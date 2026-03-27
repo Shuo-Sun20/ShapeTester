@@ -1,0 +1,1773 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "True",
+            "is_square": "False",
+            "name": "Circulant3D_Op"
+        },
+        "segment": "(0, 0, 0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.",
+        "conflict_params": [
+            "is_square"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "segment": "(0, 1, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "Test_Operator"
+        },
+        "segment": "(1, 0, 1, 2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "Custom_Circulant3D"
+        },
+        "segment": "(0, 2, 2, 2, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "Default"
+        },
+        "segment": "(1, 2, 0, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular.",
+        "conflict_params": [
+            "is_positive_definite",
+            "is_non_singular"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "Circulant3D_Op"
+        },
+        "segment": "(2, 0, 2, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "segment": "(2, 1, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Custom_Circulant3D"
+        },
+        "segment": "(2, 2, 1, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "Test_Operator"
+        },
+        "segment": "(1, 1, 2, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "Default"
+        },
+        "segment": "(0, 0, 1, 2, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "Circulant3D_Op"
+        },
+        "segment": "(1, 1, 1, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "Test_Operator"
+        },
+        "segment": "(0, 2, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "Default"
+        },
+        "segment": "(2, 1, 2, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "segment": "(1, 0, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "Custom_Circulant3D"
+        },
+        "segment": "(0, 0, 0, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Custom_Circulant3D"
+        },
+        "segment": "(1, 1, 1, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "Test_Operator"
+        },
+        "segment": "(2, 0, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "segment": "(0, 2, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "Circulant3D_Op"
+        },
+        "segment": "(0, 2, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "Circulant3D_Op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "Circulant3D_Op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Circulant3D_Op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Default"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "Custom_Circulant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Default"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Custom_Circulant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Circulant3D_Op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "Default"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "Default"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "Custom_Circulant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "Circulant3D_Op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "False",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "Custom_Circulant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "True",
+            "is_square": "False",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "Circulant3D_Op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Circulant3D_Op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Default"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "Custom_Circulant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "Circulant3D_Op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "False",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "Custom_Circulant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "Circulant3D_Op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "True",
+            "is_square": "False",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "Custom_Circulant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "Circulant3D_Op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "Default"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Circulant3D_Op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Custom_Circulant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "Custom_Circulant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Default"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "Default"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "Default"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "Default"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "Custom_Circulant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "Default"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "Default"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "Default"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Default"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "Circulant3D_Op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Custom_Circulant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "Custom_Circulant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "Circulant3D_Op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Circulant3D_Op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "False",
+            "name": "Test_Operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "Default"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "Custom_Circulant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((24, 24), (24, 24)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "Custom_Circulant3D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant3D/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant3D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    }
+]

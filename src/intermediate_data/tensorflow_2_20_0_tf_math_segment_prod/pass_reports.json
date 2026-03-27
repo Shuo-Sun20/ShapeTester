@@ -1,0 +1,97 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 2))]",
+            "segment_ids": "EagerTensor(shape=(4,))",
+            "name": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__SegmentProd_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids should be the same size as dimension 0 of input. [Op:SegmentProd] name: ', ('{{function_node __wrapped__SegmentProd_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids should be the same size as dimension 0 of input. [Op:SegmentProd] name: ', 'Graph execution error:\\n\\nDetected at node SegmentProd defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_segment_prod/generated_code.py\", line 5, in call_func\\n\\nsegment_ids should be the same size as dimension 0 of input.\\n\\t [[{{node SegmentProd}}]] [Op:__inference_call_func_45064]'))",
+        "error_message": "{{function_node __wrapped__SegmentProd_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids should be the same size as dimension 0 of input. [Op:SegmentProd] name: ",
+        "conflict_params": [
+            "inputs",
+            "segment_ids"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 2))]",
+            "segment_ids": "EagerTensor(shape=(3,))",
+            "name": "None"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 2))]",
+            "segment_ids": "EagerTensor(shape=(1,))",
+            "name": "None"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__SegmentProd_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids should be the same size as dimension 0 of input. [Op:SegmentProd] name: ', ('{{function_node __wrapped__SegmentProd_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids should be the same size as dimension 0 of input. [Op:SegmentProd] name: ', 'Graph execution error:\\n\\nDetected at node SegmentProd defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_segment_prod/generated_code.py\", line 5, in call_func\\n\\nsegment_ids should be the same size as dimension 0 of input.\\n\\t [[{{node SegmentProd}}]] [Op:__inference_call_func_45099]'))",
+        "error_message": "{{function_node __wrapped__SegmentProd_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids should be the same size as dimension 0 of input. [Op:SegmentProd] name: ",
+        "conflict_params": [
+            "inputs",
+            "segment_ids"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 2))]",
+            "segment_ids": "EagerTensor(shape=(3,))",
+            "name": "None"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2), (1, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 2))]",
+            "segment_ids": "EagerTensor(shape=(5,))",
+            "name": "None"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__SegmentProd_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids should be the same size as dimension 0 of input. [Op:SegmentProd] name: ', ('{{function_node __wrapped__SegmentProd_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids should be the same size as dimension 0 of input. [Op:SegmentProd] name: ', 'Graph execution error:\\n\\nDetected at node SegmentProd defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_segment_prod/generated_code.py\", line 5, in call_func\\n\\nsegment_ids should be the same size as dimension 0 of input.\\n\\t [[{{node SegmentProd}}]] [Op:__inference_call_func_45126]'))",
+        "error_message": "{{function_node __wrapped__SegmentProd_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids should be the same size as dimension 0 of input. [Op:SegmentProd] name: ",
+        "conflict_params": [
+            "inputs",
+            "segment_ids"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 2))]",
+            "segment_ids": "EagerTensor(shape=(1,))",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__SegmentProd_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids should be the same size as dimension 0 of input. [Op:SegmentProd] name: ', ('{{function_node __wrapped__SegmentProd_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids should be the same size as dimension 0 of input. [Op:SegmentProd] name: ', 'Graph execution error:\\n\\nDetected at node SegmentProd defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 167, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/GA_Based_Generation.py\", line 385, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_segment_prod/generated_code.py\", line 5, in call_func\\n\\nsegment_ids should be the same size as dimension 0 of input.\\n\\t [[{{node SegmentProd}}]] [Op:__inference_call_func_45144]'))",
+        "error_message": "{{function_node __wrapped__SegmentProd_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids should be the same size as dimension 0 of input. [Op:SegmentProd] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 2))]",
+            "segment_ids": "EagerTensor(shape=(4,))",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__SegmentProd_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids should be the same size as dimension 0 of input. [Op:SegmentProd] name: ', ('{{function_node __wrapped__SegmentProd_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids should be the same size as dimension 0 of input. [Op:SegmentProd] name: ', 'Graph execution error:\\n\\nDetected at node SegmentProd defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 167, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/GA_Based_Generation.py\", line 385, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_segment_prod/generated_code.py\", line 5, in call_func\\n\\nsegment_ids should be the same size as dimension 0 of input.\\n\\t [[{{node SegmentProd}}]] [Op:__inference_call_func_45150]'))",
+        "error_message": "{{function_node __wrapped__SegmentProd_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids should be the same size as dimension 0 of input. [Op:SegmentProd] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 2))]",
+            "segment_ids": "EagerTensor(shape=(5,))",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__SegmentProd_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids should be the same size as dimension 0 of input. [Op:SegmentProd] name: ', ('{{function_node __wrapped__SegmentProd_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids should be the same size as dimension 0 of input. [Op:SegmentProd] name: ', 'Graph execution error:\\n\\nDetected at node SegmentProd defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 167, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/GA_Based_Generation.py\", line 385, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_segment_prod/generated_code.py\", line 5, in call_func\\n\\nsegment_ids should be the same size as dimension 0 of input.\\n\\t [[{{node SegmentProd}}]] [Op:__inference_call_func_45156]'))",
+        "error_message": "{{function_node __wrapped__SegmentProd_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids should be the same size as dimension 0 of input. [Op:SegmentProd] name: "
+    }
+]

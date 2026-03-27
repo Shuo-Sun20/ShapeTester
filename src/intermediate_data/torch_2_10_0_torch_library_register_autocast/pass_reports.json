@@ -1,0 +1,30 @@
+[
+    {
+        "test_case": {
+            "op": "mylib::my_sin",
+            "device_type": "cpu",
+            "cast_inputs": "torch.float16",
+            "lib": "None",
+            "inputs": "Tensor(shape=torch.Size([3]))"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "op": "mylib.my_sin",
+            "device_type": "cpu",
+            "cast_inputs": "torch.float16",
+            "lib": "None",
+            "inputs": "Tensor(shape=torch.Size([3]))"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"register_autocast(mylib.my_sin): got unexpected type for op: <class 'torch._ops.OpOverloadPacket'>\", (\"register_autocast(mylib.my_sin): got unexpected type for op: <class 'torch._ops.OpOverloadPacket'>\", \"register_autocast(mylib.my_sin): got unexpected type for op: <class 'torch._ops.OpOverloadPacket'>\", \"register_autocast(mylib.my_sin): got unexpected type for op: <class 'torch._ops.OpOverloadPacket'>\"))",
+        "error_message": "register_autocast(mylib.my_sin): got unexpected type for op: <class 'torch._ops.OpOverloadPacket'>",
+        "conflict_params": [
+            "op"
+        ]
+    }
+]

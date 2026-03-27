@@ -1,0 +1,30 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 12, 30]))]",
+            "weight": "Tensor(shape=torch.Size([3, 2, 3]))",
+            "bias": "None",
+            "stride": "1",
+            "padding": "4",
+            "dilation": "5",
+            "groups": "6"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Given groups=6, expected weight to be at least 6 at dimension 0, but got weight of size [3, 2, 3] instead', ('Given groups=6, expected weight to be at least 6 at dimension 0, but got weight of size [3, 2, 3] instead', 'Given groups=6, expected weight to be at least 6 at dimension 0, but got weight of size [3, 2, 3] instead', (2, 3, 28)))",
+        "error_message": "Given groups=6, expected weight to be at least 6 at dimension 0, but got weight of size [3, 2, 3] instead"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 6, 10]))]",
+            "weight": "Tensor(shape=torch.Size([3, 2, 3]))",
+            "bias": "None",
+            "stride": "3",
+            "padding": "1",
+            "dilation": "1",
+            "groups": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'expected size 2==2, stride 12==6 at dim=0; expected size 3==3, stride 4==2 at dim=1; expected size 4==2, stride 1==1 at dim=2\\nError in op: torch.ops.aten.convolution.default\\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\\nUse torch.library.opcheck to test your custom op.\\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck', ((2, 3, 4), 'expected size 2==2, stride 12==6 at dim=0; expected size 3==3, stride 4==2 at dim=1; expected size 4==2, stride 1==1 at dim=2\\nError in op: torch.ops.aten.convolution.default\\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\\nUse torch.library.opcheck to test your custom op.\\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck', (2, 3, 4)))",
+        "error_message": "expected size 2==2, stride 12==6 at dim=0; expected size 3==3, stride 4==2 at dim=1; expected size 4==2, stride 1==1 at dim=2\nError in op: torch.ops.aten.convolution.default\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\nUse torch.library.opcheck to test your custom op.\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck"
+    }
+]

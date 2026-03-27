@@ -1,0 +1,78 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "dim": "0",
+            "sparse_grad": "True",
+            "out": "None"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'index 3 is out of bounds for dimension 0 with size 3', ('index 3 is out of bounds for dimension 0 with size 3', 'kernel, /tmp/torchinductor_sunshuo/3n/c3npjtpdgvtnedjyanex545h6zedgyp4ysemzb2plbmfp4z2zs2h.main.cpp:98, index out of bounds: 0 <= tmp10 < ks0', (3, 4)))",
+        "error_message": "index 3 is out of bounds for dimension 0 with size 3",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "dim": "-2",
+            "sparse_grad": "True",
+            "out": "None"
+        },
+        "segment": "(3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'index 3 is out of bounds for dimension 0 with size 3', ('index 3 is out of bounds for dimension 0 with size 3', 'kernel, /tmp/torchinductor_sunshuo/2m/c2mps4cpol5u2c34cgq2ho4z37eiiiel5bpb7yqxsvegewtojgr2.main.cpp:100, index out of bounds: 0 <= tmp10 < ks2', (3, 4)))",
+        "error_message": "index 3 is out of bounds for dimension 0 with size 3",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "dim": "-2",
+            "sparse_grad": "False",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'index 3 is out of bounds for dimension 0 with size 3', ('index 3 is out of bounds for dimension 0 with size 3', 'index 3 is out of bounds for dimension 0 with size 3', (3, 4)))",
+        "error_message": "index 3 is out of bounds for dimension 0 with size 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "dim": "-2",
+            "sparse_grad": "True",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'index 3 is out of bounds for dimension 0 with size 3', ('index 3 is out of bounds for dimension 0 with size 3', 'kernel, /tmp/torchinductor_sunshuo/2m/c2mps4cpol5u2c34cgq2ho4z37eiiiel5bpb7yqxsvegewtojgr2.main.cpp:100, index out of bounds: 0 <= tmp10 < ks2', (3, 4)))",
+        "error_message": "index 3 is out of bounds for dimension 0 with size 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "dim": "0",
+            "sparse_grad": "True",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'index 3 is out of bounds for dimension 0 with size 3', ('index 3 is out of bounds for dimension 0 with size 3', 'kernel, /tmp/torchinductor_sunshuo/3n/c3npjtpdgvtnedjyanex545h6zedgyp4ysemzb2plbmfp4z2zs2h.main.cpp:98, index out of bounds: 0 <= tmp10 < ks0', (3, 4)))",
+        "error_message": "index 3 is out of bounds for dimension 0 with size 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "dim": "0",
+            "sparse_grad": "False",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'index 3 is out of bounds for dimension 0 with size 3', ('index 3 is out of bounds for dimension 0 with size 3', 'index 3 is out of bounds for dimension 0 with size 3', (3, 4)))",
+        "error_message": "index 3 is out of bounds for dimension 0 with size 3"
+    }
+]

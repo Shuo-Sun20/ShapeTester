@@ -1,0 +1,37 @@
+[
+    {
+        "test_case": {
+            "inputs": "[2, 3]",
+            "out": "None",
+            "dtype": "torch.float32",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False",
+            "pin_memory": "False",
+            "memory_format": "torch.contiguous_format"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3), (2, 3), (2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[2, 3]",
+            "out": "Tensor(shape=torch.Size([0, 2]))",
+            "dtype": "torch.float32",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False",
+            "pin_memory": "False",
+            "memory_format": "torch.contiguous_format"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"'memory_format' argument is incompatible with 'out' tensor argument\", (\"'memory_format' argument is incompatible with 'out' tensor argument\", \"'memory_format' argument is incompatible with 'out' tensor argument\", \"'memory_format' argument is incompatible with 'out' tensor argument\"))",
+        "error_message": "'memory_format' argument is incompatible with 'out' tensor argument",
+        "conflict_params": [
+            "out",
+            "memory_format"
+        ]
+    }
+]

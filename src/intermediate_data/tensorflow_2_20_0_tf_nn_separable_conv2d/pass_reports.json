@@ -1,0 +1,1363 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[2, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(1, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 4), (2, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(1, 2, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[0, 0, 1, 1, 1, 1, 0, 0], padding=\"EXPLICIT\", strides=[1, 2, 2, 1]](inputs, inputs_1)\\' with input shapes: [2,5,5,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise",
+        "conflict_params": [
+            "strides",
+            "data_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(4, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(0, 3, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 7, 7, 4), (2, 7, 7, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[3, 3]",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(2, 2, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(2, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"SAME\", strides=[1, 3, 3, 1]](inputs, inputs_1)\\' with input shapes: [2,5,5,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise",
+        "conflict_params": [
+            "strides",
+            "data_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "[[0, 0], [0, 0], [0, 0], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(3, 4, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "dilations": "[2, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(0, 1, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1]](separable_conv2d_example/SpaceToBatchND, inputs_1)\\' with input shapes: [8,5,3,2], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise",
+        "conflict_params": [
+            "inputs",
+            "data_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5, 5)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "[3, 3]"
+        },
+        "segment": "(4, 3, 1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Negative dimension size caused by subtracting 3 from 2 for \\'{{node separable_conv2d/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 5, 5, 1]](separable_conv2d/SpaceToBatchND, inputs_1)\\' with input shapes: [18,3,3,2], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise",
+        "conflict_params": [
+            "strides",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5, 5)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]"
+        },
+        "segment": "(3, 0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', 'Graph execution error:\\n\\nDetected at node separable_conv2d/depthwise defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 228, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 85, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func\\n\\nCurrent implementation does not yet support strides in the batch and depth dimensions.\\n\\t [[{{node separable_conv2d/depthwise}}]] [Op:__inference_call_func_567989]'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise",
+        "conflict_params": [
+            "strides",
+            "data_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5, 5)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 2]"
+        },
+        "segment": "(0, 0, 1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 5, 5), (2, 4, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5, 5)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [0, 0], [0, 0], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "None"
+        },
+        "segment": "(0, 4, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 3, 3), (2, 4, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[2, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(4, 2, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "[[0, 0], [0, 0], [0, 0], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(4, 4, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(1, 1, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 1, 4), (2, 2, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(2, 1, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(1, 3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 4, 4), (2, 4, 4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(3, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 4), (2, 2, 2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[2, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(2, 3, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "[[0, 0], [0, 0], [0, 0], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[3, 3]",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(1, 4, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 3 vs 6 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 3 vs 6 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Negative dimension size caused by subtracting 3 from 2 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 2, 2, 1]](separable_conv2d_example/SpaceToBatchND, inputs_1)\\' with input shapes: [18,2,2,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 3 vs 6 [Op:Conv2D] name: ",
+        "conflict_params": [
+            "strides",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[3, 3]",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(3, 1, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 3 vs 6 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 3 vs 6 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Negative dimension size caused by subtracting 3 from 2 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 4, 4, 1]](separable_conv2d_example/SpaceToBatchND, inputs_1)\\' with input shapes: [18,2,2,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 3 vs 6 [Op:Conv2D] name: ",
+        "conflict_params": [
+            "inputs",
+            "strides",
+            "dilations",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[3, 3]",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(0, 2, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(4, 0, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(2, 2, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 1, 4), (2, 2, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(3, 3, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 1, 4), (2, 2, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "[[0, 0], [0, 0], [0, 0], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[2, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(2, 4, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[2, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(3, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[3, 3]",
+            "name": "separable_conv2d_example"
+        },
+        "segment": "(0, 0, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 5, 4), (2, 5, 5, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 4), (2, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[3, 3]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 4), (2, 2, 2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "[3, 3]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 4, 4, 1]](separable_conv2d_example/SpaceToBatchND, inputs_1)\\' with input shapes: [18,5,3,1], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 5, 4), (2, 5, 5, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[3, 3]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 4), (2, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 5, 4), (2, 5, 5, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "[3, 3]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1]](separable_conv2d_example/SpaceToBatchND, inputs_1)\\' with input shapes: [18,5,3,1], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[3, 3]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 4), (2, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 1, 4), (2, 2, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [0, 0], [0, 0], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 4), (2, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 5, 4), (2, 5, 5, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 4), (2, 2, 2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[3, 3]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 4), (2, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 4), (2, 2, 2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 5, 4), (2, 5, 5, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 4, 4), (2, 4, 4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 7, 7, 4), (2, 7, 7, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"SAME\", strides=[1, 1, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,5,5,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "[[0, 0], [0, 0], [0, 0], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "[[0, 0], [0, 0], [0, 0], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[0, 0, 2, 2, 2, 2, 0, 0], padding=\"EXPLICIT\", strides=[1, 2, 2, 1]](inputs, inputs_1)\\' with input shapes: [2,5,5,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [0, 0], [0, 0], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 4), (2, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[0, 0, 2, 2, 2, 2, 0, 0], padding=\"EXPLICIT\", strides=[1, 1, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,5,5,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[2, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 5, 4), (2, 5, 5, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 4), (2, 2, 2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 4), (2, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 4), (2, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "[1, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1]](separable_conv2d_example/SpaceToBatchND, inputs_1)\\' with input shapes: [4,5,7,2], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[0, 0, 2, 2, 2, 2, 0, 0], padding=\"EXPLICIT\", strides=[1, 1, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,5,5,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[0, 0, 2, 2, 2, 2, 0, 0], padding=\"EXPLICIT\", strides=[1, 5, 5, 1]](inputs, inputs_1)\\' with input shapes: [2,5,5,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 4), (2, 2, 2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 7, 5, 4), (2, 7, 5, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 4), (2, 2, 2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "[3, 3]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 2, 2, 1]](separable_conv2d_example/SpaceToBatchND, inputs_1)\\' with input shapes: [18,5,3,1], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "[1, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 2, 2, 1]](separable_conv2d_example/SpaceToBatchND, inputs_1)\\' with input shapes: [4,5,9,2], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "[1, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1]](separable_conv2d_example/SpaceToBatchND, inputs_1)\\' with input shapes: [4,5,9,2], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,5,5,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 4), (2, 2, 2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "[[0, 0], [0, 0], [0, 0], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 4), (2, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[0, 0, 1, 1, 1, 1, 0, 0], padding=\"EXPLICIT\", strides=[1, 1, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,5,5,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[0, 0, 2, 2, 2, 2, 0, 0], padding=\"EXPLICIT\", strides=[1, 3, 3, 1]](inputs, inputs_1)\\' with input shapes: [2,5,5,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 1, 4), (2, 3, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 4), (2, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[3, 3]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 4), (2, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 4), (2, 2, 2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "[2, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 3, 3, 1]](separable_conv2d_example/SpaceToBatchND, inputs_1)\\' with input shapes: [8,5,5,2], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "[[0, 0], [0, 0], [0, 0], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[0, 0, 0, 0, 0, 0, 0, 0], padding=\"EXPLICIT\", strides=[1, 5, 5, 1]](inputs, inputs_1)\\' with input shapes: [2,5,5,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[3, 3]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 4), (2, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[2, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 4), (2, 2, 2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[0, 0, 2, 2, 2, 2, 0, 0], padding=\"EXPLICIT\", strides=[1, 4, 4, 1]](inputs, inputs_1)\\' with input shapes: [2,5,5,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[2, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 4), (2, 2, 2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[0, 0, 2, 2, 2, 2, 0, 0], padding=\"EXPLICIT\", strides=[1, 5, 5, 1]](inputs, inputs_1)\\' with input shapes: [2,5,5,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[3, 3]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 3 vs 6 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 3 vs 6 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Negative dimension size caused by subtracting 3 from 2 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1]](separable_conv2d_example/SpaceToBatchND, inputs_1)\\' with input shapes: [18,2,2,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 3 vs 6 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [0, 0], [0, 0], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[0, 0, 0, 0, 0, 0, 0, 0], padding=\"EXPLICIT\", strides=[1, 1, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,5,5,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "[2, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1]](separable_conv2d_example/SpaceToBatchND, inputs_1)\\' with input shapes: [8,5,5,2], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"SAME\", strides=[1, 2, 2, 1]](inputs, inputs_1)\\' with input shapes: [2,5,5,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 1, 4), (2, 3, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 1, 4), (2, 2, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 5, 4), (2, 5, 5, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"SAME\", strides=[1, 3, 3, 1]](inputs, inputs_1)\\' with input shapes: [2,5,5,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "[[0, 0], [2, 2], [2, 2], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 1, 4), (2, 2, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 4), (2, 2, 2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "[[0, 0], [0, 0], [0, 0], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "[2, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 4, 4, 1]](separable_conv2d_example/SpaceToBatchND, inputs_1)\\' with input shapes: [8,5,3,2], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[2, 2]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 4), (2, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 4, 4, 1]](inputs, inputs_1)\\' with input shapes: [2,5,5,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 3, 3, 1]](inputs, inputs_1)\\' with input shapes: [2,5,5,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"SAME\", strides=[1, 1, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,5,5,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [0, 0], [0, 0], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "None",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', ('{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_separable_conv2d/generated_code.py\", line 21, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 5 and 3 for \\'{{node separable_conv2d_example/depthwise}} = DepthwiseConv2dNative[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[0, 0, 0, 0, 0, 0, 0, 0], padding=\"EXPLICIT\", strides=[1, 1, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,5,5,3], [3,3,3,2].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeDepthwiseConv2dNative_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:DepthwiseConv2dNative] name: depthwise"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3, 2)), EagerTensor(shape=(1, 1, 6, 4))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "separable_conv2d_example"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 4), (2, 3, 3, 4)))"
+    }
+]

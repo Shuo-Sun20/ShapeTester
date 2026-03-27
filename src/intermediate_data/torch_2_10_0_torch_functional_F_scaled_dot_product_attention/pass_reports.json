@@ -1,0 +1,2359 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.0",
+            "is_causal": "False",
+            "scale": "0.5",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 0, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', ('The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function scaled_dot_product_attention>(*(), **{\\'query\\': FakeTensor(..., size=(s21, s41, s65, s54)), \\'key\\': FakeTensor(..., size=(s21, s22, s20, s54)), \\'value\\': FakeTensor(..., size=(s21, s22, s20, s87)), \\'attn_mask\\': None, \\'dropout_p\\': 0.0, \\'is_causal\\': False, \\'scale\\': 0.500000000000000, \\'enable_gqa\\': False}): got RuntimeError(\\'Attempting to broadcast a dimension of length s22 at -1! Mismatching argument at index 1 had [s21, s22]; but expected shape should be broadcastable to [s21, s41]\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_functional_F_scaled_dot_product_attention/generated_code.py\", line 21, in call_func\\n    return torch.nn.functional.scaled_dot_product_attention(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1'))",
+        "error_message": "The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1",
+        "conflict_params": [
+            "inputs",
+            "enable_gqa"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.1",
+            "is_causal": "True",
+            "scale": "1.5",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 2, 1, 1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function scaled_dot_product_attention>(*(), **{\\'query\\': FakeTensor(..., size=(1, s41, s65, s54)), \\'key\\': FakeTensor(..., size=(1, s22, s20, s54)), \\'value\\': FakeTensor(..., size=(1, s24, s8, s87)), \\'attn_mask\\': FakeTensor(..., size=(s11, s93), dtype=torch.bool), \\'dropout_p\\': 0.100000000000000, \\'is_causal\\': True, \\'scale\\': 1.50000000000000, \\'enable_gqa\\': False}): got RuntimeError(\\'_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_functional_F_scaled_dot_product_attention/generated_code.py\", line 21, in call_func\\n    return torch.nn.functional.scaled_dot_product_attention(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True",
+        "conflict_params": [
+            "attn_mask",
+            "is_causal"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.1",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "segment": "(1, 3, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.0",
+            "is_causal": "True",
+            "scale": "1.0",
+            "enable_gqa": "True"
+        },
+        "segment": "(1, 4, 0, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function scaled_dot_product_attention>(*(), **{\\'query\\': FakeTensor(..., size=(s21, s41, s11, s54)), \\'key\\': FakeTensor(..., size=(s21, s22, s20, s54)), \\'value\\': FakeTensor(..., size=(s21, s22, s8, s87)), \\'attn_mask\\': FakeTensor(..., size=(s11, s20)), \\'dropout_p\\': 0.0, \\'is_causal\\': True, \\'scale\\': 1.00000000000000, \\'enable_gqa\\': True}): got RuntimeError(\\'_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_functional_F_scaled_dot_product_attention/generated_code.py\", line 21, in call_func\\n    return torch.nn.functional.scaled_dot_product_attention(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True",
+        "conflict_params": [
+            "attn_mask",
+            "is_causal"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.25",
+            "is_causal": "False",
+            "scale": "2.0",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 4, 2, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (4) must match the size of tensor b (12) at non-singleton dimension 3', ('The size of tensor a (4) must match the size of tensor b (12) at non-singleton dimension 3', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function scaled_dot_product_attention>(*(), **{\\'query\\': FakeTensor(..., size=(1, s22, s65, s54)), \\'key\\': FakeTensor(..., size=(1, s22, s20, s54)), \\'value\\': FakeTensor(..., size=(1, s24, s8, s87)), \\'attn_mask\\': FakeTensor(..., size=(s11, s93)), \\'dropout_p\\': 0.250000000000000, \\'is_causal\\': False, \\'scale\\': 2.00000000000000, \\'enable_gqa\\': False}): got RuntimeError(\\'The size of tensor a (s20: hint = 4) must match the size of tensor b (s93: hint = 12) at non-singleton dimension 3)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_functional_F_scaled_dot_product_attention/generated_code.py\", line 21, in call_func\\n    return torch.nn.functional.scaled_dot_product_attention(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Attempting to broadcast a dimension of length 12 at -1! Mismatching argument at index 1 had torch.Size([10, 12]); but expected shape should be broadcastable to [1, 2, 3, 4]'))",
+        "error_message": "The size of tensor a (4) must match the size of tensor b (12) at non-singleton dimension 3",
+        "conflict_params": [
+            "inputs",
+            "attn_mask"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.25",
+            "is_causal": "True",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "segment": "(1, 0, 2, 1, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.5",
+            "is_causal": "True",
+            "scale": "0.5",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 3, 3, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function scaled_dot_product_attention>(*(), **{\\'query\\': FakeTensor(..., size=(1, s41, s65, s54)), \\'key\\': FakeTensor(..., size=(1, s22, s20, s54)), \\'value\\': FakeTensor(..., size=(1, s24, s8, s87)), \\'attn_mask\\': FakeTensor(..., size=(s11, s93), dtype=torch.bool), \\'dropout_p\\': 0.500000000000000, \\'is_causal\\': True, \\'scale\\': 0.500000000000000, \\'enable_gqa\\': False}): got RuntimeError(\\'_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_functional_F_scaled_dot_product_attention/generated_code.py\", line 21, in call_func\\n    return torch.nn.functional.scaled_dot_product_attention(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True",
+        "conflict_params": [
+            "attn_mask",
+            "is_causal"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.5",
+            "is_causal": "False",
+            "scale": "1.0",
+            "enable_gqa": "True"
+        },
+        "segment": "(1, 2, 3, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.75",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 0, 4, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.9",
+            "is_causal": "True",
+            "scale": "2.0",
+            "enable_gqa": "True"
+        },
+        "segment": "(1, 0, 5, 1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.75",
+            "is_causal": "False",
+            "scale": "1.5",
+            "enable_gqa": "True"
+        },
+        "segment": "(1, 3, 4, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.9",
+            "is_causal": "False",
+            "scale": "0.125",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 2, 5, 0, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (4) must match the size of tensor b (12) at non-singleton dimension 3', ('The size of tensor a (4) must match the size of tensor b (12) at non-singleton dimension 3', 'The size of tensor a (4) must match the size of tensor b (12) at non-singleton dimension 3', 'Attempting to broadcast a dimension of length 12 at -1! Mismatching argument at index 1 had torch.Size([10, 12]); but expected shape should be broadcastable to [1, 2, 3, 4]'))",
+        "error_message": "The size of tensor a (4) must match the size of tensor b (12) at non-singleton dimension 3",
+        "conflict_params": [
+            "inputs",
+            "attn_mask"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "1.0",
+            "is_causal": "True",
+            "scale": "1.0",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 0, 6, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "1.0",
+            "is_causal": "False",
+            "scale": "0.5",
+            "enable_gqa": "True"
+        },
+        "segment": "(1, 2, 6, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', ('The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'Attempting to broadcast a dimension of length 12 at -1! Mismatching argument at index 1 had torch.Size([10, 12]); but expected shape should be broadcastable to [2, 8, 128, 128]'))",
+        "error_message": "The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3",
+        "conflict_params": [
+            "attn_mask"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.0",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 2, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', ('The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'Attempting to broadcast a dimension of length 12 at -1! Mismatching argument at index 1 had torch.Size([10, 12]); but expected shape should be broadcastable to [2, 8, 128, 128]'))",
+        "error_message": "The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3",
+        "conflict_params": [
+            "attn_mask"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.1",
+            "is_causal": "False",
+            "scale": "0.5",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 4, 1, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', ('The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'Attempting to broadcast a dimension of length 12 at -1! Mismatching argument at index 1 had torch.Size([10, 12]); but expected shape should be broadcastable to [2, 8, 128, 128]'))",
+        "error_message": "The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3",
+        "conflict_params": [
+            "attn_mask"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.5",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 4, 3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', ('The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'Attempting to broadcast a dimension of length 12 at -1! Mismatching argument at index 1 had torch.Size([10, 12]); but expected shape should be broadcastable to [2, 8, 128, 128]'))",
+        "error_message": "The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3",
+        "conflict_params": [
+            "attn_mask"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.0",
+            "is_causal": "False",
+            "scale": "2.0",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 3, 0, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', ('The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'Attempting to broadcast a dimension of length 12 at -1! Mismatching argument at index 1 had torch.Size([10, 12]); but expected shape should be broadcastable to [2, 8, 128, 128]'))",
+        "error_message": "The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3",
+        "conflict_params": [
+            "inputs",
+            "attn_mask"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.25",
+            "is_causal": "False",
+            "scale": "1.0",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 3, 2, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', ('The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'Attempting to broadcast a dimension of length 12 at -1! Mismatching argument at index 1 had torch.Size([10, 12]); but expected shape should be broadcastable to [2, 8, 128, 128]'))",
+        "error_message": "The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3",
+        "conflict_params": [
+            "attn_mask",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.5",
+            "is_causal": "False",
+            "scale": "1.5",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 0, 3, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.75",
+            "is_causal": "False",
+            "scale": "2.0",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 2, 4, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', ('The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'Attempting to broadcast a dimension of length 12 at -1! Mismatching argument at index 1 had torch.Size([10, 12]); but expected shape should be broadcastable to [2, 8, 128, 128]'))",
+        "error_message": "The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3",
+        "conflict_params": [
+            "attn_mask"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.9",
+            "is_causal": "False",
+            "scale": "1.5",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 4, 5, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', ('The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'Attempting to broadcast a dimension of length 12 at -1! Mismatching argument at index 1 had torch.Size([10, 12]); but expected shape should be broadcastable to [2, 8, 128, 128]'))",
+        "error_message": "The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3",
+        "conflict_params": [
+            "attn_mask"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.75",
+            "is_causal": "False",
+            "scale": "0.125",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 4, 4, 0, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', ('The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'Attempting to broadcast a dimension of length 12 at -1! Mismatching argument at index 1 had torch.Size([10, 12]); but expected shape should be broadcastable to [2, 8, 128, 128]'))",
+        "error_message": "The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3",
+        "conflict_params": [
+            "attn_mask"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "1.0",
+            "is_causal": "False",
+            "scale": "0.125",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 3, 6, 0, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', ('The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'Attempting to broadcast a dimension of length 12 at -1! Mismatching argument at index 1 had torch.Size([10, 12]); but expected shape should be broadcastable to [2, 8, 128, 128]'))",
+        "error_message": "The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3",
+        "conflict_params": [
+            "attn_mask"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.25",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 2, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', ('The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'Attempting to broadcast a dimension of length 12 at -1! Mismatching argument at index 1 had torch.Size([10, 12]); but expected shape should be broadcastable to [2, 8, 128, 128]'))",
+        "error_message": "The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3",
+        "conflict_params": [
+            "attn_mask"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.1",
+            "is_causal": "False",
+            "scale": "1.0",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 0, 1, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.9",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 3, 5, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', ('The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'Attempting to broadcast a dimension of length 12 at -1! Mismatching argument at index 1 had torch.Size([10, 12]); but expected shape should be broadcastable to [2, 8, 128, 128]'))",
+        "error_message": "The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3",
+        "conflict_params": [
+            "attn_mask"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64])), Tensor(shape=torch.Size([2, 8, 128, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "1.0",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 4, 6, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', ('The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3', 'Attempting to broadcast a dimension of length 12 at -1! Mismatching argument at index 1 had torch.Size([10, 12]); but expected shape should be broadcastable to [2, 8, 128, 128]'))",
+        "error_message": "The size of tensor a (128) must match the size of tensor b (12) at non-singleton dimension 3",
+        "conflict_params": [
+            "inputs",
+            "attn_mask"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.0",
+            "is_causal": "False",
+            "scale": "1.5",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 0, 0, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.25",
+            "is_causal": "False",
+            "scale": "0.5",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 0, 2, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.0",
+            "is_causal": "False",
+            "scale": "0.125",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 0, 0, 0, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.1",
+            "is_causal": "False",
+            "scale": "2.0",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 0, 1, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.25",
+            "is_causal": "False",
+            "scale": "1.5",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 0, 2, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.75",
+            "is_causal": "False",
+            "scale": "0.5",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 0, 4, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.1",
+            "is_causal": "False",
+            "scale": "0.125",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 0, 1, 0, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.75",
+            "is_causal": "False",
+            "scale": "1.0",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 0, 4, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.9",
+            "is_causal": "False",
+            "scale": "0.5",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 0, 5, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.5",
+            "is_causal": "False",
+            "scale": "2.0",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 0, 3, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.9",
+            "is_causal": "False",
+            "scale": "1.0",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 0, 5, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.5",
+            "is_causal": "False",
+            "scale": "0.125",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 0, 3, 0, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "1.0",
+            "is_causal": "False",
+            "scale": "1.5",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 0, 6, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "1.0",
+            "is_causal": "False",
+            "scale": "2.0",
+            "enable_gqa": "False"
+        },
+        "segment": "(0, 0, 6, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.0",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.25",
+            "is_causal": "True",
+            "scale": "0.5",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.1",
+            "is_causal": "False",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "1.0",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.25",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.1",
+            "is_causal": "True",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.25",
+            "is_causal": "False",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.1",
+            "is_causal": "True",
+            "scale": "0.125",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.1",
+            "is_causal": "False",
+            "scale": "1.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.25",
+            "is_causal": "True",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.1",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.25",
+            "is_causal": "False",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.25",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.25",
+            "is_causal": "False",
+            "scale": "1.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.1",
+            "is_causal": "False",
+            "scale": "1.5",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.9",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.0",
+            "is_causal": "False",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.1",
+            "is_causal": "False",
+            "scale": "0.5",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', ('The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1'))",
+        "error_message": "The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.1",
+            "is_causal": "True",
+            "scale": "0.5",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "1.0",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "1.0",
+            "is_causal": "False",
+            "scale": "1.0",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.1",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.9",
+            "is_causal": "True",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.1",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', ('The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1'))",
+        "error_message": "The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "1.0",
+            "is_causal": "True",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "1.0",
+            "is_causal": "True",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.0",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.1",
+            "is_causal": "False",
+            "scale": "0.5",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.1",
+            "is_causal": "True",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.75",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "1.0",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.75",
+            "is_causal": "True",
+            "scale": "1.0",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "1.0",
+            "is_causal": "True",
+            "scale": "1.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.1",
+            "is_causal": "False",
+            "scale": "0.125",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', ('The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1'))",
+        "error_message": "The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.25",
+            "is_causal": "True",
+            "scale": "2.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.9",
+            "is_causal": "False",
+            "scale": "0.5",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.0",
+            "is_causal": "True",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.1",
+            "is_causal": "True",
+            "scale": "0.5",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "1.0",
+            "is_causal": "True",
+            "scale": "0.5",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "1.0",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.75",
+            "is_causal": "True",
+            "scale": "1.5",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.1",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.5",
+            "is_causal": "True",
+            "scale": "1.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.0",
+            "is_causal": "True",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.0",
+            "is_causal": "True",
+            "scale": "1.5",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.25",
+            "is_causal": "False",
+            "scale": "1.0",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.75",
+            "is_causal": "True",
+            "scale": "0.125",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "1.0",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.5",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.9",
+            "is_causal": "False",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.0",
+            "is_causal": "False",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.0",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.1",
+            "is_causal": "True",
+            "scale": "2.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.25",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.5",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.75",
+            "is_causal": "True",
+            "scale": "2.0",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.0",
+            "is_causal": "True",
+            "scale": "2.0",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.1",
+            "is_causal": "True",
+            "scale": "1.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.1",
+            "is_causal": "False",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.25",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.9",
+            "is_causal": "True",
+            "scale": "0.5",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "1.0",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.1",
+            "is_causal": "True",
+            "scale": "0.125",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', ('The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1'))",
+        "error_message": "The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.9",
+            "is_causal": "False",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.75",
+            "is_causal": "True",
+            "scale": "1.5",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.0",
+            "is_causal": "True",
+            "scale": "1.0",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.75",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.9",
+            "is_causal": "True",
+            "scale": "1.0",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.5",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.5",
+            "is_causal": "False",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.25",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', ('The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1'))",
+        "error_message": "The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.25",
+            "is_causal": "False",
+            "scale": "1.5",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.75",
+            "is_causal": "True",
+            "scale": "0.5",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.25",
+            "is_causal": "True",
+            "scale": "1.0",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.75",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "1.0",
+            "is_causal": "True",
+            "scale": "1.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.1",
+            "is_causal": "True",
+            "scale": "2.0",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.25",
+            "is_causal": "False",
+            "scale": "0.125",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', ('The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1'))",
+        "error_message": "The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.25",
+            "is_causal": "False",
+            "scale": "0.5",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.75",
+            "is_causal": "True",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.1",
+            "is_causal": "False",
+            "scale": "1.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.9",
+            "is_causal": "False",
+            "scale": "1.5",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.9",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.25",
+            "is_causal": "False",
+            "scale": "1.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.25",
+            "is_causal": "True",
+            "scale": "2.0",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.75",
+            "is_causal": "True",
+            "scale": "0.5",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "1.0",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.1",
+            "is_causal": "True",
+            "scale": "1.5",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', ('The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1'))",
+        "error_message": "The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.9",
+            "is_causal": "True",
+            "scale": "2.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.25",
+            "is_causal": "True",
+            "scale": "1.5",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.0",
+            "is_causal": "True",
+            "scale": "2.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.75",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.5",
+            "is_causal": "True",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.9",
+            "is_causal": "True",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "1.0",
+            "is_causal": "True",
+            "scale": "2.0",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.25",
+            "is_causal": "True",
+            "scale": "0.5",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.1",
+            "is_causal": "True",
+            "scale": "1.0",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.1",
+            "is_causal": "False",
+            "scale": "0.5",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.5",
+            "is_causal": "False",
+            "scale": "1.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.25",
+            "is_causal": "True",
+            "scale": "2.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "1.0",
+            "is_causal": "True",
+            "scale": "1.5",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.9",
+            "is_causal": "True",
+            "scale": "0.5",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "1.0",
+            "is_causal": "True",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "1.0",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.25",
+            "is_causal": "False",
+            "scale": "0.125",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', ('The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1'))",
+        "error_message": "The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "1.0",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "1.0",
+            "is_causal": "True",
+            "scale": "2.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.1",
+            "is_causal": "True",
+            "scale": "1.5",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.25",
+            "is_causal": "False",
+            "scale": "2.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.75",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "1.0",
+            "is_causal": "True",
+            "scale": "1.0",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.25",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.9",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.75",
+            "is_causal": "True",
+            "scale": "1.0",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.5",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.75",
+            "is_causal": "False",
+            "scale": "1.0",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (4) must match the size of tensor b (12) at non-singleton dimension 3', ('The size of tensor a (4) must match the size of tensor b (12) at non-singleton dimension 3', 'The size of tensor a (4) must match the size of tensor b (12) at non-singleton dimension 3', 'Attempting to broadcast a dimension of length 12 at -1! Mismatching argument at index 1 had torch.Size([10, 12]); but expected shape should be broadcastable to [1, 2, 3, 4]'))",
+        "error_message": "The size of tensor a (4) must match the size of tensor b (12) at non-singleton dimension 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.75",
+            "is_causal": "False",
+            "scale": "1.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.25",
+            "is_causal": "True",
+            "scale": "0.125",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', ('The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1'))",
+        "error_message": "The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.75",
+            "is_causal": "True",
+            "scale": "2.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.1",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.0",
+            "is_causal": "True",
+            "scale": "1.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.5",
+            "is_causal": "True",
+            "scale": "1.5",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.5",
+            "is_causal": "True",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.1",
+            "is_causal": "True",
+            "scale": "0.5",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.1",
+            "is_causal": "True",
+            "scale": "1.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.1",
+            "is_causal": "False",
+            "scale": "1.5",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', ('The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1'))",
+        "error_message": "The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.25",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', ('The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1'))",
+        "error_message": "The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.5",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.0",
+            "is_causal": "True",
+            "scale": "1.5",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', ('The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1'))",
+        "error_message": "The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.75",
+            "is_causal": "False",
+            "scale": "0.125",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "1.0",
+            "is_causal": "True",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', ('_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True', '_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True'))",
+        "error_message": "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.0",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 2, 3, 64])), Tensor(shape=torch.Size([1, 2, 4, 64])), Tensor(shape=torch.Size([1, 2, 4, 64]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.75",
+            "is_causal": "True",
+            "scale": "1.0",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 3, 64), (1, 2, 3, 64), (1, 2, 3, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.75",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.75",
+            "is_causal": "True",
+            "scale": "0.125",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', ('The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1'))",
+        "error_message": "The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.1",
+            "is_causal": "False",
+            "scale": "None",
+            "enable_gqa": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', ('The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1', 'The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1'))",
+        "error_message": "The size of tensor a (8) must match the size of tensor b (4) at non-singleton dimension 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "1.0",
+            "is_causal": "False",
+            "scale": "0.125",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "0.1",
+            "is_causal": "True",
+            "scale": "None",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "None",
+            "dropout_p": "1.0",
+            "is_causal": "False",
+            "scale": "1.5",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 64])), Tensor(shape=torch.Size([2, 4, 12, 64])), Tensor(shape=torch.Size([2, 4, 12, 48]))]",
+            "attn_mask": "Tensor(shape=torch.Size([10, 12]))",
+            "dropout_p": "0.1",
+            "is_causal": "False",
+            "scale": "1.5",
+            "enable_gqa": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 48), (2, 8, 10, 48), (2, 8, 10, 48)))"
+    }
+]

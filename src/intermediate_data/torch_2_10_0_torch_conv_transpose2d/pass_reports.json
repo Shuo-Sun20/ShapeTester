@@ -1,0 +1,2248 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "0",
+            "output_padding": "0",
+            "groups": "1",
+            "dilation": "1"
+        },
+        "segment": "(0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 7, 7), (1, 8, 7, 7), (1, 8, 7, 7)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "1",
+            "groups": "2",
+            "dilation": "2"
+        },
+        "segment": "(0, 2, 1, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 6, 6), (1, 16, 6, 6), (1, 16, 6, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "[0, 1]",
+            "output_padding": "[1, 0]",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "segment": "(0, 3, 4, 2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 12, 9), (1, 32, 12, 9), (1, 32, 12, 9)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "2",
+            "padding": "0",
+            "output_padding": "1",
+            "groups": "4",
+            "dilation": "[2, 1]"
+        },
+        "segment": "(1, 0, 1, 4, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 14, 12), (1, 32, 14, 12), (1, 32, 14, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "0",
+            "output_padding": "[0, 1]",
+            "groups": "2",
+            "dilation": "3"
+        },
+        "segment": "(2, 0, 3, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 19, 20), (1, 16, 19, 20), (1, 16, 19, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "1",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "dilation": "[2, 1]"
+        },
+        "segment": "(2, 1, 4, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 16, 13), (1, 8, 16, 13), (1, 8, 16, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "output_padding": "0",
+            "groups": "2",
+            "dilation": "[1, 2]"
+        },
+        "segment": "(3, 1, 0, 3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 5, 11), (1, 16, 5, 11), (1, 16, 5, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[2, 1]",
+            "padding": "2",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "dilation": "[1, 2]"
+        },
+        "segment": "(4, 2, 3, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 7, 6), (1, 8, 7, 6), (1, 8, 7, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[2, 1]",
+            "padding": "[1, 0]",
+            "output_padding": "[1, 0]",
+            "groups": "2",
+            "dilation": "1"
+        },
+        "segment": "(4, 4, 4, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 10, 7), (1, 16, 10, 7), (1, 16, 10, 7)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "segment": "(2, 2, 2, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 13, 13), (1, 32, 13, 13), (1, 32, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "[1, 0]",
+            "output_padding": "1",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "segment": "(3, 4, 1, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 10, 16), (1, 8, 10, 16), (1, 8, 10, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "[0, 1]",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "2"
+        },
+        "segment": "(3, 3, 3, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 9, 12), (1, 32, 9, 12), (1, 32, 9, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[1, 0]",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "[1, 2]"
+        },
+        "segment": "(2, 4, 0, 3, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 13, 17), (1, 32, 13, 17), (1, 32, 13, 17)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "2",
+            "padding": "1",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "segment": "(1, 1, 3, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 9, 10), (1, 32, 9, 10), (1, 32, 9, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "2",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "2",
+            "dilation": "3"
+        },
+        "segment": "(1, 2, 0, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 11, 11), (1, 16, 11, 11), (1, 16, 11, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "1",
+            "groups": "1",
+            "dilation": "1"
+        },
+        "segment": "(2, 3, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 16, 14), (1, 8, 16, 14), (1, 8, 16, 14)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[2, 1]",
+            "padding": "1",
+            "output_padding": "1",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "segment": "(4, 1, 1, 2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 14, 10), (1, 32, 14, 10), (1, 32, 14, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "2",
+            "padding": "0",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "dilation": "[1, 2]"
+        },
+        "segment": "(1, 0, 4, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 12, 13), (1, 8, 12, 13), (1, 8, 12, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[2, 1]",
+            "padding": "0",
+            "output_padding": "0",
+            "groups": "1",
+            "dilation": "2"
+        },
+        "segment": "(4, 0, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 13, 9), (1, 8, 13, 9), (1, 8, 13, 9)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "dilation": "[2, 1]"
+        },
+        "segment": "(3, 2, 4, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 6, 7), (1, 8, 6, 7), (1, 8, 6, 7)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "1",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "dilation": "2"
+        },
+        "segment": "(2, 1, 4, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 16, 15), (1, 8, 16, 15), (1, 8, 16, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "2",
+            "padding": "[0, 1]",
+            "output_padding": "0",
+            "groups": "1",
+            "dilation": "[2, 1]"
+        },
+        "segment": "(1, 3, 0, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 13, 9), (1, 8, 13, 9), (1, 8, 13, 9)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "0",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "segment": "(0, 0, 2, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 13, 13), (1, 8, 13, 13), (1, 8, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "1",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 13, 13), (1, 32, 13, 13), (1, 32, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 8, 7), (1, 8, 8, 7), (1, 8, 8, 7)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "2",
+            "padding": "1",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 11, 12), (1, 32, 11, 12), (1, 32, 11, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 17, 15), (1, 8, 17, 15), (1, 8, 17, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "2",
+            "padding": "1",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 9, 10), (1, 8, 9, 10), (1, 8, 9, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "2",
+            "groups": "2",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 19, 17), (1, 16, 19, 17), (1, 16, 19, 17)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "2",
+            "padding": "1",
+            "output_padding": "[0, 1]",
+            "groups": "2",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 9, 10), (1, 16, 9, 10), (1, 16, 9, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "1",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 13, 14), (1, 32, 13, 14), (1, 32, 13, 14)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "2",
+            "padding": "[1, 0]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 9, 12), (1, 8, 9, 12), (1, 8, 9, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 15, 14), (1, 32, 15, 14), (1, 32, 15, 14)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 19, 18), (1, 8, 19, 18), (1, 8, 19, 18)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "1",
+            "output_padding": "2",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 15, 15), (1, 32, 15, 15), (1, 32, 15, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "2",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 17, 15), (1, 32, 17, 15), (1, 32, 17, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 5, 10), (1, 32, 5, 10), (1, 32, 5, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 19, 18), (1, 32, 19, 18), (1, 32, 19, 18)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "0",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 15, 16), (1, 32, 15, 16), (1, 32, 15, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "[0, 1]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 9, 12), (1, 8, 9, 12), (1, 8, 9, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 7, 12), (1, 8, 7, 12), (1, 8, 7, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[2, 1]",
+            "padding": "[1, 0]",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 13, 12), (1, 32, 13, 12), (1, 32, 13, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "[0, 1]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 7, 10), (1, 8, 7, 10), (1, 8, 7, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "1",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 17, 18), (1, 8, 17, 18), (1, 8, 17, 18)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[1, 0]",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 17, 20), (1, 32, 17, 20), (1, 32, 17, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 21, 19), (1, 8, 21, 19), (1, 8, 21, 19)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "1",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 15, 16), (1, 32, 15, 16), (1, 32, 15, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 5, 10), (1, 8, 5, 10), (1, 8, 5, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "0",
+            "groups": "1",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 15, 15), (1, 8, 15, 15), (1, 8, 15, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "[0, 1]",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 7, 10), (1, 32, 7, 10), (1, 32, 7, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "1",
+            "output_padding": "0",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 17, 17), (1, 8, 17, 17), (1, 8, 17, 17)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "[0, 1]",
+            "output_padding": "1",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 12, 14), (1, 32, 12, 14), (1, 32, 12, 14)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 9, 14), (1, 32, 9, 14), (1, 32, 9, 14)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "output_padding": "[0, 1]",
+            "groups": "2",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 9, 14), (1, 16, 9, 14), (1, 16, 9, 14)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "2",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 21, 19), (1, 32, 21, 19), (1, 32, 21, 19)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "output_padding": "[0, 1]",
+            "groups": "2",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 3, 8), (1, 16, 3, 8), (1, 16, 3, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[2, 1]",
+            "padding": "[0, 1]",
+            "output_padding": "[0, 1]",
+            "groups": "2",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 15, 10), (1, 16, 15, 10), (1, 16, 15, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "0",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 19, 20), (1, 8, 19, 20), (1, 8, 19, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "[1, 0]",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 5, 12), (1, 32, 5, 12), (1, 32, 5, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "1",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 20, 18), (1, 32, 20, 18), (1, 32, 20, 18)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 3, 8), (1, 32, 3, 8), (1, 32, 3, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "1",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 15, 17), (1, 8, 15, 17), (1, 8, 15, 17)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "2",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 11, 12), (1, 32, 11, 12), (1, 32, 11, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "[0, 1]",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 13, 15), (1, 8, 13, 15), (1, 8, 13, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 7, 12), (1, 32, 7, 12), (1, 32, 7, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 17, 16), (1, 8, 17, 16), (1, 8, 17, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "dilation": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 17, 14), (1, 8, 17, 14), (1, 8, 17, 14)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 5, 10), (1, 32, 5, 10), (1, 32, 5, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "output_padding": "[0, 1]",
+            "groups": "2",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 5, 10), (1, 16, 5, 10), (1, 16, 5, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 7, 10), (1, 32, 7, 10), (1, 32, 7, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "[0, 1]",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 7, 9), (1, 32, 7, 9), (1, 32, 7, 9)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "0",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 13, 17), (1, 8, 13, 17), (1, 8, 13, 17)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[2, 1]",
+            "padding": "2",
+            "output_padding": "1",
+            "groups": "4",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 8, 6), (1, 32, 8, 6), (1, 32, 8, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 5, 8), (1, 8, 5, 8), (1, 8, 5, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[2, 1]",
+            "padding": "[0, 1]",
+            "output_padding": "0",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 15, 9), (1, 8, 15, 9), (1, 8, 15, 9)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "[1, 0]",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 11, 17), (1, 8, 11, 17), (1, 8, 11, 17)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 13, 13), (1, 8, 13, 13), (1, 8, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "2",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "dilation": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 13, 12), (1, 8, 13, 12), (1, 8, 13, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "0",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 19, 17), (1, 8, 19, 17), (1, 8, 19, 17)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "2",
+            "padding": "2",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 7, 8), (1, 32, 7, 8), (1, 32, 7, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[2, 1]",
+            "padding": "2",
+            "output_padding": "1",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 12, 8), (1, 32, 12, 8), (1, 32, 12, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "output_padding": "[0, 1]",
+            "groups": "2",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 3, 10), (1, 16, 3, 10), (1, 16, 3, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[2, 1]",
+            "padding": "[1, 0]",
+            "output_padding": "1",
+            "groups": "2",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 10, 10), (1, 16, 10, 10), (1, 16, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "2",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 11, 14), (1, 32, 11, 14), (1, 32, 11, 14)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "2",
+            "padding": "[0, 1]",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 17, 15), (1, 8, 17, 15), (1, 8, 17, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[1, 0]",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 19, 21), (1, 8, 19, 21), (1, 8, 19, 21)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "[0, 1]",
+            "output_padding": "[0, 1]",
+            "groups": "2",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 11, 14), (1, 16, 11, 14), (1, 16, 11, 14)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 17, 17), (1, 8, 17, 17), (1, 8, 17, 17)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 5, 9), (1, 32, 5, 9), (1, 32, 5, 9)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[2, 1]",
+            "padding": "2",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 7, 6), (1, 32, 7, 6), (1, 32, 7, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 3, 10), (1, 32, 3, 10), (1, 32, 3, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 3, 8), (1, 8, 3, 8), (1, 8, 3, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "[1, 0]",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 5, 14), (1, 32, 5, 14), (1, 32, 5, 14)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "2",
+            "padding": "2",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 11, 12), (1, 32, 11, 12), (1, 32, 11, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "2",
+            "output_padding": "1",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 12, 12), (1, 32, 12, 12), (1, 32, 12, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 9, 9), (1, 8, 9, 9), (1, 8, 9, 9)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[2, 1]",
+            "padding": "[1, 0]",
+            "output_padding": "[1, 0]",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 10, 7), (1, 32, 10, 7), (1, 32, 10, 7)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "2",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 11, 12), (1, 8, 11, 12), (1, 8, 11, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 3, 10), (1, 8, 3, 10), (1, 8, 3, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "2",
+            "groups": "2",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 21, 19), (1, 16, 21, 19), (1, 16, 21, 19)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[2, 1]",
+            "padding": "[0, 1]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 15, 10), (1, 8, 15, 10), (1, 8, 15, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "[1, 0]",
+            "groups": "4",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 18, 15), (1, 32, 18, 15), (1, 32, 18, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "[0, 1]",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 7, 12), (1, 32, 7, 12), (1, 32, 7, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "[1, 0]",
+            "output_padding": "[0, 1]",
+            "groups": "2",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 5, 12), (1, 16, 5, 12), (1, 16, 5, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 5, 9), (1, 8, 5, 9), (1, 8, 5, 9)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "2",
+            "padding": "[0, 1]",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 11, 10), (1, 32, 11, 10), (1, 32, 11, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[1, 0]",
+            "output_padding": "2",
+            "groups": "2",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 19, 21), (1, 16, 19, 21), (1, 16, 19, 21)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "2",
+            "padding": "[0, 1]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "dilation": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 13, 10), (1, 8, 13, 10), (1, 8, 13, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "2",
+            "padding": "[1, 0]",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 11, 14), (1, 32, 11, 14), (1, 32, 11, 14)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "2",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 15, 16), (1, 32, 15, 16), (1, 32, 15, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "[0, 1]",
+            "output_padding": "2",
+            "groups": "2",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 13, 15), (1, 16, 13, 15), (1, 16, 13, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "0",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 15, 18), (1, 32, 15, 18), (1, 32, 15, 18)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[2, 1]",
+            "padding": "[0, 1]",
+            "output_padding": "2",
+            "groups": "2",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 17, 11), (1, 16, 17, 11), (1, 16, 17, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 20, 17), (1, 8, 20, 17), (1, 8, 20, 17)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "output_padding": "0",
+            "groups": "1",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 5, 9), (1, 8, 5, 9), (1, 8, 5, 9)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 19, 17), (1, 32, 19, 17), (1, 32, 19, 17)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 5, 12), (1, 32, 5, 12), (1, 32, 5, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "output_padding": "[0, 1]",
+            "groups": "2",
+            "dilation": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 5, 8), (1, 16, 5, 8), (1, 16, 5, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 15, 15), (1, 8, 15, 15), (1, 8, 15, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "2",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 13, 14), (1, 32, 13, 14), (1, 32, 13, 14)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "output_padding": "2",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 11, 15), (1, 32, 11, 15), (1, 32, 11, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "dilation": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 5, 7), (1, 8, 5, 7), (1, 8, 5, 7)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "[1, 0]",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 20, 17), (1, 32, 20, 17), (1, 32, 20, 17)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "2",
+            "output_padding": "1",
+            "groups": "1",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 12, 12), (1, 8, 12, 12), (1, 8, 12, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "1",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 20, 18), (1, 8, 20, 18), (1, 8, 20, 18)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 3, 9), (1, 32, 3, 9), (1, 32, 3, 9)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "dilation": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 5, 8), (1, 32, 5, 8), (1, 32, 5, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[2, 1]",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 7, 3), (1, 32, 7, 3), (1, 32, 7, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 3, 5), (1, 32, 3, 5), (1, 32, 3, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[2, 1]",
+            "padding": "2",
+            "output_padding": "[1, 0]",
+            "groups": "4",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 8, 5), (1, 32, 8, 5), (1, 32, 8, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[2, 1]",
+            "padding": "1",
+            "output_padding": "[1, 0]",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 10, 5), (1, 32, 10, 5), (1, 32, 10, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 3, 3), (1, 32, 3, 3), (1, 32, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[2, 1]",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 7, 5), (1, 8, 7, 5), (1, 8, 7, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "[1, 0]",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 5, 7), (1, 32, 5, 7), (1, 32, 5, 7)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 5, 3), (1, 32, 5, 3), (1, 32, 5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 7, 11), (1, 32, 7, 11), (1, 32, 7, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "[0, 1]",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 7, 7), (1, 32, 7, 7), (1, 32, 7, 7)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[2, 1]",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 9, 3), (1, 32, 9, 3), (1, 32, 9, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "[0, 1]",
+            "output_padding": "0",
+            "groups": "2",
+            "dilation": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 9, 5), (1, 16, 9, 5), (1, 16, 9, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "[0, 1]",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 7, 5), (1, 32, 7, 5), (1, 32, 7, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 7, 9), (1, 32, 7, 9), (1, 32, 7, 9)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "2",
+            "dilation": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 5, 3), (1, 16, 5, 3), (1, 16, 5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 17, 17), (1, 8, 17, 17), (1, 8, 17, 17)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 11, 11), (1, 8, 11, 11), (1, 8, 11, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "[0, 1]",
+            "output_padding": "2",
+            "groups": "2",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 13, 11), (1, 16, 13, 11), (1, 16, 13, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 5, 5), (1, 32, 5, 5), (1, 32, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "[0, 1]",
+            "output_padding": "[1, 0]",
+            "groups": "4",
+            "dilation": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 10, 5), (1, 32, 10, 5), (1, 32, 10, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "dilation": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 5, 3), (1, 8, 5, 3), (1, 8, 5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "[0, 1]",
+            "output_padding": "0",
+            "groups": "2",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 9, 7), (1, 16, 9, 7), (1, 16, 9, 7)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "[1, 0]",
+            "output_padding": "0",
+            "groups": "1",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 5, 7), (1, 8, 5, 7), (1, 8, 5, 7)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "1",
+            "groups": "2",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 20, 18), (1, 16, 20, 18), (1, 16, 20, 18)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[2, 1]",
+            "padding": "[0, 1]",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 17, 11), (1, 8, 17, 11), (1, 8, 17, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "1",
+            "groups": "1",
+            "dilation": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 18, 14), (1, 8, 18, 14), (1, 8, 18, 14)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "[1, 0]",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 9, 11), (1, 32, 9, 11), (1, 32, 9, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "1",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 19, 19), (1, 8, 19, 19), (1, 8, 19, 19)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 11, 11), (1, 32, 11, 11), (1, 32, 11, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "[0, 1]",
+            "output_padding": "2",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 13, 11), (1, 32, 13, 11), (1, 32, 13, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "2",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 7, 7), (1, 32, 7, 7), (1, 32, 7, 7)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 11, 13), (1, 32, 11, 13), (1, 32, 11, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 3, 3), (1, 8, 3, 3), (1, 8, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "[0, 1]",
+            "output_padding": "[1, 0]",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 12, 13), (1, 32, 12, 13), (1, 32, 12, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "2",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 3, 3), (1, 16, 3, 3), (1, 16, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 15, 15), (1, 8, 15, 15), (1, 8, 15, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "[1, 0]",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "dilation": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 14, 17), (1, 8, 14, 17), (1, 8, 14, 17)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "2",
+            "padding": "[0, 1]",
+            "output_padding": "2",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 17, 15), (1, 32, 17, 15), (1, 32, 17, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 7, 7), (1, 32, 7, 7), (1, 32, 7, 7)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 7, 11), (1, 8, 7, 11), (1, 8, 7, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "[0, 1]",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 9, 7), (1, 32, 9, 7), (1, 32, 9, 7)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 9, 13), (1, 32, 9, 13), (1, 32, 9, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 3, 7), (1, 32, 3, 7), (1, 32, 3, 7)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5])), Tensor(shape=torch.Size([4, 8, 3, 3]))]",
+            "bias": "None",
+            "stride": "1",
+            "padding": "[0, 1]",
+            "output_padding": "0",
+            "groups": "4",
+            "dilation": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 9, 5), (1, 32, 9, 5), (1, 32, 9, 5)))"
+    }
+]

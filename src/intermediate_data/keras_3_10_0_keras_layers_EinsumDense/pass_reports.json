@@ -1,0 +1,1422 @@
+[
+    {
+        "test_case": {
+            "equation": "ab,bc->ac",
+            "output_shape": "64",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", (\"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\"))",
+        "error_message": "Bias dimension 'y' was requested, but is not part of the output spec 'ac'",
+        "conflict_params": [
+            "equation",
+            "bias_axes"
+        ]
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "64",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 64.\", (\"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 64.\", \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 64.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 64.",
+        "conflict_params": [
+            "output_shape"
+        ]
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "[None, 64]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "segment": "(1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'y' was requested, but is not part of the output spec 'abd'\", (\"Bias dimension 'y' was requested, but is not part of the output spec 'abd'\", \"Bias dimension 'y' was requested, but is not part of the output spec 'abd'\"))",
+        "error_message": "Bias dimension 'y' was requested, but is not part of the output spec 'abd'",
+        "conflict_params": [
+            "equation",
+            "bias_axes"
+        ]
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "[None, None, 32]",
+            "bias_axes": "d",
+            "inputs": "KerasTensor(shape=(None, 32, 128))"
+        },
+        "segment": "(1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_12/kernel'\", (\"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_12/kernel'\", \"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_13/kernel'\"))",
+        "error_message": "Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_12/kernel'",
+        "conflict_params": [
+            "output_shape"
+        ]
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "[128]",
+            "bias_axes": "d",
+            "inputs": "KerasTensor(shape=(None, 32, 128))"
+        },
+        "segment": "(1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", (\"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.",
+        "conflict_params": [
+            "equation",
+            "output_shape"
+        ]
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "[None, 64, 32]",
+            "bias_axes": "d",
+            "inputs": "KerasTensor(shape=(None, 32, 128))"
+        },
+        "segment": "(1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, None, 64, 32), (None, None, 64, 32)))"
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "[None, 64]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "segment": "(2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_18/kernel'\", (\"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_18/kernel'\", \"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_19/kernel'\"))",
+        "error_message": "Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_18/kernel'",
+        "conflict_params": [
+            "output_shape"
+        ]
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "[128]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "segment": "(2, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 128), (None, 32, 128)))"
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "[None, 64, 32]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "segment": "(2, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_22/kernel'\", (\"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_22/kernel'\", \"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_23/kernel'\"))",
+        "error_message": "Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_22/kernel'",
+        "conflict_params": [
+            "output_shape"
+        ]
+    },
+    {
+        "test_case": {
+            "equation": "...ab,bc->...ac",
+            "output_shape": "[128]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "segment": "(3, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'a'. Input shape is 32, and output shape is 128.\", (\"Input shape and output shape do not match at shared dimension 'a'. Input shape is 32, and output shape is 128.\", \"Input shape and output shape do not match at shared dimension 'a'. Input shape is 32, and output shape is 128.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'a'. Input shape is 32, and output shape is 128.",
+        "conflict_params": [
+            "equation",
+            "output_shape",
+            "bias_axes"
+        ]
+    },
+    {
+        "test_case": {
+            "equation": "abcd,de->abce",
+            "output_shape": "[128]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "segment": "(4, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", (\"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.",
+        "conflict_params": [
+            "equation",
+            "output_shape",
+            "bias_axes",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "[None, 64, 32]",
+            "bias_axes": "d",
+            "inputs": "KerasTensor(shape=(None, 32, 128))",
+            "lora_rank": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_constraint": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'd' was requested, but is not part of the output spec 'y'\", (\"Bias dimension 'd' was requested, but is not part of the output spec 'y'\", \"Bias dimension 'd' was requested, but is not part of the output spec 'y'\"))",
+        "error_message": "Bias dimension 'd' was requested, but is not part of the output spec 'y'"
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "[None, 64, 32]",
+            "bias_axes": "d",
+            "inputs": "KerasTensor(shape=(None, 32, 128))",
+            "kernel_regularizer": "None",
+            "bias_constraint": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, None, 64, 32), (None, None, 64, 32)))"
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "[128]",
+            "activation": "None",
+            "bias_axes": "d",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'd' was requested, but is not part of the output spec 'y'\", (\"Bias dimension 'd' was requested, but is not part of the output spec 'y'\", \"Bias dimension 'd' was requested, but is not part of the output spec 'y'\"))",
+        "error_message": "Bias dimension 'd' was requested, but is not part of the output spec 'y'"
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "[None, 64, 32]",
+            "activation": "None",
+            "bias_axes": "d",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'd' was requested, but is not part of the output spec 'y'\", (\"Bias dimension 'd' was requested, but is not part of the output spec 'y'\", \"Bias dimension 'd' was requested, but is not part of the output spec 'y'\"))",
+        "error_message": "Bias dimension 'd' was requested, but is not part of the output spec 'y'"
+    },
+    {
+        "test_case": {
+            "equation": "abcd,de->abce",
+            "output_shape": "[128]",
+            "bias_axes": "d",
+            "inputs": "KerasTensor(shape=(None, 32, 128))",
+            "bias_initializer": "zeros",
+            "lora_rank": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", (\"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128."
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "[128]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 128), (None, 32, 128)))"
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "[None, 64, 32]",
+            "bias_axes": "d",
+            "inputs": "KerasTensor(shape=(None, 32, 128))",
+            "kernel_initializer": "glorot_uniform",
+            "activation": "None",
+            "bias_regularizer": "None",
+            "bias_constraint": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, None, 64, 32), (None, None, 64, 32)))"
+    },
+    {
+        "test_case": {
+            "equation": "ab,bc->ac",
+            "output_shape": "64",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", (\"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\"))",
+        "error_message": "Bias dimension 'y' was requested, but is not part of the output spec 'ac'"
+    },
+    {
+        "test_case": {
+            "equation": "ab,bc->ac",
+            "output_shape": "[128]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", (\"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\"))",
+        "error_message": "Bias dimension 'y' was requested, but is not part of the output spec 'ac'"
+    },
+    {
+        "test_case": {
+            "equation": "abcd,de->abce",
+            "output_shape": "[None, 64]",
+            "activation": "None",
+            "bias_axes": "d",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'c'. Input shape is 128, and output shape is 64.\", (\"Input shape and output shape do not match at shared dimension 'c'. Input shape is 128, and output shape is 64.\", \"Input shape and output shape do not match at shared dimension 'c'. Input shape is 128, and output shape is 64.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'c'. Input shape is 128, and output shape is 64."
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "[None, None, 32]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_48/kernel'\", (\"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_48/kernel'\", \"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_49/kernel'\"))",
+        "error_message": "Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_48/kernel'"
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "[None, 64]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_50/kernel'\", (\"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_50/kernel'\", \"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_51/kernel'\"))",
+        "error_message": "Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_50/kernel'"
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "[128]",
+            "activation": "None",
+            "bias_axes": "d",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'd' was requested, but is not part of the output spec 'y'\", (\"Bias dimension 'd' was requested, but is not part of the output spec 'y'\", \"Bias dimension 'd' was requested, but is not part of the output spec 'y'\"))",
+        "error_message": "Bias dimension 'd' was requested, but is not part of the output spec 'y'"
+    },
+    {
+        "test_case": {
+            "equation": "...ab,bc->...ac",
+            "output_shape": "[None, 64, 32]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", (\"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\"))",
+        "error_message": "Bias dimension 'y' was requested, but is not part of the output spec 'ac'"
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "64",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 64.\", (\"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 64.\", \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 64.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 64."
+    },
+    {
+        "test_case": {
+            "equation": "abcd,de->abce",
+            "output_shape": "[128]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", (\"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128."
+    },
+    {
+        "test_case": {
+            "equation": "...ab,bc->...ac",
+            "output_shape": "[128]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'a'. Input shape is 32, and output shape is 128.\", (\"Input shape and output shape do not match at shared dimension 'a'. Input shape is 32, and output shape is 128.\", \"Input shape and output shape do not match at shared dimension 'a'. Input shape is 32, and output shape is 128.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'a'. Input shape is 32, and output shape is 128."
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "[128]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", (\"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128."
+    },
+    {
+        "test_case": {
+            "equation": "ab,bc->ac",
+            "output_shape": "[128]",
+            "activation": "None",
+            "bias_axes": "d",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'd' was requested, but is not part of the output spec 'ac'\", (\"Bias dimension 'd' was requested, but is not part of the output spec 'ac'\", \"Bias dimension 'd' was requested, but is not part of the output spec 'ac'\"))",
+        "error_message": "Bias dimension 'd' was requested, but is not part of the output spec 'ac'"
+    },
+    {
+        "test_case": {
+            "equation": "abcd,de->abce",
+            "output_shape": "[128]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", (\"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128."
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "[128]",
+            "activation": "None",
+            "bias_axes": "d",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", (\"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128."
+    },
+    {
+        "test_case": {
+            "equation": "ab,bc->ac",
+            "output_shape": "[None, None, 32]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", (\"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\"))",
+        "error_message": "Bias dimension 'y' was requested, but is not part of the output spec 'ac'"
+    },
+    {
+        "test_case": {
+            "equation": "...ab,bc->...ac",
+            "output_shape": "[128]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'a'. Input shape is 32, and output shape is 128.\", (\"Input shape and output shape do not match at shared dimension 'a'. Input shape is 32, and output shape is 128.\", \"Input shape and output shape do not match at shared dimension 'a'. Input shape is 32, and output shape is 128.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'a'. Input shape is 32, and output shape is 128."
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "64",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 64), (None, 32, 64)))"
+    },
+    {
+        "test_case": {
+            "equation": "...ab,bc->...ac",
+            "output_shape": "64",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'a'. Input shape is 32, and output shape is 64.\", (\"Input shape and output shape do not match at shared dimension 'a'. Input shape is 32, and output shape is 64.\", \"Input shape and output shape do not match at shared dimension 'a'. Input shape is 32, and output shape is 64.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'a'. Input shape is 32, and output shape is 64."
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "64",
+            "activation": "None",
+            "bias_axes": "d",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'd' was requested, but is not part of the output spec 'y'\", (\"Bias dimension 'd' was requested, but is not part of the output spec 'y'\", \"Bias dimension 'd' was requested, but is not part of the output spec 'y'\"))",
+        "error_message": "Bias dimension 'd' was requested, but is not part of the output spec 'y'"
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "[None, 64, 32]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_80/kernel'\", (\"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_80/kernel'\", \"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_81/kernel'\"))",
+        "error_message": "Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_80/kernel'"
+    },
+    {
+        "test_case": {
+            "equation": "...ab,bc->...ac",
+            "output_shape": "[None, 64]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", (\"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\"))",
+        "error_message": "Bias dimension 'y' was requested, but is not part of the output spec 'ac'"
+    },
+    {
+        "test_case": {
+            "equation": "abcd,de->abce",
+            "output_shape": "[128]",
+            "activation": "None",
+            "bias_axes": "d",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", (\"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128."
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "64",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 64.\", (\"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 64.\", \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 64.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 64."
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "[None, 64]",
+            "activation": "None",
+            "bias_axes": "d",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'd' was requested, but is not part of the output spec 'y'\", (\"Bias dimension 'd' was requested, but is not part of the output spec 'y'\", \"Bias dimension 'd' was requested, but is not part of the output spec 'y'\"))",
+        "error_message": "Bias dimension 'd' was requested, but is not part of the output spec 'y'"
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "64",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 64), (None, 32, 64)))"
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "[None, 64, 32]",
+            "bias_axes": "d",
+            "inputs": "KerasTensor(shape=(None, 32, 128))",
+            "bias_regularizer": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, None, 64, 32), (None, None, 64, 32)))"
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "[128]",
+            "bias_axes": "y",
+            "inputs": "KerasTensor(shape=(None, 32, 128))",
+            "kernel_regularizer": "None",
+            "bias_constraint": "None",
+            "activation": "None",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "bias_regularizer": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", (\"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128."
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "[None, 64, 32]",
+            "bias_axes": "d",
+            "inputs": "KerasTensor(shape=(None, 32, 128))",
+            "lora_alpha": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, None, 64, 32), (None, None, 64, 32)))"
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "[None, 64, 32]",
+            "bias_axes": "d",
+            "inputs": "KerasTensor(shape=(None, 32, 128))",
+            "kernel_regularizer": "None",
+            "bias_constraint": "None",
+            "lora_alpha": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, None, 64, 32), (None, None, 64, 32)))"
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "[128]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", (\"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128."
+    },
+    {
+        "test_case": {
+            "equation": "ab,bc->ac",
+            "output_shape": "[128]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", (\"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\"))",
+        "error_message": "Bias dimension 'y' was requested, but is not part of the output spec 'ac'"
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "[None, 64]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_104/kernel'\", (\"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_104/kernel'\", \"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_105/kernel'\"))",
+        "error_message": "Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_104/kernel'"
+    },
+    {
+        "test_case": {
+            "equation": "ab,bc->ac",
+            "output_shape": "[None, 64]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", (\"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\"))",
+        "error_message": "Bias dimension 'y' was requested, but is not part of the output spec 'ac'"
+    },
+    {
+        "test_case": {
+            "equation": "abcd,de->abce",
+            "output_shape": "[128]",
+            "activation": "None",
+            "bias_axes": "d",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", (\"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\", \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 128."
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "[None, None, 32]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_110/kernel'\", (\"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_110/kernel'\", \"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_111/kernel'\"))",
+        "error_message": "Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_110/kernel'"
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "[None, 64, 32]",
+            "activation": "None",
+            "bias_axes": "d",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'd' was requested, but is not part of the output spec 'y'\", (\"Bias dimension 'd' was requested, but is not part of the output spec 'y'\", \"Bias dimension 'd' was requested, but is not part of the output spec 'y'\"))",
+        "error_message": "Bias dimension 'd' was requested, but is not part of the output spec 'y'"
+    },
+    {
+        "test_case": {
+            "equation": "abcd,de->abce",
+            "output_shape": "64",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 64.\", (\"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 64.\", \"Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 64.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'b'. Input shape is 32, and output shape is 64."
+    },
+    {
+        "test_case": {
+            "equation": "ab,bc->ac",
+            "output_shape": "[128]",
+            "activation": "None",
+            "bias_axes": "d",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'd' was requested, but is not part of the output spec 'ac'\", (\"Bias dimension 'd' was requested, but is not part of the output spec 'ac'\", \"Bias dimension 'd' was requested, but is not part of the output spec 'ac'\"))",
+        "error_message": "Bias dimension 'd' was requested, but is not part of the output spec 'ac'"
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "[None, 64, 32]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'y' was requested, but is not part of the output spec 'abd'\", (\"Bias dimension 'y' was requested, but is not part of the output spec 'abd'\", \"Bias dimension 'y' was requested, but is not part of the output spec 'abd'\"))",
+        "error_message": "Bias dimension 'y' was requested, but is not part of the output spec 'abd'"
+    },
+    {
+        "test_case": {
+            "equation": "abcd,de->abce",
+            "output_shape": "[None, 64, 32]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'c'. Input shape is 128, and output shape is 64.\", (\"Input shape and output shape do not match at shared dimension 'c'. Input shape is 128, and output shape is 64.\", \"Input shape and output shape do not match at shared dimension 'c'. Input shape is 128, and output shape is 64.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'c'. Input shape is 128, and output shape is 64."
+    },
+    {
+        "test_case": {
+            "equation": "abcd,de->abce",
+            "output_shape": "[None, 64]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'c'. Input shape is 128, and output shape is 64.\", (\"Input shape and output shape do not match at shared dimension 'c'. Input shape is 128, and output shape is 64.\", \"Input shape and output shape do not match at shared dimension 'c'. Input shape is 128, and output shape is 64.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'c'. Input shape is 128, and output shape is 64."
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "[None, 64, 32]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_124/kernel'\", (\"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_124/kernel'\", \"Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_125/kernel'\"))",
+        "error_message": "Shapes used to initialize variables must be fully-defined (no `None` dimensions). Received: shape=(128, None) for variable path='einsum_dense_124/kernel'"
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "[None, 64]",
+            "activation": "None",
+            "bias_axes": "d",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'd' was requested, but is not part of the output spec 'y'\", (\"Bias dimension 'd' was requested, but is not part of the output spec 'y'\", \"Bias dimension 'd' was requested, but is not part of the output spec 'y'\"))",
+        "error_message": "Bias dimension 'd' was requested, but is not part of the output spec 'y'"
+    },
+    {
+        "test_case": {
+            "equation": "ab,bc->ac",
+            "output_shape": "[None, None, 32]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", (\"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\"))",
+        "error_message": "Bias dimension 'y' was requested, but is not part of the output spec 'ac'"
+    },
+    {
+        "test_case": {
+            "equation": "abcd,de->abce",
+            "output_shape": "[None, 64, 32]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'c'. Input shape is 128, and output shape is 64.\", (\"Input shape and output shape do not match at shared dimension 'c'. Input shape is 128, and output shape is 64.\", \"Input shape and output shape do not match at shared dimension 'c'. Input shape is 128, and output shape is 64.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'c'. Input shape is 128, and output shape is 64."
+    },
+    {
+        "test_case": {
+            "equation": "ab,bc->ac",
+            "output_shape": "[None, 64, 32]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", (\"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\"))",
+        "error_message": "Bias dimension 'y' was requested, but is not part of the output spec 'ac'"
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "[None, 64]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'y' was requested, but is not part of the output spec 'abd'\", (\"Bias dimension 'y' was requested, but is not part of the output spec 'abd'\", \"Bias dimension 'y' was requested, but is not part of the output spec 'abd'\"))",
+        "error_message": "Bias dimension 'y' was requested, but is not part of the output spec 'abd'"
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "[None, 64]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'y' was requested, but is not part of the output spec 'abd'\", (\"Bias dimension 'y' was requested, but is not part of the output spec 'abd'\", \"Bias dimension 'y' was requested, but is not part of the output spec 'abd'\"))",
+        "error_message": "Bias dimension 'y' was requested, but is not part of the output spec 'abd'"
+    },
+    {
+        "test_case": {
+            "equation": "ab,bc->ac",
+            "output_shape": "[None, None, 32]",
+            "activation": "None",
+            "bias_axes": "d",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'd' was requested, but is not part of the output spec 'ac'\", (\"Bias dimension 'd' was requested, but is not part of the output spec 'ac'\", \"Bias dimension 'd' was requested, but is not part of the output spec 'ac'\"))",
+        "error_message": "Bias dimension 'd' was requested, but is not part of the output spec 'ac'"
+    },
+    {
+        "test_case": {
+            "equation": "ab,bc->ac",
+            "output_shape": "64",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", (\"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\", \"Bias dimension 'y' was requested, but is not part of the output spec 'ac'\"))",
+        "error_message": "Bias dimension 'y' was requested, but is not part of the output spec 'ac'"
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "[None, None, 32]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'y' was requested, but is not part of the output spec 'abd'\", (\"Bias dimension 'y' was requested, but is not part of the output spec 'abd'\", \"Bias dimension 'y' was requested, but is not part of the output spec 'abd'\"))",
+        "error_message": "Bias dimension 'y' was requested, but is not part of the output spec 'abd'"
+    },
+    {
+        "test_case": {
+            "equation": "abc,cd->abd",
+            "output_shape": "[None, 64, 32]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'y' was requested, but is not part of the output spec 'abd'\", (\"Bias dimension 'y' was requested, but is not part of the output spec 'abd'\", \"Bias dimension 'y' was requested, but is not part of the output spec 'abd'\"))",
+        "error_message": "Bias dimension 'y' was requested, but is not part of the output spec 'abd'"
+    },
+    {
+        "test_case": {
+            "equation": "...ab,bc->...ac",
+            "output_shape": "[128]",
+            "activation": "None",
+            "bias_axes": "d",
+            "kernel_initializer": "None",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'a'. Input shape is 32, and output shape is 128.\", (\"Input shape and output shape do not match at shared dimension 'a'. Input shape is 32, and output shape is 128.\", \"Input shape and output shape do not match at shared dimension 'a'. Input shape is 32, and output shape is 128.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'a'. Input shape is 32, and output shape is 128."
+    },
+    {
+        "test_case": {
+            "equation": "abcd,de->abce",
+            "output_shape": "[None, 64]",
+            "activation": "None",
+            "bias_axes": "y",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Input shape and output shape do not match at shared dimension 'c'. Input shape is 128, and output shape is 64.\", (\"Input shape and output shape do not match at shared dimension 'c'. Input shape is 128, and output shape is 64.\", \"Input shape and output shape do not match at shared dimension 'c'. Input shape is 128, and output shape is 64.\"))",
+        "error_message": "Input shape and output shape do not match at shared dimension 'c'. Input shape is 128, and output shape is 64."
+    },
+    {
+        "test_case": {
+            "equation": "...x,xy->...y",
+            "output_shape": "[None, None, 32]",
+            "activation": "None",
+            "bias_axes": "d",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "lora_rank": "None",
+            "lora_alpha": "None",
+            "inputs": "ndarray(shape=(5, 32, 128))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Bias dimension 'd' was requested, but is not part of the output spec 'y'\", (\"Bias dimension 'd' was requested, but is not part of the output spec 'y'\", \"Bias dimension 'd' was requested, but is not part of the output spec 'y'\"))",
+        "error_message": "Bias dimension 'd' was requested, but is not part of the output spec 'y'"
+    }
+]

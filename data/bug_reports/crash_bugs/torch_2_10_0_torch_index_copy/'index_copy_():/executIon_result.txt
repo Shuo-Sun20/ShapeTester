@@ -1,0 +1,6 @@
+{
+    "POC File": "/mnt/data2/Users/sunshuo/2026/dltest_3.3/data/bug_reports/crash_bugs/torch_2_10_0_torch_index_copy/'index_copy_():/POC_Code.py",
+    "Return Code": 0,
+    "STDOUT": "Input shapes:\ninput_tensor: torch.Size([5, 3])\nindex_tensor: torch.Size([3])\nsource_tensor: torch.Size([3, 3])\ndim: -1\n\n1. Dynamic output shape:\nDynamic error: index_copy_(): Source/destination tensor must have same slice shapes. Destination slice shape: 5 at dimension 1 and source slice shape: 3 at dimension 0.\n\n2. Static output shape (torch.compile):\nStatic error: AcceleratorError: CUDA error: device doesn't have valid Grid license\nSearch for `cudaErrorDeviceNotLicensed' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n\n\n\n3. Meta output shape:\nMeta shape: torch.Size([5, 3])",
+    "STDERR": ""
+}

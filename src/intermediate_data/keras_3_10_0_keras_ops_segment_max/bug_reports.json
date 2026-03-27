@@ -1,0 +1,76 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(6,)), EagerTensor(shape=(6,))]",
+            "num_segments": "1",
+            "sorted": "False"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[2] = 1 is out of range [0, 1) [Op:UnsortedSegmentMax] name: ', ('{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[2] = 1 is out of range [0, 1) [Op:UnsortedSegmentMax] name: ', (None,)))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[2] = 1 is out of range [0, 1) [Op:UnsortedSegmentMax] name: ",
+        "conflict_params": [
+            "inputs",
+            "num_segments"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(6,)), EagerTensor(shape=(6,))]",
+            "num_segments": "2",
+            "sorted": "False"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[4] = 2 is out of range [0, 2) [Op:UnsortedSegmentMax] name: ', ('{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[4] = 2 is out of range [0, 2) [Op:UnsortedSegmentMax] name: ', (None,)))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[4] = 2 is out of range [0, 2) [Op:UnsortedSegmentMax] name: ",
+        "conflict_params": [
+            "inputs",
+            "num_segments"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(6,)), EagerTensor(shape=(6,))]",
+            "num_segments": "0",
+            "sorted": "False"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 0 is out of range [0, 0) [Op:UnsortedSegmentMax] name: ', ('{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 0 is out of range [0, 0) [Op:UnsortedSegmentMax] name: ', (None,)))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 0 is out of range [0, 0) [Op:UnsortedSegmentMax] name: ",
+        "conflict_params": [
+            "num_segments"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(6,)), EagerTensor(shape=(6,))]",
+            "num_segments": "1",
+            "sorted": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[2] = 1 is out of range [0, 1) [Op:UnsortedSegmentMax] name: ', ('{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[2] = 1 is out of range [0, 1) [Op:UnsortedSegmentMax] name: ', (None,)))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[2] = 1 is out of range [0, 1) [Op:UnsortedSegmentMax] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(6,)), EagerTensor(shape=(6,))]",
+            "num_segments": "0",
+            "sorted": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 0 is out of range [0, 0) [Op:UnsortedSegmentMax] name: ', ('{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 0 is out of range [0, 0) [Op:UnsortedSegmentMax] name: ', (None,)))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 0 is out of range [0, 0) [Op:UnsortedSegmentMax] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(6,)), EagerTensor(shape=(6,))]",
+            "num_segments": "2",
+            "sorted": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[4] = 2 is out of range [0, 2) [Op:UnsortedSegmentMax] name: ', ('{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[4] = 2 is out of range [0, 2) [Op:UnsortedSegmentMax] name: ', (None,)))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[4] = 2 is out of range [0, 2) [Op:UnsortedSegmentMax] name: "
+    }
+]

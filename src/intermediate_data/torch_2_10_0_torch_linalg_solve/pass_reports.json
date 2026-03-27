@@ -1,0 +1,55 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3])), Tensor(shape=torch.Size([3]))]",
+            "left": "True",
+            "out": "None"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3])), Tensor(shape=torch.Size([3]))]",
+            "left": "True",
+            "out": "zero_tensor"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"linalg_solve(): argument 'out' must be Tensor, not str\", (\"linalg_solve(): argument 'out' must be Tensor, not str\", \"linalg_solve(): argument 'out' must be Tensor, not str\", \"linalg_solve(): argument 'out' must be Tensor, not str\"))",
+        "error_message": "linalg_solve(): argument 'out' must be Tensor, not str",
+        "conflict_params": [
+            "out"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3])), Tensor(shape=torch.Size([3]))]",
+            "left": "True",
+            "out": "matching_tensor"
+        },
+        "segment": "(0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"linalg_solve(): argument 'out' must be Tensor, not str\", (\"linalg_solve(): argument 'out' must be Tensor, not str\", \"linalg_solve(): argument 'out' must be Tensor, not str\", \"linalg_solve(): argument 'out' must be Tensor, not str\"))",
+        "error_message": "linalg_solve(): argument 'out' must be Tensor, not str",
+        "conflict_params": [
+            "out"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3])), Tensor(shape=torch.Size([3]))]",
+            "left": "False",
+            "out": "None"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'linalg.solve: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x1)', ('linalg.solve: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x1)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_solve>(*(FakeTensor(..., size=(s21, s21)), FakeTensor(..., size=(s21,))), **{\\'left\\': False, \\'out\\': None}): got RuntimeError(\\'linalg.solve: Incompatible shapes of A and B for the equation XA = B (s21xs21 and s21x1)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_solve/generated_code.py\", line 5, in call_func\\n    return torch.linalg.solve(A, B, left=left, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'linalg.solve: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x1)'))",
+        "error_message": "linalg.solve: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x1)",
+        "conflict_params": [
+            "inputs",
+            "left"
+        ]
+    }
+]

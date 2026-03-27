@@ -1,0 +1,137 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "None",
+            "keepdims": "True"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 1, 1), (None, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "1",
+            "keepdims": "True"
+        },
+        "segment": "(2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 1, 5), (None, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "2",
+            "keepdims": "True"
+        },
+        "segment": "(3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 4, 1), (None, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "-1",
+            "keepdims": "True"
+        },
+        "segment": "(4, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 4, 1), (None, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "-2",
+            "keepdims": "True"
+        },
+        "segment": "(5, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 1, 5), (None, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "None",
+            "keepdims": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 1, 1), (None, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "-2",
+            "keepdims": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 1, 5), (None, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "[1, 2]",
+            "keepdims": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', ('{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', (None, 4, 5)))",
+        "error_message": "{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "1",
+            "keepdims": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 1, 5), (None, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "[0, 2]",
+            "keepdims": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', ('{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', (None, 4, 5)))",
+        "error_message": "{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "[0, 1, 2]",
+            "keepdims": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [3] [Op:ArgMin]', ('{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [3] [Op:ArgMin]', (None, 4, 5)))",
+        "error_message": "{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [3] [Op:ArgMin]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "2",
+            "keepdims": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 4, 1), (None, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "[0, 1]",
+            "keepdims": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', ('{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', (None, 4, 5)))",
+        "error_message": "{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "-1",
+            "keepdims": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 4, 1), (None, 4, 5)))"
+    }
+]

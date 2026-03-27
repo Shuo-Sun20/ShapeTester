@@ -1,0 +1,151 @@
+[
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 10, 10, 128))",
+            "filters": "1024",
+            "kernel_size": "[11, 11]",
+            "strides": "4",
+            "padding": "valid",
+            "data_format": "None",
+            "dilation_rate": "1",
+            "groups": "4",
+            "activation": "relu",
+            "use_bias": "True",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "activity_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None"
+        },
+        "segment": "(5, 8, 3, 0, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Exception encountered when calling Conv2D.call().\\n\\n\\x1b[1min user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Negative dimension size caused by subtracting 11 from 10 for \\'{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 4, 4, 1], use_cudnn_on_gpu=true](convolution/input, convolution/ReadVariableOp)\\' with input shapes: [4,10,10,128], [11,11,32,1024].\\n\\x1b[0m\\n\\nArguments received by Conv2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 10, 128), dtype=float32)', ('Exception encountered when calling Conv2D.call().\\n\\n\\x1b[1min user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Negative dimension size caused by subtracting 11 from 10 for \\'{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 4, 4, 1], use_cudnn_on_gpu=true](convolution/input, convolution/ReadVariableOp)\\' with input shapes: [4,10,10,128], [11,11,32,1024].\\n\\x1b[0m\\n\\nArguments received by Conv2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 10, 128), dtype=float32)', (None, 0, 0, 1024)))",
+        "error_message": "Exception encountered when calling Conv2D.call().\n\n\u001b[1min user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: Negative dimension size caused by subtracting 11 from 10 for '{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 4, 4, 1], use_cudnn_on_gpu=true](convolution/input, convolution/ReadVariableOp)' with input shapes: [4,10,10,128], [11,11,32,1024].\n\u001b[0m\n\nArguments received by Conv2D.call():\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 10, 128), dtype=float32)",
+        "conflict_params": [
+            "kernel_size",
+            "strides",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 10, 10, 128))",
+            "filters": "1",
+            "kernel_size": "[11, 11]",
+            "strides": "[2, 2]",
+            "padding": "valid",
+            "data_format": "None",
+            "dilation_rate": "1",
+            "groups": "1",
+            "activation": "relu",
+            "use_bias": "True",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "activity_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None"
+        },
+        "segment": "(0, 8, 5, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 10, 10, 128), (None, 0, 0, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 10, 10, 128))",
+            "filters": "1024",
+            "kernel_size": "[11, 11]",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "None",
+            "dilation_rate": "[1, 1]",
+            "groups": "1",
+            "activation": "relu",
+            "use_bias": "True",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "activity_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Exception encountered when calling Conv2D.call().\\n\\n\\x1b[1m{{function_node __wrapped__AddV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [4,10,10,128] vs. [1,1,1,1024] [Op:AddV2] name: \\x1b[0m\\n\\nArguments received by Conv2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 10, 128), dtype=float32)', ('Exception encountered when calling Conv2D.call().\\n\\n\\x1b[1m{{function_node __wrapped__AddV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [4,10,10,128] vs. [1,1,1,1024] [Op:AddV2] name: \\x1b[0m\\n\\nArguments received by Conv2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 10, 128), dtype=float32)', (None, 0, 0, 1024)))",
+        "error_message": "Exception encountered when calling Conv2D.call().\n\n\u001b[1m{{function_node __wrapped__AddV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [4,10,10,128] vs. [1,1,1,1024] [Op:AddV2] name: \u001b[0m\n\nArguments received by Conv2D.call():\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 10, 128), dtype=float32)"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 10, 10, 128))",
+            "filters": "1024",
+            "kernel_size": "[11, 11]",
+            "strides": "[1, 1]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 1]",
+            "groups": "2",
+            "activation": "None",
+            "use_bias": "True",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "activity_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Exception encountered when calling Conv2D.call().\\n\\n\\x1b[1min user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Negative dimension size caused by subtracting 11 from 10 for \\'{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](convolution/input, convolution/ReadVariableOp)\\' with input shapes: [4,10,10,128], [11,11,5,1024].\\n\\x1b[0m\\n\\nArguments received by Conv2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 10, 128), dtype=float32)', ('Exception encountered when calling Conv2D.call().\\n\\n\\x1b[1min user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Negative dimension size caused by subtracting 11 from 10 for \\'{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](convolution/input, convolution/ReadVariableOp)\\' with input shapes: [4,10,10,128], [11,11,5,1024].\\n\\x1b[0m\\n\\nArguments received by Conv2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 10, 128), dtype=float32)', (None, 1024, 0, 118)))",
+        "error_message": "Exception encountered when calling Conv2D.call().\n\n\u001b[1min user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: Negative dimension size caused by subtracting 11 from 10 for '{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](convolution/input, convolution/ReadVariableOp)' with input shapes: [4,10,10,128], [11,11,5,1024].\n\u001b[0m\n\nArguments received by Conv2D.call():\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 10, 128), dtype=float32)"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 10, 10, 128))",
+            "filters": "1",
+            "kernel_size": "[11, 11]",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "None",
+            "dilation_rate": "[1, 1]",
+            "groups": "1",
+            "activation": "relu",
+            "use_bias": "True",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "activity_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 10, 10, 128), (None, 0, 0, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 10, 10, 128))",
+            "filters": "64",
+            "kernel_size": "[11, 11]",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "None",
+            "dilation_rate": "[1, 1]",
+            "groups": "1",
+            "activation": "None",
+            "use_bias": "True",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "activity_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Exception encountered when calling Conv2D.call().\\n\\n\\x1b[1m{{function_node __wrapped__AddV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [4,10,10,128] vs. [1,1,1,64] [Op:AddV2] name: \\x1b[0m\\n\\nArguments received by Conv2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 10, 128), dtype=float32)', ('Exception encountered when calling Conv2D.call().\\n\\n\\x1b[1m{{function_node __wrapped__AddV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [4,10,10,128] vs. [1,1,1,64] [Op:AddV2] name: \\x1b[0m\\n\\nArguments received by Conv2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 10, 128), dtype=float32)', (None, 0, 0, 64)))",
+        "error_message": "Exception encountered when calling Conv2D.call().\n\n\u001b[1m{{function_node __wrapped__AddV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [4,10,10,128] vs. [1,1,1,64] [Op:AddV2] name: \u001b[0m\n\nArguments received by Conv2D.call():\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 10, 128), dtype=float32)"
+    }
+]

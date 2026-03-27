@@ -1,0 +1,45 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "[-1, -2]",
+            "keepdims": "False",
+            "dtype": "float32"
+        },
+        "segment": "(7, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'list assignment index out of range', ((None,), 'list assignment index out of range'))",
+        "error_message": "list assignment index out of range",
+        "conflict_params": [
+            "axis",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "[-1, -2]",
+            "keepdims": "False",
+            "dtype": "float32"
+        },
+        "segment": "(9, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'list assignment index out of range', ((None,), 'list assignment index out of range'))",
+        "error_message": "list assignment index out of range",
+        "conflict_params": [
+            "axis",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "[-1, -2]",
+            "keepdims": "False",
+            "dtype": "float32"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'list assignment index out of range', ((None,), 'list assignment index out of range'))",
+        "error_message": "list assignment index out of range"
+    }
+]

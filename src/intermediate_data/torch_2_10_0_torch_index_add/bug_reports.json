@@ -1,0 +1,147 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "1.5"
+        },
+        "segment": "(1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [3, 3]', ('source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [3, 3]', 'LoweringException: AssertionError: Broadcast failed in ExpandView([s35, s22], [s21, s22]) on dimension 0\\n  target: aten.index_put.default\\n  args[0]: TensorBox(StorageBox(\\n    InputBuffer(name=\\'arg2_1\\', layout=FixedLayout(\\'cpu\\', torch.float32, size=[s21, s41], stride=[s41, 1]))\\n  ))\\n  args[1]: [None, TensorBox(StorageBox(\\n    InputBuffer(name=\\'arg4_1\\', layout=FixedLayout(\\'cpu\\', torch.int64, size=[s22], stride=[1]))\\n  ))]\\n  args[2]: TensorBox(StorageBox(\\n    Pointwise(\\n      \\'cpu\\',\\n      torch.float32,\\n      def inner_fn(index):\\n          i0, i1 = index\\n          tmp0 = ops.load(arg6_1, i1 + i0 * s22)\\n          tmp1 = ops.constant(1.5, torch.float32)\\n          tmp2 = tmp0 * tmp1\\n          return tmp2\\n      ,\\n      ranges=[s35, s22],\\n      origin_node=mul,\\n      origins=OrderedSet([mul]),\\n      stack_traces = {,\\n        File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/torch_2_10_0_torch_index_add/generated_code.py\", line 5, in call_func,\\n          return torch.index_add(input_tensor, dim, index, source_tensor, alpha=alpha, out=out),\\n      ,\\n      }\\n    )\\n  ))\\n  args[3]: True\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (5, 3)))",
+        "error_message": "source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [3, 3]",
+        "conflict_params": [
+            "inputs",
+            "dim",
+            "index"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([5, 1]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([1]))"
+        },
+        "segment": "(1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'index 4 is out of bounds for dimension 1 with size 3', ('index 4 is out of bounds for dimension 1 with size 3', 'kernel, /tmp/torchinductor_sunshuo/as/casjucmxdjxtkm47rydmvgqi4by37gpu2zyy7w3f33fqyqyf2cis.main.cpp:42, index out of bounds: 0 <= tmp7 < ks1', (5, 3)))",
+        "error_message": "index 4 is out of bounds for dimension 1 with size 3",
+        "conflict_params": [
+            "inputs",
+            "dim",
+            "index"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "1.5"
+        },
+        "segment": "(3, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [3, 3]', ('source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [3, 3]', 'source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [3, 3]', (5, 3)))",
+        "error_message": "source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [3, 3]",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([5, 1]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([1]))"
+        },
+        "segment": "(3, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'index 4 is out of bounds for dimension 1 with size 3', ('index 4 is out of bounds for dimension 1 with size 3', 'index 4 is out of bounds for dimension 1 with size 3', (5, 3)))",
+        "error_message": "index 4 is out of bounds for dimension 1 with size 3",
+        "conflict_params": [
+            "inputs",
+            "dim",
+            "index"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([3]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [3, 5] source.shape = [3, 2]', ('source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [3, 5] source.shape = [3, 2]', 'source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [3, 5] source.shape = [3, 2]', (3, 5)))",
+        "error_message": "source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [3, 5] source.shape = [3, 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "out": "None",
+            "alpha": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [3, 5] source.shape = [3, 2]', ('source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [3, 5] source.shape = [3, 2]', 'source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [3, 5] source.shape = [3, 2]', (3, 5)))",
+        "error_message": "source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [3, 5] source.shape = [3, 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "1",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [2, 3]', ('source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [2, 3]', 'source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [2, 3]', (5, 3)))",
+        "error_message": "source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [2, 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "1.5"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [2, 3]', ('source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [2, 3]', 'source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [2, 3]', (5, 3)))",
+        "error_message": "source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [2, 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "1.5"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [3, 3]', ('source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [3, 3]', 'source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [3, 3]', (5, 3)))",
+        "error_message": "source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [3, 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "1.5",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [3, 3]', ('source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [3, 3]', 'source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [3, 3]', (5, 3)))",
+        "error_message": "source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [5, 3] source.shape = [3, 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-2",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "out": "None",
+            "alpha": "1.5"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [3, 5] source.shape = [3, 2]', ('source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [3, 5] source.shape = [3, 2]', 'source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [3, 5] source.shape = [3, 2]', (3, 5)))",
+        "error_message": "source tensor shape must match self tensor shape, excluding the specified dimension. Got self.shape = [3, 5] source.shape = [3, 2]"
+    }
+]

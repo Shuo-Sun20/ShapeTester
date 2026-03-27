@@ -1,0 +1,6 @@
+{
+    "POC File": "/mnt/data2/Users/sunshuo/2026/dltest_3.3/data/bug_reports/crash_bugs/torch_2_10_0_torch_fft_irfft/'Dynamo/POC_Code.py",
+    "Return Code": 0,
+    "STDOUT": "=== Testing torch.fft.irfft shape consistency ===\n\n1. Dynamic execution:\nDynamic output shape: [1]\n\n2. Static execution with torch.compile:\nStatic execution failed: AcceleratorError: CUDA error: device doesn't have valid Grid license\nSearch for `cudaErrorDeviceNotLicensed' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n\n\n\n3. Meta execution:\nMeta output shape: [1]\n\n=== Shape comparison ===\nDynamic shape: [1]\nMeta shape: [1]\n\u2713 Dynamic and Meta shapes are consistent",
+    "STDERR": ""
+}

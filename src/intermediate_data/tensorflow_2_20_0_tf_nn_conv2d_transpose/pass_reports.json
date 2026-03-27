@@ -1,0 +1,430 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 4, 3)), EagerTensor(shape=(3, 3, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 1, 1, 1]",
+            "name": "None"
+        },
+        "segment": "(0, 0, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ', ('{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ', 'Graph execution error:\\n\\nDetected at node conv2d_transpose defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func\\n\\nOperation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546\\n\\t [[{{node conv2d_transpose}}]] [Op:__inference_call_func_40607]'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "inputs",
+            "output_shape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 4, 3)), EagerTensor(shape=(3, 3, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "[[0, 0], [0, 0], [0, 0], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "None"
+        },
+        "segment": "(1, 3, 4, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInput: Size of out_backprop doesn't match computed: actual = 4, computed = 2 spatial_dim: 1 input: 7 filter: 3 output: 4 stride: 4 dilation: 1 [Op:Conv2DBackpropInput] name: \", (\"{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInput: Size of out_backprop doesn't match computed: actual = 4, computed = 2 spatial_dim: 1 input: 7 filter: 3 output: 4 stride: 4 dilation: 1 [Op:Conv2DBackpropInput] name: \", 'Graph execution error:\\n\\nDetected at node conv2d_transpose defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func\\n\\nConv2DCustomBackpropInput: Size of out_backprop doesn\\'t match computed: actual = 4, computed = 2 spatial_dim: 1 input: 7 filter: 3 output: 4 stride: 4 dilation: 1\\n\\t [[{{node conv2d_transpose}}]] [Op:__inference_call_func_40614]'))",
+        "error_message": "{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInput: Size of out_backprop doesn't match computed: actual = 4, computed = 2 spatial_dim: 1 input: 7 filter: 3 output: 4 stride: 4 dilation: 1 [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "inputs",
+            "output_shape",
+            "strides",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 4, 3)), EagerTensor(shape=(3, 3, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 1, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 2, 2, 1]",
+            "name": "None"
+        },
+        "segment": "(2, 4, 1, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ', ('{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ', 'Graph execution error:\\n\\nDetected at node conv2d_transpose defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func\\n\\nOperation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546\\n\\t [[{{node conv2d_transpose}}]] [Op:__inference_call_func_40621]'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "output_shape",
+            "strides",
+            "padding",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 4, 3)), EagerTensor(shape=(3, 3, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "dilations": "[1, 4, 4, 1]",
+            "name": "None"
+        },
+        "segment": "(1, 0, 1, 1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations in the batch and depth dimensions. [Op:Conv2DBackpropInput] name: ', ('{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations in the batch and depth dimensions. [Op:Conv2DBackpropInput] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func  *\\n        result = tf.nn.conv2d_transpose(\\n\\n    ValueError: Dimensions must be equal, but are 4 and 3 for \\'{{node conv2d_transpose}} = Conv2DBackpropInput[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 4, 4, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](output_shape, inputs_1, inputs)\\' with input shapes: [4], [3,3,5,3], [2,4,4,3].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations in the batch and depth dimensions. [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "data_format",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 4, 3)), EagerTensor(shape=(3, 3, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "[[0, 0], [0, 0], [1, 1], [1, 1]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 4, 4, 1]",
+            "name": "None"
+        },
+        "segment": "(4, 1, 3, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current CPU implementations do not yet support dilation rates larger than 1. [Op:Conv2DBackpropInput] name: ', ('{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current CPU implementations do not yet support dilation rates larger than 1. [Op:Conv2DBackpropInput] name: ', 'Graph execution error:\\n\\nDetected at node conv2d_transpose defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func\\n\\nCurrent CPU implementations do not yet support dilation rates larger than 1.\\n\\t [[{{node conv2d_transpose}}]] [Op:__inference_call_func_40632]'))",
+        "error_message": "{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current CPU implementations do not yet support dilation rates larger than 1. [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 4, 3)), EagerTensor(shape=(3, 3, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "None",
+            "name": "None"
+        },
+        "segment": "(2, 1, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv2DBackpropInput] name: ', ('{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv2DBackpropInput] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func  *\\n        result = tf.nn.conv2d_transpose(\\n\\n    ValueError: Dimensions must be equal, but are 4 and 3 for \\'{{node conv2d_transpose}} = Conv2DBackpropInput[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"SAME\", strides=[1, 2, 2, 1], use_cudnn_on_gpu=true](output_shape, inputs_1, inputs)\\' with input shapes: [4], [3,3,5,3], [2,4,4,3].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "strides",
+            "data_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 4, 3)), EagerTensor(shape=(3, 3, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "[1, 2, 2, 1]",
+            "name": "None"
+        },
+        "segment": "(3, 2, 2, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInputOp only supports NHWC. [Op:Conv2DBackpropInput] name: ', ('{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInputOp only supports NHWC. [Op:Conv2DBackpropInput] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func  *\\n        result = tf.nn.conv2d_transpose(\\n\\n    ValueError: Dimensions must be equal, but are 4 and 3 for \\'{{node conv2d_transpose}} = Conv2DBackpropInput[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 2, 2, 1], explicit_paddings=[0, 0, 1, 1, 1, 1, 0, 0], padding=\"EXPLICIT\", strides=[1, 3, 3, 1], use_cudnn_on_gpu=true](output_shape, inputs_1, inputs)\\' with input shapes: [4], [3,3,5,3], [2,4,4,3].\\n'))",
+        "error_message": "{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInputOp only supports NHWC. [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "data_format",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 4, 3)), EagerTensor(shape=(3, 3, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 1, 2, 1]",
+            "padding": "[[0, 0], [0, 0], [0, 0], [0, 0]]",
+            "data_format": "NCHW",
+            "dilations": "[1, 1, 1, 1]",
+            "name": "None"
+        },
+        "segment": "(4, 4, 4, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInputOp only supports NHWC. [Op:Conv2DBackpropInput] name: ', ('{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInputOp only supports NHWC. [Op:Conv2DBackpropInput] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func  *\\n        result = tf.nn.conv2d_transpose(\\n\\n    ValueError: Dimensions must be equal, but are 4 and 3 for \\'{{node conv2d_transpose}} = Conv2DBackpropInput[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[0, 0, 0, 0, 0, 0, 0, 0], padding=\"EXPLICIT\", strides=[1, 1, 2, 1], use_cudnn_on_gpu=true](output_shape, inputs_1, inputs)\\' with input shapes: [4], [3,3,5,3], [2,4,4,3].\\n'))",
+        "error_message": "{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInputOp only supports NHWC. [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "data_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 4, 3)), EagerTensor(shape=(3, 3, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 3, 3, 1]",
+            "name": "None"
+        },
+        "segment": "(4, 2, 0, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ', ('{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ', 'Graph execution error:\\n\\nDetected at node conv2d_transpose defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func\\n\\nOperation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546\\n\\t [[{{node conv2d_transpose}}]] [Op:__inference_call_func_40651]'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "strides",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 4, 3)), EagerTensor(shape=(3, 3, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 3, 3, 1]",
+            "name": "None"
+        },
+        "segment": "(1, 1, 2, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current CPU implementations do not yet support dilation rates larger than 1. [Op:Conv2DBackpropInput] name: ', ('{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current CPU implementations do not yet support dilation rates larger than 1. [Op:Conv2DBackpropInput] name: ', 'Graph execution error:\\n\\nDetected at node conv2d_transpose defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func\\n\\nCurrent CPU implementations do not yet support dilation rates larger than 1.\\n\\t [[{{node conv2d_transpose}}]] [Op:__inference_call_func_40658]'))",
+        "error_message": "{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current CPU implementations do not yet support dilation rates larger than 1. [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 4, 3)), EagerTensor(shape=(3, 3, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [0, 0], [1, 1], [1, 1]]",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "None"
+        },
+        "segment": "(3, 0, 3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Nonzero explicit padding in the batch or depth dimensions is not supported [Op:Conv2DBackpropInput] name: ', ('{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Nonzero explicit padding in the batch or depth dimensions is not supported [Op:Conv2DBackpropInput] name: ', 'Graph execution error:\\n\\nDetected at node conv2d_transpose defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func\\n\\nNonzero explicit padding in the batch or depth dimensions is not supported\\n\\t [[{{node conv2d_transpose}}]] [Op:__inference_call_func_40665]'))",
+        "error_message": "{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Nonzero explicit padding in the batch or depth dimensions is not supported [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 4, 3)), EagerTensor(shape=(3, 3, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 1, 1, 1]",
+            "name": "None"
+        },
+        "segment": "(2, 3, 2, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInput: Size of out_backprop doesn't match computed: actual = 4, computed = 3 spatial_dim: 1 input: 12 filter: 3 output: 4 stride: 4 dilation: 1 [Op:Conv2DBackpropInput] name: \", (\"{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInput: Size of out_backprop doesn't match computed: actual = 4, computed = 3 spatial_dim: 1 input: 12 filter: 3 output: 4 stride: 4 dilation: 1 [Op:Conv2DBackpropInput] name: \", 'Graph execution error:\\n\\nDetected at node conv2d_transpose defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func\\n\\nConv2DCustomBackpropInput: Size of out_backprop doesn\\'t match computed: actual = 4, computed = 3 spatial_dim: 1 input: 12 filter: 3 output: 4 stride: 4 dilation: 1\\n\\t [[{{node conv2d_transpose}}]] [Op:__inference_call_func_40672]'))",
+        "error_message": "{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInput: Size of out_backprop doesn't match computed: actual = 4, computed = 3 spatial_dim: 1 input: 12 filter: 3 output: 4 stride: 4 dilation: 1 [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "inputs",
+            "output_shape",
+            "strides",
+            "padding",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 3, 3)), EagerTensor(shape=(6, 6, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 1, 1, 1]",
+            "name": "None"
+        },
+        "segment": "(3, 1, 1, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ', ('{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ', 'Graph execution error:\\n\\nDetected at node conv2d_transpose defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func\\n\\nOperation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546\\n\\t [[{{node conv2d_transpose}}]] [Op:__inference_call_func_40702]'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "output_shape",
+            "strides",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 3, 3)), EagerTensor(shape=(6, 6, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [0, 0], [0, 0], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "[1, 2, 2, 1]",
+            "name": "None"
+        },
+        "segment": "(2, 0, 4, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current CPU implementations do not yet support dilation rates larger than 1. [Op:Conv2DBackpropInput] name: ', ('{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current CPU implementations do not yet support dilation rates larger than 1. [Op:Conv2DBackpropInput] name: ', 'Graph execution error:\\n\\nDetected at node conv2d_transpose defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func\\n\\nCurrent CPU implementations do not yet support dilation rates larger than 1.\\n\\t [[{{node conv2d_transpose}}]] [Op:__inference_call_func_40709]'))",
+        "error_message": "{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current CPU implementations do not yet support dilation rates larger than 1. [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 3, 3)), EagerTensor(shape=(6, 6, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "None"
+        },
+        "segment": "(4, 0, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInput: Size of out_backprop doesn't match computed: actual = 3, computed = 1 spatial_dim: 1 input: 4 filter: 6 output: 3 stride: 1 dilation: 1 [Op:Conv2DBackpropInput] name: \", (\"{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInput: Size of out_backprop doesn't match computed: actual = 3, computed = 1 spatial_dim: 1 input: 4 filter: 6 output: 3 stride: 1 dilation: 1 [Op:Conv2DBackpropInput] name: \", 'Graph execution error:\\n\\nDetected at node conv2d_transpose defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func\\n\\nConv2DCustomBackpropInput: Size of out_backprop doesn\\'t match computed: actual = 3, computed = 1 spatial_dim: 1 input: 4 filter: 6 output: 3 stride: 1 dilation: 1\\n\\t [[{{node conv2d_transpose}}]] [Op:__inference_call_func_40716]'))",
+        "error_message": "{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInput: Size of out_backprop doesn't match computed: actual = 3, computed = 1 spatial_dim: 1 input: 4 filter: 6 output: 3 stride: 1 dilation: 1 [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "inputs",
+            "output_shape",
+            "strides",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 3, 3)), EagerTensor(shape=(6, 6, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 1, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "None"
+        },
+        "segment": "(1, 4, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ', ('{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ', 'Graph execution error:\\n\\nDetected at node conv2d_transpose defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func\\n\\nOperation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546\\n\\t [[{{node conv2d_transpose}}]] [Op:__inference_call_func_40753]'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "inputs",
+            "output_shape",
+            "strides",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 3, 3)), EagerTensor(shape=(6, 6, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "None"
+        },
+        "segment": "(4, 3, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ', ('{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ', 'Graph execution error:\\n\\nDetected at node conv2d_transpose defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func\\n\\nOperation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546\\n\\t [[{{node conv2d_transpose}}]] [Op:__inference_call_func_40780]'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "inputs",
+            "output_shape",
+            "strides",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 3, 3)), EagerTensor(shape=(6, 6, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 1, 1, 1]",
+            "name": "None"
+        },
+        "segment": "(1, 2, 1, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ', ('{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ', 'Graph execution error:\\n\\nDetected at node conv2d_transpose defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func\\n\\nOperation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546\\n\\t [[{{node conv2d_transpose}}]] [Op:__inference_call_func_40824]'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "inputs",
+            "output_shape",
+            "strides"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 3, 3)), EagerTensor(shape=(6, 6, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "None"
+        },
+        "segment": "(3, 3, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ', ('{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ', 'Graph execution error:\\n\\nDetected at node conv2d_transpose defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func\\n\\nOperation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546\\n\\t [[{{node conv2d_transpose}}]] [Op:__inference_call_func_40884]'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 2, message: could not create a primitive descriptor for the convolution forward propagation primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information., in file tensorflow/core/kernels/mkl/mkl_conv_grad_input_ops.cc:546 [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "inputs",
+            "output_shape",
+            "strides"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 3, 3)), EagerTensor(shape=(6, 6, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "[[0, 0], [0, 0], [0, 0], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "None"
+        },
+        "segment": "(2, 2, 4, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 12, 12, 5), (2, 12, 12, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 3, 3)), EagerTensor(shape=(6, 6, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 1, 2, 1]",
+            "padding": "[[0, 0], [1, 1], [1, 1], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "None"
+        },
+        "segment": "(3, 4, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInput: Size of out_backprop doesn't match computed: actual = 3, computed = 13 spatial_dim: 1 input: 16 filter: 6 output: 3 stride: 1 dilation: 1 [Op:Conv2DBackpropInput] name: \", (\"{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInput: Size of out_backprop doesn't match computed: actual = 3, computed = 13 spatial_dim: 1 input: 16 filter: 6 output: 3 stride: 1 dilation: 1 [Op:Conv2DBackpropInput] name: \", 'Graph execution error:\\n\\nDetected at node conv2d_transpose defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func\\n\\nConv2DCustomBackpropInput: Size of out_backprop doesn\\'t match computed: actual = 3, computed = 13 spatial_dim: 1 input: 16 filter: 6 output: 3 stride: 1 dilation: 1\\n\\t [[{{node conv2d_transpose}}]] [Op:__inference_call_func_40923]'))",
+        "error_message": "{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInput: Size of out_backprop doesn't match computed: actual = 3, computed = 13 spatial_dim: 1 input: 16 filter: 6 output: 3 stride: 1 dilation: 1 [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "inputs",
+            "output_shape",
+            "strides",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 3, 3)), EagerTensor(shape=(6, 6, 5, 3))]",
+            "output_shape": "EagerTensor(shape=(4,))",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "[[0, 0], [0, 0], [0, 0], [0, 0]]",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "None"
+        },
+        "segment": "(3, 1, 4, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInput: Size of out_backprop doesn't match computed: actual = 3, computed = 6 spatial_dim: 1 input: 16 filter: 6 output: 3 stride: 2 dilation: 1 [Op:Conv2DBackpropInput] name: \", (\"{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInput: Size of out_backprop doesn't match computed: actual = 3, computed = 6 spatial_dim: 1 input: 16 filter: 6 output: 3 stride: 2 dilation: 1 [Op:Conv2DBackpropInput] name: \", 'Graph execution error:\\n\\nDetected at node conv2d_transpose defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv2d_transpose/generated_code.py\", line 9, in call_func\\n\\nConv2DCustomBackpropInput: Size of out_backprop doesn\\'t match computed: actual = 3, computed = 6 spatial_dim: 1 input: 16 filter: 6 output: 3 stride: 2 dilation: 1\\n\\t [[{{node conv2d_transpose}}]] [Op:__inference_call_func_41005]'))",
+        "error_message": "{{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} Conv2DCustomBackpropInput: Size of out_backprop doesn't match computed: actual = 3, computed = 6 spatial_dim: 1 input: 16 filter: 6 output: 3 stride: 2 dilation: 1 [Op:Conv2DBackpropInput] name: ",
+        "conflict_params": [
+            "inputs",
+            "output_shape",
+            "strides",
+            "padding"
+        ]
+    }
+]

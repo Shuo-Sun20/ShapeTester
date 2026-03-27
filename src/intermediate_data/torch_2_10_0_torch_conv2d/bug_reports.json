@@ -1,0 +1,46 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 4, 5, 5])), Tensor(shape=torch.Size([6, 4, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "0",
+            "dilation": "[2, 3]",
+            "groups": "1"
+        },
+        "segment": "(2, 0, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, \"Calculated padded input size per channel: (5 x 5). Kernel size: (5 x 7). Kernel size can't be greater than actual input size\", (\"Calculated padded input size per channel: (5 x 5). Kernel size: (5 x 7). Kernel size can't be greater than actual input size\", \"Calculated padded input size per channel: (5 x 5). Kernel size: (5 x 7). Kernel size can't be greater than actual input size\", (2, 6, 1, 0)))",
+        "error_message": "Calculated padded input size per channel: (5 x 5). Kernel size: (5 x 7). Kernel size can't be greater than actual input size",
+        "conflict_params": [
+            "inputs",
+            "dilation"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 4, 5, 5])), Tensor(shape=torch.Size([6, 4, 3, 3]))]",
+            "bias": "None",
+            "stride": "3",
+            "padding": "0",
+            "dilation": "[2, 3]",
+            "groups": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, \"Calculated padded input size per channel: (5 x 5). Kernel size: (5 x 7). Kernel size can't be greater than actual input size\", (\"Calculated padded input size per channel: (5 x 5). Kernel size: (5 x 7). Kernel size can't be greater than actual input size\", \"Calculated padded input size per channel: (5 x 5). Kernel size: (5 x 7). Kernel size can't be greater than actual input size\", (2, 6, 1, 0)))",
+        "error_message": "Calculated padded input size per channel: (5 x 5). Kernel size: (5 x 7). Kernel size can't be greater than actual input size"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 4, 5, 5])), Tensor(shape=torch.Size([6, 4, 3, 3]))]",
+            "bias": "None",
+            "stride": "[1, 2]",
+            "padding": "0",
+            "dilation": "[2, 3]",
+            "groups": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, \"Calculated padded input size per channel: (5 x 5). Kernel size: (5 x 7). Kernel size can't be greater than actual input size\", (\"Calculated padded input size per channel: (5 x 5). Kernel size: (5 x 7). Kernel size can't be greater than actual input size\", \"Calculated padded input size per channel: (5 x 5). Kernel size: (5 x 7). Kernel size can't be greater than actual input size\", (2, 6, 1, 0)))",
+        "error_message": "Calculated padded input size per channel: (5 x 5). Kernel size: (5 x 7). Kernel size can't be greater than actual input size"
+    }
+]

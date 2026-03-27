@@ -1,0 +1,141 @@
+[
+    {
+        "test_case": {
+            "padding": "0",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 2, 2, 2]))"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 2, 2, 2), (1, 1, 2, 2, 2), (1, 1, 2, 2, 2)))"
+    },
+    {
+        "test_case": {
+            "padding": "1",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 2, 2, 2]))"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 4, 4, 4), (1, 1, 4, 4, 4), (1, 1, 4, 4, 4)))"
+    },
+    {
+        "test_case": {
+            "padding": "[0, 0, 0, 0, 0, 0]",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 2, 2, 2]))"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 2, 2, 2), (1, 1, 2, 2, 2), (1, 1, 2, 2, 2)))"
+    },
+    {
+        "test_case": {
+            "padding": "[1, 1, 1, 1, 1, 1]",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 2, 2, 2]))"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 4, 4, 4), (1, 1, 4, 4, 4), (1, 1, 4, 4, 4)))"
+    },
+    {
+        "test_case": {
+            "padding": "[1, 0, 1, 0, 1, 0]",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 2, 2, 2]))"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 3, 3, 3), (1, 1, 3, 3, 3), (1, 1, 3, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "padding": "[0, 1, 0, 1, 0, 1]",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 2, 2, 2]))"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 3, 3, 3), (1, 1, 3, 3, 3), (1, 1, 3, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "padding": "[2, 0, 0, 0, 0, 0]",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 2, 2, 2]))"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Argument #4: Padding size should be less than the corresponding input dimension, but got: padding (2, 0) at dimension 4 of input [1, 1, 2, 2, 2]', ('Argument #4: Padding size should be less than the corresponding input dimension, but got: padding (2, 0) at dimension 4 of input [1, 1, 2, 2, 2]', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function pad>(*(FakeTensor(..., size=(1, 1, s34, s34, s34)), (s66, s40, s12, s67, s18, s63), \\'reflect\\', None), **{}): got RuntimeError(\\'Argument #4: Padding size should be less than the corresponding input dimension, but got: padding (s66, s40) at dimension 4 of input torch.Size([1, 1, s34, s34, s34])\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_ReflectionPad3d/generated_code.py\", line 5, in call_func\\n    return pad_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/padding.py\", line 377, in forward\\n    return F.pad(input, self.padding, \"reflect\")\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/functional.py\", line 5418, in pad\\n    return torch._C._nn.pad(input, pad, mode, value)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Argument #4: Padding size should be less than the corresponding input dimension, but got: padding (2, 0) at dimension 4 of input torch.Size([1, 1, 2, 2, 2])'))",
+        "error_message": "Argument #4: Padding size should be less than the corresponding input dimension, but got: padding (2, 0) at dimension 4 of input [1, 1, 2, 2, 2]",
+        "conflict_params": [
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "padding": "[0, 0, 2, 0, 0, 0]",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 2, 2, 2]))"
+        },
+        "segment": "(7,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Argument #6: Padding size should be less than the corresponding input dimension, but got: padding (2, 0) at dimension 3 of input [1, 1, 2, 2, 2]', ('Argument #6: Padding size should be less than the corresponding input dimension, but got: padding (2, 0) at dimension 3 of input [1, 1, 2, 2, 2]', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function pad>(*(FakeTensor(..., size=(1, 1, s34, s34, s34)), (s66, s40, s12, s67, s18, s63), \\'reflect\\', None), **{}): got RuntimeError(\\'Argument #6: Padding size should be less than the corresponding input dimension, but got: padding (s12, s67) at dimension 3 of input torch.Size([1, 1, s34, s34, s34])\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_ReflectionPad3d/generated_code.py\", line 5, in call_func\\n    return pad_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/padding.py\", line 377, in forward\\n    return F.pad(input, self.padding, \"reflect\")\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/functional.py\", line 5418, in pad\\n    return torch._C._nn.pad(input, pad, mode, value)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Argument #6: Padding size should be less than the corresponding input dimension, but got: padding (2, 0) at dimension 3 of input torch.Size([1, 1, 2, 2, 2])'))",
+        "error_message": "Argument #6: Padding size should be less than the corresponding input dimension, but got: padding (2, 0) at dimension 3 of input [1, 1, 2, 2, 2]",
+        "conflict_params": [
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "padding": "[0, 0, 0, 0, 0, 2]",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 2, 2, 2]))"
+        },
+        "segment": "(8,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Argument #8: Padding size should be less than the corresponding input dimension, but got: padding (0, 2) at dimension 2 of input [1, 1, 2, 2, 2]', ('Argument #8: Padding size should be less than the corresponding input dimension, but got: padding (0, 2) at dimension 2 of input [1, 1, 2, 2, 2]', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function pad>(*(FakeTensor(..., size=(1, 1, s34, s34, s34)), (s66, s40, s12, s67, s18, s63), \\'reflect\\', None), **{}): got RuntimeError(\\'Argument #8: Padding size should be less than the corresponding input dimension, but got: padding (s18, s63) at dimension 2 of input torch.Size([1, 1, s34, s34, s34])\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_ReflectionPad3d/generated_code.py\", line 5, in call_func\\n    return pad_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/padding.py\", line 377, in forward\\n    return F.pad(input, self.padding, \"reflect\")\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/functional.py\", line 5418, in pad\\n    return torch._C._nn.pad(input, pad, mode, value)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Argument #8: Padding size should be less than the corresponding input dimension, but got: padding (0, 2) at dimension 2 of input torch.Size([1, 1, 2, 2, 2])'))",
+        "error_message": "Argument #8: Padding size should be less than the corresponding input dimension, but got: padding (0, 2) at dimension 2 of input [1, 1, 2, 2, 2]",
+        "conflict_params": [
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "padding": "[0, 1, 0, 1, 0, 1]",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 2, 2, 2]))"
+        },
+        "segment": "(9,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 3, 3, 3), (1, 1, 3, 3, 3), (1, 1, 3, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "padding": "[1, 1, 0, 0, 1, 1]",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 2, 2, 2]))"
+        },
+        "segment": "(10,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 4, 2, 4), (1, 1, 4, 2, 4), (1, 1, 4, 2, 4)))"
+    },
+    {
+        "test_case": {
+            "padding": "[2, 0, 0, 0, 0, 0]",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 2, 2, 2]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Argument #4: Padding size should be less than the corresponding input dimension, but got: padding (2, 0) at dimension 4 of input [1, 1, 2, 2, 2]', ('Argument #4: Padding size should be less than the corresponding input dimension, but got: padding (2, 0) at dimension 4 of input [1, 1, 2, 2, 2]', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function pad>(*(FakeTensor(..., size=(1, 1, s34, s34, s34)), (s66, s40, s12, s67, s18, s63), \\'reflect\\', None), **{}): got RuntimeError(\\'Argument #4: Padding size should be less than the corresponding input dimension, but got: padding (s66, s40) at dimension 4 of input torch.Size([1, 1, s34, s34, s34])\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_ReflectionPad3d/generated_code.py\", line 5, in call_func\\n    return pad_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/padding.py\", line 377, in forward\\n    return F.pad(input, self.padding, \"reflect\")\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/functional.py\", line 5418, in pad\\n    return torch._C._nn.pad(input, pad, mode, value)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Argument #4: Padding size should be less than the corresponding input dimension, but got: padding (2, 0) at dimension 4 of input torch.Size([1, 1, 2, 2, 2])'))",
+        "error_message": "Argument #4: Padding size should be less than the corresponding input dimension, but got: padding (2, 0) at dimension 4 of input [1, 1, 2, 2, 2]"
+    },
+    {
+        "test_case": {
+            "padding": "[0, 0, 2, 0, 0, 0]",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 2, 2, 2]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Argument #6: Padding size should be less than the corresponding input dimension, but got: padding (2, 0) at dimension 3 of input [1, 1, 2, 2, 2]', ('Argument #6: Padding size should be less than the corresponding input dimension, but got: padding (2, 0) at dimension 3 of input [1, 1, 2, 2, 2]', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function pad>(*(FakeTensor(..., size=(1, 1, s34, s34, s34)), (s66, s40, s12, s67, s18, s63), \\'reflect\\', None), **{}): got RuntimeError(\\'Argument #6: Padding size should be less than the corresponding input dimension, but got: padding (s12, s67) at dimension 3 of input torch.Size([1, 1, s34, s34, s34])\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_ReflectionPad3d/generated_code.py\", line 5, in call_func\\n    return pad_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/padding.py\", line 377, in forward\\n    return F.pad(input, self.padding, \"reflect\")\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/functional.py\", line 5418, in pad\\n    return torch._C._nn.pad(input, pad, mode, value)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Argument #6: Padding size should be less than the corresponding input dimension, but got: padding (2, 0) at dimension 3 of input torch.Size([1, 1, 2, 2, 2])'))",
+        "error_message": "Argument #6: Padding size should be less than the corresponding input dimension, but got: padding (2, 0) at dimension 3 of input [1, 1, 2, 2, 2]"
+    },
+    {
+        "test_case": {
+            "padding": "[0, 0, 0, 0, 0, 2]",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 2, 2, 2]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Argument #8: Padding size should be less than the corresponding input dimension, but got: padding (0, 2) at dimension 2 of input [1, 1, 2, 2, 2]', ('Argument #8: Padding size should be less than the corresponding input dimension, but got: padding (0, 2) at dimension 2 of input [1, 1, 2, 2, 2]', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function pad>(*(FakeTensor(..., size=(1, 1, s34, s34, s34)), (s66, s40, s12, s67, s18, s63), \\'reflect\\', None), **{}): got RuntimeError(\\'Argument #8: Padding size should be less than the corresponding input dimension, but got: padding (s18, s63) at dimension 2 of input torch.Size([1, 1, s34, s34, s34])\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_ReflectionPad3d/generated_code.py\", line 5, in call_func\\n    return pad_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/padding.py\", line 377, in forward\\n    return F.pad(input, self.padding, \"reflect\")\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/functional.py\", line 5418, in pad\\n    return torch._C._nn.pad(input, pad, mode, value)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Argument #8: Padding size should be less than the corresponding input dimension, but got: padding (0, 2) at dimension 2 of input torch.Size([1, 1, 2, 2, 2])'))",
+        "error_message": "Argument #8: Padding size should be less than the corresponding input dimension, but got: padding (0, 2) at dimension 2 of input [1, 1, 2, 2, 2]"
+    }
+]

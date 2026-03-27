@@ -1,0 +1,6 @@
+{
+    "POC File": "/mnt/data2/Users/sunshuo/2026/dltest_3.3/data/bug_reports/crash_bugs/torch_2_10_0_torch_conv_transpose1d/'output/POC_Code.py",
+    "Return Code": 0,
+    "STDOUT": "Testing torch.conv_transpose1d defect reproduction\n\n1. Dynamic output shape (direct call):\nDynamic error: output padding must be smaller than either stride or dilation, but got output_padding_height: 0 output_padding_width: 2 stride_height: 1 stride_width: 2 dilation_height: 1 dilation_width: 1\n\n2. Static output shape (torch.compile with dynamic=True):\nStatic error: AcceleratorError: CUDA error: device doesn't have valid Grid license\nSearch for `cudaErrorDeviceNotLicensed' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n\n\n\n3. Meta output shape (device='meta'):\nMeta shape: torch.Size([20, 66, 105])\n\nDefect reproduced: Inconsistent behavior between dynamic/static execution (both fail with validation error) vs meta execution (succeeds and returns shape)",
+    "STDERR": ""
+}

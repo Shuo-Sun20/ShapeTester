@@ -1,0 +1,80 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3)), EagerTensor(shape=(2, 3)), EagerTensor(shape=(2, 3))]",
+            "axis": "-4"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Argument `axis` = -4 not in range [-3, 3)', ('Argument `axis` = -4 not in range [-3, 3)', (3, None, 3)))",
+        "error_message": "Argument `axis` = -4 not in range [-3, 3)",
+        "conflict_params": [
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3)), EagerTensor(shape=(2, 3)), EagerTensor(shape=(2, 3))]",
+            "axis": "-3"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 2, 3), (3, None, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3)), EagerTensor(shape=(2, 3)), EagerTensor(shape=(2, 3))]",
+            "axis": "0"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 2, 3), (3, None, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3)), EagerTensor(shape=(2, 3)), EagerTensor(shape=(2, 3))]",
+            "axis": "3"
+        },
+        "segment": "(7,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Argument `axis` = 3 not in range [-3, 3)', ('Argument `axis` = 3 not in range [-3, 3)', (None, 3, 3)))",
+        "error_message": "Argument `axis` = 3 not in range [-3, 3)",
+        "conflict_params": [
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3)), EagerTensor(shape=(2, 3)), EagerTensor(shape=(2, 3))]",
+            "axis": "0"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 2, 3), (3, None, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3)), EagerTensor(shape=(2, 3)), EagerTensor(shape=(2, 3))]",
+            "axis": "-3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 2, 3), (3, None, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3)), EagerTensor(shape=(2, 3)), EagerTensor(shape=(2, 3))]",
+            "axis": "-4"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Argument `axis` = -4 not in range [-3, 3)', ('Argument `axis` = -4 not in range [-3, 3)', (3, None, 3)))",
+        "error_message": "Argument `axis` = -4 not in range [-3, 3)"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3)), EagerTensor(shape=(2, 3)), EagerTensor(shape=(2, 3))]",
+            "axis": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Argument `axis` = 3 not in range [-3, 3)', ('Argument `axis` = 3 not in range [-3, 3)', (None, 3, 3)))",
+        "error_message": "Argument `axis` = 3 not in range [-3, 3)"
+    }
+]

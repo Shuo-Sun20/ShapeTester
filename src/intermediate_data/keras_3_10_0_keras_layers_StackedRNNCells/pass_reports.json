@@ -1,0 +1,97 @@
+[
+    {
+        "test_case": {
+            "cells": "[<LSTMCell name=lstm_cell_31, built=True>]",
+            "inputs": "[ndarray(shape=(3, 5)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128))]",
+            "training": "False"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 128), (None, 128)))"
+    },
+    {
+        "test_case": {
+            "cells": "[<LSTMCell name=lstm_cell_32, built=True>, <LSTMCell name=lstm_cell_33, built=True>]",
+            "inputs": "[ndarray(shape=(3, 5)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128))]",
+            "training": "False"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 128), (None, 128)))"
+    },
+    {
+        "test_case": {
+            "cells": "[<GRUCell name=gru_cell_6, built=True>]",
+            "inputs": "[ndarray(shape=(3, 5)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128))]",
+            "training": "False"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling GRUCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,128], In[1]: [64,192] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by GRUCell.call():\\n  \u2022 inputs=tf.Tensor(shape=(3, 5), dtype=float32)\\n  \u2022 states=['tf.Tensor(shape=(3, 128), dtype=float32)']\\n  \u2022 training=False\", (\"Exception encountered when calling GRUCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,128], In[1]: [64,192] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by GRUCell.call():\\n  \u2022 inputs=tf.Tensor(shape=(3, 5), dtype=float32)\\n  \u2022 states=['tf.Tensor(shape=(3, 128), dtype=float32)']\\n  \u2022 training=False\", \"Exception encountered when calling StackedRNNCells.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'stacked_rnn_cells_24' (of type StackedRNNCells). Either the `StackedRNNCells.call()` method is incorrect, or you need to implement the `StackedRNNCells.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nException encountered when calling GRUCell.call().\\n\\n\\x1b[1mDimensions must be equal, but are 128 and 64 for '{{node gru_cell_6_1/MatMul_1}} = MatMul[T=DT_FLOAT, grad_a=false, grad_b=false, transpose_a=false, transpose_b=false](Placeholder_1, gru_cell_6_1/Cast_1/ReadVariableOp)' with input shapes: [?,128], [64,192].\\x1b[0m\\n\\nArguments received by GRUCell.call():\\n  \u2022 inputs=tf.Tensor(shape=(None, 5), dtype=float32)\\n  \u2022 states=['tf.Tensor(shape=(None, 128), dtype=float32)']\\n  \u2022 training=False\\x1b[0m\\n\\nArguments received by StackedRNNCells.call():\\n  \u2022 args=('<KerasTensor shape=(None, 5), dtype=float32, sparse=False, ragged=False, name=keras_tensor_1171>', ['<KerasTensor shape=(None, 128), dtype=float32, sparse=False, ragged=False, name=keras_tensor_1172>'])\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling GRUCell.call().\n\n\u001b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,128], In[1]: [64,192] [Op:MatMul] name: \u001b[0m\n\nArguments received by GRUCell.call():\n  \u2022 inputs=tf.Tensor(shape=(3, 5), dtype=float32)\n  \u2022 states=['tf.Tensor(shape=(3, 128), dtype=float32)']\n  \u2022 training=False",
+        "conflict_params": [
+            "cells",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "cells": "[<GRUCell name=gru_cell_7, built=True>, <GRUCell name=gru_cell_8, built=True>]",
+            "inputs": "[ndarray(shape=(3, 5)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128))]",
+            "training": "False"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling GRUCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,128], In[1]: [64,192] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by GRUCell.call():\\n  \u2022 inputs=tf.Tensor(shape=(3, 5), dtype=float32)\\n  \u2022 states=['tf.Tensor(shape=(3, 128), dtype=float32)']\\n  \u2022 training=False\", (\"Exception encountered when calling GRUCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,128], In[1]: [64,192] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by GRUCell.call():\\n  \u2022 inputs=tf.Tensor(shape=(3, 5), dtype=float32)\\n  \u2022 states=['tf.Tensor(shape=(3, 128), dtype=float32)']\\n  \u2022 training=False\", \"Exception encountered when calling StackedRNNCells.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'stacked_rnn_cells_30' (of type StackedRNNCells). Either the `StackedRNNCells.call()` method is incorrect, or you need to implement the `StackedRNNCells.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nException encountered when calling GRUCell.call().\\n\\n\\x1b[1mDimensions must be equal, but are 128 and 64 for '{{node gru_cell_7_1/MatMul_1}} = MatMul[T=DT_FLOAT, grad_a=false, grad_b=false, transpose_a=false, transpose_b=false](Placeholder_1, gru_cell_7_1/Cast_1/ReadVariableOp)' with input shapes: [?,128], [64,192].\\x1b[0m\\n\\nArguments received by GRUCell.call():\\n  \u2022 inputs=tf.Tensor(shape=(None, 5), dtype=float32)\\n  \u2022 states=['tf.Tensor(shape=(None, 128), dtype=float32)']\\n  \u2022 training=False\\x1b[0m\\n\\nArguments received by StackedRNNCells.call():\\n  \u2022 args=('<KerasTensor shape=(None, 5), dtype=float32, sparse=False, ragged=False, name=keras_tensor_1184>', ['<KerasTensor shape=(None, 128), dtype=float32, sparse=False, ragged=False, name=keras_tensor_1185>', '<KerasTensor shape=(None, 128), dtype=float32, sparse=False, ragged=False, name=keras_tensor_1186>'])\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling GRUCell.call().\n\n\u001b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,128], In[1]: [64,192] [Op:MatMul] name: \u001b[0m\n\nArguments received by GRUCell.call():\n  \u2022 inputs=tf.Tensor(shape=(3, 5), dtype=float32)\n  \u2022 states=['tf.Tensor(shape=(3, 128), dtype=float32)']\n  \u2022 training=False",
+        "conflict_params": [
+            "cells",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "cells": "[<SimpleRNNCell name=simple_rnn_cell_28, built=True>]",
+            "inputs": "[ndarray(shape=(3, 5)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128))]",
+            "training": "False"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling SimpleRNNCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,128], In[1]: [32,32] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by SimpleRNNCell.call():\\n  \u2022 sequence=tf.Tensor(shape=(3, 5), dtype=float32)\\n  \u2022 states=['tf.Tensor(shape=(3, 128), dtype=float32)']\\n  \u2022 training=False\", (\"Exception encountered when calling SimpleRNNCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,128], In[1]: [32,32] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by SimpleRNNCell.call():\\n  \u2022 sequence=tf.Tensor(shape=(3, 5), dtype=float32)\\n  \u2022 states=['tf.Tensor(shape=(3, 128), dtype=float32)']\\n  \u2022 training=False\", \"Exception encountered when calling StackedRNNCells.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'stacked_rnn_cells_36' (of type StackedRNNCells). Either the `StackedRNNCells.call()` method is incorrect, or you need to implement the `StackedRNNCells.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nException encountered when calling SimpleRNNCell.call().\\n\\n\\x1b[1mDimensions must be equal, but are 128 and 32 for '{{node simple_rnn_cell_28_1/MatMul_1}} = MatMul[T=DT_FLOAT, grad_a=false, grad_b=false, transpose_a=false, transpose_b=false](Placeholder_1, simple_rnn_cell_28_1/Cast_1/ReadVariableOp)' with input shapes: [?,128], [32,32].\\x1b[0m\\n\\nArguments received by SimpleRNNCell.call():\\n  \u2022 sequence=tf.Tensor(shape=(None, 5), dtype=float32)\\n  \u2022 states=['tf.Tensor(shape=(None, 128), dtype=float32)']\\n  \u2022 training=False\\x1b[0m\\n\\nArguments received by StackedRNNCells.call():\\n  \u2022 args=('<KerasTensor shape=(None, 5), dtype=float32, sparse=False, ragged=False, name=keras_tensor_1201>', ['<KerasTensor shape=(None, 128), dtype=float32, sparse=False, ragged=False, name=keras_tensor_1202>'])\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling SimpleRNNCell.call().\n\n\u001b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,128], In[1]: [32,32] [Op:MatMul] name: \u001b[0m\n\nArguments received by SimpleRNNCell.call():\n  \u2022 sequence=tf.Tensor(shape=(3, 5), dtype=float32)\n  \u2022 states=['tf.Tensor(shape=(3, 128), dtype=float32)']\n  \u2022 training=False",
+        "conflict_params": [
+            "cells",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "cells": "[<GRUCell name=gru_cell_6, built=True>]",
+            "inputs": "[ndarray(shape=(3, 5)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128))]",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling GRUCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,128], In[1]: [64,192] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by GRUCell.call():\\n  \u2022 inputs=tf.Tensor(shape=(3, 5), dtype=float32)\\n  \u2022 states=['tf.Tensor(shape=(3, 128), dtype=float32)']\\n  \u2022 training=False\", (\"Exception encountered when calling GRUCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,128], In[1]: [64,192] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by GRUCell.call():\\n  \u2022 inputs=tf.Tensor(shape=(3, 5), dtype=float32)\\n  \u2022 states=['tf.Tensor(shape=(3, 128), dtype=float32)']\\n  \u2022 training=False\", \"Exception encountered when calling StackedRNNCells.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'stacked_rnn_cells_42' (of type StackedRNNCells). Either the `StackedRNNCells.call()` method is incorrect, or you need to implement the `StackedRNNCells.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nException encountered when calling GRUCell.call().\\n\\n\\x1b[1mDimensions must be equal, but are 128 and 64 for '{{node gru_cell_6_1/MatMul_1}} = MatMul[T=DT_FLOAT, grad_a=false, grad_b=false, transpose_a=false, transpose_b=false](Placeholder_1, gru_cell_6_1/Cast_1/ReadVariableOp)' with input shapes: [?,128], [64,192].\\x1b[0m\\n\\nArguments received by GRUCell.call():\\n  \u2022 inputs=tf.Tensor(shape=(None, 5), dtype=float32)\\n  \u2022 states=['tf.Tensor(shape=(None, 128), dtype=float32)']\\n  \u2022 training=False\\x1b[0m\\n\\nArguments received by StackedRNNCells.call():\\n  \u2022 args=('<KerasTensor shape=(None, 5), dtype=float32, sparse=False, ragged=False, name=keras_tensor_1214>', ['<KerasTensor shape=(None, 128), dtype=float32, sparse=False, ragged=False, name=keras_tensor_1215>'])\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling GRUCell.call().\n\n\u001b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,128], In[1]: [64,192] [Op:MatMul] name: \u001b[0m\n\nArguments received by GRUCell.call():\n  \u2022 inputs=tf.Tensor(shape=(3, 5), dtype=float32)\n  \u2022 states=['tf.Tensor(shape=(3, 128), dtype=float32)']\n  \u2022 training=False"
+    },
+    {
+        "test_case": {
+            "cells": "[<GRUCell name=gru_cell_7, built=True>, <GRUCell name=gru_cell_8, built=True>]",
+            "inputs": "[ndarray(shape=(3, 5)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128))]",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling GRUCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,128], In[1]: [64,192] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by GRUCell.call():\\n  \u2022 inputs=tf.Tensor(shape=(3, 5), dtype=float32)\\n  \u2022 states=['tf.Tensor(shape=(3, 128), dtype=float32)']\\n  \u2022 training=False\", (\"Exception encountered when calling GRUCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,128], In[1]: [64,192] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by GRUCell.call():\\n  \u2022 inputs=tf.Tensor(shape=(3, 5), dtype=float32)\\n  \u2022 states=['tf.Tensor(shape=(3, 128), dtype=float32)']\\n  \u2022 training=False\", \"Exception encountered when calling StackedRNNCells.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'stacked_rnn_cells_44' (of type StackedRNNCells). Either the `StackedRNNCells.call()` method is incorrect, or you need to implement the `StackedRNNCells.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nException encountered when calling GRUCell.call().\\n\\n\\x1b[1mDimensions must be equal, but are 128 and 64 for '{{node gru_cell_7_1/MatMul_1}} = MatMul[T=DT_FLOAT, grad_a=false, grad_b=false, transpose_a=false, transpose_b=false](Placeholder_1, gru_cell_7_1/Cast_1/ReadVariableOp)' with input shapes: [?,128], [64,192].\\x1b[0m\\n\\nArguments received by GRUCell.call():\\n  \u2022 inputs=tf.Tensor(shape=(None, 5), dtype=float32)\\n  \u2022 states=['tf.Tensor(shape=(None, 128), dtype=float32)']\\n  \u2022 training=False\\x1b[0m\\n\\nArguments received by StackedRNNCells.call():\\n  \u2022 args=('<KerasTensor shape=(None, 5), dtype=float32, sparse=False, ragged=False, name=keras_tensor_1219>', ['<KerasTensor shape=(None, 128), dtype=float32, sparse=False, ragged=False, name=keras_tensor_1220>', '<KerasTensor shape=(None, 128), dtype=float32, sparse=False, ragged=False, name=keras_tensor_1221>'])\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling GRUCell.call().\n\n\u001b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,128], In[1]: [64,192] [Op:MatMul] name: \u001b[0m\n\nArguments received by GRUCell.call():\n  \u2022 inputs=tf.Tensor(shape=(3, 5), dtype=float32)\n  \u2022 states=['tf.Tensor(shape=(3, 128), dtype=float32)']\n  \u2022 training=False"
+    },
+    {
+        "test_case": {
+            "cells": "[<SimpleRNNCell name=simple_rnn_cell_28, built=True>]",
+            "inputs": "[ndarray(shape=(3, 5)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128)), ndarray(shape=(3, 128))]",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling SimpleRNNCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,128], In[1]: [32,32] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by SimpleRNNCell.call():\\n  \u2022 sequence=tf.Tensor(shape=(3, 5), dtype=float32)\\n  \u2022 states=['tf.Tensor(shape=(3, 128), dtype=float32)']\\n  \u2022 training=False\", (\"Exception encountered when calling SimpleRNNCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,128], In[1]: [32,32] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by SimpleRNNCell.call():\\n  \u2022 sequence=tf.Tensor(shape=(3, 5), dtype=float32)\\n  \u2022 states=['tf.Tensor(shape=(3, 128), dtype=float32)']\\n  \u2022 training=False\", \"Exception encountered when calling StackedRNNCells.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'stacked_rnn_cells_46' (of type StackedRNNCells). Either the `StackedRNNCells.call()` method is incorrect, or you need to implement the `StackedRNNCells.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nException encountered when calling SimpleRNNCell.call().\\n\\n\\x1b[1mDimensions must be equal, but are 128 and 32 for '{{node simple_rnn_cell_28_1/MatMul_1}} = MatMul[T=DT_FLOAT, grad_a=false, grad_b=false, transpose_a=false, transpose_b=false](Placeholder_1, simple_rnn_cell_28_1/Cast_1/ReadVariableOp)' with input shapes: [?,128], [32,32].\\x1b[0m\\n\\nArguments received by SimpleRNNCell.call():\\n  \u2022 sequence=tf.Tensor(shape=(None, 5), dtype=float32)\\n  \u2022 states=['tf.Tensor(shape=(None, 128), dtype=float32)']\\n  \u2022 training=False\\x1b[0m\\n\\nArguments received by StackedRNNCells.call():\\n  \u2022 args=('<KerasTensor shape=(None, 5), dtype=float32, sparse=False, ragged=False, name=keras_tensor_1224>', ['<KerasTensor shape=(None, 128), dtype=float32, sparse=False, ragged=False, name=keras_tensor_1225>'])\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling SimpleRNNCell.call().\n\n\u001b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,128], In[1]: [32,32] [Op:MatMul] name: \u001b[0m\n\nArguments received by SimpleRNNCell.call():\n  \u2022 sequence=tf.Tensor(shape=(3, 5), dtype=float32)\n  \u2022 states=['tf.Tensor(shape=(3, 128), dtype=float32)']\n  \u2022 training=False"
+    }
+]

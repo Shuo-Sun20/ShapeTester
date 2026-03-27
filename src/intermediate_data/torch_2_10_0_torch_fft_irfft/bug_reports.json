@@ -1,0 +1,19 @@
+[
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "n": "1",
+            "dim": "-1",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Dynamo failed to run FX node with fake tensors: call_function <built-in function fft_irfft>(*(), **{\\'input\\': FakeTensor(..., size=(s85,), dtype=torch.complex64), \\'n\\': 1, \\'dim\\': -1, \\'norm\\': None, \\'out\\': None}): got RuntimeError(\\'tried to directly modify sizes for customized tensor\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_fft_irfft/generated_code.py\", line 4, in call_func\\n    return torch.fft.irfft(input=inputs, n=n, dim=dim, norm=norm, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', ((1,), 'Dynamo failed to run FX node with fake tensors: call_function <built-in function fft_irfft>(*(), **{\\'input\\': FakeTensor(..., size=(s85,), dtype=torch.complex64), \\'n\\': 1, \\'dim\\': -1, \\'norm\\': None, \\'out\\': None}): got RuntimeError(\\'tried to directly modify sizes for customized tensor\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_fft_irfft/generated_code.py\", line 4, in call_func\\n    return torch.fft.irfft(input=inputs, n=n, dim=dim, norm=norm, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (1,)))",
+        "error_message": "Dynamo failed to run FX node with fake tensors: call_function <built-in function fft_irfft>(*(), **{'input': FakeTensor(..., size=(s85,), dtype=torch.complex64), 'n': 1, 'dim': -1, 'norm': None, 'out': None}): got RuntimeError('tried to directly modify sizes for customized tensor')\n\nfrom user code:\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_fft_irfft/generated_code.py\", line 4, in call_func\n    return torch.fft.irfft(input=inputs, n=n, dim=dim, norm=norm, out=out)\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n",
+        "conflict_params": [
+            "inputs",
+            "n"
+        ]
+    }
+]

@@ -1,0 +1,100 @@
+[
+    {
+        "test_case": {
+            "output_size": "[4, 5]",
+            "kernel_size": "[1, 1]",
+            "dilation": "1",
+            "padding": "0",
+            "stride": "1",
+            "inputs": "Tensor(shape=torch.Size([1, 12, 12]))"
+        },
+        "segment": "(0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Given output_size=(4, 5), kernel_size=(1, 1), dilation=(1, 1), padding=(0, 0), stride=(1, 1), expected size of input's dimension 2 to match the calculated number of sliding blocks 4 * 5 = 20, but got input.size(2)=12.\", (\"Given output_size=(4, 5), kernel_size=(1, 1), dilation=(1, 1), padding=(0, 0), stride=(1, 1), expected size of input's dimension 2 to match the calculated number of sliding blocks 4 * 5 = 20, but got input.size(2)=12.\", 'Dynamo failed to run FX node with fake tensors: call_function <function fold at 0x7fde5f7187c0>(*(FakeTensor(..., size=(1, s71, s71)), (s93, s29), (1, 1), 1, 0, 1), **{}): got RuntimeError(\\'Given output_size=[s93, s29], kernel_size=[1, 1], dilation=[1, 1], padding=[0, 0], stride=[1, 1], expected input.size(-1) to be s29*s93 but got s71.\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Fold/generated_code.py\", line 5, in call_func\\n    return fold_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/fold.py\", line 153, in forward\\n    return F.fold(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Given output_size=[4, 5], kernel_size=[1, 1], dilation=[1, 1], padding=[0, 0], stride=[1, 1], expected input.size(-1) to be 20 but got 12.'))",
+        "error_message": "Given output_size=(4, 5), kernel_size=(1, 1), dilation=(1, 1), padding=(0, 0), stride=(1, 1), expected size of input's dimension 2 to match the calculated number of sliding blocks 4 * 5 = 20, but got input.size(2)=12.",
+        "conflict_params": [
+            "output_size",
+            "kernel_size",
+            "dilation",
+            "padding",
+            "stride",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "output_size": "[4, 5]",
+            "kernel_size": "[2, 2]",
+            "dilation": "[1, 1]",
+            "padding": "[0, 0]",
+            "stride": "[1, 1]",
+            "inputs": "Tensor(shape=torch.Size([1, 3, 20]))"
+        },
+        "segment": "(0, 1, 1, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Expected size of input's dimension 1 to be divisible by the product of kernel_size, but got input.size(1)=3 and kernel_size=(2, 2).\", (\"Expected size of input's dimension 1 to be divisible by the product of kernel_size, but got input.size(1)=3 and kernel_size=(2, 2).\", 'Dynamo failed to run FX node with fake tensors: call_function <function fold at 0x7fde5f7187c0>(*(FakeTensor(..., size=(1, s71, s34)), (s93, s29), (2, 2), (1, 1), (0, 0), (1, 1)), **{}): got RuntimeError(\"Expected size of input\\'s first non-batch dimension to be divisible by the product of kernel_size, but got input.shape[-2] = s71 and kernel_size=[2, 2]\")\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Fold/generated_code.py\", line 5, in call_func\\n    return fold_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/fold.py\", line 153, in forward\\n    return F.fold(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', \"Expected size of input's first non-batch dimension to be divisible by the product of kernel_size, but got input.shape[-2] = 3 and kernel_size=[2, 2]\"))",
+        "error_message": "Expected size of input's dimension 1 to be divisible by the product of kernel_size, but got input.size(1)=3 and kernel_size=(2, 2).",
+        "conflict_params": [
+            "inputs",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "output_size": "[4, 5]",
+            "kernel_size": "[3, 3]",
+            "dilation": "2",
+            "padding": "1",
+            "stride": "3",
+            "inputs": "Tensor(shape=torch.Size([1, 3, 20]))"
+        },
+        "segment": "(0, 2, 2, 2, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Expected size of input's dimension 1 to be divisible by the product of kernel_size, but got input.size(1)=3 and kernel_size=(3, 3).\", (\"Expected size of input's dimension 1 to be divisible by the product of kernel_size, but got input.size(1)=3 and kernel_size=(3, 3).\", 'Dynamo failed to run FX node with fake tensors: call_function <function fold at 0x7fde5f7187c0>(*(FakeTensor(..., size=(1, s71, s34)), (s93, s29), (3, 3), 2, 1, 3), **{}): got RuntimeError(\"Expected size of input\\'s first non-batch dimension to be divisible by the product of kernel_size, but got input.shape[-2] = s71 and kernel_size=[3, 3]\")\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Fold/generated_code.py\", line 5, in call_func\\n    return fold_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/fold.py\", line 153, in forward\\n    return F.fold(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', \"Expected size of input's first non-batch dimension to be divisible by the product of kernel_size, but got input.shape[-2] = 3 and kernel_size=[3, 3]\"))",
+        "error_message": "Expected size of input's dimension 1 to be divisible by the product of kernel_size, but got input.size(1)=3 and kernel_size=(3, 3).",
+        "conflict_params": [
+            "kernel_size",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "output_size": "[4, 5]",
+            "kernel_size": "[1, 3]",
+            "dilation": "[2, 2]",
+            "padding": "[1, 1]",
+            "stride": "[2, 2]",
+            "inputs": "Tensor(shape=torch.Size([1, 3, 20]))"
+        },
+        "segment": "(0, 3, 3, 3, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Given output_size=(4, 5), kernel_size=(1, 3), dilation=(2, 2), padding=(1, 1), stride=(2, 2), expected size of input's dimension 2 to match the calculated number of sliding blocks 3 * 2 = 6, but got input.size(2)=20.\", (\"Given output_size=(4, 5), kernel_size=(1, 3), dilation=(2, 2), padding=(1, 1), stride=(2, 2), expected size of input's dimension 2 to match the calculated number of sliding blocks 3 * 2 = 6, but got input.size(2)=20.\", 'Dynamo failed to run FX node with fake tensors: call_function <function fold at 0x7fde5f7187c0>(*(FakeTensor(..., size=(1, s71, s34)), (s93, s29), (1, 3), (2, 2), (1, 1), (2, 2)), **{}): got RuntimeError(\\'Given output_size=[s93, s29], kernel_size=[1, 3], dilation=[2, 2], padding=[1, 1], stride=[2, 2], expected input.size(-1) to be ((((s29 - 3)//2)) + 1)*((((s93 + 1)//2)) + 1) but got s34.\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Fold/generated_code.py\", line 5, in call_func\\n    return fold_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/fold.py\", line 153, in forward\\n    return F.fold(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Given output_size=[4, 5], kernel_size=[1, 3], dilation=[2, 2], padding=[1, 1], stride=[2, 2], expected input.size(-1) to be 6 but got 20.'))",
+        "error_message": "Given output_size=(4, 5), kernel_size=(1, 3), dilation=(2, 2), padding=(1, 1), stride=(2, 2), expected size of input's dimension 2 to match the calculated number of sliding blocks 3 * 2 = 6, but got input.size(2)=20.",
+        "conflict_params": [
+            "output_size",
+            "kernel_size",
+            "dilation",
+            "padding",
+            "stride",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "output_size": "[4, 5]",
+            "kernel_size": "[5, 5]",
+            "dilation": "3",
+            "padding": "2",
+            "stride": "[1, 2]",
+            "inputs": "Tensor(shape=torch.Size([1, 3, 20]))"
+        },
+        "segment": "(0, 4, 4, 4, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Expected size of input's dimension 1 to be divisible by the product of kernel_size, but got input.size(1)=3 and kernel_size=(5, 5).\", (\"Expected size of input's dimension 1 to be divisible by the product of kernel_size, but got input.size(1)=3 and kernel_size=(5, 5).\", 'Dynamo failed to run FX node with fake tensors: call_function <function fold at 0x7fde5f7187c0>(*(FakeTensor(..., size=(1, s71, s34)), (s93, s29), (5, 5), 3, 2, (1, 2)), **{}): got RuntimeError(\"Expected size of input\\'s first non-batch dimension to be divisible by the product of kernel_size, but got input.shape[-2] = s71 and kernel_size=[5, 5]\")\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Fold/generated_code.py\", line 5, in call_func\\n    return fold_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/fold.py\", line 153, in forward\\n    return F.fold(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', \"Expected size of input's first non-batch dimension to be divisible by the product of kernel_size, but got input.shape[-2] = 3 and kernel_size=[5, 5]\"))",
+        "error_message": "Expected size of input's dimension 1 to be divisible by the product of kernel_size, but got input.size(1)=3 and kernel_size=(5, 5).",
+        "conflict_params": [
+            "kernel_size",
+            "inputs"
+        ]
+    }
+]

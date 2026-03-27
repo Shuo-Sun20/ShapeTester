@@ -1,0 +1,105 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10]))]",
+            "dim": "-2",
+            "dtype": "None",
+            "out": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', ('Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cumprod of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21,)), -2), **{\\'dtype\\': None, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-1, 0], but got -2)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_cumprod/generated_code.py\", line 4, in call_func\\n    return torch.cumprod(inputs[0], dim, dtype=dtype, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got -2)",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10]))]",
+            "dim": "-1",
+            "dtype": "None",
+            "out": "None"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10,), (10,), (10,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10]))]",
+            "dim": "0",
+            "dtype": "None",
+            "out": "None"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10,), (10,), (10,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10]))]",
+            "dim": "1",
+            "dtype": "None",
+            "out": "None"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', ('Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cumprod of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21,)), 1), **{\\'dtype\\': None, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-1, 0], but got 1)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_cumprod/generated_code.py\", line 4, in call_func\\n    return torch.cumprod(inputs[0], dim, dtype=dtype, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 1)",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10]))]",
+            "dim": "2",
+            "dtype": "None",
+            "out": "None"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 2)', ('Dimension out of range (expected to be in range of [-1, 0], but got 2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cumprod of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21,)), 2), **{\\'dtype\\': None, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-1, 0], but got 2)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_cumprod/generated_code.py\", line 4, in call_func\\n    return torch.cumprod(inputs[0], dim, dtype=dtype, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-1, 0], but got 2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 2)",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10]))]",
+            "dim": "-2",
+            "dtype": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', ('Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cumprod of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21,)), -2), **{\\'dtype\\': None, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-1, 0], but got -2)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_cumprod/generated_code.py\", line 4, in call_func\\n    return torch.cumprod(inputs[0], dim, dtype=dtype, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got -2)"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10]))]",
+            "dim": "1",
+            "dtype": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', ('Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cumprod of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21,)), 1), **{\\'dtype\\': None, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-1, 0], but got 1)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_cumprod/generated_code.py\", line 4, in call_func\\n    return torch.cumprod(inputs[0], dim, dtype=dtype, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 1)"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10]))]",
+            "dim": "2",
+            "dtype": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 2)', ('Dimension out of range (expected to be in range of [-1, 0], but got 2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cumprod of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21,)), 2), **{\\'dtype\\': None, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-1, 0], but got 2)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_cumprod/generated_code.py\", line 4, in call_func\\n    return torch.cumprod(inputs[0], dim, dtype=dtype, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-1, 0], but got 2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 2)"
+    }
+]

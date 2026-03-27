@@ -1,0 +1,75 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "None",
+            "dim": "[0]",
+            "norm": "backward",
+            "out": "None"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'expected size 6==6, stride 1==10 at dim=0; expected size 10==10, stride 6==1 at dim=1\\nError in op: torch.ops.aten._fft_r2c.default\\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\\nUse torch.library.opcheck to test your custom op.\\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck', ((6, 10), 'expected size 6==6, stride 1==10 at dim=0; expected size 10==10, stride 6==1 at dim=1\\nError in op: torch.ops.aten._fft_r2c.default\\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\\nUse torch.library.opcheck to test your custom op.\\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck', (6, 10)))",
+        "error_message": "expected size 6==6, stride 1==10 at dim=0; expected size 10==10, stride 6==1 at dim=1\nError in op: torch.ops.aten._fft_r2c.default\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\nUse torch.library.opcheck to test your custom op.\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "None",
+            "dim": "[1, 0]",
+            "norm": "backward",
+            "out": "None"
+        },
+        "segment": "(0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'expected size 6==6, stride 1==10 at dim=0; expected size 10==10, stride 6==1 at dim=1\\nError in op: torch.ops.aten._fft_r2c.default\\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\\nUse torch.library.opcheck to test your custom op.\\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck', ((6, 10), 'expected size 6==6, stride 1==10 at dim=0; expected size 10==10, stride 6==1 at dim=1\\nError in op: torch.ops.aten._fft_r2c.default\\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\\nUse torch.library.opcheck to test your custom op.\\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck', (6, 10)))",
+        "error_message": "expected size 6==6, stride 1==10 at dim=0; expected size 10==10, stride 6==1 at dim=1\nError in op: torch.ops.aten._fft_r2c.default\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\nUse torch.library.opcheck to test your custom op.\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "None",
+            "dim": "[-1, -2]",
+            "norm": "backward",
+            "out": "None"
+        },
+        "segment": "(0, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'expected size 6==6, stride 1==10 at dim=0; expected size 10==10, stride 6==1 at dim=1\\nError in op: torch.ops.aten._fft_r2c.default\\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\\nUse torch.library.opcheck to test your custom op.\\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck', ((6, 10), 'expected size 6==6, stride 1==10 at dim=0; expected size 10==10, stride 6==1 at dim=1\\nError in op: torch.ops.aten._fft_r2c.default\\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\\nUse torch.library.opcheck to test your custom op.\\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck', (6, 10)))",
+        "error_message": "expected size 6==6, stride 1==10 at dim=0; expected size 10==10, stride 6==1 at dim=1\nError in op: torch.ops.aten._fft_r2c.default\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\nUse torch.library.opcheck to test your custom op.\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "None",
+            "dim": "[1, 0]",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'expected size 6==6, stride 1==10 at dim=0; expected size 10==10, stride 6==1 at dim=1\\nError in op: torch.ops.aten._fft_r2c.default\\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\\nUse torch.library.opcheck to test your custom op.\\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck', ((6, 10), 'expected size 6==6, stride 1==10 at dim=0; expected size 10==10, stride 6==1 at dim=1\\nError in op: torch.ops.aten._fft_r2c.default\\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\\nUse torch.library.opcheck to test your custom op.\\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck', (6, 10)))",
+        "error_message": "expected size 6==6, stride 1==10 at dim=0; expected size 10==10, stride 6==1 at dim=1\nError in op: torch.ops.aten._fft_r2c.default\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\nUse torch.library.opcheck to test your custom op.\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "None",
+            "dim": "[-1, -2]",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'expected size 6==6, stride 1==10 at dim=0; expected size 10==10, stride 6==1 at dim=1\\nError in op: torch.ops.aten._fft_r2c.default\\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\\nUse torch.library.opcheck to test your custom op.\\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck', ((6, 10), 'expected size 6==6, stride 1==10 at dim=0; expected size 10==10, stride 6==1 at dim=1\\nError in op: torch.ops.aten._fft_r2c.default\\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\\nUse torch.library.opcheck to test your custom op.\\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck', (6, 10)))",
+        "error_message": "expected size 6==6, stride 1==10 at dim=0; expected size 10==10, stride 6==1 at dim=1\nError in op: torch.ops.aten._fft_r2c.default\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\nUse torch.library.opcheck to test your custom op.\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck"
+    }
+]

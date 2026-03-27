@@ -1,0 +1,180 @@
+[
+    {
+        "test_case": {
+            "max_tokens": "None",
+            "num_oov_indices": "0",
+            "mask_token": "-1",
+            "oov_token": "-999",
+            "vocabulary": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]",
+            "vocabulary_dtype": "int64",
+            "idf_weights": "None",
+            "invert": "False",
+            "output_mode": "int",
+            "sparse": "False",
+            "pad_to_max_tokens": "False",
+            "name": "None",
+            "inputs": "ndarray(shape=(2, 3))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, \"Exception encountered when calling IntegerLookup.call().\\n\\n\\x1b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [1138 1000], consider setting `num_oov_indices=1`.'\\x1b[0m\\n\\nArguments received by IntegerLookup.call():\\n  \u2022 inputs=array([[  12, 1138,   42],\\n       [  42, 1000,   36]])\", (\"Exception encountered when calling IntegerLookup.call().\\n\\n\\x1b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [1138 1000], consider setting `num_oov_indices=1`.'\\x1b[0m\\n\\nArguments received by IntegerLookup.call():\\n  \u2022 inputs=array([[  12, 1138,   42],\\n       [  42, 1000,   36]])\", (None, 3)))",
+        "error_message": "Exception encountered when calling IntegerLookup.call().\n\n\u001b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [1138 1000], consider setting `num_oov_indices=1`.'\u001b[0m\n\nArguments received by IntegerLookup.call():\n  \u2022 inputs=array([[  12, 1138,   42],\n       [  42, 1000,   36]])"
+    },
+    {
+        "test_case": {
+            "max_tokens": "None",
+            "num_oov_indices": "3",
+            "mask_token": "-1",
+            "oov_token": "-999",
+            "vocabulary": "[12, 36, 1138, 42]",
+            "vocabulary_dtype": "int64",
+            "idf_weights": "None",
+            "invert": "False",
+            "output_mode": "one_hot",
+            "sparse": "False",
+            "pad_to_max_tokens": "False",
+            "name": "None",
+            "inputs": "ndarray(shape=(2, 3))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 3, 7), (None, 7)))"
+    },
+    {
+        "test_case": {
+            "max_tokens": "None",
+            "num_oov_indices": "1",
+            "mask_token": "100",
+            "oov_token": "-999",
+            "vocabulary": "[12, 36]",
+            "vocabulary_dtype": "int64",
+            "idf_weights": "None",
+            "invert": "False",
+            "output_mode": "one_hot",
+            "sparse": "False",
+            "pad_to_max_tokens": "False",
+            "name": "None",
+            "inputs": "ndarray(shape=(2, 3))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 3, 3), (None, 3)))"
+    },
+    {
+        "test_case": {
+            "max_tokens": "None",
+            "num_oov_indices": "0",
+            "mask_token": "-1",
+            "oov_token": "-1",
+            "vocabulary": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",
+            "vocabulary_dtype": "int64",
+            "idf_weights": "None",
+            "invert": "False",
+            "output_mode": "int",
+            "sparse": "False",
+            "pad_to_max_tokens": "False",
+            "name": "None",
+            "inputs": "ndarray(shape=(2, 3))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, \"Exception encountered when calling IntegerLookup.call().\\n\\n\\x1b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [12 1138 42 42 1000 36], consider setting `num_oov_indices=1`.'\\x1b[0m\\n\\nArguments received by IntegerLookup.call():\\n  \u2022 inputs=array([[  12, 1138,   42],\\n       [  42, 1000,   36]])\", (\"Exception encountered when calling IntegerLookup.call().\\n\\n\\x1b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [12 1138 42 42 1000 36], consider setting `num_oov_indices=1`.'\\x1b[0m\\n\\nArguments received by IntegerLookup.call():\\n  \u2022 inputs=array([[  12, 1138,   42],\\n       [  42, 1000,   36]])\", (None, 3)))",
+        "error_message": "Exception encountered when calling IntegerLookup.call().\n\n\u001b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [12 1138 42 42 1000 36], consider setting `num_oov_indices=1`.'\u001b[0m\n\nArguments received by IntegerLookup.call():\n  \u2022 inputs=array([[  12, 1138,   42],\n       [  42, 1000,   36]])"
+    },
+    {
+        "test_case": {
+            "max_tokens": "None",
+            "num_oov_indices": "0",
+            "mask_token": "0",
+            "oov_token": "-999",
+            "vocabulary": "[12, 36]",
+            "vocabulary_dtype": "int64",
+            "idf_weights": "None",
+            "invert": "False",
+            "output_mode": "one_hot",
+            "sparse": "False",
+            "pad_to_max_tokens": "False",
+            "name": "None",
+            "inputs": "ndarray(shape=(2, 3))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, \"Exception encountered when calling IntegerLookup.call().\\n\\n\\x1b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [1138 42 42 1000], consider setting `num_oov_indices=1`.'\\x1b[0m\\n\\nArguments received by IntegerLookup.call():\\n  \u2022 inputs=array([[  12, 1138,   42],\\n       [  42, 1000,   36]])\", (\"Exception encountered when calling IntegerLookup.call().\\n\\n\\x1b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [1138 42 42 1000], consider setting `num_oov_indices=1`.'\\x1b[0m\\n\\nArguments received by IntegerLookup.call():\\n  \u2022 inputs=array([[  12, 1138,   42],\\n       [  42, 1000,   36]])\", (None, 2)))",
+        "error_message": "Exception encountered when calling IntegerLookup.call().\n\n\u001b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [1138 42 42 1000], consider setting `num_oov_indices=1`.'\u001b[0m\n\nArguments received by IntegerLookup.call():\n  \u2022 inputs=array([[  12, 1138,   42],\n       [  42, 1000,   36]])"
+    },
+    {
+        "test_case": {
+            "max_tokens": "10",
+            "num_oov_indices": "0",
+            "mask_token": "None",
+            "oov_token": "999999",
+            "vocabulary": "[12, 36, 1138, 42]",
+            "vocabulary_dtype": "int64",
+            "idf_weights": "None",
+            "invert": "False",
+            "output_mode": "count",
+            "sparse": "False",
+            "pad_to_max_tokens": "True",
+            "name": "None",
+            "inputs": "ndarray(shape=(2, 3))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, \"Exception encountered when calling IntegerLookup.call().\\n\\n\\x1b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [1000], consider setting `num_oov_indices=1`.'\\x1b[0m\\n\\nArguments received by IntegerLookup.call():\\n  \u2022 inputs=array([[  12, 1138,   42],\\n       [  42, 1000,   36]])\", (\"Exception encountered when calling IntegerLookup.call().\\n\\n\\x1b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [1000], consider setting `num_oov_indices=1`.'\\x1b[0m\\n\\nArguments received by IntegerLookup.call():\\n  \u2022 inputs=array([[  12, 1138,   42],\\n       [  42, 1000,   36]])\", (None, 10)))",
+        "error_message": "Exception encountered when calling IntegerLookup.call().\n\n\u001b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [1000], consider setting `num_oov_indices=1`.'\u001b[0m\n\nArguments received by IntegerLookup.call():\n  \u2022 inputs=array([[  12, 1138,   42],\n       [  42, 1000,   36]])"
+    },
+    {
+        "test_case": {
+            "max_tokens": "None",
+            "num_oov_indices": "0",
+            "mask_token": "1",
+            "oov_token": "-999",
+            "vocabulary": "[12, 36]",
+            "vocabulary_dtype": "int64",
+            "idf_weights": "None",
+            "invert": "False",
+            "output_mode": "int",
+            "sparse": "False",
+            "pad_to_max_tokens": "False",
+            "name": "None",
+            "inputs": "ndarray(shape=(2, 3))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, \"Exception encountered when calling IntegerLookup.call().\\n\\n\\x1b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [1138 42 42 1000], consider setting `num_oov_indices=1`.'\\x1b[0m\\n\\nArguments received by IntegerLookup.call():\\n  \u2022 inputs=array([[  12, 1138,   42],\\n       [  42, 1000,   36]])\", (\"Exception encountered when calling IntegerLookup.call().\\n\\n\\x1b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [1138 42 42 1000], consider setting `num_oov_indices=1`.'\\x1b[0m\\n\\nArguments received by IntegerLookup.call():\\n  \u2022 inputs=array([[  12, 1138,   42],\\n       [  42, 1000,   36]])\", (None, 3)))",
+        "error_message": "Exception encountered when calling IntegerLookup.call().\n\n\u001b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [1138 42 42 1000], consider setting `num_oov_indices=1`.'\u001b[0m\n\nArguments received by IntegerLookup.call():\n  \u2022 inputs=array([[  12, 1138,   42],\n       [  42, 1000,   36]])"
+    },
+    {
+        "test_case": {
+            "max_tokens": "None",
+            "num_oov_indices": "0",
+            "mask_token": "-1",
+            "oov_token": "-999",
+            "vocabulary": "[12, 36]",
+            "vocabulary_dtype": "int64",
+            "idf_weights": "None",
+            "invert": "False",
+            "output_mode": "int",
+            "sparse": "False",
+            "pad_to_max_tokens": "False",
+            "name": "None",
+            "inputs": "ndarray(shape=(2, 3))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, \"Exception encountered when calling IntegerLookup.call().\\n\\n\\x1b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [1138 42 42 1000], consider setting `num_oov_indices=1`.'\\x1b[0m\\n\\nArguments received by IntegerLookup.call():\\n  \u2022 inputs=array([[  12, 1138,   42],\\n       [  42, 1000,   36]])\", (\"Exception encountered when calling IntegerLookup.call().\\n\\n\\x1b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [1138 42 42 1000], consider setting `num_oov_indices=1`.'\\x1b[0m\\n\\nArguments received by IntegerLookup.call():\\n  \u2022 inputs=array([[  12, 1138,   42],\\n       [  42, 1000,   36]])\", (None, 3)))",
+        "error_message": "Exception encountered when calling IntegerLookup.call().\n\n\u001b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [1138 42 42 1000], consider setting `num_oov_indices=1`.'\u001b[0m\n\nArguments received by IntegerLookup.call():\n  \u2022 inputs=array([[  12, 1138,   42],\n       [  42, 1000,   36]])"
+    },
+    {
+        "test_case": {
+            "max_tokens": "None",
+            "num_oov_indices": "0",
+            "mask_token": "-1",
+            "oov_token": "-999",
+            "vocabulary": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]",
+            "vocabulary_dtype": "int64",
+            "idf_weights": "None",
+            "invert": "False",
+            "output_mode": "count",
+            "sparse": "False",
+            "pad_to_max_tokens": "False",
+            "name": "None",
+            "inputs": "ndarray(shape=(2, 3))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, \"Exception encountered when calling IntegerLookup.call().\\n\\n\\x1b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [1138 1000], consider setting `num_oov_indices=1`.'\\x1b[0m\\n\\nArguments received by IntegerLookup.call():\\n  \u2022 inputs=array([[  12, 1138,   42],\\n       [  42, 1000,   36]])\", (\"Exception encountered when calling IntegerLookup.call().\\n\\n\\x1b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [1138 1000], consider setting `num_oov_indices=1`.'\\x1b[0m\\n\\nArguments received by IntegerLookup.call():\\n  \u2022 inputs=array([[  12, 1138,   42],\\n       [  42, 1000,   36]])\", (None, 100)))",
+        "error_message": "Exception encountered when calling IntegerLookup.call().\n\n\u001b[1mExpected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'When `num_oov_indices=0` all inputs should be in vocabulary, found OOV values [1138 1000], consider setting `num_oov_indices=1`.'\u001b[0m\n\nArguments received by IntegerLookup.call():\n  \u2022 inputs=array([[  12, 1138,   42],\n       [  42, 1000,   36]])"
+    }
+]

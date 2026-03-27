@@ -1,0 +1,142 @@
+[
+    {
+        "test_case": {
+            "units": "1",
+            "activation": "tanh",
+            "use_bias": "True",
+            "kernel_initializer": "glorot_uniform",
+            "recurrent_initializer": "orthogonal",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "recurrent_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "recurrent_constraint": "None",
+            "bias_constraint": "None",
+            "dropout": "0.0",
+            "recurrent_dropout": "0.0",
+            "seed": "None",
+            "inputs": "[ndarray(shape=(32, 8)), ndarray(shape=(32, 4))]",
+            "training": "False"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Exception encountered when calling SimpleRNNCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [32,4], In[1]: [1,1] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by SimpleRNNCell.call():\\n  \u2022 sequence=tf.Tensor(shape=(32, 8), dtype=float32)\\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\\n  \u2022 training=False', ('Exception encountered when calling SimpleRNNCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [32,4], In[1]: [1,1] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by SimpleRNNCell.call():\\n  \u2022 sequence=tf.Tensor(shape=(32, 8), dtype=float32)\\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\\n  \u2022 training=False', \"Exception encountered when calling SimpleRNNCell.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'simple_rnn_cell_5' (of type SimpleRNNCell). Either the `SimpleRNNCell.call()` method is incorrect, or you need to implement the `SimpleRNNCell.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nDimensions must be equal, but are 4 and 1 for '{{node MatMul_1}} = MatMul[T=DT_FLOAT, grad_a=false, grad_b=false, transpose_a=false, transpose_b=false](Placeholder_1, Cast_1/ReadVariableOp)' with input shapes: [?,4], [1,1].\\x1b[0m\\n\\nArguments received by SimpleRNNCell.call():\\n  \u2022 args=('<KerasTensor shape=(None, 8), dtype=float32, sparse=False, ragged=False, name=keras_tensor_7352>', '<KerasTensor shape=(None, 4), dtype=float32, sparse=False, ragged=False, name=keras_tensor_7353>')\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling SimpleRNNCell.call().\n\n\u001b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [32,4], In[1]: [1,1] [Op:MatMul] name: \u001b[0m\n\nArguments received by SimpleRNNCell.call():\n  \u2022 sequence=tf.Tensor(shape=(32, 8), dtype=float32)\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\n  \u2022 training=False",
+        "conflict_params": [
+            "units",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "units": "2",
+            "activation": "tanh",
+            "use_bias": "True",
+            "kernel_initializer": "glorot_uniform",
+            "recurrent_initializer": "orthogonal",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "recurrent_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "recurrent_constraint": "None",
+            "bias_constraint": "None",
+            "dropout": "0.0",
+            "recurrent_dropout": "0.0",
+            "seed": "None",
+            "inputs": "[ndarray(shape=(32, 8)), ndarray(shape=(32, 4))]",
+            "training": "False"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Exception encountered when calling SimpleRNNCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [32,4], In[1]: [2,2] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by SimpleRNNCell.call():\\n  \u2022 sequence=tf.Tensor(shape=(32, 8), dtype=float32)\\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\\n  \u2022 training=False', ('Exception encountered when calling SimpleRNNCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [32,4], In[1]: [2,2] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by SimpleRNNCell.call():\\n  \u2022 sequence=tf.Tensor(shape=(32, 8), dtype=float32)\\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\\n  \u2022 training=False', \"Exception encountered when calling SimpleRNNCell.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'simple_rnn_cell_9' (of type SimpleRNNCell). Either the `SimpleRNNCell.call()` method is incorrect, or you need to implement the `SimpleRNNCell.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nDimensions must be equal, but are 4 and 2 for '{{node MatMul_1}} = MatMul[T=DT_FLOAT, grad_a=false, grad_b=false, transpose_a=false, transpose_b=false](Placeholder_1, Cast_1/ReadVariableOp)' with input shapes: [?,4], [2,2].\\x1b[0m\\n\\nArguments received by SimpleRNNCell.call():\\n  \u2022 args=('<KerasTensor shape=(None, 8), dtype=float32, sparse=False, ragged=False, name=keras_tensor_7358>', '<KerasTensor shape=(None, 4), dtype=float32, sparse=False, ragged=False, name=keras_tensor_7359>')\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling SimpleRNNCell.call().\n\n\u001b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [32,4], In[1]: [2,2] [Op:MatMul] name: \u001b[0m\n\nArguments received by SimpleRNNCell.call():\n  \u2022 sequence=tf.Tensor(shape=(32, 8), dtype=float32)\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\n  \u2022 training=False",
+        "conflict_params": [
+            "units",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "units": "4",
+            "activation": "tanh",
+            "use_bias": "True",
+            "kernel_initializer": "glorot_uniform",
+            "recurrent_initializer": "orthogonal",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "recurrent_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "recurrent_constraint": "None",
+            "bias_constraint": "None",
+            "dropout": "0.0",
+            "recurrent_dropout": "0.0",
+            "seed": "None",
+            "inputs": "[ndarray(shape=(32, 8)), ndarray(shape=(32, 4))]",
+            "training": "False"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4), (None, 4)))"
+    },
+    {
+        "test_case": {
+            "units": "8",
+            "activation": "tanh",
+            "use_bias": "True",
+            "kernel_initializer": "glorot_uniform",
+            "recurrent_initializer": "orthogonal",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "recurrent_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "recurrent_constraint": "None",
+            "bias_constraint": "None",
+            "dropout": "0.0",
+            "recurrent_dropout": "0.0",
+            "seed": "None",
+            "inputs": "[ndarray(shape=(32, 8)), ndarray(shape=(32, 4))]",
+            "training": "False"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Exception encountered when calling SimpleRNNCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [32,4], In[1]: [8,8] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by SimpleRNNCell.call():\\n  \u2022 sequence=tf.Tensor(shape=(32, 8), dtype=float32)\\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\\n  \u2022 training=False', ('Exception encountered when calling SimpleRNNCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [32,4], In[1]: [8,8] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by SimpleRNNCell.call():\\n  \u2022 sequence=tf.Tensor(shape=(32, 8), dtype=float32)\\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\\n  \u2022 training=False', \"Exception encountered when calling SimpleRNNCell.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'simple_rnn_cell_15' (of type SimpleRNNCell). Either the `SimpleRNNCell.call()` method is incorrect, or you need to implement the `SimpleRNNCell.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nDimensions must be equal, but are 4 and 8 for '{{node MatMul_1}} = MatMul[T=DT_FLOAT, grad_a=false, grad_b=false, transpose_a=false, transpose_b=false](Placeholder_1, Cast_1/ReadVariableOp)' with input shapes: [?,4], [8,8].\\x1b[0m\\n\\nArguments received by SimpleRNNCell.call():\\n  \u2022 args=('<KerasTensor shape=(None, 8), dtype=float32, sparse=False, ragged=False, name=keras_tensor_7368>', '<KerasTensor shape=(None, 4), dtype=float32, sparse=False, ragged=False, name=keras_tensor_7369>')\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling SimpleRNNCell.call().\n\n\u001b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [32,4], In[1]: [8,8] [Op:MatMul] name: \u001b[0m\n\nArguments received by SimpleRNNCell.call():\n  \u2022 sequence=tf.Tensor(shape=(32, 8), dtype=float32)\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\n  \u2022 training=False",
+        "conflict_params": [
+            "units",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "units": "16",
+            "activation": "tanh",
+            "use_bias": "True",
+            "kernel_initializer": "glorot_uniform",
+            "recurrent_initializer": "orthogonal",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "recurrent_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "recurrent_constraint": "None",
+            "bias_constraint": "None",
+            "dropout": "0.0",
+            "recurrent_dropout": "0.0",
+            "seed": "None",
+            "inputs": "[ndarray(shape=(32, 8)), ndarray(shape=(32, 4))]",
+            "training": "False"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Exception encountered when calling SimpleRNNCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [32,4], In[1]: [16,16] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by SimpleRNNCell.call():\\n  \u2022 sequence=tf.Tensor(shape=(32, 8), dtype=float32)\\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\\n  \u2022 training=False', ('Exception encountered when calling SimpleRNNCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [32,4], In[1]: [16,16] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by SimpleRNNCell.call():\\n  \u2022 sequence=tf.Tensor(shape=(32, 8), dtype=float32)\\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\\n  \u2022 training=False', \"Exception encountered when calling SimpleRNNCell.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'simple_rnn_cell_19' (of type SimpleRNNCell). Either the `SimpleRNNCell.call()` method is incorrect, or you need to implement the `SimpleRNNCell.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nDimensions must be equal, but are 4 and 16 for '{{node MatMul_1}} = MatMul[T=DT_FLOAT, grad_a=false, grad_b=false, transpose_a=false, transpose_b=false](Placeholder_1, Cast_1/ReadVariableOp)' with input shapes: [?,4], [16,16].\\x1b[0m\\n\\nArguments received by SimpleRNNCell.call():\\n  \u2022 args=('<KerasTensor shape=(None, 8), dtype=float32, sparse=False, ragged=False, name=keras_tensor_7374>', '<KerasTensor shape=(None, 4), dtype=float32, sparse=False, ragged=False, name=keras_tensor_7375>')\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling SimpleRNNCell.call().\n\n\u001b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [32,4], In[1]: [16,16] [Op:MatMul] name: \u001b[0m\n\nArguments received by SimpleRNNCell.call():\n  \u2022 sequence=tf.Tensor(shape=(32, 8), dtype=float32)\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\n  \u2022 training=False",
+        "conflict_params": [
+            "units",
+            "inputs"
+        ]
+    }
+]

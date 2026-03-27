@@ -1,0 +1,776 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 1, 1, 1]",
+            "name": "None"
+        },
+        "segment": "(0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 5, 3), (2, 5, 5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 2, 2, 1]",
+            "name": "None"
+        },
+        "segment": "(0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 3), (2, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 2, 2, 1]",
+            "name": "None"
+        },
+        "segment": "(1, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 3), (2, 3, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 1, 1, 1]",
+            "name": "None"
+        },
+        "segment": "(1, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 3, 3, 1]",
+            "name": "None"
+        },
+        "segment": "(2, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 4, 4, 1]",
+            "name": "None"
+        },
+        "segment": "(2, 1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 0, 0, 3), (2, 0, 0, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 4, 4, 1]",
+            "name": "None"
+        },
+        "segment": "(3, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 3, 3, 1]",
+            "name": "None"
+        },
+        "segment": "(3, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 0, 0, 3), (2, 0, 0, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 5, 5, 1]",
+            "name": "None"
+        },
+        "segment": "(4, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 3), (2, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 5, 5, 1]",
+            "name": "None"
+        },
+        "segment": "(0, 1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -5 [input_size: 5, effective_filter_size: 11, stride: 1] [Op:Dilation2D] name: ', ('{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -5 [input_size: 5, effective_filter_size: 11, stride: 1] [Op:Dilation2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_erosion2d/generated_code.py\", line 7, in call_func  *\\n        output = tf.nn.erosion2d(\\n\\n    ValueError: Computed output size would be negative: -5 [input_size: 5, effective_filter_size: 11, stride: 1] for \\'{{node erosion2d}} = Dilation2D[T=DT_FLOAT, padding=\"VALID\", rates=[1, 5, 5, 1], strides=[1, 1, 1, 1]](erosion2d/Neg, erosion2d/ReverseV2)\\' with input shapes: [2,5,5,3], [3,3,3].\\n'))",
+        "error_message": "{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -5 [input_size: 5, effective_filter_size: 11, stride: 1] [Op:Dilation2D] name: ",
+        "conflict_params": [
+            "inputs",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 1, 1, 1]",
+            "name": "None"
+        },
+        "segment": "(4, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 3), (2, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 3, 3, 1]",
+            "name": "None"
+        },
+        "segment": "(0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 5, 3), (2, 5, 5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 4, 4, 1]",
+            "name": "None"
+        },
+        "segment": "(0, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 5, 3), (2, 5, 5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 3, 3, 1]",
+            "name": "None"
+        },
+        "segment": "(1, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 3), (2, 3, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 4, 4, 1]",
+            "name": "None"
+        },
+        "segment": "(1, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 3), (2, 3, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 15, 15, 1)), EagerTensor(shape=(3, 3, 1))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "SAME",
+            "dilations": "[1, 5, 5, 1]",
+            "data_format": "NHWC"
+        },
+        "segment": "(1, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 8, 1), (1, 8, 8, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 1, 1, 1]",
+            "name": "None"
+        },
+        "segment": "(2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 2, 2, 1]",
+            "name": "None"
+        },
+        "segment": "(2, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 15, 15, 1)), EagerTensor(shape=(3, 3, 1))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "SAME",
+            "dilations": "[1, 5, 5, 1]",
+            "data_format": "NHWC"
+        },
+        "segment": "(2, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 5, 5, 1), (1, 5, 5, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 1, 1, 1]",
+            "name": "None"
+        },
+        "segment": "(3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 2, 2, 1]",
+            "name": "None"
+        },
+        "segment": "(3, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 15, 15, 1)), EagerTensor(shape=(3, 3, 1))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "SAME",
+            "dilations": "[1, 5, 5, 1]",
+            "data_format": "NHWC"
+        },
+        "segment": "(3, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 4, 4, 1), (1, 4, 4, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 2, 2, 1]",
+            "name": "None"
+        },
+        "segment": "(4, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 3), (2, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 3, 3, 1]",
+            "name": "None"
+        },
+        "segment": "(4, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 3), (2, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 4, 4, 1]",
+            "name": "None"
+        },
+        "segment": "(4, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 3), (2, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 15, 15, 1)), EagerTensor(shape=(3, 3, 1))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "SAME",
+            "dilations": "[1, 1, 1, 1]",
+            "data_format": "NHWC"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 5, 5, 1), (1, 5, 5, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 4, 4, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -1 [input_size: 5, effective_filter_size: 9, stride: 2] [Op:Dilation2D] name: ', ('{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -1 [input_size: 5, effective_filter_size: 9, stride: 2] [Op:Dilation2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_erosion2d/generated_code.py\", line 7, in call_func  *\\n        output = tf.nn.erosion2d(\\n\\n    ValueError: Computed output size would be negative: -1 [input_size: 5, effective_filter_size: 9, stride: 2] for \\'{{node erosion2d}} = Dilation2D[T=DT_FLOAT, padding=\"VALID\", rates=[1, 4, 4, 1], strides=[1, 2, 2, 1]](erosion2d/Neg, erosion2d/ReverseV2)\\' with input shapes: [2,5,5,3], [3,3,3].\\n'))",
+        "error_message": "{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -1 [input_size: 5, effective_filter_size: 9, stride: 2] [Op:Dilation2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 15, 15, 1)), EagerTensor(shape=(3, 3, 1))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "VALID",
+            "dilations": "[1, 3, 3, 1]",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 5, 5, 1), (1, 5, 5, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 4, 4, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 2, 2, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 3), (2, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 1, 1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 3), (2, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 3, 3, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 0, 0, 3), (2, 0, 0, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 15, 15, 1)), EagerTensor(shape=(3, 3, 1))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "SAME",
+            "dilations": "[1, 2, 2, 1]",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 8, 1), (1, 8, 8, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 5, 5, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -1 [input_size: 5, effective_filter_size: 11, stride: 3] [Op:Dilation2D] name: ', ('{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -1 [input_size: 5, effective_filter_size: 11, stride: 3] [Op:Dilation2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_erosion2d/generated_code.py\", line 7, in call_func  *\\n        output = tf.nn.erosion2d(\\n\\n    ValueError: Computed output size would be negative: -1 [input_size: 5, effective_filter_size: 11, stride: 3] for \\'{{node erosion2d}} = Dilation2D[T=DT_FLOAT, padding=\"VALID\", rates=[1, 5, 5, 1], strides=[1, 3, 3, 1]](erosion2d/Neg, erosion2d/ReverseV2)\\' with input shapes: [2,5,5,3], [3,3,3].\\n'))",
+        "error_message": "{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -1 [input_size: 5, effective_filter_size: 11, stride: 3] [Op:Dilation2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 15, 15, 1)), EagerTensor(shape=(3, 3, 1))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "SAME",
+            "dilations": "[1, 5, 5, 1]",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 8, 1), (1, 8, 8, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 3, 3, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 0, 0, 3), (2, 0, 0, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 4, 4, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 0, 0, 3), (2, 0, 0, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 4, 4, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 0, 0, 3), (2, 0, 0, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 3, 3, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 15, 15, 1)), EagerTensor(shape=(3, 3, 1))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "SAME",
+            "dilations": "[1, 4, 4, 1]",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 8, 1), (1, 8, 8, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 15, 15, 1)), EagerTensor(shape=(3, 3, 1))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "SAME",
+            "dilations": "[1, 5, 5, 1]",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 3, 1), (1, 3, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 15, 15, 1)), EagerTensor(shape=(3, 3, 1))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "VALID",
+            "dilations": "[1, 4, 4, 1]",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 4, 4, 1), (1, 4, 4, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 3, 3, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 0, 0, 3), (2, 0, 0, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 4, 4, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -3 [input_size: 5, effective_filter_size: 9, stride: 1] [Op:Dilation2D] name: ', ('{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -3 [input_size: 5, effective_filter_size: 9, stride: 1] [Op:Dilation2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_erosion2d/generated_code.py\", line 7, in call_func  *\\n        output = tf.nn.erosion2d(\\n\\n    ValueError: Computed output size would be negative: -3 [input_size: 5, effective_filter_size: 9, stride: 1] for \\'{{node erosion2d}} = Dilation2D[T=DT_FLOAT, padding=\"VALID\", rates=[1, 4, 4, 1], strides=[1, 1, 1, 1]](erosion2d/Neg, erosion2d/ReverseV2)\\' with input shapes: [2,5,5,3], [3,3,3].\\n'))",
+        "error_message": "{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -3 [input_size: 5, effective_filter_size: 9, stride: 1] [Op:Dilation2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 3, 3, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -1 [input_size: 5, effective_filter_size: 7, stride: 1] [Op:Dilation2D] name: ', ('{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -1 [input_size: 5, effective_filter_size: 7, stride: 1] [Op:Dilation2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_erosion2d/generated_code.py\", line 7, in call_func  *\\n        output = tf.nn.erosion2d(\\n\\n    ValueError: Computed output size would be negative: -1 [input_size: 5, effective_filter_size: 7, stride: 1] for \\'{{node erosion2d}} = Dilation2D[T=DT_FLOAT, padding=\"VALID\", rates=[1, 3, 3, 1], strides=[1, 1, 1, 1]](erosion2d/Neg, erosion2d/ReverseV2)\\' with input shapes: [2,5,5,3], [3,3,3].\\n'))",
+        "error_message": "{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -1 [input_size: 5, effective_filter_size: 7, stride: 1] [Op:Dilation2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 15, 15, 1)), EagerTensor(shape=(3, 3, 1))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "SAME",
+            "dilations": "[1, 3, 3, 1]",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 8, 1), (1, 8, 8, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 15, 15, 1)), EagerTensor(shape=(3, 3, 1))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "SAME",
+            "dilations": "[1, 1, 1, 1]",
+            "data_format": "NHWC"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 8, 1), (1, 8, 8, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 15, 15, 1)), EagerTensor(shape=(3, 3, 1))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "SAME",
+            "dilations": "[1, 1, 1, 1]",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 8, 1), (1, 8, 8, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 5, 5, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 0, 0, 3), (2, 0, 0, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 1, 1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 3), (2, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 1, 1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 3), (2, 3, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 2, 2, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 3), (2, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 5, 5, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 0, 0, 3), (2, 0, 0, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 15, 15, 1)), EagerTensor(shape=(3, 3, 1))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "SAME",
+            "dilations": "[1, 5, 5, 1]",
+            "data_format": "NHWC"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 3, 1), (1, 3, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 15, 15, 1)), EagerTensor(shape=(3, 3, 1))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "VALID",
+            "dilations": "[1, 2, 2, 1]",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 3, 1), (1, 3, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 15, 15, 1)), EagerTensor(shape=(3, 3, 1))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "VALID",
+            "dilations": "[1, 5, 5, 1]",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 3, 1), (1, 3, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 15, 15, 1)), EagerTensor(shape=(3, 3, 1))]",
+            "strides": "[1, 5, 5, 1]",
+            "padding": "SAME",
+            "dilations": "[1, 2, 2, 1]",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 3, 1), (1, 3, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 4, 4, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 5, 5, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 2, 2, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 3), (2, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 5, 5, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -5 [input_size: 5, effective_filter_size: 11, stride: 1] [Op:Dilation2D] name: ', ('{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -5 [input_size: 5, effective_filter_size: 11, stride: 1] [Op:Dilation2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_erosion2d/generated_code.py\", line 7, in call_func  *\\n        output = tf.nn.erosion2d(\\n\\n    ValueError: Computed output size would be negative: -5 [input_size: 5, effective_filter_size: 11, stride: 1] for \\'{{node erosion2d}} = Dilation2D[T=DT_FLOAT, padding=\"VALID\", rates=[1, 5, 5, 1], strides=[1, 1, 1, 1]](erosion2d/Neg, erosion2d/ReverseV2)\\' with input shapes: [2,5,5,3], [3,3,3].\\n'))",
+        "error_message": "{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -5 [input_size: 5, effective_filter_size: 11, stride: 1] [Op:Dilation2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 5, 5, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 5, 5, 3)), EagerTensor(shape=(3, 3, 3))]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 5, 5, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -2 [input_size: 5, effective_filter_size: 11, stride: 2] [Op:Dilation2D] name: ', ('{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -2 [input_size: 5, effective_filter_size: 11, stride: 2] [Op:Dilation2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_erosion2d/generated_code.py\", line 7, in call_func  *\\n        output = tf.nn.erosion2d(\\n\\n    ValueError: Computed output size would be negative: -2 [input_size: 5, effective_filter_size: 11, stride: 2] for \\'{{node erosion2d}} = Dilation2D[T=DT_FLOAT, padding=\"VALID\", rates=[1, 5, 5, 1], strides=[1, 2, 2, 1]](erosion2d/Neg, erosion2d/ReverseV2)\\' with input shapes: [2,5,5,3], [3,3,3].\\n'))",
+        "error_message": "{{function_node __wrapped__Dilation2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -2 [input_size: 5, effective_filter_size: 11, stride: 2] [Op:Dilation2D] name: "
+    }
+]

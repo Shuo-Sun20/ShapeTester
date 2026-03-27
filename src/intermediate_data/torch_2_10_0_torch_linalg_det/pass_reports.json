@@ -1,0 +1,93 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3]))]",
+            "out": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((), (), ()))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3]))]",
+            "out": "Tensor(shape=torch.Size([]))"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((), (), ()))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3]))]",
+            "out": "Tensor(shape=torch.Size([]))"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((), (), ()))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3]))]",
+            "out": "Tensor(shape=torch.Size([]))"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((), (), ()))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3]))]",
+            "out": "Tensor(shape=torch.Size([]))"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((), (), ()))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3]))]",
+            "out": "Tensor(shape=torch.Size([]))"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((), (), ()))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3]))]",
+            "out": "Tensor(shape=torch.Size([3]))"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected out tensor to have dtype float, but got double instead', ('Expected out tensor to have dtype float, but got double instead', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_det>(*(FakeTensor(..., size=(3, 3)),), **{\\'out\\': FakeTensor(..., size=(s41,), dtype=torch.float64)}): got RuntimeError(\\'Expected out tensor to have dtype float, but got double instead\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_det/generated_code.py\", line 10, in call_func\\n    return torch.linalg.det(A, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected out tensor to have dtype float, but got double instead'))",
+        "error_message": "Expected out tensor to have dtype float, but got double instead",
+        "conflict_params": [
+            "inputs",
+            "out"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2, 2]))]",
+            "out": "Tensor(shape=torch.Size([3]))"
+        },
+        "segment": "(7,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected out tensor to have dtype double, but got float instead', ('Expected out tensor to have dtype double, but got float instead', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_det>(*(FakeTensor(..., size=(3, 2, 2), dtype=torch.float64),), **{\\'out\\': FakeTensor(..., size=(s42,))}): got RuntimeError(\\'Expected out tensor to have dtype double, but got float instead\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_det/generated_code.py\", line 10, in call_func\\n    return torch.linalg.det(A, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected out tensor to have dtype double, but got float instead'))",
+        "error_message": "Expected out tensor to have dtype double, but got float instead",
+        "conflict_params": [
+            "inputs",
+            "out"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3]))]",
+            "out": "Tensor(shape=torch.Size([3]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected out tensor to have dtype float, but got double instead', ('Expected out tensor to have dtype float, but got double instead', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_det>(*(FakeTensor(..., size=(3, 3)),), **{\\'out\\': FakeTensor(..., size=(s42,), dtype=torch.float64)}): got RuntimeError(\\'Expected out tensor to have dtype float, but got double instead\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_det/generated_code.py\", line 10, in call_func\\n    return torch.linalg.det(A, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected out tensor to have dtype float, but got double instead'))",
+        "error_message": "Expected out tensor to have dtype float, but got double instead"
+    }
+]

@@ -1,0 +1,863 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 10, 20])), Tensor(shape=torch.Size([16, 33, 3, 3, 3])), Tensor(shape=torch.Size([33]))]",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "1",
+            "groups": "2",
+            "dilation": "2"
+        },
+        "segment": "(0, 1, 1, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 66 elements, but got bias of size [33] instead', ('Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 66 elements, but got bias of size [33] instead', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method conv_transpose3d of type object at 0x7f27a8b29b40>(*(FakeTensor(..., size=(s21, s41, s65, s54, s21)), FakeTensor(..., size=(s41, s22, s20, s20, s20))), **{\\'bias\\': FakeTensor(..., size=(s22,)), \\'stride\\': s78, \\'padding\\': s85, \\'output_padding\\': s28, \\'groups\\': s79, \\'dilation\\': s33}): got RuntimeError(\\'Given transposed=1, weight of size [s41, s22, s20, s20, s20], expected bias to be 1-dimensional with s22*s79 elements, but got bias of size [s22] instead\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_conv_transpose3d/generated_code.py\", line 13, in call_func\\n    return F.conv_transpose3d(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (20, 66, 53, 13, 23)))",
+        "error_message": "Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 66 elements, but got bias of size [33] instead",
+        "conflict_params": [
+            "inputs",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 10, 20])), Tensor(shape=torch.Size([16, 33, 3, 3, 3])), Tensor(shape=torch.Size([33]))]",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "4",
+            "dilation": "3"
+        },
+        "segment": "(0, 2, 2, 2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 132 elements, but got bias of size [33] instead', ('Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 132 elements, but got bias of size [33] instead', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method conv_transpose3d of type object at 0x7f27a8b29b40>(*(FakeTensor(..., size=(s21, s35, s65, s54, s40)), FakeTensor(..., size=(s35, s22, s20, s20, s20))), **{\\'bias\\': FakeTensor(..., size=(s39,)), \\'stride\\': s78, \\'padding\\': s85, \\'output_padding\\': s28, \\'groups\\': s79, \\'dilation\\': s33}): got RuntimeError(\\'Given transposed=1, weight of size [s35, s22, s20, s20, s20], expected bias to be 1-dimensional with s22*s79 elements, but got bias of size [s39] instead\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_conv_transpose3d/generated_code.py\", line 13, in call_func\\n    return F.conv_transpose3d(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (20, 132, 54, 14, 24)))",
+        "error_message": "Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 132 elements, but got bias of size [33] instead",
+        "conflict_params": [
+            "inputs",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 10, 20])), Tensor(shape=torch.Size([16, 33, 3, 3, 3])), Tensor(shape=torch.Size([33]))]",
+            "stride": "1",
+            "padding": "[0, 1, 2]",
+            "output_padding": "[0, 1, 2]",
+            "groups": "8",
+            "dilation": "[1, 2, 3]"
+        },
+        "segment": "(0, 3, 3, 3, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 264 elements, but got bias of size [33] instead', ('Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 264 elements, but got bias of size [33] instead', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method conv_transpose3d of type object at 0x7f27a8b29b40>(*(FakeTensor(..., size=(s21, s35, s65, s54, s40)), FakeTensor(..., size=(s35, s22, s20, s20, s20))), **{\\'bias\\': FakeTensor(..., size=(s39,)), \\'stride\\': s78, \\'padding\\': (s66, s42, s12), \\'output_padding\\': (s98, s23, s62), \\'groups\\': s79, \\'dilation\\': (s89, s90, s1)}): got RuntimeError(\\'Given transposed=1, weight of size [s35, s22, s20, s20, s20], expected bias to be 1-dimensional with s22*s79 elements, but got bias of size [s39] instead\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_conv_transpose3d/generated_code.py\", line 13, in call_func\\n    return F.conv_transpose3d(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (20, 264, 52, 13, 24)))",
+        "error_message": "Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 264 elements, but got bias of size [33] instead",
+        "conflict_params": [
+            "inputs",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 10, 20])), Tensor(shape=torch.Size([16, 33, 3, 3, 3])), Tensor(shape=torch.Size([33]))]",
+            "stride": "2",
+            "padding": "1",
+            "output_padding": "0",
+            "groups": "16",
+            "dilation": "3"
+        },
+        "segment": "(1, 1, 0, 4, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 528 elements, but got bias of size [33] instead', ('Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 528 elements, but got bias of size [33] instead', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method conv_transpose3d of type object at 0x7f27a8b29b40>(*(FakeTensor(..., size=(s21, s35, s65, s54, s40)), FakeTensor(..., size=(s35, s22, s20, s20, s20))), **{\\'bias\\': FakeTensor(..., size=(s39,)), \\'stride\\': s78, \\'padding\\': s85, \\'output_padding\\': s28, \\'groups\\': s79, \\'dilation\\': s33}): got RuntimeError(\\'Given transposed=1, weight of size [s35, s22, s20, s20, s20], expected bias to be 1-dimensional with s22*s79 elements, but got bias of size [s39] instead\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_conv_transpose3d/generated_code.py\", line 13, in call_func\\n    return F.conv_transpose3d(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (20, 528, 103, 23, 43)))",
+        "error_message": "Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 528 elements, but got bias of size [33] instead",
+        "conflict_params": [
+            "inputs",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "[1, 2, 3]",
+            "padding": "0",
+            "output_padding": "2",
+            "groups": "16",
+            "dilation": "2"
+        },
+        "segment": "(2, 0, 2, 4, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 2 dilation_height: 2 dilation_width: 2', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 2 dilation_height: 2 dilation_width: 2', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 2 dilation_height: 2 dilation_width: 2', (2, 32, 16, 25, 34)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 2 dilation_height: 2 dilation_width: 2",
+        "conflict_params": [
+            "stride",
+            "output_padding",
+            "dilation"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5, 5])), Tensor(shape=torch.Size([4, 3, 3, 3, 3])), Tensor(shape=torch.Size([6]))]",
+            "stride": "2",
+            "padding": "2",
+            "output_padding": "[0, 1, 2]",
+            "groups": "2",
+            "dilation": "1"
+        },
+        "segment": "(1, 2, 3, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 1 dilation_height: 1 dilation_width: 1', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 1 dilation_height: 1 dilation_width: 1', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 1 dilation_height: 1 dilation_width: 1', (1, 6, 7, 8, 9)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 1 dilation_height: 1 dilation_width: 1",
+        "conflict_params": [
+            "output_padding",
+            "stride",
+            "dilation"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 10, 20])), Tensor(shape=torch.Size([16, 33, 3, 3, 3])), Tensor(shape=torch.Size([33]))]",
+            "stride": "2",
+            "padding": "[0, 1, 2]",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "2"
+        },
+        "segment": "(1, 3, 2, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 2 dilation_height: 2 dilation_width: 2', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 2 dilation_height: 2 dilation_width: 2', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 2 dilation_height: 2 dilation_width: 2', (20, 33, 105, 23, 41)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 2 dilation_height: 2 dilation_width: 2",
+        "conflict_params": [
+            "output_padding",
+            "stride",
+            "dilation"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 10, 10])), Tensor(shape=torch.Size([8, 1, 3, 3, 3]))]",
+            "stride": "[1, 2, 3]",
+            "padding": "[0, 1, 2]",
+            "output_padding": "[1, 1, 1]",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "segment": "(2, 3, 4, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 1 dilation_width: 1', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 1 dilation_width: 1', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 1 dilation_width: 1', (2, 4, 13, 20, 27)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 1 dilation_width: 1",
+        "conflict_params": [
+            "stride",
+            "dilation",
+            "output_padding"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 4, 5, 5, 5])), Tensor(shape=torch.Size([4, 3, 3, 3, 3])), Tensor(shape=torch.Size([6]))]",
+            "stride": "[1, 2, 3]",
+            "padding": "[1, 1, 1]",
+            "output_padding": "2",
+            "groups": "2",
+            "dilation": "[1, 2, 3]"
+        },
+        "segment": "(2, 4, 2, 1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 2 dilation_width: 3', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 2 dilation_width: 3', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 2 dilation_width: 3', (1, 6, 7, 13, 19)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 2 dilation_width: 3",
+        "conflict_params": [
+            "output_padding",
+            "stride",
+            "dilation"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 10, 20])), Tensor(shape=torch.Size([16, 33, 3, 3, 3])), Tensor(shape=torch.Size([33]))]",
+            "stride": "[2, 2, 2]",
+            "padding": "1",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "[1, 2, 3]"
+        },
+        "segment": "(3, 1, 2, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 1 dilation_height: 2 dilation_width: 3', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 1 dilation_height: 2 dilation_width: 3', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 1 dilation_height: 2 dilation_width: 3', (20, 33, 101, 23, 45)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 1 dilation_height: 2 dilation_width: 3",
+        "conflict_params": [
+            "output_padding",
+            "stride",
+            "dilation"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 10, 20])), Tensor(shape=torch.Size([16, 33, 3, 3, 3])), Tensor(shape=torch.Size([33]))]",
+            "stride": "2",
+            "padding": "[1, 1, 1]",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "[2, 2, 2]"
+        },
+        "segment": "(1, 4, 2, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 2 dilation_height: 2 dilation_width: 2', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 2 dilation_height: 2 dilation_width: 2', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 2 dilation_height: 2 dilation_width: 2', (20, 33, 103, 23, 43)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 2 dilation_height: 2 dilation_width: 2",
+        "conflict_params": [
+            "stride",
+            "output_padding",
+            "dilation"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 10, 20])), Tensor(shape=torch.Size([16, 33, 3, 3, 3])), Tensor(shape=torch.Size([33]))]",
+            "stride": "1",
+            "padding": "[1, 1, 1]",
+            "output_padding": "[0, 1, 2]",
+            "groups": "1",
+            "dilation": "1"
+        },
+        "segment": "(0, 4, 3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 1 dilation_width: 1', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 1 dilation_width: 1', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 1 dilation_width: 1', (20, 33, 50, 11, 22)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 1 dilation_width: 1",
+        "conflict_params": [
+            "output_padding",
+            "stride",
+            "dilation"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "[1, 1, 1]",
+            "output_padding": "[1, 1, 1]",
+            "groups": "1",
+            "dilation": "[1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', (2, 2, 11, 13, 15)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "1",
+            "groups": "16",
+            "dilation": "[1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', (2, 32, 9, 11, 13)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "16",
+            "dilation": "[1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', (2, 32, 10, 12, 14)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "[1, 1, 1]",
+            "output_padding": "[0, 1, 2]",
+            "groups": "16",
+            "dilation": "[2, 2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', (2, 32, 12, 13, 14)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 10, 10])), Tensor(shape=torch.Size([8, 1, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "[0, 1, 2]",
+            "groups": "4",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', (2, 4, 12, 13, 14)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "[1, 1, 1]",
+            "groups": "16",
+            "dilation": "[1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', (2, 32, 9, 11, 13)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "[0, 1, 2]",
+            "groups": "16",
+            "dilation": "[2, 2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', (2, 32, 10, 11, 12)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 10, 10])), Tensor(shape=torch.Size([8, 1, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "[0, 1, 2]",
+            "groups": "16",
+            "dilation": "[1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', ('Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', 'Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', (2, 16, 10, 13, 16)))",
+        "error_message": "Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 10, 10])), Tensor(shape=torch.Size([8, 1, 3, 3, 3]))]",
+            "stride": "[1, 2, 3]",
+            "padding": "0",
+            "output_padding": "[0, 1, 2]",
+            "groups": "16",
+            "dilation": "[1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', ('Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', 'Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', (2, 16, 12, 24, 36)))",
+        "error_message": "Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "[2, 2, 2]",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "16",
+            "dilation": "[1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 1 dilation_height: 2 dilation_width: 3', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 1 dilation_height: 2 dilation_width: 3', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 1 dilation_height: 2 dilation_width: 3', (2, 32, 19, 21, 23)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 1 dilation_height: 2 dilation_width: 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 10, 10])), Tensor(shape=torch.Size([8, 1, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "[0, 1, 2]",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 1 dilation_width: 1', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 1 dilation_width: 1', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 1 dilation_width: 1', (2, 4, 10, 11, 12)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 1 dilation_width: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 10, 10])), Tensor(shape=torch.Size([8, 1, 3, 3, 3]))]",
+            "stride": "[1, 2, 3]",
+            "padding": "2",
+            "output_padding": "[0, 1, 2]",
+            "groups": "16",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', ('Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', 'Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', (2, 16, 10, 20, 30)))",
+        "error_message": "Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 10, 10])), Tensor(shape=torch.Size([8, 1, 3, 3, 3]))]",
+            "stride": "[1, 2, 3]",
+            "padding": "2",
+            "output_padding": "[0, 1, 2]",
+            "groups": "16",
+            "dilation": "[1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', ('Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', 'Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', (2, 16, 8, 20, 32)))",
+        "error_message": "Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "[0, 1, 2]",
+            "output_padding": "2",
+            "groups": "16",
+            "dilation": "[2, 2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', (2, 32, 16, 14, 12)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 10, 20])), Tensor(shape=torch.Size([16, 33, 3, 3, 3])), Tensor(shape=torch.Size([33]))]",
+            "stride": "[3, 3, 3]",
+            "padding": "1",
+            "output_padding": "1",
+            "groups": "2",
+            "dilation": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 66 elements, but got bias of size [33] instead', ('Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 66 elements, but got bias of size [33] instead', 'Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 66 elements, but got bias of size [33] instead', (20, 66, 153, 33, 63)))",
+        "error_message": "Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 66 elements, but got bias of size [33] instead"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 10, 20])), Tensor(shape=torch.Size([16, 33, 3, 3, 3])), Tensor(shape=torch.Size([33]))]",
+            "stride": "[3, 3, 3]",
+            "padding": "1",
+            "output_padding": "1",
+            "groups": "16",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 528 elements, but got bias of size [33] instead', ('Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 528 elements, but got bias of size [33] instead', 'Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 528 elements, but got bias of size [33] instead', (20, 528, 149, 29, 59)))",
+        "error_message": "Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 528 elements, but got bias of size [33] instead"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 10, 20])), Tensor(shape=torch.Size([16, 33, 3, 3, 3])), Tensor(shape=torch.Size([33]))]",
+            "stride": "[1, 2, 3]",
+            "padding": "1",
+            "output_padding": "[1, 1, 1]",
+            "groups": "1",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 1 dilation_width: 1', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 1 dilation_width: 1', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 1 dilation_width: 1', (20, 33, 51, 20, 59)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 1 dilation_width: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 10, 20])), Tensor(shape=torch.Size([16, 33, 3, 3, 3])), Tensor(shape=torch.Size([33]))]",
+            "stride": "[1, 2, 3]",
+            "padding": "1",
+            "output_padding": "1",
+            "groups": "1",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 1 dilation_width: 1', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 1 dilation_width: 1', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 1 dilation_width: 1', (20, 33, 51, 20, 59)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 1 dilation_width: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 10, 10])), Tensor(shape=torch.Size([8, 1, 3, 3, 3]))]",
+            "stride": "[1, 2, 3]",
+            "padding": "2",
+            "output_padding": "[0, 1, 2]",
+            "groups": "16",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', ('Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', 'Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', (2, 16, 8, 18, 28)))",
+        "error_message": "Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "0",
+            "output_padding": "2",
+            "groups": "4",
+            "dilation": "[1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', (2, 8, 14, 16, 18)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 10, 10])), Tensor(shape=torch.Size([8, 1, 3, 3, 3]))]",
+            "stride": "[2, 2, 2]",
+            "padding": "[0, 1, 2]",
+            "output_padding": "[0, 1, 2]",
+            "groups": "16",
+            "dilation": "[1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', ('Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', 'Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', (2, 16, 21, 22, 23)))",
+        "error_message": "Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "0",
+            "output_padding": "2",
+            "groups": "16",
+            "dilation": "[1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', (2, 32, 14, 16, 18)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "[0, 1, 2]",
+            "groups": "16",
+            "dilation": "[2, 2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', (2, 32, 12, 13, 14)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "[1, 1, 1]",
+            "groups": "8",
+            "dilation": "[1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', (2, 16, 9, 11, 13)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 10, 10])), Tensor(shape=torch.Size([8, 1, 3, 3, 3]))]",
+            "stride": "[2, 2, 2]",
+            "padding": "2",
+            "output_padding": "[0, 1, 2]",
+            "groups": "16",
+            "dilation": "[1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', ('Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', 'Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', (2, 16, 17, 20, 23)))",
+        "error_message": "Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 10, 20])), Tensor(shape=torch.Size([16, 33, 3, 3, 3])), Tensor(shape=torch.Size([33]))]",
+            "stride": "[3, 3, 3]",
+            "padding": "[0, 1, 2]",
+            "output_padding": "1",
+            "groups": "4",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 132 elements, but got bias of size [33] instead', ('Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 132 elements, but got bias of size [33] instead', 'Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 132 elements, but got bias of size [33] instead', (20, 132, 151, 29, 57)))",
+        "error_message": "Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 132 elements, but got bias of size [33] instead"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 10, 10])), Tensor(shape=torch.Size([8, 1, 3, 3, 3]))]",
+            "stride": "[2, 2, 2]",
+            "padding": "2",
+            "output_padding": "[0, 1, 2]",
+            "groups": "8",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 1 dilation_height: 1 dilation_width: 1', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 1 dilation_height: 1 dilation_width: 1', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 1 dilation_height: 1 dilation_width: 1', (2, 8, 17, 18, 19)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 1 dilation_height: 1 dilation_width: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 10, 20])), Tensor(shape=torch.Size([16, 33, 3, 3, 3])), Tensor(shape=torch.Size([33]))]",
+            "stride": "[1, 2, 3]",
+            "padding": "[0, 1, 2]",
+            "output_padding": "1",
+            "groups": "1",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 1 dilation_width: 1', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 1 dilation_width: 1', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 1 dilation_width: 1', (20, 33, 53, 20, 57)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 1 dilation_width: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 10, 20])), Tensor(shape=torch.Size([16, 33, 3, 3, 3])), Tensor(shape=torch.Size([33]))]",
+            "stride": "[1, 2, 3]",
+            "padding": "[0, 1, 2]",
+            "output_padding": "1",
+            "groups": "1",
+            "dilation": "[1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 2 dilation_width: 3', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 2 dilation_width: 3', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 2 dilation_width: 3', (20, 33, 53, 22, 61)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 2 dilation_width: 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 10, 10])), Tensor(shape=torch.Size([8, 1, 3, 3, 3]))]",
+            "stride": "[1, 2, 3]",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 1 dilation_width: 1', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 1 dilation_width: 1', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 1 dilation_width: 1', (2, 1, 10, 19, 28)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 1 dilation_width: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 10, 10])), Tensor(shape=torch.Size([8, 1, 3, 3, 3]))]",
+            "stride": "[1, 2, 3]",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "16",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', ('Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', 'Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead', (2, 16, 8, 17, 26)))",
+        "error_message": "Given groups=16, expected weight to be at least 16 at dimension 0, but got weight of size [8, 1, 3, 3, 3] instead"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "[0, 1, 2]",
+            "output_padding": "[1, 1, 1]",
+            "groups": "16",
+            "dilation": "[1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', (2, 32, 13, 13, 13)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 10, 10])), Tensor(shape=torch.Size([8, 1, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "1",
+            "groups": "1",
+            "dilation": "[1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', (2, 1, 9, 11, 13)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 10, 10])), Tensor(shape=torch.Size([8, 1, 3, 3, 3]))]",
+            "stride": "[1, 2, 3]",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "[1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 2 dilation_width: 3', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 2 dilation_width: 3', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 2 dilation_width: 3', (2, 1, 10, 21, 32)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 2 dilation_width: 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "16",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', (2, 32, 12, 12, 12)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 10, 10])), Tensor(shape=torch.Size([8, 1, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "[1, 1, 1]",
+            "output_padding": "2",
+            "groups": "1",
+            "dilation": "[1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', (2, 1, 12, 14, 16)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "[1, 2, 3]",
+            "padding": "0",
+            "output_padding": "1",
+            "groups": "2",
+            "dilation": "[1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 2 dilation_width: 3', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 2 dilation_width: 3', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 2 dilation_width: 3', (2, 4, 13, 24, 35)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 2 stride_width: 3 dilation_depth: 1 dilation_height: 2 dilation_width: 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 10, 10, 10])), Tensor(shape=torch.Size([8, 1, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "[1, 1, 1]",
+            "groups": "1",
+            "dilation": "[1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3', (2, 1, 9, 11, 13)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 1 output_padding_height: 1 output_padding_width: 1 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 1 dilation_height: 2 dilation_width: 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "[2, 2, 2]",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "2",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 2 dilation_height: 2 dilation_width: 2', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 2 dilation_height: 2 dilation_width: 2', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 2 dilation_height: 2 dilation_width: 2', (2, 4, 21, 21, 21)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 2 dilation_height: 2 dilation_width: 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "2",
+            "groups": "16",
+            "dilation": "[2, 2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', (2, 32, 14, 14, 14)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "[0, 1, 2]",
+            "groups": "16",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', (2, 32, 10, 11, 12)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "[2, 2, 2]",
+            "padding": "2",
+            "output_padding": "[0, 1, 2]",
+            "groups": "16",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 1 dilation_height: 1 dilation_width: 1', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 1 dilation_height: 1 dilation_width: 1', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 1 dilation_height: 1 dilation_width: 1', (2, 32, 17, 18, 19)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 1 dilation_height: 1 dilation_width: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "16",
+            "dilation": "[2, 2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', (2, 32, 12, 12, 12)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "4",
+            "dilation": "[2, 2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', (2, 8, 12, 12, 12)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 10, 20])), Tensor(shape=torch.Size([16, 33, 3, 3, 3])), Tensor(shape=torch.Size([33]))]",
+            "stride": "[3, 3, 3]",
+            "padding": "[0, 1, 2]",
+            "output_padding": "[0, 1, 2]",
+            "groups": "8",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 264 elements, but got bias of size [33] instead', ('Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 264 elements, but got bias of size [33] instead', 'Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 264 elements, but got bias of size [33] instead', (20, 264, 150, 29, 58)))",
+        "error_message": "Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 264 elements, but got bias of size [33] instead"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "2",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "16",
+            "dilation": "[2, 2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 2 dilation_height: 2 dilation_width: 2', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 2 dilation_height: 2 dilation_width: 2', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 2 dilation_height: 2 dilation_width: 2', (2, 32, 21, 21, 21)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 2 dilation_height: 2 dilation_width: 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "[2, 2, 2]",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "16",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 2 dilation_height: 2 dilation_width: 2', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 2 dilation_height: 2 dilation_width: 2', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 2 dilation_height: 2 dilation_width: 2', (2, 32, 21, 21, 21)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 2 output_padding_height: 2 output_padding_width: 2 stride_depth: 2 stride_height: 2 stride_width: 2 dilation_depth: 2 dilation_height: 2 dilation_width: 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 10, 20])), Tensor(shape=torch.Size([16, 33, 3, 3, 3])), Tensor(shape=torch.Size([33]))]",
+            "stride": "[3, 3, 3]",
+            "padding": "[0, 1, 2]",
+            "output_padding": "[1, 1, 1]",
+            "groups": "16",
+            "dilation": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 528 elements, but got bias of size [33] instead', ('Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 528 elements, but got bias of size [33] instead', 'Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 528 elements, but got bias of size [33] instead', (20, 528, 151, 29, 57)))",
+        "error_message": "Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 528 elements, but got bias of size [33] instead"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 32, 10, 10, 10])), Tensor(shape=torch.Size([32, 2, 3, 3, 3]))]",
+            "stride": "1",
+            "padding": "[0, 1, 2]",
+            "output_padding": "[0, 1, 2]",
+            "groups": "16",
+            "dilation": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', ('output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', 'output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2', (2, 32, 14, 13, 12)))",
+        "error_message": "output padding must be smaller than either stride or dilation, but got output_padding_depth: 0 output_padding_height: 1 output_padding_width: 2 stride_depth: 1 stride_height: 1 stride_width: 1 dilation_depth: 2 dilation_height: 2 dilation_width: 2"
+    }
+]

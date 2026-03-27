@@ -1,0 +1,15 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 3, 4])), Tensor(shape=torch.Size([4, 5]))]",
+            "out": "Tensor(shape=torch.Size([10, 3, 5]))"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Expected out tensor to have dtype float, but got double instead', ('Expected out tensor to have dtype float, but got double instead', (10, 3, 5), 'Expected out tensor to have dtype torch.float32 but got torch.float64 instead'))",
+        "error_message": "Expected out tensor to have dtype float, but got double instead",
+        "conflict_params": [
+            "out"
+        ]
+    }
+]

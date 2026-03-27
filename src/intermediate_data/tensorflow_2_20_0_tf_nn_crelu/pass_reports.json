@@ -1,0 +1,97 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3))",
+            "axis": "-3",
+            "name": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__ConcatV2_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} ConcatOp : Expected concatenating dimensions in the range [-2, 2), but got -3 [Op:ConcatV2] name: ', ('{{function_node __wrapped__ConcatV2_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} ConcatOp : Expected concatenating dimensions in the range [-2, 2), but got -3 [Op:ConcatV2] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_crelu/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.crelu(features=inputs, axis=axis, name=name)\\n\\n    ValueError: Shape must be at least rank 3 but is rank 2 for \\'{{node CRelu}} = ConcatV2[N=2, T=DT_FLOAT, Tidx=DT_INT32](inputs, CRelu/Neg, CRelu/axis)\\' with input shapes: [2,3], [2,3], [] and with computed input tensors: input[2] = <-3>.\\n'))",
+        "error_message": "{{function_node __wrapped__ConcatV2_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} ConcatOp : Expected concatenating dimensions in the range [-2, 2), but got -3 [Op:ConcatV2] name: ",
+        "conflict_params": [
+            "inputs",
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3))",
+            "axis": "-1",
+            "name": "None"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 6), (2, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3))",
+            "axis": "0",
+            "name": "None"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3), (4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3))",
+            "axis": "2",
+            "name": "None"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__ConcatV2_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} ConcatOp : Expected concatenating dimensions in the range [-2, 2), but got 2 [Op:ConcatV2] name: ', ('{{function_node __wrapped__ConcatV2_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} ConcatOp : Expected concatenating dimensions in the range [-2, 2), but got 2 [Op:ConcatV2] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_crelu/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.crelu(features=inputs, axis=axis, name=name)\\n\\n    ValueError: Shape must be at least rank 3 but is rank 2 for \\'{{node CRelu}} = ConcatV2[N=2, T=DT_FLOAT, Tidx=DT_INT32](inputs, CRelu/Neg, CRelu/axis)\\' with input shapes: [2,3], [2,3], [] and with computed input tensors: input[2] = <2>.\\n'))",
+        "error_message": "{{function_node __wrapped__ConcatV2_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} ConcatOp : Expected concatenating dimensions in the range [-2, 2), but got 2 [Op:ConcatV2] name: ",
+        "conflict_params": [
+            "inputs",
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3))",
+            "axis": "4",
+            "name": "None"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__ConcatV2_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} ConcatOp : Expected concatenating dimensions in the range [-2, 2), but got 4 [Op:ConcatV2] name: ', ('{{function_node __wrapped__ConcatV2_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} ConcatOp : Expected concatenating dimensions in the range [-2, 2), but got 4 [Op:ConcatV2] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_crelu/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.crelu(features=inputs, axis=axis, name=name)\\n\\n    ValueError: Shape must be at least rank 5 but is rank 2 for \\'{{node CRelu}} = ConcatV2[N=2, T=DT_FLOAT, Tidx=DT_INT32](inputs, CRelu/Neg, CRelu/axis)\\' with input shapes: [2,3], [2,3], [] and with computed input tensors: input[2] = <4>.\\n'))",
+        "error_message": "{{function_node __wrapped__ConcatV2_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} ConcatOp : Expected concatenating dimensions in the range [-2, 2), but got 4 [Op:ConcatV2] name: ",
+        "conflict_params": [
+            "axis",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3))",
+            "axis": "-3",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__ConcatV2_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} ConcatOp : Expected concatenating dimensions in the range [-2, 2), but got -3 [Op:ConcatV2] name: ', ('{{function_node __wrapped__ConcatV2_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} ConcatOp : Expected concatenating dimensions in the range [-2, 2), but got -3 [Op:ConcatV2] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_crelu/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.crelu(features=inputs, axis=axis, name=name)\\n\\n    ValueError: Shape must be at least rank 3 but is rank 2 for \\'{{node CRelu}} = ConcatV2[N=2, T=DT_FLOAT, Tidx=DT_INT32](inputs, CRelu/Neg, CRelu/axis)\\' with input shapes: [2,3], [2,3], [] and with computed input tensors: input[2] = <-3>.\\n'))",
+        "error_message": "{{function_node __wrapped__ConcatV2_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} ConcatOp : Expected concatenating dimensions in the range [-2, 2), but got -3 [Op:ConcatV2] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3))",
+            "axis": "2",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__ConcatV2_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} ConcatOp : Expected concatenating dimensions in the range [-2, 2), but got 2 [Op:ConcatV2] name: ', ('{{function_node __wrapped__ConcatV2_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} ConcatOp : Expected concatenating dimensions in the range [-2, 2), but got 2 [Op:ConcatV2] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_crelu/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.crelu(features=inputs, axis=axis, name=name)\\n\\n    ValueError: Shape must be at least rank 3 but is rank 2 for \\'{{node CRelu}} = ConcatV2[N=2, T=DT_FLOAT, Tidx=DT_INT32](inputs, CRelu/Neg, CRelu/axis)\\' with input shapes: [2,3], [2,3], [] and with computed input tensors: input[2] = <2>.\\n'))",
+        "error_message": "{{function_node __wrapped__ConcatV2_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} ConcatOp : Expected concatenating dimensions in the range [-2, 2), but got 2 [Op:ConcatV2] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3))",
+            "axis": "4",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__ConcatV2_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} ConcatOp : Expected concatenating dimensions in the range [-2, 2), but got 4 [Op:ConcatV2] name: ', ('{{function_node __wrapped__ConcatV2_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} ConcatOp : Expected concatenating dimensions in the range [-2, 2), but got 4 [Op:ConcatV2] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_crelu/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.crelu(features=inputs, axis=axis, name=name)\\n\\n    ValueError: Shape must be at least rank 5 but is rank 2 for \\'{{node CRelu}} = ConcatV2[N=2, T=DT_FLOAT, Tidx=DT_INT32](inputs, CRelu/Neg, CRelu/axis)\\' with input shapes: [2,3], [2,3], [] and with computed input tensors: input[2] = <4>.\\n'))",
+        "error_message": "{{function_node __wrapped__ConcatV2_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} ConcatOp : Expected concatenating dimensions in the range [-2, 2), but got 4 [Op:ConcatV2] name: "
+    }
+]

@@ -1,0 +1,38 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 3)), EagerTensor(shape=(3, 4, 3))]",
+            "axis": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 4, 3), (None, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 3)), EagerTensor(shape=(3, 4, 3))]",
+            "axis": "-3"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 4, 3), (None, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 3)), EagerTensor(shape=(3, 4, 3))]",
+            "axis": "-1"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 4, 3), (None, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 3)), EagerTensor(shape=(3, 4, 3))]",
+            "axis": "0"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 4, 3), (None, 3)))"
+    }
+]

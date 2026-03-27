@@ -1,0 +1,205 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4])), Tensor(shape=torch.Size([4]))]",
+            "offset": "-2",
+            "dim1": "0",
+            "dim2": "0"
+        },
+        "segment": "(0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'diagonal dimensions cannot be identical 0, 0', ('diagonal dimensions cannot be identical 0, 0', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method diagonal_scatter of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s21)), FakeTensor(..., size=(s21,)), -2, 0, 0), **{}): got RuntimeError(\\'diagonal dimensions cannot be identical 0, 0\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_diagonal_scatter/generated_code.py\", line 5, in call_func\\n    return torch.diagonal_scatter(input_tensor, src_tensor, offset, dim1, dim2)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'diagonal dimensions cannot be identical 0, 0'))",
+        "error_message": "diagonal dimensions cannot be identical 0, 0",
+        "conflict_params": [
+            "dim1",
+            "dim2"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4])), Tensor(shape=torch.Size([4]))]",
+            "offset": "-2",
+            "dim1": "1",
+            "dim2": "1"
+        },
+        "segment": "(0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'diagonal dimensions cannot be identical 1, 1', ('diagonal dimensions cannot be identical 1, 1', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method diagonal_scatter of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s21)), FakeTensor(..., size=(s21,)), -2, 1, 1), **{}): got RuntimeError(\\'diagonal dimensions cannot be identical 1, 1\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_diagonal_scatter/generated_code.py\", line 5, in call_func\\n    return torch.diagonal_scatter(input_tensor, src_tensor, offset, dim1, dim2)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'diagonal dimensions cannot be identical 1, 1'))",
+        "error_message": "diagonal dimensions cannot be identical 1, 1",
+        "conflict_params": [
+            "dim1",
+            "dim2"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4])), Tensor(shape=torch.Size([4]))]",
+            "offset": "-2",
+            "dim1": "2",
+            "dim2": "2"
+        },
+        "segment": "(0, 2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 2)', ('Dimension out of range (expected to be in range of [-2, 1], but got 2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method diagonal_scatter of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s21)), FakeTensor(..., size=(s21,)), -2, 2, 2), **{}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 2)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_diagonal_scatter/generated_code.py\", line 5, in call_func\\n    return torch.diagonal_scatter(input_tensor, src_tensor, offset, dim1, dim2)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 2)",
+        "conflict_params": [
+            "dim1",
+            "dim2"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4])), Tensor(shape=torch.Size([4]))]",
+            "offset": "-2",
+            "dim1": "3",
+            "dim2": "3"
+        },
+        "segment": "(0, 3, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 3)', ('Dimension out of range (expected to be in range of [-2, 1], but got 3)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method diagonal_scatter of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s21)), FakeTensor(..., size=(s21,)), -2, 3, 3), **{}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 3)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_diagonal_scatter/generated_code.py\", line 5, in call_func\\n    return torch.diagonal_scatter(input_tensor, src_tensor, offset, dim1, dim2)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 3)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 3)",
+        "conflict_params": [
+            "dim1",
+            "dim2"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4])), Tensor(shape=torch.Size([4]))]",
+            "offset": "-1",
+            "dim1": "0",
+            "dim2": "1"
+        },
+        "segment": "(1, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'expected src to have a size equal to the slice of self. src size = [4], slice size = [3]', ('expected src to have a size equal to the slice of self. src size = [4], slice size = [3]', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method diagonal_scatter of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s21)), FakeTensor(..., size=(s21,)), -1, 0, 1), **{}): got RuntimeError(\\'expected src to have a size equal to the diagonal of the input.Got torch.Size([s21]) for a diagonal of shape torch.Size([s21 - 1])\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_diagonal_scatter/generated_code.py\", line 5, in call_func\\n    return torch.diagonal_scatter(input_tensor, src_tensor, offset, dim1, dim2)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'expected src to have a size equal to the diagonal of the input.Got torch.Size([4]) for a diagonal of shape torch.Size([3])'))",
+        "error_message": "expected src to have a size equal to the slice of self. src size = [4], slice size = [3]",
+        "conflict_params": [
+            "inputs",
+            "offset"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4])), Tensor(shape=torch.Size([4]))]",
+            "offset": "0",
+            "dim1": "1",
+            "dim2": "0"
+        },
+        "segment": "(2, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4])), Tensor(shape=torch.Size([4]))]",
+            "offset": "0",
+            "dim1": "0",
+            "dim2": "2"
+        },
+        "segment": "(2, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 2)', ('Dimension out of range (expected to be in range of [-2, 1], but got 2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method diagonal_scatter of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s21)), FakeTensor(..., size=(s21,)), 0, 0, 2), **{}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 2)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_diagonal_scatter/generated_code.py\", line 5, in call_func\\n    return torch.diagonal_scatter(input_tensor, src_tensor, offset, dim1, dim2)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 2)",
+        "conflict_params": [
+            "dim2"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4])), Tensor(shape=torch.Size([4]))]",
+            "offset": "0",
+            "dim1": "2",
+            "dim2": "1"
+        },
+        "segment": "(2, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 2)', ('Dimension out of range (expected to be in range of [-2, 1], but got 2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method diagonal_scatter of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s21)), FakeTensor(..., size=(s21,)), 0, 2, 1), **{}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 2)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_diagonal_scatter/generated_code.py\", line 5, in call_func\\n    return torch.diagonal_scatter(input_tensor, src_tensor, offset, dim1, dim2)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 2)",
+        "conflict_params": [
+            "dim1"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4])), Tensor(shape=torch.Size([4]))]",
+            "offset": "1",
+            "dim1": "0",
+            "dim2": "3"
+        },
+        "segment": "(3, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 3)', ('Dimension out of range (expected to be in range of [-2, 1], but got 3)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method diagonal_scatter of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s21)), FakeTensor(..., size=(s21,)), 1, 0, 3), **{}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 3)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_diagonal_scatter/generated_code.py\", line 5, in call_func\\n    return torch.diagonal_scatter(input_tensor, src_tensor, offset, dim1, dim2)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 3)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 3)",
+        "conflict_params": [
+            "dim2"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4])), Tensor(shape=torch.Size([4]))]",
+            "offset": "1",
+            "dim1": "3",
+            "dim2": "1"
+        },
+        "segment": "(3, 3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 3)', ('Dimension out of range (expected to be in range of [-2, 1], but got 3)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method diagonal_scatter of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s21)), FakeTensor(..., size=(s21,)), 1, 3, 1), **{}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 3)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_diagonal_scatter/generated_code.py\", line 5, in call_func\\n    return torch.diagonal_scatter(input_tensor, src_tensor, offset, dim1, dim2)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 3)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 3)",
+        "conflict_params": [
+            "dim1"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4])), Tensor(shape=torch.Size([4]))]",
+            "offset": "2",
+            "dim1": "0",
+            "dim2": "1"
+        },
+        "segment": "(4, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'expected src to have a size equal to the slice of self. src size = [4], slice size = [2]', ('expected src to have a size equal to the slice of self. src size = [4], slice size = [2]', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method diagonal_scatter of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s21)), FakeTensor(..., size=(s21,)), 2, 0, 1), **{}): got RuntimeError(\\'expected src to have a size equal to the diagonal of the input.Got torch.Size([s21]) for a diagonal of shape torch.Size([s21 - 2])\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_diagonal_scatter/generated_code.py\", line 5, in call_func\\n    return torch.diagonal_scatter(input_tensor, src_tensor, offset, dim1, dim2)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'expected src to have a size equal to the diagonal of the input.Got torch.Size([4]) for a diagonal of shape torch.Size([2])'))",
+        "error_message": "expected src to have a size equal to the slice of self. src size = [4], slice size = [2]",
+        "conflict_params": [
+            "inputs",
+            "offset"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4])), Tensor(shape=torch.Size([4]))]",
+            "offset": "1",
+            "dim1": "1",
+            "dim2": "0"
+        },
+        "segment": "(3, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'expected src to have a size equal to the slice of self. src size = [4], slice size = [3]', ('expected src to have a size equal to the slice of self. src size = [4], slice size = [3]', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method diagonal_scatter of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s41)), FakeTensor(..., size=(s35,)), 1, 1, 0), **{}): got RuntimeError(\\'expected src to have a size equal to the diagonal of the input.Got torch.Size([s35]) for a diagonal of shape torch.Size([s21 - 1])\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_diagonal_scatter/generated_code.py\", line 5, in call_func\\n    return torch.diagonal_scatter(input_tensor, src_tensor, offset, dim1, dim2)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'expected src to have a size equal to the diagonal of the input.Got torch.Size([4]) for a diagonal of shape torch.Size([3])'))",
+        "error_message": "expected src to have a size equal to the slice of self. src size = [4], slice size = [3]",
+        "conflict_params": [
+            "inputs",
+            "offset",
+            "dim1",
+            "dim2"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4, 4, 4])), Tensor(shape=torch.Size([4, 4, 3]))]",
+            "offset": "2",
+            "dim1": "1",
+            "dim2": "0"
+        },
+        "segment": "(4, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'expected src to have a size equal to the slice of self. src size = [4, 4, 3], slice size = [4, 4, 2]', ('expected src to have a size equal to the slice of self. src size = [4, 4, 3], slice size = [4, 4, 2]', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method diagonal_scatter of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s41, s35, s22)), FakeTensor(..., size=(s35, s22, s20)), 2, 1, 0), **{}): got RuntimeError(\\'expected src to have a size equal to the diagonal of the input.Got torch.Size([s35, s22, s20]) for a diagonal of shape torch.Size([s35, s22, s21 - 2])\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_diagonal_scatter/generated_code.py\", line 5, in call_func\\n    return torch.diagonal_scatter(input_tensor, src_tensor, offset, dim1, dim2)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'expected src to have a size equal to the diagonal of the input.Got torch.Size([4, 4, 3]) for a diagonal of shape torch.Size([4, 4, 2])'))",
+        "error_message": "expected src to have a size equal to the slice of self. src size = [4, 4, 3], slice size = [4, 4, 2]",
+        "conflict_params": [
+            "inputs",
+            "offset",
+            "dim1",
+            "dim2"
+        ]
+    }
+]

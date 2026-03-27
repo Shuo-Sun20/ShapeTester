@@ -1,0 +1,75 @@
+[
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 4, 2, 2]))",
+            "groups": "1"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 4, 2, 2), (1, 4, 2, 2), (1, 4, 2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 4, 2, 2]))",
+            "groups": "2"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 4, 2, 2), (1, 4, 2, 2), (1, 4, 2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 4, 2, 2]))",
+            "groups": "4"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 4, 2, 2), (1, 4, 2, 2), (1, 4, 2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 4, 2, 2]))",
+            "groups": "8"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Number of channels must be divisible by groups. Got 4 channels and 8 groups.', ('Number of channels must be divisible by groups. Got 4 channels and 8 groups.', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method channel_shuffle of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(1, s71, s34, s90)), s79), **{}): got RuntimeError(\\'Number of channels must be divisible by groups. Got s71 channels and s79 groups.\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_channel_shuffle/generated_code.py\", line 4, in call_func\\n    return torch.channel_shuffle(inputs, groups)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Number of channels must be divisible by groups. Got 4 channels and 8 groups.'))",
+        "error_message": "Number of channels must be divisible by groups. Got 4 channels and 8 groups.",
+        "conflict_params": [
+            "inputs",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 4, 2, 2]))",
+            "groups": "16"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Number of channels must be divisible by groups. Got 4 channels and 16 groups.', ('Number of channels must be divisible by groups. Got 4 channels and 16 groups.', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method channel_shuffle of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(1, s71, s34, s90)), s79), **{}): got RuntimeError(\\'Number of channels must be divisible by groups. Got s71 channels and s79 groups.\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_channel_shuffle/generated_code.py\", line 4, in call_func\\n    return torch.channel_shuffle(inputs, groups)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Number of channels must be divisible by groups. Got 4 channels and 16 groups.'))",
+        "error_message": "Number of channels must be divisible by groups. Got 4 channels and 16 groups.",
+        "conflict_params": [
+            "inputs",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 4, 2, 2]))",
+            "groups": "8"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Number of channels must be divisible by groups. Got 4 channels and 8 groups.', ('Number of channels must be divisible by groups. Got 4 channels and 8 groups.', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method channel_shuffle of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(1, s71, s34, s90)), s79), **{}): got RuntimeError(\\'Number of channels must be divisible by groups. Got s71 channels and s79 groups.\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_channel_shuffle/generated_code.py\", line 4, in call_func\\n    return torch.channel_shuffle(inputs, groups)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Number of channels must be divisible by groups. Got 4 channels and 8 groups.'))",
+        "error_message": "Number of channels must be divisible by groups. Got 4 channels and 8 groups."
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 4, 2, 2]))",
+            "groups": "16"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Number of channels must be divisible by groups. Got 4 channels and 16 groups.', ('Number of channels must be divisible by groups. Got 4 channels and 16 groups.', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method channel_shuffle of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(1, s71, s34, s90)), s79), **{}): got RuntimeError(\\'Number of channels must be divisible by groups. Got s71 channels and s79 groups.\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_channel_shuffle/generated_code.py\", line 4, in call_func\\n    return torch.channel_shuffle(inputs, groups)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Number of channels must be divisible by groups. Got 4 channels and 16 groups.'))",
+        "error_message": "Number of channels must be divisible by groups. Got 4 channels and 16 groups."
+    }
+]

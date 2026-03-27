@@ -1,0 +1,186 @@
+[
+    {
+        "test_case": {
+            "padding": "-8",
+            "inputs": "Tensor(shape=torch.Size([16, 3, 8, 320, 480]))"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Negative padding value is resulting in an empty dimension', ('Negative padding value is resulting in an empty dimension', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function pad>(*(FakeTensor(..., size=(s85, s71, s34, s90, s96)), (-8, -8, -8, -8, -8, -8), \\'circular\\', None), **{}): got RuntimeError(\\'Negative padding value is resulting in an empty dimension\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CircularPad3d/generated_code.py\", line 5, in torch_dynamo_resume_in_call_func_at_4\\n    output = pad_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/padding.py\", line 42, in forward\\n    return F.pad(input, self.padding, \"circular\")\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/functional.py\", line 5418, in pad\\n    return torch._C._nn.pad(input, pad, mode, value)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Negative padding value is resulting in an empty dimension'))",
+        "error_message": "Negative padding value is resulting in an empty dimension",
+        "conflict_params": [
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "padding": "-5",
+            "inputs": "Tensor(shape=torch.Size([16, 3, 8, 320, 480]))"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Negative padding value is resulting in an empty dimension', ('Negative padding value is resulting in an empty dimension', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function pad>(*(FakeTensor(..., size=(s85, s71, s34, s90, s96)), (-5, -5, -5, -5, -5, -5), \\'circular\\', None), **{}): got RuntimeError(\\'Negative padding value is resulting in an empty dimension\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CircularPad3d/generated_code.py\", line 5, in torch_dynamo_resume_in_call_func_at_4\\n    output = pad_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/padding.py\", line 42, in forward\\n    return F.pad(input, self.padding, \"circular\")\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/functional.py\", line 5418, in pad\\n    return torch._C._nn.pad(input, pad, mode, value)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Negative padding value is resulting in an empty dimension'))",
+        "error_message": "Negative padding value is resulting in an empty dimension",
+        "conflict_params": [
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "padding": "-2",
+            "inputs": "Tensor(shape=torch.Size([16, 3, 8, 320, 480]))"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16, 3, 4, 316, 476), (16, 3, 4, 316, 476), (16, 3, 4, 316, 476)))"
+    },
+    {
+        "test_case": {
+            "padding": "0",
+            "inputs": "Tensor(shape=torch.Size([16, 3, 8, 320, 480]))"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16, 3, 8, 320, 480), (16, 3, 8, 320, 480), (16, 3, 8, 320, 480)))"
+    },
+    {
+        "test_case": {
+            "padding": "2",
+            "inputs": "Tensor(shape=torch.Size([16, 3, 8, 320, 480]))"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16, 3, 12, 324, 484), (16, 3, 12, 324, 484), (16, 3, 12, 324, 484)))"
+    },
+    {
+        "test_case": {
+            "padding": "3",
+            "inputs": "Tensor(shape=torch.Size([16, 3, 8, 320, 480]))"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16, 3, 14, 326, 486), (16, 3, 14, 326, 486), (16, 3, 14, 326, 486)))"
+    },
+    {
+        "test_case": {
+            "padding": "5",
+            "inputs": "Tensor(shape=torch.Size([16, 3, 8, 320, 480]))"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16, 3, 18, 330, 490), (16, 3, 18, 330, 490), (16, 3, 18, 330, 490)))"
+    },
+    {
+        "test_case": {
+            "padding": "8",
+            "inputs": "Tensor(shape=torch.Size([16, 3, 8, 320, 480]))"
+        },
+        "segment": "(7,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16, 3, 24, 336, 496), (16, 3, 24, 336, 496), (16, 3, 24, 336, 496)))"
+    },
+    {
+        "test_case": {
+            "padding": "[0, 0, 0, 0, 0, 0]",
+            "inputs": "Tensor(shape=torch.Size([16, 3, 8, 320, 480]))"
+        },
+        "segment": "(8,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16, 3, 8, 320, 480), (16, 3, 8, 320, 480), (16, 3, 8, 320, 480)))"
+    },
+    {
+        "test_case": {
+            "padding": "[3, 3, 6, 6, 1, 1]",
+            "inputs": "Tensor(shape=torch.Size([16, 3, 8, 320, 480]))"
+        },
+        "segment": "(9,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16, 3, 10, 332, 486), (16, 3, 10, 332, 486), (16, 3, 10, 332, 486)))"
+    },
+    {
+        "test_case": {
+            "padding": "[-1, -1, -1, -1, -1, -1]",
+            "inputs": "Tensor(shape=torch.Size([16, 3, 8, 320, 480]))"
+        },
+        "segment": "(10,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16, 3, 6, 318, 478), (16, 3, 6, 318, 478), (16, 3, 6, 318, 478)))"
+    },
+    {
+        "test_case": {
+            "padding": "[2, 2, 2, 2, 2, 2]",
+            "inputs": "Tensor(shape=torch.Size([16, 3, 8, 320, 480]))"
+        },
+        "segment": "(11,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16, 3, 12, 324, 484), (16, 3, 12, 324, 484), (16, 3, 12, 324, 484)))"
+    },
+    {
+        "test_case": {
+            "padding": "[5, 5, 10, 10, 3, 3]",
+            "inputs": "Tensor(shape=torch.Size([16, 3, 8, 320, 480]))"
+        },
+        "segment": "(12,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16, 3, 14, 340, 490), (16, 3, 14, 340, 490), (16, 3, 14, 340, 490)))"
+    },
+    {
+        "test_case": {
+            "padding": "[0, 5, 0, 10, 0, 3]",
+            "inputs": "Tensor(shape=torch.Size([16, 3, 8, 320, 480]))"
+        },
+        "segment": "(13,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16, 3, 11, 330, 485), (16, 3, 11, 330, 485), (16, 3, 11, 330, 485)))"
+    },
+    {
+        "test_case": {
+            "padding": "[-2, 2, -5, 5, -1, 1]",
+            "inputs": "Tensor(shape=torch.Size([16, 3, 8, 320, 480]))"
+        },
+        "segment": "(14,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16, 3, 8, 320, 480), (16, 3, 8, 320, 480), (16, 3, 8, 320, 480)))"
+    },
+    {
+        "test_case": {
+            "padding": "[8, -4, 320, -100, 480, -200]",
+            "inputs": "Tensor(shape=torch.Size([16, 3, 8, 320, 480]))"
+        },
+        "segment": "(15,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Padding value causes wrapping around more than once.', ('Padding value causes wrapping around more than once.', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function pad>(*(FakeTensor(..., size=(s85, s71, s34, s90, s96)), (s66, s40, s12, s67, s18, s63), \\'circular\\', None), **{}): got RuntimeError(\\'Padding value causes wrapping around more than once.\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CircularPad3d/generated_code.py\", line 5, in call_func\\n    output = pad_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/padding.py\", line 42, in forward\\n    return F.pad(input, self.padding, \"circular\")\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/functional.py\", line 5418, in pad\\n    return torch._C._nn.pad(input, pad, mode, value)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Padding value causes wrapping around more than once.'))",
+        "error_message": "Padding value causes wrapping around more than once.",
+        "conflict_params": [
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "padding": "-8",
+            "inputs": "Tensor(shape=torch.Size([16, 3, 8, 320, 480]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Negative padding value is resulting in an empty dimension', ('Negative padding value is resulting in an empty dimension', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function pad>(*(FakeTensor(..., size=(s85, s71, s34, s90, s96)), (-8, -8, -8, -8, -8, -8), \\'circular\\', None), **{}): got RuntimeError(\\'Negative padding value is resulting in an empty dimension\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CircularPad3d/generated_code.py\", line 5, in torch_dynamo_resume_in_call_func_at_4\\n    output = pad_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/padding.py\", line 42, in forward\\n    return F.pad(input, self.padding, \"circular\")\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/functional.py\", line 5418, in pad\\n    return torch._C._nn.pad(input, pad, mode, value)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Negative padding value is resulting in an empty dimension'))",
+        "error_message": "Negative padding value is resulting in an empty dimension"
+    },
+    {
+        "test_case": {
+            "padding": "-5",
+            "inputs": "Tensor(shape=torch.Size([16, 3, 8, 320, 480]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Negative padding value is resulting in an empty dimension', ('Negative padding value is resulting in an empty dimension', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function pad>(*(FakeTensor(..., size=(s85, s71, s34, s90, s96)), (-5, -5, -5, -5, -5, -5), \\'circular\\', None), **{}): got RuntimeError(\\'Negative padding value is resulting in an empty dimension\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CircularPad3d/generated_code.py\", line 5, in torch_dynamo_resume_in_call_func_at_4\\n    output = pad_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/padding.py\", line 42, in forward\\n    return F.pad(input, self.padding, \"circular\")\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/functional.py\", line 5418, in pad\\n    return torch._C._nn.pad(input, pad, mode, value)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Negative padding value is resulting in an empty dimension'))",
+        "error_message": "Negative padding value is resulting in an empty dimension"
+    },
+    {
+        "test_case": {
+            "padding": "[8, -4, 320, -100, 480, -200]",
+            "inputs": "Tensor(shape=torch.Size([16, 3, 8, 320, 480]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Padding value causes wrapping around more than once.', ('Padding value causes wrapping around more than once.', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function pad>(*(FakeTensor(..., size=(s85, s71, s34, s90, s96)), (s66, s40, s12, s67, s18, s63), \\'circular\\', None), **{}): got RuntimeError(\\'Padding value causes wrapping around more than once.\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CircularPad3d/generated_code.py\", line 5, in call_func\\n    output = pad_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/padding.py\", line 42, in forward\\n    return F.pad(input, self.padding, \"circular\")\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/functional.py\", line 5418, in pad\\n    return torch._C._nn.pad(input, pad, mode, value)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Padding value causes wrapping around more than once.'))",
+        "error_message": "Padding value causes wrapping around more than once."
+    }
+]

@@ -1,0 +1,38 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 5)), EagerTensor(shape=(5, 4, 3))]",
+            "axes": "1"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 4, 3), (None, 4, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 5)), EagerTensor(shape=(5, 4, 3))]",
+            "axes": "2"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3), (None, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 5)), EagerTensor(shape=(5, 4, 3))]",
+            "axes": "3"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None,), (None,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 5)), EagerTensor(shape=(5, 4, 3))]",
+            "axes": "[[0, 2], [2, 0]]"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4), (None, 4)))"
+    }
+]

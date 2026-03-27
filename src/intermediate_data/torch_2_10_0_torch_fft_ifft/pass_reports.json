@@ -1,0 +1,1051 @@
+[
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "None",
+            "dim": "0",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16,), (16,), (16,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "None",
+            "dim": "-1",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16,), (16,), (16,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "None",
+            "dim": "-2",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', ('Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function fft_ifft>(*(FakeTensor(..., size=(s85,), dtype=torch.complex64), None, -2, None), **{\\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-1, 0], but got -2)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_fft_ifft/generated_code.py\", line 4, in call_func\\n    return torch.fft.ifft(inputs, n, dim, norm, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got -2)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "None",
+            "dim": "1",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', ('Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function fft_ifft>(*(FakeTensor(..., size=(s85,), dtype=torch.complex64), None, 1, None), **{\\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-1, 0], but got 1)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_fft_ifft/generated_code.py\", line 4, in call_func\\n    return torch.fft.ifft(inputs, n, dim, norm, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 1)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "None",
+            "dim": "2",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 2)', ('Dimension out of range (expected to be in range of [-1, 0], but got 2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function fft_ifft>(*(FakeTensor(..., size=(s85,), dtype=torch.complex64), None, 2, None), **{\\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-1, 0], but got 2)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_fft_ifft/generated_code.py\", line 4, in call_func\\n    return torch.fft.ifft(inputs, n, dim, norm, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-1, 0], but got 2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 2)",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "4",
+            "dim": "0",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "4",
+            "dim": "-1",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "4",
+            "dim": "2",
+            "norm": "backward"
+        },
+        "segment": "(2, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 4), (4, 8, 4), (4, 8, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "8",
+            "dim": "0",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((8,), (8,), (8,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "8",
+            "dim": "-1",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((8,), (8,), (8,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "8",
+            "dim": "2",
+            "norm": "backward"
+        },
+        "segment": "(3, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 8), (4, 8, 8), (4, 8, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "16",
+            "dim": "0",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16,), (16,), (16,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "16",
+            "dim": "-1",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(4, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16,), (16,), (16,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "16",
+            "dim": "2",
+            "norm": "backward"
+        },
+        "segment": "(4, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 16), (4, 8, 16), (4, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "32",
+            "dim": "0",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((32,), (32,), (32,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "32",
+            "dim": "-1",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(5, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((32,), (32,), (32,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "32",
+            "dim": "2",
+            "norm": "backward"
+        },
+        "segment": "(5, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 32), (4, 8, 32), (4, 8, 32)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "64",
+            "dim": "0",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(6, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((64,), (64,), (64,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "64",
+            "dim": "-1",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(6, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((64,), (64,), (64,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "64",
+            "dim": "2",
+            "norm": "backward"
+        },
+        "segment": "(6, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 64), (4, 8, 64), (4, 8, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "128",
+            "dim": "0",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(7, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((128,), (128,), (128,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "128",
+            "dim": "-1",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(7, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((128,), (128,), (128,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "128",
+            "dim": "2",
+            "norm": "backward"
+        },
+        "segment": "(7, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 128), (4, 8, 128), (4, 8, 128)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "16",
+            "dim": "2",
+            "norm": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 16), (4, 8, 16), (4, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "4",
+            "dim": "1",
+            "norm": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4, 16), (4, 4, 16), (4, 4, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "128",
+            "dim": "0",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((128, 8, 16), (128, 8, 16), (128, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "4",
+            "dim": "-2",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4, 16), (4, 4, 16), (4, 4, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "4",
+            "dim": "2",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 4), (4, 8, 4), (4, 8, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "128",
+            "dim": "2",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 128), (4, 8, 128), (4, 8, 128)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "4",
+            "dim": "0",
+            "norm": "backward"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 16), (4, 8, 16), (4, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "32",
+            "dim": "2",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 32), (4, 8, 32), (4, 8, 32)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "16",
+            "dim": "0",
+            "norm": "backward"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16, 8, 16), (16, 8, 16), (16, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "128",
+            "dim": "-1",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 128), (4, 8, 128), (4, 8, 128)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "4",
+            "dim": "-2",
+            "norm": "backward"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4, 16), (4, 4, 16), (4, 4, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "None",
+            "dim": "0",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 16), (4, 8, 16), (4, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "128",
+            "dim": "0",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((128, 8, 16), (128, 8, 16), (128, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "4",
+            "dim": "-1",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 4), (4, 8, 4), (4, 8, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "4",
+            "dim": "-2",
+            "norm": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4, 16), (4, 4, 16), (4, 4, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "128",
+            "dim": "2",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 128), (4, 8, 128), (4, 8, 128)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "1",
+            "dim": "0",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 16), (1, 8, 16), (1, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "128",
+            "dim": "-2",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 16), (4, 128, 16), (4, 128, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "1",
+            "dim": "-1",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 1), (4, 8, 1), (4, 8, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "4",
+            "dim": "0",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 16), (4, 8, 16), (4, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "32",
+            "dim": "0",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((32, 8, 16), (32, 8, 16), (32, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "8",
+            "dim": "-1",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 8), (4, 8, 8), (4, 8, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "16",
+            "dim": "2",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 16), (4, 8, 16), (4, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "128",
+            "dim": "1",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 16), (4, 128, 16), (4, 128, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "128",
+            "dim": "-2",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 16), (4, 128, 16), (4, 128, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "128",
+            "dim": "-1",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 128), (4, 8, 128), (4, 8, 128)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "32",
+            "dim": "-1",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 32), (4, 8, 32), (4, 8, 32)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "8",
+            "dim": "0",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((8, 8, 16), (8, 8, 16), (8, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "128",
+            "dim": "1",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 16), (4, 128, 16), (4, 128, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "64",
+            "dim": "0",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((64, 8, 16), (64, 8, 16), (64, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "64",
+            "dim": "1",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', ('Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 1)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "None",
+            "dim": "-2",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', ('Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got -2)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "None",
+            "dim": "2",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 2)', ('Dimension out of range (expected to be in range of [-1, 0], but got 2)', 'Dimension out of range (expected to be in range of [-1, 0], but got 2)', 'Dimension out of range (expected to be in range of [-1, 0], but got 2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 2)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "8",
+            "dim": "-2",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', ('Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got -2)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "None",
+            "dim": "0",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16,), (16,), (16,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "32",
+            "dim": "1",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', ('Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 1)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "16",
+            "dim": "-1",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 16), (4, 8, 16), (4, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "8",
+            "dim": "-2",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 16), (4, 8, 16), (4, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "8",
+            "dim": "0",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((8, 8, 16), (8, 8, 16), (8, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "None",
+            "dim": "1",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', ('Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 1)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "None",
+            "dim": "-1",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16,), (16,), (16,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "4",
+            "dim": "-1",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "64",
+            "dim": "0",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((64, 8, 16), (64, 8, 16), (64, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "64",
+            "dim": "2",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 64), (4, 8, 64), (4, 8, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "64",
+            "dim": "-1",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 64), (4, 8, 64), (4, 8, 64)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "32",
+            "dim": "0",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((32, 8, 16), (32, 8, 16), (32, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "4",
+            "dim": "0",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 16), (4, 8, 16), (4, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "None",
+            "dim": "-2",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', ('Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got -2)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "4",
+            "dim": "2",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 2)', ('Dimension out of range (expected to be in range of [-1, 0], but got 2)', 'Dimension out of range (expected to be in range of [-1, 0], but got 2)', 'Dimension out of range (expected to be in range of [-1, 0], but got 2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 2)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "1",
+            "dim": "-1",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1,), (1,), (1,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "16",
+            "dim": "0",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16, 8, 16), (16, 8, 16), (16, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "16",
+            "dim": "-2",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 16, 16), (4, 16, 16), (4, 16, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "None",
+            "dim": "2",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 2)', ('Dimension out of range (expected to be in range of [-1, 0], but got 2)', 'Dimension out of range (expected to be in range of [-1, 0], but got 2)', 'Dimension out of range (expected to be in range of [-1, 0], but got 2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 2)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "1",
+            "dim": "-1",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1,), (1,), (1,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "1",
+            "dim": "0",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1,), (1,), (1,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "32",
+            "dim": "0",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((32,), (32,), (32,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "16",
+            "dim": "0",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16, 8, 16), (16, 8, 16), (16, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "1",
+            "dim": "-1",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 1), (4, 8, 1), (4, 8, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "1",
+            "dim": "0",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 8, 16), (1, 8, 16), (1, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "4",
+            "dim": "2",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 4), (4, 8, 4), (4, 8, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "32",
+            "dim": "1",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 16), (4, 32, 16), (4, 32, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "16",
+            "dim": "-1",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((16,), (16,), (16,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "32",
+            "dim": "1",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', ('Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 1)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "1",
+            "dim": "1",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 1, 16), (4, 1, 16), (4, 1, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "64",
+            "dim": "-2",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 64, 16), (4, 64, 16), (4, 64, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 8, 16]))",
+            "n": "None",
+            "dim": "2",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 8, 16), (4, 8, 16), (4, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "16",
+            "dim": "-2",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', ('Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got -2)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "1",
+            "dim": "1",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', ('Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 1)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([16]))",
+            "n": "32",
+            "dim": "-2",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', ('Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got -2)"
+    }
+]

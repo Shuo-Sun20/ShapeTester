@@ -1,0 +1,2420 @@
+[
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 10), (2, 3, 10), (2, 3, 10)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "2",
+            "padding": "1",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(0, 1, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=1, kernel_size=1 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=1, kernel_size=1 and dilation=1', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method avg_pool1d of type object at 0x7f572b929b40>(*(FakeTensor(..., size=(s85, s71, s34)), (1,), (2,), (1,), False, False), **{}): got RuntimeError(\\'pad should be at most half of effective kernel size, but got pad=1, kernel_size=1 and dilation=1\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_AvgPool1d/generated_code.py\", line 12, in torch_dynamo_resume_in_call_func_at_5\\n    output = avgpool(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pooling.py\", line 670, in forward\\n    return F.avg_pool1d(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'pad should be at most half of effective kernel size, but got pad=1, kernel_size=1 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=1, kernel_size=1 and dilation=1",
+        "conflict_params": [
+            "kernel_size",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "2",
+            "stride": "1",
+            "padding": "2",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(1, 0, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method avg_pool1d of type object at 0x7f572b929b40>(*(FakeTensor(..., size=(s85, s71, s34)), (2,), (1,), (2,), False, False), **{}): got RuntimeError(\\'pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_AvgPool1d/generated_code.py\", line 12, in torch_dynamo_resume_in_call_func_at_5\\n    output = avgpool(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pooling.py\", line 670, in forward\\n    return F.avg_pool1d(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "2",
+            "padding": "3",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(2, 1, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=3 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=3, kernel_size=3 and dilation=1', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method avg_pool1d of type object at 0x7f572b929b40>(*(FakeTensor(..., size=(s85, s71, s34)), (3,), (2,), (3,), True, False), **{}): got RuntimeError(\\'pad should be at most half of effective kernel size, but got pad=3, kernel_size=3 and dilation=1\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_AvgPool1d/generated_code.py\", line 12, in torch_dynamo_resume_in_call_func_at_5\\n    output = avgpool(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pooling.py\", line 670, in forward\\n    return F.avg_pool1d(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=3 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=3, kernel_size=3 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "3",
+            "padding": "0",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(3, 2, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "3",
+            "padding": "4",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(4, 2, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=5 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=4, kernel_size=5 and dilation=1', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method avg_pool1d of type object at 0x7f572b929b40>(*(FakeTensor(..., size=(s85, s71, s34)), (5,), (3,), (4,), True, False), **{}): got RuntimeError(\\'pad should be at most half of effective kernel size, but got pad=4, kernel_size=5 and dilation=1\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_AvgPool1d/generated_code.py\", line 12, in torch_dynamo_resume_in_call_func_at_5\\n    output = avgpool(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pooling.py\", line 670, in forward\\n    return F.avg_pool1d(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=5 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=4, kernel_size=5 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "4",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(3, 3, 5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method avg_pool1d of type object at 0x7f572b929b40>(*(FakeTensor(..., size=(s85, s71, s34)), (4,), (4,), (5,), True, False), **{}): got RuntimeError(\\'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_AvgPool1d/generated_code.py\", line 12, in torch_dynamo_resume_in_call_func_at_5\\n    output = avgpool(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pooling.py\", line 670, in forward\\n    return F.avg_pool1d(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "4",
+            "padding": "6",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(5, 3, 6, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=7 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=6, kernel_size=7 and dilation=1', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method avg_pool1d of type object at 0x7f572b929b40>(*(FakeTensor(..., size=(s85, s71, s34)), (7,), (4,), (6,), False, False), **{}): got RuntimeError(\\'pad should be at most half of effective kernel size, but got pad=6, kernel_size=7 and dilation=1\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_AvgPool1d/generated_code.py\", line 12, in torch_dynamo_resume_in_call_func_at_5\\n    output = avgpool(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pooling.py\", line 670, in forward\\n    return F.avg_pool1d(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=7 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=6, kernel_size=7 and dilation=1",
+        "conflict_params": [
+            "kernel_size",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "5",
+            "padding": "1",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(6, 4, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "6",
+            "padding": "3",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(6, 5, 3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "5",
+            "padding": "4",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(2, 4, 4, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=3 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=4, kernel_size=3 and dilation=1', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method avg_pool1d of type object at 0x7f572b929b40>(*(FakeTensor(..., size=(s85, s71, s34)), (3,), (5,), (4,), False, False), **{}): got RuntimeError(\\'pad should be at most half of effective kernel size, but got pad=4, kernel_size=3 and dilation=1\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_AvgPool1d/generated_code.py\", line 12, in torch_dynamo_resume_in_call_func_at_5\\n    output = avgpool(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pooling.py\", line 670, in forward\\n    return F.avg_pool1d(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=3 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=4, kernel_size=3 and dilation=1",
+        "conflict_params": [
+            "kernel_size",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "2",
+            "stride": "6",
+            "padding": "6",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(1, 5, 6, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=2 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=6, kernel_size=2 and dilation=1', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method avg_pool1d of type object at 0x7f572b929b40>(*(FakeTensor(..., size=(s85, s71, s34)), (2,), (6,), (6,), True, False), **{}): got RuntimeError(\\'pad should be at most half of effective kernel size, but got pad=6, kernel_size=2 and dilation=1\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_AvgPool1d/generated_code.py\", line 12, in torch_dynamo_resume_in_call_func_at_5\\n    output = avgpool(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pooling.py\", line 670, in forward\\n    return F.avg_pool1d(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=2 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=6, kernel_size=2 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "7",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(5, 6, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "7",
+            "padding": "5",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(4, 6, 5, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=5 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=5 and dilation=1', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method avg_pool1d of type object at 0x7f572b929b40>(*(FakeTensor(..., size=(s85, s71, s34)), (5,), (7,), (5,), False, False), **{}): got RuntimeError(\\'pad should be at most half of effective kernel size, but got pad=5, kernel_size=5 and dilation=1\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_AvgPool1d/generated_code.py\", line 12, in torch_dynamo_resume_in_call_func_at_5\\n    output = avgpool(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pooling.py\", line 670, in forward\\n    return F.avg_pool1d(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=5 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=5 and dilation=1",
+        "conflict_params": [
+            "kernel_size",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "2",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(6, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 1), (2, 3, 1), (2, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "3",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(6, 2, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "1",
+            "padding": "1",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(3, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 9), (2, 3, 9), (2, 3, 9)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "5",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(5, 4, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "1",
+            "padding": "4",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(6, 0, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 9), (2, 3, 9), (2, 3, 9)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "2",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(3, 1, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 6), (2, 3, 6), (2, 3, 6)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "3",
+            "padding": "3",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(0, 2, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=1 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=3, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=1 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=3, kernel_size=1 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "4",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(2, 3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "2",
+            "stride": "7",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(1, 6, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "6",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(4, 5, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "7",
+            "padding": "6",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(6, 6, 6, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1",
+        "conflict_params": [
+            "kernel_size",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "3",
+            "padding": "1",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(5, 2, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "2",
+            "stride": "4",
+            "padding": "1",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(1, 3, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "4",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(0, 3, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=1 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=2, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=1 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=2, kernel_size=1 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "2",
+            "padding": "4",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(5, 1, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=7 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=4, kernel_size=7 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=7 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=7 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=4, kernel_size=7 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "6",
+            "padding": "1",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(2, 5, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "5",
+            "padding": "3",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(3, 4, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=4 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=3, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=4 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=3, kernel_size=4 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(2, 0, 5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=3 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=3 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=3 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=3 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=3 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "2",
+            "stride": "2",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(1, 1, 5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=2 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=2 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=2 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=2 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=2 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "5",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(4, 4, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "6",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(4, 0, 6, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=5 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=6, kernel_size=5 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=5 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=5 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=6, kernel_size=5 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "3",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(5, 0, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 10), (2, 3, 10), (2, 3, 10)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "6",
+            "padding": "4",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(3, 5, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=4 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=4, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=4 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=4, kernel_size=4 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "6",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(5, 5, 5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=7 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=7 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=7 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=7 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=7 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "4",
+            "padding": "3",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(4, 3, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=5 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=3, kernel_size=5 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=5 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=5 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=3, kernel_size=5 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "7",
+            "padding": "4",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(0, 6, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=1 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=4, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=1 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=4, kernel_size=1 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "3",
+            "padding": "6",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(2, 2, 6, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=3 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=6, kernel_size=3 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=3 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=3 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=6, kernel_size=3 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "5",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(0, 4, 5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=1 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=1 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=1 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "7",
+            "padding": "1",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(4, 6, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "4",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(6, 3, 5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "6",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(2, 5, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=3 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=2, kernel_size=3 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=3 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=3 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=2, kernel_size=3 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "2",
+            "stride": "3",
+            "padding": "3",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(1, 2, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=2 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=3, kernel_size=2 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=2 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=2 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=3, kernel_size=2 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "7",
+            "padding": "6",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(3, 6, 6, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1",
+        "conflict_params": [
+            "padding",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "2",
+            "stride": "4",
+            "padding": "4",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(1, 3, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=2 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=4, kernel_size=2 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=2 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=2 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=4, kernel_size=2 and dilation=1",
+        "conflict_params": [
+            "kernel_size",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "6",
+            "padding": "6",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(0, 5, 6, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=1 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=6, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=1 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=6, kernel_size=1 and dilation=1",
+        "conflict_params": [
+            "kernel_size",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "2",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(4, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "3",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(6, 2, 5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 5), (2, 3, 5), (2, 3, 5)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "7",
+            "padding": "3",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(5, 6, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "2",
+            "stride": "5",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(1, 4, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "7",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "segment": "(2, 6, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 8), (2, 3, 8), (2, 3, 8)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "1",
+            "padding": "3",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=4 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=3, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=4 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=3, kernel_size=4 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "1",
+            "padding": "6",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "3",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 10), (2, 3, 10), (2, 3, 10)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "2",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 5), (2, 3, 5), (2, 3, 5)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "3",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=3 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=3, kernel_size=3 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=3 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=3 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=3, kernel_size=3 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "1",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 7), (2, 3, 7), (2, 3, 7)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "6",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=7 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=6, kernel_size=7 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=7 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=7 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=6, kernel_size=7 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "1",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 1), (2, 3, 1), (2, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "2",
+            "padding": "0",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 1), (2, 3, 1), (2, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "0",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 6), (2, 3, 6), (2, 3, 6)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "7",
+            "padding": "6",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=1 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=6, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=1 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=6, kernel_size=1 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 8), (2, 3, 8), (2, 3, 8)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "3",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=1 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=3, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=1 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=3, kernel_size=1 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=7 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=7 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=7 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=7 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=7 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "2",
+            "padding": "3",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "2",
+            "stride": "2",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 5), (2, 3, 5), (2, 3, 5)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "1",
+            "padding": "0",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 1), (2, 3, 1), (2, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=3 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=3 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=3 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=3 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=3 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "2",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "3",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=7 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=7 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=7 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=7 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=7 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "2",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 5), (2, 3, 5), (2, 3, 5)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "2",
+            "stride": "1",
+            "padding": "0",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 9), (2, 3, 9), (2, 3, 9)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "4",
+            "padding": "0",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 1), (2, 3, 1), (2, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "2",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "2",
+            "padding": "1",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "6",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 1), (2, 3, 1), (2, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "1",
+            "padding": "6",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 6), (2, 3, 6), (2, 3, 6)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "3",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=1 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=3, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=1 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=3, kernel_size=1 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "2",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=1 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=2, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=1 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=2, kernel_size=1 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "6",
+            "padding": "3",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=1 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=3, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=1 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=3, kernel_size=1 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "0",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 10), (2, 3, 10), (2, 3, 10)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "1",
+            "padding": "3",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 7), (2, 3, 7), (2, 3, 7)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "2",
+            "padding": "1",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=1, kernel_size=1 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=1, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=1, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=1, kernel_size=1 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=1, kernel_size=1 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "3",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 1), (2, 3, 1), (2, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "4",
+            "padding": "3",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "3",
+            "padding": "4",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=1 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=4, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=1 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=4, kernel_size=1 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "3",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=1 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=1 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=1 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "5",
+            "padding": "3",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "1",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 11), (2, 3, 11), (2, 3, 11)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "1",
+            "padding": "3",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 7), (2, 3, 7), (2, 3, 7)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "2",
+            "stride": "1",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 9), (2, 3, 9), (2, 3, 9)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "6",
+            "padding": "3",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "2",
+            "padding": "0",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "1",
+            "padding": "6",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "1",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 11), (2, 3, 11), (2, 3, 11)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "6",
+            "padding": "5",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "7",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 1), (2, 3, 1), (2, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "5",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 1), (2, 3, 1), (2, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "1",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=5 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=5 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=5 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=5 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=5 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "2",
+            "stride": "1",
+            "padding": "2",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "1",
+            "padding": "5",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 11), (2, 3, 11), (2, 3, 11)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "6",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=1 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=2, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=1 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=2, kernel_size=1 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "6",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "3",
+            "padding": "2",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "1",
+            "padding": "5",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "4",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "1",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 5), (2, 3, 5), (2, 3, 5)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "1",
+            "padding": "1",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "2",
+            "padding": "5",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "6",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "2",
+            "stride": "6",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "4",
+            "padding": "6",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=3 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=2, kernel_size=3 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=3 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=3 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=2, kernel_size=3 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "5",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=5 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=5 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=5 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=5 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=5 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "5",
+            "padding": "6",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=3 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=6, kernel_size=3 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=3 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=3 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=6, kernel_size=3 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "6",
+            "padding": "1",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "3",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "7",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "2",
+            "stride": "1",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "1",
+            "padding": "2",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 11), (2, 3, 11), (2, 3, 11)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "5",
+            "padding": "3",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "2",
+            "stride": "1",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=2 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=2 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=2 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=2 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=2 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "1",
+            "padding": "2",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 5), (2, 3, 5), (2, 3, 5)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 10), (2, 3, 10), (2, 3, 10)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "6",
+            "padding": "5",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=1 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=1 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=1 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "2",
+            "padding": "6",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "4",
+            "padding": "1",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "2",
+            "padding": "5",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 6), (2, 3, 6), (2, 3, 6)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "5",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=7 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=7 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=7 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=7 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=7 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "2",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "5",
+            "padding": "6",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=6, kernel_size=10 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "2",
+            "stride": "1",
+            "padding": "3",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=2 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=3, kernel_size=2 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=2 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=2 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=3, kernel_size=2 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "1",
+            "padding": "0",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 7), (2, 3, 7), (2, 3, 7)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "2",
+            "padding": "4",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 5), (2, 3, 5), (2, 3, 5)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "2",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 6), (2, 3, 6), (2, 3, 6)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "6",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "2",
+            "padding": "4",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 5), (2, 3, 5), (2, 3, 5)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "4",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "4",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 1), (2, 3, 1), (2, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "7",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "2",
+            "padding": "1",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 6), (2, 3, 6), (2, 3, 6)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "4",
+            "padding": "3",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "4",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "4",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "2",
+            "padding": "3",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=4 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=3, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=4 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=3, kernel_size=4 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "4",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=7 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=4, kernel_size=7 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=7 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=7 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=4, kernel_size=7 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "5",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "7",
+            "padding": "5",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "6",
+            "padding": "3",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "2",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 6), (2, 3, 6), (2, 3, 6)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "3",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "2",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 10), (2, 3, 10), (2, 3, 10)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "1",
+            "padding": "3",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=4 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=3, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=3, kernel_size=4 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=3, kernel_size=4 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "5",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "3",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "7",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "5",
+            "padding": "6",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=7 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=6, kernel_size=7 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=7 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=7 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=6, kernel_size=7 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "1",
+            "padding": "4",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=4 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=4, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=4 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=4, kernel_size=4 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "2",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 8), (2, 3, 8), (2, 3, 8)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "7",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "6",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2), (2, 3, 2), (2, 3, 2)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "4",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=3 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=4, kernel_size=3 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=3 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=4, kernel_size=3 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=4, kernel_size=3 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "5",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=4 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "4",
+            "padding": "0",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "2",
+            "padding": "6",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "7",
+            "padding": "5",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=5 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=5 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=5 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=5 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=5 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "2",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=3 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=3 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=3 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=3 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=3 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "2",
+            "stride": "7",
+            "padding": "2",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=2, kernel_size=2 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "7",
+            "padding": "5",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=1 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=5, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=1 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=5, kernel_size=1 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=5, kernel_size=1 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "1",
+            "padding": "1",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "kernel_size": "4",
+            "stride": "5",
+            "padding": "6",
+            "ceil_mode": "True",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1', ('pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1', 'pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1'))",
+        "error_message": "pad should be at most half of effective kernel size, but got pad=6, kernel_size=4 and dilation=1"
+    },
+    {
+        "test_case": {
+            "kernel_size": "10",
+            "stride": "5",
+            "padding": "5",
+            "ceil_mode": "False",
+            "count_include_pad": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 3, 10]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    }
+]

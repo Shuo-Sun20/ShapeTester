@@ -1,0 +1,1525 @@
+[
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "None",
+            "left_padding": "0",
+            "bottom_padding": "None",
+            "right_padding": "0",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(0, 1, 0, 1, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=None, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=None, target_height=None', \"unsupported operand type(s) for +: 'NoneType' and 'int'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=None, target_height=None",
+        "conflict_params": [
+            "top_padding",
+            "bottom_padding",
+            "target_height"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "2",
+            "left_padding": "None",
+            "bottom_padding": "5",
+            "right_padding": "None",
+            "target_height": "20",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "segment": "(3, 0, 4, 0, 3, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=2, bottom_padding=5, target_height=20', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=2, bottom_padding=5, target_height=20', \"unsupported operand type(s) for +: 'NoneType' and 'int'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=2, bottom_padding=5, target_height=20",
+        "conflict_params": [
+            "top_padding",
+            "bottom_padding",
+            "target_height"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "1",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_last"
+        },
+        "segment": "(2, 0, 3, 4, 0, 5, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 18, 40, 3), (None, 18, 40, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "1",
+            "left_padding": "1",
+            "bottom_padding": "None",
+            "right_padding": "None",
+            "target_height": "15",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "segment": "(2, 2, 0, 0, 1, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of left_padding, right_padding, target_width. Received: left_padding=1, right_padding=None, target_width=None', ('Must specify exactly two of left_padding, right_padding, target_width. Received: left_padding=1, right_padding=None, target_width=None', \"unsupported operand type(s) for +: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of left_padding, right_padding, target_width. Received: left_padding=1, right_padding=None, target_width=None",
+        "conflict_params": [
+            "left_padding",
+            "right_padding",
+            "target_width"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "10",
+            "left_padding": "10",
+            "bottom_padding": "2",
+            "right_padding": "None",
+            "target_height": "None",
+            "target_width": "35",
+            "data_format": "None"
+        },
+        "segment": "(5, 5, 3, 0, 0, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 27, 35, 3), (None, 27, 35, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "5",
+            "left_padding": "None",
+            "bottom_padding": "None",
+            "right_padding": "10",
+            "target_height": "None",
+            "target_width": "25",
+            "data_format": "None"
+        },
+        "segment": "(4, 0, 0, 5, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=5, bottom_padding=None, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=5, bottom_padding=None, target_height=None', \"unsupported operand type(s) for +: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=5, bottom_padding=None, target_height=None",
+        "conflict_params": [
+            "top_padding",
+            "bottom_padding",
+            "target_height"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "1",
+            "left_padding": "None",
+            "bottom_padding": "5",
+            "right_padding": "2",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(2, 0, 4, 3, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of left_padding, right_padding, target_width. Received: left_padding=None, right_padding=2, target_width=None', ('Must specify exactly two of left_padding, right_padding, target_width. Received: left_padding=None, right_padding=2, target_width=None', \"unsupported operand type(s) for +: 'NoneType' and 'int'\"))",
+        "error_message": "Must specify exactly two of left_padding, right_padding, target_width. Received: left_padding=None, right_padding=2, target_width=None",
+        "conflict_params": [
+            "left_padding",
+            "right_padding",
+            "target_width"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "None",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "None",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(0, 0, 1, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=0, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=0, target_height=None', \"unsupported operand type(s) for +: 'NoneType' and 'int'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=0, target_height=None",
+        "conflict_params": [
+            "top_padding",
+            "bottom_padding",
+            "target_height"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "10",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "35",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 27, 35, 3), (None, 27, 35, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "None",
+            "left_padding": "10",
+            "bottom_padding": "2",
+            "right_padding": "0",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=2, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=2, target_height=None', \"unsupported operand type(s) for +: 'NoneType' and 'int'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=2, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "10",
+            "left_padding": "10",
+            "bottom_padding": "2",
+            "right_padding": "None",
+            "target_height": "None",
+            "target_width": "35",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 27, 35, 3), (None, 27, 35, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "1",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 18, 40, 3), (None, 18, 40, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "10",
+            "left_padding": "10",
+            "bottom_padding": "2",
+            "right_padding": "0",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 27, 35, 3), (None, 27, 35, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "10",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "35",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 27, 35, 3), (None, 27, 35, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "None",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "10",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=0, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=0, target_height=None', \"unsupported operand type(s) for +: 'NoneType' and 'int'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=0, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 17, 40, 3), (None, 17, 40, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "1",
+            "left_padding": "None",
+            "bottom_padding": "None",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=1, bottom_padding=None, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=1, bottom_padding=None, target_height=None', \"unsupported operand type(s) for +: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=1, bottom_padding=None, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "5",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "30",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 22, 30, 3), (None, 22, 30, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "10",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 27, 40, 3), (None, 27, 40, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "1",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "30",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 18, 30, 3), (None, 18, 30, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "5",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "35",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 22, 35, 3), (None, 22, 35, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "None",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "None",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=2, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=2, target_height=None', \"unsupported operand type(s) for +: 'NoneType' and 'int'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=2, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "1",
+            "left_padding": "10",
+            "bottom_padding": "None",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=1, bottom_padding=None, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=1, bottom_padding=None, target_height=None', \"unsupported operand type(s) for +: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=1, bottom_padding=None, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 17, 40, 3), (None, 17, 40, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "2",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "35",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 19, 35, 3), (None, 19, 35, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "1",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 16, 40, 3), (None, 16, 40, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "1",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 26, 40), (None, 15, 26, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "2",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 19, 40, 3), (None, 19, 40, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "1",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 16, 40, 3), (None, 16, 40, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 17, 40, 3), (None, 17, 40, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "1",
+            "bottom_padding": "None",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=0, bottom_padding=None, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=0, bottom_padding=None, target_height=None', \"unsupported operand type(s) for +: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=0, bottom_padding=None, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "5",
+            "left_padding": "None",
+            "bottom_padding": "1",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 31, 40), (None, 15, 31, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "2",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 27, 40), (None, 15, 27, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "5",
+            "left_padding": "None",
+            "bottom_padding": "1",
+            "right_padding": "0",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 31, 40), (None, 15, 31, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "1",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 26, 40), (None, 15, 26, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "1",
+            "left_padding": "10",
+            "bottom_padding": "None",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=1, bottom_padding=None, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=1, bottom_padding=None, target_height=None', \"unsupported operand type(s) for +: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=1, bottom_padding=None, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "2",
+            "left_padding": "None",
+            "bottom_padding": "1",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of left_padding, right_padding, target_width. Received: left_padding=None, right_padding=5, target_width=None', ('Must specify exactly two of left_padding, right_padding, target_width. Received: left_padding=None, right_padding=5, target_width=None', \"unsupported operand type(s) for +: 'NoneType' and 'int'\"))",
+        "error_message": "Must specify exactly two of left_padding, right_padding, target_width. Received: left_padding=None, right_padding=5, target_width=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "1",
+            "right_padding": "10",
+            "target_height": "None",
+            "target_width": "35",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 26, 35), (None, 15, 26, 35)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "0",
+            "bottom_padding": "None",
+            "right_padding": "2",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=0, bottom_padding=None, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=0, bottom_padding=None, target_height=None', \"unsupported operand type(s) for +: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=0, bottom_padding=None, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "1",
+            "right_padding": "0",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 26, 40), (None, 15, 26, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "2",
+            "left_padding": "None",
+            "bottom_padding": "1",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 28, 40), (None, 15, 28, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "10",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "35",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 25, 35, 3), (None, 25, 35, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "None",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=0, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=0, target_height=None', \"unsupported operand type(s) for +: 'NoneType' and 'int'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=0, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "2",
+            "left_padding": "None",
+            "bottom_padding": "1",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 28, 40), (None, 15, 28, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "2",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 29, 40), (None, 15, 29, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 25, 40), (None, 15, 25, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "1",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 16, 40, 3), (None, 16, 40, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "5",
+            "right_padding": "2",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 30, 40), (None, 15, 30, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "10",
+            "left_padding": "3",
+            "bottom_padding": "None",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "25",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=10, bottom_padding=None, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=10, bottom_padding=None, target_height=None', \"unsupported operand type(s) for +: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=10, bottom_padding=None, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "1",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "26",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 26, 26), (None, 15, 26, 26)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 27, 40), (None, 15, 27, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "0",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 40, 3), (None, 15, 40, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "None",
+            "left_padding": "None",
+            "bottom_padding": "1",
+            "right_padding": "None",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=1, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=1, target_height=None', \"unsupported operand type(s) for +: 'NoneType' and 'int'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=1, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "26",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 25, 26), (None, 15, 25, 26)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "1",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "35",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 26, 35), (None, 15, 26, 35)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "5",
+            "left_padding": "None",
+            "bottom_padding": "10",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 40, 40), (None, 15, 40, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "1",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "30",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 26, 30), (None, 15, 26, 30)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "2",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 27, 40), (None, 15, 27, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "None",
+            "left_padding": "0",
+            "bottom_padding": "0",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=0, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=0, target_height=None', \"unsupported operand type(s) for +: 'NoneType' and 'int'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=0, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "None",
+            "left_padding": "3",
+            "bottom_padding": "1",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=1, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=1, target_height=None', \"unsupported operand type(s) for +: 'NoneType' and 'int'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=1, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "None",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=0, bottom_padding=None, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=0, bottom_padding=None, target_height=None', \"unsupported operand type(s) for +: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=0, bottom_padding=None, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "2",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 40, 3), (None, 15, 40, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "None",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=0, bottom_padding=None, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=0, bottom_padding=None, target_height=None', \"unsupported operand type(s) for +: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=0, bottom_padding=None, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "1",
+            "bottom_padding": "None",
+            "right_padding": "2",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=0, bottom_padding=None, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=0, bottom_padding=None, target_height=None', \"unsupported operand type(s) for +: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=0, bottom_padding=None, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "2",
+            "left_padding": "3",
+            "bottom_padding": "0",
+            "right_padding": "None",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 27, 40), (None, 15, 27, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "5",
+            "left_padding": "None",
+            "bottom_padding": "1",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 31, 40), (None, 15, 31, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 25, 40), (None, 15, 25, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "10",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 25, 40), (None, 15, 25, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "5",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "25",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 30, 25), (None, 15, 30, 25)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "25",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 25, 25), (None, 15, 25, 25)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "26",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 25, 26), (None, 15, 25, 26)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "10",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of left_padding, right_padding, target_width. Received: left_padding=None, right_padding=5, target_width=None', ('Must specify exactly two of left_padding, right_padding, target_width. Received: left_padding=None, right_padding=5, target_width=None', \"unsupported operand type(s) for +: 'NoneType' and 'int'\"))",
+        "error_message": "Must specify exactly two of left_padding, right_padding, target_width. Received: left_padding=None, right_padding=5, target_width=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "10",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of left_padding, right_padding, target_width. Received: left_padding=None, right_padding=5, target_width=None', ('Must specify exactly two of left_padding, right_padding, target_width. Received: left_padding=None, right_padding=5, target_width=None', \"unsupported operand type(s) for +: 'NoneType' and 'int'\"))",
+        "error_message": "Must specify exactly two of left_padding, right_padding, target_width. Received: left_padding=None, right_padding=5, target_width=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "1",
+            "left_padding": "10",
+            "bottom_padding": "2",
+            "right_padding": "None",
+            "target_height": "None",
+            "target_width": "35",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 18, 35, 3), (None, 18, 35, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "5",
+            "left_padding": "None",
+            "bottom_padding": "None",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "25",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=5, bottom_padding=None, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=5, bottom_padding=None, target_height=None', \"unsupported operand type(s) for +: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=5, bottom_padding=None, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "5",
+            "bottom_padding": "0",
+            "right_padding": "None",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 25, 40), (None, 15, 25, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 40, 3), (None, 15, 40, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "2",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 27, 40), (None, 15, 27, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "10",
+            "left_padding": "10",
+            "bottom_padding": "2",
+            "right_padding": "None",
+            "target_height": "None",
+            "target_width": "35",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 37, 35), (None, 15, 37, 35)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "10",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "10",
+            "target_height": "None",
+            "target_width": "35",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 27, 35, 3), (None, 27, 35, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "10",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "10",
+            "target_height": "None",
+            "target_width": "35",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 27, 35, 3), (None, 27, 35, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "35",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 25, 35), (None, 15, 25, 35)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "30",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 25, 30), (None, 15, 25, 30)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "35",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 17, 35, 3), (None, 17, 35, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 27, 40), (None, 15, 27, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 40, 3), (None, 15, 40, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "0",
+            "target_height": "None",
+            "target_width": "30",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 25, 30), (None, 15, 25, 30)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "0",
+            "target_height": "None",
+            "target_width": "35",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 25, 35), (None, 15, 25, 35)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "10",
+            "left_padding": "10",
+            "bottom_padding": "0",
+            "right_padding": "None",
+            "target_height": "None",
+            "target_width": "35",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 25, 35, 3), (None, 25, 35, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "10",
+            "left_padding": "None",
+            "bottom_padding": "5",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "35",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 30, 35, 3), (None, 30, 35, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "5",
+            "left_padding": "10",
+            "bottom_padding": "10",
+            "right_padding": "None",
+            "target_height": "None",
+            "target_width": "35",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 30, 35, 3), (None, 30, 35, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "5",
+            "left_padding": "None",
+            "bottom_padding": "10",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 30, 40, 3), (None, 30, 40, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "None",
+            "right_padding": "1",
+            "target_height": "25",
+            "target_width": "40",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 25, 40, 3), (None, 25, 40, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "25",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 25, 25), (None, 15, 25, 25)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "2",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of left_padding, right_padding, target_width. Received: left_padding=None, right_padding=5, target_width=None', ('Must specify exactly two of left_padding, right_padding, target_width. Received: left_padding=None, right_padding=5, target_width=None', \"unsupported operand type(s) for +: 'NoneType' and 'int'\"))",
+        "error_message": "Must specify exactly two of left_padding, right_padding, target_width. Received: left_padding=None, right_padding=5, target_width=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "5",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "2",
+            "target_height": "None",
+            "target_width": "35",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 30, 35), (None, 15, 30, 35)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "10",
+            "left_padding": "None",
+            "bottom_padding": "1",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 26, 40, 3), (None, 26, 40, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "None",
+            "left_padding": "None",
+            "bottom_padding": "10",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=10, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=10, target_height=None', \"unsupported operand type(s) for +: 'NoneType' and 'int'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=None, bottom_padding=10, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 40, 3), (None, 15, 40, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "10",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 35, 40), (None, 15, 35, 40)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 40, 3), (None, 15, 40, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "1",
+            "bottom_padding": "None",
+            "right_padding": "1",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=0, bottom_padding=None, target_height=None', ('Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=0, bottom_padding=None, target_height=None', \"unsupported operand type(s) for +: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_padding, bottom_padding, target_height. Received: top_padding=0, bottom_padding=None, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "0",
+            "left_padding": "5",
+            "bottom_padding": "0",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 25, 13), (None, 15, 25, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 15, 25, 3))]",
+            "top_padding": "10",
+            "left_padding": "None",
+            "bottom_padding": "0",
+            "right_padding": "5",
+            "target_height": "None",
+            "target_width": "40",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 35, 40), (None, 15, 35, 40)))"
+    }
+]

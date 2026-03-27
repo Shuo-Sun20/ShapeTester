@@ -1,0 +1,75 @@
+[
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 3]))",
+            "driver": "None",
+            "out": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 3]))",
+            "driver": "None",
+            "out": "Tensor(shape=torch.Size([3]))"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 3]))",
+            "driver": "None",
+            "out": "Tensor(shape=torch.Size([3]))"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected out tensor to have dtype float, but got double instead', ('Expected out tensor to have dtype float, but got double instead', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_svdvals>(*(FakeTensor(..., size=(5, 3)),), **{\\'driver\\': None, \\'out\\': FakeTensor(..., size=(3,), dtype=torch.float64)}): got RuntimeError(\\'Expected out tensor to have dtype float, but got double instead\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_svdvals/generated_code.py\", line 6, in call_func\\n    return torch.linalg.svdvals(A, driver=driver, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected out tensor to have dtype float, but got double instead'))",
+        "error_message": "Expected out tensor to have dtype float, but got double instead",
+        "conflict_params": [
+            "inputs",
+            "out"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 3]))",
+            "driver": "None",
+            "out": "Tensor(shape=torch.Size([3]))"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected out tensor to have dtype float, but got c10::complex<float> instead', ('Expected out tensor to have dtype float, but got c10::complex<float> instead', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_svdvals>(*(FakeTensor(..., size=(5, 3)),), **{\\'driver\\': None, \\'out\\': FakeTensor(..., size=(3,), dtype=torch.complex64)}): got RuntimeError(\\'Expected out tensor to have dtype float, but got c10::complex<float> instead\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_svdvals/generated_code.py\", line 6, in call_func\\n    return torch.linalg.svdvals(A, driver=driver, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected out tensor to have dtype float, but got c10::complex<float> instead'))",
+        "error_message": "Expected out tensor to have dtype float, but got c10::complex<float> instead",
+        "conflict_params": [
+            "out"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 3]))",
+            "driver": "None",
+            "out": "Tensor(shape=torch.Size([3]))"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected out tensor to have dtype float, but got c10::complex<double> instead', ('Expected out tensor to have dtype float, but got c10::complex<double> instead', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_svdvals>(*(FakeTensor(..., size=(5, 3)),), **{\\'driver\\': None, \\'out\\': FakeTensor(..., size=(3,), dtype=torch.complex128)}): got RuntimeError(\\'Expected out tensor to have dtype float, but got c10::complex<double> instead\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_svdvals/generated_code.py\", line 6, in call_func\\n    return torch.linalg.svdvals(A, driver=driver, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected out tensor to have dtype float, but got c10::complex<double> instead'))",
+        "error_message": "Expected out tensor to have dtype float, but got c10::complex<double> instead",
+        "conflict_params": [
+            "out"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 3]))",
+            "driver": "None",
+            "out": "Tensor(shape=torch.Size([3]))"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,), (3,)))"
+    }
+]

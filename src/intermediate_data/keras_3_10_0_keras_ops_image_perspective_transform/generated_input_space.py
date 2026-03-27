@@ -1,0 +1,39 @@
+import keras
+import numpy as np
+from dataclasses import dataclass, field
+
+def call_func(inputs, interpolation="bilinear", fill_value=0, data_format=None):
+    images, start_points, end_points = inputs
+    return keras.ops.image.perspective_transform(
+        images=images,
+        start_points=start_points,
+        end_points=end_points,
+        interpolation=interpolation,
+        fill_value=fill_value,
+        data_format=data_format
+    )
+
+x = np.random.random((2, 64, 80, 3)).astype("float32")
+start_points = np.array(
+    [
+        [[0, 0], [0, 64], [80, 0], [80, 64]],
+        [[0, 0], [0, 64], [80, 0], [80, 64]],
+    ]
+).astype("float32")
+end_points = np.array(
+    [
+        [[3, 5], [7, 64], [76, -10], [84, 61]],
+        [[8, 10], [10, 61], [65, 3], [88, 43]],
+    ]
+).astype("float32")
+
+valid_test_case = {
+    "inputs": [x, start_points, end_points],
+    "interpolation": "bilinear",
+    "fill_value": 0,
+    "data_format": None
+}
+
+@dataclass
+class InputSpace:
+    data_format: list = field(default_factory=lambda: [None, "channels_last", "channels_first"])

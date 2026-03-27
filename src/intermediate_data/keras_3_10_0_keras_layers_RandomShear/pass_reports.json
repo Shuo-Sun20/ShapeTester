@@ -1,0 +1,47 @@
+[
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 32, 32, 3))",
+            "x_factor": "[0.0, 0.1]",
+            "y_factor": "0.05",
+            "interpolation": "bilinear",
+            "fill_mode": "constant",
+            "fill_value": "0.0",
+            "data_format": "None",
+            "seed": "42"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 32, 3), (None, 32, 32, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 32, 32, 3))",
+            "x_factor": "[0.0, 0.1]",
+            "y_factor": "0.05",
+            "interpolation": "bilinear",
+            "fill_mode": "constant",
+            "fill_value": "0.0",
+            "data_format": "channels_last",
+            "seed": "42"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 32, 3), (None, 32, 32, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 32, 32, 3))",
+            "x_factor": "[0.0, 0.1]",
+            "y_factor": "0.05",
+            "interpolation": "bilinear",
+            "fill_mode": "constant",
+            "fill_value": "0.0",
+            "data_format": "channels_first",
+            "seed": "42"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 32, 3), (None, 32, 32, 3)))"
+    }
+]

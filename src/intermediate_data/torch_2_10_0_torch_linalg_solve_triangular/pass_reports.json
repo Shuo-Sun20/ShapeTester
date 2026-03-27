@@ -1,0 +1,31 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3])), Tensor(shape=torch.Size([3, 2]))]",
+            "upper": "True",
+            "left": "True",
+            "unitriangular": "False",
+            "out": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3])), Tensor(shape=torch.Size([3, 2]))]",
+            "upper": "True",
+            "left": "False",
+            "unitriangular": "False",
+            "out": "None"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'linalg.solve_triangular: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x2)', ('linalg.solve_triangular: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_solve_triangular>(*(FakeTensor(..., size=(s21, s21)), FakeTensor(..., size=(s21, s22))), **{\\'upper\\': True, \\'left\\': False, \\'unitriangular\\': False, \\'out\\': None}): got RuntimeError(\\'linalg.solve_triangular: Incompatible shapes of A and B for the equation XA = B (s21xs21 and s21xs22)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_solve_triangular/generated_code.py\", line 5, in call_func\\n    return torch.linalg.solve_triangular(A, B, upper=upper, left=left, unitriangular=unitriangular, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'linalg.solve_triangular: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x2)'))",
+        "error_message": "linalg.solve_triangular: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x2)",
+        "conflict_params": [
+            "inputs",
+            "left"
+        ]
+    }
+]

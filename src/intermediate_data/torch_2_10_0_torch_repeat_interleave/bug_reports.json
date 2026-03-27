@@ -1,0 +1,268 @@
+[
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([1]))",
+            "dim": "None"
+        },
+        "segment": "(2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot repeat_interleave a meta tensor without output_size', ((3,), (3,), 'cannot repeat_interleave a meta tensor without output_size'))",
+        "error_message": "cannot repeat_interleave a meta tensor without output_size",
+        "conflict_params": [
+            "repeats",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 3]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "-2"
+        },
+        "segment": "(3, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot repeat_interleave a meta tensor without output_size', ((3, 3), (3, 3), 'cannot repeat_interleave a meta tensor without output_size'))",
+        "error_message": "cannot repeat_interleave a meta tensor without output_size",
+        "conflict_params": [
+            "repeats",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([3]))",
+            "dim": "None"
+        },
+        "segment": "(4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot repeat_interleave a meta tensor without output_size', ((3,), (3,), 'cannot repeat_interleave a meta tensor without output_size'))",
+        "error_message": "cannot repeat_interleave a meta tensor without output_size",
+        "conflict_params": [
+            "inputs",
+            "repeats",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 3]))",
+            "repeats": "Tensor(shape=torch.Size([3]))",
+            "dim": "1"
+        },
+        "segment": "(4, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot repeat_interleave a meta tensor without output_size', ((2, 3), (2, 3), 'cannot repeat_interleave a meta tensor without output_size'))",
+        "error_message": "cannot repeat_interleave a meta tensor without output_size",
+        "conflict_params": [
+            "inputs",
+            "repeats",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([1]))",
+            "dim": "-1",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'allocated size does not match required size', ('allocated size does not match required size', 'allocated size does not match required size', (2, 3)))",
+        "error_message": "allocated size does not match required size"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "0",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot repeat_interleave a meta tensor without output_size', ((3, 2), (3, 2), 'cannot repeat_interleave a meta tensor without output_size'))",
+        "error_message": "cannot repeat_interleave a meta tensor without output_size"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "-1",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot repeat_interleave a meta tensor without output_size', ((2, 3), (2, 3), 'cannot repeat_interleave a meta tensor without output_size'))",
+        "error_message": "cannot repeat_interleave a meta tensor without output_size"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "1",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot repeat_interleave a meta tensor without output_size', ((2, 3), (2, 3), 'cannot repeat_interleave a meta tensor without output_size'))",
+        "error_message": "cannot repeat_interleave a meta tensor without output_size"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "-2",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot repeat_interleave a meta tensor without output_size', ((3, 2), (3, 2), 'cannot repeat_interleave a meta tensor without output_size'))",
+        "error_message": "cannot repeat_interleave a meta tensor without output_size"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([1]))",
+            "dim": "1",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'allocated size does not match required size', ('allocated size does not match required size', 'allocated size does not match required size', (2, 3)))",
+        "error_message": "allocated size does not match required size"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([1]))",
+            "dim": "-2",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'allocated size does not match required size', ('allocated size does not match required size', 'allocated size does not match required size', (3, 2)))",
+        "error_message": "allocated size does not match required size"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([1]))",
+            "dim": "0",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'allocated size does not match required size', ('allocated size does not match required size', 'allocated size does not match required size', (3, 2)))",
+        "error_message": "allocated size does not match required size"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([1]))",
+            "dim": "-2",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot repeat_interleave a meta tensor without output_size', ((2, 2), (2, 2), 'cannot repeat_interleave a meta tensor without output_size'))",
+        "error_message": "cannot repeat_interleave a meta tensor without output_size"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([3]))",
+            "dim": "-1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot repeat_interleave a meta tensor without output_size', ((3,), (3,), 'cannot repeat_interleave a meta tensor without output_size'))",
+        "error_message": "cannot repeat_interleave a meta tensor without output_size"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([3]))",
+            "dim": "0",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot repeat_interleave a meta tensor without output_size', ((3,), (3,), 'cannot repeat_interleave a meta tensor without output_size'))",
+        "error_message": "cannot repeat_interleave a meta tensor without output_size"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([1]))",
+            "dim": "0",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot repeat_interleave a meta tensor without output_size', ((3,), (3,), 'cannot repeat_interleave a meta tensor without output_size'))",
+        "error_message": "cannot repeat_interleave a meta tensor without output_size"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([1]))",
+            "dim": "-1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot repeat_interleave a meta tensor without output_size', ((3,), (3,), 'cannot repeat_interleave a meta tensor without output_size'))",
+        "error_message": "cannot repeat_interleave a meta tensor without output_size"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([1]))",
+            "dim": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot repeat_interleave a meta tensor without output_size', ((3,), (3,), 'cannot repeat_interleave a meta tensor without output_size'))",
+        "error_message": "cannot repeat_interleave a meta tensor without output_size"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([1]))",
+            "dim": "0"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot repeat_interleave a meta tensor without output_size', ((3,), (3,), 'cannot repeat_interleave a meta tensor without output_size'))",
+        "error_message": "cannot repeat_interleave a meta tensor without output_size"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([1]))",
+            "dim": "None",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot repeat_interleave a meta tensor without output_size', ((4,), (4,), 'cannot repeat_interleave a meta tensor without output_size'))",
+        "error_message": "cannot repeat_interleave a meta tensor without output_size"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([1]))",
+            "dim": "-1",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot repeat_interleave a meta tensor without output_size', ((2, 2), (2, 2), 'cannot repeat_interleave a meta tensor without output_size'))",
+        "error_message": "cannot repeat_interleave a meta tensor without output_size"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([3]))",
+            "dim": "0"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot repeat_interleave a meta tensor without output_size', ((3,), (3,), 'cannot repeat_interleave a meta tensor without output_size'))",
+        "error_message": "cannot repeat_interleave a meta tensor without output_size"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([1]))",
+            "dim": "1",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot repeat_interleave a meta tensor without output_size', ((2, 2), (2, 2), 'cannot repeat_interleave a meta tensor without output_size'))",
+        "error_message": "cannot repeat_interleave a meta tensor without output_size"
+    }
+]

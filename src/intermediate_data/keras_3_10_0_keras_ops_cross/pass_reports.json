@@ -1,0 +1,38 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 3)), EagerTensor(shape=(3, 4, 3))]",
+            "axis": "-2"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Cross_device_/job:localhost/replica:0/task:0/device:CPU:0}} Cross-products are only defined for 3-element vectors. [Op:Cross] name: ', ('{{function_node __wrapped__Cross_device_/job:localhost/replica:0/task:0/device:CPU:0}} Cross-products are only defined for 3-element vectors. [Op:Cross] name: ', \"`x1`'s dim on `axis={axisa}` must be either 2 or 3, but received: 4\"))",
+        "error_message": "{{function_node __wrapped__Cross_device_/job:localhost/replica:0/task:0/device:CPU:0}} Cross-products are only defined for 3-element vectors. [Op:Cross] name: ",
+        "conflict_params": [
+            "inputs",
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 3)), EagerTensor(shape=(3, 4, 3))]",
+            "axis": "1"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Cross_device_/job:localhost/replica:0/task:0/device:CPU:0}} Cross-products are only defined for 3-element vectors. [Op:Cross] name: ', ('{{function_node __wrapped__Cross_device_/job:localhost/replica:0/task:0/device:CPU:0}} Cross-products are only defined for 3-element vectors. [Op:Cross] name: ', \"`x1`'s dim on `axis={axisa}` must be either 2 or 3, but received: 4\"))",
+        "error_message": "{{function_node __wrapped__Cross_device_/job:localhost/replica:0/task:0/device:CPU:0}} Cross-products are only defined for 3-element vectors. [Op:Cross] name: ",
+        "conflict_params": [
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 3)), EagerTensor(shape=(3, 4, 3))]",
+            "axis": "2"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 3), (None, 4, 3)))"
+    }
+]

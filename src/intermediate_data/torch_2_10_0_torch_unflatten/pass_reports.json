@@ -1,0 +1,1440 @@
+[
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "-3",
+            "sizes": "[2, 2]"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 0 (3) in the input tensor\", (\"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 0 (3) in the input tensor\", 'Dynamo failed to run FX node with fake tensors: call_function <built-in method unflatten of type object at 0x7fdbb2529b40>(*(FakeTensor(..., size=(s85, s71, 1)), -3, (s62, s38)), **{}): got RuntimeError(\"unflatten: Provided sizes [s62, s38] don\\'t multiply up to the size of dim 0 (s85: hint = 3) in the input tensor\")\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_unflatten/generated_code.py\", line 4, in call_func\\n    return torch.unflatten(inputs, dim, sizes)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', \"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 0 (3) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 0 (3) in the input tensor",
+        "conflict_params": [
+            "inputs",
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 5, 6]))",
+            "dim": "-3",
+            "sizes": "[4, 1]"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 1, 5, 6), (4, 1, 5, 6), (4, 1, 5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 5, 6]))",
+            "dim": "-3",
+            "sizes": "[1, 4]"
+        },
+        "segment": "(0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 4, 5, 6), (1, 4, 5, 6), (1, 4, 5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 5, 6]))",
+            "dim": "-3",
+            "sizes": "[-1, 2]"
+        },
+        "segment": "(0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 5, 6), (2, 2, 5, 6), (2, 2, 5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 5, 6]))",
+            "dim": "-3",
+            "sizes": "[2, -1]"
+        },
+        "segment": "(0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 5, 6), (2, 2, 5, 6), (2, 2, 5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 5, 6]))",
+            "dim": "-3",
+            "sizes": "[-1, 4]"
+        },
+        "segment": "(0, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 4, 5, 6), (1, 4, 5, 6), (1, 4, 5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 5, 6]))",
+            "dim": "-3",
+            "sizes": "[4, -1]"
+        },
+        "segment": "(0, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 1, 5, 6), (4, 1, 5, 6), (4, 1, 5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 5, 6]))",
+            "dim": "-3",
+            "sizes": "[1, 2, 2]"
+        },
+        "segment": "(0, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 2, 5, 6), (1, 2, 2, 5, 6), (1, 2, 2, 5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 5, 6]))",
+            "dim": "-3",
+            "sizes": "[2, 1, 2]"
+        },
+        "segment": "(0, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 2, 5, 6), (2, 1, 2, 5, 6), (2, 1, 2, 5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 5, 6]))",
+            "dim": "-3",
+            "sizes": "[2, 2, 1]"
+        },
+        "segment": "(0, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 1, 5, 6), (2, 2, 1, 5, 6), (2, 2, 1, 5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 5, 6]))",
+            "dim": "-3",
+            "sizes": "[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+        },
+        "segment": "(0, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 0 (4) in the input tensor\", (\"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 0 (4) in the input tensor\", \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 0 (4) in the input tensor\", \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 0 (4) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 0 (4) in the input tensor",
+        "conflict_params": [
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 5, 6]))",
+            "dim": "-3",
+            "sizes": "[1]"
+        },
+        "segment": "(0, 11)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1] don't multiply up to the size of dim 0 (4) in the input tensor\", (\"unflatten: Provided sizes [1] don't multiply up to the size of dim 0 (4) in the input tensor\", \"unflatten: Provided sizes [1] don't multiply up to the size of dim 0 (4) in the input tensor\", \"unflatten: Provided sizes [1] don't multiply up to the size of dim 0 (4) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1] don't multiply up to the size of dim 0 (4) in the input tensor",
+        "conflict_params": [
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 5, 6]))",
+            "dim": "-3",
+            "sizes": "[5, 1]"
+        },
+        "segment": "(0, 12)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 0 (4) in the input tensor\", (\"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 0 (4) in the input tensor\", \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 0 (4) in the input tensor\", \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 0 (4) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 0 (4) in the input tensor",
+        "conflict_params": [
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 5, 6]))",
+            "dim": "-2",
+            "sizes": "[2, 2]"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 1 (5) in the input tensor\", (\"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 1 (5) in the input tensor\", \"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 1 (5) in the input tensor\", \"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 1 (5) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 1 (5) in the input tensor",
+        "conflict_params": [
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "-2",
+            "sizes": "[4, 1]"
+        },
+        "segment": "(1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 1, 1), (3, 4, 1, 1), (3, 4, 1, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "-2",
+            "sizes": "[1, 4]"
+        },
+        "segment": "(1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 1, 4, 1), (3, 1, 4, 1), (3, 1, 4, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "-2",
+            "sizes": "[-1, 2]"
+        },
+        "segment": "(1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2, 2, 1), (3, 2, 2, 1), (3, 2, 2, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "-2",
+            "sizes": "[2, -1]"
+        },
+        "segment": "(1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2, 2, 1), (3, 2, 2, 1), (3, 2, 2, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "-2",
+            "sizes": "[-1, 4]"
+        },
+        "segment": "(1, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 1, 4, 1), (3, 1, 4, 1), (3, 1, 4, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "-2",
+            "sizes": "[4, -1]"
+        },
+        "segment": "(1, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 1, 1), (3, 4, 1, 1), (3, 4, 1, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "-2",
+            "sizes": "[1, 2, 2]"
+        },
+        "segment": "(1, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 1, 2, 2, 1), (3, 1, 2, 2, 1), (3, 1, 2, 2, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "-2",
+            "sizes": "[2, 1, 2]"
+        },
+        "segment": "(1, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2, 1, 2, 1), (3, 2, 1, 2, 1), (3, 2, 1, 2, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "-2",
+            "sizes": "[2, 2, 1]"
+        },
+        "segment": "(1, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2, 2, 1, 1), (3, 2, 2, 1, 1), (3, 2, 2, 1, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "-2",
+            "sizes": "[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+        },
+        "segment": "(1, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 1 (4) in the input tensor\", (\"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 1 (4) in the input tensor\", \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 1 (4) in the input tensor\", \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 1 (4) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 1 (4) in the input tensor",
+        "conflict_params": [
+            "inputs",
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-2",
+            "sizes": "[1]"
+        },
+        "segment": "(1, 11)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 1, 4), (3, 1, 4), (3, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-2",
+            "sizes": "[5, 1]"
+        },
+        "segment": "(1, 12)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (1) in the input tensor",
+        "conflict_params": [
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 5, 6]))",
+            "dim": "-1",
+            "sizes": "[2, 2]"
+        },
+        "segment": "(2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 2 (6) in the input tensor\", (\"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 2 (6) in the input tensor\", \"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 2 (6) in the input tensor\", \"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 2 (6) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 2 (6) in the input tensor",
+        "conflict_params": [
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "-1",
+            "sizes": "[4, 1]"
+        },
+        "segment": "(2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 2 (1) in the input tensor\", (\"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 2 (1) in the input tensor\", \"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 2 (1) in the input tensor\", \"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 2 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 2 (1) in the input tensor",
+        "conflict_params": [
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "-1",
+            "sizes": "[1, 4]"
+        },
+        "segment": "(2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1, 4] don't multiply up to the size of dim 2 (1) in the input tensor\", (\"unflatten: Provided sizes [1, 4] don't multiply up to the size of dim 2 (1) in the input tensor\", \"unflatten: Provided sizes [1, 4] don't multiply up to the size of dim 2 (1) in the input tensor\", \"unflatten: Provided sizes [1, 4] don't multiply up to the size of dim 2 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1, 4] don't multiply up to the size of dim 2 (1) in the input tensor",
+        "conflict_params": [
+            "inputs",
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "dim": "-1",
+            "sizes": "[-1, 2]"
+        },
+        "segment": "(2, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2, 2), (3, 2, 2), (3, 2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "dim": "-1",
+            "sizes": "[2, -1]"
+        },
+        "segment": "(2, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2, 2), (3, 2, 2), (3, 2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "dim": "-1",
+            "sizes": "[-1, 4]"
+        },
+        "segment": "(2, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 1, 4), (3, 1, 4), (3, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "dim": "-1",
+            "sizes": "[4, -1]"
+        },
+        "segment": "(2, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 1), (3, 4, 1), (3, 4, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "dim": "-1",
+            "sizes": "[1, 2, 2]"
+        },
+        "segment": "(2, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 1, 2, 2), (3, 1, 2, 2), (3, 1, 2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "dim": "-1",
+            "sizes": "[2, 1, 2]"
+        },
+        "segment": "(2, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2, 1, 2), (3, 2, 1, 2), (3, 2, 1, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "dim": "-1",
+            "sizes": "[2, 2, 1]"
+        },
+        "segment": "(2, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2, 2, 1), (3, 2, 2, 1), (3, 2, 2, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-1",
+            "sizes": "[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+        },
+        "segment": "(2, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 2 (4) in the input tensor\", (\"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 2 (4) in the input tensor\", \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 2 (4) in the input tensor\", \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 2 (4) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 2 (4) in the input tensor",
+        "conflict_params": [
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "dim": "-1",
+            "sizes": "[1]"
+        },
+        "segment": "(2, 11)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1] don't multiply up to the size of dim 1 (4) in the input tensor\", (\"unflatten: Provided sizes [1] don't multiply up to the size of dim 1 (4) in the input tensor\", \"unflatten: Provided sizes [1] don't multiply up to the size of dim 1 (4) in the input tensor\", \"unflatten: Provided sizes [1] don't multiply up to the size of dim 1 (4) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1] don't multiply up to the size of dim 1 (4) in the input tensor",
+        "conflict_params": [
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "dim": "-1",
+            "sizes": "[5, 1]"
+        },
+        "segment": "(2, 12)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (4) in the input tensor\", (\"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (4) in the input tensor\", \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (4) in the input tensor\", \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (4) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (4) in the input tensor",
+        "conflict_params": [
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 5, 6]))",
+            "dim": "0",
+            "sizes": "[2, 2]"
+        },
+        "segment": "(3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 5, 6), (2, 2, 5, 6), (2, 2, 5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "0",
+            "sizes": "[4, 1]"
+        },
+        "segment": "(3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", (\"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 0 (3) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 0 (3) in the input tensor",
+        "conflict_params": [
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "dim": "0",
+            "sizes": "[1, 4]"
+        },
+        "segment": "(3, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1, 4] don't multiply up to the size of dim 0 (3) in the input tensor\", (\"unflatten: Provided sizes [1, 4] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [1, 4] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [1, 4] don't multiply up to the size of dim 0 (3) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1, 4] don't multiply up to the size of dim 0 (3) in the input tensor",
+        "conflict_params": [
+            "inputs",
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "dim": "0",
+            "sizes": "[-1, 2]"
+        },
+        "segment": "(3, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "dim": "0",
+            "sizes": "[2, -1]"
+        },
+        "segment": "(3, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "dim": "0",
+            "sizes": "[-1, 4]"
+        },
+        "segment": "(3, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 4), (1, 4), (1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "dim": "0",
+            "sizes": "[4, -1]"
+        },
+        "segment": "(3, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 1), (4, 1), (4, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "dim": "0",
+            "sizes": "[1, 2, 2]"
+        },
+        "segment": "(3, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 2, 2), (1, 2, 2), (1, 2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "dim": "0",
+            "sizes": "[2, 1, 2]"
+        },
+        "segment": "(3, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 2), (2, 1, 2), (2, 1, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "dim": "0",
+            "sizes": "[2, 2, 1]"
+        },
+        "segment": "(3, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 1), (2, 2, 1), (2, 2, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "0",
+            "sizes": "[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+        },
+        "segment": "(3, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", (\"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 0 (3) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 0 (3) in the input tensor",
+        "conflict_params": [
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "dim": "0",
+            "sizes": "[1]"
+        },
+        "segment": "(3, 11)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1] don't multiply up to the size of dim 0 (4) in the input tensor\", (\"unflatten: Provided sizes [1] don't multiply up to the size of dim 0 (4) in the input tensor\", \"unflatten: Provided sizes [1] don't multiply up to the size of dim 0 (4) in the input tensor\", \"unflatten: Provided sizes [1] don't multiply up to the size of dim 0 (4) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1] don't multiply up to the size of dim 0 (4) in the input tensor",
+        "conflict_params": [
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "dim": "0",
+            "sizes": "[5, 1]"
+        },
+        "segment": "(3, 12)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 0 (4) in the input tensor\", (\"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 0 (4) in the input tensor\", \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 0 (4) in the input tensor\", \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 0 (4) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 0 (4) in the input tensor",
+        "conflict_params": [
+            "inputs",
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 5, 6]))",
+            "dim": "1",
+            "sizes": "[2, 2]"
+        },
+        "segment": "(4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 1 (5) in the input tensor\", (\"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 1 (5) in the input tensor\", \"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 1 (5) in the input tensor\", \"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 1 (5) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 1 (5) in the input tensor",
+        "conflict_params": [
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "1",
+            "sizes": "[4, 1]"
+        },
+        "segment": "(4, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 1, 1), (3, 4, 1, 1), (3, 4, 1, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "dim": "1",
+            "sizes": "[1, 4]"
+        },
+        "segment": "(4, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 1, 4), (3, 1, 4), (3, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "1",
+            "sizes": "[-1, 2]"
+        },
+        "segment": "(4, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2, 2, 1), (3, 2, 2, 1), (3, 2, 2, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "1",
+            "sizes": "[2, -1]"
+        },
+        "segment": "(4, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2, 2, 1), (3, 2, 2, 1), (3, 2, 2, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "1",
+            "sizes": "[-1, 4]"
+        },
+        "segment": "(4, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 1, 4, 1), (3, 1, 4, 1), (3, 1, 4, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "1",
+            "sizes": "[4, -1]"
+        },
+        "segment": "(4, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 1, 1), (3, 4, 1, 1), (3, 4, 1, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "1",
+            "sizes": "[1, 2, 2]"
+        },
+        "segment": "(4, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 1, 2, 2, 1), (3, 1, 2, 2, 1), (3, 1, 2, 2, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "1",
+            "sizes": "[2, 1, 2]"
+        },
+        "segment": "(4, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2, 1, 2, 1), (3, 2, 1, 2, 1), (3, 2, 1, 2, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "1",
+            "sizes": "[2, 2, 1]"
+        },
+        "segment": "(4, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2, 2, 1, 1), (3, 2, 2, 1, 1), (3, 2, 2, 1, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "1",
+            "sizes": "[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+        },
+        "segment": "(4, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4), (3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4), (3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "1",
+            "sizes": "[1]"
+        },
+        "segment": "(4, 11)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1] don't multiply up to the size of dim 1 (4) in the input tensor\", (\"unflatten: Provided sizes [1] don't multiply up to the size of dim 1 (4) in the input tensor\", \"unflatten: Provided sizes [1] don't multiply up to the size of dim 1 (4) in the input tensor\", \"unflatten: Provided sizes [1] don't multiply up to the size of dim 1 (4) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1] don't multiply up to the size of dim 1 (4) in the input tensor",
+        "conflict_params": [
+            "inputs",
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 3]))",
+            "dim": "1",
+            "sizes": "[5, 1]"
+        },
+        "segment": "(4, 12)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (3) in the input tensor\", (\"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (3) in the input tensor\", \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (3) in the input tensor\", \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (3) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (3) in the input tensor",
+        "conflict_params": [
+            "inputs",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 5, 6]))",
+            "dim": "2",
+            "sizes": "[2, 2]"
+        },
+        "segment": "(5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 2 (6) in the input tensor\", (\"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 2 (6) in the input tensor\", \"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 2 (6) in the input tensor\", \"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 2 (6) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 2 (6) in the input tensor",
+        "conflict_params": [
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 1]))",
+            "dim": "2",
+            "sizes": "[4, 1]"
+        },
+        "segment": "(5, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 2 (1) in the input tensor\", (\"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 2 (1) in the input tensor\", \"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 2 (1) in the input tensor\", \"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 2 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 2 (1) in the input tensor",
+        "conflict_params": [
+            "dim",
+            "sizes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "dim": "2",
+            "sizes": "[1, 4]"
+        },
+        "segment": "(5, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 2)', ('Dimension out of range (expected to be in range of [-2, 1], but got 2)', 'Dimension out of range (expected to be in range of [-2, 1], but got 2)', 'Dimension out of range (expected to be in range of [-2, 1], but got 2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 2)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 5, 6]))",
+            "dim": "5",
+            "sizes": "[2, 2]"
+        },
+        "segment": "(6, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-3, 2], but got 5)', ('Dimension out of range (expected to be in range of [-3, 2], but got 5)', 'Dimension out of range (expected to be in range of [-3, 2], but got 5)', 'Dimension out of range (expected to be in range of [-3, 2], but got 5)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-3, 2], but got 5)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 5, 6]))",
+            "dim": "-5",
+            "sizes": "[2, 2]"
+        },
+        "segment": "(7, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-3, 2], but got -5)', ('Dimension out of range (expected to be in range of [-3, 2], but got -5)', 'Dimension out of range (expected to be in range of [-3, 2], but got -5)', 'Dimension out of range (expected to be in range of [-3, 2], but got -5)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-3, 2], but got -5)",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 5, 6, 7, 8]))",
+            "dim": "-5",
+            "sizes": "[4, 1]"
+        },
+        "segment": "(7, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 1, 5, 6, 7, 8), (3, 4, 1, 5, 6, 7, 8), (3, 4, 1, 5, 6, 7, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "dim": "-5",
+            "sizes": "[1, 4]"
+        },
+        "segment": "(7, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -5)', ('Dimension out of range (expected to be in range of [-2, 1], but got -5)', 'Dimension out of range (expected to be in range of [-2, 1], but got -5)', 'Dimension out of range (expected to be in range of [-2, 1], but got -5)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -5)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-2",
+            "sizes": "[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4), (3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4), (3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 5, 6, 7, 8]))",
+            "dim": "1",
+            "sizes": "[4, -1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 1, 5, 6, 7, 8), (3, 4, 1, 5, 6, 7, 8), (3, 4, 1, 5, 6, 7, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "0",
+            "sizes": "[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", (\"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 0 (3) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 0 (3) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4, 5, 6, 7, 8]))",
+            "dim": "1",
+            "sizes": "[4, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 1, 5, 6, 7, 8), (3, 4, 1, 5, 6, 7, 8), (3, 4, 1, 5, 6, 7, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "1",
+            "sizes": "[5, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "5",
+            "sizes": "[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-3, 2], but got 5)', ('Dimension out of range (expected to be in range of [-3, 2], but got 5)', 'Dimension out of range (expected to be in range of [-3, 2], but got 5)', 'Dimension out of range (expected to be in range of [-3, 2], but got 5)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-3, 2], but got 5)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "5",
+            "sizes": "[-1, 4]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-3, 2], but got 5)', ('Dimension out of range (expected to be in range of [-3, 2], but got 5)', 'Dimension out of range (expected to be in range of [-3, 2], but got 5)', 'Dimension out of range (expected to be in range of [-3, 2], but got 5)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-3, 2], but got 5)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "1",
+            "sizes": "[2, 1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [2, 1, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [2, 1, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [2, 1, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [2, 1, 2] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [2, 1, 2] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "1",
+            "sizes": "[-1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [-1, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [-1, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [-1, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [-1, 2] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [-1, 2] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-5",
+            "sizes": "[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-3, 2], but got -5)', ('Dimension out of range (expected to be in range of [-3, 2], but got -5)', 'Dimension out of range (expected to be in range of [-3, 2], but got -5)', 'Dimension out of range (expected to be in range of [-3, 2], but got -5)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-3, 2], but got -5)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "2",
+            "sizes": "[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 2 (4) in the input tensor\", (\"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 2 (4) in the input tensor\", \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 2 (4) in the input tensor\", \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 2 (4) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 2 (4) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "0",
+            "sizes": "[4, -1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [4, -1] don't multiply up to the size of dim 0 (3) in the input tensor\", (\"unflatten: Provided sizes [4, -1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [4, -1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [4, -1] don't multiply up to the size of dim 0 (3) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [4, -1] don't multiply up to the size of dim 0 (3) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-2",
+            "sizes": "[-1, 4]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [-1, 4] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [-1, 4] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [-1, 4] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [-1, 4] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [-1, 4] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "1",
+            "sizes": "[2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-2",
+            "sizes": "[1, 4]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1, 4] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [1, 4] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [1, 4] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [1, 4] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1, 4] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-3",
+            "sizes": "[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", (\"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 0 (3) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 0 (3) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "0",
+            "sizes": "[5, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", (\"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 0 (3) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 0 (3) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "1",
+            "sizes": "[1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 1, 4), (3, 1, 4), (3, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-2",
+            "sizes": "[5, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-5",
+            "sizes": "[-1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-3, 2], but got -5)', ('Dimension out of range (expected to be in range of [-3, 2], but got -5)', 'Dimension out of range (expected to be in range of [-3, 2], but got -5)', 'Dimension out of range (expected to be in range of [-3, 2], but got -5)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-3, 2], but got -5)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "0",
+            "sizes": "[1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1] don't multiply up to the size of dim 0 (3) in the input tensor\", (\"unflatten: Provided sizes [1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [1] don't multiply up to the size of dim 0 (3) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1] don't multiply up to the size of dim 0 (3) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "0",
+            "sizes": "[1, 2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1, 2, 2] don't multiply up to the size of dim 0 (3) in the input tensor\", (\"unflatten: Provided sizes [1, 2, 2] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [1, 2, 2] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [1, 2, 2] don't multiply up to the size of dim 0 (3) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1, 2, 2] don't multiply up to the size of dim 0 (3) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-1",
+            "sizes": "[-1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 1, 2, 2), (3, 1, 2, 2), (3, 1, 2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-2",
+            "sizes": "[2, 1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [2, 1, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [2, 1, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [2, 1, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [2, 1, 2] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [2, 1, 2] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-2",
+            "sizes": "[4, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "1",
+            "sizes": "[4, -1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [4, -1] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [4, -1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [4, -1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [4, -1] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [4, -1] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-2",
+            "sizes": "[-1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [-1, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [-1, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [-1, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [-1, 2] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [-1, 2] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-1",
+            "sizes": "[4, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 1, 4, 1), (3, 1, 4, 1), (3, 1, 4, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "1",
+            "sizes": "[4, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "1",
+            "sizes": "[1, 4]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1, 4] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [1, 4] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [1, 4] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [1, 4] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1, 4] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-2",
+            "sizes": "[1, 2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1, 2, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [1, 2, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [1, 2, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [1, 2, 2] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1, 2, 2] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "1",
+            "sizes": "[2, -1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [2, -1] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [2, -1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [2, -1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [2, -1] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [2, -1] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-2",
+            "sizes": "[2, 2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [2, 2, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [2, 2, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [2, 2, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [2, 2, 1] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [2, 2, 1] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-3",
+            "sizes": "[-1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [-1, 2] don't multiply up to the size of dim 0 (3) in the input tensor\", (\"unflatten: Provided sizes [-1, 2] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [-1, 2] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [-1, 2] don't multiply up to the size of dim 0 (3) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [-1, 2] don't multiply up to the size of dim 0 (3) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "2",
+            "sizes": "[5, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 2 (4) in the input tensor\", (\"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 2 (4) in the input tensor\", \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 2 (4) in the input tensor\", \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 2 (4) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 2 (4) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-3",
+            "sizes": "[1, 2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1, 2, 2] don't multiply up to the size of dim 0 (3) in the input tensor\", (\"unflatten: Provided sizes [1, 2, 2] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [1, 2, 2] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [1, 2, 2] don't multiply up to the size of dim 0 (3) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1, 2, 2] don't multiply up to the size of dim 0 (3) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "5",
+            "sizes": "[1, 2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-3, 2], but got 5)', ('Dimension out of range (expected to be in range of [-3, 2], but got 5)', 'Dimension out of range (expected to be in range of [-3, 2], but got 5)', 'Dimension out of range (expected to be in range of [-3, 2], but got 5)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-3, 2], but got 5)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-2",
+            "sizes": "[4, -1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [4, -1] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [4, -1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [4, -1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [4, -1] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [4, -1] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "1",
+            "sizes": "[-1, 4]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [-1, 4] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [-1, 4] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [-1, 4] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [-1, 4] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [-1, 4] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-2",
+            "sizes": "[2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [2, 2] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "1",
+            "sizes": "[2, 2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [2, 2, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [2, 2, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [2, 2, 1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [2, 2, 1] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [2, 2, 1] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-5",
+            "sizes": "[1, 2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-3, 2], but got -5)', ('Dimension out of range (expected to be in range of [-3, 2], but got -5)', 'Dimension out of range (expected to be in range of [-3, 2], but got -5)', 'Dimension out of range (expected to be in range of [-3, 2], but got -5)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-3, 2], but got -5)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "2",
+            "sizes": "[1, 2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 1, 1, 2, 2), (3, 1, 1, 2, 2), (3, 1, 1, 2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "2",
+            "sizes": "[2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 1, 2, 2), (3, 1, 2, 2), (3, 1, 2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-3",
+            "sizes": "[5, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", (\"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 0 (3) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [5, 1] don't multiply up to the size of dim 0 (3) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "0",
+            "sizes": "[2, -1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [2, -1] don't multiply up to the size of dim 0 (3) in the input tensor\", (\"unflatten: Provided sizes [2, -1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [2, -1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [2, -1] don't multiply up to the size of dim 0 (3) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [2, -1] don't multiply up to the size of dim 0 (3) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-1",
+            "sizes": "[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 2 (4) in the input tensor\", (\"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 2 (4) in the input tensor\", \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 2 (4) in the input tensor\", \"unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 2 (4) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] don't multiply up to the size of dim 2 (4) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-3",
+            "sizes": "[2, -1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [2, -1] don't multiply up to the size of dim 0 (3) in the input tensor\", (\"unflatten: Provided sizes [2, -1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [2, -1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [2, -1] don't multiply up to the size of dim 0 (3) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [2, -1] don't multiply up to the size of dim 0 (3) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "1",
+            "sizes": "[1, 2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [1, 2, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [1, 2, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [1, 2, 2] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [1, 2, 2] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [1, 2, 2] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-3",
+            "sizes": "[-1, 4]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [-1, 4] don't multiply up to the size of dim 0 (3) in the input tensor\", (\"unflatten: Provided sizes [-1, 4] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [-1, 4] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [-1, 4] don't multiply up to the size of dim 0 (3) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [-1, 4] don't multiply up to the size of dim 0 (3) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "5",
+            "sizes": "[2, 2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-3, 2], but got 5)', ('Dimension out of range (expected to be in range of [-3, 2], but got 5)', 'Dimension out of range (expected to be in range of [-3, 2], but got 5)', 'Dimension out of range (expected to be in range of [-3, 2], but got 5)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-3, 2], but got 5)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "5",
+            "sizes": "[1, 4]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-3, 2], but got 5)', ('Dimension out of range (expected to be in range of [-3, 2], but got 5)', 'Dimension out of range (expected to be in range of [-3, 2], but got 5)', 'Dimension out of range (expected to be in range of [-3, 2], but got 5)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-3, 2], but got 5)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-1",
+            "sizes": "[1, 2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 1, 1, 2, 2), (3, 1, 1, 2, 2), (3, 1, 1, 2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-2",
+            "sizes": "[2, -1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [2, -1] don't multiply up to the size of dim 1 (1) in the input tensor\", (\"unflatten: Provided sizes [2, -1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [2, -1] don't multiply up to the size of dim 1 (1) in the input tensor\", \"unflatten: Provided sizes [2, -1] don't multiply up to the size of dim 1 (1) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [2, -1] don't multiply up to the size of dim 1 (1) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "5",
+            "sizes": "[1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-3, 2], but got 5)', ('Dimension out of range (expected to be in range of [-3, 2], but got 5)', 'Dimension out of range (expected to be in range of [-3, 2], but got 5)', 'Dimension out of range (expected to be in range of [-3, 2], but got 5)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-3, 2], but got 5)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-3",
+            "sizes": "[2, 1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [2, 1, 2] don't multiply up to the size of dim 0 (3) in the input tensor\", (\"unflatten: Provided sizes [2, 1, 2] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [2, 1, 2] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [2, 1, 2] don't multiply up to the size of dim 0 (3) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [2, 1, 2] don't multiply up to the size of dim 0 (3) in the input tensor"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "5",
+            "sizes": "[-1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-3, 2], but got 5)', ('Dimension out of range (expected to be in range of [-3, 2], but got 5)', 'Dimension out of range (expected to be in range of [-3, 2], but got 5)', 'Dimension out of range (expected to be in range of [-3, 2], but got 5)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-3, 2], but got 5)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "2",
+            "sizes": "[4, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 1, 4, 1), (3, 1, 4, 1), (3, 1, 4, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 1, 4]))",
+            "dim": "-3",
+            "sizes": "[4, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", (\"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 0 (3) in the input tensor\", \"unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 0 (3) in the input tensor\"))",
+        "error_message": "unflatten: Provided sizes [4, 1] don't multiply up to the size of dim 0 (3) in the input tensor"
+    }
+]

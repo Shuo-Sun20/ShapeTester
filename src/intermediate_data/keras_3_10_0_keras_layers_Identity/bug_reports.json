@@ -1,0 +1,188 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 5))",
+            "name": "test_identity",
+            "dtype": "bfloat16",
+            "trainable": "False",
+            "autocast": "True",
+            "activity_regularizer": "<keras.src.regularizers.regularizers.L1 object at 0x7f8c3f25af60>"
+        },
+        "segment": "(3, 1, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a bfloat16 tensor [Op:Mul] name: ', ('cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a bfloat16 tensor [Op:Mul] name: ', (None, 5)))",
+        "error_message": "cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a bfloat16 tensor [Op:Mul] name: ",
+        "conflict_params": [
+            "dtype",
+            "activity_regularizer"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 5))",
+            "name": "test_identity",
+            "dtype": "float64",
+            "trainable": "True",
+            "autocast": "True",
+            "activity_regularizer": "<keras.src.regularizers.regularizers.L1 object at 0x7f8c3f25af60>"
+        },
+        "segment": "(2, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ', ('cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ', (None, 5)))",
+        "error_message": "cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+        "conflict_params": [
+            "dtype",
+            "activity_regularizer"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 5))",
+            "name": "test_identity",
+            "dtype": "int32",
+            "trainable": "True",
+            "autocast": "True",
+            "activity_regularizer": "<keras.src.regularizers.regularizers.L1 object at 0x7f8c3f25af60>"
+        },
+        "segment": "(4, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a int32 tensor [Op:Mul] name: ', ('cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a int32 tensor [Op:Mul] name: ', (None, 5)))",
+        "error_message": "cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a int32 tensor [Op:Mul] name: ",
+        "conflict_params": [
+            "dtype",
+            "activity_regularizer"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 5))",
+            "name": "test_identity",
+            "dtype": "int32",
+            "trainable": "True",
+            "autocast": "True",
+            "activity_regularizer": "<keras.src.regularizers.regularizers.L2 object at 0x7f8c3f25ab70>"
+        },
+        "segment": "(4, 0, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Cannot convert 0.01 to EagerTensor of dtype int32', ('Cannot convert 0.01 to EagerTensor of dtype int32', (None, 5)))",
+        "error_message": "Cannot convert 0.01 to EagerTensor of dtype int32",
+        "conflict_params": [
+            "dtype",
+            "activity_regularizer"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 5))",
+            "name": "test_identity",
+            "dtype": "bool",
+            "trainable": "True",
+            "autocast": "True",
+            "activity_regularizer": "<keras.src.regularizers.regularizers.L1 object at 0x7f8c3f25af60>"
+        },
+        "segment": "(5, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a int32 tensor [Op:Mul] name: ', ('cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a int32 tensor [Op:Mul] name: ', (None, 5)))",
+        "error_message": "cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a int32 tensor [Op:Mul] name: ",
+        "conflict_params": [
+            "dtype",
+            "activity_regularizer"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 5))",
+            "name": "test_identity",
+            "dtype": "bool",
+            "trainable": "True",
+            "autocast": "True",
+            "activity_regularizer": "<keras.src.regularizers.regularizers.L2 object at 0x7f8c3f25ab70>"
+        },
+        "segment": "(5, 0, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Cannot convert 0.01 to EagerTensor of dtype int32', ('Cannot convert 0.01 to EagerTensor of dtype int32', (None, 5)))",
+        "error_message": "Cannot convert 0.01 to EagerTensor of dtype int32",
+        "conflict_params": [
+            "dtype",
+            "activity_regularizer"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 5))",
+            "name": "test_identity",
+            "dtype": "bool",
+            "trainable": "False",
+            "autocast": "True",
+            "activity_regularizer": "<keras.src.regularizers.regularizers.L1L2 object at 0x7f8c3f25a690>"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Cannot convert 0.01 to EagerTensor of dtype int32', ('Cannot convert 0.01 to EagerTensor of dtype int32', (None, 5)))",
+        "error_message": "Cannot convert 0.01 to EagerTensor of dtype int32"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 5))",
+            "name": "test_identity",
+            "dtype": "bool",
+            "trainable": "True",
+            "autocast": "True",
+            "activity_regularizer": "<keras.src.regularizers.regularizers.L1L2 object at 0x7f8c3f25a690>"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Cannot convert 0.01 to EagerTensor of dtype int32', ('Cannot convert 0.01 to EagerTensor of dtype int32', (None, 5)))",
+        "error_message": "Cannot convert 0.01 to EagerTensor of dtype int32"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 5))",
+            "name": "test_identity",
+            "dtype": "int32",
+            "trainable": "True",
+            "autocast": "True",
+            "activity_regularizer": "<keras.src.regularizers.regularizers.L1 object at 0x7f8c3f25af60>"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a int32 tensor [Op:Mul] name: ', ('cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a int32 tensor [Op:Mul] name: ', (None, 5)))",
+        "error_message": "cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a int32 tensor [Op:Mul] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 5))",
+            "name": "test_identity",
+            "dtype": "bool",
+            "trainable": "False",
+            "autocast": "True",
+            "activity_regularizer": "<keras.src.regularizers.regularizers.L1 object at 0x7f8c3f25af60>"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a int32 tensor [Op:Mul] name: ', ('cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a int32 tensor [Op:Mul] name: ', (None, 5)))",
+        "error_message": "cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a int32 tensor [Op:Mul] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 5))",
+            "name": "test_identity",
+            "dtype": "int32",
+            "trainable": "True",
+            "autocast": "True",
+            "activity_regularizer": "<keras.src.regularizers.regularizers.L1L2 object at 0x7f8c3f25a690>"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Cannot convert 0.01 to EagerTensor of dtype int32', ('Cannot convert 0.01 to EagerTensor of dtype int32', (None, 5)))",
+        "error_message": "Cannot convert 0.01 to EagerTensor of dtype int32"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 5))",
+            "name": "test_identity",
+            "dtype": "int32",
+            "trainable": "False",
+            "autocast": "True",
+            "activity_regularizer": "<keras.src.regularizers.regularizers.L1L2 object at 0x7f8c3f25a690>"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Cannot convert 0.01 to EagerTensor of dtype int32', ('Cannot convert 0.01 to EagerTensor of dtype int32', (None, 5)))",
+        "error_message": "Cannot convert 0.01 to EagerTensor of dtype int32"
+    }
+]

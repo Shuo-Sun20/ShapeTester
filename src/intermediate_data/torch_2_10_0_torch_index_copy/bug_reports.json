@@ -1,0 +1,72 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "-1",
+            "out": "None"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'index_copy_(): Source/destination tensor must have same slice shapes. Destination slice shape: 5 at dimension 1 and source slice shape: 3 at dimension 0.', ('index_copy_(): Source/destination tensor must have same slice shapes. Destination slice shape: 5 at dimension 1 and source slice shape: 3 at dimension 0.', 'LoweringException: AssertionError: Broadcast failed in ExpandView([s41, s41], [s21, s41]) on dimension 0\\n  target: aten.index_put.default\\n  args[0]: TensorBox(StorageBox(\\n    InputBuffer(name=\\'arg2_1\\', layout=FixedLayout(\\'cpu\\', torch.float32, size=[s21, s41], stride=[s41, 1]))\\n  ))\\n  args[1]: [None, TensorBox(StorageBox(\\n    InputBuffer(name=\\'arg3_1\\', layout=FixedLayout(\\'cpu\\', torch.int64, size=[s41], stride=[1]))\\n  ))]\\n  args[2]: TensorBox(StorageBox(\\n    InputBuffer(name=\\'arg4_1\\', layout=FixedLayout(\\'cpu\\', torch.float32, size=[s41, s41], stride=[s41, 1]))\\n  ))\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (5, 3)))",
+        "error_message": "index_copy_(): Source/destination tensor must have same slice shapes. Destination slice shape: 5 at dimension 1 and source slice shape: 3 at dimension 0.",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "1",
+            "out": "None"
+        },
+        "segment": "(3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'index_copy_(): Source/destination tensor must have same slice shapes. Destination slice shape: 5 at dimension 1 and source slice shape: 3 at dimension 0.', ('index_copy_(): Source/destination tensor must have same slice shapes. Destination slice shape: 5 at dimension 1 and source slice shape: 3 at dimension 0.', 'LoweringException: AssertionError: Broadcast failed in ExpandView([s39, s24], [s21, s35]) on dimension 0\\n  target: aten.index_put.default\\n  args[0]: TensorBox(StorageBox(\\n    InputBuffer(name=\\'arg2_1\\', layout=FixedLayout(\\'cpu\\', torch.float32, size=[s21, s41], stride=[s41, 1]))\\n  ))\\n  args[1]: [None, TensorBox(StorageBox(\\n    InputBuffer(name=\\'arg4_1\\', layout=FixedLayout(\\'cpu\\', torch.int64, size=[s35], stride=[1]))\\n  ))]\\n  args[2]: TensorBox(StorageBox(\\n    InputBuffer(name=\\'arg7_1\\', layout=FixedLayout(\\'cpu\\', torch.float32, size=[s39, s24], stride=[s24, 1]))\\n  ))\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (5, 3)))",
+        "error_message": "index_copy_(): Source/destination tensor must have same slice shapes. Destination slice shape: 5 at dimension 1 and source slice shape: 3 at dimension 0.",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "1",
+            "out": "Tensor(shape=torch.Size([5, 3]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'index_copy_(): Source/destination tensor must have same slice shapes. Destination slice shape: 5 at dimension 1 and source slice shape: 3 at dimension 0.', ('index_copy_(): Source/destination tensor must have same slice shapes. Destination slice shape: 5 at dimension 1 and source slice shape: 3 at dimension 0.', 'kernel, /tmp/torchinductor_sunshuo/ah/cahs6f6oq6usg4hdkxszddn2u25vhzz6yu6soeqgharj3aa4kzzy.main.cpp:119, index out of bounds: 0 <= tmp10 < ks1', (5, 3)))",
+        "error_message": "index_copy_(): Source/destination tensor must have same slice shapes. Destination slice shape: 5 at dimension 1 and source slice shape: 3 at dimension 0."
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "-1",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'index_copy_(): Source/destination tensor must have same slice shapes. Destination slice shape: 5 at dimension 1 and source slice shape: 3 at dimension 0.', ('index_copy_(): Source/destination tensor must have same slice shapes. Destination slice shape: 5 at dimension 1 and source slice shape: 3 at dimension 0.', 'LoweringException: AssertionError: Broadcast failed in ExpandView([s39, s24], [s21, s35]) on dimension 0\\n  target: aten.index_put.default\\n  args[0]: TensorBox(StorageBox(\\n    InputBuffer(name=\\'arg2_1\\', layout=FixedLayout(\\'cpu\\', torch.float32, size=[s21, s41], stride=[s41, 1]))\\n  ))\\n  args[1]: [None, TensorBox(StorageBox(\\n    InputBuffer(name=\\'arg4_1\\', layout=FixedLayout(\\'cpu\\', torch.int64, size=[s35], stride=[1]))\\n  ))]\\n  args[2]: TensorBox(StorageBox(\\n    InputBuffer(name=\\'arg7_1\\', layout=FixedLayout(\\'cpu\\', torch.float32, size=[s39, s24], stride=[s24, 1]))\\n  ))\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (5, 3)))",
+        "error_message": "index_copy_(): Source/destination tensor must have same slice shapes. Destination slice shape: 5 at dimension 1 and source slice shape: 3 at dimension 0."
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "-1",
+            "out": "Tensor(shape=torch.Size([5, 3]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'index_copy_(): Source/destination tensor must have same slice shapes. Destination slice shape: 5 at dimension 1 and source slice shape: 3 at dimension 0.', ('index_copy_(): Source/destination tensor must have same slice shapes. Destination slice shape: 5 at dimension 1 and source slice shape: 3 at dimension 0.', 'kernel, /tmp/torchinductor_sunshuo/ah/cahs6f6oq6usg4hdkxszddn2u25vhzz6yu6soeqgharj3aa4kzzy.main.cpp:119, index out of bounds: 0 <= tmp10 < ks1', (5, 3)))",
+        "error_message": "index_copy_(): Source/destination tensor must have same slice shapes. Destination slice shape: 5 at dimension 1 and source slice shape: 3 at dimension 0."
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "1",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'index_copy_(): Source/destination tensor must have same slice shapes. Destination slice shape: 5 at dimension 1 and source slice shape: 3 at dimension 0.', ('index_copy_(): Source/destination tensor must have same slice shapes. Destination slice shape: 5 at dimension 1 and source slice shape: 3 at dimension 0.', 'index_copy_(): Source/destination tensor must have same slice shapes. Destination slice shape: 5 at dimension 1 and source slice shape: 3 at dimension 0.', (5, 3)))",
+        "error_message": "index_copy_(): Source/destination tensor must have same slice shapes. Destination slice shape: 5 at dimension 1 and source slice shape: 3 at dimension 0."
+    }
+]

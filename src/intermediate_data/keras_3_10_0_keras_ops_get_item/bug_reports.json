@@ -1,0 +1,134 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 3, 2))",
+            "key": "slice(None, None, None)"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Unsupported key type for array slice. Received: `slice(None, None, None)`', ((None, 3, 2), 'Unsupported key type for array slice. Received: `slice(None, None, None)`'))",
+        "error_message": "Unsupported key type for array slice. Received: `slice(None, None, None)`",
+        "conflict_params": [
+            "key"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 3, 2))",
+            "key": "slice(0, 2, None)"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Unsupported key type for array slice. Received: `slice(0, 2, None)`', ((None, 3, 2), 'Unsupported key type for array slice. Received: `slice(0, 2, None)`'))",
+        "error_message": "Unsupported key type for array slice. Received: `slice(0, 2, None)`",
+        "conflict_params": [
+            "key"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 3, 2))",
+            "key": "slice(1, None, None)"
+        },
+        "segment": "(7,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Unsupported key type for array slice. Received: `slice(1, None, None)`', ((None, 3, 2), 'Unsupported key type for array slice. Received: `slice(1, None, None)`'))",
+        "error_message": "Unsupported key type for array slice. Received: `slice(1, None, None)`",
+        "conflict_params": [
+            "key"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 3, 2))",
+            "key": "slice(None, 3, 2)"
+        },
+        "segment": "(8,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Unsupported key type for array slice. Received: `slice(None, 3, 2)`', ((None, 3, 2), 'Unsupported key type for array slice. Received: `slice(None, 3, 2)`'))",
+        "error_message": "Unsupported key type for array slice. Received: `slice(None, 3, 2)`",
+        "conflict_params": [
+            "key"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 3, 2))",
+            "key": "slice(-2, None, None)"
+        },
+        "segment": "(9,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Unsupported key type for array slice. Received: `slice(-2, None, None)`', ((None, 3, 2), 'Unsupported key type for array slice. Received: `slice(-2, None, None)`'))",
+        "error_message": "Unsupported key type for array slice. Received: `slice(-2, None, None)`",
+        "conflict_params": [
+            "key"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 3, 2))",
+            "key": "None"
+        },
+        "segment": "(18,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Unsupported key type for array slice. Received: `None`', ((None, 4, 3, 2), 'Unsupported key type for array slice. Received: `None`'))",
+        "error_message": "Unsupported key type for array slice. Received: `None`",
+        "conflict_params": [
+            "key"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 3, 2))",
+            "key": "slice(None, 3, 2)"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Unsupported key type for array slice. Received: `slice(None, 3, 2)`', ((None, 3, 2), 'Unsupported key type for array slice. Received: `slice(None, 3, 2)`'))",
+        "error_message": "Unsupported key type for array slice. Received: `slice(None, 3, 2)`"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 3, 2))",
+            "key": "slice(None, None, None)"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Unsupported key type for array slice. Received: `slice(None, None, None)`', ((None, 3, 2), 'Unsupported key type for array slice. Received: `slice(None, None, None)`'))",
+        "error_message": "Unsupported key type for array slice. Received: `slice(None, None, None)`"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 3, 2))",
+            "key": "slice(1, None, None)"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Unsupported key type for array slice. Received: `slice(1, None, None)`', ((None, 3, 2), 'Unsupported key type for array slice. Received: `slice(1, None, None)`'))",
+        "error_message": "Unsupported key type for array slice. Received: `slice(1, None, None)`"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 3, 2))",
+            "key": "slice(-2, None, None)"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Unsupported key type for array slice. Received: `slice(-2, None, None)`', ((None, 3, 2), 'Unsupported key type for array slice. Received: `slice(-2, None, None)`'))",
+        "error_message": "Unsupported key type for array slice. Received: `slice(-2, None, None)`"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 3, 2))",
+            "key": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Unsupported key type for array slice. Received: `None`', ((None, 4, 3, 2), 'Unsupported key type for array slice. Received: `None`'))",
+        "error_message": "Unsupported key type for array slice. Received: `None`"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 3, 2))",
+            "key": "slice(0, 2, None)"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Unsupported key type for array slice. Received: `slice(0, 2, None)`', ((None, 3, 2), 'Unsupported key type for array slice. Received: `slice(0, 2, None)`'))",
+        "error_message": "Unsupported key type for array slice. Received: `slice(0, 2, None)`"
+    }
+]

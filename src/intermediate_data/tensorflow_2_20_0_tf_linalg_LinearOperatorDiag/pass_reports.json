@@ -1,0 +1,1968 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "True",
+            "is_square": "False",
+            "name": "diag_op"
+        },
+        "segment": "(0, 0, 0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported.",
+        "conflict_params": [
+            "is_square"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "test_operator"
+        },
+        "segment": "(0, 1, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A real diagonal operator is always self adjoint.', ('A real diagonal operator is always self adjoint.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A real diagonal operator is always self adjoint.\\n'))",
+        "error_message": "A real diagonal operator is always self adjoint.",
+        "conflict_params": [
+            "inputs",
+            "is_self_adjoint"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "diag_op"
+        },
+        "segment": "(1, 2, 2, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "test_operator"
+        },
+        "segment": "(2, 2, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "linear_operator"
+        },
+        "segment": "(2, 0, 2, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": ""
+        },
+        "segment": "(0, 1, 2, 2, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": ""
+        },
+        "segment": "(1, 1, 0, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular.",
+        "conflict_params": [
+            "is_non_singular",
+            "is_positive_definite"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "linear_operator"
+        },
+        "segment": "(0, 2, 1, 2, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "segment": "(2, 1, 1, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": ""
+        },
+        "segment": "(2, 0, 1, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "test_operator"
+        },
+        "segment": "(1, 0, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "linear_operator"
+        },
+        "segment": "(0, 1, 0, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": ""
+        },
+        "segment": "(0, 2, 0, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "linear_operator"
+        },
+        "segment": "(1, 0, 1, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: At least one of name (None) and default_name (None) must be provided.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A real diagonal operator is always self adjoint.', ('A real diagonal operator is always self adjoint.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A real diagonal operator is always self adjoint.\\n'))",
+        "error_message": "A real diagonal operator is always self adjoint."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A real diagonal operator is always self adjoint.', ('A real diagonal operator is always self adjoint.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A real diagonal operator is always self adjoint.\\n'))",
+        "error_message": "A real diagonal operator is always self adjoint."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "linear_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A real diagonal operator is always self adjoint.', ('A real diagonal operator is always self adjoint.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A real diagonal operator is always self adjoint.\\n'))",
+        "error_message": "A real diagonal operator is always self adjoint."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: At least one of name (None) and default_name (None) must be provided.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "False",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "False",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: At least one of name (None) and default_name (None) must be provided.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "linear_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A real diagonal operator is always self adjoint.', ('A real diagonal operator is always self adjoint.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: At least one of name (None) and default_name (None) must be provided.\\n'))",
+        "error_message": "A real diagonal operator is always self adjoint."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A real diagonal operator is always self adjoint.', ('A real diagonal operator is always self adjoint.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A real diagonal operator is always self adjoint.\\n'))",
+        "error_message": "A real diagonal operator is always self adjoint."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "True",
+            "is_square": "False",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "linear_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "False",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "linear_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "linear_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "linear_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "linear_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: At least one of name (None) and default_name (None) must be provided.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "False",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A real diagonal operator is always self adjoint.', ('A real diagonal operator is always self adjoint.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A real diagonal operator is always self adjoint.\\n'))",
+        "error_message": "A real diagonal operator is always self adjoint."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "False",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "linear_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A real diagonal operator is always self adjoint.', ('A real diagonal operator is always self adjoint.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A real diagonal operator is always self adjoint.\\n'))",
+        "error_message": "A real diagonal operator is always self adjoint."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A real diagonal operator is always self adjoint.', ('A real diagonal operator is always self adjoint.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A real diagonal operator is always self adjoint.\\n'))",
+        "error_message": "A real diagonal operator is always self adjoint."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "linear_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A real diagonal operator is always self adjoint.', ('A real diagonal operator is always self adjoint.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A real diagonal operator is always self adjoint.\\n'))",
+        "error_message": "A real diagonal operator is always self adjoint."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: At least one of name (None) and default_name (None) must be provided.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "linear_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: At least one of name (None) and default_name (None) must be provided.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: At least one of name (None) and default_name (None) must be provided.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "linear_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "False",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A positive definite matrix is always non-singular.', ('A positive definite matrix is always non-singular.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A positive definite matrix is always non-singular.\\n'))",
+        "error_message": "A positive definite matrix is always non-singular."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "True",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A real diagonal operator is always self adjoint.', ('A real diagonal operator is always self adjoint.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A real diagonal operator is always self adjoint.\\n'))",
+        "error_message": "A real diagonal operator is always self adjoint."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "True",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A real diagonal operator is always self adjoint.', ('A real diagonal operator is always self adjoint.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A real diagonal operator is always self adjoint.\\n'))",
+        "error_message": "A real diagonal operator is always self adjoint."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "linear_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A real diagonal operator is always self adjoint.', ('A real diagonal operator is always self adjoint.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A real diagonal operator is always self adjoint.\\n'))",
+        "error_message": "A real diagonal operator is always self adjoint."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "linear_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only square diagonal operators currently supported.', ('Only square diagonal operators currently supported.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: Only square diagonal operators currently supported.\\n'))",
+        "error_message": "Only square diagonal operators currently supported."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "False",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "linear_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "None",
+            "is_self_adjoint": "False",
+            "is_positive_definite": "True",
+            "is_square": "False",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A real diagonal operator is always self adjoint.', ('A real diagonal operator is always self adjoint.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorDiag/generated_code.py\", line 5, in call_func  *\\n        operator = tf.linalg.LinearOperatorDiag(\\n\\n    ValueError: A real diagonal operator is always self adjoint.\\n'))",
+        "error_message": "A real diagonal operator is always self adjoint."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "None",
+            "name": "diag_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3, 4, 2))]",
+            "is_non_singular": "True",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "False",
+            "is_square": "True",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 2), (3, 4, 2)))"
+    }
+]

@@ -1,0 +1,63 @@
+[
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 2]))",
+            "out": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 2]))",
+            "out": "zeros"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"rad2deg(): argument 'out' must be Tensor, not str\", (\"rad2deg(): argument 'out' must be Tensor, not str\", \"rad2deg(): argument 'out' must be Tensor, not str\", \"rad2deg(): argument 'out' must be Tensor, not str\"))",
+        "error_message": "rad2deg(): argument 'out' must be Tensor, not str",
+        "conflict_params": [
+            "out"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 2]))",
+            "out": "ones"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"rad2deg(): argument 'out' must be Tensor, not str\", (\"rad2deg(): argument 'out' must be Tensor, not str\", \"rad2deg(): argument 'out' must be Tensor, not str\", \"rad2deg(): argument 'out' must be Tensor, not str\"))",
+        "error_message": "rad2deg(): argument 'out' must be Tensor, not str",
+        "conflict_params": [
+            "out"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 2]))",
+            "out": "random"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"rad2deg(): argument 'out' must be Tensor, not str\", (\"rad2deg(): argument 'out' must be Tensor, not str\", \"rad2deg(): argument 'out' must be Tensor, not str\", \"rad2deg(): argument 'out' must be Tensor, not str\"))",
+        "error_message": "rad2deg(): argument 'out' must be Tensor, not str",
+        "conflict_params": [
+            "out"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 2]))",
+            "out": "same"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"rad2deg(): argument 'out' must be Tensor, not str\", (\"rad2deg(): argument 'out' must be Tensor, not str\", \"rad2deg(): argument 'out' must be Tensor, not str\", \"rad2deg(): argument 'out' must be Tensor, not str\"))",
+        "error_message": "rad2deg(): argument 'out' must be Tensor, not str",
+        "conflict_params": [
+            "out"
+        ]
+    }
+]

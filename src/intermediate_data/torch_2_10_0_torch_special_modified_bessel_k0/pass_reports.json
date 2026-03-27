@@ -1,0 +1,117 @@
+[
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 5]))",
+            "out": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 5), (5, 5), (5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 5]))",
+            "out": "same_shape_same_dtype"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", (\"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\"))",
+        "error_message": "special_modified_bessel_k0(): argument 'out' must be Tensor, not str",
+        "conflict_params": [
+            "out"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 5]))",
+            "out": "same_shape_different_dtype"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", (\"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\"))",
+        "error_message": "special_modified_bessel_k0(): argument 'out' must be Tensor, not str",
+        "conflict_params": [
+            "out"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 5]))",
+            "out": "preallocated"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", (\"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\"))",
+        "error_message": "special_modified_bessel_k0(): argument 'out' must be Tensor, not str",
+        "conflict_params": [
+            "out"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 5]))",
+            "out": "broadcastable"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", (\"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\"))",
+        "error_message": "special_modified_bessel_k0(): argument 'out' must be Tensor, not str",
+        "conflict_params": [
+            "out"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 5]))",
+            "out": "Tensor(shape=torch.Size([5, 5]))"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 5), (5, 5), (5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 5]))",
+            "out": "Tensor(shape=torch.Size([5, 5]))"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 5), (5, 5), (5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 5]))",
+            "out": "same_shape_different_dtype"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", (\"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\"))",
+        "error_message": "special_modified_bessel_k0(): argument 'out' must be Tensor, not str"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 5]))",
+            "out": "broadcastable"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", (\"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\"))",
+        "error_message": "special_modified_bessel_k0(): argument 'out' must be Tensor, not str"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 5]))",
+            "out": "same_shape_same_dtype"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", (\"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\"))",
+        "error_message": "special_modified_bessel_k0(): argument 'out' must be Tensor, not str"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 5]))",
+            "out": "preallocated"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", (\"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\", \"special_modified_bessel_k0(): argument 'out' must be Tensor, not str\"))",
+        "error_message": "special_modified_bessel_k0(): argument 'out' must be Tensor, not str"
+    }
+]

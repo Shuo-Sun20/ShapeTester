@@ -1,0 +1,910 @@
+[
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 4, 4, 1]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(3, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 3), (2, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 4, 4, 1]",
+            "strides": "[1, 2, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "segment": "(3, 4, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', 'Graph execution error:\\n\\nDetected at node AvgPool defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_avg_pool/generated_code.py\", line 12, in call_func\\n\\nMaxPooling supports exactly one of pooling across depth or pooling across width/height.\\n\\t [[{{node AvgPool}}]] [Op:__inference_call_func_661947]'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ",
+        "conflict_params": [
+            "data_format",
+            "ksize"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 1, 1, 1]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(0, 1, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 2, 1]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "segment": "(1, 1, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', 'Graph execution error:\\n\\nDetected at node AvgPool defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_avg_pool/generated_code.py\", line 12, in call_func\\n\\nMaxPooling supports exactly one of pooling across depth or pooling across width/height.\\n\\t [[{{node AvgPool}}]] [Op:__inference_call_func_661963]'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ",
+        "conflict_params": [
+            "data_format",
+            "ksize"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 3, 1]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(4, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 3), (2, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 3, 3, 1]",
+            "strides": "[1, 2, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(2, 4, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 2, 3), (2, 1, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 3, 3, 1]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "segment": "(2, 0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', 'Graph execution error:\\n\\nDetected at node AvgPool defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_avg_pool/generated_code.py\", line 12, in call_func\\n\\nMaxPooling supports exactly one of pooling across depth or pooling across width/height.\\n\\t [[{{node AvgPool}}]] [Op:__inference_call_func_661988]'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ",
+        "conflict_params": [
+            "data_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 2, 1]",
+            "strides": "[1, 1, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(1, 3, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 2, 3), (2, 4, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 1, 1, 1]",
+            "strides": "[1, 1, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(0, 3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 2, 3), (2, 4, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 4, 4, 1]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(3, 2, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 3, 1]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(4, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 4, 3), (2, 4, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 2, 1]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(1, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 3), (2, 3, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 4, 4, 1]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(3, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 3), (2, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 1, 1, 1]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 4, 3), (2, 4, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 2, 1]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(1, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 3), (2, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 3, 3, 1]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(2, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 3), (2, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 4, 4, 1]",
+            "strides": "[1, 1, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(3, 3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 3), (2, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 1, 1, 1]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(0, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 2, 1]",
+            "strides": "[1, 2, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(1, 4, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3, 3), (2, 2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 3, 3, 1]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(2, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 3), (2, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 3, 1]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(4, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 1, 3), (2, 2, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 3, 3, 1]",
+            "strides": "[1, 1, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(2, 3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 1, 3), (2, 2, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 1, 1, 1]",
+            "strides": "[1, 2, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(0, 4, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 4, 3), (2, 2, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 3, 1]",
+            "strides": "[1, 2, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(4, 4, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 3, 1]",
+            "strides": "[1, 1, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "segment": "(4, 3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 1, 3), (2, 3, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 3, 3, 1]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 3, 1]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2, 3), (2, 3, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 3, 1]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', 'Graph execution error:\\n\\nDetected at node AvgPool defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_avg_pool/generated_code.py\", line 12, in call_func\\n\\nMaxPooling supports exactly one of pooling across depth or pooling across width/height.\\n\\t [[{{node AvgPool}}]] [Op:__inference_call_func_662248]'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 3, 3, 1]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 4, 3), (2, 4, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 1, 1, 1]",
+            "strides": "[1, 2, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 4, 3), (2, 4, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 3, 1]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 2, 1]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 4, 3), (2, 4, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 1, 1, 1]",
+            "strides": "[1, 1, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 2, 3), (2, 4, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 1, 1, 1]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 4, 3), (2, 4, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 1, 1, 1]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 4, 3), (2, 4, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 3, 3, 1]",
+            "strides": "[1, 1, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 2, 3), (2, 4, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 3, 1]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', 'Graph execution error:\\n\\nDetected at node AvgPool defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_avg_pool/generated_code.py\", line 12, in call_func\\n\\nMaxPooling supports exactly one of pooling across depth or pooling across width/height.\\n\\t [[{{node AvgPool}}]] [Op:__inference_call_func_662619]'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 3, 1]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 4, 4, 1]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 3), (2, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 3, 3, 1]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 3, 3, 1]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', 'Graph execution error:\\n\\nDetected at node AvgPool defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_avg_pool/generated_code.py\", line 12, in call_func\\n\\nMaxPooling supports exactly one of pooling across depth or pooling across width/height.\\n\\t [[{{node AvgPool}}]] [Op:__inference_call_func_662726]'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 3, 1]",
+            "strides": "[1, 2, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 4, 3), (2, 2, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 4, 4, 1]",
+            "strides": "[1, 2, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 1, 3), (2, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 1, 1, 1]",
+            "strides": "[1, 2, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 4, 3), (2, 2, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 2, 1]",
+            "strides": "[1, 2, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 4, 3), (2, 2, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 3, 1]",
+            "strides": "[1, 2, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', 'Graph execution error:\\n\\nDetected at node AvgPool defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_avg_pool/generated_code.py\", line 12, in call_func\\n\\nMaxPooling supports exactly one of pooling across depth or pooling across width/height.\\n\\t [[{{node AvgPool}}]] [Op:__inference_call_func_662915]'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 1, 1, 1]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 2, 3), (2, 4, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 4, 4, 1]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', 'Graph execution error:\\n\\nDetected at node AvgPool defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_avg_pool/generated_code.py\", line 12, in call_func\\n\\nMaxPooling supports exactly one of pooling across depth or pooling across width/height.\\n\\t [[{{node AvgPool}}]] [Op:__inference_call_func_663004]'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 4, 4, 1]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', 'Graph execution error:\\n\\nDetected at node AvgPool defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_avg_pool/generated_code.py\", line 12, in call_func\\n\\nMaxPooling supports exactly one of pooling across depth or pooling across width/height.\\n\\t [[{{node AvgPool}}]] [Op:__inference_call_func_663011]'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 3, 3, 1]",
+            "strides": "[1, 1, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', 'Graph execution error:\\n\\nDetected at node AvgPool defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_avg_pool/generated_code.py\", line 12, in call_func\\n\\nMaxPooling supports exactly one of pooling across depth or pooling across width/height.\\n\\t [[{{node AvgPool}}]] [Op:__inference_call_func_663091]'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 2, 1]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', 'Graph execution error:\\n\\nDetected at node AvgPool defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_avg_pool/generated_code.py\", line 12, in call_func\\n\\nMaxPooling supports exactly one of pooling across depth or pooling across width/height.\\n\\t [[{{node AvgPool}}]] [Op:__inference_call_func_663098]'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 3, 1]",
+            "strides": "[1, 1, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 2, 3), (2, 4, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 1, 1, 1]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 2, 1]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 3, 1]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', 'Graph execution error:\\n\\nDetected at node AvgPool defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_avg_pool/generated_code.py\", line 12, in call_func\\n\\nMaxPooling supports exactly one of pooling across depth or pooling across width/height.\\n\\t [[{{node AvgPool}}]] [Op:__inference_call_func_663351]'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 4, 4, 1]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 4, 3), (2, 4, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 4, 4, 1]",
+            "strides": "[1, 2, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 4, 3), (2, 2, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 2, 1]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', 'Graph execution error:\\n\\nDetected at node AvgPool defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_avg_pool/generated_code.py\", line 12, in call_func\\n\\nMaxPooling supports exactly one of pooling across depth or pooling across width/height.\\n\\t [[{{node AvgPool}}]] [Op:__inference_call_func_663741]'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 2, 1]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', 'Graph execution error:\\n\\nDetected at node AvgPool defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_avg_pool/generated_code.py\", line 12, in call_func\\n\\nMaxPooling supports exactly one of pooling across depth or pooling across width/height.\\n\\t [[{{node AvgPool}}]] [Op:__inference_call_func_663821]'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 3, 3, 1]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', 'Graph execution error:\\n\\nDetected at node AvgPool defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_avg_pool/generated_code.py\", line 12, in call_func\\n\\nMaxPooling supports exactly one of pooling across depth or pooling across width/height.\\n\\t [[{{node AvgPool}}]] [Op:__inference_call_func_663901]'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 3, 1]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', 'Graph execution error:\\n\\nDetected at node AvgPool defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_avg_pool/generated_code.py\", line 12, in call_func\\n\\nMaxPooling supports exactly one of pooling across depth or pooling across width/height.\\n\\t [[{{node AvgPool}}]] [Op:__inference_call_func_664200]'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 4, 4, 1]",
+            "strides": "[1, 2, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', 'Graph execution error:\\n\\nDetected at node AvgPool defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_avg_pool/generated_code.py\", line 12, in call_func\\n\\nMaxPooling supports exactly one of pooling across depth or pooling across width/height.\\n\\t [[{{node AvgPool}}]] [Op:__inference_call_func_664280]'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 1, 1, 1]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 2, 3), (2, 4, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 1, 1, 1]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 2, 3), (2, 4, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 4, 4, 1]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', 'Graph execution error:\\n\\nDetected at node AvgPool defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_avg_pool/generated_code.py\", line 12, in call_func\\n\\nMaxPooling supports exactly one of pooling across depth or pooling across width/height.\\n\\t [[{{node AvgPool}}]] [Op:__inference_call_func_664670]'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 4, 4, 1]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 2, 3, 1]",
+            "strides": "[1, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', 'Graph execution error:\\n\\nDetected at node AvgPool defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_avg_pool/generated_code.py\", line 12, in call_func\\n\\nMaxPooling supports exactly one of pooling across depth or pooling across width/height.\\n\\t [[{{node AvgPool}}]] [Op:__inference_call_func_664905]'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 1, 1, 1]",
+            "strides": "[1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 4, 3), (2, 4, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 4, 4, 1]",
+            "strides": "[1, 1, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 2, 3), (2, 4, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 1, 1, 1]",
+            "strides": "[1, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3), (2, 2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 4, 4, 3))]",
+            "ksize": "[1, 4, 4, 1]",
+            "strides": "[1, 1, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: ', 'Graph execution error:\\n\\nDetected at node AvgPool defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_avg_pool/generated_code.py\", line 12, in call_func\\n\\nMaxPooling supports exactly one of pooling across depth or pooling across width/height.\\n\\t [[{{node AvgPool}}]] [Op:__inference_call_func_666107]'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} MaxPooling supports exactly one of pooling across depth or pooling across width/height. [Op:AvgPool] name: "
+    }
+]

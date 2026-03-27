@@ -1,0 +1,3201 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "None",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "True",
+            "check_invariants": "False"
+        },
+        "segment": "(0, 0, 0, 1, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=bool, requires_grad=bool, device=NoneType, dtype=NoneType), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', ('sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=bool, requires_grad=bool, device=NoneType, dtype=NoneType), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=bool, requires_grad=bool, device=NoneType, dtype=NoneType), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=bool, requires_grad=bool, device=NoneType, dtype=NoneType), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n'))",
+        "error_message": "sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=bool, requires_grad=bool, device=NoneType, dtype=NoneType), but expected one of:\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\n",
+        "conflict_params": [
+            "size",
+            "pin_memory",
+            "requires_grad",
+            "check_invariants"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "segment": "(6, 1, 0, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3",
+        "conflict_params": [
+            "inputs",
+            "size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.float64",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "True",
+            "check_invariants": "True"
+        },
+        "segment": "(3, 2, 1, 1, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=101), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=101), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=101), but got 3', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=101), but got 3",
+        "conflict_params": [
+            "inputs",
+            "size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1, 1000]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "segment": "(4, 3, 0, 1, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaComplexFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available",
+        "conflict_params": [
+            "device",
+            "pin_memory"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.int8",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(7, 5, 1, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "No CUDA GPUs are available",
+        "conflict_params": [
+            "inputs",
+            "pin_memory"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "None",
+            "dtype": "torch.int16",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(0, 6, 1, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=torch.device, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', ('sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=torch.device, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=torch.device, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=torch.device, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n'))",
+        "error_message": "sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=torch.device, dtype=torch.dtype), but expected one of:\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\n",
+        "conflict_params": [
+            "size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1, 1000]",
+            "dtype": "torch.int32",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "segment": "(4, 7, 1, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=2), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=2), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=2), but got 3', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=2), but got 3",
+        "conflict_params": [
+            "inputs",
+            "size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.float16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(3, 11, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float16",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "True",
+            "check_invariants": "False"
+        },
+        "segment": "(6, 11, 1, 1, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "No CUDA GPUs are available",
+        "conflict_params": [
+            "pin_memory"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.bfloat16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "False"
+        },
+        "segment": "(7, 12, 0, 0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 2]",
+            "dtype": "torch.int8",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "True"
+        },
+        "segment": "(1, 5, 0, 0, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only Tensors of floating point and complex dtype can require gradients', ('Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients', 'expected nnz to be 0 for sparse CSR meta tensor but got 4'))",
+        "error_message": "Only Tensors of floating point and complex dtype can require gradients",
+        "conflict_params": [
+            "dtype",
+            "requires_grad"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1000, 1]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "segment": "(5, 2, 0, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1000, 1), (1000, 1), (1000, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.int16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "False"
+        },
+        "segment": "(2, 6, 0, 0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only Tensors of floating point and complex dtype can require gradients', ('Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients'))",
+        "error_message": "Only Tensors of floating point and complex dtype can require gradients",
+        "conflict_params": [
+            "dtype",
+            "requires_grad"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1, 5, 5]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "False"
+        },
+        "segment": "(8, 7, 0, 0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only Tensors of floating point and complex dtype can require gradients', ('Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients'))",
+        "error_message": "Only Tensors of floating point and complex dtype can require gradients",
+        "conflict_params": [
+            "dtype",
+            "requires_grad"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 0, 10]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "False"
+        },
+        "segment": "(9, 8, 0, 0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only Tensors of floating point and complex dtype can require gradients', ('Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients'))",
+        "error_message": "Only Tensors of floating point and complex dtype can require gradients",
+        "conflict_params": [
+            "dtype",
+            "requires_grad"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 10, 0]",
+            "dtype": "torch.uint8",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "False"
+        },
+        "segment": "(10, 9, 0, 0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only Tensors of floating point and complex dtype can require gradients', ('Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients'))",
+        "error_message": "Only Tensors of floating point and complex dtype can require gradients",
+        "conflict_params": [
+            "dtype",
+            "requires_grad"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.complex128",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "segment": "(2, 4, 0, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=6), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=6), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=6), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=6), but got 3'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=6), but got 3",
+        "conflict_params": [
+            "inputs",
+            "size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.bool",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "False"
+        },
+        "segment": "(3, 10, 0, 0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only Tensors of floating point and complex dtype can require gradients', ('Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients'))",
+        "error_message": "Only Tensors of floating point and complex dtype can require gradients",
+        "conflict_params": [
+            "dtype",
+            "requires_grad"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1000, 1]",
+            "dtype": "torch.bfloat16",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "segment": "(5, 12, 1, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1001), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=1001), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1001), but got 3', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=1001), but got 3",
+        "conflict_params": [
+            "inputs",
+            "size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[1, 1000]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "segment": "(4, 1, 0, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1000), (1, 1000), (1, 1000)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "segment": "(7, 0, 0, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', ('tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3'))",
+        "error_message": "tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3",
+        "conflict_params": [
+            "inputs",
+            "size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(6, 2, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1, 5, 5]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "segment": "(8, 3, 0, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', ('tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3'))",
+        "error_message": "tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3",
+        "conflict_params": [
+            "inputs",
+            "size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 0, 10]",
+            "dtype": "torch.float16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "segment": "(9, 11, 0, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', ('tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3'))",
+        "error_message": "tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3",
+        "conflict_params": [
+            "size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 10, 0]",
+            "dtype": "torch.int16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "segment": "(10, 6, 0, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', ('tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3'))",
+        "error_message": "tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3",
+        "conflict_params": [
+            "inputs",
+            "size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 2]",
+            "dtype": "torch.complex128",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "segment": "(1, 4, 0, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 2]",
+            "dtype": "torch.bfloat16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(1, 12, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.int8",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "segment": "(2, 5, 0, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 2]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(1, 7, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[100, 100]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(3, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(3, 3, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(2, 3, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 2]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(1, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[1, 1000]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(4, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1000), (1, 1000), (1, 1000)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 2]",
+            "dtype": "torch.float16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(1, 11, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 10, 0]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(10, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 10, 0), (10, 10, 0), (10, 10, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(6, 3, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.float16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(2, 11, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[[0, 2, 4], [0, 1, 0, 1], [1.5, 2.5, 3.5, 4.5]]",
+            "size": "[1000, 1]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(5, 3, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1000, 1), (1000, 1), (1000, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 10, 0]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(10, 3, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 10, 0), (10, 10, 0), (10, 10, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[1, 1000]",
+            "dtype": "torch.float16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(4, 11, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1000), (1, 1000), (1, 1000)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[[0, 2, 4], [0, 1, 0, 1], [1.5, 2.5, 3.5, 4.5]]",
+            "size": "[1000, 1]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(5, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1000, 1), (1000, 1), (1000, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(6, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 4])), Tensor(shape=torch.Size([2, 4])), Tensor(shape=torch.Size([2, 4]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(7, 3, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(2, 1, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(3, 1, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 2]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(1, 2, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(2, 2, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.complex128",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(3, 4, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[1, 1000]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(4, 2, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1000), (1, 1000), (1, 1000)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[1, 1000]",
+            "dtype": "torch.complex128",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(4, 4, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1000), (1, 1000), (1, 1000)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 10, 0]",
+            "dtype": "torch.float16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(10, 11, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 10, 0), (10, 10, 0), (10, 10, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[[0, 2, 4], [0, 1, 0, 1], [1.5, 2.5, 3.5, 4.5]]",
+            "size": "[1000, 1]",
+            "dtype": "torch.float16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(5, 11, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1000, 1), (1000, 1), (1000, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 4])), Tensor(shape=torch.Size([2, 4])), Tensor(shape=torch.Size([2, 4]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.float16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(7, 11, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 10, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(10, 1, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 10, 0), (10, 10, 0), (10, 10, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 4])), Tensor(shape=torch.Size([2, 4])), Tensor(shape=torch.Size([2, 4]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(7, 1, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 10, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(10, 2, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 10, 0), (10, 10, 0), (10, 10, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 4])), Tensor(shape=torch.Size([2, 4])), Tensor(shape=torch.Size([2, 4]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(7, 2, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[[0, 2, 4], [0, 1, 0, 1], [1.5, 2.5, 3.5, 4.5]]",
+            "size": "[1000, 1]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(5, 1, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1000, 1), (1000, 1), (1000, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.complex128",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(6, 4, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.bfloat16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(2, 12, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 10, 0]",
+            "dtype": "torch.complex128",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(10, 4, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 10, 0), (10, 10, 0), (10, 10, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.bfloat16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(3, 12, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 4])), Tensor(shape=torch.Size([2, 4])), Tensor(shape=torch.Size([2, 4]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.complex128",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(7, 4, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[1, 1000]",
+            "dtype": "torch.bfloat16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(4, 12, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1000), (1, 1000), (1, 1000)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.bfloat16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(6, 12, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 10, 0]",
+            "dtype": "torch.bfloat16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(10, 12, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 10, 0), (10, 10, 0), (10, 10, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(2, 8, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(3, 8, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[1, 1000]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(4, 8, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1000), (1, 1000), (1, 1000)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.uint8",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(2, 9, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(2, 7, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 10, 0]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(10, 8, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 10, 0), (10, 10, 0), (10, 10, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.uint8",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(3, 9, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[1, 1000]",
+            "dtype": "torch.uint8",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(4, 9, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1000), (1, 1000), (1, 1000)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(6, 8, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.int8",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(3, 5, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(3, 7, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[[0, 2, 4], [0, 1, 0, 1], [1.5, 2.5, 3.5, 4.5]]",
+            "size": "[1000, 1]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(5, 8, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1000, 1), (1000, 1), (1000, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 4])), Tensor(shape=torch.Size([2, 4])), Tensor(shape=torch.Size([2, 4]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(7, 8, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 2]",
+            "dtype": "torch.int16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(1, 6, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[1, 1000]",
+            "dtype": "torch.int8",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(4, 5, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1000), (1, 1000), (1, 1000)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.bool",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(2, 10, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.int16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(3, 6, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[1, 1000]",
+            "dtype": "torch.int16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(4, 6, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1000), (1, 1000), (1, 1000)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[1, 1000]",
+            "dtype": "torch.bool",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(4, 10, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1000), (1, 1000), (1, 1000)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 10, 0]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(10, 7, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 10, 0), (10, 10, 0), (10, 10, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(6, 7, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.uint8",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(6, 9, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 10, 0]",
+            "dtype": "torch.int8",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(10, 5, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 10, 0), (10, 10, 0), (10, 10, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[[0, 2, 4], [0, 1, 0, 1], [1.5, 2.5, 3.5, 4.5]]",
+            "size": "[1000, 1]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(5, 7, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1000, 1), (1000, 1), (1000, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[[0, 2, 4], [0, 1, 0, 1], [1.5, 2.5, 3.5, 4.5]]",
+            "size": "[1000, 1]",
+            "dtype": "torch.uint8",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(5, 9, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1000, 1), (1000, 1), (1000, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int8",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(6, 5, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 4])), Tensor(shape=torch.Size([2, 4])), Tensor(shape=torch.Size([2, 4]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(7, 7, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 4])), Tensor(shape=torch.Size([2, 4])), Tensor(shape=torch.Size([2, 4]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.uint8",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(7, 9, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[[0, 2, 4], [0, 1, 0, 1], [1.5, 2.5, 3.5, 4.5]]",
+            "size": "[1000, 1]",
+            "dtype": "torch.int8",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(5, 5, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1000, 1), (1000, 1), (1000, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(6, 6, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[[0, 2, 4], [0, 1, 0, 1], [1.5, 2.5, 3.5, 4.5]]",
+            "size": "[1000, 1]",
+            "dtype": "torch.int16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(5, 6, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1000, 1), (1000, 1), (1000, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 4])), Tensor(shape=torch.Size([2, 4])), Tensor(shape=torch.Size([2, 4]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.int16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(7, 6, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.bool",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(6, 10, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[[0, 2, 4], [0, 1, 0, 1], [1.5, 2.5, 3.5, 4.5]]",
+            "size": "[1000, 1]",
+            "dtype": "torch.bool",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(5, 10, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1000, 1), (1000, 1), (1000, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 4])), Tensor(shape=torch.Size([2, 4])), Tensor(shape=torch.Size([2, 4]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.bool",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "segment": "(7, 10, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1, 1000]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1000), (1, 1000), (1, 1000)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 2]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.complex64",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaDoubleType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int8",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaCharType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.uint8",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaByteType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaIntType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 10, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 10, 0), (10, 10, 0), (10, 10, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.float16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1, 1000]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1000), (1, 1000), (1, 1000)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1, 5, 5]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', ('tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3'))",
+        "error_message": "tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 0, 10]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 0, 10), (10, 0, 10), (10, 0, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaComplexFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1000, 1]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaComplexFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1, 5, 5]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 5, 5), (1, 5, 5), (1, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 0, 10]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', ('tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3'))",
+        "error_message": "tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "None",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', ('sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n'))",
+        "error_message": "sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1, 5, 5]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 5, 5), (1, 5, 5), (1, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.int16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only Tensors of floating point and complex dtype can require gradients', ('Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients'))",
+        "error_message": "Only Tensors of floating point and complex dtype can require gradients"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.complex64",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int16",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float16",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaHalfType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 0, 10]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 0, 10), (10, 0, 10), (10, 0, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaDoubleType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "None",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', ('sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n'))",
+        "error_message": "sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 2]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaDoubleType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 0, 10]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 0, 10), (10, 0, 10), (10, 0, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "None",
+            "dtype": "torch.int8",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', ('sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n'))",
+        "error_message": "sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 0, 10]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 0, 10), (10, 0, 10), (10, 0, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaComplexFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1, 5, 5]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', ('tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3'))",
+        "error_message": "tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int8",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 10, 0]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaComplexFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int16",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaComplexFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "None",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', ('sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n'))",
+        "error_message": "sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int8",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only Tensors of floating point and complex dtype can require gradients', ('Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "Only Tensors of floating point and complex dtype can require gradients"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int32",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only Tensors of floating point and complex dtype can require gradients', ('Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "Only Tensors of floating point and complex dtype can require gradients"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 10, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 10, 0), (10, 10, 0), (10, 10, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaComplexFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaComplexFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "None",
+            "dtype": "torch.float64",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=torch.device, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', ('sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=torch.device, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=torch.device, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=torch.device, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n'))",
+        "error_message": "sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=torch.device, dtype=torch.dtype), but expected one of:\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1000, 1]",
+            "dtype": "torch.complex64",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1, 5, 5]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaComplexFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.bool",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaDoubleType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1, 5, 5]",
+            "dtype": "torch.int16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 5, 5), (1, 5, 5), (1, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaIntType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.bool",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only Tensors of floating point and complex dtype can require gradients', ('Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients'))",
+        "error_message": "Only Tensors of floating point and complex dtype can require gradients"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaLongType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaComplexFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 10, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 10, 0), (10, 10, 0), (10, 10, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 0, 10]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', ('tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3'))",
+        "error_message": "tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaDoubleType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "None",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=bool, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', ('sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=bool, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=bool, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=bool, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n'))",
+        "error_message": "sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=bool, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.int8",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=101), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=101), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=101), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=101), but got 3'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=101), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaDoubleType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=6), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=6), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=6), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=6), but got 3'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=6), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.complex64",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 2]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.complex128",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1000, 1]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1001), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=1001), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1001), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1001), but got 3'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=1001), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1, 5, 5]",
+            "dtype": "torch.bfloat16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 5, 5), (1, 5, 5), (1, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 2]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1000, 1]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1000, 1), (1000, 1), (1000, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1000, 1]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1001), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=1001), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1001), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1001), but got 3'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=1001), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1000, 1]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaDoubleType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "None",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 0, 10]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only Tensors of floating point and complex dtype can require gradients', ('Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients'))",
+        "error_message": "Only Tensors of floating point and complex dtype can require gradients"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 10, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 10, 0), (10, 10, 0), (10, 10, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 2]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.bool",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int8",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1000, 1]",
+            "dtype": "torch.bool",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1000, 1), (1000, 1), (1000, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 0, 10]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 0, 10), (10, 0, 10), (10, 0, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1000, 1]",
+            "dtype": "torch.complex64",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1001), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=1001), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1001), but got 3', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=1001), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 2]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.uint8",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.bfloat16",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaBFloat16Type' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', ('tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3', 'tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3'))",
+        "error_message": "tensor dimensionality must be sum of batch, base, and dense dimensionalities (=0 + 2 + 0) but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 2]",
+            "dtype": "torch.bfloat16",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaBFloat16Type' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[5, 3]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=6), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=6), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=6), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=6), but got 3'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=6), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[1000, 1]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1000, 1), (1000, 1), (1000, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[10, 10, 0]",
+            "dtype": "torch.float64",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only Tensors of floating point and complex dtype can require gradients', ('Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients'))",
+        "error_message": "Only Tensors of floating point and complex dtype can require gradients"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[2, 2]",
+            "dtype": "torch.bool",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "None",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', ('sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n'))",
+        "error_message": "sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', ('crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3', 'crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3'))",
+        "error_message": "crow_indices.shape[-1] must be equal to the number of rows + 1 (=1), but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "None",
+            "dtype": "torch.complex128",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', ('sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n', 'sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\\n'))",
+        "error_message": "sparse_csr_tensor() received an invalid combination of arguments - got (Tensor, Tensor, Tensor, NoneType, pin_memory=bool, check_invariants=NoneType, requires_grad=bool, device=NoneType, dtype=torch.dtype), but expected one of:\n * (object crow_indices, object col_indices, object values, tuple of ints size, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\n * (object crow_indices, object col_indices, object values, *, torch.dtype dtype = None, torch.layout layout = None, torch.device device = None, bool pin_memory = False, bool requires_grad = False, bool check_invariants = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([4])), Tensor(shape=torch.Size([4]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.bfloat16",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    }
+]

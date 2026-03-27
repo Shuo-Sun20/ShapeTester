@@ -1,0 +1,48 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 4))]",
+            "k": "-4"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__MatrixDiagPartV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} lower_diag_index is out of bound: -4. It must be between -4 and 0 [Op:MatrixDiagPartV3] name: diag_part', ('{{function_node __wrapped__MatrixDiagPartV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} lower_diag_index is out of bound: -4. It must be between -4 and 0 [Op:MatrixDiagPartV3] name: diag_part', (None,)))",
+        "error_message": "{{function_node __wrapped__MatrixDiagPartV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} lower_diag_index is out of bound: -4. It must be between -4 and 0 [Op:MatrixDiagPartV3] name: diag_part",
+        "conflict_params": [
+            "inputs",
+            "k"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 4))]",
+            "k": "4"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__MatrixDiagPartV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} lower_diag_index is out of bound: 4. It must be between -4 and 0 [Op:MatrixDiagPartV3] name: diag_part', ('{{function_node __wrapped__MatrixDiagPartV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} lower_diag_index is out of bound: 4. It must be between -4 and 0 [Op:MatrixDiagPartV3] name: diag_part', (None,)))",
+        "error_message": "{{function_node __wrapped__MatrixDiagPartV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} lower_diag_index is out of bound: 4. It must be between -4 and 0 [Op:MatrixDiagPartV3] name: diag_part",
+        "conflict_params": [
+            "inputs",
+            "k"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 4))]",
+            "k": "4"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__MatrixDiagPartV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} lower_diag_index is out of bound: 4. It must be between -4 and 0 [Op:MatrixDiagPartV3] name: diag_part', ('{{function_node __wrapped__MatrixDiagPartV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} lower_diag_index is out of bound: 4. It must be between -4 and 0 [Op:MatrixDiagPartV3] name: diag_part', (None,)))",
+        "error_message": "{{function_node __wrapped__MatrixDiagPartV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} lower_diag_index is out of bound: 4. It must be between -4 and 0 [Op:MatrixDiagPartV3] name: diag_part"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 4))]",
+            "k": "-4"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__MatrixDiagPartV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} lower_diag_index is out of bound: -4. It must be between -4 and 0 [Op:MatrixDiagPartV3] name: diag_part', ('{{function_node __wrapped__MatrixDiagPartV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} lower_diag_index is out of bound: -4. It must be between -4 and 0 [Op:MatrixDiagPartV3] name: diag_part', (None,)))",
+        "error_message": "{{function_node __wrapped__MatrixDiagPartV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} lower_diag_index is out of bound: -4. It must be between -4 and 0 [Op:MatrixDiagPartV3] name: diag_part"
+    }
+]

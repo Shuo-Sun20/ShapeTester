@@ -1,0 +1,26 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3)), EagerTensor(shape=(3, 3))]",
+            "from_logits": "False",
+            "axis": "2"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__Sum_device_/job:localhost/replica:0/task:0/device:CPU:0}} Invalid reduction dimension (2 for input with 2 dimension(s) [Op:Sum] name: ', ('{{function_node __wrapped__Sum_device_/job:localhost/replica:0/task:0/device:CPU:0}} Invalid reduction dimension (2 for input with 2 dimension(s) [Op:Sum] name: ', (None,)))",
+        "error_message": "{{function_node __wrapped__Sum_device_/job:localhost/replica:0/task:0/device:CPU:0}} Invalid reduction dimension (2 for input with 2 dimension(s) [Op:Sum] name: ",
+        "conflict_params": [
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3)), EagerTensor(shape=(3, 3))]",
+            "from_logits": "False",
+            "axis": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__Sum_device_/job:localhost/replica:0/task:0/device:CPU:0}} Invalid reduction dimension (2 for input with 2 dimension(s) [Op:Sum] name: ', ('{{function_node __wrapped__Sum_device_/job:localhost/replica:0/task:0/device:CPU:0}} Invalid reduction dimension (2 for input with 2 dimension(s) [Op:Sum] name: ', (None,)))",
+        "error_message": "{{function_node __wrapped__Sum_device_/job:localhost/replica:0/task:0/device:CPU:0}} Invalid reduction dimension (2 for input with 2 dimension(s) [Op:Sum] name: "
+    }
+]

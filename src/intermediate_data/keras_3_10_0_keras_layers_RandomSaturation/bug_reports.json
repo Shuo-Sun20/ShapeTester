@@ -1,0 +1,30 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "factor": "0.2",
+            "value_range": "[0, 255]",
+            "data_format": "channels_first",
+            "seed": "None"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Exception encountered when calling RandomSaturation.call().\\n\\n\\x1b[1m{{function_node __wrapped__RGBToHSV_device_/job:localhost/replica:0/task:0/device:CPU:0}} input must have 3 channels but input only has 32 channels. [Op:RGBToHSV] name: \\x1b[0m\\n\\nArguments received by RandomSaturation.call():\\n  \u2022 data=tf.Tensor(shape=(4, 32, 32, 3), dtype=float32)\\n  \u2022 training=True', ('Exception encountered when calling RandomSaturation.call().\\n\\n\\x1b[1m{{function_node __wrapped__RGBToHSV_device_/job:localhost/replica:0/task:0/device:CPU:0}} input must have 3 channels but input only has 32 channels. [Op:RGBToHSV] name: \\x1b[0m\\n\\nArguments received by RandomSaturation.call():\\n  \u2022 data=tf.Tensor(shape=(4, 32, 32, 3), dtype=float32)\\n  \u2022 training=True', (None, 32, 32, 3)))",
+        "error_message": "Exception encountered when calling RandomSaturation.call().\n\n\u001b[1m{{function_node __wrapped__RGBToHSV_device_/job:localhost/replica:0/task:0/device:CPU:0}} input must have 3 channels but input only has 32 channels. [Op:RGBToHSV] name: \u001b[0m\n\nArguments received by RandomSaturation.call():\n  \u2022 data=tf.Tensor(shape=(4, 32, 32, 3), dtype=float32)\n  \u2022 training=True",
+        "conflict_params": [
+            "data_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "factor": "0.2",
+            "value_range": "[0, 255]",
+            "data_format": "channels_first",
+            "seed": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Exception encountered when calling RandomSaturation.call().\\n\\n\\x1b[1m{{function_node __wrapped__RGBToHSV_device_/job:localhost/replica:0/task:0/device:CPU:0}} input must have 3 channels but input only has 32 channels. [Op:RGBToHSV] name: \\x1b[0m\\n\\nArguments received by RandomSaturation.call():\\n  \u2022 data=tf.Tensor(shape=(4, 32, 32, 3), dtype=float32)\\n  \u2022 training=True', ('Exception encountered when calling RandomSaturation.call().\\n\\n\\x1b[1m{{function_node __wrapped__RGBToHSV_device_/job:localhost/replica:0/task:0/device:CPU:0}} input must have 3 channels but input only has 32 channels. [Op:RGBToHSV] name: \\x1b[0m\\n\\nArguments received by RandomSaturation.call():\\n  \u2022 data=tf.Tensor(shape=(4, 32, 32, 3), dtype=float32)\\n  \u2022 training=True', (None, 32, 32, 3)))",
+        "error_message": "Exception encountered when calling RandomSaturation.call().\n\n\u001b[1m{{function_node __wrapped__RGBToHSV_device_/job:localhost/replica:0/task:0/device:CPU:0}} input must have 3 channels but input only has 32 channels. [Op:RGBToHSV] name: \u001b[0m\n\nArguments received by RandomSaturation.call():\n  \u2022 data=tf.Tensor(shape=(4, 32, 32, 3), dtype=float32)\n  \u2022 training=True"
+    }
+]

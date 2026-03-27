@@ -1,0 +1,6 @@
+{
+    "POC File": "/mnt/data2/Users/sunshuo/2026/dltest_3.3/data/bug_reports/crash_bugs/torch_2_10_0_torch_conv_transpose3d/'Given/POC_Code.py",
+    "Return Code": 0,
+    "STDOUT": "Testing torch.conv_transpose3d defect reproduction...\n\n1. Dynamic output shape (direct call):\nDynamic error: Given transposed=1, weight of size [16, 33, 3, 3, 3], expected bias to be 1-dimensional with 66 elements, but got bias of size [33] instead\n\n2. Static output shape (torch.compile with dynamic=True):\nStatic error: AcceleratorError: CUDA error: device doesn't have valid Grid license\nSearch for `cudaErrorDeviceNotLicensed' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n\n\n\n3. Meta output shape (device='meta'):\nMeta shape: torch.Size([20, 66, 53, 13, 23])\n\nDefect reproduction complete. The three approaches show inconsistent behavior.",
+    "STDERR": ""
+}

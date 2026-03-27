@@ -1,0 +1,216 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 3, 4))",
+            "diagonals_format": "sequence",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "test_operator"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"For 'sequence' format, inputs must be a list or tuple.\", (\"For 'sequence' format, inputs must be a list or tuple.\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorTridiag/generated_code.py\", line 20, in call_func  *\\n        raise TypeError(\"For \\'sequence\\' format, inputs must be a list or tuple.\")\\n\\n    TypeError: For \\'sequence\\' format, inputs must be a list or tuple.\\n'))",
+        "error_message": "For 'sequence' format, inputs must be a list or tuple.",
+        "conflict_params": [
+            "inputs",
+            "diagonals_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3,)), EagerTensor(shape=(3,))]",
+            "diagonals_format": "sequence",
+            "is_square": "True",
+            "name": "test_operator"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 3), (3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3,)), EagerTensor(shape=(3,))]",
+            "diagonals_format": "sequence",
+            "is_square": "False",
+            "name": "test_operator"
+        },
+        "segment": "(0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 3), (3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 3, 4))",
+            "diagonals_format": "compact",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "test_operator"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4, 4), (2, 3, 4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 3, 4))",
+            "diagonals_format": "compact",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "test_operator"
+        },
+        "segment": "(1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4, 4), (2, 3, 4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 3, 4))",
+            "diagonals_format": "compact",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "test_operator"
+        },
+        "segment": "(1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4, 4), (2, 3, 4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 3, 4))",
+            "diagonals_format": "matrix",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "test_operator"
+        },
+        "segment": "(2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 4), (2, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 3, 4))",
+            "diagonals_format": "matrix",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "test_operator"
+        },
+        "segment": "(2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 4), (2, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 3, 4))",
+            "diagonals_format": "matrix",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "test_operator"
+        },
+        "segment": "(2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 4), (2, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3,)), EagerTensor(shape=(3,))]",
+            "diagonals_format": "matrix",
+            "is_square": "True",
+            "name": "test_operator",
+            "is_positive_definite": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 3), (3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3,)), EagerTensor(shape=(3,))]",
+            "diagonals_format": "compact",
+            "is_square": "None",
+            "name": "test_operator",
+            "is_positive_definite": "None",
+            "is_self_adjoint": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 3), (3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3,)), EagerTensor(shape=(3,))]",
+            "diagonals_format": "sequence",
+            "is_square": "True",
+            "name": "test_operator",
+            "is_positive_definite": "None",
+            "is_self_adjoint": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 3), (3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,)), EagerTensor(shape=(3,)), EagerTensor(shape=(3,))]",
+            "diagonals_format": "sequence",
+            "is_square": "True",
+            "name": "test_operator",
+            "is_positive_definite": "None",
+            "is_non_singular": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 3), (3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 3, 4))",
+            "diagonals_format": "sequence",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"For 'sequence' format, inputs must be a list or tuple.\", (\"For 'sequence' format, inputs must be a list or tuple.\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorTridiag/generated_code.py\", line 20, in call_func  *\\n        raise TypeError(\"For \\'sequence\\' format, inputs must be a list or tuple.\")\\n\\n    TypeError: For \\'sequence\\' format, inputs must be a list or tuple.\\n'))",
+        "error_message": "For 'sequence' format, inputs must be a list or tuple."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 3, 4))",
+            "diagonals_format": "sequence",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"For 'sequence' format, inputs must be a list or tuple.\", (\"For 'sequence' format, inputs must be a list or tuple.\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorTridiag/generated_code.py\", line 20, in call_func  *\\n        raise TypeError(\"For \\'sequence\\' format, inputs must be a list or tuple.\")\\n\\n    TypeError: For \\'sequence\\' format, inputs must be a list or tuple.\\n'))",
+        "error_message": "For 'sequence' format, inputs must be a list or tuple."
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 3, 4))",
+            "diagonals_format": "sequence",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "test_operator"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"For 'sequence' format, inputs must be a list or tuple.\", (\"For 'sequence' format, inputs must be a list or tuple.\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorTridiag/generated_code.py\", line 20, in call_func  *\\n        raise TypeError(\"For \\'sequence\\' format, inputs must be a list or tuple.\")\\n\\n    TypeError: For \\'sequence\\' format, inputs must be a list or tuple.\\n'))",
+        "error_message": "For 'sequence' format, inputs must be a list or tuple."
+    }
+]

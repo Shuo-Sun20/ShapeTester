@@ -1,0 +1,70 @@
+[
+    {
+        "test_case": {
+            "axis": "-1",
+            "epsilon": "1e-06",
+            "inputs": "ndarray(shape=(1, 10))"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 10), (None, 10)))"
+    },
+    {
+        "test_case": {
+            "axis": "1",
+            "epsilon": "1e-06",
+            "inputs": "ndarray(shape=(1, 10))"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 10), (None, 10)))"
+    },
+    {
+        "test_case": {
+            "axis": "2",
+            "epsilon": "1e-06",
+            "inputs": "ndarray(shape=(1, 10))"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tuple index out of range', ('tuple index out of range', 'tuple index out of range'))",
+        "error_message": "tuple index out of range",
+        "conflict_params": [
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "axis": "[0, 1]",
+            "epsilon": "1e-06",
+            "inputs": "ndarray(shape=(1, 10))"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tuple indices must be integers or slices, not tuple', ('tuple indices must be integers or slices, not tuple', 'tuple indices must be integers or slices, not tuple'))",
+        "error_message": "tuple indices must be integers or slices, not tuple",
+        "conflict_params": [
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "axis": "2",
+            "epsilon": "1e-06",
+            "inputs": "ndarray(shape=(1, 10))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tuple index out of range', ('tuple index out of range', 'tuple index out of range'))",
+        "error_message": "tuple index out of range"
+    },
+    {
+        "test_case": {
+            "axis": "[0, 1]",
+            "epsilon": "1e-06",
+            "inputs": "ndarray(shape=(1, 10))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tuple indices must be integers or slices, not tuple', ('tuple indices must be integers or slices, not tuple', 'tuple indices must be integers or slices, not tuple'))",
+        "error_message": "tuple indices must be integers or slices, not tuple"
+    }
+]

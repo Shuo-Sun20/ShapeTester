@@ -1,0 +1,15 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "1",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Negative dimension size caused by subtracting 4 from 3 for \\'{{node MaxPool1d}} = MaxPool[T=DT_FLOAT, data_format=\"NCHW\", explicit_paddings=[], ksize=[1, 1, 1, 4], padding=\"VALID\", strides=[1, 1, 1, 1]](MaxPool1d/ExpandDims)\\' with input shapes: [2,10,1,3].\\n', ((2, 10, 0), 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Negative dimension size caused by subtracting 4 from 3 for \\'{{node MaxPool1d}} = MaxPool[T=DT_FLOAT, data_format=\"NCHW\", explicit_paddings=[], ksize=[1, 1, 1, 4], padding=\"VALID\", strides=[1, 1, 1, 1]](MaxPool1d/ExpandDims)\\' with input shapes: [2,10,1,3].\\n'))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\n\n    ValueError: Negative dimension size caused by subtracting 4 from 3 for '{{node MaxPool1d}} = MaxPool[T=DT_FLOAT, data_format=\"NCHW\", explicit_paddings=[], ksize=[1, 1, 1, 4], padding=\"VALID\", strides=[1, 1, 1, 1]](MaxPool1d/ExpandDims)' with input shapes: [2,10,1,3].\n"
+    }
+]

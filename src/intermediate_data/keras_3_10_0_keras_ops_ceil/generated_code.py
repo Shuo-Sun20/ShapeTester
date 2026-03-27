@@ -1,0 +1,9 @@
+import keras
+import numpy as np
+
+def call_func(inputs):
+    x = inputs[0]
+    return keras.ops.ceil(x)
+
+random_tensor = keras.ops.convert_to_tensor(np.random.randn(3, 4))
+example_output = call_func([random_tensor])

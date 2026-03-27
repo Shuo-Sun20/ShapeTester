@@ -1,0 +1,3478 @@
+[
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "3.5",
+            "mode": "bilinear",
+            "align_corners": "False",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(0, 4, 2, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 84, 112), (1, 3, 84, 112), (1, 3, 84, 112)))"
+    },
+    {
+        "test_case": {
+            "size": "48",
+            "scale_factor": "3.5",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(1, 4, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), s49, 3.5, \\'nearest\\', None), **{\\'recompute_scale_factor\\': None}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[48, 64]",
+            "scale_factor": "4.0",
+            "mode": "nearest",
+            "align_corners": "False",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(3, 6, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4), 4.0, \\'nearest\\', False), **{\\'recompute_scale_factor\\': True}): got ValueError(\\'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear",
+        "conflict_params": [
+            "mode",
+            "align_corners"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "None",
+            "mode": "linear",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(0, 0, 1, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'either size or scale_factor should be defined', ('either size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), None, None, \\'linear\\', True), **{\\'recompute_scale_factor\\': None}): got ValueError(\\'either size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'either size or scale_factor should be defined'))",
+        "error_message": "either size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "64",
+            "scale_factor": "0.5",
+            "mode": "linear",
+            "align_corners": "None",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(2, 1, 1, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), s49, 0.5, \\'linear\\', None), **{\\'recompute_scale_factor\\': False}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[48, 64]",
+            "scale_factor": "1.0",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(3, 2, 3, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4), 1.0, \\'bicubic\\', True), **{\\'recompute_scale_factor\\': False}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[100, 150]",
+            "scale_factor": "2.0",
+            "mode": "bilinear",
+            "align_corners": "True",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(4, 3, 2, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4), 2.0, \\'bilinear\\', True), **{\\'recompute_scale_factor\\': True}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "0.25",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(5, 5, 3, 2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4), 0.25, \\'bicubic\\', None), **{\\'recompute_scale_factor\\': True}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(6, 7, 3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4), (zf91, zf77), \\'bicubic\\', False), **{\\'recompute_scale_factor\\': None}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[200, 200]",
+            "scale_factor": "4.0",
+            "mode": "bilinear",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(7, 6, 2, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4), 4.0, \\'bilinear\\', None), **{\\'recompute_scale_factor\\': None}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[48, 64, 96]",
+            "scale_factor": "[2.0, 3.0]",
+            "mode": "trilinear",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(8, 8, 4, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4, s19), (zf91, zf77), \\'trilinear\\', True), **{\\'recompute_scale_factor\\': None}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[1.5, 1.5]",
+            "mode": "trilinear",
+            "align_corners": "None",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(0, 9, 4, 2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 4D input, but trilinear mode needs 5D input', ('Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input'))",
+        "error_message": "Got 4D input, but trilinear mode needs 5D input",
+        "conflict_params": [
+            "mode",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "48",
+            "scale_factor": "1.0",
+            "mode": "linear",
+            "align_corners": "False",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(1, 2, 1, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), s49, 1.0, \\'linear\\', False), **{\\'recompute_scale_factor\\': True}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "[1.5, 1.5]",
+            "mode": "nearest",
+            "align_corners": "True",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(5, 9, 0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4), (zf91, zf77), \\'nearest\\', True), **{\\'recompute_scale_factor\\': False}): got ValueError(\\'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear",
+        "conflict_params": [
+            "mode",
+            "align_corners"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "64",
+            "scale_factor": "[1.5, 1.5]",
+            "mode": "bilinear",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(2, 9, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), s49, (zf91, zf77), \\'bilinear\\', False), **{\\'recompute_scale_factor\\': None}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "3.5",
+            "mode": "linear",
+            "align_corners": "True",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(6, 4, 1, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4), 3.5, \\'linear\\', True), **{\\'recompute_scale_factor\\': True}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[48, 64]",
+            "scale_factor": "2.0",
+            "mode": "linear",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(3, 3, 1, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4), 2.0, \\'linear\\', None), **{\\'recompute_scale_factor\\': None}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[100, 150]",
+            "scale_factor": "None",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(4, 0, 3, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 100, 150), (1, 3, 100, 150), (1, 3, 100, 150)))"
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "0.5",
+            "mode": "bilinear",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(5, 1, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4), 0.5, \\'bilinear\\', False), **{\\'recompute_scale_factor\\': None}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[100, 150]",
+            "scale_factor": "0.25",
+            "mode": "linear",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(4, 5, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4), 0.25, \\'linear\\', False), **{\\'recompute_scale_factor\\': None}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[48, 64, 96]",
+            "scale_factor": "None",
+            "mode": "bilinear",
+            "align_corners": "False",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(8, 0, 2, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Input and output must have the same number of spatial dimensions, but got input with spatial dimensions of [24, 32] and output size of (48, 64, 96). Please provide input tensor in (N, C, d1, d2, ...,dK) format and output size in (o1, o2, ...,oK) format.', ('Input and output must have the same number of spatial dimensions, but got input with spatial dimensions of [24, 32] and output size of (48, 64, 96). Please provide input tensor in (N, C, d1, d2, ...,dK) format and output size in (o1, o2, ...,oK) format.', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4, s19), None, \\'bilinear\\', False), **{\\'recompute_scale_factor\\': True}): got ValueError(\\'Input and output must have the same number of spatial dimensions, but got input with spatial dimensions of [s65, s54] and output size of (s90, s4, s19). Please provide input tensor in (N, C, d1, d2, ...,dK) format and output size in (o1, o2, ...,oK) format.\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Input and output must have the same number of spatial dimensions, but got input with spatial dimensions of [24, 32] and output size of (48, 64, 96). Please provide input tensor in (N, C, d1, d2, ...,dK) format and output size in (o1, o2, ...,oK) format.'))",
+        "error_message": "Input and output must have the same number of spatial dimensions, but got input with spatial dimensions of [24, 32] and output size of (48, 64, 96). Please provide input tensor in (N, C, d1, d2, ...,dK) format and output size in (o1, o2, ...,oK) format.",
+        "conflict_params": [
+            "size"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[200, 200]",
+            "scale_factor": "[2.0, 3.0]",
+            "mode": "linear",
+            "align_corners": "False",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(7, 8, 1, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4), (zf91, zf77), \\'linear\\', False), **{\\'recompute_scale_factor\\': True}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "48",
+            "scale_factor": "0.25",
+            "mode": "bilinear",
+            "align_corners": "True",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(1, 5, 2, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), s49, 0.25, \\'bilinear\\', True), **{\\'recompute_scale_factor\\': False}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "[2.0, 3.0]",
+            "mode": "bilinear",
+            "align_corners": "None",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(6, 8, 2, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4), (zf91, zf77), \\'bilinear\\', None), **{\\'recompute_scale_factor\\': False}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "64",
+            "scale_factor": "4.0",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(2, 6, 3, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), s49, 4.0, \\'bicubic\\', True), **{\\'recompute_scale_factor\\': True}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[200, 200]",
+            "scale_factor": "0.5",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(7, 1, 3, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4), 0.5, \\'bicubic\\', True), **{\\'recompute_scale_factor\\': True}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[200, 200]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(7, 7, 0, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4), (zf91, zf77), \\'nearest\\', None), **{\\'recompute_scale_factor\\': False}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "2.0",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(0, 3, 3, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 48, 64), (1, 3, 48, 64), (1, 3, 48, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bilinear",
+            "align_corners": "True",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(3, 7, 2, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4), (zf91, zf77), \\'bilinear\\', True), **{\\'recompute_scale_factor\\': True}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "1.0",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(0, 2, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 24, 32), (1, 3, 24, 32), (1, 3, 24, 32)))"
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "4.0",
+            "mode": "linear",
+            "align_corners": "False",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(5, 6, 1, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4), 4.0, \\'linear\\', False), **{\\'recompute_scale_factor\\': False}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "48",
+            "scale_factor": "[1.5, 1.5]",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(1, 9, 3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), s49, (zf91, zf77), \\'bicubic\\', False), **{\\'recompute_scale_factor\\': None}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "64",
+            "scale_factor": "None",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(2, 0, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 64, 64), (1, 3, 64, 64), (1, 3, 64, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "[100, 150]",
+            "scale_factor": "0.5",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(4, 1, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4), 0.5, \\'nearest\\', None), **{\\'recompute_scale_factor\\': None}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "2.0",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(6, 3, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4), 2.0, \\'nearest\\', None), **{\\'recompute_scale_factor\\': None}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "64",
+            "scale_factor": "3.5",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(2, 4, 3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), s49, 3.5, \\'bicubic\\', False), **{\\'recompute_scale_factor\\': None}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "64",
+            "scale_factor": "1.0",
+            "mode": "bilinear",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(2, 2, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), s49, 1.0, \\'bilinear\\', False), **{\\'recompute_scale_factor\\': None}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[48, 64]",
+            "scale_factor": "[1.5, 1.5]",
+            "mode": "linear",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(3, 9, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'Dynamo failed to run FX node with fake tensors: call_function <function interpolate at 0x7fb0dd4a7d80>(*(FakeTensor(..., size=(1, s41, s65, s54)), (s90, s4), (zf91, zf77), \\'linear\\', False), **{\\'recompute_scale_factor\\': None}): got ValueError(\\'only one of size or scale_factor should be defined\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_Upsample/generated_code.py\", line 6, in call_func\\n    return upsample_layer(inputs[0])\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/upsampling.py\", line 174, in forward\\n    return F.interpolate(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[2.0, 3.0]",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(0, 8, 3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 48, 96), (1, 3, 48, 96), (1, 3, 48, 96)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "linear",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(0, 7, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 4D input, but linear mode needs 3D input', ('Got 4D input, but linear mode needs 3D input', 'Got 4D input, but linear mode needs 3D input', 'Got 4D input, but linear mode needs 3D input'))",
+        "error_message": "Got 4D input, but linear mode needs 3D input",
+        "conflict_params": [
+            "mode",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "0.25",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(0, 5, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 6, 8), (1, 3, 6, 8), (1, 3, 6, 8)))"
+    },
+    {
+        "test_case": {
+            "size": "64",
+            "scale_factor": "[2.0, 3.0]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(2, 8, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "0.5",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(0, 1, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 12, 16), (1, 3, 12, 16), (1, 3, 12, 16)))"
+    },
+    {
+        "test_case": {
+            "size": "[100, 150]",
+            "scale_factor": "[1.5, 1.5]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(4, 9, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[48, 64]",
+            "scale_factor": "None",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(3, 0, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 48, 64), (1, 3, 48, 64), (1, 3, 48, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "[1.5, 1.5]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(6, 9, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[48, 64]",
+            "scale_factor": "0.5",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(3, 1, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[200, 200]",
+            "scale_factor": "[1.5, 1.5]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(7, 9, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "64",
+            "scale_factor": "2.0",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(2, 3, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "None",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(5, 0, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 24, 32), (1, 3, 24, 32), (1, 3, 24, 32)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "4.0",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(0, 6, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 96, 128), (1, 3, 96, 128), (1, 3, 96, 128)))"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64]",
+            "scale_factor": "3.5",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(3, 4, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "None",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(6, 0, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 10, 10), (1, 3, 10, 10), (1, 3, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "size": "64",
+            "scale_factor": "0.25",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(2, 5, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[100, 150]",
+            "scale_factor": "3.5",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(4, 4, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "0.5",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(6, 1, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[200, 200]",
+            "scale_factor": "None",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(7, 0, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 200, 200), (1, 3, 200, 200), (1, 3, 200, 200)))"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64]",
+            "scale_factor": "0.25",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(3, 5, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "2.0",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(5, 3, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "64",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(2, 7, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "3.5",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(5, 4, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[100, 150]",
+            "scale_factor": "4.0",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(4, 6, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[200, 200]",
+            "scale_factor": "2.0",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(7, 3, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[48, 64]",
+            "scale_factor": "[2.0, 3.0]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(3, 8, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[100, 150]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(4, 7, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "0.25",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(6, 5, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[200, 200]",
+            "scale_factor": "3.5",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(7, 4, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "48",
+            "scale_factor": "None",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(1, 0, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 48, 48), (1, 3, 48, 48), (1, 3, 48, 48)))"
+    },
+    {
+        "test_case": {
+            "size": "[100, 150]",
+            "scale_factor": "[2.0, 3.0]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(4, 8, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(5, 7, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[200, 200]",
+            "scale_factor": "0.25",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(7, 5, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "4.0",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(6, 6, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "[2.0, 3.0]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(5, 8, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "48",
+            "scale_factor": "0.5",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(1, 1, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "48",
+            "scale_factor": "2.0",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(1, 3, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[100, 150]",
+            "scale_factor": "1.0",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(4, 2, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "48",
+            "scale_factor": "4.0",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(1, 6, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "1.0",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(5, 2, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "48",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(1, 7, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "1.0",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(6, 2, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "48",
+            "scale_factor": "[2.0, 3.0]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(1, 8, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[200, 200]",
+            "scale_factor": "1.0",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "segment": "(7, 2, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined",
+        "conflict_params": [
+            "size",
+            "scale_factor"
+        ]
+    },
+    {
+        "test_case": {
+            "size": "[100, 150]",
+            "scale_factor": "0.25",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "0.5",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "0.25",
+            "mode": "bilinear",
+            "align_corners": "True",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[2.0, 3.0]",
+            "mode": "linear",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 4D input, but linear mode needs 3D input', ('Got 4D input, but linear mode needs 3D input', 'Got 4D input, but linear mode needs 3D input', 'Got 4D input, but linear mode needs 3D input'))",
+        "error_message": "Got 4D input, but linear mode needs 3D input"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[2.0, 3.0]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 48, 96), (1, 3, 48, 96), (1, 3, 48, 96)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "0.25",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 6, 8), (1, 3, 6, 8), (1, 3, 6, 8)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[2.0, 3.0]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 48, 96), (1, 3, 48, 96), (1, 3, 48, 96)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "0.25",
+            "mode": "trilinear",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 4D input, but trilinear mode needs 5D input', ('Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input'))",
+        "error_message": "Got 4D input, but trilinear mode needs 5D input"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "0.25",
+            "mode": "nearest",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "0.25",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 6, 8), (1, 3, 6, 8), (1, 3, 6, 8)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 12, 64), (1, 3, 12, 64), (1, 3, 12, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64, 96]",
+            "scale_factor": "0.25",
+            "mode": "nearest",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "nearest",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64, 96]",
+            "scale_factor": "0.25",
+            "mode": "linear",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "nearest",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "0.25",
+            "mode": "trilinear",
+            "align_corners": "None",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 4D input, but trilinear mode needs 5D input', ('Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input'))",
+        "error_message": "Got 4D input, but trilinear mode needs 5D input"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 12, 64), (1, 3, 12, 64), (1, 3, 12, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "0.5",
+            "mode": "trilinear",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 4D input, but trilinear mode needs 5D input', ('Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input'))",
+        "error_message": "Got 4D input, but trilinear mode needs 5D input"
+    },
+    {
+        "test_case": {
+            "size": "[200, 200]",
+            "scale_factor": "1.0",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "0.25",
+            "mode": "nearest",
+            "align_corners": "False",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "trilinear",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 4D input, but trilinear mode needs 5D input', ('Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input'))",
+        "error_message": "Got 4D input, but trilinear mode needs 5D input"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "None",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'either size or scale_factor should be defined', ('either size or scale_factor should be defined', 'either size or scale_factor should be defined', 'either size or scale_factor should be defined'))",
+        "error_message": "either size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "linear",
+            "align_corners": "None",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 4D input, but linear mode needs 3D input', ('Got 4D input, but linear mode needs 3D input', 'Got 4D input, but linear mode needs 3D input', 'Got 4D input, but linear mode needs 3D input'))",
+        "error_message": "Got 4D input, but linear mode needs 3D input"
+    },
+    {
+        "test_case": {
+            "size": "48",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "1.0",
+            "mode": "nearest",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[1.5, 1.5]",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 36, 48), (1, 3, 36, 48), (1, 3, 36, 48)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 12, 64), (1, 3, 12, 64), (1, 3, 12, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64, 96]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bilinear",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 12, 64), (1, 3, 12, 64), (1, 3, 12, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "4.0",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 96, 128), (1, 3, 96, 128), (1, 3, 96, 128)))"
+    },
+    {
+        "test_case": {
+            "size": "[200, 200]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "None",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'either size or scale_factor should be defined', ('either size or scale_factor should be defined', 'either size or scale_factor should be defined', 'either size or scale_factor should be defined'))",
+        "error_message": "either size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 12, 64), (1, 3, 12, 64), (1, 3, 12, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "0.5",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 12, 16), (1, 3, 12, 16), (1, 3, 12, 16)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "nearest",
+            "align_corners": "True",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear"
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "nearest",
+            "align_corners": "True",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 12, 64), (1, 3, 12, 64), (1, 3, 12, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "[100, 150]",
+            "scale_factor": "[1.5, 1.5]",
+            "mode": "nearest",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear"
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "2.0",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "48",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "trilinear",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "1.0",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 24, 32), (1, 3, 24, 32), (1, 3, 24, 32)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "trilinear",
+            "align_corners": "None",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 4D input, but trilinear mode needs 5D input', ('Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input'))",
+        "error_message": "Got 4D input, but trilinear mode needs 5D input"
+    },
+    {
+        "test_case": {
+            "size": "[100, 150]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "2.0",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 48, 64), (1, 3, 48, 64), (1, 3, 48, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "0.25",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 6, 8), (1, 3, 6, 8), (1, 3, 6, 8)))"
+    },
+    {
+        "test_case": {
+            "size": "[200, 200]",
+            "scale_factor": "0.25",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 12, 64), (1, 3, 12, 64), (1, 3, 12, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "0.5",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "None",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'either size or scale_factor should be defined', ('either size or scale_factor should be defined', 'either size or scale_factor should be defined', 'either size or scale_factor should be defined'))",
+        "error_message": "either size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bilinear",
+            "align_corners": "None",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 12, 64), (1, 3, 12, 64), (1, 3, 12, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 12, 64), (1, 3, 12, 64), (1, 3, 12, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[2.0, 3.0]",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 48, 96), (1, 3, 48, 96), (1, 3, 48, 96)))"
+    },
+    {
+        "test_case": {
+            "size": "[100, 150]",
+            "scale_factor": "[1.5, 1.5]",
+            "mode": "nearest",
+            "align_corners": "False",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "3.5",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 84, 112), (1, 3, 84, 112), (1, 3, 84, 112)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "nearest",
+            "align_corners": "False",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 12, 64), (1, 3, 12, 64), (1, 3, 12, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "nearest",
+            "align_corners": "False",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear"
+    },
+    {
+        "test_case": {
+            "size": "48",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "4.0",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 96, 128), (1, 3, 96, 128), (1, 3, 96, 128)))"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64]",
+            "scale_factor": "0.5",
+            "mode": "linear",
+            "align_corners": "None",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "linear",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 4D input, but linear mode needs 3D input', ('Got 4D input, but linear mode needs 3D input', 'Got 4D input, but linear mode needs 3D input', 'Got 4D input, but linear mode needs 3D input'))",
+        "error_message": "Got 4D input, but linear mode needs 3D input"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64, 96]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "nearest",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "2.0",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 48, 64), (1, 3, 48, 64), (1, 3, 48, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "trilinear",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 4D input, but trilinear mode needs 5D input', ('Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input'))",
+        "error_message": "Got 4D input, but trilinear mode needs 5D input"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 12, 64), (1, 3, 12, 64), (1, 3, 12, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "linear",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 4D input, but linear mode needs 3D input', ('Got 4D input, but linear mode needs 3D input', 'Got 4D input, but linear mode needs 3D input', 'Got 4D input, but linear mode needs 3D input'))",
+        "error_message": "Got 4D input, but linear mode needs 3D input"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 12, 64), (1, 3, 12, 64), (1, 3, 12, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "None",
+            "mode": "trilinear",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'either size or scale_factor should be defined', ('either size or scale_factor should be defined', 'either size or scale_factor should be defined', 'either size or scale_factor should be defined'))",
+        "error_message": "either size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[200, 200]",
+            "scale_factor": "1.0",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 12, 64), (1, 3, 12, 64), (1, 3, 12, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "48",
+            "scale_factor": "3.5",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "48",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "None",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 10, 10), (1, 3, 10, 10), (1, 3, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "size": "64",
+            "scale_factor": "4.0",
+            "mode": "nearest",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear"
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "trilinear",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 4D input, but trilinear mode needs 5D input', ('Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input'))",
+        "error_message": "Got 4D input, but trilinear mode needs 5D input"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "1.0",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 24, 32), (1, 3, 24, 32), (1, 3, 24, 32)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "2.0",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 48, 64), (1, 3, 48, 64), (1, 3, 48, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "None",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'either size or scale_factor should be defined', ('either size or scale_factor should be defined', 'either size or scale_factor should be defined', 'either size or scale_factor should be defined'))",
+        "error_message": "either size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "linear",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 4D input, but linear mode needs 3D input', ('Got 4D input, but linear mode needs 3D input', 'Got 4D input, but linear mode needs 3D input', 'Got 4D input, but linear mode needs 3D input'))",
+        "error_message": "Got 4D input, but linear mode needs 3D input"
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "trilinear",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "None",
+            "mode": "bilinear",
+            "align_corners": "True",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'either size or scale_factor should be defined', ('either size or scale_factor should be defined', 'either size or scale_factor should be defined', 'either size or scale_factor should be defined'))",
+        "error_message": "either size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "trilinear",
+            "align_corners": "None",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 4D input, but trilinear mode needs 5D input', ('Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input'))",
+        "error_message": "Got 4D input, but trilinear mode needs 5D input"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64, 96]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "trilinear",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "linear",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "48",
+            "scale_factor": "0.5",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64, 96]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bilinear",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 12, 64), (1, 3, 12, 64), (1, 3, 12, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[2.0, 3.0]",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 48, 96), (1, 3, 48, 96), (1, 3, 48, 96)))"
+    },
+    {
+        "test_case": {
+            "size": "48",
+            "scale_factor": "4.0",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "[1.5, 1.5]",
+            "mode": "nearest",
+            "align_corners": "None",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "2.0",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "4.0",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "None",
+            "mode": "bilinear",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 10, 10), (1, 3, 10, 10), (1, 3, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "3.5",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 84, 112), (1, 3, 84, 112), (1, 3, 84, 112)))"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64, 96]",
+            "scale_factor": "0.25",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "2.0",
+            "mode": "linear",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 4D input, but linear mode needs 3D input', ('Got 4D input, but linear mode needs 3D input', 'Got 4D input, but linear mode needs 3D input', 'Got 4D input, but linear mode needs 3D input'))",
+        "error_message": "Got 4D input, but linear mode needs 3D input"
+    },
+    {
+        "test_case": {
+            "size": "[200, 200]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "48",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bilinear",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "0.25",
+            "mode": "nearest",
+            "align_corners": "False",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "0.25",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 6, 8), (1, 3, 6, 8), (1, 3, 6, 8)))"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64, 96]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "1.0",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[200, 200]",
+            "scale_factor": "0.25",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[100, 150]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "0.5",
+            "mode": "nearest",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "[2.0, 3.0]",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "None",
+            "mode": "bilinear",
+            "align_corners": "False",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'either size or scale_factor should be defined', ('either size or scale_factor should be defined', 'either size or scale_factor should be defined', 'either size or scale_factor should be defined'))",
+        "error_message": "either size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64]",
+            "scale_factor": "2.0",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "0.25",
+            "mode": "bilinear",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 6, 8), (1, 3, 6, 8), (1, 3, 6, 8)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "3.5",
+            "mode": "nearest",
+            "align_corners": "True",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear"
+    },
+    {
+        "test_case": {
+            "size": "[200, 200]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bilinear",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64, 96]",
+            "scale_factor": "3.5",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "0.5",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 12, 16), (1, 3, 12, 16), (1, 3, 12, 16)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "3.5",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 84, 112), (1, 3, 84, 112), (1, 3, 84, 112)))"
+    },
+    {
+        "test_case": {
+            "size": "[200, 200]",
+            "scale_factor": "[2.0, 3.0]",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64, 96]",
+            "scale_factor": "3.5",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[2.0, 3.0]",
+            "mode": "bilinear",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 48, 96), (1, 3, 48, 96), (1, 3, 48, 96)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bilinear",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 12, 64), (1, 3, 12, 64), (1, 3, 12, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "64",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "48",
+            "scale_factor": "0.25",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "None",
+            "mode": "bilinear",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'either size or scale_factor should be defined', ('either size or scale_factor should be defined', 'either size or scale_factor should be defined', 'either size or scale_factor should be defined'))",
+        "error_message": "either size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "2.0",
+            "mode": "nearest",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "1.0",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 24, 32), (1, 3, 24, 32), (1, 3, 24, 32)))"
+    },
+    {
+        "test_case": {
+            "size": "[200, 200]",
+            "scale_factor": "2.0",
+            "mode": "bilinear",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[1.5, 1.5]",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 36, 48), (1, 3, 36, 48), (1, 3, 36, 48)))"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64, 96]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "4.0",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 96, 128), (1, 3, 96, 128), (1, 3, 96, 128)))"
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "4.0",
+            "mode": "bilinear",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 96, 128), (1, 3, 96, 128), (1, 3, 96, 128)))"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64, 96]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "trilinear",
+            "align_corners": "True",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 4D input, but trilinear mode needs 5D input', ('Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input'))",
+        "error_message": "Got 4D input, but trilinear mode needs 5D input"
+    },
+    {
+        "test_case": {
+            "size": "[100, 150]",
+            "scale_factor": "0.5",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "None",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'either size or scale_factor should be defined', ('either size or scale_factor should be defined', 'either size or scale_factor should be defined', 'either size or scale_factor should be defined'))",
+        "error_message": "either size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[100, 150]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64, 96]",
+            "scale_factor": "2.0",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[2.0, 3.0]",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 48, 96), (1, 3, 48, 96), (1, 3, 48, 96)))"
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "[2.0, 3.0]",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "None",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'either size or scale_factor should be defined', ('either size or scale_factor should be defined', 'either size or scale_factor should be defined', 'either size or scale_factor should be defined'))",
+        "error_message": "either size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64]",
+            "scale_factor": "1.0",
+            "mode": "trilinear",
+            "align_corners": "True",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "3.5",
+            "mode": "bicubic",
+            "align_corners": "None",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 84, 112), (1, 3, 84, 112), (1, 3, 84, 112)))"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64]",
+            "scale_factor": "0.5",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "48",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "3.5",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bilinear",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[24, 32]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "[10, 10]",
+            "scale_factor": "4.0",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "3.5",
+            "mode": "trilinear",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 4D input, but trilinear mode needs 5D input', ('Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input', 'Got 4D input, but trilinear mode needs 5D input'))",
+        "error_message": "Got 4D input, but trilinear mode needs 5D input"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "nearest",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', ('align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear', 'align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear'))",
+        "error_message": "align_corners option can only be set with the interpolating modes: linear | bilinear | bicubic | trilinear"
+    },
+    {
+        "test_case": {
+            "size": "[48, 64]",
+            "scale_factor": "1.0",
+            "mode": "linear",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "None",
+            "mode": "bicubic",
+            "align_corners": "False",
+            "recompute_scale_factor": "True",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'either size or scale_factor should be defined', ('either size or scale_factor should be defined', 'either size or scale_factor should be defined', 'either size or scale_factor should be defined'))",
+        "error_message": "either size or scale_factor should be defined"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bilinear",
+            "align_corners": "None",
+            "recompute_scale_factor": "False",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 12, 64), (1, 3, 12, 64), (1, 3, 12, 64)))"
+    },
+    {
+        "test_case": {
+            "size": "None",
+            "scale_factor": "0.25",
+            "mode": "bilinear",
+            "align_corners": "False",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 6, 8), (1, 3, 6, 8), (1, 3, 6, 8)))"
+    },
+    {
+        "test_case": {
+            "size": "[100, 150]",
+            "scale_factor": "[0.5, 2.0]",
+            "mode": "bicubic",
+            "align_corners": "True",
+            "recompute_scale_factor": "None",
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 24, 32]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'only one of size or scale_factor should be defined', ('only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined', 'only one of size or scale_factor should be defined'))",
+        "error_message": "only one of size or scale_factor should be defined"
+    }
+]

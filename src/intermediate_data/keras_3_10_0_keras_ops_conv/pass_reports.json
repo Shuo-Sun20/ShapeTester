@@ -1,0 +1,1170 @@
+[
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[1, 2]"
+        },
+        "segment": "(0, 0, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'dilations should be of length 1, 1 or 3. Received: dilations=[1, 2] of length 2', ('dilations should be of length 1, 1 or 3. Received: dilations=[1, 2] of length 2', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 5, 5, 3).'))",
+        "error_message": "dilations should be of length 1, 1 or 3. Received: dilations=[1, 2] of length 2",
+        "conflict_params": [
+            "kernel",
+            "dilation_rate"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "2",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 2]"
+        },
+        "segment": "(0, 1, 1, 1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: dilations should be of length 1, 1 or 3. Received: dilations=[2, 2] of length 2\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: dilations should be of length 1, 1 or 3. Received: dilations=[2, 2] of length 2\\n', 'Kernel shape must have the same length as input, but received kernel of shape (1, 5, 4) and input of shape (None, 5, 5, 3).'))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: dilations should be of length 1, 1 or 3. Received: dilations=[2, 2] of length 2\n",
+        "conflict_params": [
+            "inputs",
+            "kernel",
+            "data_format",
+            "dilation_rate"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "1",
+            "padding": "same",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "segment": "(3, 0, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 5, 5, 8), (None, 5, 5, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "segment": "(2, 0, 0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 2, 2), (None, 4, 2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "segment": "(0, 4, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'strides should be of length 1, 1 or 3. Received: strides=[2, 2] of length 2', ('strides should be of length 1, 1 or 3. Received: strides=[2, 2] of length 2', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 5, 5, 3).'))",
+        "error_message": "strides should be of length 1, 1 or 3. Received: strides=[2, 2] of length 2",
+        "conflict_params": [
+            "kernel",
+            "strides"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "[1, 2]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "2"
+        },
+        "segment": "(0, 2, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'strides should be of length 1, 1 or 3. Received: strides=[1, 2] of length 2', ('strides should be of length 1, 1 or 3. Received: strides=[1, 2] of length 2', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 5, 5, 3).'))",
+        "error_message": "strides should be of length 1, 1 or 3. Received: strides=[1, 2] of length 2",
+        "conflict_params": [
+            "kernel",
+            "strides"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "segment": "(2, 1, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 1, 4), (None, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[2, 2]"
+        },
+        "segment": "(2, 3, 0, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]', 'Computed output size would be negative. Received `inputs shape=(None, 5, 5, 3)`, `kernel shape=(5, 5, 3, 4)`, `dilation_rate=[2 2]`.'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]",
+        "conflict_params": [
+            "strides",
+            "dilation_rate"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[2, 2]"
+        },
+        "segment": "(4, 0, 0, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 5, 5, 4), (None, 5, 5, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "segment": "(4, 3, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3, 5, 4), (None, 3, 5, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[2, 1]"
+        },
+        "segment": "(0, 0, 0, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'dilations should be of length 1, 1 or 3. Received: dilations=[2, 1] of length 2', ('dilations should be of length 1, 1 or 3. Received: dilations=[2, 1] of length 2', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 5, 5, 3).'))",
+        "error_message": "dilations should be of length 1, 1 or 3. Received: dilations=[2, 1] of length 2",
+        "conflict_params": [
+            "inputs",
+            "kernel",
+            "dilation_rate"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "segment": "(0, 3, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'strides should be of length 1, 1 or 3. Received: strides=[2, 1] of length 2', ('strides should be of length 1, 1 or 3. Received: strides=[2, 1] of length 2', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 5, 5, 3).'))",
+        "error_message": "strides should be of length 1, 1 or 3. Received: strides=[2, 1] of length 2",
+        "conflict_params": [
+            "kernel",
+            "strides"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(3, 3, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "segment": "(1, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3, 3, 4), (None, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3, 3, 8), (None, 3, 3, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', 'Computed output size would be negative. Received `inputs shape=(None, 3, 10, 10)`, `kernel shape=(5, 5, 10, 4)`, `dilation_rate=[2 2]`.'))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[1, 2]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]', 'Computed output size would be negative. Received `inputs shape=(None, 5, 5, 3)`, `kernel shape=(5, 5, 3, 4)`, `dilation_rate=[2 2]`.'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[1, 2]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 6, 3), (None, 4, 6, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 1, 4), (None, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 1, 4), (None, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 8, 6, 6), (None, 8, 6, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "2",
+            "padding": "same",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3, 3, 4), (None, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "1",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 10, 10), (None, 4, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 6, 6), (None, 4, 6, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "[1, 2]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'strides should be of length 1, 1 or 3. Received: strides=[1, 2] of length 2', ('strides should be of length 1, 1 or 3. Received: strides=[1, 2] of length 2', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 3, 10, 10).'))",
+        "error_message": "strides should be of length 1, 1 or 3. Received: strides=[1, 2] of length 2"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "1",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 10, 10), (None, 4, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "1",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 10, 10), (None, 4, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(3, 3, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 2, 3, 4), (None, 2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 2, 2), (None, 4, 2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3, 3, 4), (None, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "1",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 10, 10), (None, 4, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "1",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(1, 3, 4) with 3 output filters.', ('The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(1, 3, 4) with 3 output filters.', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 3, 10, 10).'))",
+        "error_message": "The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(1, 3, 4) with 3 output filters."
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 3, 6), (None, 4, 3, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', 'Computed output size would be negative. Received `inputs shape=(None, 3, 10, 10)`, `kernel shape=(5, 5, 10, 4)`, `dilation_rate=[1 2]`.'))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'dilations should be of length 1, 1 or 3. Received: dilations=[2, 2] of length 2', ('dilations should be of length 1, 1 or 3. Received: dilations=[2, 2] of length 2', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 3, 10, 10).'))",
+        "error_message": "dilations should be of length 1, 1 or 3. Received: dilations=[2, 2] of length 2"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 6, 2), (None, 4, 6, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "1",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'dilations should be of length 1, 1 or 3. Received: dilations=[2, 2] of length 2', ('dilations should be of length 1, 1 or 3. Received: dilations=[2, 2] of length 2', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 3, 10, 10).'))",
+        "error_message": "dilations should be of length 1, 1 or 3. Received: dilations=[2, 2] of length 2"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[1, 2]",
+            "padding": "same",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 5, 3, 4), (None, 5, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 2, 6), (None, 4, 2, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(2, 5, 5, 3) with 5 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(2, 5, 5, 3) with 5 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', 'Computed output size would be negative. Received `inputs shape=(None, 5, 5, 3)`, `kernel shape=(5, 5, 5, 4)`, `dilation_rate=[1 2]`.'))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(2, 5, 5, 3) with 5 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "1",
+            "padding": "same",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 5, 5, 4), (None, 5, 5, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 1, 4), (None, 1, 1, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "1",
+            "padding": "same",
+            "data_format": "channels_last",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: dilations should be of length 1, 1 or 3. Received: dilations=[1, 2] of length 2\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: dilations should be of length 1, 1 or 3. Received: dilations=[1, 2] of length 2\\n', 'Kernel shape must have the same length as input, but received kernel of shape (1, 10, 4) and input of shape (None, 3, 10, 10).'))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: dilations should be of length 1, 1 or 3. Received: dilations=[1, 2] of length 2\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 10, 10), (None, 4, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 8, 6), (None, 4, 8, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 4))",
+            "strides": "1",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 10, 10), (None, 4, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(1, 3, 4) with 3 output filters.', ('The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(1, 3, 4) with 3 output filters.', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 3, 10, 10).'))",
+        "error_message": "The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(1, 3, 4) with 3 output filters."
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 8, 8, 6), (None, 8, 8, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: dilations should be of length 1, 1 or 3. Received: dilations=[2, 1] of length 2\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: dilations should be of length 1, 1 or 3. Received: dilations=[2, 1] of length 2\\n', 'Kernel shape must have the same length as input, but received kernel of shape (1, 10, 4) and input of shape (None, 3, 10, 10).'))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: dilations should be of length 1, 1 or 3. Received: dilations=[2, 1] of length 2\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -1 [input_size: 3, effective_filter_size: 5, stride: 1] [Op:Conv2D]', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -1 [input_size: 3, effective_filter_size: 5, stride: 1] [Op:Conv2D]', 'Computed output size would be negative. Received `inputs shape=(None, 5, 5, 3)`, `kernel shape=(5, 5, 3, 4)`, `dilation_rate=[2 2]`.'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -1 [input_size: 3, effective_filter_size: 5, stride: 1] [Op:Conv2D]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 5, 10), (None, 4, 5, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', 'Computed output size would be negative. Received `inputs shape=(None, 5, 5, 3)`, `kernel shape=(5, 5, 3, 4)`, `dilation_rate=[1 2]`.'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 6, 6), (None, 4, 6, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', 'Computed output size would be negative. Received `inputs shape=(None, 3, 10, 10)`, `kernel shape=(5, 5, 10, 4)`, `dilation_rate=[2 1]`.'))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[1, 2]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', 'Computed output size would be negative. Received `inputs shape=(None, 3, 10, 10)`, `kernel shape=(5, 5, 10, 4)`, `dilation_rate=[2 2]`.'))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 8, 8), (None, 4, 8, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'strides should be of length 1, 1 or 3. Received: strides=[2, 2] of length 2', ('strides should be of length 1, 1 or 3. Received: strides=[2, 2] of length 2', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 3, 10, 10).'))",
+        "error_message": "strides should be of length 1, 1 or 3. Received: strides=[2, 2] of length 2"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 4, 4), (None, 4, 4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'dilations should be of length 1, 1 or 3. Received: dilations=[1, 2] of length 2', ('dilations should be of length 1, 1 or 3. Received: dilations=[1, 2] of length 2', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 3, 10, 10).'))",
+        "error_message": "dilations should be of length 1, 1 or 3. Received: dilations=[1, 2] of length 2"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 10, 10), (None, 4, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 5, 10), (None, 4, 5, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: strides should be of length 1, 1 or 3. Received: strides=[2, 1] of length 2\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: strides should be of length 1, 1 or 3. Received: strides=[2, 1] of length 2\\n', 'Kernel shape must have the same length as input, but received kernel of shape (1, 10, 4) and input of shape (None, 3, 10, 10).'))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: strides should be of length 1, 1 or 3. Received: strides=[2, 1] of length 2\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'dilations should be of length 1, 1 or 3. Received: dilations=[2, 1] of length 2', ('dilations should be of length 1, 1 or 3. Received: dilations=[2, 1] of length 2', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 3, 10, 10).'))",
+        "error_message": "dilations should be of length 1, 1 or 3. Received: dilations=[2, 1] of length 2"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(3, 3, 3, 8) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(3, 3, 3, 8) with 3 output filters.\\n', 'Computed output size would be negative. Received `inputs shape=(None, 3, 10, 10)`, `kernel shape=(3, 3, 10, 8)`, `dilation_rate=[2 1]`.'))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(3, 3, 3, 8) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "[1, 2]",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'strides should be of length 1, 1 or 3. Received: strides=[1, 2] of length 2', ('strides should be of length 1, 1 or 3. Received: strides=[1, 2] of length 2', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 3, 10, 10).'))",
+        "error_message": "strides should be of length 1, 1 or 3. Received: strides=[1, 2] of length 2"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 3, 3), (None, 4, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "1",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 10, 10), (None, 4, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[1, 2]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', 'Computed output size would be negative. Received `inputs shape=(None, 3, 10, 10)`, `kernel shape=(5, 5, 10, 4)`, `dilation_rate=[2 2]`.'))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 5, 5), (None, 4, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[1, 2]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', 'Computed output size would be negative. Received `inputs shape=(None, 3, 10, 10)`, `kernel shape=(5, 5, 10, 4)`, `dilation_rate=[1 2]`.'))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 10, 10), (None, 4, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', 'Computed output size would be negative. Received `inputs shape=(None, 3, 10, 10)`, `kernel shape=(5, 5, 10, 4)`, `dilation_rate=[2 2]`.'))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "[1, 2]",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'strides should be of length 1, 1 or 3. Received: strides=[1, 2] of length 2', ('strides should be of length 1, 1 or 3. Received: strides=[1, 2] of length 2', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 3, 10, 10).'))",
+        "error_message": "strides should be of length 1, 1 or 3. Received: strides=[1, 2] of length 2"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 8, 6, 6), (None, 8, 6, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', 'Computed output size would be negative. Received `inputs shape=(None, 3, 10, 10)`, `kernel shape=(5, 5, 10, 4)`, `dilation_rate=[2 2]`.'))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for \\'{{node convolution/Conv2D}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 2, 1], use_cudnn_on_gpu=true](convolution/Reshape, convolution/ExpandDims_1)\\' with input shapes: [10,5,1,3], [1,1,3,4].\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for \\'{{node convolution/Conv2D}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 2, 1], use_cudnn_on_gpu=true](convolution/Reshape, convolution/ExpandDims_1)\\' with input shapes: [10,5,1,3], [1,1,3,4].\\n', 'Kernel shape must have the same length as input, but received kernel of shape (1, 5, 4) and input of shape (None, 5, 5, 3).'))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for '{{node convolution/Conv2D}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 2, 1], use_cudnn_on_gpu=true](convolution/Reshape, convolution/ExpandDims_1)' with input shapes: [10,5,1,3], [1,1,3,4].\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 1]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 1]', 'Computed output size would be negative. Received `inputs shape=(None, 5, 5, 3)`, `kernel shape=(5, 5, 3, 4)`, `dilation_rate=[2 1]`.'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 1]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "2",
+            "padding": "same",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3, 3, 4), (None, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "2",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: dilations should be of length 1, 1 or 3. Received: dilations=[2, 1] of length 2\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: dilations should be of length 1, 1 or 3. Received: dilations=[2, 1] of length 2\\n', 'Kernel shape must have the same length as input, but received kernel of shape (1, 5, 4) and input of shape (None, 5, 5, 3).'))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: dilations should be of length 1, 1 or 3. Received: dilations=[2, 1] of length 2\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "same",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3, 3, 4), (None, 3, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', 'Computed output size would be negative. Received `inputs shape=(None, 5, 5, 3)`, `kernel shape=(5, 5, 3, 4)`, `dilation_rate=[2 2]`.'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'dilations should be of length 1, 1 or 3. Received: dilations=[1, 2] of length 2', ('dilations should be of length 1, 1 or 3. Received: dilations=[1, 2] of length 2', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 3, 10, 10).'))",
+        "error_message": "dilations should be of length 1, 1 or 3. Received: dilations=[1, 2] of length 2"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 2, 2, 8), (None, 2, 2, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 3, 10, 10).'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'dilations should be of length 1, 1 or 3. Received: dilations=[1, 2] of length 2', ('dilations should be of length 1, 1 or 3. Received: dilations=[1, 2] of length 2', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 3, 10, 10).'))",
+        "error_message": "dilations should be of length 1, 1 or 3. Received: dilations=[1, 2] of length 2"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "1",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'dilations should be of length 1, 1 or 3. Received: dilations=[2, 1] of length 2', ('dilations should be of length 1, 1 or 3. Received: dilations=[2, 1] of length 2', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 3, 10, 10).'))",
+        "error_message": "dilations should be of length 1, 1 or 3. Received: dilations=[2, 1] of length 2"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)\\' with input shapes: [1,3,10,10], [5,5,3,4].\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)\\' with input shapes: [1,3,10,10], [5,5,3,4].\\n', 'Computed output size would be negative. Received `inputs shape=(None, 3, 10, 10)`, `kernel shape=(5, 5, 10, 4)`, `dilation_rate=[1 1]`.'))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for '{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)' with input shapes: [1,3,10,10], [5,5,3,4].\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 10, 10), (None, 4, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'dilations should be of length 1, 1 or 3. Received: dilations=[2, 1] of length 2', ('dilations should be of length 1, 1 or 3. Received: dilations=[2, 1] of length 2', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 3, 10, 10).'))",
+        "error_message": "dilations should be of length 1, 1 or 3. Received: dilations=[2, 1] of length 2"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 10, 10), (None, 4, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'dilations should be of length 1, 1 or 3. Received: dilations=[2, 2] of length 2', ('dilations should be of length 1, 1 or 3. Received: dilations=[2, 2] of length 2', 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 3, 10, 10).'))",
+        "error_message": "dilations should be of length 1, 1 or 3. Received: dilations=[2, 2] of length 2"
+    }
+]

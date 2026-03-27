@@ -1,0 +1,278 @@
+[
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[1, 1]"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [1,1] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [1,1] [Op:ScatterNd]', (None, 1)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [1,1] [Op:ScatterNd]",
+        "conflict_params": [
+            "inputs",
+            "shape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[2, 2]"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [2,2] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [2,2] [Op:ScatterNd]', (None, 2)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [2,2] [Op:ScatterNd]",
+        "conflict_params": [
+            "inputs",
+            "shape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[1, 1, 1]"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[1,1,1]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[1,1,1]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', (None, 1, 1)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[1,1,1]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]",
+        "conflict_params": [
+            "inputs",
+            "shape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[2, 2, 2]"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[2,2,2]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[2,2,2]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', (None, 2, 2)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[2,2,2]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]",
+        "conflict_params": [
+            "inputs",
+            "shape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[4, 4, 4]"
+        },
+        "segment": "(7,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[4,4,4]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[4,4,4]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', (None, 4, 4)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[4,4,4]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]",
+        "conflict_params": [
+            "inputs",
+            "shape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[10, 10, 10]"
+        },
+        "segment": "(8,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[10,10,10]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[10,10,10]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', (None, 10, 10)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[10,10,10]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]",
+        "conflict_params": [
+            "inputs",
+            "shape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[2]"
+        },
+        "segment": "(9,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,1) of input[shape=[2]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,1) of input[shape=[2]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', (None,)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,1) of input[shape=[2]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]",
+        "conflict_params": [
+            "inputs",
+            "shape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[100]"
+        },
+        "segment": "(10,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,1) of input[shape=[100]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,1) of input[shape=[100]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', (None,)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,1) of input[shape=[100]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]",
+        "conflict_params": [
+            "inputs",
+            "shape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[1, 10]"
+        },
+        "segment": "(11,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [1,10] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [1,10] [Op:ScatterNd]', (None, 10)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [1,10] [Op:ScatterNd]",
+        "conflict_params": [
+            "inputs",
+            "shape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[10, 1]"
+        },
+        "segment": "(12,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [10,1] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [10,1] [Op:ScatterNd]', (None, 1)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [10,1] [Op:ScatterNd]",
+        "conflict_params": [
+            "inputs",
+            "shape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[2, 3, 4]"
+        },
+        "segment": "(13,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[2,3,4]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[2,3,4]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', (None, 3, 4)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[2,3,4]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]",
+        "conflict_params": [
+            "inputs",
+            "shape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[1, 1, 1, 1]"
+        },
+        "segment": "(14,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,4) of input[shape=[1,1,1,1]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,4) of input[shape=[1,1,1,1]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', (None, 1, 1, 1)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,4) of input[shape=[1,1,1,1]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]",
+        "conflict_params": [
+            "inputs",
+            "shape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[2, 2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[2,2,2]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[2,2,2]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', (None, 2, 2)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[2,2,2]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,1) of input[shape=[2]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,1) of input[shape=[2]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', (None,)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,1) of input[shape=[2]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[10, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [10,1] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [10,1] [Op:ScatterNd]', (None, 1)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [10,1] [Op:ScatterNd]"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [2,2] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [2,2] [Op:ScatterNd]', (None, 2)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [2,2] [Op:ScatterNd]"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[4, 4, 4]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[4,4,4]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[4,4,4]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', (None, 4, 4)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[4,4,4]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[1, 1, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[1,1,1]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[1,1,1]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', (None, 1, 1)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[1,1,1]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[1, 1, 1, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,4) of input[shape=[1,1,1,1]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,4) of input[shape=[1,1,1,1]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', (None, 1, 1, 1)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,4) of input[shape=[1,1,1,1]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[1, 10]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [1,10] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [1,10] [Op:ScatterNd]', (None, 10)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [1,10] [Op:ScatterNd]"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[10, 10, 10]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[10,10,10]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[10,10,10]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', (None, 10, 10)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[10,10,10]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[1, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [1,1] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [1,1] [Op:ScatterNd]', (None, 1)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} indices[4] = [2, 2] does not index into shape [1,1] [Op:ScatterNd]"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[100]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,1) of input[shape=[100]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,1) of input[shape=[100]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', (None,)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,1) of input[shape=[100]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(5, 2)), ndarray(shape=(5,))]",
+            "shape": "[2, 3, 4]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[2,3,4]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', ('{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[2,3,4]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]', (None, 3, 4)))",
+        "error_message": "{{function_node __wrapped__ScatterNd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Dimensions [2,3) of input[shape=[2,3,4]] must match dimensions [1,1) of updates[shape=[5]] [Op:ScatterNd]"
+    }
+]

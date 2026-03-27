@@ -1,0 +1,29 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 5)), EagerTensor(shape=(2,))]",
+            "axis": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None,), (None,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 5)), EagerTensor(shape=(2,))]",
+            "axis": "0"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 5), (None, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 5)), EagerTensor(shape=(2,))]",
+            "axis": "-3"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 5), (None, 4, 5)))"
+    }
+]

@@ -1,0 +1,35 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(1, 28, 28, 3))",
+            "value_range": "[0, 255]",
+            "bins": "256",
+            "data_format": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 28, 28, 3), (None, 28, 28, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(1, 28, 28, 3))",
+            "value_range": "[0, 255]",
+            "bins": "256",
+            "data_format": "channels_last"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 28, 28, 3), (None, 28, 28, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(1, 28, 28, 3))",
+            "value_range": "[0, 255]",
+            "bins": "256",
+            "data_format": "channels_first"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 28, 28, 3), (None, 28, 28, 3)))"
+    }
+]

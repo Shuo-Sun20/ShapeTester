@@ -1,0 +1,325 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[0]"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 1 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 1 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 1.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 1 [Op:Transpose]",
+        "conflict_params": [
+            "axes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[-1]"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 1 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 1 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 1.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 1 [Op:Transpose]",
+        "conflict_params": [
+            "inputs",
+            "axes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[0, 1]"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 2 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 2 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 2.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 2 [Op:Transpose]",
+        "conflict_params": [
+            "inputs",
+            "axes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[1, 0]"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 2 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 2 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 2.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 2 [Op:Transpose]",
+        "conflict_params": [
+            "inputs",
+            "axes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[-1, -2]"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 2 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 2 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 2.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 2 [Op:Transpose]",
+        "conflict_params": [
+            "inputs",
+            "axes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[0, 1, 2]"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3, 4), (None, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[0, 2, 1]"
+        },
+        "segment": "(7,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 3), (None, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[0, -1, 1]"
+        },
+        "segment": "(13,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 3), (None, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[0, 1, 2, 3]"
+        },
+        "segment": "(14,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 4.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]",
+        "conflict_params": [
+            "inputs",
+            "axes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[3, 2, 1, 0]"
+        },
+        "segment": "(15,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 4.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]",
+        "conflict_params": [
+            "axes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[0, 1, 3, 2]"
+        },
+        "segment": "(16,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 4.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]",
+        "conflict_params": [
+            "axes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[1, 0, 2, 3]"
+        },
+        "segment": "(17,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 4.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]",
+        "conflict_params": [
+            "inputs",
+            "axes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[0, 2, 3, 1]"
+        },
+        "segment": "(18,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 4.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]",
+        "conflict_params": [
+            "inputs",
+            "axes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[2, 3, 0, 1]"
+        },
+        "segment": "(19,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 4.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]",
+        "conflict_params": [
+            "inputs",
+            "axes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[-1, -2, -3, -4]"
+        },
+        "segment": "(20,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 4.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]",
+        "conflict_params": [
+            "inputs",
+            "axes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[0, -1, 1, 2]"
+        },
+        "segment": "(21,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 4.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]",
+        "conflict_params": [
+            "inputs",
+            "axes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[0, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 2 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 2 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 2.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 2 [Op:Transpose]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[-1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 1 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 1 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 1.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 1 [Op:Transpose]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[-1, -2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 2 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 2 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 2.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 2 [Op:Transpose]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[0]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 1 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 1 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 1.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 1 [Op:Transpose]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[-1, -2, -3, -4]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 4.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[1, 0]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 2 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 2 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 2.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 2 [Op:Transpose]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[0, 2, 3, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 4.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[0, 1, 3, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 4.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[3, 2, 1, 0]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 4.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[1, 0, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 4.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[0, -1, 1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 4.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[0, 1, 2, 3]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 4.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 3, 4))",
+            "axes": "[2, 3, 0, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', ('{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]', 'axis must be a list of the same length as the input shape, expected 3, but received 4.'))",
+        "error_message": "{{function_node __wrapped__Transpose_device_/job:localhost/replica:0/task:0/device:CPU:0}} transpose expects a vector of size 3. But input(1) is a vector of size 4 [Op:Transpose]"
+    }
+]

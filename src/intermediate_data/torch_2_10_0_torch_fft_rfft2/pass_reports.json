@@ -1,0 +1,792 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "None",
+            "dim": "[-2, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 6), (10, 6), (10, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "None",
+            "dim": "[0, 1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 6), (10, 6), (10, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "None",
+            "dim": "[-2, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'FFT dims must be unique', ('FFT dims must be unique', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function fft_rfft2>(*(FakeTensor(..., size=(s21, s21)),), **{\\'s\\': None, \\'dim\\': (-2, 0), \\'norm\\': None, \\'out\\': None}): got RuntimeError(\\'FFT dims must be unique\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_fft_rfft2/generated_code.py\", line 5, in call_func\\n    return torch.fft.rfft2(input_tensor, s=s, dim=dim, norm=norm, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'FFT dims must be unique'))",
+        "error_message": "FFT dims must be unique",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "None",
+            "dim": "[0, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(0, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 6), (10, 6), (10, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[-1, -1]",
+            "dim": "[-2, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 6), (10, 6), (10, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[-1, -1]",
+            "dim": "[0, 1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 6), (10, 6), (10, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[-1, -1]",
+            "dim": "[0, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(1, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 6), (10, 6), (10, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[5, 5]",
+            "dim": "[-2, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[5, 5]",
+            "dim": "[0, 1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[5, 5]",
+            "dim": "[0, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(2, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[10, 10]",
+            "dim": "[-2, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 6), (10, 6), (10, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[10, 10]",
+            "dim": "[0, 1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 6), (10, 6), (10, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[10, 10]",
+            "dim": "[0, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(3, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 6), (10, 6), (10, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[15, 15]",
+            "dim": "[-2, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((15, 8), (15, 8), (15, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[15, 15]",
+            "dim": "[0, 1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(4, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((15, 8), (15, 8), (15, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[15, 15]",
+            "dim": "[0, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(4, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((15, 8), (15, 8), (15, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[5, 10]",
+            "dim": "[-2, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 6), (5, 6), (5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[5, 10]",
+            "dim": "[0, 1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(5, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 6), (5, 6), (5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[5, 10]",
+            "dim": "[0, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(5, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 6), (5, 6), (5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[10, 15]",
+            "dim": "[-2, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(6, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 8), (10, 8), (10, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[10, 15]",
+            "dim": "[0, 1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(6, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 8), (10, 8), (10, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[10, 15]",
+            "dim": "[0, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(6, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 8), (10, 8), (10, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[0, 10]",
+            "dim": "[-2, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(7, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Invalid number of data points (0) specified', ('Invalid number of data points (0) specified', 'Invalid number of data points (0) specified', 'Invalid number of data points (0) specified'))",
+        "error_message": "Invalid number of data points (0) specified",
+        "conflict_params": [
+            "s"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[10, 0]",
+            "dim": "[-2, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(8, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Invalid number of data points (0) specified', ('Invalid number of data points (0) specified', 'Invalid number of data points (0) specified', 'Invalid number of data points (0) specified'))",
+        "error_message": "Invalid number of data points (0) specified",
+        "conflict_params": [
+            "s"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[-1, 5]",
+            "dim": "[-2, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(9, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 3), (10, 3), (10, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[-1, 5]",
+            "dim": "[0, 1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(9, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 3), (10, 3), (10, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[-1, 5]",
+            "dim": "[0, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(9, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 3), (10, 3), (10, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[5, -1]",
+            "dim": "[-2, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(10, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 6), (5, 6), (5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[5, -1]",
+            "dim": "[0, 1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(10, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 6), (5, 6), (5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[5, -1]",
+            "dim": "[0, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(10, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 6), (5, 6), (5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[20, 20]",
+            "dim": "[-2, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(11, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 11), (20, 11), (20, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[20, 20]",
+            "dim": "[0, 1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(11, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 11), (20, 11), (20, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[20, 20]",
+            "dim": "[0, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(11, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 11), (20, 11), (20, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[3, 8]",
+            "dim": "[-2, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(12, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5), (3, 5), (3, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[3, 8]",
+            "dim": "[0, 1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(12, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5), (3, 5), (3, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[3, 8]",
+            "dim": "[0, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(12, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5), (3, 5), (3, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[5, 5]",
+            "dim": "[-1, -2]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5), (3, 5), (3, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[10, 0]",
+            "dim": "[-2, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Invalid number of data points (0) specified', ('Invalid number of data points (0) specified', 'Invalid number of data points (0) specified', 'Invalid number of data points (0) specified'))",
+        "error_message": "Invalid number of data points (0) specified"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[3, 8]",
+            "dim": "[-2, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'FFT dims must be unique', ('FFT dims must be unique', 'FFT dims must be unique', 'FFT dims must be unique'))",
+        "error_message": "FFT dims must be unique"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[0, 10]",
+            "dim": "[-2, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Invalid number of data points (0) specified', ('Invalid number of data points (0) specified', 'Invalid number of data points (0) specified', 'Invalid number of data points (0) specified'))",
+        "error_message": "Invalid number of data points (0) specified"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[-1, 5]",
+            "dim": "[-2, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'FFT dims must be unique', ('FFT dims must be unique', 'FFT dims must be unique', 'FFT dims must be unique'))",
+        "error_message": "FFT dims must be unique"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[10, 0]",
+            "dim": "[0, 1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Invalid number of data points (0) specified', ('Invalid number of data points (0) specified', 'Invalid number of data points (0) specified', 'Invalid number of data points (0) specified'))",
+        "error_message": "Invalid number of data points (0) specified"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[10, 15]",
+            "dim": "[-2, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'FFT dims must be unique', ('FFT dims must be unique', 'FFT dims must be unique', 'FFT dims must be unique'))",
+        "error_message": "FFT dims must be unique"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[0, 10]",
+            "dim": "[-1, -2]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Invalid number of data points (0) specified', ('Invalid number of data points (0) specified', 'Invalid number of data points (0) specified', 'Invalid number of data points (0) specified'))",
+        "error_message": "Invalid number of data points (0) specified"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[0, 10]",
+            "dim": "[0, 1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Invalid number of data points (0) specified', ('Invalid number of data points (0) specified', 'Invalid number of data points (0) specified', 'Invalid number of data points (0) specified'))",
+        "error_message": "Invalid number of data points (0) specified"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[10, 10]",
+            "dim": "[-1, -2]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6, 10), (6, 10), (6, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[10, 10]",
+            "dim": "[1, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6, 10), (6, 10), (6, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[5, 5]",
+            "dim": "[1, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5), (3, 5), (3, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[-1, 5]",
+            "dim": "[-1, -2]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 10), (3, 10), (3, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[10, 0]",
+            "dim": "[-2, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'FFT dims must be unique', ('FFT dims must be unique', 'FFT dims must be unique', 'FFT dims must be unique'))",
+        "error_message": "FFT dims must be unique"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[-1, 5]",
+            "dim": "[1, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 10), (3, 10), (3, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[-1, -1]",
+            "dim": "[-1, -2]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6, 10), (6, 10), (6, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[15, 15]",
+            "dim": "[1, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((8, 15), (8, 15), (8, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[15, 15]",
+            "dim": "[-1, -2]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((8, 15), (8, 15), (8, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[10, 0]",
+            "dim": "[1, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Invalid number of data points (0) specified', ('Invalid number of data points (0) specified', 'Invalid number of data points (0) specified', 'Invalid number of data points (0) specified'))",
+        "error_message": "Invalid number of data points (0) specified"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[5, -1]",
+            "dim": "[-2, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'FFT dims must be unique', ('FFT dims must be unique', 'FFT dims must be unique', 'FFT dims must be unique'))",
+        "error_message": "FFT dims must be unique"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[0, 10]",
+            "dim": "[1, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Invalid number of data points (0) specified', ('Invalid number of data points (0) specified', 'Invalid number of data points (0) specified', 'Invalid number of data points (0) specified'))",
+        "error_message": "Invalid number of data points (0) specified"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[-1, -1]",
+            "dim": "[1, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6, 10), (6, 10), (6, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[0, 10]",
+            "dim": "[0, -1]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Invalid number of data points (0) specified', ('Invalid number of data points (0) specified', 'Invalid number of data points (0) specified', 'Invalid number of data points (0) specified'))",
+        "error_message": "Invalid number of data points (0) specified"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[20, 20]",
+            "dim": "[1, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((11, 20), (11, 20), (11, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[20, 20]",
+            "dim": "[-1, -2]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((11, 20), (11, 20), (11, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[10, 0]",
+            "dim": "[-1, -2]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Invalid number of data points (0) specified', ('Invalid number of data points (0) specified', 'Invalid number of data points (0) specified', 'Invalid number of data points (0) specified'))",
+        "error_message": "Invalid number of data points (0) specified"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[10, 15]",
+            "dim": "[1, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((8, 10), (8, 10), (8, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "None",
+            "dim": "[-2, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'FFT dims must be unique', ('FFT dims must be unique', 'FFT dims must be unique', 'FFT dims must be unique'))",
+        "error_message": "FFT dims must be unique"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[10, 10]",
+            "dim": "[-2, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'FFT dims must be unique', ('FFT dims must be unique', 'FFT dims must be unique', 'FFT dims must be unique'))",
+        "error_message": "FFT dims must be unique"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([10, 10]))]",
+            "s": "[10, 15]",
+            "dim": "[-1, -2]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((8, 10), (8, 10), (8, 10)))"
+    }
+]

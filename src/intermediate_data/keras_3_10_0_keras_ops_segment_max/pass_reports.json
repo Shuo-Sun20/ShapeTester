@@ -1,0 +1,66 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(6,)), EagerTensor(shape=(6,))]",
+            "num_segments": "None",
+            "sorted": "False"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None,), (None,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(6,)), EagerTensor(shape=(6,))]",
+            "num_segments": "3",
+            "sorted": "False"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None,), (None,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(6,)), EagerTensor(shape=(6,))]",
+            "num_segments": "4",
+            "sorted": "False"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None,), (None,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(6,)), EagerTensor(shape=(6,))]",
+            "num_segments": "10",
+            "sorted": "False"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None,), (None,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(6,)), EagerTensor(shape=(6,))]",
+            "num_segments": "-1",
+            "sorted": "False"
+        },
+        "segment": "(7,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} Input num_segments == -1 must not be negative. [Op:UnsortedSegmentMax] name: ', ('{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} Input num_segments == -1 must not be negative. [Op:UnsortedSegmentMax] name: ', \"Cannot convert '(-1,)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} Input num_segments == -1 must not be negative. [Op:UnsortedSegmentMax] name: ",
+        "conflict_params": [
+            "num_segments"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(6,)), EagerTensor(shape=(6,))]",
+            "num_segments": "-1",
+            "sorted": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} Input num_segments == -1 must not be negative. [Op:UnsortedSegmentMax] name: ', ('{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} Input num_segments == -1 must not be negative. [Op:UnsortedSegmentMax] name: ', \"Cannot convert '(-1,)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} Input num_segments == -1 must not be negative. [Op:UnsortedSegmentMax] name: "
+    }
+]

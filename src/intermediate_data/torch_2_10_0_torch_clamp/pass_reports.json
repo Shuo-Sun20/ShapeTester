@@ -1,0 +1,1832 @@
+[
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "None",
+            "max": "None",
+            "out": "None"
+        },
+        "segment": "(0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"torch.clamp: At least one of 'min' or 'max' must not be None\", (\"torch.clamp: At least one of 'min' or 'max' must not be None\", 'Dynamo failed to run FX node with fake tensors: call_function <built-in method clamp of type object at 0x7f9199b29b40>(*(), **{\\'input\\': FakeTensor(..., size=(s85,)), \\'min\\': None, \\'max\\': None, \\'out\\': None}): got ValueError(\\'clamp called but both min and max are none!\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_clamp/generated_code.py\", line 4, in call_func\\n    return torch.clamp(input=inputs, min=min, max=max, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'clamp called but both min and max are none!'))",
+        "error_message": "torch.clamp: At least one of 'min' or 'max' must not be None",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-1.0",
+            "max": "-1.0",
+            "out": "None"
+        },
+        "segment": "(1, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-1.0",
+            "max": "-0.5",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(1, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-1.0",
+            "max": "0.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(1, 3, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-1.0",
+            "max": "0.5",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(1, 4, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-1.0",
+            "max": "1.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(1, 5, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-0.5",
+            "max": "-1.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(2, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-0.5",
+            "max": "-0.5",
+            "out": "None"
+        },
+        "segment": "(2, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-0.5",
+            "max": "0.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(2, 3, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-0.5",
+            "max": "0.5",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(2, 4, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.0",
+            "max": "0.0",
+            "out": "None"
+        },
+        "segment": "(3, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.5",
+            "max": "Tensor(shape=torch.Size([1]))",
+            "out": "None"
+        },
+        "segment": "(4, 7, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "None",
+            "max": "0.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(0, 3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.0",
+            "max": "0.5",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(3, 4, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "1.0",
+            "max": "1.0",
+            "out": "None"
+        },
+        "segment": "(5, 5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "None",
+            "max": "-1.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(0, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.0",
+            "max": "-0.5",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(3, 2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.0",
+            "max": "-1.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(3, 1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "1.0",
+            "max": "None",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(5, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([1]))",
+            "max": "Tensor(shape=torch.Size([4]))",
+            "out": "None"
+        },
+        "segment": "(7, 8, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "None",
+            "max": "-0.5",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(0, 2, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.0",
+            "max": "None",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(3, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "None"
+        },
+        "segment": "(8, 9, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "None",
+            "max": "0.5",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(0, 4, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "1.0",
+            "max": "-1.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(5, 1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([1]))",
+            "max": "1.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(7, 5, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "1.0",
+            "max": "Tensor(shape=torch.Size([4]))",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(5, 8, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "None",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(8, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "-0.5",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(8, 2, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "segment": "(9, 9, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "None",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "segment": "(9, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "0.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(9, 3, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.5",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(4, 9, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "Tensor(shape=torch.Size([1]))",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(8, 7, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([1]))",
+            "max": "Tensor(shape=torch.Size([1]))",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(7, 7, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "1.0",
+            "max": "Tensor(shape=torch.Size([1]))",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "segment": "(5, 7, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "1.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(9, 5, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([1]))",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "segment": "(7, 9, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.5",
+            "max": "Tensor(shape=torch.Size([4]))",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(4, 8, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "1.0",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "segment": "(8, 5, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "-1.0",
+            "out": "None"
+        },
+        "segment": "(9, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([1]))",
+            "max": "None",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(7, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "None",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "segment": "(0, 9, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "None",
+            "max": "Tensor(shape=torch.Size([1]))",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(0, 7, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "None",
+            "max": "Tensor(shape=torch.Size([4]))",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(0, 8, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-1.0",
+            "max": "Tensor(shape=torch.Size([4]))",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "segment": "(1, 8, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.5",
+            "max": "None",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(4, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.5",
+            "max": "-0.5",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(4, 2, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "None",
+            "max": "1.0",
+            "out": "None"
+        },
+        "segment": "(0, 5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-1.0",
+            "max": "None",
+            "out": "None"
+        },
+        "segment": "(1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-1.0",
+            "max": "Tensor(shape=torch.Size([1]))",
+            "out": "None"
+        },
+        "segment": "(1, 7, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-1.0",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "None"
+        },
+        "segment": "(1, 9, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-0.5",
+            "max": "None",
+            "out": "None"
+        },
+        "segment": "(2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-0.5",
+            "max": "1.0",
+            "out": "None"
+        },
+        "segment": "(2, 5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-0.5",
+            "max": "Tensor(shape=torch.Size([1]))",
+            "out": "None"
+        },
+        "segment": "(2, 7, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-0.5",
+            "max": "Tensor(shape=torch.Size([4]))",
+            "out": "None"
+        },
+        "segment": "(2, 8, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-0.5",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "None"
+        },
+        "segment": "(2, 9, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.0",
+            "max": "1.0",
+            "out": "None"
+        },
+        "segment": "(3, 5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.0",
+            "max": "Tensor(shape=torch.Size([1]))",
+            "out": "None"
+        },
+        "segment": "(3, 7, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.0",
+            "max": "Tensor(shape=torch.Size([4]))",
+            "out": "None"
+        },
+        "segment": "(3, 8, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.0",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "None"
+        },
+        "segment": "(3, 9, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.5",
+            "max": "-1.0",
+            "out": "None"
+        },
+        "segment": "(4, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.5",
+            "max": "0.0",
+            "out": "None"
+        },
+        "segment": "(4, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.5",
+            "max": "0.5",
+            "out": "None"
+        },
+        "segment": "(4, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.5",
+            "max": "1.0",
+            "out": "None"
+        },
+        "segment": "(4, 5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "1.0",
+            "max": "-0.5",
+            "out": "None"
+        },
+        "segment": "(5, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "1.0",
+            "max": "0.0",
+            "out": "None"
+        },
+        "segment": "(5, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "1.0",
+            "max": "0.5",
+            "out": "None"
+        },
+        "segment": "(5, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "1.0",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "None"
+        },
+        "segment": "(5, 9, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([1]))",
+            "max": "-1.0",
+            "out": "None"
+        },
+        "segment": "(7, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([1]))",
+            "max": "-0.5",
+            "out": "None"
+        },
+        "segment": "(7, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([1]))",
+            "max": "0.0",
+            "out": "None"
+        },
+        "segment": "(7, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([1]))",
+            "max": "0.5",
+            "out": "None"
+        },
+        "segment": "(7, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "-1.0",
+            "out": "None"
+        },
+        "segment": "(8, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "0.0",
+            "out": "None"
+        },
+        "segment": "(8, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "0.5",
+            "out": "None"
+        },
+        "segment": "(8, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "Tensor(shape=torch.Size([4]))",
+            "out": "None"
+        },
+        "segment": "(8, 8, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "-0.5",
+            "out": "None"
+        },
+        "segment": "(9, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "0.5",
+            "out": "None"
+        },
+        "segment": "(9, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n",
+        "conflict_params": [
+            "min",
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "Tensor(shape=torch.Size([1]))",
+            "out": "None"
+        },
+        "segment": "(9, 7, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "Tensor(shape=torch.Size([4]))",
+            "out": "None"
+        },
+        "segment": "(9, 8, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.5",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-1.0",
+            "max": "Tensor(shape=torch.Size([4]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "0.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-0.5",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-0.5",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([]))",
+            "max": "None",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "Tensor(shape=torch.Size([4]))",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "1.0",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([1]))",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "None",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "0.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-1.0",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "Tensor(shape=torch.Size([]))",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.0",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "0.5",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.0",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "-1.0",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.5",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "None",
+            "max": "Tensor(shape=torch.Size([]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "1.0",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-1.0",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-0.5",
+            "max": "1.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "0.0",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([]))",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "0.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "-1.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([]))",
+            "max": "Tensor(shape=torch.Size([1]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([1]))",
+            "max": "1.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([1]))",
+            "max": "0.5",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "1.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "1.0",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([]))",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "0.5",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([]))",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "-1.0",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "Tensor(shape=torch.Size([1]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "None",
+            "max": "Tensor(shape=torch.Size([1]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "-0.5",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-0.5",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "1.0",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "0.5",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "-0.5",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "0.5",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "-1.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "Tensor(shape=torch.Size([]))",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "0.5",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([1]))",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "1.0",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([1]))",
+            "max": "0.0",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "1.0",
+            "max": "Tensor(shape=torch.Size([1]))",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "None",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "-0.5",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "None",
+            "max": "Tensor(shape=torch.Size([4]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "-0.5",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.0",
+            "max": "Tensor(shape=torch.Size([1]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.5",
+            "max": "Tensor(shape=torch.Size([1]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.0",
+            "max": "-1.0",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-0.5",
+            "max": "Tensor(shape=torch.Size([1]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "-0.5",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "0.5",
+            "max": "-1.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-1.0",
+            "max": "1.0",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "0.5",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=NoneType, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "Tensor(shape=torch.Size([1]))",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "None",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "Tensor(shape=torch.Size([4]))",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-1.0",
+            "max": "Tensor(shape=torch.Size([4, 1]))",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=Tensor, min=float, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4]))",
+            "max": "Tensor(shape=torch.Size([]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([4, 1]))",
+            "max": "1.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', ('clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n', 'clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\\n'))",
+        "error_message": "clamp() received an invalid combination of arguments - got (out=Tensor, max=float, min=Tensor, input=Tensor, ), but expected one of:\n * (Tensor input, Tensor min = None, Tensor max = None, *, Tensor out = None)\n * (Tensor input, Number min = None, Number max = None, *, Tensor out = None)\n"
+    }
+]

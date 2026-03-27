@@ -1,0 +1,105 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 2])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([5, 3]))]",
+            "left": "True",
+            "transpose": "True",
+            "out": "None"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 2])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([5, 3]))]",
+            "left": "True",
+            "transpose": "False",
+            "out": "None"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 2])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([5, 3]))]",
+            "left": "False",
+            "transpose": "True",
+            "out": "None"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'torch.ormqr: other.shape[-1] must be equal to input.shape[-2]', ('torch.ormqr: other.shape[-1] must be equal to input.shape[-2]', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method ormqr of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s41), dtype=torch.float64), FakeTensor(..., size=(s41,), dtype=torch.float64), FakeTensor(..., size=(s21, s24), dtype=torch.float64)), **{\\'left\\': False, \\'transpose\\': True, \\'out\\': None}): got RuntimeError(\\'torch.ormqr: other.shape[-1] must be equal to input.shape[-2]\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_ormqr/generated_code.py\", line 5, in call_func\\n    return torch.ormqr(input_tensor, tau_tensor, other_tensor, left=left, transpose=transpose, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'torch.ormqr: other.shape[-1] must be equal to input.shape[-2]'))",
+        "error_message": "torch.ormqr: other.shape[-1] must be equal to input.shape[-2]",
+        "conflict_params": [
+            "inputs",
+            "left"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([4, 3]))]",
+            "left": "False",
+            "transpose": "False",
+            "out": "None"
+        },
+        "segment": "(1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3), (4, 3), (4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([4, 3]))]",
+            "left": "True",
+            "transpose": "True",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'torch.ormqr: other.shape[-2] must be equal to input.shape[-2]', ('torch.ormqr: other.shape[-2] must be equal to input.shape[-2]', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method ormqr of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s41)), FakeTensor(..., size=(s41,)), FakeTensor(..., size=(s39, s24))), **{\\'left\\': True, \\'transpose\\': True, \\'out\\': None}): got RuntimeError(\\'torch.ormqr: other.shape[-2] must be equal to input.shape[-2]\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_ormqr/generated_code.py\", line 5, in call_func\\n    return torch.ormqr(input_tensor, tau_tensor, other_tensor, left=left, transpose=transpose, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'torch.ormqr: other.shape[-2] must be equal to input.shape[-2]'))",
+        "error_message": "torch.ormqr: other.shape[-2] must be equal to input.shape[-2]"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 2])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([5, 3]))]",
+            "left": "False",
+            "transpose": "True",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'torch.ormqr: other.shape[-1] must be equal to input.shape[-2]', ('torch.ormqr: other.shape[-1] must be equal to input.shape[-2]', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method ormqr of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s41), dtype=torch.float64), FakeTensor(..., size=(s41,), dtype=torch.float64), FakeTensor(..., size=(s39, s24), dtype=torch.float64)), **{\\'left\\': False, \\'transpose\\': True, \\'out\\': None}): got RuntimeError(\\'torch.ormqr: other.shape[-1] must be equal to input.shape[-2]\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_ormqr/generated_code.py\", line 5, in call_func\\n    return torch.ormqr(input_tensor, tau_tensor, other_tensor, left=left, transpose=transpose, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'torch.ormqr: other.shape[-1] must be equal to input.shape[-2]'))",
+        "error_message": "torch.ormqr: other.shape[-1] must be equal to input.shape[-2]"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([4, 3]))]",
+            "left": "True",
+            "transpose": "False",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'torch.ormqr: other.shape[-2] must be equal to input.shape[-2]', ('torch.ormqr: other.shape[-2] must be equal to input.shape[-2]', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method ormqr of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s41)), FakeTensor(..., size=(s41,)), FakeTensor(..., size=(s39, s24))), **{\\'left\\': True, \\'transpose\\': False, \\'out\\': None}): got RuntimeError(\\'torch.ormqr: other.shape[-2] must be equal to input.shape[-2]\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_ormqr/generated_code.py\", line 5, in call_func\\n    return torch.ormqr(input_tensor, tau_tensor, other_tensor, left=left, transpose=transpose, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'torch.ormqr: other.shape[-2] must be equal to input.shape[-2]'))",
+        "error_message": "torch.ormqr: other.shape[-2] must be equal to input.shape[-2]"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 2])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([5, 3]))]",
+            "left": "False",
+            "transpose": "False",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'torch.ormqr: other.shape[-1] must be equal to input.shape[-2]', ('torch.ormqr: other.shape[-1] must be equal to input.shape[-2]', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method ormqr of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s41), dtype=torch.float64), FakeTensor(..., size=(s41,), dtype=torch.float64), FakeTensor(..., size=(s39, s24), dtype=torch.float64)), **{\\'left\\': False, \\'transpose\\': False, \\'out\\': None}): got RuntimeError(\\'torch.ormqr: other.shape[-1] must be equal to input.shape[-2]\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_ormqr/generated_code.py\", line 5, in call_func\\n    return torch.ormqr(input_tensor, tau_tensor, other_tensor, left=left, transpose=transpose, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'torch.ormqr: other.shape[-1] must be equal to input.shape[-2]'))",
+        "error_message": "torch.ormqr: other.shape[-1] must be equal to input.shape[-2]"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2])), Tensor(shape=torch.Size([2])), Tensor(shape=torch.Size([4, 3]))]",
+            "left": "False",
+            "transpose": "True",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3), (4, 3), (4, 3)))"
+    }
+]

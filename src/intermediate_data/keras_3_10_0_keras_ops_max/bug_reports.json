@@ -1,0 +1,55 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "[-3, -2]",
+            "keepdims": "False",
+            "initial": "None"
+        },
+        "segment": "(14, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'list assignment index out of range', ((None,), 'list assignment index out of range'))",
+        "error_message": "list assignment index out of range",
+        "conflict_params": [
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "[-3, -1]",
+            "keepdims": "False",
+            "initial": "None"
+        },
+        "segment": "(15, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'list assignment index out of range', ((None,), 'list assignment index out of range'))",
+        "error_message": "list assignment index out of range",
+        "conflict_params": [
+            "inputs",
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "[-3, -2]",
+            "keepdims": "False",
+            "initial": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'list assignment index out of range', ((None,), 'list assignment index out of range'))",
+        "error_message": "list assignment index out of range"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "[-3, -1]",
+            "keepdims": "False",
+            "initial": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'list assignment index out of range', ((None,), 'list assignment index out of range'))",
+        "error_message": "list assignment index out of range"
+    }
+]

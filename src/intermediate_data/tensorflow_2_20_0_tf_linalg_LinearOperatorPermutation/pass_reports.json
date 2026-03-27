@@ -1,0 +1,39 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(5,)), EagerTensor(shape=(5, 3))]",
+            "dtype": "None",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "permutation_operator",
+            "adjoint": "False",
+            "adjoint_arg": "True"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimensions 5 and 3 are not compatible', ('Dimensions 5 and 3 are not compatible', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorPermutation/generated_code.py\", line 16, in call_func  *\\n        return operator.matmul(x, adjoint=adjoint, adjoint_arg=adjoint_arg)\\n\\n    ValueError: Dimensions 5 and 3 are not compatible\\n'))",
+        "error_message": "Dimensions 5 and 3 are not compatible",
+        "conflict_params": [
+            "inputs",
+            "adjoint_arg"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(5,)), EagerTensor(shape=(5, 3))]",
+            "dtype": "None",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "permutation_operator",
+            "adjoint": "False",
+            "adjoint_arg": "False"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3)))"
+    }
+]

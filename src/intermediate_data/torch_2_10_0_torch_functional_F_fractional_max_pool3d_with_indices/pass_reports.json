@@ -1,0 +1,1075 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "None",
+            "output_ratio": "None",
+            "_random_samples": "None"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d requires specifying either an output_size or an output_ratio', ('fractional_max_pool3d requires specifying either an output_size or an output_ratio', 'Dynamo failed to run FX node with fake tensors: call_function <function fractional_max_pool3d_with_indices at 0x7fecca092700>(*(FakeTensor(..., size=(s21, s41, s65, s54, s41)),), **{\\'kernel_size\\': s91, \\'output_size\\': None, \\'output_ratio\\': None, \\'_random_samples\\': None}): got ValueError(\\'fractional_max_pool3d requires specifying either an output_size or an output_ratio\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_functional_F_fractional_max_pool3d_with_indices/generated_code.py\", line 12, in call_func\\n    output, _ = F.fractional_max_pool3d_with_indices(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'fractional_max_pool3d requires specifying either an output_size or an output_ratio'))",
+        "error_message": "fractional_max_pool3d requires specifying either an output_size or an output_ratio",
+        "conflict_params": [
+            "output_size",
+            "output_ratio"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "None",
+            "output_ratio": "0.1",
+            "_random_samples": "None"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "None",
+            "output_ratio": "0.25",
+            "_random_samples": "None"
+        },
+        "segment": "(0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 12, 8, 4), (20, 16, 12, 8, 4), (20, 16, 12, 8, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "None",
+            "output_ratio": "0.5",
+            "_random_samples": "None"
+        },
+        "segment": "(0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 25, 16, 8), (20, 16, 25, 16, 8), (20, 16, 25, 16, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "None",
+            "output_ratio": "0.75",
+            "_random_samples": "None"
+        },
+        "segment": "(0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 37, 24, 12), (20, 16, 37, 24, 12), (20, 16, 37, 24, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "None",
+            "output_ratio": "0.9",
+            "_random_samples": "None"
+        },
+        "segment": "(0, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'Dynamo failed to run FX node with fake tensors: call_function <function fractional_max_pool3d_with_indices at 0x7fecca092700>(*(FakeTensor(..., size=(20, 16, 50, 32, 16)),), **{\\'kernel_size\\': 3, \\'output_size\\': None, \\'output_ratio\\': zf99, \\'_random_samples\\': None}): got RuntimeError(\\'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_functional_F_fractional_max_pool3d_with_indices/generated_code.py\", line 12, in call_func\\n    output, _ = F.fractional_max_pool3d_with_indices(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 3 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_ratio"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "None",
+            "output_ratio": "0.999",
+            "_random_samples": "None"
+        },
+        "segment": "(0, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool time 3 too large relative to input time 50', ('fractional_max_pool3d_out(): pool time 3 too large relative to input time 50', 'Dynamo failed to run FX node with fake tensors: call_function <function fractional_max_pool3d_with_indices at 0x7fecca092700>(*(FakeTensor(..., size=(20, 16, 50, 32, 16)),), **{\\'kernel_size\\': 3, \\'output_size\\': None, \\'output_ratio\\': zf99, \\'_random_samples\\': None}): got RuntimeError(\\'fractional_max_pool3d_out(): pool time 3 too large relative to input time 50\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_functional_F_fractional_max_pool3d_with_indices/generated_code.py\", line 12, in call_func\\n    output, _ = F.fractional_max_pool3d_with_indices(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'fractional_max_pool3d_out(): pool time 3 too large relative to input time 50'))",
+        "error_message": "fractional_max_pool3d_out(): pool time 3 too large relative to input time 50",
+        "conflict_params": [
+            "kernel_size",
+            "output_ratio"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "None",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "_random_samples": "None"
+        },
+        "segment": "(0, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "None",
+            "output_ratio": "[0.25, 0.25, 0.25]",
+            "_random_samples": "None"
+        },
+        "segment": "(0, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 12, 8, 4), (20, 16, 12, 8, 4), (20, 16, 12, 8, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "None",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "_random_samples": "None"
+        },
+        "segment": "(0, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 25, 16, 8), (20, 16, 25, 16, 8), (20, 16, 25, 16, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "None",
+            "output_ratio": "[0.75, 0.75, 0.75]",
+            "_random_samples": "None"
+        },
+        "segment": "(0, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 37, 24, 12), (20, 16, 37, 24, 12), (20, 16, 37, 24, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "None",
+            "output_ratio": "[0.9, 0.8, 0.7]",
+            "_random_samples": "None"
+        },
+        "segment": "(0, 11)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 45, 25, 11), (20, 16, 45, 25, 11), (20, 16, 45, 25, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "None",
+            "output_ratio": "[0.999, 0.999, 0.999]",
+            "_random_samples": "None"
+        },
+        "segment": "(0, 12)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool time 3 too large relative to input time 50', ('fractional_max_pool3d_out(): pool time 3 too large relative to input time 50', 'fractional_max_pool3d_out(): pool time 3 too large relative to input time 50', 'fractional_max_pool3d_out(): pool time 3 too large relative to input time 50'))",
+        "error_message": "fractional_max_pool3d_out(): pool time 3 too large relative to input time 50",
+        "conflict_params": [
+            "kernel_size",
+            "output_ratio"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "10",
+            "output_ratio": "None",
+            "_random_samples": "None"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "10",
+            "output_ratio": "0.1",
+            "_random_samples": "None"
+        },
+        "segment": "(1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "10",
+            "output_ratio": "0.25",
+            "_random_samples": "None"
+        },
+        "segment": "(1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "10",
+            "output_ratio": "0.5",
+            "_random_samples": "None"
+        },
+        "segment": "(1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "10",
+            "output_ratio": "0.75",
+            "_random_samples": "None"
+        },
+        "segment": "(1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 1, 20, 20, 20]))",
+            "kernel_size": "[2, 2, 2]",
+            "output_ratio": "0.9",
+            "output_size": "10"
+        },
+        "segment": "(1, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 10, 10, 10), (1, 1, 10, 10, 10), (1, 1, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "10",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "_random_samples": "None"
+        },
+        "segment": "(1, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "10",
+            "output_ratio": "[0.25, 0.25, 0.25]",
+            "_random_samples": "None"
+        },
+        "segment": "(1, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "10",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "_random_samples": "None"
+        },
+        "segment": "(1, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "10",
+            "output_ratio": "[0.75, 0.75, 0.75]",
+            "_random_samples": "None"
+        },
+        "segment": "(1, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "10",
+            "output_ratio": "[0.9, 0.8, 0.7]",
+            "_random_samples": "None"
+        },
+        "segment": "(1, 11)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "10",
+            "output_ratio": "[0.999, 0.999, 0.999]",
+            "_random_samples": "None"
+        },
+        "segment": "(1, 12)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "15",
+            "output_ratio": "None",
+            "_random_samples": "None"
+        },
+        "segment": "(2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 3 too large relative to input width 16",
+        "conflict_params": [
+            "inputs",
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 1, 50, 50, 50]))",
+            "kernel_size": "3",
+            "output_size": "15",
+            "output_ratio": "0.1",
+            "_random_samples": "None"
+        },
+        "segment": "(2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 15, 15, 15), (1, 1, 15, 15, 15), (1, 1, 15, 15, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 1, 50, 50, 50]))",
+            "kernel_size": "3",
+            "output_size": "15",
+            "output_ratio": "0.25",
+            "_random_samples": "None"
+        },
+        "segment": "(2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 15, 15, 15), (1, 1, 15, 15, 15), (1, 1, 15, 15, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 1, 50, 50, 50]))",
+            "kernel_size": "3",
+            "output_size": "15",
+            "output_ratio": "0.5",
+            "_random_samples": "None"
+        },
+        "segment": "(2, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 15, 15, 15), (1, 1, 15, 15, 15), (1, 1, 15, 15, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 1, 50, 50, 50]))",
+            "kernel_size": "3",
+            "output_size": "15",
+            "output_ratio": "0.75",
+            "_random_samples": "None"
+        },
+        "segment": "(2, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 15, 15, 15), (1, 1, 15, 15, 15), (1, 1, 15, 15, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 1, 20, 20, 20]))",
+            "kernel_size": "[2, 2, 2]",
+            "output_ratio": "0.9",
+            "output_size": "15"
+        },
+        "segment": "(2, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 15, 15, 15), (1, 1, 15, 15, 15), (1, 1, 15, 15, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 1, 50, 50, 50]))",
+            "kernel_size": "3",
+            "output_size": "15",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "_random_samples": "None"
+        },
+        "segment": "(2, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 15, 15, 15), (1, 1, 15, 15, 15), (1, 1, 15, 15, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 1, 50, 50, 50]))",
+            "kernel_size": "3",
+            "output_size": "15",
+            "output_ratio": "[0.25, 0.25, 0.25]",
+            "_random_samples": "None"
+        },
+        "segment": "(2, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 15, 15, 15), (1, 1, 15, 15, 15), (1, 1, 15, 15, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 1, 50, 50, 50]))",
+            "kernel_size": "3",
+            "output_size": "15",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "_random_samples": "None"
+        },
+        "segment": "(2, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 15, 15, 15), (1, 1, 15, 15, 15), (1, 1, 15, 15, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 1, 50, 50, 50]))",
+            "kernel_size": "3",
+            "output_size": "15",
+            "output_ratio": "[0.75, 0.75, 0.75]",
+            "_random_samples": "None"
+        },
+        "segment": "(2, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 15, 15, 15), (1, 1, 15, 15, 15), (1, 1, 15, 15, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 1, 50, 50, 50]))",
+            "kernel_size": "3",
+            "output_size": "15",
+            "output_ratio": "[0.9, 0.8, 0.7]",
+            "_random_samples": "None"
+        },
+        "segment": "(2, 11)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 15, 15, 15), (1, 1, 15, 15, 15), (1, 1, 15, 15, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 1, 50, 50, 50]))",
+            "kernel_size": "3",
+            "output_size": "15",
+            "output_ratio": "[0.999, 0.999, 0.999]",
+            "_random_samples": "None"
+        },
+        "segment": "(2, 12)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 15, 15, 15), (1, 1, 15, 15, 15), (1, 1, 15, 15, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[5, 5, 5]",
+            "output_ratio": "None",
+            "_random_samples": "None"
+        },
+        "segment": "(3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 5, 5), (20, 16, 5, 5, 5), (20, 16, 5, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[5, 5, 5]",
+            "output_ratio": "0.1",
+            "_random_samples": "None"
+        },
+        "segment": "(3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 5, 5), (20, 16, 5, 5, 5), (20, 16, 5, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[5, 5, 5]",
+            "output_ratio": "0.25",
+            "_random_samples": "None"
+        },
+        "segment": "(3, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 5, 5), (20, 16, 5, 5, 5), (20, 16, 5, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[5, 5, 5]",
+            "output_ratio": "0.5",
+            "_random_samples": "None"
+        },
+        "segment": "(3, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 5, 5), (20, 16, 5, 5, 5), (20, 16, 5, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[5, 5, 5]",
+            "output_ratio": "0.75",
+            "_random_samples": "None"
+        },
+        "segment": "(3, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 5, 5), (20, 16, 5, 5, 5), (20, 16, 5, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 1, 20, 20, 20]))",
+            "kernel_size": "[2, 2, 2]",
+            "output_ratio": "0.9",
+            "output_size": "[5, 5, 5]"
+        },
+        "segment": "(3, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 5, 5, 5), (1, 1, 5, 5, 5), (1, 1, 5, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[5, 5, 5]",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "_random_samples": "None"
+        },
+        "segment": "(3, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 5, 5), (20, 16, 5, 5, 5), (20, 16, 5, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[5, 5, 5]",
+            "output_ratio": "[0.25, 0.25, 0.25]",
+            "_random_samples": "None"
+        },
+        "segment": "(3, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 5, 5), (20, 16, 5, 5, 5), (20, 16, 5, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[5, 5, 5]",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "_random_samples": "None"
+        },
+        "segment": "(3, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 5, 5), (20, 16, 5, 5, 5), (20, 16, 5, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[5, 5, 5]",
+            "output_ratio": "[0.75, 0.75, 0.75]",
+            "_random_samples": "None"
+        },
+        "segment": "(3, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 5, 5), (20, 16, 5, 5, 5), (20, 16, 5, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[5, 5, 5]",
+            "output_ratio": "[0.9, 0.8, 0.7]",
+            "_random_samples": "None"
+        },
+        "segment": "(3, 11)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 5, 5), (20, 16, 5, 5, 5), (20, 16, 5, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[5, 5, 5]",
+            "output_ratio": "[0.999, 0.999, 0.999]",
+            "_random_samples": "None"
+        },
+        "segment": "(3, 12)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 5, 5), (20, 16, 5, 5, 5), (20, 16, 5, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[8, 8, 8]",
+            "output_ratio": "None",
+            "_random_samples": "None"
+        },
+        "segment": "(4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 8, 8, 8), (20, 16, 8, 8, 8), (20, 16, 8, 8, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[8, 8, 8]",
+            "output_ratio": "0.1",
+            "_random_samples": "None"
+        },
+        "segment": "(4, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 8, 8, 8), (20, 16, 8, 8, 8), (20, 16, 8, 8, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[8, 8, 8]",
+            "output_ratio": "0.25",
+            "_random_samples": "None"
+        },
+        "segment": "(4, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 8, 8, 8), (20, 16, 8, 8, 8), (20, 16, 8, 8, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[8, 8, 8]",
+            "output_ratio": "0.5",
+            "_random_samples": "None"
+        },
+        "segment": "(4, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 8, 8, 8), (20, 16, 8, 8, 8), (20, 16, 8, 8, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[8, 8, 8]",
+            "output_ratio": "0.75",
+            "_random_samples": "None"
+        },
+        "segment": "(4, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 8, 8, 8), (20, 16, 8, 8, 8), (20, 16, 8, 8, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 1, 20, 20, 20]))",
+            "kernel_size": "[2, 2, 2]",
+            "output_ratio": "0.9",
+            "output_size": "[8, 8, 8]"
+        },
+        "segment": "(4, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 8, 8, 8), (1, 1, 8, 8, 8), (1, 1, 8, 8, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[8, 8, 8]",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "_random_samples": "None"
+        },
+        "segment": "(4, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 8, 8, 8), (20, 16, 8, 8, 8), (20, 16, 8, 8, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[8, 8, 8]",
+            "output_ratio": "[0.25, 0.25, 0.25]",
+            "_random_samples": "None"
+        },
+        "segment": "(4, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 8, 8, 8), (20, 16, 8, 8, 8), (20, 16, 8, 8, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[8, 8, 8]",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "_random_samples": "None"
+        },
+        "segment": "(4, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 8, 8, 8), (20, 16, 8, 8, 8), (20, 16, 8, 8, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[8, 8, 8]",
+            "output_ratio": "[0.75, 0.75, 0.75]",
+            "_random_samples": "None"
+        },
+        "segment": "(4, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 8, 8, 8), (20, 16, 8, 8, 8), (20, 16, 8, 8, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[8, 8, 8]",
+            "output_ratio": "[0.9, 0.8, 0.7]",
+            "_random_samples": "None"
+        },
+        "segment": "(4, 11)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 8, 8, 8), (20, 16, 8, 8, 8), (20, 16, 8, 8, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[8, 8, 8]",
+            "output_ratio": "[0.999, 0.999, 0.999]",
+            "_random_samples": "None"
+        },
+        "segment": "(4, 12)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 8, 8, 8), (20, 16, 8, 8, 8), (20, 16, 8, 8, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "None",
+            "_random_samples": "None"
+        },
+        "segment": "(5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "0.1",
+            "_random_samples": "None"
+        },
+        "segment": "(5, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "0.25",
+            "_random_samples": "None"
+        },
+        "segment": "(5, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "0.5",
+            "_random_samples": "None"
+        },
+        "segment": "(5, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "0.75",
+            "_random_samples": "None"
+        },
+        "segment": "(5, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 1, 20, 20, 20]))",
+            "kernel_size": "[2, 2, 2]",
+            "output_ratio": "0.9",
+            "output_size": "[10, 10, 10]"
+        },
+        "segment": "(5, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 10, 10, 10), (1, 1, 10, 10, 10), (1, 1, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "_random_samples": "None"
+        },
+        "segment": "(5, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "[0.25, 0.25, 0.25]",
+            "_random_samples": "None"
+        },
+        "segment": "(5, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "_random_samples": "None"
+        },
+        "segment": "(5, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "[0.75, 0.75, 0.75]",
+            "_random_samples": "None"
+        },
+        "segment": "(5, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "[0.9, 0.8, 0.7]",
+            "_random_samples": "None"
+        },
+        "segment": "(5, 11)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "[0.999, 0.999, 0.999]",
+            "_random_samples": "None"
+        },
+        "segment": "(5, 12)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "None",
+            "_random_samples": "None"
+        },
+        "segment": "(6, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "0.1",
+            "_random_samples": "None"
+        },
+        "segment": "(6, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "0.25",
+            "_random_samples": "None"
+        },
+        "segment": "(6, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "0.5",
+            "_random_samples": "None"
+        },
+        "segment": "(6, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "0.75",
+            "_random_samples": "None"
+        },
+        "segment": "(6, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 1, 20, 20, 20]))",
+            "kernel_size": "[2, 2, 2]",
+            "output_ratio": "0.9",
+            "output_size": "[13, 12, 11]"
+        },
+        "segment": "(6, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 13, 12, 11), (1, 1, 13, 12, 11), (1, 1, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "_random_samples": "None"
+        },
+        "segment": "(6, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "[0.25, 0.25, 0.25]",
+            "_random_samples": "None"
+        },
+        "segment": "(6, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "_random_samples": "None"
+        },
+        "segment": "(6, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "[0.75, 0.75, 0.75]",
+            "_random_samples": "None"
+        },
+        "segment": "(6, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "[0.9, 0.8, 0.7]",
+            "_random_samples": "None"
+        },
+        "segment": "(6, 11)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "[0.999, 0.999, 0.999]",
+            "_random_samples": "None"
+        },
+        "segment": "(6, 12)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[20, 16, 16]",
+            "output_ratio": "None",
+            "_random_samples": "None"
+        },
+        "segment": "(7, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 3 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([1, 1, 20, 20, 20]))",
+            "kernel_size": "[2, 2, 2]",
+            "output_ratio": "0.1",
+            "output_size": "[20, 16, 16]"
+        },
+        "segment": "(7, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool time 2 too large relative to input time 20', ('fractional_max_pool3d_out(): pool time 2 too large relative to input time 20', 'fractional_max_pool3d_out(): pool time 2 too large relative to input time 20', 'fractional_max_pool3d_out(): pool time 2 too large relative to input time 20'))",
+        "error_message": "fractional_max_pool3d_out(): pool time 2 too large relative to input time 20",
+        "conflict_params": [
+            "kernel_size",
+            "output_size"
+        ]
+    }
+]

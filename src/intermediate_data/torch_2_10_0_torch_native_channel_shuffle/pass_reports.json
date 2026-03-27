@@ -1,0 +1,61 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 4, 4]))]",
+            "groups": "1"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 4, 4), (2, 8, 4, 4), (2, 8, 4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 4, 4]))]",
+            "groups": "2"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 4, 4), (2, 8, 4, 4), (2, 8, 4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 4, 4]))]",
+            "groups": "4"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 4, 4), (2, 8, 4, 4), (2, 8, 4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 4, 4]))]",
+            "groups": "8"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 4, 4), (2, 8, 4, 4), (2, 8, 4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 4, 4]))]",
+            "groups": "16"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Number of channels must be divisible by groups. Got 8 channels and 16 groups.', ('Number of channels must be divisible by groups. Got 8 channels and 16 groups.', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method native_channel_shuffle of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(2, 8, 4, 4)), 16), **{}): got RuntimeError(\"shape \\'[2, 16, 0, -1]\\' is invalid for input of size 256\")\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_native_channel_shuffle/generated_code.py\", line 4, in call_func\\n    return torch.native_channel_shuffle(inputs[0], groups)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', \"shape '[2, 16, 0, -1]' is invalid for input of size 256\"))",
+        "error_message": "Number of channels must be divisible by groups. Got 8 channels and 16 groups.",
+        "conflict_params": [
+            "inputs",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 8, 4, 4]))]",
+            "groups": "16"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Number of channels must be divisible by groups. Got 8 channels and 16 groups.', ('Number of channels must be divisible by groups. Got 8 channels and 16 groups.', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method native_channel_shuffle of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(2, 8, 4, 4)), 16), **{}): got RuntimeError(\"shape \\'[2, 16, 0, -1]\\' is invalid for input of size 256\")\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_native_channel_shuffle/generated_code.py\", line 4, in call_func\\n    return torch.native_channel_shuffle(inputs[0], groups)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', \"shape '[2, 16, 0, -1]' is invalid for input of size 256\"))",
+        "error_message": "Number of channels must be divisible by groups. Got 8 channels and 16 groups."
+    }
+]

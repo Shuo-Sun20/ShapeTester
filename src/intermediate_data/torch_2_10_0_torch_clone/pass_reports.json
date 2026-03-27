@@ -1,0 +1,100 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3]))]",
+            "memory_format": "torch.preserve_format"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3), (2, 3), (2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3]))]",
+            "memory_format": "torch.contiguous_format"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3), (2, 3), (2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3]))]",
+            "memory_format": "torch.channels_last"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'required rank 4 tensor to use channels_last format', ('required rank 4 tensor to use channels_last format', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method clone of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s41)),), **{\\'memory_format\\': torch.channels_last}): got RuntimeError(\\'required rank 4 tensor to use channels_last format\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_clone/generated_code.py\", line 4, in call_func\\n    return torch.clone(inputs[0], memory_format=memory_format)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'required rank 4 tensor to use channels_last format'))",
+        "error_message": "required rank 4 tensor to use channels_last format",
+        "conflict_params": [
+            "inputs",
+            "memory_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3]))]",
+            "memory_format": "torch.channels_last_3d"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'required rank 5 tensor to use channels_last_3d format', ('required rank 5 tensor to use channels_last_3d format', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method clone of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s41)),), **{\\'memory_format\\': torch.channels_last_3d}): got RuntimeError(\\'required rank 5 tensor to use channels_last_3d format\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_clone/generated_code.py\", line 4, in call_func\\n    return torch.clone(inputs[0], memory_format=memory_format)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'required rank 5 tensor to use channels_last_3d format'))",
+        "error_message": "required rank 5 tensor to use channels_last_3d format",
+        "conflict_params": [
+            "inputs",
+            "memory_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 4, 5, 6]))]",
+            "memory_format": "torch.channels_last_3d"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4, 5, 6), (2, 3, 4, 5, 6), (2, 3, 4, 5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 4, 5, 6]))]",
+            "memory_format": "torch.channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'required rank 4 tensor to use channels_last format', ('required rank 4 tensor to use channels_last format', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method clone of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s41, s65, s54, s40)),), **{\\'memory_format\\': torch.channels_last}): got RuntimeError(\\'required rank 4 tensor to use channels_last format\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_clone/generated_code.py\", line 4, in call_func\\n    return torch.clone(inputs[0], memory_format=memory_format)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'required rank 4 tensor to use channels_last format'))",
+        "error_message": "required rank 4 tensor to use channels_last format"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3]))]",
+            "memory_format": "torch.channels_last_3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'required rank 5 tensor to use channels_last_3d format', ('required rank 5 tensor to use channels_last_3d format', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method clone of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s41)),), **{\\'memory_format\\': torch.channels_last_3d}): got RuntimeError(\\'required rank 5 tensor to use channels_last_3d format\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_clone/generated_code.py\", line 4, in call_func\\n    return torch.clone(inputs[0], memory_format=memory_format)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'required rank 5 tensor to use channels_last_3d format'))",
+        "error_message": "required rank 5 tensor to use channels_last_3d format"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 4, 5, 6]))]",
+            "memory_format": "torch.preserve_format"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4, 5, 6), (2, 3, 4, 5, 6), (2, 3, 4, 5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 4, 5, 6]))]",
+            "memory_format": "torch.contiguous_format"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4, 5, 6), (2, 3, 4, 5, 6), (2, 3, 4, 5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3]))]",
+            "memory_format": "torch.channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'required rank 4 tensor to use channels_last format', ('required rank 4 tensor to use channels_last format', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method clone of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21, s41)),), **{\\'memory_format\\': torch.channels_last}): got RuntimeError(\\'required rank 4 tensor to use channels_last format\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_clone/generated_code.py\", line 4, in call_func\\n    return torch.clone(inputs[0], memory_format=memory_format)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'required rank 4 tensor to use channels_last format'))",
+        "error_message": "required rank 4 tensor to use channels_last format"
+    }
+]

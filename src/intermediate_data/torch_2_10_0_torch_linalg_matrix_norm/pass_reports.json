@@ -1,0 +1,222 @@
+[
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "ord": "2",
+            "dim": "[-2, -1]",
+            "keepdim": "False",
+            "dtype": "torch.float32",
+            "out": "None"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((), (), ()))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "ord": "2",
+            "dim": "[-2, -1]",
+            "keepdim": "True",
+            "dtype": "torch.float32",
+            "out": "None"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1), (1, 1), (1, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "ord": "2",
+            "dim": "[0, 1]",
+            "keepdim": "False",
+            "dtype": "torch.float32",
+            "out": "None"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((), (), ()))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "ord": "2",
+            "dim": "[0, 1]",
+            "keepdim": "True",
+            "dtype": "torch.float32",
+            "out": "None"
+        },
+        "segment": "(1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1), (1, 1), (1, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "ord": "2",
+            "dim": "[-3, -2]",
+            "keepdim": "False",
+            "dtype": "torch.float32",
+            "out": "None"
+        },
+        "segment": "(2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -3)', ('Dimension out of range (expected to be in range of [-2, 1], but got -3)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_matrix_norm>(*(FakeTensor(..., size=(s85, s71)),), **{\\'ord\\': 2, \\'dim\\': (-3, -2), \\'keepdim\\': False, \\'dtype\\': torch.float32, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got -3)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_matrix_norm/generated_code.py\", line 8, in call_func\\n    return torch.linalg.matrix_norm(A, ord=ord, dim=dim, keepdim=keepdim, dtype=dtype, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got -3)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -3)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "ord": "2",
+            "dim": "[-1, -2]",
+            "keepdim": "False",
+            "dtype": "torch.float32",
+            "out": "None"
+        },
+        "segment": "(3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((), (), ()))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "ord": "2",
+            "dim": "[-1, -2]",
+            "keepdim": "True",
+            "dtype": "torch.float32",
+            "out": "None"
+        },
+        "segment": "(3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1), (1, 1), (1, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "ord": "2",
+            "dim": "[1, 2]",
+            "keepdim": "False",
+            "dtype": "torch.float32",
+            "out": "None"
+        },
+        "segment": "(4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 2)', ('Dimension out of range (expected to be in range of [-2, 1], but got 2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_matrix_norm>(*(FakeTensor(..., size=(s85, s71)),), **{\\'ord\\': 2, \\'dim\\': (1, 2), \\'keepdim\\': False, \\'dtype\\': torch.float32, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 2)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_matrix_norm/generated_code.py\", line 8, in call_func\\n    return torch.linalg.matrix_norm(A, ord=ord, dim=dim, keepdim=keepdim, dtype=dtype, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 2)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "ord": "2",
+            "dim": "[0, -1]",
+            "keepdim": "False",
+            "dtype": "torch.float32",
+            "out": "None"
+        },
+        "segment": "(5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((), (), ()))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "ord": "2",
+            "dim": "[0, -1]",
+            "keepdim": "True",
+            "dtype": "torch.float32",
+            "out": "None"
+        },
+        "segment": "(5, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1), (1, 1), (1, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "ord": "2",
+            "dim": "[0, 0]",
+            "keepdim": "False",
+            "dtype": "torch.float32",
+            "out": "None"
+        },
+        "segment": "(6, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'linalg.matrix_norm: dims must be different. Got (0, 0)', ('linalg.matrix_norm: dims must be different. Got (0, 0)', 'linalg.matrix_norm: dims must be different. Got (0, 0)', 'linalg.matrix_norm: dims must be different. Got (0, 0)'))",
+        "error_message": "linalg.matrix_norm: dims must be different. Got (0, 0)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "ord": "2",
+            "dim": "[-3, -2]",
+            "keepdim": "False",
+            "dtype": "torch.float32",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -3)', ('Dimension out of range (expected to be in range of [-2, 1], but got -3)', 'Dimension out of range (expected to be in range of [-2, 1], but got -3)', 'Dimension out of range (expected to be in range of [-2, 1], but got -3)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -3)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "ord": "2",
+            "dim": "[1, 2]",
+            "keepdim": "False",
+            "dtype": "torch.float32",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 2)', ('Dimension out of range (expected to be in range of [-2, 1], but got 2)', 'Dimension out of range (expected to be in range of [-2, 1], but got 2)', 'Dimension out of range (expected to be in range of [-2, 1], but got 2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 2)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "ord": "2",
+            "dim": "[-3, -2]",
+            "keepdim": "True",
+            "dtype": "torch.float32",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -3)', ('Dimension out of range (expected to be in range of [-2, 1], but got -3)', 'Dimension out of range (expected to be in range of [-2, 1], but got -3)', 'Dimension out of range (expected to be in range of [-2, 1], but got -3)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -3)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "ord": "2",
+            "dim": "[0, 0]",
+            "keepdim": "True",
+            "dtype": "torch.float32",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'linalg.matrix_norm: dims must be different. Got (0, 0)', ('linalg.matrix_norm: dims must be different. Got (0, 0)', 'linalg.matrix_norm: dims must be different. Got (0, 0)', 'linalg.matrix_norm: dims must be different. Got (0, 0)'))",
+        "error_message": "linalg.matrix_norm: dims must be different. Got (0, 0)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "ord": "2",
+            "dim": "[0, 0]",
+            "keepdim": "False",
+            "dtype": "torch.float32",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'linalg.matrix_norm: dims must be different. Got (0, 0)', ('linalg.matrix_norm: dims must be different. Got (0, 0)', 'linalg.matrix_norm: dims must be different. Got (0, 0)', 'linalg.matrix_norm: dims must be different. Got (0, 0)'))",
+        "error_message": "linalg.matrix_norm: dims must be different. Got (0, 0)"
+    }
+]

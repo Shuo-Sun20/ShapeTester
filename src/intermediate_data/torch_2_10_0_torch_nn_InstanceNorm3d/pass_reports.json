@@ -1,0 +1,2446 @@
+[
+    {
+        "test_case": {
+            "num_features": "1",
+            "eps": "1e-06",
+            "momentum": "0.999",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(0, 1, 5, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 12 elements not 4', ('running_mean should contain 12 elements not 4', 'running_mean should contain 12 elements not 4', 'running_mean should contain 12 elements not 4'))",
+        "error_message": "running_mean should contain 12 elements not 4",
+        "conflict_params": [
+            "num_features",
+            "track_running_stats",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "1",
+            "eps": "1e-05",
+            "momentum": "0.0",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(0, 2, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (1), but got: 3.\", (\"expected input's size at dim=1 to match num_features (1), but got: 3.\", \"expected input's size at dim=1 to match num_features (1), but got: 3.\", \"expected input's size at dim=1 to match num_features (1), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (1), but got: 3.",
+        "conflict_params": [
+            "num_features",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "1e-07",
+            "momentum": "0.1",
+            "affine": "True",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(1, 0, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (2), but got: 3.\", (\"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (2), but got: 3.",
+        "conflict_params": [
+            "num_features",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "0.0001",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(1, 3, 3, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "1e-07",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(2, 0, 2, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "4",
+            "eps": "0.001",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(3, 4, 1, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "8",
+            "eps": "0.01",
+            "momentum": "0.99",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(4, 5, 4, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "16",
+            "eps": "1e-06",
+            "momentum": "0.999",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(5, 1, 5, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (16), but got: 3.\", (\"expected input's size at dim=1 to match num_features (16), but got: 3.\", \"expected input's size at dim=1 to match num_features (16), but got: 3.\", \"expected input's size at dim=1 to match num_features (16), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (16), but got: 3.",
+        "conflict_params": [
+            "num_features",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "1e-05",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(6, 2, 2, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 12 elements not 128', ('running_mean should contain 12 elements not 128', 'running_mean should contain 12 elements not 128', 'running_mean should contain 12 elements not 128'))",
+        "error_message": "running_mean should contain 12 elements not 128",
+        "conflict_params": [
+            "num_features",
+            "track_running_stats",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "0.001",
+            "momentum": "0.0",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(7, 4, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 12 elements not 256', ('running_mean should contain 12 elements not 256', 'running_mean should contain 12 elements not 256', 'running_mean should contain 12 elements not 256'))",
+        "error_message": "running_mean should contain 12 elements not 256",
+        "conflict_params": [
+            "num_features",
+            "track_running_stats",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "0.001",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(6, 4, 3, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (32), but got: 3.\", (\"expected input's size at dim=1 to match num_features (32), but got: 3.\", \"expected input's size at dim=1 to match num_features (32), but got: 3.\", \"expected input's size at dim=1 to match num_features (32), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (32), but got: 3.",
+        "conflict_params": [
+            "num_features",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "0.01",
+            "momentum": "0.5",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(7, 5, 2, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (64), but got: 3.\", (\"expected input's size at dim=1 to match num_features (64), but got: 3.\", \"expected input's size at dim=1 to match num_features (64), but got: 3.\", \"expected input's size at dim=1 to match num_features (64), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (64), but got: 3.",
+        "conflict_params": [
+            "num_features",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "128",
+            "eps": "0.01",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(8, 5, 3, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 12 elements not 512', ('running_mean should contain 12 elements not 512', 'running_mean should contain 12 elements not 512', 'running_mean should contain 12 elements not 512'))",
+        "error_message": "running_mean should contain 12 elements not 512",
+        "conflict_params": [
+            "num_features",
+            "track_running_stats",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "128",
+            "eps": "1e-07",
+            "momentum": "0.0",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(8, 0, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (128), but got: 3.\", (\"expected input's size at dim=1 to match num_features (128), but got: 3.\", \"expected input's size at dim=1 to match num_features (128), but got: 3.\", \"expected input's size at dim=1 to match num_features (128), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (128), but got: 3.",
+        "conflict_params": [
+            "num_features",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "4",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(3, 0, 3, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (4), but got: 3.\", (\"expected input's size at dim=1 to match num_features (4), but got: 3.\", \"expected input's size at dim=1 to match num_features (4), but got: 3.\", \"expected input's size at dim=1 to match num_features (4), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (4), but got: 3.",
+        "conflict_params": [
+            "num_features",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "8",
+            "eps": "1e-07",
+            "momentum": "0.999",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(4, 0, 5, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (8), but got: 3.\", (\"expected input's size at dim=1 to match num_features (8), but got: 3.\", \"expected input's size at dim=1 to match num_features (8), but got: 3.\", \"expected input's size at dim=1 to match num_features (8), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (8), but got: 3.",
+        "conflict_params": [
+            "num_features",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "1",
+            "eps": "1e-07",
+            "momentum": "0.99",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(0, 0, 4, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (1), but got: 3.\", (\"expected input's size at dim=1 to match num_features (1), but got: 3.\", \"expected input's size at dim=1 to match num_features (1), but got: 3.\", \"expected input's size at dim=1 to match num_features (1), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (1), but got: 3.",
+        "conflict_params": [
+            "num_features",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "1e-06",
+            "momentum": "0.5",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(1, 1, 2, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (2), but got: 3.\", (\"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (2), but got: 3.",
+        "conflict_params": [
+            "num_features",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "1",
+            "eps": "0.0001",
+            "momentum": "0.1",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(0, 3, 1, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (1), but got: 3.\", (\"expected input's size at dim=1 to match num_features (1), but got: 3.\", \"expected input's size at dim=1 to match num_features (1), but got: 3.\", \"expected input's size at dim=1 to match num_features (1), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (1), but got: 3.",
+        "conflict_params": [
+            "num_features",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "1e-05",
+            "momentum": "0.99",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(1, 2, 4, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (2), but got: 3.\", (\"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (2), but got: 3.",
+        "conflict_params": [
+            "num_features",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "1",
+            "eps": "0.001",
+            "momentum": "0.5",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(0, 4, 2, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (1), but got: 3.\", (\"expected input's size at dim=1 to match num_features (1), but got: 3.\", \"expected input's size at dim=1 to match num_features (1), but got: 3.\", \"expected input's size at dim=1 to match num_features (1), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (1), but got: 3.",
+        "conflict_params": [
+            "num_features",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "0.01",
+            "momentum": "0.0",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(1, 5, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (2), but got: 3.\", (\"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (2), but got: 3.",
+        "conflict_params": [
+            "num_features",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "0.001",
+            "momentum": "0.999",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(1, 4, 5, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (2), but got: 3.\", (\"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (2), but got: 3.",
+        "conflict_params": [
+            "num_features",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "8",
+            "eps": "1e-05",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 8, 10, 10, 10]))"
+        },
+        "segment": "(4, 2, 3, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 10, 10), (2, 8, 10, 10, 10), (2, 8, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "num_features": "8",
+            "eps": "0.0001",
+            "momentum": "0.0",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 8, 10, 10, 10]))"
+        },
+        "segment": "(4, 3, 0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 10, 10), (2, 8, 10, 10, 10), (2, 8, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "0.01",
+            "momentum": "0.999",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(2, 5, 5, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "1e-06",
+            "momentum": "0.99",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(6, 1, 4, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "0.0001",
+            "momentum": "0.999",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(6, 3, 5, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "0.01",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(6, 5, 1, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "128",
+            "eps": "0.001",
+            "momentum": "0.99",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 32, 32, 32]))"
+        },
+        "segment": "(8, 4, 4, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 32, 32, 32), (4, 128, 32, 32, 32), (4, 128, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "1",
+            "eps": "0.01",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(0, 5, 3, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "0.001",
+            "momentum": "0.0",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(2, 4, 0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "4",
+            "eps": "0.01",
+            "momentum": "0.99",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 4, 10, 15, 8]))"
+        },
+        "segment": "(3, 5, 4, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 10, 15, 8), (2, 4, 10, 15, 8), (2, 4, 10, 15, 8)))"
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "1e-07",
+            "momentum": "0.0",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(6, 0, 0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-07",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "segment": "(7, 0, 1, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "8",
+            "eps": "0.001",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 8, 10, 10, 10]))"
+        },
+        "segment": "(4, 4, 2, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 10, 10, 10), (2, 8, 10, 10, 10), (2, 8, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "num_features": "128",
+            "eps": "1e-06",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 32, 32, 32]))"
+        },
+        "segment": "(8, 1, 1, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 32, 32, 32), (4, 128, 32, 32, 32), (4, 128, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-06",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "segment": "(7, 1, 3, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "128",
+            "eps": "1e-05",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 32, 32, 32]))"
+        },
+        "segment": "(8, 2, 2, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 32, 32, 32), (4, 128, 32, 32, 32), (4, 128, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-05",
+            "momentum": "0.999",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "segment": "(7, 2, 5, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "0.0001",
+            "momentum": "0.99",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "segment": "(7, 3, 4, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "128",
+            "eps": "0.0001",
+            "momentum": "0.999",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 32, 32, 32]))"
+        },
+        "segment": "(8, 3, 5, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 32, 32, 32), (4, 128, 32, 32, 32), (4, 128, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "8",
+            "eps": "1e-07",
+            "momentum": "0.0",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 512 elements not 128', ('running_mean should contain 512 elements not 128', 'running_mean should contain 512 elements not 128', 'running_mean should contain 512 elements not 128'))",
+        "error_message": "running_mean should contain 512 elements not 128"
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "1e-07",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-06",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "8",
+            "eps": "1e-06",
+            "momentum": "0.1",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (8), but got: 128.\", (\"expected input's size at dim=1 to match num_features (8), but got: 128.\", \"expected input's size at dim=1 to match num_features (8), but got: 128.\", \"expected input's size at dim=1 to match num_features (8), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (8), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "0.001",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "0.001",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (2), but got: 3.\", (\"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (2), but got: 3."
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "0.0001",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "0.01",
+            "momentum": "0.99",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "1e-07",
+            "momentum": "0.0",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-05",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-05",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-07",
+            "momentum": "0.999",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-06",
+            "momentum": "0.0",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (64), but got: 128.\", (\"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (64), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "1",
+            "eps": "0.0001",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 12 elements not 4', ('running_mean should contain 12 elements not 4', 'running_mean should contain 12 elements not 4', 'running_mean should contain 12 elements not 4'))",
+        "error_message": "running_mean should contain 12 elements not 4"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "1e-07",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "0.0001",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (2), but got: 3.\", (\"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (2), but got: 3."
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "0.0001",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-06",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 512 elements not 256', ('running_mean should contain 512 elements not 256', 'running_mean should contain 512 elements not 256', 'running_mean should contain 512 elements not 256'))",
+        "error_message": "running_mean should contain 512 elements not 256"
+    },
+    {
+        "test_case": {
+            "num_features": "8",
+            "eps": "1e-07",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-06",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (64), but got: 128.\", (\"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (64), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "16",
+            "eps": "0.0001",
+            "momentum": "0.999",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "1e-06",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "1e-07",
+            "momentum": "0.99",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-06",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "1e-06",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 512 elements not 256', ('running_mean should contain 512 elements not 256', 'running_mean should contain 512 elements not 256', 'running_mean should contain 512 elements not 256'))",
+        "error_message": "running_mean should contain 512 elements not 256"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 12 elements not 8', ('running_mean should contain 12 elements not 8', 'running_mean should contain 12 elements not 8', 'running_mean should contain 12 elements not 8'))",
+        "error_message": "running_mean should contain 12 elements not 8"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "0.0001",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "16",
+            "eps": "0.0001",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "0.01",
+            "momentum": "0.0",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-07",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "0.001",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "0.01",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "8",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "0.0001",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-07",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "1e-07",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 512 elements not 128', ('running_mean should contain 512 elements not 128', 'running_mean should contain 512 elements not 128', 'running_mean should contain 512 elements not 128'))",
+        "error_message": "running_mean should contain 512 elements not 128"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-07",
+            "momentum": "0.99",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "8",
+            "eps": "1e-06",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 512 elements not 32', ('running_mean should contain 512 elements not 32', 'running_mean should contain 512 elements not 32', 'running_mean should contain 512 elements not 32'))",
+        "error_message": "running_mean should contain 512 elements not 32"
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "0.0001",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "16",
+            "eps": "1e-07",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "4",
+            "eps": "1e-06",
+            "momentum": "0.5",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (4), but got: 128.\", (\"expected input's size at dim=1 to match num_features (4), but got: 128.\", \"expected input's size at dim=1 to match num_features (4), but got: 128.\", \"expected input's size at dim=1 to match num_features (4), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (4), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-06",
+            "momentum": "0.99",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "8",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (8), but got: 128.\", (\"expected input's size at dim=1 to match num_features (8), but got: 128.\", \"expected input's size at dim=1 to match num_features (8), but got: 128.\", \"expected input's size at dim=1 to match num_features (8), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (8), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "0.0001",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-07",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 512 elements not 256', ('running_mean should contain 512 elements not 256', 'running_mean should contain 512 elements not 256', 'running_mean should contain 512 elements not 256'))",
+        "error_message": "running_mean should contain 512 elements not 256"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "0.0001",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "1e-07",
+            "momentum": "0.999",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "0.0001",
+            "momentum": "0.0",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "0.0001",
+            "momentum": "0.0",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "0.01",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 512 elements not 256', ('running_mean should contain 512 elements not 256', 'running_mean should contain 512 elements not 256', 'running_mean should contain 512 elements not 256'))",
+        "error_message": "running_mean should contain 512 elements not 256"
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "1e-06",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "1e-07",
+            "momentum": "0.1",
+            "affine": "True",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (2), but got: 128.\", (\"expected input's size at dim=1 to match num_features (2), but got: 128.\", \"expected input's size at dim=1 to match num_features (2), but got: 128.\", \"expected input's size at dim=1 to match num_features (2), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (2), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "8",
+            "eps": "1e-06",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-05",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 512 elements not 256', ('running_mean should contain 512 elements not 256', 'running_mean should contain 512 elements not 256', 'running_mean should contain 512 elements not 256'))",
+        "error_message": "running_mean should contain 512 elements not 256"
+    },
+    {
+        "test_case": {
+            "num_features": "128",
+            "eps": "1e-07",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "4",
+            "eps": "1e-06",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 512 elements not 16', ('running_mean should contain 512 elements not 16', 'running_mean should contain 512 elements not 16', 'running_mean should contain 512 elements not 16'))",
+        "error_message": "running_mean should contain 512 elements not 16"
+    },
+    {
+        "test_case": {
+            "num_features": "128",
+            "eps": "1e-05",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "16",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "0.001",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "0.01",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "1",
+            "eps": "1e-07",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-06",
+            "momentum": "0.999",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "1e-07",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "16",
+            "eps": "0.0001",
+            "momentum": "0.5",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (16), but got: 3.\", (\"expected input's size at dim=1 to match num_features (16), but got: 3.\", \"expected input's size at dim=1 to match num_features (16), but got: 3.\", \"expected input's size at dim=1 to match num_features (16), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (16), but got: 3."
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "0.0001",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 12 elements not 8', ('running_mean should contain 12 elements not 8', 'running_mean should contain 12 elements not 8', 'running_mean should contain 12 elements not 8'))",
+        "error_message": "running_mean should contain 12 elements not 8"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "1e-06",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "16",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "0.01",
+            "momentum": "0.999",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 512 elements not 256', ('running_mean should contain 512 elements not 256', 'running_mean should contain 512 elements not 256', 'running_mean should contain 512 elements not 256'))",
+        "error_message": "running_mean should contain 512 elements not 256"
+    },
+    {
+        "test_case": {
+            "num_features": "4",
+            "eps": "1e-07",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "4",
+            "eps": "0.001",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "0.0001",
+            "momentum": "0.5",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (2), but got: 3.\", (\"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (2), but got: 3."
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "0.0001",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 12 elements not 256', ('running_mean should contain 12 elements not 256', 'running_mean should contain 12 elements not 256', 'running_mean should contain 12 elements not 256'))",
+        "error_message": "running_mean should contain 12 elements not 256"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "1e-07",
+            "momentum": "0.0",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 12 elements not 8', ('running_mean should contain 12 elements not 8', 'running_mean should contain 12 elements not 8', 'running_mean should contain 12 elements not 8'))",
+        "error_message": "running_mean should contain 12 elements not 8"
+    },
+    {
+        "test_case": {
+            "num_features": "8",
+            "eps": "1e-05",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 12 elements not 32', ('running_mean should contain 12 elements not 32', 'running_mean should contain 12 elements not 32', 'running_mean should contain 12 elements not 32'))",
+        "error_message": "running_mean should contain 12 elements not 32"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "1e-07",
+            "momentum": "0.99",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (2), but got: 3.\", (\"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (2), but got: 3."
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-07",
+            "momentum": "0.5",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (64), but got: 3.\", (\"expected input's size at dim=1 to match num_features (64), but got: 3.\", \"expected input's size at dim=1 to match num_features (64), but got: 3.\", \"expected input's size at dim=1 to match num_features (64), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (64), but got: 3."
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "1e-07",
+            "momentum": "0.99",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "1",
+            "eps": "0.0001",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "0.0001",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (64), but got: 3.\", (\"expected input's size at dim=1 to match num_features (64), but got: 3.\", \"expected input's size at dim=1 to match num_features (64), but got: 3.\", \"expected input's size at dim=1 to match num_features (64), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (64), but got: 3."
+    },
+    {
+        "test_case": {
+            "num_features": "128",
+            "eps": "1e-07",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "1e-06",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "0.0001",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "0.0001",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 512 elements not 8', ('running_mean should contain 512 elements not 8', 'running_mean should contain 512 elements not 8', 'running_mean should contain 512 elements not 8'))",
+        "error_message": "running_mean should contain 512 elements not 8"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "0.01",
+            "momentum": "0.1",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (64), but got: 128.\", (\"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (64), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "1e-06",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "1e-07",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-06",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 512 elements not 256', ('running_mean should contain 512 elements not 256', 'running_mean should contain 512 elements not 256', 'running_mean should contain 512 elements not 256'))",
+        "error_message": "running_mean should contain 512 elements not 256"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (64), but got: 128.\", (\"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (64), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-06",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 512 elements not 256', ('running_mean should contain 512 elements not 256', 'running_mean should contain 512 elements not 256', 'running_mean should contain 512 elements not 256'))",
+        "error_message": "running_mean should contain 512 elements not 256"
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (32), but got: 128.\", (\"expected input's size at dim=1 to match num_features (32), but got: 128.\", \"expected input's size at dim=1 to match num_features (32), but got: 128.\", \"expected input's size at dim=1 to match num_features (32), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (32), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "8",
+            "eps": "0.0001",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 512 elements not 32', ('running_mean should contain 512 elements not 32', 'running_mean should contain 512 elements not 32', 'running_mean should contain 512 elements not 32'))",
+        "error_message": "running_mean should contain 512 elements not 32"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 512 elements not 12', ('running_mean should contain 512 elements not 12', 'running_mean should contain 512 elements not 12', 'running_mean should contain 512 elements not 12'))",
+        "error_message": "running_mean should contain 512 elements not 12"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-06",
+            "momentum": "0.1",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (64), but got: 128.\", (\"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (64), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "1",
+            "eps": "1e-06",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (1), but got: 128.\", (\"expected input's size at dim=1 to match num_features (1), but got: 128.\", \"expected input's size at dim=1 to match num_features (1), but got: 128.\", \"expected input's size at dim=1 to match num_features (1), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (1), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "128",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "1e-06",
+            "momentum": "0.1",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (32), but got: 128.\", (\"expected input's size at dim=1 to match num_features (32), but got: 128.\", \"expected input's size at dim=1 to match num_features (32), but got: 128.\", \"expected input's size at dim=1 to match num_features (32), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (32), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "4",
+            "eps": "1e-06",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "0.01",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "0.01",
+            "momentum": "0.0",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (64), but got: 128.\", (\"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (64), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "1e-06",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-07",
+            "momentum": "0.1",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (64), but got: 128.\", (\"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (64), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "8",
+            "eps": "1e-06",
+            "momentum": "0.999",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (8), but got: 128.\", (\"expected input's size at dim=1 to match num_features (8), but got: 128.\", \"expected input's size at dim=1 to match num_features (8), but got: 128.\", \"expected input's size at dim=1 to match num_features (8), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (8), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "1",
+            "eps": "0.01",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "0.01",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "1e-06",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (2), but got: 3.\", (\"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (2), but got: 3."
+    },
+    {
+        "test_case": {
+            "num_features": "128",
+            "eps": "0.0001",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "0.001",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (2), but got: 3.\", (\"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\", \"expected input's size at dim=1 to match num_features (2), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (2), but got: 3."
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "1e-07",
+            "momentum": "0.99",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-07",
+            "momentum": "0.1",
+            "affine": "True",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (64), but got: 128.\", (\"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (64), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-06",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (64), but got: 128.\", (\"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (64), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "1e-06",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 512 elements not 128', ('running_mean should contain 512 elements not 128', 'running_mean should contain 512 elements not 128', 'running_mean should contain 512 elements not 128'))",
+        "error_message": "running_mean should contain 512 elements not 128"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-06",
+            "momentum": "0.0",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "1e-05",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (32), but got: 3.\", (\"expected input's size at dim=1 to match num_features (32), but got: 3.\", \"expected input's size at dim=1 to match num_features (32), but got: 3.\", \"expected input's size at dim=1 to match num_features (32), but got: 3.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (32), but got: 3."
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "0.0001",
+            "momentum": "0.999",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-06",
+            "momentum": "0.99",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 512 elements not 256', ('running_mean should contain 512 elements not 256', 'running_mean should contain 512 elements not 256', 'running_mean should contain 512 elements not 256'))",
+        "error_message": "running_mean should contain 512 elements not 256"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-07",
+            "momentum": "0.0",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (64), but got: 128.\", (\"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (64), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "1e-07",
+            "momentum": "0.0",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "1",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "16",
+            "eps": "1e-07",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 512 elements not 64', ('running_mean should contain 512 elements not 64', 'running_mean should contain 512 elements not 64', 'running_mean should contain 512 elements not 64'))",
+        "error_message": "running_mean should contain 512 elements not 64"
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "0.001",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "0.01",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "0.001",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "16",
+            "eps": "1e-07",
+            "momentum": "0.99",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "0.0001",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (32), but got: 128.\", (\"expected input's size at dim=1 to match num_features (32), but got: 128.\", \"expected input's size at dim=1 to match num_features (32), but got: 128.\", \"expected input's size at dim=1 to match num_features (32), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (32), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "1e-06",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "0.001",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'running_mean should contain 512 elements not 256', ('running_mean should contain 512 elements not 256', 'running_mean should contain 512 elements not 256', 'running_mean should contain 512 elements not 256'))",
+        "error_message": "running_mean should contain 512 elements not 256"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "0.0001",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (64), but got: 128.\", (\"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (64), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "32",
+            "eps": "1e-05",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-05",
+            "momentum": "0.1",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (64), but got: 128.\", (\"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (64), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-06",
+            "momentum": "0.999",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (64), but got: 128.\", (\"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\", \"expected input's size at dim=1 to match num_features (64), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (64), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "4",
+            "eps": "0.01",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (4), but got: 128.\", (\"expected input's size at dim=1 to match num_features (4), but got: 128.\", \"expected input's size at dim=1 to match num_features (4), but got: 128.\", \"expected input's size at dim=1 to match num_features (4), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (4), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "4",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "1e-07",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "2",
+            "eps": "0.0001",
+            "momentum": "0.99",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), (4, 3, 32, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-05",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "1e-06",
+            "momentum": "0.1",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"expected input's size at dim=1 to match num_features (3), but got: 128.\", (\"expected input's size at dim=1 to match num_features (3), but got: 128.\", \"expected input's size at dim=1 to match num_features (3), but got: 128.\", \"expected input's size at dim=1 to match num_features (3), but got: 128.\"))",
+        "error_message": "expected input's size at dim=1 to match num_features (3), but got: 128."
+    },
+    {
+        "test_case": {
+            "num_features": "64",
+            "eps": "1e-07",
+            "momentum": "0.0",
+            "affine": "False",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), (4, 128, 10, 20, 30)))"
+    }
+]

@@ -1,0 +1,47 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4, 5)), EagerTensor(shape=(5,))]",
+            "data_format": "None",
+            "name": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4, 5), (2, 3, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4, 5)), EagerTensor(shape=(5,))]",
+            "data_format": "N...C",
+            "name": "None"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4, 5), (2, 3, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4, 5)), EagerTensor(shape=(5,))]",
+            "data_format": "NC...",
+            "name": "None"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__BiasAdd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Must provide as many biases as the last dimension of the input tensor: [5] vs. [2,3,4,5] [Op:BiasAdd] name: ', ('{{function_node __wrapped__BiasAdd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Must provide as many biases as the last dimension of the input tensor: [5] vs. [2,3,4,5] [Op:BiasAdd] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_bias_add/generated_code.py\", line 16, in call_func  *\\n        return tf.nn.bias_add(value, bias, data_format=data_format, name=name)\\n\\n    ValueError: Dimensions must be equal, but are 3 and 5 for \\'{{node BiasAdd}} = BiasAdd[T=DT_FLOAT, data_format=\"NCHW\"](inputs, inputs_1)\\' with input shapes: [2,3,4,5], [5].\\n'))",
+        "error_message": "{{function_node __wrapped__BiasAdd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Must provide as many biases as the last dimension of the input tensor: [5] vs. [2,3,4,5] [Op:BiasAdd] name: ",
+        "conflict_params": [
+            "inputs",
+            "data_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4, 5)), EagerTensor(shape=(5,))]",
+            "data_format": "NC...",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__BiasAdd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Must provide as many biases as the last dimension of the input tensor: [5] vs. [2,3,4,5] [Op:BiasAdd] name: ', ('{{function_node __wrapped__BiasAdd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Must provide as many biases as the last dimension of the input tensor: [5] vs. [2,3,4,5] [Op:BiasAdd] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_bias_add/generated_code.py\", line 16, in call_func  *\\n        return tf.nn.bias_add(value, bias, data_format=data_format, name=name)\\n\\n    ValueError: Dimensions must be equal, but are 3 and 5 for \\'{{node BiasAdd}} = BiasAdd[T=DT_FLOAT, data_format=\"NCHW\"](inputs, inputs_1)\\' with input shapes: [2,3,4,5], [5].\\n'))",
+        "error_message": "{{function_node __wrapped__BiasAdd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Must provide as many biases as the last dimension of the input tensor: [5] vs. [2,3,4,5] [Op:BiasAdd] name: "
+    }
+]

@@ -1,0 +1,256 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4]))]",
+            "upper": "False",
+            "out": "None"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4]))]",
+            "upper": "False",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4]))]",
+            "upper": "False",
+            "out": "Tensor(shape=torch.Size([2, 3, 3]))"
+        },
+        "segment": "(0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected out tensor to have dtype double, but got float instead', ('Expected out tensor to have dtype double, but got float instead', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_cholesky>(*(FakeTensor(..., size=(4, 4), dtype=torch.float64),), **{\\'upper\\': False, \\'out\\': FakeTensor(..., size=(s41, s66, s57))}): got RuntimeError(\\'Expected out tensor to have dtype double, but got float instead\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_cholesky/generated_code.py\", line 4, in call_func\\n    return torch.linalg.cholesky(inputs[0], upper=upper, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected out tensor to have dtype double, but got float instead'))",
+        "error_message": "Expected out tensor to have dtype double, but got float instead",
+        "conflict_params": [
+            "inputs",
+            "out"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4]))]",
+            "upper": "False",
+            "out": "Tensor(shape=torch.Size([1, 1, 5, 5]))"
+        },
+        "segment": "(0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected out tensor to have dtype double, but got c10::complex<float> instead', ('Expected out tensor to have dtype double, but got c10::complex<float> instead', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_cholesky>(*(FakeTensor(..., size=(4, 4), dtype=torch.float64),), **{\\'upper\\': False, \\'out\\': FakeTensor(..., size=(1, 1, s57, s68), dtype=torch.complex64)}): got RuntimeError(\\'Expected out tensor to have dtype double, but got c10::complex<float> instead\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_cholesky/generated_code.py\", line 4, in call_func\\n    return torch.linalg.cholesky(inputs[0], upper=upper, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected out tensor to have dtype double, but got c10::complex<float> instead'))",
+        "error_message": "Expected out tensor to have dtype double, but got c10::complex<float> instead",
+        "conflict_params": [
+            "inputs",
+            "out"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4]))]",
+            "upper": "False",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "segment": "(0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4]))]",
+            "upper": "False",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "segment": "(0, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4]))]",
+            "upper": "True",
+            "out": "None"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4]))]",
+            "upper": "True",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "segment": "(1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 3]))]",
+            "out": "Tensor(shape=torch.Size([2, 3, 3]))",
+            "upper": "True"
+        },
+        "segment": "(1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 5, 5]))]",
+            "upper": "True",
+            "out": "Tensor(shape=torch.Size([1, 1, 5, 5]))"
+        },
+        "segment": "(1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 5, 5), (1, 1, 5, 5), (1, 1, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4]))]",
+            "upper": "True",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "segment": "(1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 4]))]",
+            "upper": "True",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "segment": "(1, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 3]))]",
+            "out": "Tensor(shape=torch.Size([2, 3, 3]))",
+            "upper": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 5, 5]))]",
+            "upper": "False",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 5, 5), (1, 1, 5, 5), (1, 1, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 5, 5]))]",
+            "upper": "False",
+            "out": "Tensor(shape=torch.Size([1, 1, 5, 5]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 5, 5), (1, 1, 5, 5), (1, 1, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 5, 5]))]",
+            "upper": "True",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected out tensor to have dtype c10::complex<float>, but got double instead', ('Expected out tensor to have dtype c10::complex<float>, but got double instead', 'Expected out tensor to have dtype c10::complex<float>, but got double instead', 'Expected out tensor to have dtype c10::complex<float>, but got double instead'))",
+        "error_message": "Expected out tensor to have dtype c10::complex<float>, but got double instead"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 3]))]",
+            "out": "Tensor(shape=torch.Size([1, 1, 5, 5]))",
+            "upper": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected out tensor to have dtype float, but got c10::complex<float> instead', ('Expected out tensor to have dtype float, but got c10::complex<float> instead', 'Expected out tensor to have dtype float, but got c10::complex<float> instead', 'Expected out tensor to have dtype float, but got c10::complex<float> instead'))",
+        "error_message": "Expected out tensor to have dtype float, but got c10::complex<float> instead"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 3]))]",
+            "out": "Tensor(shape=torch.Size([1, 1, 5, 5]))",
+            "upper": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected out tensor to have dtype float, but got c10::complex<float> instead', ('Expected out tensor to have dtype float, but got c10::complex<float> instead', 'Expected out tensor to have dtype float, but got c10::complex<float> instead', 'Expected out tensor to have dtype float, but got c10::complex<float> instead'))",
+        "error_message": "Expected out tensor to have dtype float, but got c10::complex<float> instead"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 3]))]",
+            "out": "None",
+            "upper": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 3]))]",
+            "out": "None",
+            "upper": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 5, 5]))]",
+            "upper": "True",
+            "out": "Tensor(shape=torch.Size([2, 3, 3]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected out tensor to have dtype c10::complex<float>, but got float instead', ('Expected out tensor to have dtype c10::complex<float>, but got float instead', 'Expected out tensor to have dtype c10::complex<float>, but got float instead', 'Expected out tensor to have dtype c10::complex<float>, but got float instead'))",
+        "error_message": "Expected out tensor to have dtype c10::complex<float>, but got float instead"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 5, 5]))]",
+            "upper": "True",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 5, 5), (1, 1, 5, 5), (1, 1, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 5, 5]))]",
+            "upper": "False",
+            "out": "Tensor(shape=torch.Size([4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected out tensor to have dtype c10::complex<float>, but got double instead', ('Expected out tensor to have dtype c10::complex<float>, but got double instead', 'Expected out tensor to have dtype c10::complex<float>, but got double instead', 'Expected out tensor to have dtype c10::complex<float>, but got double instead'))",
+        "error_message": "Expected out tensor to have dtype c10::complex<float>, but got double instead"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 3]))]",
+            "out": "Tensor(shape=torch.Size([4, 4]))",
+            "upper": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected out tensor to have dtype float, but got double instead', ('Expected out tensor to have dtype float, but got double instead', 'Expected out tensor to have dtype float, but got double instead', 'Expected out tensor to have dtype float, but got double instead'))",
+        "error_message": "Expected out tensor to have dtype float, but got double instead"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 3]))]",
+            "out": "Tensor(shape=torch.Size([4, 4]))",
+            "upper": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected out tensor to have dtype float, but got double instead', ('Expected out tensor to have dtype float, but got double instead', 'Expected out tensor to have dtype float, but got double instead', 'Expected out tensor to have dtype float, but got double instead'))",
+        "error_message": "Expected out tensor to have dtype float, but got double instead"
+    }
+]

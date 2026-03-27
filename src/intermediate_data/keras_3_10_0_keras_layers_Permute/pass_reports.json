@@ -1,0 +1,88 @@
+[
+    {
+        "test_case": {
+            "dims": "[1, 2]",
+            "inputs": "EagerTensor(shape=(5, 10, 64))"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 10, 64), (None, 10, 64)))"
+    },
+    {
+        "test_case": {
+            "dims": "[2, 1]",
+            "inputs": "EagerTensor(shape=(5, 10, 64))"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 64, 10), (None, 64, 10)))"
+    },
+    {
+        "test_case": {
+            "dims": "[1, 2, 3]",
+            "inputs": "EagerTensor(shape=(5, 10, 64))"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Input 0 of layer \"permute_8\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (5, 10, 64)', ('Input 0 of layer \"permute_8\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (5, 10, 64)', 'Input 0 of layer \"permute_9\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (None, 10, 64)'))",
+        "error_message": "Input 0 of layer \"permute_8\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (5, 10, 64)",
+        "conflict_params": [
+            "dims",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "dims": "[2, 1, 3]",
+            "inputs": "EagerTensor(shape=(5, 10, 64))"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Input 0 of layer \"permute_12\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (5, 10, 64)', ('Input 0 of layer \"permute_12\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (5, 10, 64)', 'Input 0 of layer \"permute_13\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (None, 10, 64)'))",
+        "error_message": "Input 0 of layer \"permute_12\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (5, 10, 64)",
+        "conflict_params": [
+            "dims"
+        ]
+    },
+    {
+        "test_case": {
+            "dims": "[1, 3, 2]",
+            "inputs": "EagerTensor(shape=(5, 10, 64))"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Input 0 of layer \"permute_14\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (5, 10, 64)', ('Input 0 of layer \"permute_14\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (5, 10, 64)', 'Input 0 of layer \"permute_15\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (None, 10, 64)'))",
+        "error_message": "Input 0 of layer \"permute_14\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (5, 10, 64)",
+        "conflict_params": [
+            "dims",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "dims": "[1, 2, 3]",
+            "inputs": "EagerTensor(shape=(5, 10, 64))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Input 0 of layer \"permute_78\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (5, 10, 64)', ('Input 0 of layer \"permute_78\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (5, 10, 64)', 'Input 0 of layer \"permute_79\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (None, 10, 64)'))",
+        "error_message": "Input 0 of layer \"permute_78\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (5, 10, 64)"
+    },
+    {
+        "test_case": {
+            "dims": "[1, 3, 2]",
+            "inputs": "EagerTensor(shape=(5, 10, 64))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Input 0 of layer \"permute_80\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (5, 10, 64)', ('Input 0 of layer \"permute_80\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (5, 10, 64)', 'Input 0 of layer \"permute_81\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (None, 10, 64)'))",
+        "error_message": "Input 0 of layer \"permute_80\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (5, 10, 64)"
+    },
+    {
+        "test_case": {
+            "dims": "[2, 1, 3]",
+            "inputs": "EagerTensor(shape=(5, 10, 64))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Input 0 of layer \"permute_262\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (5, 10, 64)', ('Input 0 of layer \"permute_262\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (5, 10, 64)', 'Input 0 of layer \"permute_263\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (None, 10, 64)'))",
+        "error_message": "Input 0 of layer \"permute_262\" is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: (5, 10, 64)"
+    }
+]

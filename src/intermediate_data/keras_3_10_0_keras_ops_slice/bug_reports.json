@@ -1,0 +1,102 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(5, 5))",
+            "start_indices": "[2, 1]",
+            "shape": "[4, 4]"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[0] in [0, 3], but got 4 [Op:Slice]', ('{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[0] in [0, 3], but got 4 [Op:Slice]', (None, 4)))",
+        "error_message": "{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[0] in [0, 3], but got 4 [Op:Slice]",
+        "conflict_params": [
+            "start_indices",
+            "shape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(5, 5))",
+            "start_indices": "[2, 1]",
+            "shape": "[5, 5]"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[0] in [0, 3], but got 5 [Op:Slice]', ('{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[0] in [0, 3], but got 5 [Op:Slice]', (None, 5)))",
+        "error_message": "{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[0] in [0, 3], but got 5 [Op:Slice]",
+        "conflict_params": [
+            "start_indices",
+            "shape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(5, 5))",
+            "start_indices": "[2, 1]",
+            "shape": "[1, 5]"
+        },
+        "segment": "(8,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[1] in [0, 4], but got 5 [Op:Slice]', ('{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[1] in [0, 4], but got 5 [Op:Slice]', (None, 5)))",
+        "error_message": "{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[1] in [0, 4], but got 5 [Op:Slice]",
+        "conflict_params": [
+            "start_indices",
+            "shape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(5, 5))",
+            "start_indices": "[2, 1]",
+            "shape": "[5, 1]"
+        },
+        "segment": "(9,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[0] in [0, 3], but got 5 [Op:Slice]', ('{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[0] in [0, 3], but got 5 [Op:Slice]', (None, 1)))",
+        "error_message": "{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[0] in [0, 3], but got 5 [Op:Slice]",
+        "conflict_params": [
+            "start_indices",
+            "shape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(5, 5))",
+            "start_indices": "[2, 1]",
+            "shape": "[4, 4]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[0] in [0, 3], but got 4 [Op:Slice]', ('{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[0] in [0, 3], but got 4 [Op:Slice]', (None, 4)))",
+        "error_message": "{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[0] in [0, 3], but got 4 [Op:Slice]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(5, 5))",
+            "start_indices": "[2, 1]",
+            "shape": "[5, 5]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[0] in [0, 3], but got 5 [Op:Slice]', ('{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[0] in [0, 3], but got 5 [Op:Slice]', (None, 5)))",
+        "error_message": "{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[0] in [0, 3], but got 5 [Op:Slice]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(5, 5))",
+            "start_indices": "[2, 1]",
+            "shape": "[5, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[0] in [0, 3], but got 5 [Op:Slice]', ('{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[0] in [0, 3], but got 5 [Op:Slice]', (None, 1)))",
+        "error_message": "{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[0] in [0, 3], but got 5 [Op:Slice]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(5, 5))",
+            "start_indices": "[2, 1]",
+            "shape": "[1, 5]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[1] in [0, 4], but got 5 [Op:Slice]', ('{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[1] in [0, 4], but got 5 [Op:Slice]', (None, 5)))",
+        "error_message": "{{function_node __wrapped__Slice_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected size[1] in [0, 4], but got 5 [Op:Slice]"
+    }
+]

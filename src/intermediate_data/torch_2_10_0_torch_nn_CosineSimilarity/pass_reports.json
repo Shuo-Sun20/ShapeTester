@@ -1,0 +1,260 @@
+[
+    {
+        "test_case": {
+            "dim": "-4",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -4)', ('Dimension out of range (expected to be in range of [-2, 1], but got -4)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cosine_similarity of type object at 0x7f9145929b40>(*(FakeTensor(..., size=(s21, s41)), FakeTensor(..., size=(s21, s41)), -4, 1.00000000000000E-8), **{}): got IndexError(\\'tuple index out of range\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CosineSimilarity/generated_code.py\", line 13, in call_func\\n    output = cos_sim(x1, x2)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/distance.py\", line 100, in forward\\n    return F.cosine_similarity(x1, x2, self.dim, self.eps)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'tuple index out of range'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -4)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "dim": "-3",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -3)', ('Dimension out of range (expected to be in range of [-2, 1], but got -3)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cosine_similarity of type object at 0x7f9145929b40>(*(FakeTensor(..., size=(s21, s41)), FakeTensor(..., size=(s21, s41)), -3, 1.00000000000000E-8), **{}): got IndexError(\\'tuple index out of range\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CosineSimilarity/generated_code.py\", line 13, in call_func\\n    output = cos_sim(x1, x2)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/distance.py\", line 100, in forward\\n    return F.cosine_similarity(x1, x2, self.dim, self.eps)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'tuple index out of range'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -3)",
+        "conflict_params": [
+            "dim",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "dim": "-2",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((128,), (128,), (128,)))"
+    },
+    {
+        "test_case": {
+            "dim": "-1",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100,), (100,), (100,)))"
+    },
+    {
+        "test_case": {
+            "dim": "0",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((128,), (128,), (128,)))"
+    },
+    {
+        "test_case": {
+            "dim": "1",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100,), (100,), (100,)))"
+    },
+    {
+        "test_case": {
+            "dim": "2",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 2)', ('Dimension out of range (expected to be in range of [-2, 1], but got 2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cosine_similarity of type object at 0x7f9145929b40>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22)), 2, 1.00000000000000E-8), **{}): got IndexError(\\'tuple index out of range\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CosineSimilarity/generated_code.py\", line 13, in call_func\\n    output = cos_sim(x1, x2)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/distance.py\", line 100, in forward\\n    return F.cosine_similarity(x1, x2, self.dim, self.eps)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'tuple index out of range'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 2)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "dim": "3",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "segment": "(7,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 3)', ('Dimension out of range (expected to be in range of [-2, 1], but got 3)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cosine_similarity of type object at 0x7f9145929b40>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22)), 3, 1.00000000000000E-8), **{}): got IndexError(\\'tuple index out of range\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CosineSimilarity/generated_code.py\", line 13, in call_func\\n    output = cos_sim(x1, x2)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/distance.py\", line 100, in forward\\n    return F.cosine_similarity(x1, x2, self.dim, self.eps)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'tuple index out of range'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 3)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "dim": "4",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "segment": "(8,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 4)', ('Dimension out of range (expected to be in range of [-2, 1], but got 4)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cosine_similarity of type object at 0x7f9145929b40>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22)), 4, 1.00000000000000E-8), **{}): got IndexError(\\'tuple index out of range\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CosineSimilarity/generated_code.py\", line 13, in call_func\\n    output = cos_sim(x1, x2)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/distance.py\", line 100, in forward\\n    return F.cosine_similarity(x1, x2, self.dim, self.eps)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'tuple index out of range'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 4)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "dim": "-5",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "segment": "(9,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -5)', ('Dimension out of range (expected to be in range of [-2, 1], but got -5)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cosine_similarity of type object at 0x7f9145929b40>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22)), -5, 1.00000000000000E-8), **{}): got IndexError(\\'tuple index out of range\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CosineSimilarity/generated_code.py\", line 13, in call_func\\n    output = cos_sim(x1, x2)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/distance.py\", line 100, in forward\\n    return F.cosine_similarity(x1, x2, self.dim, self.eps)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'tuple index out of range'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -5)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "dim": "5",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "segment": "(10,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 5)', ('Dimension out of range (expected to be in range of [-2, 1], but got 5)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cosine_similarity of type object at 0x7f9145929b40>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22)), 5, 1.00000000000000E-8), **{}): got IndexError(\\'tuple index out of range\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CosineSimilarity/generated_code.py\", line 13, in call_func\\n    output = cos_sim(x1, x2)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/distance.py\", line 100, in forward\\n    return F.cosine_similarity(x1, x2, self.dim, self.eps)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'tuple index out of range'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 5)",
+        "conflict_params": [
+            "dim",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "dim": "-6",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "segment": "(11,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -6)', ('Dimension out of range (expected to be in range of [-2, 1], but got -6)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cosine_similarity of type object at 0x7f9145929b40>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22)), -6, 1.00000000000000E-8), **{}): got IndexError(\\'tuple index out of range\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CosineSimilarity/generated_code.py\", line 13, in call_func\\n    output = cos_sim(x1, x2)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/distance.py\", line 100, in forward\\n    return F.cosine_similarity(x1, x2, self.dim, self.eps)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'tuple index out of range'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -6)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "dim": "6",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "segment": "(12,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 6)', ('Dimension out of range (expected to be in range of [-2, 1], but got 6)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cosine_similarity of type object at 0x7f9145929b40>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22)), 6, 1.00000000000000E-8), **{}): got IndexError(\\'tuple index out of range\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CosineSimilarity/generated_code.py\", line 13, in call_func\\n    output = cos_sim(x1, x2)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/distance.py\", line 100, in forward\\n    return F.cosine_similarity(x1, x2, self.dim, self.eps)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'tuple index out of range'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 6)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "dim": "-3",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -3)', ('Dimension out of range (expected to be in range of [-2, 1], but got -3)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cosine_similarity of type object at 0x7f9145929b40>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22)), -3, 1.00000000000000E-8), **{}): got IndexError(\\'tuple index out of range\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CosineSimilarity/generated_code.py\", line 13, in call_func\\n    output = cos_sim(x1, x2)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/distance.py\", line 100, in forward\\n    return F.cosine_similarity(x1, x2, self.dim, self.eps)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'tuple index out of range'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -3)"
+    },
+    {
+        "test_case": {
+            "dim": "2",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 2)', ('Dimension out of range (expected to be in range of [-2, 1], but got 2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cosine_similarity of type object at 0x7f9145929b40>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22)), 2, 1.00000000000000E-8), **{}): got IndexError(\\'tuple index out of range\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CosineSimilarity/generated_code.py\", line 13, in call_func\\n    output = cos_sim(x1, x2)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/distance.py\", line 100, in forward\\n    return F.cosine_similarity(x1, x2, self.dim, self.eps)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'tuple index out of range'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 2)"
+    },
+    {
+        "test_case": {
+            "dim": "4",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 4)', ('Dimension out of range (expected to be in range of [-2, 1], but got 4)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cosine_similarity of type object at 0x7f9145929b40>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22)), 4, 1.00000000000000E-8), **{}): got IndexError(\\'tuple index out of range\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CosineSimilarity/generated_code.py\", line 13, in call_func\\n    output = cos_sim(x1, x2)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/distance.py\", line 100, in forward\\n    return F.cosine_similarity(x1, x2, self.dim, self.eps)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'tuple index out of range'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 4)"
+    },
+    {
+        "test_case": {
+            "dim": "5",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 5)', ('Dimension out of range (expected to be in range of [-2, 1], but got 5)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cosine_similarity of type object at 0x7f9145929b40>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22)), 5, 1.00000000000000E-8), **{}): got IndexError(\\'tuple index out of range\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CosineSimilarity/generated_code.py\", line 13, in call_func\\n    output = cos_sim(x1, x2)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/distance.py\", line 100, in forward\\n    return F.cosine_similarity(x1, x2, self.dim, self.eps)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'tuple index out of range'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 5)"
+    },
+    {
+        "test_case": {
+            "dim": "-5",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -5)', ('Dimension out of range (expected to be in range of [-2, 1], but got -5)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cosine_similarity of type object at 0x7f9145929b40>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22)), -5, 1.00000000000000E-8), **{}): got IndexError(\\'tuple index out of range\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CosineSimilarity/generated_code.py\", line 13, in call_func\\n    output = cos_sim(x1, x2)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/distance.py\", line 100, in forward\\n    return F.cosine_similarity(x1, x2, self.dim, self.eps)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'tuple index out of range'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -5)"
+    },
+    {
+        "test_case": {
+            "dim": "-6",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -6)', ('Dimension out of range (expected to be in range of [-2, 1], but got -6)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cosine_similarity of type object at 0x7f9145929b40>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22)), -6, 1.00000000000000E-8), **{}): got IndexError(\\'tuple index out of range\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CosineSimilarity/generated_code.py\", line 13, in call_func\\n    output = cos_sim(x1, x2)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/distance.py\", line 100, in forward\\n    return F.cosine_similarity(x1, x2, self.dim, self.eps)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'tuple index out of range'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -6)"
+    },
+    {
+        "test_case": {
+            "dim": "6",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 6)', ('Dimension out of range (expected to be in range of [-2, 1], but got 6)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cosine_similarity of type object at 0x7f9145929b40>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22)), 6, 1.00000000000000E-8), **{}): got IndexError(\\'tuple index out of range\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CosineSimilarity/generated_code.py\", line 13, in call_func\\n    output = cos_sim(x1, x2)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/distance.py\", line 100, in forward\\n    return F.cosine_similarity(x1, x2, self.dim, self.eps)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'tuple index out of range'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 6)"
+    },
+    {
+        "test_case": {
+            "dim": "3",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 3)', ('Dimension out of range (expected to be in range of [-2, 1], but got 3)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cosine_similarity of type object at 0x7f9145929b40>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22)), 3, 1.00000000000000E-8), **{}): got IndexError(\\'tuple index out of range\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CosineSimilarity/generated_code.py\", line 13, in call_func\\n    output = cos_sim(x1, x2)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/distance.py\", line 100, in forward\\n    return F.cosine_similarity(x1, x2, self.dim, self.eps)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'tuple index out of range'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 3)"
+    },
+    {
+        "test_case": {
+            "dim": "-4",
+            "eps": "1e-08",
+            "inputs": "[Tensor(shape=torch.Size([100, 128])), Tensor(shape=torch.Size([100, 128]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -4)', ('Dimension out of range (expected to be in range of [-2, 1], but got -4)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cosine_similarity of type object at 0x7f9145929b40>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22)), -4, 1.00000000000000E-8), **{}): got IndexError(\\'tuple index out of range\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_CosineSimilarity/generated_code.py\", line 13, in call_func\\n    output = cos_sim(x1, x2)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/distance.py\", line 100, in forward\\n    return F.cosine_similarity(x1, x2, self.dim, self.eps)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'tuple index out of range'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -4)"
+    }
+]

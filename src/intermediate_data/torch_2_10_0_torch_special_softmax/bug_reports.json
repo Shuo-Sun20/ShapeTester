@@ -1,0 +1,130 @@
+[
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 3, 4]))",
+            "dim": "-3",
+            "dtype": "torch.complex64"
+        },
+        "segment": "(0, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '\"softmax_kernel_impl\" not implemented for \\'ComplexFloat\\'', ('\"softmax_kernel_impl\" not implemented for \\'ComplexFloat\\'', '\"max_values_cpu\" not implemented for \\'ComplexFloat\\'', (2, 3, 4)))",
+        "error_message": "\"softmax_kernel_impl\" not implemented for 'ComplexFloat'",
+        "conflict_params": [
+            "dtype"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 3, 4]))",
+            "dim": "-3",
+            "dtype": "torch.complex128"
+        },
+        "segment": "(0, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '\"softmax_kernel_impl\" not implemented for \\'ComplexDouble\\'', ('\"softmax_kernel_impl\" not implemented for \\'ComplexDouble\\'', '\"max_values_cpu\" not implemented for \\'ComplexDouble\\'', (2, 3, 4)))",
+        "error_message": "\"softmax_kernel_impl\" not implemented for 'ComplexDouble'",
+        "conflict_params": [
+            "dtype"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 3, 4]))",
+            "dim": "-3",
+            "dtype": "torch.complex128"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '\"softmax_kernel_impl\" not implemented for \\'ComplexDouble\\'', ('\"softmax_kernel_impl\" not implemented for \\'ComplexDouble\\'', '\"max_values_cpu\" not implemented for \\'ComplexDouble\\'', (2, 3, 4)))",
+        "error_message": "\"softmax_kernel_impl\" not implemented for 'ComplexDouble'"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 3, 4]))",
+            "dim": "-3",
+            "dtype": "torch.complex64"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '\"softmax_kernel_impl\" not implemented for \\'ComplexFloat\\'', ('\"softmax_kernel_impl\" not implemented for \\'ComplexFloat\\'', '\"max_values_cpu\" not implemented for \\'ComplexFloat\\'', (2, 3, 4)))",
+        "error_message": "\"softmax_kernel_impl\" not implemented for 'ComplexFloat'"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 3, 4]))",
+            "dim": "0",
+            "dtype": "torch.complex64"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '\"softmax_kernel_impl\" not implemented for \\'ComplexFloat\\'', ('\"softmax_kernel_impl\" not implemented for \\'ComplexFloat\\'', '\"softmax_kernel_impl\" not implemented for \\'ComplexFloat\\'', (2, 3, 4)))",
+        "error_message": "\"softmax_kernel_impl\" not implemented for 'ComplexFloat'"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 3, 4]))",
+            "dim": "0",
+            "dtype": "torch.complex128"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '\"softmax_kernel_impl\" not implemented for \\'ComplexDouble\\'', ('\"softmax_kernel_impl\" not implemented for \\'ComplexDouble\\'', '\"softmax_kernel_impl\" not implemented for \\'ComplexDouble\\'', (2, 3, 4)))",
+        "error_message": "\"softmax_kernel_impl\" not implemented for 'ComplexDouble'"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 3, 4]))",
+            "dim": "2",
+            "dtype": "torch.complex128"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '\"softmax_lastdim_kernel_impl\" not implemented for \\'ComplexDouble\\'', ('\"softmax_lastdim_kernel_impl\" not implemented for \\'ComplexDouble\\'', '\"softmax_lastdim_kernel_impl\" not implemented for \\'ComplexDouble\\'', (2, 3, 4)))",
+        "error_message": "\"softmax_lastdim_kernel_impl\" not implemented for 'ComplexDouble'"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 3, 4]))",
+            "dim": "-2",
+            "dtype": "torch.complex64"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '\"softmax_kernel_impl\" not implemented for \\'ComplexFloat\\'', ('\"softmax_kernel_impl\" not implemented for \\'ComplexFloat\\'', '\"softmax_kernel_impl\" not implemented for \\'ComplexFloat\\'', (2, 3, 4)))",
+        "error_message": "\"softmax_kernel_impl\" not implemented for 'ComplexFloat'"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 3, 4]))",
+            "dim": "1",
+            "dtype": "torch.complex128"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '\"softmax_kernel_impl\" not implemented for \\'ComplexDouble\\'', ('\"softmax_kernel_impl\" not implemented for \\'ComplexDouble\\'', '\"softmax_kernel_impl\" not implemented for \\'ComplexDouble\\'', (2, 3, 4)))",
+        "error_message": "\"softmax_kernel_impl\" not implemented for 'ComplexDouble'"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 3, 4]))",
+            "dim": "2",
+            "dtype": "torch.complex64"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '\"softmax_lastdim_kernel_impl\" not implemented for \\'ComplexFloat\\'', ('\"softmax_lastdim_kernel_impl\" not implemented for \\'ComplexFloat\\'', '\"softmax_lastdim_kernel_impl\" not implemented for \\'ComplexFloat\\'', (2, 3, 4)))",
+        "error_message": "\"softmax_lastdim_kernel_impl\" not implemented for 'ComplexFloat'"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 3, 4]))",
+            "dim": "-1",
+            "dtype": "torch.complex128"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '\"softmax_lastdim_kernel_impl\" not implemented for \\'ComplexDouble\\'', ('\"softmax_lastdim_kernel_impl\" not implemented for \\'ComplexDouble\\'', '\"softmax_lastdim_kernel_impl\" not implemented for \\'ComplexDouble\\'', (2, 3, 4)))",
+        "error_message": "\"softmax_lastdim_kernel_impl\" not implemented for 'ComplexDouble'"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 3, 4]))",
+            "dim": "-2",
+            "dtype": "torch.complex128"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '\"softmax_kernel_impl\" not implemented for \\'ComplexDouble\\'', ('\"softmax_kernel_impl\" not implemented for \\'ComplexDouble\\'', '\"softmax_kernel_impl\" not implemented for \\'ComplexDouble\\'', (2, 3, 4)))",
+        "error_message": "\"softmax_kernel_impl\" not implemented for 'ComplexDouble'"
+    }
+]

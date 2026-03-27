@@ -1,0 +1,297 @@
+[
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "0.0001",
+            "momentum": "0.99",
+            "affine": "True",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(2, 3, 4, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor on device cpu is not on the expected device meta!', ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), 'Tensor on device cpu is not on the expected device meta!'))",
+        "error_message": "Tensor on device cpu is not on the expected device meta!",
+        "conflict_params": [
+            "affine",
+            "track_running_stats"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "4",
+            "eps": "1e-06",
+            "momentum": "0.0",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([2, 4, 10, 15, 8]))"
+        },
+        "segment": "(3, 1, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor on device cpu is not on the expected device meta!', ((2, 4, 10, 15, 8), (2, 4, 10, 15, 8), 'Tensor on device cpu is not on the expected device meta!'))",
+        "error_message": "Tensor on device cpu is not on the expected device meta!",
+        "conflict_params": [
+            "track_running_stats",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "8",
+            "eps": "1e-06",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([2, 8, 10, 10, 10]))"
+        },
+        "segment": "(4, 1, 1, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor on device cpu is not on the expected device meta!', ((2, 8, 10, 10, 10), (2, 8, 10, 10, 10), 'Tensor on device cpu is not on the expected device meta!'))",
+        "error_message": "Tensor on device cpu is not on the expected device meta!",
+        "conflict_params": [
+            "track_running_stats"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "1e-06",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(2, 1, 3, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor on device cpu is not on the expected device meta!', ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), 'Tensor on device cpu is not on the expected device meta!'))",
+        "error_message": "Tensor on device cpu is not on the expected device meta!",
+        "conflict_params": [
+            "num_features",
+            "eps",
+            "momentum",
+            "affine",
+            "track_running_stats"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "1e-05",
+            "momentum": "0.1",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "segment": "(2, 2, 1, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor on device cpu is not on the expected device meta!', ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), 'Tensor on device cpu is not on the expected device meta!'))",
+        "error_message": "Tensor on device cpu is not on the expected device meta!",
+        "conflict_params": [
+            "num_features",
+            "eps",
+            "momentum",
+            "affine",
+            "track_running_stats"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "4",
+            "eps": "0.0001",
+            "momentum": "0.5",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([2, 4, 10, 15, 8]))"
+        },
+        "segment": "(3, 3, 2, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor on device cpu is not on the expected device meta!', ((2, 4, 10, 15, 8), (2, 4, 10, 15, 8), 'Tensor on device cpu is not on the expected device meta!'))",
+        "error_message": "Tensor on device cpu is not on the expected device meta!",
+        "conflict_params": [
+            "track_running_stats",
+            "affine"
+        ]
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "1e-07",
+            "momentum": "0.5",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor on device cpu is not on the expected device meta!', ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), 'Tensor on device cpu is not on the expected device meta!'))",
+        "error_message": "Tensor on device cpu is not on the expected device meta!"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "0.0001",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor on device cpu is not on the expected device meta!', ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), 'Tensor on device cpu is not on the expected device meta!'))",
+        "error_message": "Tensor on device cpu is not on the expected device meta!"
+    },
+    {
+        "test_case": {
+            "num_features": "128",
+            "eps": "1e-07",
+            "momentum": "0.1",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor on device cpu is not on the expected device meta!', ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), 'Tensor on device cpu is not on the expected device meta!'))",
+        "error_message": "Tensor on device cpu is not on the expected device meta!"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "0.0001",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor on device cpu is not on the expected device meta!', ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), 'Tensor on device cpu is not on the expected device meta!'))",
+        "error_message": "Tensor on device cpu is not on the expected device meta!"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "0.01",
+            "momentum": "0.5",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor on device cpu is not on the expected device meta!', ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), 'Tensor on device cpu is not on the expected device meta!'))",
+        "error_message": "Tensor on device cpu is not on the expected device meta!"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor on device cpu is not on the expected device meta!', ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), 'Tensor on device cpu is not on the expected device meta!'))",
+        "error_message": "Tensor on device cpu is not on the expected device meta!"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "0.001",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor on device cpu is not on the expected device meta!', ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), 'Tensor on device cpu is not on the expected device meta!'))",
+        "error_message": "Tensor on device cpu is not on the expected device meta!"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor on device cpu is not on the expected device meta!', ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), 'Tensor on device cpu is not on the expected device meta!'))",
+        "error_message": "Tensor on device cpu is not on the expected device meta!"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "1e-07",
+            "momentum": "0.5",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor on device cpu is not on the expected device meta!', ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), 'Tensor on device cpu is not on the expected device meta!'))",
+        "error_message": "Tensor on device cpu is not on the expected device meta!"
+    },
+    {
+        "test_case": {
+            "num_features": "128",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor on device cpu is not on the expected device meta!', ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), 'Tensor on device cpu is not on the expected device meta!'))",
+        "error_message": "Tensor on device cpu is not on the expected device meta!"
+    },
+    {
+        "test_case": {
+            "num_features": "3",
+            "eps": "1e-07",
+            "momentum": "0.99",
+            "affine": "False",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 3, 32, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor on device cpu is not on the expected device meta!', ((4, 3, 32, 32, 32), (4, 3, 32, 32, 32), 'Tensor on device cpu is not on the expected device meta!'))",
+        "error_message": "Tensor on device cpu is not on the expected device meta!"
+    },
+    {
+        "test_case": {
+            "num_features": "128",
+            "eps": "1e-05",
+            "momentum": "0.99",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor on device cpu is not on the expected device meta!', ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), 'Tensor on device cpu is not on the expected device meta!'))",
+        "error_message": "Tensor on device cpu is not on the expected device meta!"
+    },
+    {
+        "test_case": {
+            "num_features": "128",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "False",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor on device cpu is not on the expected device meta!', ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), 'Tensor on device cpu is not on the expected device meta!'))",
+        "error_message": "Tensor on device cpu is not on the expected device meta!"
+    },
+    {
+        "test_case": {
+            "num_features": "128",
+            "eps": "1e-07",
+            "momentum": "0.9",
+            "affine": "True",
+            "track_running_stats": "True",
+            "inputs": "Tensor(shape=torch.Size([4, 128, 10, 20, 30]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor on device cpu is not on the expected device meta!', ((4, 128, 10, 20, 30), (4, 128, 10, 20, 30), 'Tensor on device cpu is not on the expected device meta!'))",
+        "error_message": "Tensor on device cpu is not on the expected device meta!"
+    }
+]

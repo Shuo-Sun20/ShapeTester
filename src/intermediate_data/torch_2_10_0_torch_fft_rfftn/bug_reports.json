@@ -1,0 +1,52 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 6, 8]))]",
+            "s": "None",
+            "dim": "[0]",
+            "norm": "ortho",
+            "out": "None"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'expected size 3==3, stride 1==48 at dim=0; expected size 6==6, stride 24==8 at dim=1; expected size 8==8, stride 3==1 at dim=2\\nError in op: torch.ops.aten._fft_r2c.default\\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\\nUse torch.library.opcheck to test your custom op.\\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck', ((3, 6, 8), 'expected size 3==3, stride 1==48 at dim=0; expected size 6==6, stride 24==8 at dim=1; expected size 8==8, stride 3==1 at dim=2\\nError in op: torch.ops.aten._fft_r2c.default\\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\\nUse torch.library.opcheck to test your custom op.\\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck', (3, 6, 8)))",
+        "error_message": "expected size 3==3, stride 1==48 at dim=0; expected size 6==6, stride 24==8 at dim=1; expected size 8==8, stride 3==1 at dim=2\nError in op: torch.ops.aten._fft_r2c.default\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\nUse torch.library.opcheck to test your custom op.\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 6, 8]))]",
+            "s": "None",
+            "dim": "[1]",
+            "norm": "ortho",
+            "out": "None"
+        },
+        "segment": "(0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'expected size 4==4, stride 1==8 at dim=1; expected size 8==8, stride 4==1 at dim=2\\nError in op: torch.ops.aten._fft_r2c.default\\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\\nUse torch.library.opcheck to test your custom op.\\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck', ((4, 4, 8), 'expected size 4==4, stride 1==8 at dim=1; expected size 8==8, stride 4==1 at dim=2\\nError in op: torch.ops.aten._fft_r2c.default\\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\\nUse torch.library.opcheck to test your custom op.\\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck', (4, 4, 8)))",
+        "error_message": "expected size 4==4, stride 1==8 at dim=1; expected size 8==8, stride 4==1 at dim=2\nError in op: torch.ops.aten._fft_r2c.default\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\nUse torch.library.opcheck to test your custom op.\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 6, 8]))]",
+            "s": "None",
+            "dim": "[0, 1]",
+            "norm": "ortho",
+            "out": "None"
+        },
+        "segment": "(0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'expected size 4==4, stride 4==32 at dim=0; expected size 4==4, stride 1==8 at dim=1; expected size 8==8, stride 16==1 at dim=2\\nError in op: torch.ops.aten._fft_r2c.default\\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\\nUse torch.library.opcheck to test your custom op.\\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck', ((4, 4, 8), 'expected size 4==4, stride 4==32 at dim=0; expected size 4==4, stride 1==8 at dim=1; expected size 8==8, stride 16==1 at dim=2\\nError in op: torch.ops.aten._fft_r2c.default\\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\\nUse torch.library.opcheck to test your custom op.\\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck', (4, 4, 8)))",
+        "error_message": "expected size 4==4, stride 4==32 at dim=0; expected size 4==4, stride 1==8 at dim=1; expected size 8==8, stride 16==1 at dim=2\nError in op: torch.ops.aten._fft_r2c.default\nThis error most often comes from a incorrect fake (aka meta) kernel for a custom op.\nUse torch.library.opcheck to test your custom op.\nSee https://pytorch.org/docs/stable/library.html#torch.library.opcheck",
+        "conflict_params": [
+            "inputs",
+            "s",
+            "dim"
+        ]
+    }
+]

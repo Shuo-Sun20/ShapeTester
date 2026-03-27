@@ -1,0 +1,179 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3)), EagerTensor(shape=(6,))]",
+            "input_output_dtype": "None",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant2D"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6,), (6,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3)), EagerTensor(shape=(6,))]",
+            "input_output_dtype": "None",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "LinearOperatorCirculant2D"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant2D/generated_code.py\", line 17, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant2D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.",
+        "conflict_params": [
+            "is_square"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3)), EagerTensor(shape=(6,))]",
+            "input_output_dtype": "None",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "LinearOperatorCirculant2D"
+        },
+        "segment": "(0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6,), (6,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3)), EagerTensor(shape=(6,))]",
+            "input_output_dtype": "<dtype: 'complex64'>",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant2D"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6,), (6,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3)), EagerTensor(shape=(6,))]",
+            "input_output_dtype": "<dtype: 'complex64'>",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "LinearOperatorCirculant2D"
+        },
+        "segment": "(1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6,), (6,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3)), EagerTensor(shape=(6,))]",
+            "input_output_dtype": "<dtype: 'complex128'>",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant2D"
+        },
+        "segment": "(2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Expected argument to have dtype <dtype: 'complex128'>.  Found: <dtype: 'complex64'> in tensor tf.Tensor(\\n[ 0.78591084+1.0697693j  1.2077684 +1.3566502j -1.5852556 +1.4650016j\\n -0.13794923+0.8458971j  0.7132276 +0.5606278j -0.14942479+1.3420402j], shape=(6,), dtype=complex64)\", (\"Expected argument to have dtype <dtype: 'complex128'>.  Found: <dtype: 'complex64'> in tensor tf.Tensor(\\n[ 0.78591084+1.0697693j  1.2077684 +1.3566502j -1.5852556 +1.4650016j\\n -0.13794923+0.8458971j  0.7132276 +0.5606278j -0.14942479+1.3420402j], shape=(6,), dtype=complex64)\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant2D/generated_code.py\", line 27, in call_func  *\\n        return operator.matvec(inputs[1])\\n\\n    TypeError: Expected argument to have dtype <dtype: \\'complex128\\'>.  Found: <dtype: \\'complex64\\'> in tensor Tensor(\"inputs_1:0\", shape=(6,), dtype=complex64)\\n'))",
+        "error_message": "Expected argument to have dtype <dtype: 'complex128'>.  Found: <dtype: 'complex64'> in tensor tf.Tensor(\n[ 0.78591084+1.0697693j  1.2077684 +1.3566502j -1.5852556 +1.4650016j\n -0.13794923+0.8458971j  0.7132276 +0.5606278j -0.14942479+1.3420402j], shape=(6,), dtype=complex64)",
+        "conflict_params": [
+            "inputs",
+            "input_output_dtype"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 2)), EagerTensor(shape=(4,))]",
+            "input_output_dtype": "<dtype: 'complex128'>",
+            "is_square": "None",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "name": "LinearOperatorCirculant2D"
+        },
+        "segment": "(2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3)), EagerTensor(shape=(6,))]",
+            "input_output_dtype": "<dtype: 'complex128'>",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "True",
+            "name": "LinearOperatorCirculant2D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Expected argument to have dtype <dtype: 'complex128'>.  Found: <dtype: 'complex64'> in tensor tf.Tensor(\\n[ 0.78591084+1.0697693j  1.2077684 +1.3566502j -1.5852556 +1.4650016j\\n -0.13794923+0.8458971j  0.7132276 +0.5606278j -0.14942479+1.3420402j], shape=(6,), dtype=complex64)\", (\"Expected argument to have dtype <dtype: 'complex128'>.  Found: <dtype: 'complex64'> in tensor tf.Tensor(\\n[ 0.78591084+1.0697693j  1.2077684 +1.3566502j -1.5852556 +1.4650016j\\n -0.13794923+0.8458971j  0.7132276 +0.5606278j -0.14942479+1.3420402j], shape=(6,), dtype=complex64)\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant2D/generated_code.py\", line 27, in call_func  *\\n        return operator.matvec(inputs[1])\\n\\n    TypeError: Expected argument to have dtype <dtype: \\'complex128\\'>.  Found: <dtype: \\'complex64\\'> in tensor Tensor(\"inputs_1:0\", shape=(6,), dtype=complex64)\\n'))",
+        "error_message": "Expected argument to have dtype <dtype: 'complex128'>.  Found: <dtype: 'complex64'> in tensor tf.Tensor(\n[ 0.78591084+1.0697693j  1.2077684 +1.3566502j -1.5852556 +1.4650016j\n -0.13794923+0.8458971j  0.7132276 +0.5606278j -0.14942479+1.3420402j], shape=(6,), dtype=complex64)"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3)), EagerTensor(shape=(6,))]",
+            "input_output_dtype": "None",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "LinearOperatorCirculant2D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant2D/generated_code.py\", line 17, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant2D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3)), EagerTensor(shape=(6,))]",
+            "input_output_dtype": "<dtype: 'complex128'>",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "None",
+            "name": "LinearOperatorCirculant2D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Expected argument to have dtype <dtype: 'complex128'>.  Found: <dtype: 'complex64'> in tensor tf.Tensor(\\n[ 0.78591084+1.0697693j  1.2077684 +1.3566502j -1.5852556 +1.4650016j\\n -0.13794923+0.8458971j  0.7132276 +0.5606278j -0.14942479+1.3420402j], shape=(6,), dtype=complex64)\", (\"Expected argument to have dtype <dtype: 'complex128'>.  Found: <dtype: 'complex64'> in tensor tf.Tensor(\\n[ 0.78591084+1.0697693j  1.2077684 +1.3566502j -1.5852556 +1.4650016j\\n -0.13794923+0.8458971j  0.7132276 +0.5606278j -0.14942479+1.3420402j], shape=(6,), dtype=complex64)\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant2D/generated_code.py\", line 27, in call_func  *\\n        return operator.matvec(inputs[1])\\n\\n    TypeError: Expected argument to have dtype <dtype: \\'complex128\\'>.  Found: <dtype: \\'complex64\\'> in tensor Tensor(\"inputs_1:0\", shape=(6,), dtype=complex64)\\n'))",
+        "error_message": "Expected argument to have dtype <dtype: 'complex128'>.  Found: <dtype: 'complex64'> in tensor tf.Tensor(\n[ 0.78591084+1.0697693j  1.2077684 +1.3566502j -1.5852556 +1.4650016j\n -0.13794923+0.8458971j  0.7132276 +0.5606278j -0.14942479+1.3420402j], shape=(6,), dtype=complex64)"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3)), EagerTensor(shape=(6,))]",
+            "input_output_dtype": "<dtype: 'complex64'>",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "LinearOperatorCirculant2D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant2D/generated_code.py\", line 17, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant2D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3)), EagerTensor(shape=(6,))]",
+            "input_output_dtype": "<dtype: 'complex128'>",
+            "is_non_singular": "None",
+            "is_self_adjoint": "None",
+            "is_positive_definite": "None",
+            "is_square": "False",
+            "name": "LinearOperatorCirculant2D"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', ('A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_LinearOperatorCirculant2D/generated_code.py\", line 17, in call_func  *\\n        operator = tf.linalg.LinearOperatorCirculant2D(\\n\\n    ValueError: A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False.\\n'))",
+        "error_message": "A [[nested] block] circulant operator is always square. Expected argument `is_square` to be True. Received: False."
+    }
+]

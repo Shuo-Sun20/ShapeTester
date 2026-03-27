@@ -1,0 +1,230 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "None",
+            "keepdims": "False"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None,), (None,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "0",
+            "keepdims": "False"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 5), (None, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "0",
+            "keepdims": "True"
+        },
+        "segment": "(1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 5), (None, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "1",
+            "keepdims": "False"
+        },
+        "segment": "(2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 5), (None, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "2",
+            "keepdims": "False"
+        },
+        "segment": "(3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4), (None, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "-1",
+            "keepdims": "False"
+        },
+        "segment": "(4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4), (None, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "-2",
+            "keepdims": "False"
+        },
+        "segment": "(5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 5), (None, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "-3",
+            "keepdims": "False"
+        },
+        "segment": "(6, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 5), (None, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "-3",
+            "keepdims": "True"
+        },
+        "segment": "(6, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 5), (None, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "[0, 1]",
+            "keepdims": "False"
+        },
+        "segment": "(7, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', ('{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', 'list indices must be integers or slices, not tuple'))",
+        "error_message": "{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]",
+        "conflict_params": [
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "[0, 2]",
+            "keepdims": "False"
+        },
+        "segment": "(8, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', ('{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', 'list indices must be integers or slices, not tuple'))",
+        "error_message": "{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]",
+        "conflict_params": [
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "[1, 2]",
+            "keepdims": "False"
+        },
+        "segment": "(9, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', ('{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', 'list indices must be integers or slices, not tuple'))",
+        "error_message": "{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]",
+        "conflict_params": [
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "[0, 1, 2]",
+            "keepdims": "False"
+        },
+        "segment": "(10, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [3] [Op:ArgMin]', ('{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [3] [Op:ArgMin]', 'list indices must be integers or slices, not tuple'))",
+        "error_message": "{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [3] [Op:ArgMin]",
+        "conflict_params": [
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "[0, 1]",
+            "keepdims": "False"
+        },
+        "segment": "(11, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', ('{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', 'list indices must be integers or slices, not list'))",
+        "error_message": "{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]",
+        "conflict_params": [
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "[0, 2]",
+            "keepdims": "False"
+        },
+        "segment": "(12, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', ('{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', 'list indices must be integers or slices, not list'))",
+        "error_message": "{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]",
+        "conflict_params": [
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "[1, 2]",
+            "keepdims": "False"
+        },
+        "segment": "(13, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', ('{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', 'list indices must be integers or slices, not list'))",
+        "error_message": "{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]",
+        "conflict_params": [
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "[0, 1, 2]",
+            "keepdims": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [3] [Op:ArgMin]', ('{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [3] [Op:ArgMin]', 'list indices must be integers or slices, not tuple'))",
+        "error_message": "{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [3] [Op:ArgMin]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "[0, 2]",
+            "keepdims": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', ('{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', 'list indices must be integers or slices, not list'))",
+        "error_message": "{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "[0, 1]",
+            "keepdims": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', ('{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', 'list indices must be integers or slices, not tuple'))",
+        "error_message": "{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "[1, 2]",
+            "keepdims": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', ('{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]', 'list indices must be integers or slices, not list'))",
+        "error_message": "{{function_node __wrapped__ArgMin_device_/job:localhost/replica:0/task:0/device:CPU:0}} dim must be a scalar, but received tensor of shape: [2] [Op:ArgMin]"
+    }
+]

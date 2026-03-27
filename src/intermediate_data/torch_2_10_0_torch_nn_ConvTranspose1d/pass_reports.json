@@ -1,0 +1,3296 @@
+[
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "0",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "segment": "(0, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32), (4, 32, 32), (4, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "2",
+            "padding": "1",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "10"
+        },
+        "segment": "(0, 1, 1, 1, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()",
+        "conflict_params": [
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "3",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "20"
+        },
+        "segment": "(0, 2, 2, 2, 2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "output_padding",
+            "dilation"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "3",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "20"
+        },
+        "segment": "(1, 0, 1, 3, 3, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()",
+        "conflict_params": [
+            "output_padding"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "4",
+            "padding": "3",
+            "output_padding": "4",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "segment": "(0, 3, 3, 4, 3, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()",
+        "conflict_params": [
+            "in_channels",
+            "out_channels",
+            "kernel_size",
+            "stride",
+            "padding",
+            "output_padding",
+            "groups",
+            "dilation"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "2",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "segment": "(1, 1, 2, 0, 4, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "output_padding",
+            "dilation"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "40"
+        },
+        "segment": "(2, 0, 3, 1, 2, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()",
+        "conflict_params": [
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "3",
+            "padding": "4",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "segment": "(3, 2, 4, 1, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "output_padding",
+            "dilation"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "4",
+            "padding": "1",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "segment": "(2, 3, 1, 2, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 145), (4, 32, 145), (4, 32, 145)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "9",
+            "stride": "5",
+            "padding": "0",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "segment": "(4, 4, 0, 2, 1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()",
+        "conflict_params": [
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "5",
+            "padding": "4",
+            "output_padding": "4",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "segment": "(1, 4, 4, 4, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 158), (4, 32, 158), (4, 32, 158)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "2",
+            "padding": "0",
+            "output_padding": "4",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "20"
+        },
+        "segment": "(2, 1, 0, 4, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()",
+        "conflict_params": [
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "9",
+            "stride": "2",
+            "padding": "2",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "segment": "(4, 1, 2, 1, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 92), (4, 32, 92), (4, 32, 92)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "3",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "segment": "(3, 2, 3, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 100), (4, 32, 100), (4, 32, 100)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "4",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "segment": "(3, 0, 2, 4, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 62), (4, 32, 62), (4, 32, 62)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "5",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "segment": "(2, 4, 4, 0, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 164), (4, 32, 164), (4, 32, 164)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "9",
+            "stride": "4",
+            "padding": "1",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "segment": "(4, 3, 1, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 147), (4, 32, 147), (4, 32, 147)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "4",
+            "padding": "0",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "segment": "(1, 3, 0, 1, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 130), (4, 32, 130), (4, 32, 130)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "5",
+            "padding": "3",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "segment": "(0, 4, 3, 1, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 151), (4, 32, 151), (4, 32, 151)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "9",
+            "stride": "3",
+            "padding": "1",
+            "output_padding": "4",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "segment": "(4, 2, 1, 4, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 136), (4, 32, 136), (4, 32, 136)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "3",
+            "padding": "0",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "segment": "(3, 2, 0, 2, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 120), (4, 32, 120), (4, 32, 120)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "5",
+            "padding": "1",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "segment": "(3, 4, 1, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 160), (4, 32, 160), (4, 32, 160)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "4",
+            "padding": "2",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "segment": "(3, 3, 2, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 128), (4, 32, 128), (4, 32, 128)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "2",
+            "padding": "0",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "segment": "(3, 1, 0, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 81), (4, 32, 81), (4, 32, 81)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "4",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "segment": "(0, 3, 4, 0, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 117), (4, 32, 117), (4, 32, 117)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "9",
+            "stride": "5",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "segment": "(4, 4, 2, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 160), (4, 32, 160), (4, 32, 160)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "3",
+            "padding": "0",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "segment": "(1, 2, 0, 0, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 104), (4, 32, 104), (4, 32, 104)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "9",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "segment": "(4, 0, 3, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 34), (4, 32, 34), (4, 32, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "2",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "segment": "(0, 1, 4, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 55), (4, 32, 55), (4, 32, 55)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "0",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "3",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 94), (4, 32, 94), (4, 32, 94)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "9",
+            "stride": "3",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 96), (4, 32, 96), (4, 32, 96)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 24), (4, 32, 24), (4, 32, 24)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "0",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32), (4, 32, 32), (4, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 30), (4, 32, 30), (4, 32, 30)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 30), (4, 32, 30), (4, 32, 30)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "2",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 61), (4, 32, 61), (4, 32, 61)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "2",
+            "padding": "4",
+            "output_padding": "4",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 69), (4, 32, 69), (4, 32, 69)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "9",
+            "stride": "2",
+            "padding": "0",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "40"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "4",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "20"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "20"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 28), (4, 32, 28), (4, 32, 28)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 25), (4, 32, 25), (4, 32, 25)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "5",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "10"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32), (4, 32, 32), (4, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "10"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "20"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "5",
+            "padding": "0",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 157), (4, 32, 157), (4, 32, 157)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "20"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "4",
+            "padding": "4",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 118), (4, 32, 118), (4, 32, 118)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 55), (4, 32, 55), (4, 32, 55)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "2",
+            "padding": "4",
+            "output_padding": "3",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 74), (4, 32, 74), (4, 32, 74)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "5",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "20"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "20"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "3",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 88), (4, 32, 88), (4, 32, 88)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "4",
+            "padding": "4",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 136), (4, 32, 136), (4, 32, 136)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 31), (4, 32, 31), (4, 32, 31)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 24), (4, 32, 24), (4, 32, 24)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "4",
+            "padding": "0",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 126), (4, 32, 126), (4, 32, 126)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "4",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "10"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 38), (4, 32, 38), (4, 32, 38)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 28), (4, 32, 28), (4, 32, 28)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "2",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 55), (4, 32, 55), (4, 32, 55)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "0",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32), (4, 32, 32), (4, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "3",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 86), (4, 32, 86), (4, 32, 86)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "4",
+            "padding": "0",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 125), (4, 32, 125), (4, 32, 125)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "9",
+            "stride": "3",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "5",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 28), (4, 32, 28), (4, 32, 28)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 36), (4, 32, 36), (4, 32, 36)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "4",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 117), (4, 32, 117), (4, 32, 117)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 26), (4, 32, 26), (4, 32, 26)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "40"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "40"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 44), (4, 32, 44), (4, 32, 44)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "40"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "3",
+            "padding": "4",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "10"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "5",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "40"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "5",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 172), (4, 32, 172), (4, 32, 172)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "4",
+            "padding": "4",
+            "output_padding": "3",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 120), (4, 32, 120), (4, 32, 120)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 28), (4, 32, 28), (4, 32, 28)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "9",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 50), (4, 32, 50), (4, 32, 50)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "40"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "5",
+            "padding": "3",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 157), (4, 32, 157), (4, 32, 157)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 26), (4, 32, 26), (4, 32, 26)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 30), (4, 32, 30), (4, 32, 30)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "9",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 49), (4, 32, 49), (4, 32, 49)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "3",
+            "padding": "4",
+            "output_padding": "4",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "10"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 36), (4, 32, 36), (4, 32, 36)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "10"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "5",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 148), (4, 32, 148), (4, 32, 148)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 24), (4, 32, 24), (4, 32, 24)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "3",
+            "padding": "4",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 87), (4, 32, 87), (4, 32, 87)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "4",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "20"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "2",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "40"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 30), (4, 32, 30), (4, 32, 30)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "3",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 94), (4, 32, 94), (4, 32, 94)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "3",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "40"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "4",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "5",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "10"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "9",
+            "stride": "1",
+            "padding": "0",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 48), (4, 32, 48), (4, 32, 48)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "4",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "10"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 26), (4, 32, 26), (4, 32, 26)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "5",
+            "padding": "4",
+            "output_padding": "4",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 152), (4, 32, 152), (4, 32, 152)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "2",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 55), (4, 32, 55), (4, 32, 55)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "3",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 86), (4, 32, 86), (4, 32, 86)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 24), (4, 32, 24), (4, 32, 24)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "2",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 57), (4, 32, 57), (4, 32, 57)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 30), (4, 32, 30), (4, 32, 30)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "9",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 40), (4, 32, 40), (4, 32, 40)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "4",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "40"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "4",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 117), (4, 32, 117), (4, 32, 117)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 24), (4, 32, 24), (4, 32, 24)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "10"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "0",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "9",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "20"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "3",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 86), (4, 32, 86), (4, 32, 86)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "4",
+            "padding": "4",
+            "output_padding": "3",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 120), (4, 32, 120), (4, 32, 120)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "9",
+            "stride": "5",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 174), (4, 32, 174), (4, 32, 174)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "10"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "0",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "10"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "2",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 55), (4, 32, 55), (4, 32, 55)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "20"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "5",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 150), (4, 32, 150), (4, 32, 150)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 26), (4, 32, 26), (4, 32, 26)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "20"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "2",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "10"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "0",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32), (4, 32, 32), (4, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 28), (4, 32, 28), (4, 32, 28)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 34), (4, 32, 34), (4, 32, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "9",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 56), (4, 32, 56), (4, 32, 56)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "10"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "20"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "2",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 67), (4, 32, 67), (4, 32, 67)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "40"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 29), (4, 32, 29), (4, 32, 29)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "40"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 42), (4, 32, 42), (4, 32, 42)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "0",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "40"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "40"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "3",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 104), (4, 32, 104), (4, 32, 104)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "0",
+            "output_padding": "3",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "5",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 148), (4, 32, 148), (4, 32, 148)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 25), (4, 32, 25), (4, 32, 25)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "2",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 71), (4, 32, 71), (4, 32, 71)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "2",
+            "padding": "3",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 76), (4, 32, 76), (4, 32, 76)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "0",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "20"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "40"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "3",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "9",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 54), (4, 32, 54), (4, 32, 54)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "5",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 162), (4, 32, 162), (4, 32, 162)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 30), (4, 32, 30), (4, 32, 30)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "9",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "20"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "40"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 38), (4, 32, 38), (4, 32, 38)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "2",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 55), (4, 32, 55), (4, 32, 55)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "10"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "3",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 90), (4, 32, 90), (4, 32, 90)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "10"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "5",
+            "padding": "4",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 162), (4, 32, 162), (4, 32, 162)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "5",
+            "padding": "4",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 159), (4, 32, 159), (4, 32, 159)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "40"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "9",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 48), (4, 32, 48), (4, 32, 48)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 28), (4, 32, 28), (4, 32, 28)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "10"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "40"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "4",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 129), (4, 32, 129), (4, 32, 129)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 30), (4, 32, 30), (4, 32, 30)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "4",
+            "padding": "4",
+            "output_padding": "4",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "10"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "4",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 117), (4, 32, 117), (4, 32, 117)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "4",
+            "padding": "3",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 121), (4, 32, 121), (4, 32, 121)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "40"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 27), (4, 32, 27), (4, 32, 27)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "4",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 42), (4, 32, 42), (4, 32, 42)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 42), (4, 32, 42), (4, 32, 42)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "4",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "inputs": "[Tensor(shape=torch.Size([4, 16, 32]))]",
+            "output_size": "30"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"object of type 'int' has no len()\", (\"object of type 'int' has no len()\", \"object of type 'int' has no len()\", \"object of type 'int' has no len()\"))",
+        "error_message": "object of type 'int' has no len()"
+    }
+]

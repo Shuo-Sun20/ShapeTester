@@ -1,0 +1,1036 @@
+[
+    {
+        "test_case": {
+            "subscripts": "ii",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"aa\", expecting 1', ('Got 2 inputs for equation \"aa\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ii.'))",
+        "error_message": "Got 2 inputs for equation \"aa\", expecting 1",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "ii->i",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"aa->a\", expecting 1', ('Got 2 inputs for equation \"aa->a\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ii->i.'))",
+        "error_message": "Got 2 inputs for equation \"aa->a\", expecting 1",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "ij->i",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"ab->a\", expecting 1', ('Got 2 inputs for equation \"ab->a\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ij->i.'))",
+        "error_message": "Got 2 inputs for equation \"ab->a\", expecting 1",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "ij->j",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"ab->b\", expecting 1', ('Got 2 inputs for equation \"ab->b\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ij->j.'))",
+        "error_message": "Got 2 inputs for equation \"ab->b\", expecting 1",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "ij->ij",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"ab->ab\", expecting 1', ('Got 2 inputs for equation \"ab->ab\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ij->ij.'))",
+        "error_message": "Got 2 inputs for equation \"ab->ab\", expecting 1",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "ij->ji",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"ab->ba\", expecting 1', ('Got 2 inputs for equation \"ab->ba\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ij->ji.'))",
+        "error_message": "Got 2 inputs for equation \"ab->ba\", expecting 1",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "ij,jk->ik",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 5), (None, 5)))"
+    },
+    {
+        "test_case": {
+            "subscripts": "ij,j->i",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(7,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklBatchMatMulV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,4], In[1]: [4,5,1] 0 0 [Op:BatchMatMulV2] name: ', ('{{function_node __wrapped____MklBatchMatMulV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,4], In[1]: [4,5,1] 0 0 [Op:BatchMatMulV2] name: ', 'Number of dimensions in the subscript does not match the number of dimensions in the operand, received subscript `j` and operand of shape [-1, 5].'))",
+        "error_message": "{{function_node __wrapped____MklBatchMatMulV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,4], In[1]: [4,5,1] 0 0 [Op:BatchMatMulV2] name: ",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "i,i->",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(8,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklEinsum_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected input 0 to have rank 1 but got: 2 [Op:Einsum] name: ', ('{{function_node __wrapped____MklEinsum_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected input 0 to have rank 1 but got: 2 [Op:Einsum] name: ', 'Number of dimensions in the subscript does not match the number of dimensions in the operand, received subscript `i` and operand of shape [-1, 4].'))",
+        "error_message": "{{function_node __wrapped____MklEinsum_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected input 0 to have rank 1 but got: 2 [Op:Einsum] name: ",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "i,j->ij",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(9,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklBatchMatMulV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,4,1], In[1]: [1,4,5] 0 0 [Op:BatchMatMulV2] name: ', ('{{function_node __wrapped____MklBatchMatMulV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,4,1], In[1]: [1,4,5] 0 0 [Op:BatchMatMulV2] name: ', 'Number of dimensions in the subscript does not match the number of dimensions in the operand, received subscript `i` and operand of shape [-1, 4].'))",
+        "error_message": "{{function_node __wrapped____MklBatchMatMulV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,4,1], In[1]: [1,4,5] 0 0 [Op:BatchMatMulV2] name: ",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "ij,ij->ij",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(10,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklEinsum_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected dimension 3 at axis 0 of the input shaped [4,5] but got dimension 4 [Op:Einsum] name: ', ('{{function_node __wrapped____MklEinsum_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected dimension 3 at axis 0 of the input shaped [4,5] but got dimension 4 [Op:Einsum] name: ', 'Cannot broadcast shape, the failure dim has value 4, which cannot be broadcasted to 5. Input shapes are: [None, 4] and [None, 5].'))",
+        "error_message": "{{function_node __wrapped____MklEinsum_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected dimension 3 at axis 0 of the input shaped [4,5] but got dimension 4 [Op:Einsum] name: ",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "ij,jk,kl->il",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(11,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"ab,bc,cd->ad\", expecting 3', ('Got 2 inputs for equation \"ab,bc,cd->ad\", expecting 3', 'Number of operands (2) does not match the number of input specs (3) in `einsum`, received subscripts=ij,jk,kl->il.'))",
+        "error_message": "Got 2 inputs for equation \"ab,bc,cd->ad\", expecting 3",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "ijk,jkl->il",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(12,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklEinsum_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected input 0 to have rank 3 but got: 2 [Op:Einsum] name: ', ('{{function_node __wrapped____MklEinsum_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected input 0 to have rank 3 but got: 2 [Op:Einsum] name: ', 'Number of dimensions in the subscript does not match the number of dimensions in the operand, received subscript `ijk` and operand of shape [-1, 4].'))",
+        "error_message": "{{function_node __wrapped____MklEinsum_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected input 0 to have rank 3 but got: 2 [Op:Einsum] name: ",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "ijk->i",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(13,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"abc->a\", expecting 1', ('Got 2 inputs for equation \"abc->a\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ijk->i.'))",
+        "error_message": "Got 2 inputs for equation \"abc->a\", expecting 1",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "ijk->j",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(14,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"abc->b\", expecting 1', ('Got 2 inputs for equation \"abc->b\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ijk->j.'))",
+        "error_message": "Got 2 inputs for equation \"abc->b\", expecting 1",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "ijk->k",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(15,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"abc->c\", expecting 1', ('Got 2 inputs for equation \"abc->c\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ijk->k.'))",
+        "error_message": "Got 2 inputs for equation \"abc->c\", expecting 1",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "ijk->ij",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(16,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"abc->ab\", expecting 1', ('Got 2 inputs for equation \"abc->ab\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ijk->ij.'))",
+        "error_message": "Got 2 inputs for equation \"abc->ab\", expecting 1",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "ijk->ik",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(17,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"abc->ac\", expecting 1', ('Got 2 inputs for equation \"abc->ac\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ijk->ik.'))",
+        "error_message": "Got 2 inputs for equation \"abc->ac\", expecting 1",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "ijk->jk",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(18,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"abc->bc\", expecting 1', ('Got 2 inputs for equation \"abc->bc\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ijk->jk.'))",
+        "error_message": "Got 2 inputs for equation \"abc->bc\", expecting 1",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "...ii->...i",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(19,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"...aa->...a\", expecting 1', ('Got 2 inputs for equation \"...aa->...a\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=...ii->...i.'))",
+        "error_message": "Got 2 inputs for equation \"...aa->...a\", expecting 1",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "...ij->...i",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(20,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"...ab->...a\", expecting 1', ('Got 2 inputs for equation \"...ab->...a\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=...ij->...i.'))",
+        "error_message": "Got 2 inputs for equation \"...ab->...a\", expecting 1",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "...ij,...jk->...ik",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(21,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 5), (None, 5)))"
+    },
+    {
+        "test_case": {
+            "subscripts": "i->i",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(22,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"a->a\", expecting 1', ('Got 2 inputs for equation \"a->a\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=i->i.'))",
+        "error_message": "Got 2 inputs for equation \"a->a\", expecting 1",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "->",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(23,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"->\", expecting 1', ('Got 2 inputs for equation \"->\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=->.'))",
+        "error_message": "Got 2 inputs for equation \"->\", expecting 1",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "i->",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(24,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"a->\", expecting 1', ('Got 2 inputs for equation \"a->\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=i->.'))",
+        "error_message": "Got 2 inputs for equation \"a->\", expecting 1",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 0]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(25,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'list index out of range', ('list index out of range', 'list index out of range'))",
+        "error_message": "list index out of range",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 0], [0]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(26,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key.",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1], [0]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(27,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key.",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1], [1]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(28,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key.",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1], [0, 1]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(29,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key.",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1], [1, 0]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(30,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key.",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1], [1, 2], [0, 2]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(31,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key.",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1], [1], [0]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(32,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key.",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0], [0], []]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(33,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key.",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0], [1], [0, 1]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(34,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key.",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1], [0, 1], [0, 1]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(35,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key.",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1], [1, 2], [2, 3], [0, 3]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(36,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key.",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1, 2], [1, 2, 3], [0, 3]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(37,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key.",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1, 2], [0]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(38,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key.",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1, 2], [1]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(39,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key.",
+        "conflict_params": [
+            "subscripts"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1, 2], [2]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(40,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key.",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1, 2], [0, 1]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(41,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key.",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1, 2], [0, 2]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(42,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key.",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1, 2], [1, 2]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(43,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key.",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0], [0]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(44,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key.",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(45,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'list index out of range', ('list index out of range', 'list index out of range'))",
+        "error_message": "list index out of range",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0], []]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "segment": "(46,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key.",
+        "conflict_params": [
+            "subscripts",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "subscripts": "ijk->ik",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"abc->ac\", expecting 1', ('Got 2 inputs for equation \"abc->ac\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ijk->ik.'))",
+        "error_message": "Got 2 inputs for equation \"abc->ac\", expecting 1"
+    },
+    {
+        "test_case": {
+            "subscripts": "ij->ji",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"ab->ba\", expecting 1', ('Got 2 inputs for equation \"ab->ba\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ij->ji.'))",
+        "error_message": "Got 2 inputs for equation \"ab->ba\", expecting 1"
+    },
+    {
+        "test_case": {
+            "subscripts": "ijk,jkl->il",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklEinsum_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected input 0 to have rank 3 but got: 2 [Op:Einsum] name: ', ('{{function_node __wrapped____MklEinsum_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected input 0 to have rank 3 but got: 2 [Op:Einsum] name: ', 'Number of dimensions in the subscript does not match the number of dimensions in the operand, received subscript `ijk` and operand of shape [-1, 4].'))",
+        "error_message": "{{function_node __wrapped____MklEinsum_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected input 0 to have rank 3 but got: 2 [Op:Einsum] name: "
+    },
+    {
+        "test_case": {
+            "subscripts": "ij,ij->ij",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklEinsum_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected dimension 3 at axis 0 of the input shaped [4,5] but got dimension 4 [Op:Einsum] name: ', ('{{function_node __wrapped____MklEinsum_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected dimension 3 at axis 0 of the input shaped [4,5] but got dimension 4 [Op:Einsum] name: ', 'Cannot broadcast shape, the failure dim has value 4, which cannot be broadcasted to 5. Input shapes are: [None, 4] and [None, 5].'))",
+        "error_message": "{{function_node __wrapped____MklEinsum_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected dimension 3 at axis 0 of the input shaped [4,5] but got dimension 4 [Op:Einsum] name: "
+    },
+    {
+        "test_case": {
+            "subscripts": "i->",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"a->\", expecting 1', ('Got 2 inputs for equation \"a->\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=i->.'))",
+        "error_message": "Got 2 inputs for equation \"a->\", expecting 1"
+    },
+    {
+        "test_case": {
+            "subscripts": "i->i",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"a->a\", expecting 1', ('Got 2 inputs for equation \"a->a\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=i->i.'))",
+        "error_message": "Got 2 inputs for equation \"a->a\", expecting 1"
+    },
+    {
+        "test_case": {
+            "subscripts": "ijk->j",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"abc->b\", expecting 1', ('Got 2 inputs for equation \"abc->b\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ijk->j.'))",
+        "error_message": "Got 2 inputs for equation \"abc->b\", expecting 1"
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0], []]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key."
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1, 2], [2]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key."
+    },
+    {
+        "test_case": {
+            "subscripts": "...ij->...i",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"...ab->...a\", expecting 1', ('Got 2 inputs for equation \"...ab->...a\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=...ij->...i.'))",
+        "error_message": "Got 2 inputs for equation \"...ab->...a\", expecting 1"
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1], [1, 2], [2, 3], [0, 3]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key."
+    },
+    {
+        "test_case": {
+            "subscripts": "i,i->",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklEinsum_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected input 0 to have rank 1 but got: 2 [Op:Einsum] name: ', ('{{function_node __wrapped____MklEinsum_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected input 0 to have rank 1 but got: 2 [Op:Einsum] name: ', 'Number of dimensions in the subscript does not match the number of dimensions in the operand, received subscript `i` and operand of shape [-1, 4].'))",
+        "error_message": "{{function_node __wrapped____MklEinsum_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Expected input 0 to have rank 1 but got: 2 [Op:Einsum] name: "
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1, 2], [1, 2, 3], [0, 3]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key."
+    },
+    {
+        "test_case": {
+            "subscripts": "ij->j",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"ab->b\", expecting 1', ('Got 2 inputs for equation \"ab->b\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ij->j.'))",
+        "error_message": "Got 2 inputs for equation \"ab->b\", expecting 1"
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0], [1], [0, 1]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key."
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1, 2], [0, 2]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key."
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0], [0], []]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key."
+    },
+    {
+        "test_case": {
+            "subscripts": "ij->ij",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"ab->ab\", expecting 1', ('Got 2 inputs for equation \"ab->ab\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ij->ij.'))",
+        "error_message": "Got 2 inputs for equation \"ab->ab\", expecting 1"
+    },
+    {
+        "test_case": {
+            "subscripts": "ijk->k",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"abc->c\", expecting 1', ('Got 2 inputs for equation \"abc->c\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ijk->k.'))",
+        "error_message": "Got 2 inputs for equation \"abc->c\", expecting 1"
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1], [1, 0]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key."
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 0], [0]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key."
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1], [1]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key."
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1], [0, 1], [0, 1]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key."
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1], [1, 2], [0, 2]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key."
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1], [0, 1]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key."
+    },
+    {
+        "test_case": {
+            "subscripts": "ijk->jk",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"abc->bc\", expecting 1', ('Got 2 inputs for equation \"abc->bc\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ijk->jk.'))",
+        "error_message": "Got 2 inputs for equation \"abc->bc\", expecting 1"
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1], [1], [0]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key."
+    },
+    {
+        "test_case": {
+            "subscripts": "ij,jk,kl->il",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"ab,bc,cd->ad\", expecting 3', ('Got 2 inputs for equation \"ab,bc,cd->ad\", expecting 3', 'Number of operands (2) does not match the number of input specs (3) in `einsum`, received subscripts=ij,jk,kl->il.'))",
+        "error_message": "Got 2 inputs for equation \"ab,bc,cd->ad\", expecting 3"
+    },
+    {
+        "test_case": {
+            "subscripts": "ij,j->i",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklBatchMatMulV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,4], In[1]: [4,5,1] 0 0 [Op:BatchMatMulV2] name: ', ('{{function_node __wrapped____MklBatchMatMulV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,4], In[1]: [4,5,1] 0 0 [Op:BatchMatMulV2] name: ', 'Number of dimensions in the subscript does not match the number of dimensions in the operand, received subscript `j` and operand of shape [-1, 5].'))",
+        "error_message": "{{function_node __wrapped____MklBatchMatMulV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,4], In[1]: [4,5,1] 0 0 [Op:BatchMatMulV2] name: "
+    },
+    {
+        "test_case": {
+            "subscripts": "[[]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'list index out of range', ('list index out of range', 'list index out of range'))",
+        "error_message": "list index out of range"
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1, 2], [1]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key."
+    },
+    {
+        "test_case": {
+            "subscripts": "ijk->i",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"abc->a\", expecting 1', ('Got 2 inputs for equation \"abc->a\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ijk->i.'))",
+        "error_message": "Got 2 inputs for equation \"abc->a\", expecting 1"
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1], [0]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key."
+    },
+    {
+        "test_case": {
+            "subscripts": "->",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"->\", expecting 1', ('Got 2 inputs for equation \"->\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=->.'))",
+        "error_message": "Got 2 inputs for equation \"->\", expecting 1"
+    },
+    {
+        "test_case": {
+            "subscripts": "ij->i",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"ab->a\", expecting 1', ('Got 2 inputs for equation \"ab->a\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ij->i.'))",
+        "error_message": "Got 2 inputs for equation \"ab->a\", expecting 1"
+    },
+    {
+        "test_case": {
+            "subscripts": "ii->i",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"aa->a\", expecting 1', ('Got 2 inputs for equation \"aa->a\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ii->i.'))",
+        "error_message": "Got 2 inputs for equation \"aa->a\", expecting 1"
+    },
+    {
+        "test_case": {
+            "subscripts": "ijk->ij",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"abc->ab\", expecting 1', ('Got 2 inputs for equation \"abc->ab\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ijk->ij.'))",
+        "error_message": "Got 2 inputs for equation \"abc->ab\", expecting 1"
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 1, 2], [0]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key."
+    },
+    {
+        "test_case": {
+            "subscripts": "...ii->...i",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"...aa->...a\", expecting 1', ('Got 2 inputs for equation \"...aa->...a\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=...ii->...i.'))",
+        "error_message": "Got 2 inputs for equation \"...aa->...a\", expecting 1"
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0], [0]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Tensor is unhashable. Instead, use tensor.ref() as the key.', ('Tensor is unhashable. Instead, use tensor.ref() as the key.', \"'KerasTensor' object has no attribute 'split'\"))",
+        "error_message": "Tensor is unhashable. Instead, use tensor.ref() as the key."
+    },
+    {
+        "test_case": {
+            "subscripts": "i,j->ij",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklBatchMatMulV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,4,1], In[1]: [1,4,5] 0 0 [Op:BatchMatMulV2] name: ', ('{{function_node __wrapped____MklBatchMatMulV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,4,1], In[1]: [1,4,5] 0 0 [Op:BatchMatMulV2] name: ', 'Number of dimensions in the subscript does not match the number of dimensions in the operand, received subscript `i` and operand of shape [-1, 4].'))",
+        "error_message": "{{function_node __wrapped____MklBatchMatMulV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [3,4,1], In[1]: [1,4,5] 0 0 [Op:BatchMatMulV2] name: "
+    },
+    {
+        "test_case": {
+            "subscripts": "ii",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Got 2 inputs for equation \"aa\", expecting 1', ('Got 2 inputs for equation \"aa\", expecting 1', 'Number of operands (2) does not match the number of input specs (1) in `einsum`, received subscripts=ii.'))",
+        "error_message": "Got 2 inputs for equation \"aa\", expecting 1"
+    },
+    {
+        "test_case": {
+            "subscripts": "[[0, 0]]",
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 5))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'list index out of range', ('list index out of range', 'list index out of range'))",
+        "error_message": "list index out of range"
+    }
+]

@@ -1,0 +1,1457 @@
+[
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "training_endpoint",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "bfloat16",
+            "training": "True"
+        },
+        "segment": "(0, 3, 0, 3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", (\"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\"))",
+        "error_message": "The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']",
+        "conflict_params": [
+            "call_training_endpoint",
+            "training"
+        ]
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "None",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "None",
+            "training": "False"
+        },
+        "segment": "(0, 0, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1), (None, 1)))"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "serving_default",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "float32",
+            "training": "False"
+        },
+        "segment": "(1, 2, 1, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Output does not have a shape attribute.', ('Output does not have a shape attribute.', 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Output does not have a shape attribute.",
+        "conflict_params": [
+            "call_endpoint",
+            "call_training_endpoint"
+        ]
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "serve",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float64",
+            "training": "True"
+        },
+        "segment": "(1, 1, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_11' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=float64>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float64, sparse=False, ragged=False, name=keras_tensor_7829>',)\\n  \u2022 kwargs={'training': 'True'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\n  \u2022 training=True\n  \u2022 kwargs=<class 'inspect._empty'>",
+        "conflict_params": [
+            "inputs",
+            "dtype"
+        ]
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serve",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "float16",
+            "training": "False"
+        },
+        "segment": "(0, 1, 1, 4, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\\n        0.63   , 0.9326 , 0.2632 ],\\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\\n        0.63   , 0.9326 , 0.2632 ],\\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_17' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=float16>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float16, sparse=False, ragged=False, name=keras_tensor_7833>',)\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\n        0.63   , 0.9326 , 0.2632 ],\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>",
+        "conflict_params": [
+            "dtype"
+        ]
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serving_default",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float32",
+            "training": "True"
+        },
+        "segment": "(0, 2, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Output does not have a shape attribute.', ('Output does not have a shape attribute.', 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Output does not have a shape attribute.",
+        "conflict_params": [
+            "call_training_endpoint",
+            "training"
+        ]
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "training_endpoint",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "bfloat16",
+            "training": "False"
+        },
+        "segment": "(1, 3, 1, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", (\"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\"))",
+        "error_message": "The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']",
+        "conflict_params": [
+            "call_training_endpoint"
+        ]
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "None",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "None",
+            "training": "True"
+        },
+        "segment": "(1, 0, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Output does not have a shape attribute.', ('Output does not have a shape attribute.', 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Output does not have a shape attribute.",
+        "conflict_params": [
+            "call_endpoint",
+            "call_training_endpoint",
+            "training"
+        ]
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "None",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "float64",
+            "training": "False"
+        },
+        "segment": "(0, 0, 1, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_25' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=float64>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float64, sparse=False, ragged=False, name=keras_tensor_7840>',)\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>",
+        "conflict_params": [
+            "inputs",
+            "dtype"
+        ]
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serve",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "None",
+            "training": "True"
+        },
+        "segment": "(0, 1, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1), (None, 1)))"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serve",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float32",
+            "training": "True"
+        },
+        "segment": "(0, 1, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1), (None, 1)))"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serve",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "bfloat16",
+            "training": "True"
+        },
+        "segment": "(0, 1, 0, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_35' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=bfloat16>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=bfloat16, sparse=False, ragged=False, name=keras_tensor_7848>',)\\n  \u2022 kwargs={'training': 'True'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\n        0.345703, 0.628906, 0.933594, 0.263672],\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\n  \u2022 training=True\n  \u2022 kwargs=<class 'inspect._empty'>",
+        "conflict_params": [
+            "dtype",
+            "call_training_endpoint",
+            "training"
+        ]
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "None",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float32",
+            "training": "True"
+        },
+        "segment": "(0, 0, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1), (None, 1)))"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "None",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "bfloat16",
+            "training": "True"
+        },
+        "segment": "(0, 0, 0, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_39' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=bfloat16>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=bfloat16, sparse=False, ragged=False, name=keras_tensor_7852>',)\\n  \u2022 kwargs={'training': 'True'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\n        0.345703, 0.628906, 0.933594, 0.263672],\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\n  \u2022 training=True\n  \u2022 kwargs=<class 'inspect._empty'>",
+        "conflict_params": [
+            "dtype",
+            "training"
+        ]
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serving_default",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "None",
+            "training": "False"
+        },
+        "segment": "(0, 2, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1), (None, 1)))"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serving_default",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float64",
+            "training": "False"
+        },
+        "segment": "(0, 2, 1, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_43' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=float64>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float64, sparse=False, ragged=False, name=keras_tensor_7856>',)\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>",
+        "conflict_params": [
+            "inputs",
+            "dtype"
+        ]
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serving_default",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "bfloat16",
+            "training": "False"
+        },
+        "segment": "(0, 2, 1, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_49' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=bfloat16>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=bfloat16, sparse=False, ragged=False, name=keras_tensor_7860>',)\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\n        0.345703, 0.628906, 0.933594, 0.263672],\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>",
+        "conflict_params": [
+            "dtype"
+        ]
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "None",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "None",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Output does not have a shape attribute.', ('Output does not have a shape attribute.', 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Output does not have a shape attribute."
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serve",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "None",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1), (None, 1)))"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "training_endpoint",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "None",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", (\"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\"))",
+        "error_message": "The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serve",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "None",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1), (None, 1)))"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "None",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "None",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1), (None, 1)))"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serve",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "None",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1), (None, 1)))"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serve",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float64",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_63' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=float64>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float64, sparse=False, ragged=False, name=keras_tensor_7873>',)\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serve",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float16",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\\n        0.63   , 0.9326 , 0.2632 ],\\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\\n        0.63   , 0.9326 , 0.2632 ],\\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_65' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=float16>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float16, sparse=False, ragged=False, name=keras_tensor_7875>',)\\n  \u2022 kwargs={'training': 'True'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\n        0.63   , 0.9326 , 0.2632 ],\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\n  \u2022 training=True\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "training_endpoint",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float16",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", (\"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\"))",
+        "error_message": "The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serve",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float32",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1), (None, 1)))"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serving_default",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "float32",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1), (None, 1)))"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "None",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "None",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1), (None, 1)))"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "None",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "bfloat16",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_75' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=bfloat16>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=bfloat16, sparse=False, ragged=False, name=keras_tensor_7884>',)\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\n        0.345703, 0.628906, 0.933594, 0.263672],\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "None",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "None",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Output does not have a shape attribute.', ('Output does not have a shape attribute.', 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Output does not have a shape attribute."
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "serve",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "None",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1), (None, 1)))"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serving_default",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "None",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1), (None, 1)))"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "serve",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "None",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Output does not have a shape attribute.', ('Output does not have a shape attribute.', 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Output does not have a shape attribute."
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serving_default",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "None",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Output does not have a shape attribute.', ('Output does not have a shape attribute.', 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Output does not have a shape attribute."
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serve",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "float64",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_87' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=float64>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float64, sparse=False, ragged=False, name=keras_tensor_7896>',)\\n  \u2022 kwargs={'training': 'True'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\n  \u2022 training=True\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "None",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float64",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mcannot compute __inference_signature_wrapper___call___623097 as input #0(zero-based) was expected to be a float tensor but is a double tensor [Op:__inference_signature_wrapper___call___623097]\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mcannot compute __inference_signature_wrapper___call___623097 as input #0(zero-based) was expected to be a float tensor but is a double tensor [Op:__inference_signature_wrapper___call___623097]\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mcannot compute __inference_signature_wrapper___call___623097 as input #0(zero-based) was expected to be a float tensor but is a double tensor [Op:__inference_signature_wrapper___call___623097]\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\n  \u2022 training=True\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "None",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float16",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\\n        0.63   , 0.9326 , 0.2632 ],\\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\\n        0.63   , 0.9326 , 0.2632 ],\\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_91' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=float16>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float16, sparse=False, ragged=False, name=keras_tensor_7901>',)\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\n        0.63   , 0.9326 , 0.2632 ],\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "training_endpoint",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "None",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", (\"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\"))",
+        "error_message": "The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "None",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float64",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_95' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=float64>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float64, sparse=False, ragged=False, name=keras_tensor_7904>',)\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "training_endpoint",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "None",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", (\"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\"))",
+        "error_message": "The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serve",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "bfloat16",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_99' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=bfloat16>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=bfloat16, sparse=False, ragged=False, name=keras_tensor_7907>',)\\n  \u2022 kwargs={'training': 'True'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\n        0.345703, 0.628906, 0.933594, 0.263672],\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\n  \u2022 training=True\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "None",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float64",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_101' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=float64>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float64, sparse=False, ragged=False, name=keras_tensor_7909>',)\\n  \u2022 kwargs={'training': 'True'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\n  \u2022 training=True\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serve",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "bfloat16",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_103' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=bfloat16>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=bfloat16, sparse=False, ragged=False, name=keras_tensor_7911>',)\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\n        0.345703, 0.628906, 0.933594, 0.263672],\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "None",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float32",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1), (None, 1)))"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "training_endpoint",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "None",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", (\"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\"))",
+        "error_message": "The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "None",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "None",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1), (None, 1)))"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "training_endpoint",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "None",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", (\"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\"))",
+        "error_message": "The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "training_endpoint",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float32",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", (\"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\"))",
+        "error_message": "The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "serve",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "None",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1), (None, 1)))"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serving_default",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "bfloat16",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_117' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=bfloat16>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=bfloat16, sparse=False, ragged=False, name=keras_tensor_7922>',)\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\n        0.345703, 0.628906, 0.933594, 0.263672],\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "None",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float16",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mcannot compute __inference_signature_wrapper___call___628735 as input #0(zero-based) was expected to be a float tensor but is a half tensor [Op:__inference_signature_wrapper___call___628735]\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mcannot compute __inference_signature_wrapper___call___628735 as input #0(zero-based) was expected to be a float tensor but is a half tensor [Op:__inference_signature_wrapper___call___628735]\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mcannot compute __inference_signature_wrapper___call___628735 as input #0(zero-based) was expected to be a float tensor but is a half tensor [Op:__inference_signature_wrapper___call___628735]\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "None",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float16",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mcannot compute __inference_signature_wrapper___call___629158 as input #0(zero-based) was expected to be a float tensor but is a half tensor [Op:__inference_signature_wrapper___call___629158]\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mcannot compute __inference_signature_wrapper___call___629158 as input #0(zero-based) was expected to be a float tensor but is a half tensor [Op:__inference_signature_wrapper___call___629158]\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mcannot compute __inference_signature_wrapper___call___629158 as input #0(zero-based) was expected to be a float tensor but is a half tensor [Op:__inference_signature_wrapper___call___629158]\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\n  \u2022 training=True\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serving_default",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "float64",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mcannot compute __inference_signature_wrapper___call___629507 as input #0(zero-based) was expected to be a float tensor but is a double tensor [Op:__inference_signature_wrapper___call___629507]\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mcannot compute __inference_signature_wrapper___call___629507 as input #0(zero-based) was expected to be a float tensor but is a double tensor [Op:__inference_signature_wrapper___call___629507]\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mcannot compute __inference_signature_wrapper___call___629507 as input #0(zero-based) was expected to be a float tensor but is a double tensor [Op:__inference_signature_wrapper___call___629507]\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\n  \u2022 training=True\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "None",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float64",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mcannot compute __inference_signature_wrapper___call___629930 as input #0(zero-based) was expected to be a float tensor but is a double tensor [Op:__inference_signature_wrapper___call___629930]\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mcannot compute __inference_signature_wrapper___call___629930 as input #0(zero-based) was expected to be a float tensor but is a double tensor [Op:__inference_signature_wrapper___call___629930]\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mcannot compute __inference_signature_wrapper___call___629930 as input #0(zero-based) was expected to be a float tensor but is a double tensor [Op:__inference_signature_wrapper___call___629930]\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "serving_default",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "None",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Output does not have a shape attribute.', ('Output does not have a shape attribute.', 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Output does not have a shape attribute."
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serving_default",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float32",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Output does not have a shape attribute.', ('Output does not have a shape attribute.', 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Output does not have a shape attribute."
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serve",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float64",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_131' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=float64>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float64, sparse=False, ragged=False, name=keras_tensor_7940>',)\\n  \u2022 kwargs={'training': 'True'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\n  \u2022 training=True\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "None",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "None",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Output does not have a shape attribute.', ('Output does not have a shape attribute.', 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Output does not have a shape attribute."
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "None",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "bfloat16",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mcannot compute __inference_signature_wrapper___call___631888 as input #0(zero-based) was expected to be a float tensor but is a bfloat16 tensor [Op:__inference_signature_wrapper___call___631888]\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mcannot compute __inference_signature_wrapper___call___631888 as input #0(zero-based) was expected to be a float tensor but is a bfloat16 tensor [Op:__inference_signature_wrapper___call___631888]\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mcannot compute __inference_signature_wrapper___call___631888 as input #0(zero-based) was expected to be a float tensor but is a bfloat16 tensor [Op:__inference_signature_wrapper___call___631888]\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "None",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "bfloat16",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_137' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=bfloat16>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=bfloat16, sparse=False, ragged=False, name=keras_tensor_7947>',)\\n  \u2022 kwargs={'training': 'True'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\n        0.345703, 0.628906, 0.933594, 0.263672],\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\n  \u2022 training=True\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serving_default",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "float16",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mcannot compute __inference_signature_wrapper___call___632651 as input #0(zero-based) was expected to be a float tensor but is a half tensor [Op:__inference_signature_wrapper___call___632651]\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mcannot compute __inference_signature_wrapper___call___632651 as input #0(zero-based) was expected to be a float tensor but is a half tensor [Op:__inference_signature_wrapper___call___632651]\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mcannot compute __inference_signature_wrapper___call___632651 as input #0(zero-based) was expected to be a float tensor but is a half tensor [Op:__inference_signature_wrapper___call___632651]\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\n  \u2022 training=True\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serve",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "bfloat16",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_141' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=bfloat16>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=bfloat16, sparse=False, ragged=False, name=keras_tensor_7952>',)\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\n        0.345703, 0.628906, 0.933594, 0.263672],\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "serve",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float16",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\\n        0.63   , 0.9326 , 0.2632 ],\\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\\n        0.63   , 0.9326 , 0.2632 ],\\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_143' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=float16>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float16, sparse=False, ragged=False, name=keras_tensor_7954>',)\\n  \u2022 kwargs={'training': 'True'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\n        0.63   , 0.9326 , 0.2632 ],\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\n  \u2022 training=True\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "training_endpoint",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "float64",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", (\"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\"))",
+        "error_message": "The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "training_endpoint",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float64",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", (\"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\"))",
+        "error_message": "The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "training_endpoint",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "None",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", (\"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\"))",
+        "error_message": "The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "None",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float16",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\\n        0.63   , 0.9326 , 0.2632 ],\\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\\n        0.63   , 0.9326 , 0.2632 ],\\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_151' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=float16>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float16, sparse=False, ragged=False, name=keras_tensor_7959>',)\\n  \u2022 kwargs={'training': 'True'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\n        0.63   , 0.9326 , 0.2632 ],\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\n  \u2022 training=True\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "serving_default",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float64",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mcannot compute __inference_signature_wrapper___call___635546 as input #0(zero-based) was expected to be a float tensor but is a double tensor [Op:__inference_signature_wrapper___call___635546]\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mcannot compute __inference_signature_wrapper___call___635546 as input #0(zero-based) was expected to be a float tensor but is a double tensor [Op:__inference_signature_wrapper___call___635546]\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mcannot compute __inference_signature_wrapper___call___635546 as input #0(zero-based) was expected to be a float tensor but is a double tensor [Op:__inference_signature_wrapper___call___635546]\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "training_endpoint",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "bfloat16",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", (\"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\"))",
+        "error_message": "The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serve",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "bfloat16",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_157' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=bfloat16>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=bfloat16, sparse=False, ragged=False, name=keras_tensor_7965>',)\\n  \u2022 kwargs={'training': 'True'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\n        0.345703, 0.628906, 0.933594, 0.263672],\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\n  \u2022 training=True\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "None",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float32",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Output does not have a shape attribute.', ('Output does not have a shape attribute.', 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Output does not have a shape attribute."
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serving_default",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float64",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_161' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=float64>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float64, sparse=False, ragged=False, name=keras_tensor_7969>',)\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serving_default",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float32",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1), (None, 1)))"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serving_default",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "None",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Output does not have a shape attribute.', ('Output does not have a shape attribute.', 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Output does not have a shape attribute."
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serve",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float16",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\\n        0.63   , 0.9326 , 0.2632 ],\\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\\n        0.63   , 0.9326 , 0.2632 ],\\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_167' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=float16>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float16, sparse=False, ragged=False, name=keras_tensor_7975>',)\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\n        0.63   , 0.9326 , 0.2632 ],\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "None",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "float32",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1), (None, 1)))"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "training_endpoint",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "None",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", (\"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\"))",
+        "error_message": "The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "serving_default",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float16",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mcannot compute __inference_signature_wrapper___call___639553 as input #0(zero-based) was expected to be a float tensor but is a half tensor [Op:__inference_signature_wrapper___call___639553]\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mcannot compute __inference_signature_wrapper___call___639553 as input #0(zero-based) was expected to be a float tensor but is a half tensor [Op:__inference_signature_wrapper___call___639553]\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mcannot compute __inference_signature_wrapper___call___639553 as input #0(zero-based) was expected to be a float tensor but is a half tensor [Op:__inference_signature_wrapper___call___639553]\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\n  \u2022 training=True\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "None",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "bfloat16",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_175' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=bfloat16>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=bfloat16, sparse=False, ragged=False, name=keras_tensor_7983>',)\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\n        0.345703, 0.628906, 0.933594, 0.263672],\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "serve",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "None",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Output does not have a shape attribute.', ('Output does not have a shape attribute.', 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Output does not have a shape attribute."
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "training_endpoint",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "None",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", (\"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\"))",
+        "error_message": "The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "serving_default",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float32",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Output does not have a shape attribute.', ('Output does not have a shape attribute.', 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Output does not have a shape attribute."
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "None",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "float16",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\\n        0.63   , 0.9326 , 0.2632 ],\\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\\n        0.63   , 0.9326 , 0.2632 ],\\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_183' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=float16>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float16, sparse=False, ragged=False, name=keras_tensor_7990>',)\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float16, numpy=\narray([[0.1315 , 0.6465 , 0.06995, 0.4949 , 0.1015 , 0.6426 , 0.345  ,\n        0.63   , 0.9326 , 0.2632 ],\n       [0.673  , 0.04126, 0.35   , 0.11395, 0.67   , 0.00913, 0.635  ,\n        0.0938 , 0.0417 , 0.2976 ]], dtype=float16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "None",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "None",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Output does not have a shape attribute.', ('Output does not have a shape attribute.', 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Output does not have a shape attribute."
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "training_endpoint",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float16",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", (\"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\"))",
+        "error_message": "The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "serve",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "bfloat16",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_189' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=bfloat16>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=bfloat16, sparse=False, ragged=False, name=keras_tensor_7995>',)\\n  \u2022 kwargs={'training': 'True'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\n        0.345703, 0.628906, 0.933594, 0.263672],\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\n  \u2022 training=True\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "None",
+            "trainable": "False",
+            "name": "None",
+            "dtype": "float64",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_191' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=float64>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float64, sparse=False, ragged=False, name=keras_tensor_7997>',)\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.float64, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=float64, numpy=\narray([[0.13145564, 0.64671493, 0.0699163 , 0.49496448, 0.10147994,\n        0.64237976, 0.34491211, 0.62968814, 0.93283165, 0.26320916],\n       [0.67289305, 0.04124465, 0.35006681, 0.11393895, 0.67007214,\n        0.00913438, 0.63476986, 0.09383602, 0.0416984 , 0.29768121]])>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float64)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "training_endpoint",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "bfloat16",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", (\"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\"))",
+        "error_message": "The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "training_endpoint",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float16",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", (\"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\"))",
+        "error_message": "The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serve",
+            "call_training_endpoint": "training_endpoint",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float64",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", (\"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\", \"The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']\"))",
+        "error_message": "The endpoint 'training_endpoint' is neither an attribute of the reloaded SavedModel, nor an entry in the `signatures` field of the reloaded SavedModel. Available endpoints for this SavedModel: ['serve', 'serving_default']"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "serve",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "float16",
+            "training": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mcannot compute __inference_signature_wrapper___call___645025 as input #0(zero-based) was expected to be a float tensor but is a half tensor [Op:__inference_signature_wrapper___call___645025]\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mcannot compute __inference_signature_wrapper___call___645025 as input #0(zero-based) was expected to be a float tensor but is a half tensor [Op:__inference_signature_wrapper___call___645025]\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\\n  \u2022 training=False\\n  \u2022 kwargs=<class 'inspect._empty'>\", 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mcannot compute __inference_signature_wrapper___call___645025 as input #0(zero-based) was expected to be a float tensor but is a half tensor [Op:__inference_signature_wrapper___call___645025]\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=float16)\n  \u2022 training=False\n  \u2022 kwargs=<class 'inspect._empty'>"
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "serving_default",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "None",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Output does not have a shape attribute.', ('Output does not have a shape attribute.', 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Output does not have a shape attribute."
+    },
+    {
+        "test_case": {
+            "filepath": "/tmp/tmpcxky2rv5",
+            "inputs": "ndarray(shape=(2, 10))",
+            "call_endpoint": "serving_default",
+            "call_training_endpoint": "serve",
+            "trainable": "True",
+            "name": "None",
+            "dtype": "bfloat16",
+            "training": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", (\"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\\n        0.345703, 0.628906, 0.933594, 0.263672],\\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\\n  \u2022 training=True\\n  \u2022 kwargs=<class 'inspect._empty'>\", \"Exception encountered when calling TFSMLayer.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'tfsm_layer_203' (of type TFSMLayer). Either the `TFSMLayer.call()` method is incorrect, or you need to implement the `TFSMLayer.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(None, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor 'Placeholder:0' shape=(None, 10) dtype=bfloat16>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\\x1b[0m\\n\\nArguments received by TFSMLayer.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=bfloat16, sparse=False, ragged=False, name=keras_tensor_8007>',)\\n  \u2022 kwargs={'training': 'True'}\"))",
+        "error_message": "Exception encountered when calling TFSMLayer.call().\n\n\u001b[1mBinding inputs to tf.function failed due to `Can not cast TensorSpec(shape=(2, 10), dtype=tf.bfloat16, name='keras_tensor_7820') to TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')`. Received args: (<tf.Tensor: shape=(2, 10), dtype=bfloat16, numpy=\narray([[0.131836, 0.648438, 0.0698242, 0.494141, 0.101562, 0.640625,\n        0.345703, 0.628906, 0.933594, 0.263672],\n       [0.671875, 0.0412598, 0.349609, 0.11377, 0.671875, 0.00915527,\n        0.636719, 0.09375, 0.041748, 0.296875]], dtype=bfloat16)>,) and kwargs: {} for signature: (args_0: TensorSpec(shape=(None, 10), dtype=tf.float32, name='keras_tensor_7820')).\u001b[0m\n\nArguments received by TFSMLayer.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 10), dtype=bfloat16)\n  \u2022 training=True\n  \u2022 kwargs=<class 'inspect._empty'>"
+    }
+]

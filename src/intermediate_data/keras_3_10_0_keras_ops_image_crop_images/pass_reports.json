@@ -1,0 +1,2333 @@
+[
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "None",
+            "left_cropping": "0",
+            "bottom_cropping": "4",
+            "right_cropping": "6",
+            "target_height": "None",
+            "target_width": "48",
+            "data_format": "None"
+        },
+        "segment": "(0, 1, 5, 7, 0, 6, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=None, bottom_cropping=4, target_height=None', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=None, bottom_cropping=4, target_height=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=None, bottom_cropping=4, target_height=None",
+        "conflict_params": [
+            "top_cropping",
+            "bottom_cropping",
+            "target_height"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "0",
+            "left_cropping": "None",
+            "bottom_cropping": "7",
+            "right_cropping": "None",
+            "target_height": "8",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(1, 0, 8, 0, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=0, bottom_cropping=7, target_height=8', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=0, bottom_cropping=7, target_height=8', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=0, bottom_cropping=7, target_height=8",
+        "conflict_params": [
+            "top_cropping",
+            "bottom_cropping",
+            "target_height"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "segment": "(5, 1, 0, 2, 1, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 31, 3), (None, 1, 31, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "9",
+            "left_cropping": "3",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "None",
+            "target_width": "24",
+            "data_format": "channels_first"
+        },
+        "segment": "(10, 4, 0, 4, 0, 4, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=9, bottom_cropping=None, target_height=None', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=9, bottom_cropping=None, target_height=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=9, bottom_cropping=None, target_height=None",
+        "conflict_params": [
+            "top_cropping",
+            "bottom_cropping",
+            "target_height"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "2",
+            "left_cropping": "8",
+            "bottom_cropping": "2",
+            "right_cropping": "10",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "segment": "(3, 9, 3, 11, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 28, 14, 3), (None, 28, 14, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "5",
+            "left_cropping": "2",
+            "bottom_cropping": "4",
+            "right_cropping": "7",
+            "target_height": "64",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "segment": "(6, 3, 5, 8, 7, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=5, bottom_cropping=4, target_height=64', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=5, bottom_cropping=4, target_height=64', \"Cannot convert '(None, 32, 64, -6)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=5, bottom_cropping=4, target_height=64",
+        "conflict_params": [
+            "top_cropping",
+            "bottom_cropping",
+            "target_height"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "None",
+            "left_cropping": "3",
+            "bottom_cropping": "5",
+            "right_cropping": "2",
+            "target_height": "48",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "segment": "(0, 4, 6, 3, 6, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'top_cropping must be >= 0. Received: top_cropping=-21', ('top_cropping must be >= 0. Received: top_cropping=-21', \"Cannot convert '(None, 32, 48, -2)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "top_cropping must be >= 0. Received: top_cropping=-21",
+        "conflict_params": [
+            "bottom_cropping",
+            "target_height"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "4",
+            "bottom_cropping": "1",
+            "right_cropping": "None",
+            "target_height": "None",
+            "target_width": "24",
+            "data_format": "None"
+        },
+        "segment": "(5, 5, 2, 0, 0, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 27, 24, 3), (None, 27, 24, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "10",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "5",
+            "target_height": "None",
+            "target_width": "1",
+            "data_format": "None"
+        },
+        "segment": "(11, 3, 0, 6, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=10, bottom_cropping=None, target_height=None', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=10, bottom_cropping=None, target_height=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=10, bottom_cropping=None, target_height=None",
+        "conflict_params": [
+            "top_cropping",
+            "bottom_cropping",
+            "target_height"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "None",
+            "bottom_cropping": "0",
+            "right_cropping": "8",
+            "target_height": "24",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(5, 0, 1, 9, 4, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=4, bottom_cropping=0, target_height=24', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=4, bottom_cropping=0, target_height=24', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=4, bottom_cropping=0, target_height=24",
+        "conflict_params": [
+            "top_cropping",
+            "bottom_cropping",
+            "target_height"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "3",
+            "left_cropping": "None",
+            "bottom_cropping": "10",
+            "right_cropping": "9",
+            "target_height": "64",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(4, 0, 11, 10, 7, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=3, bottom_cropping=10, target_height=64', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=3, bottom_cropping=10, target_height=64', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=3, bottom_cropping=10, target_height=64",
+        "conflict_params": [
+            "top_cropping",
+            "bottom_cropping",
+            "target_height"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "None",
+            "left_cropping": "10",
+            "bottom_cropping": "9",
+            "right_cropping": "None",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(0, 11, 10, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=None, bottom_cropping=9, target_height=None', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=None, bottom_cropping=9, target_height=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=None, bottom_cropping=9, target_height=None",
+        "conflict_params": [
+            "top_cropping",
+            "bottom_cropping",
+            "target_height"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "0",
+            "left_cropping": "8",
+            "bottom_cropping": "None",
+            "right_cropping": "8",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(1, 9, 0, 9, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=0, bottom_cropping=None, target_height=None', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=0, bottom_cropping=None, target_height=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=0, bottom_cropping=None, target_height=None",
+        "conflict_params": [
+            "top_cropping",
+            "bottom_cropping",
+            "target_height"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "10",
+            "left_cropping": "4",
+            "bottom_cropping": "3",
+            "right_cropping": "10",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(11, 5, 4, 11, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 19, 18, 3), (None, 19, 18, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "6",
+            "left_cropping": "9",
+            "bottom_cropping": "None",
+            "right_cropping": "4",
+            "target_height": "None",
+            "target_width": "24",
+            "data_format": "None"
+        },
+        "segment": "(7, 10, 0, 5, 0, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=6, bottom_cropping=None, target_height=None', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=6, bottom_cropping=None, target_height=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=6, bottom_cropping=None, target_height=None",
+        "conflict_params": [
+            "top_cropping",
+            "bottom_cropping",
+            "target_height"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "1",
+            "left_cropping": "8",
+            "bottom_cropping": "4",
+            "right_cropping": "9",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(2, 9, 5, 10, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 27, 15, 3), (None, 27, 15, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "2",
+            "left_cropping": "8",
+            "bottom_cropping": "10",
+            "right_cropping": "7",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(3, 9, 11, 8, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 20, 17, 3), (None, 20, 17, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "9",
+            "left_cropping": "7",
+            "bottom_cropping": "3",
+            "right_cropping": "0",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(10, 8, 4, 1, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 20, 25, 3), (None, 20, 25, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "1",
+            "left_cropping": "5",
+            "bottom_cropping": "5",
+            "right_cropping": "6",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(2, 6, 6, 7, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 26, 21, 3), (None, 26, 21, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "7",
+            "left_cropping": "0",
+            "bottom_cropping": "10",
+            "right_cropping": "3",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(8, 1, 11, 4, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 15, 29, 3), (None, 15, 29, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "7",
+            "left_cropping": "3",
+            "bottom_cropping": "2",
+            "right_cropping": "7",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(8, 4, 3, 8, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 23, 22, 3), (None, 23, 22, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "None",
+            "left_cropping": "1",
+            "bottom_cropping": "0",
+            "right_cropping": "0",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(0, 2, 1, 1, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=None, bottom_cropping=0, target_height=None', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=None, bottom_cropping=0, target_height=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=None, bottom_cropping=0, target_height=None",
+        "conflict_params": [
+            "top_cropping",
+            "bottom_cropping",
+            "target_height"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "4",
+            "bottom_cropping": "8",
+            "right_cropping": "None",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(9, 5, 9, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=4, right_cropping=None, target_width=None', ('Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=4, right_cropping=None, target_width=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=4, right_cropping=None, target_width=None",
+        "conflict_params": [
+            "left_cropping",
+            "right_cropping",
+            "target_width"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "6",
+            "left_cropping": "3",
+            "bottom_cropping": "3",
+            "right_cropping": "9",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(7, 4, 4, 10, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 23, 20, 3), (None, 23, 20, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "5",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "9",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(6, 1, 0, 10, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=5, bottom_cropping=None, target_height=None', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=5, bottom_cropping=None, target_height=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=5, bottom_cropping=None, target_height=None",
+        "conflict_params": [
+            "top_cropping",
+            "bottom_cropping",
+            "target_height"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "1",
+            "left_cropping": "2",
+            "bottom_cropping": "1",
+            "right_cropping": "8",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(2, 3, 2, 9, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 30, 22, 3), (None, 30, 22, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "10",
+            "left_cropping": "1",
+            "bottom_cropping": "4",
+            "right_cropping": "0",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(11, 2, 5, 1, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 18, 31, 3), (None, 18, 31, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "3",
+            "left_cropping": "3",
+            "bottom_cropping": "0",
+            "right_cropping": "2",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(4, 4, 1, 3, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 29, 27, 3), (None, 29, 27, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "5",
+            "left_cropping": "5",
+            "bottom_cropping": "1",
+            "right_cropping": "4",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(6, 6, 2, 5, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 26, 23, 3), (None, 26, 23, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "7",
+            "bottom_cropping": "6",
+            "right_cropping": "9",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(5, 8, 7, 10, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 22, 16, 3), (None, 22, 16, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "2",
+            "left_cropping": "7",
+            "bottom_cropping": "4",
+            "right_cropping": "2",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(3, 8, 5, 3, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 26, 23, 3), (None, 26, 23, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "1",
+            "left_cropping": "10",
+            "bottom_cropping": "7",
+            "right_cropping": "7",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(2, 11, 8, 8, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 24, 15, 3), (None, 24, 15, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "7",
+            "left_cropping": "6",
+            "bottom_cropping": "7",
+            "right_cropping": "6",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(8, 7, 8, 7, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 18, 20, 3), (None, 18, 20, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "5",
+            "left_cropping": "6",
+            "bottom_cropping": "5",
+            "right_cropping": "10",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(6, 7, 6, 11, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 22, 16, 3), (None, 22, 16, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "None",
+            "left_cropping": "9",
+            "bottom_cropping": "8",
+            "right_cropping": "5",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(0, 10, 9, 6, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=None, bottom_cropping=8, target_height=None', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=None, bottom_cropping=8, target_height=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=None, bottom_cropping=8, target_height=None",
+        "conflict_params": [
+            "top_cropping",
+            "bottom_cropping",
+            "target_height"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "None",
+            "bottom_cropping": "6",
+            "right_cropping": "None",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(9, 0, 7, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=None, target_width=None', ('Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=None, target_width=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=None, target_width=None",
+        "conflict_params": [
+            "left_cropping",
+            "right_cropping",
+            "target_width"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "2",
+            "left_cropping": "4",
+            "bottom_cropping": "6",
+            "right_cropping": "1",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(3, 5, 7, 2, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 24, 27, 3), (None, 24, 27, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "9",
+            "left_cropping": "2",
+            "bottom_cropping": "10",
+            "right_cropping": "10",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(10, 3, 11, 11, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 13, 20, 3), (None, 13, 20, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "8",
+            "bottom_cropping": "7",
+            "right_cropping": "3",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(5, 9, 8, 4, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 21, 21, 3), (None, 21, 21, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "4",
+            "bottom_cropping": "3",
+            "right_cropping": "8",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(9, 5, 4, 9, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 21, 20, 3), (None, 21, 20, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "0",
+            "left_cropping": "0",
+            "bottom_cropping": "2",
+            "right_cropping": "0",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(1, 1, 3, 1, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 30, 32, 3), (None, 30, 32, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "1",
+            "left_cropping": "None",
+            "bottom_cropping": "9",
+            "right_cropping": "3",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(2, 0, 10, 4, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=3, target_width=None', ('Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=3, target_width=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=3, target_width=None",
+        "conflict_params": [
+            "left_cropping",
+            "right_cropping",
+            "target_width"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "9",
+            "left_cropping": "None",
+            "bottom_cropping": "0",
+            "right_cropping": "4",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(10, 0, 1, 5, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=4, target_width=None', ('Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=4, target_width=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=4, target_width=None",
+        "conflict_params": [
+            "left_cropping",
+            "right_cropping",
+            "target_width"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "9",
+            "left_cropping": "8",
+            "bottom_cropping": "1",
+            "right_cropping": "2",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(10, 9, 2, 3, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 22, 22, 3), (None, 22, 22, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "0",
+            "left_cropping": "7",
+            "bottom_cropping": "0",
+            "right_cropping": "5",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(1, 8, 1, 6, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 20, 3), (None, 32, 20, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "7",
+            "left_cropping": "9",
+            "bottom_cropping": "9",
+            "right_cropping": "1",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(8, 10, 10, 2, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 16, 22, 3), (None, 16, 22, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "7",
+            "left_cropping": "10",
+            "bottom_cropping": "1",
+            "right_cropping": "0",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(8, 11, 2, 1, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 24, 22, 3), (None, 24, 22, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "10",
+            "left_cropping": "6",
+            "bottom_cropping": "7",
+            "right_cropping": "None",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(11, 7, 8, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=6, right_cropping=None, target_width=None', ('Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=6, right_cropping=None, target_width=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=6, right_cropping=None, target_width=None",
+        "conflict_params": [
+            "left_cropping",
+            "right_cropping",
+            "target_width"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "5",
+            "left_cropping": "7",
+            "bottom_cropping": "9",
+            "right_cropping": "9",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(6, 8, 10, 10, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 18, 16, 3), (None, 18, 16, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "0",
+            "left_cropping": "5",
+            "bottom_cropping": "None",
+            "right_cropping": "7",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(1, 6, 0, 8, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 20, 3), (None, 1, 20, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "7",
+            "left_cropping": "4",
+            "bottom_cropping": "4",
+            "right_cropping": "4",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(8, 5, 5, 5, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 21, 24, 3), (None, 21, 24, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "3",
+            "left_cropping": "6",
+            "bottom_cropping": "5",
+            "right_cropping": "3",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(4, 7, 6, 4, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 24, 23, 3), (None, 24, 23, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "3",
+            "left_cropping": "10",
+            "bottom_cropping": "5",
+            "right_cropping": "4",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(4, 11, 6, 5, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 24, 18, 3), (None, 24, 18, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "None",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(0, 3, 0, 2, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=None, bottom_cropping=None, target_height=None', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=None, bottom_cropping=None, target_height=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=None, bottom_cropping=None, target_height=None",
+        "conflict_params": [
+            "top_cropping",
+            "bottom_cropping",
+            "target_height"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "9",
+            "left_cropping": "None",
+            "bottom_cropping": "None",
+            "right_cropping": "5",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "segment": "(10, 0, 0, 6, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=5, target_width=None', ('Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=5, target_width=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=5, target_width=None",
+        "conflict_params": [
+            "left_cropping",
+            "right_cropping",
+            "target_width"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "10",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 31, 3), (None, 1, 31, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "0",
+            "left_cropping": "5",
+            "bottom_cropping": "None",
+            "right_cropping": "2",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 25, 3), (None, 1, 25, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "5",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 26, 3), (None, 1, 26, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 31, 3), (None, 1, 31, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "8",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 8, 31, 3), (None, 8, 31, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "5",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 31, 3), (None, 1, 31, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "0",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 32, 3), (None, 1, 32, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "9",
+            "bottom_cropping": "None",
+            "right_cropping": "0",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 23, 3), (None, 1, 23, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "0",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "2",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 30, 3), (None, 1, 30, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 1, 2), (None, 32, 1, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "6",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 25, 3), (None, 1, 25, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 1, 0), (None, 32, 1, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "24",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 24, 2), (None, 32, 24, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "6",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "16",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 16, 31, 3), (None, 16, 31, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 29, 3), (None, 1, 29, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "3",
+            "left_cropping": "8",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-6', ('target_width must be >= 0. Received: target_width=-6', \"Cannot convert '(None, 32, 1, -6)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-6"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "None",
+            "bottom_cropping": "None",
+            "right_cropping": "7",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=7, target_width=None', ('Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=7, target_width=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=7, target_width=None"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "5",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-4', ('target_width must be >= 0. Received: target_width=-4', \"Cannot convert '(None, 32, 1, -4)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-4"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 1, 0), (None, 32, 1, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 29, 3), (None, 1, 29, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "2",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 30, 3), (None, 1, 30, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "5",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-4', ('target_width must be >= 0. Received: target_width=-4', \"Cannot convert '(None, 32, 1, -4)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-4"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "16",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 16, 0), (None, 32, 16, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 27, 3), (None, 1, 27, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 1, 2), (None, 32, 1, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "None",
+            "bottom_cropping": "None",
+            "right_cropping": "4",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=4, target_width=None', ('Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=4, target_width=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=4, target_width=None"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "8",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-8', ('target_width must be >= 0. Received: target_width=-8', \"Cannot convert '(None, 32, 1, -8)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-8"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "6",
+            "target_height": "64",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-5', ('target_width must be >= 0. Received: target_width=-5', \"Cannot convert '(None, 32, 64, -5)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-5"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "2",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 1, 1), (None, 32, 1, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "0",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 1, 0), (None, 32, 1, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "None",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=None, bottom_cropping=None, target_height=None', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=None, bottom_cropping=None, target_height=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=None, bottom_cropping=None, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 1, 0), (None, 32, 1, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-2', ('target_width must be >= 0. Received: target_width=-2', \"Cannot convert '(None, 32, 1, -2)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-2"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "1",
+            "bottom_cropping": "None",
+            "right_cropping": "5",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-3', ('target_width must be >= 0. Received: target_width=-3', \"Cannot convert '(None, 32, 1, -3)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-3"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "2",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 1, 1), (None, 32, 1, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-2', ('target_width must be >= 0. Received: target_width=-2', \"Cannot convert '(None, 32, 1, -2)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-2"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "3",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 1, 0), (None, 32, 1, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "2",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-1', ('target_width must be >= 0. Received: target_width=-1', \"Cannot convert '(None, 32, 1, -1)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-1"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "3",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 1, 0), (None, 32, 1, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "10",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-8', ('target_width must be >= 0. Received: target_width=-8', \"Cannot convert '(None, 32, 1, -8)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-8"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "2",
+            "bottom_cropping": "3",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=4, bottom_cropping=3, target_height=1', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=4, bottom_cropping=3, target_height=1', \"Cannot convert '(None, 32, 1, -2)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=4, bottom_cropping=3, target_height=1"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "0",
+            "left_cropping": "9",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-7', ('target_width must be >= 0. Received: target_width=-7', \"Cannot convert '(None, 32, 1, -7)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-7"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "None",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=4, bottom_cropping=None, target_height=None', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=4, bottom_cropping=None, target_height=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=4, bottom_cropping=None, target_height=None"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "6",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 1, 0), (None, 32, 1, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "4",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-4', ('target_width must be >= 0. Received: target_width=-4', \"Cannot convert '(None, 32, 1, -4)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-4"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "0",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 1, 1), (None, 32, 1, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "2",
+            "bottom_cropping": "0",
+            "right_cropping": "2",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=4, bottom_cropping=0, target_height=1', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=4, bottom_cropping=0, target_height=1', \"Cannot convert '(None, 32, 1, -1)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=4, bottom_cropping=0, target_height=1"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "16",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 16, 0), (None, 32, 16, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "10",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-7', ('target_width must be >= 0. Received: target_width=-7', \"Cannot convert '(None, 32, 1, -7)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-7"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "16",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-2', ('target_width must be >= 0. Received: target_width=-2', \"Cannot convert '(None, 32, 16, -2)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-2"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "1",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-1', ('target_width must be >= 0. Received: target_width=-1', \"Cannot convert '(None, 32, 1, -1)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-1"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "4",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-1', ('target_width must be >= 0. Received: target_width=-1', \"Cannot convert '(None, 32, 1, -1)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-1"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "7",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 1, 0), (None, 32, 1, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "9",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-6', ('target_width must be >= 0. Received: target_width=-6', \"Cannot convert '(None, 32, 1, -6)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-6"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "None",
+            "left_cropping": "8",
+            "bottom_cropping": "0",
+            "right_cropping": "9",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-14', ('target_width must be >= 0. Received: target_width=-14', \"Cannot convert '(None, 32, 1, -14)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-14"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "24",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 24, 27, 3), (None, 24, 27, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "7",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-5', ('target_width must be >= 0. Received: target_width=-5', \"Cannot convert '(None, 32, 1, -5)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-5"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "None",
+            "left_cropping": "0",
+            "bottom_cropping": "4",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 1, 0), (None, 32, 1, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "7",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "4",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 28, 3), (None, 1, 28, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "8",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-7', ('target_width must be >= 0. Received: target_width=-7', \"Cannot convert '(None, 32, 1, -7)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-7"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "9",
+            "bottom_cropping": "None",
+            "right_cropping": "0",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-6', ('target_width must be >= 0. Received: target_width=-6', \"Cannot convert '(None, 32, 1, -6)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-6"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 29, 3), (None, 1, 29, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "7",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-7', ('target_width must be >= 0. Received: target_width=-7', \"Cannot convert '(None, 32, 1, -7)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-7"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "3",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-2', ('target_width must be >= 0. Received: target_width=-2', \"Cannot convert '(None, 32, 1, -2)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-2"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "10",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-10', ('target_width must be >= 0. Received: target_width=-10', \"Cannot convert '(None, 32, 1, -10)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-10"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "4",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-1', ('target_width must be >= 0. Received: target_width=-1', \"Cannot convert '(None, 32, 1, -1)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-1"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "9",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-7', ('target_width must be >= 0. Received: target_width=-7', \"Cannot convert '(None, 32, 1, -7)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-7"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 29, 3), (None, 1, 29, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "10",
+            "left_cropping": "2",
+            "bottom_cropping": "9",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=10, bottom_cropping=9, target_height=1', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=10, bottom_cropping=9, target_height=1', \"Cannot convert '(None, 32, 1, -2)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=10, bottom_cropping=9, target_height=1"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "6",
+            "target_height": "32",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-5', ('target_width must be >= 0. Received: target_width=-5', \"Cannot convert '(None, 32, 32, -5)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-5"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "3",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-1', ('target_width must be >= 0. Received: target_width=-1', \"Cannot convert '(None, 32, 1, -1)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-1"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "1",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 30, 3), (None, 1, 30, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "7",
+            "target_height": "48",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-6', ('target_width must be >= 0. Received: target_width=-6', \"Cannot convert '(None, 32, 48, -6)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-6"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "0",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 1, 3), (None, 32, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "7",
+            "bottom_cropping": "None",
+            "right_cropping": "None",
+            "target_height": "32",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=7, right_cropping=None, target_width=None', ('Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=7, right_cropping=None, target_width=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=7, right_cropping=None, target_width=None"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "7",
+            "left_cropping": "8",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-8', ('target_width must be >= 0. Received: target_width=-8', \"Cannot convert '(None, 32, 1, -8)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-8"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "10",
+            "left_cropping": "None",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=1, target_width=None', ('Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=1, target_width=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=None, right_cropping=1, target_width=None"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "8",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-5', ('target_width must be >= 0. Received: target_width=-5', \"Cannot convert '(None, 32, 1, -5)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-5"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 1, 0), (None, 32, 1, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "7",
+            "bottom_cropping": "None",
+            "right_cropping": "0",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-4', ('target_width must be >= 0. Received: target_width=-4', \"Cannot convert '(None, 32, 1, -4)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-4"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "9",
+            "left_cropping": "1",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "48",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-1', ('target_width must be >= 0. Received: target_width=-1', \"Cannot convert '(None, 32, 48, -1)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-1"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "8",
+            "target_height": "16",
+            "target_width": "None",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 16, 24, 3), (None, 16, 24, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "5",
+            "left_cropping": "1",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-1', ('target_width must be >= 0. Received: target_width=-1', \"Cannot convert '(None, 32, 1, -1)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-1"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "7",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-2', ('target_width must be >= 0. Received: target_width=-2', \"Cannot convert '(None, 32, 1, -2)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-2"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "0",
+            "bottom_cropping": "2",
+            "right_cropping": "4",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=8, bottom_cropping=2, target_height=1', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=8, bottom_cropping=2, target_height=1', \"Cannot convert '(None, 32, 1, -1)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=8, bottom_cropping=2, target_height=1"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 29, 3), (None, 1, 29, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "6",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "7",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-6', ('target_width must be >= 0. Received: target_width=-6', \"Cannot convert '(None, 32, 1, -6)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-6"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "None",
+            "left_cropping": "0",
+            "bottom_cropping": "9",
+            "right_cropping": "None",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=0, right_cropping=None, target_width=None', ('Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=0, right_cropping=None, target_width=None', \"unsupported operand type(s) for -: 'int' and 'NoneType'\"))",
+        "error_message": "Must specify exactly two of left_cropping, right_cropping, target_width. Received: left_cropping=0, right_cropping=None, target_width=None"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "2",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 1, 0), (None, 32, 1, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "7",
+            "bottom_cropping": "None",
+            "right_cropping": "10",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-14', ('target_width must be >= 0. Received: target_width=-14', \"Cannot convert '(None, 32, 1, -14)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-14"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "2",
+            "bottom_cropping": "4",
+            "right_cropping": "2",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=4, bottom_cropping=4, target_height=1', ('Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=4, bottom_cropping=4, target_height=1', \"Cannot convert '(None, 32, 1, -1)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "Must specify exactly two of top_cropping, bottom_cropping, target_height. Received: top_cropping=4, bottom_cropping=4, target_height=1"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "4",
+            "left_cropping": "2",
+            "bottom_cropping": "None",
+            "right_cropping": "5",
+            "target_height": "24",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-4', ('target_width must be >= 0. Received: target_width=-4', \"Cannot convert '(None, 32, 24, -4)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-4"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "5",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "3",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 1, 0), (None, 32, 1, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "9",
+            "bottom_cropping": "None",
+            "right_cropping": "1",
+            "target_height": "1",
+            "target_width": "None",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'target_width must be >= 0. Received: target_width=-7', ('target_width must be >= 0. Received: target_width=-7', \"Cannot convert '(None, 32, 1, -7)' to a shape. Negative dimensions are not allowed.\"))",
+        "error_message": "target_width must be >= 0. Received: target_width=-7"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 32, 32, 3))",
+            "top_cropping": "8",
+            "left_cropping": "0",
+            "bottom_cropping": "None",
+            "right_cropping": "None",
+            "target_height": "1",
+            "target_width": "1",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 32, 1, 1), (None, 32, 1, 1)))"
+    }
+]

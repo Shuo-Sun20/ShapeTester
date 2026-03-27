@@ -1,0 +1,76 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5]))]",
+            "dim": "-4",
+            "dtype": "None",
+            "out": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got -4)', ('Dimension out of range (expected to be in range of [-1, 0], but got -4)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cumsum of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21,), dtype=torch.int64), -4), **{\\'dtype\\': None, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-1, 0], but got -4)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_cumsum/generated_code.py\", line 17, in call_func\\n    return torch.cumsum(input_tensor, dim, dtype=dtype, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-1, 0], but got -4)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got -4)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5]))]",
+            "dim": "-2",
+            "dtype": "None",
+            "out": "None"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', ('Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cumsum of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21,), dtype=torch.int64), -2), **{\\'dtype\\': None, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-1, 0], but got -2)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_cumsum/generated_code.py\", line 17, in call_func\\n    return torch.cumsum(input_tensor, dim, dtype=dtype, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got -2)",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5]))]",
+            "dim": "0",
+            "dtype": "None",
+            "out": "None"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5,), (5,), (5,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5]))]",
+            "dim": "2",
+            "dtype": "None",
+            "out": "None"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 2)', ('Dimension out of range (expected to be in range of [-1, 0], but got 2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cumsum of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21,), dtype=torch.int64), 2), **{\\'dtype\\': None, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-1, 0], but got 2)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_cumsum/generated_code.py\", line 17, in call_func\\n    return torch.cumsum(input_tensor, dim, dtype=dtype, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-1, 0], but got 2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 2)",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5]))]",
+            "dim": "4",
+            "dtype": "None",
+            "out": "None"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 4)', ('Dimension out of range (expected to be in range of [-1, 0], but got 4)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method cumsum of type object at 0x7f9199b29b40>(*(FakeTensor(..., size=(s21,), dtype=torch.int64), 4), **{\\'dtype\\': None, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-1, 0], but got 4)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_cumsum/generated_code.py\", line 17, in call_func\\n    return torch.cumsum(input_tensor, dim, dtype=dtype, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-1, 0], but got 4)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 4)",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    }
+]

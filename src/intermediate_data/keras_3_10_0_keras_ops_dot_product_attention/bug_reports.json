@@ -1,0 +1,374 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "ndarray(shape=(2, 1, 1, 6))",
+            "mask": "ndarray(shape=(4, 1, 1, 6))",
+            "scale": "0.0",
+            "is_causal": "False",
+            "flash_attention": "False",
+            "attn_logits_soft_cap": "None"
+        },
+        "segment": "(3, 4, 1, 1, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ', ('{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ', (None, 4, 8, 16)))",
+        "error_message": "{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ",
+        "conflict_params": [
+            "mask"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "ndarray(shape=(1, 8, 1, 6))",
+            "mask": "ndarray(shape=(2, 8, 4, 6))",
+            "scale": "1.0",
+            "is_causal": "False",
+            "flash_attention": "True",
+            "attn_logits_soft_cap": "None"
+        },
+        "segment": "(4, 3, 5, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Flash attention is not supported in tensorflow backend.', ('Flash attention is not supported in tensorflow backend.', (None, 4, 8, 16)))",
+        "error_message": "Flash attention is not supported in tensorflow backend.",
+        "conflict_params": [
+            "flash_attention"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "ndarray(shape=(1, 8, 1, 6))",
+            "mask": "ndarray(shape=(2, 1, 4, 6))",
+            "scale": "2.0",
+            "is_causal": "True",
+            "flash_attention": "True",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Flash attention is not supported in tensorflow backend.', ('Flash attention is not supported in tensorflow backend.', (None, 4, 8, 16)))",
+        "error_message": "Flash attention is not supported in tensorflow backend."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "None",
+            "mask": "ndarray(shape=(4, 1, 1, 6))",
+            "scale": "0.125",
+            "is_causal": "False",
+            "flash_attention": "None",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ', ('{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ', (None, 4, 8, 16)))",
+        "error_message": "{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "ndarray(shape=(1, 1, 4, 6))",
+            "mask": "None",
+            "scale": "0.125",
+            "is_causal": "True",
+            "flash_attention": "True",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Flash attention is not supported in tensorflow backend.', ('Flash attention is not supported in tensorflow backend.', (None, 4, 8, 16)))",
+        "error_message": "Flash attention is not supported in tensorflow backend."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "None",
+            "mask": "ndarray(shape=(4, 1, 1, 6))",
+            "scale": "2.0",
+            "is_causal": "False",
+            "flash_attention": "None",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ', ('{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ', (None, 4, 8, 16)))",
+        "error_message": "{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "ndarray(shape=(1, 1, 4, 6))",
+            "mask": "ndarray(shape=(2, 1, 4, 6))",
+            "scale": "0.125",
+            "is_causal": "True",
+            "flash_attention": "True",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Flash attention is not supported in tensorflow backend.', ('Flash attention is not supported in tensorflow backend.', (None, 4, 8, 16)))",
+        "error_message": "Flash attention is not supported in tensorflow backend."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "None",
+            "mask": "None",
+            "scale": "0.0",
+            "is_causal": "False",
+            "flash_attention": "True",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Flash attention is not supported in tensorflow backend.', ('Flash attention is not supported in tensorflow backend.', (None, 4, 8, 16)))",
+        "error_message": "Flash attention is not supported in tensorflow backend."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "None",
+            "mask": "None",
+            "scale": "0.125",
+            "is_causal": "True",
+            "flash_attention": "True",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Flash attention is not supported in tensorflow backend.', ('Flash attention is not supported in tensorflow backend.', (None, 4, 8, 16)))",
+        "error_message": "Flash attention is not supported in tensorflow backend."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "None",
+            "mask": "None",
+            "scale": "0.125",
+            "is_causal": "False",
+            "flash_attention": "True",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Flash attention is not supported in tensorflow backend.', ('Flash attention is not supported in tensorflow backend.', (None, 4, 8, 16)))",
+        "error_message": "Flash attention is not supported in tensorflow backend."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "None",
+            "mask": "ndarray(shape=(2, 1, 4, 6))",
+            "scale": "2.0",
+            "is_causal": "True",
+            "flash_attention": "True",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Flash attention is not supported in tensorflow backend.', ('Flash attention is not supported in tensorflow backend.', (None, 4, 8, 16)))",
+        "error_message": "Flash attention is not supported in tensorflow backend."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "None",
+            "mask": "ndarray(shape=(2, 1, 4, 6))",
+            "scale": "2.0",
+            "is_causal": "False",
+            "flash_attention": "True",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Flash attention is not supported in tensorflow backend.', ('Flash attention is not supported in tensorflow backend.', (None, 4, 8, 16)))",
+        "error_message": "Flash attention is not supported in tensorflow backend."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "ndarray(shape=(2, 1, 1, 6))",
+            "mask": "ndarray(shape=(4, 1, 1, 6))",
+            "scale": "2.0",
+            "is_causal": "True",
+            "flash_attention": "None",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ', ('{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ', (None, 4, 8, 16)))",
+        "error_message": "{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "ndarray(shape=(1, 1, 4, 6))",
+            "mask": "ndarray(shape=(4, 1, 1, 6))",
+            "scale": "0.125",
+            "is_causal": "True",
+            "flash_attention": "None",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ', ('{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ', (None, 4, 8, 16)))",
+        "error_message": "{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "None",
+            "mask": "ndarray(shape=(2, 8, 4, 6))",
+            "scale": "2.0",
+            "is_causal": "False",
+            "flash_attention": "True",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Flash attention is not supported in tensorflow backend.', ('Flash attention is not supported in tensorflow backend.', (None, 4, 8, 16)))",
+        "error_message": "Flash attention is not supported in tensorflow backend."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "None",
+            "mask": "ndarray(shape=(4, 1, 1, 6))",
+            "scale": "2.0",
+            "is_causal": "False",
+            "flash_attention": "False",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ', ('{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ', (None, 4, 8, 16)))",
+        "error_message": "{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "None",
+            "mask": "ndarray(shape=(4, 1, 1, 6))",
+            "scale": "2.0",
+            "is_causal": "True",
+            "flash_attention": "None",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ', ('{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ', (None, 4, 8, 16)))",
+        "error_message": "{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "ndarray(shape=(2, 8, 4, 6))",
+            "mask": "None",
+            "scale": "0.25",
+            "is_causal": "True",
+            "flash_attention": "True",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Flash attention is not supported in tensorflow backend.', ('Flash attention is not supported in tensorflow backend.', (None, 4, 8, 16)))",
+        "error_message": "Flash attention is not supported in tensorflow backend."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "ndarray(shape=(1, 1, 4, 6))",
+            "mask": "None",
+            "scale": "0.125",
+            "is_causal": "False",
+            "flash_attention": "True",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Flash attention is not supported in tensorflow backend.', ('Flash attention is not supported in tensorflow backend.', (None, 4, 8, 16)))",
+        "error_message": "Flash attention is not supported in tensorflow backend."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "ndarray(shape=(1, 8, 1, 6))",
+            "mask": "ndarray(shape=(4, 1, 1, 6))",
+            "scale": "2.0",
+            "is_causal": "False",
+            "flash_attention": "None",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ', ('{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ', (None, 4, 8, 16)))",
+        "error_message": "{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "ndarray(shape=(1, 1, 4, 6))",
+            "mask": "ndarray(shape=(4, 1, 1, 6))",
+            "scale": "2.0",
+            "is_causal": "False",
+            "flash_attention": "None",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ', ('{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ', (None, 4, 8, 16)))",
+        "error_message": "{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "ndarray(shape=(1, 1, 4, 6))",
+            "mask": "ndarray(shape=(2, 1, 4, 6))",
+            "scale": "0.25",
+            "is_causal": "False",
+            "flash_attention": "True",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Flash attention is not supported in tensorflow backend.', ('Flash attention is not supported in tensorflow backend.', (None, 4, 8, 16)))",
+        "error_message": "Flash attention is not supported in tensorflow backend."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "None",
+            "mask": "ndarray(shape=(4, 1, 1, 6))",
+            "scale": "0.125",
+            "is_causal": "True",
+            "flash_attention": "False",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ', ('{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: ', (None, 4, 8, 16)))",
+        "error_message": "{{function_node __wrapped__LogicalAnd_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [2,8,4,6] vs. [4,1,1,6] [Op:LogicalAnd] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "ndarray(shape=(2, 1, 1, 6))",
+            "mask": "None",
+            "scale": "0.125",
+            "is_causal": "True",
+            "flash_attention": "True",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Flash attention is not supported in tensorflow backend.', ('Flash attention is not supported in tensorflow backend.', (None, 4, 8, 16)))",
+        "error_message": "Flash attention is not supported in tensorflow backend."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "ndarray(shape=(2, 8, 4, 6))",
+            "mask": "None",
+            "scale": "2.0",
+            "is_causal": "False",
+            "flash_attention": "True",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Flash attention is not supported in tensorflow backend.', ('Flash attention is not supported in tensorflow backend.', (None, 4, 8, 16)))",
+        "error_message": "Flash attention is not supported in tensorflow backend."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 4, 8, 16)), EagerTensor(shape=(2, 6, 8, 16)), EagerTensor(shape=(2, 6, 8, 16))]",
+            "bias": "None",
+            "mask": "ndarray(shape=(2, 1, 4, 6))",
+            "scale": "10.0",
+            "is_causal": "False",
+            "flash_attention": "True",
+            "attn_logits_soft_cap": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Flash attention is not supported in tensorflow backend.', ('Flash attention is not supported in tensorflow backend.', (None, 4, 8, 16)))",
+        "error_message": "Flash attention is not supported in tensorflow backend."
+    }
+]

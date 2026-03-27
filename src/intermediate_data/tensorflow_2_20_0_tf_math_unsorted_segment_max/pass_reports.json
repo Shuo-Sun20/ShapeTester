@@ -1,0 +1,75 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3,))]",
+            "num_segments": "0"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 0 is out of range [0, 0) [Op:UnsortedSegmentMax] name: ', ('{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 0 is out of range [0, 0) [Op:UnsortedSegmentMax] name: ', 'Graph execution error:\\n\\nDetected at node UnsortedSegmentMax defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_math_unsorted_segment_max/generated_code.py\", line 5, in call_func\\n\\nsegment_ids[0] = 0 is out of range [0, 0)\\n\\t [[{{node UnsortedSegmentMax}}]] [Op:__inference_call_func_587569]'))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 0 is out of range [0, 0) [Op:UnsortedSegmentMax] name: ",
+        "conflict_params": [
+            "inputs",
+            "num_segments"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3,))]",
+            "num_segments": "1"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[1] = 1 is out of range [0, 1) [Op:UnsortedSegmentMax] name: ', ('{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[1] = 1 is out of range [0, 1) [Op:UnsortedSegmentMax] name: ', 'Graph execution error:\\n\\nDetected at node UnsortedSegmentMax defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_math_unsorted_segment_max/generated_code.py\", line 5, in call_func\\n\\nsegment_ids[1] = 1 is out of range [0, 1)\\n\\t [[{{node UnsortedSegmentMax}}]] [Op:__inference_call_func_587605]'))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[1] = 1 is out of range [0, 1) [Op:UnsortedSegmentMax] name: ",
+        "conflict_params": [
+            "inputs",
+            "num_segments"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3,))]",
+            "num_segments": "2"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4), (2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3,))]",
+            "num_segments": "3"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3,))]",
+            "num_segments": "4"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 4), (4, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3,))]",
+            "num_segments": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[1] = 1 is out of range [0, 1) [Op:UnsortedSegmentMax] name: ', ('{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[1] = 1 is out of range [0, 1) [Op:UnsortedSegmentMax] name: ', 'Graph execution error:\\n\\nDetected at node UnsortedSegmentMax defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_math_unsorted_segment_max/generated_code.py\", line 5, in call_func\\n\\nsegment_ids[1] = 1 is out of range [0, 1)\\n\\t [[{{node UnsortedSegmentMax}}]] [Op:__inference_call_func_587693]'))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[1] = 1 is out of range [0, 1) [Op:UnsortedSegmentMax] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(3,))]",
+            "num_segments": "0"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 0 is out of range [0, 0) [Op:UnsortedSegmentMax] name: ', ('{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 0 is out of range [0, 0) [Op:UnsortedSegmentMax] name: ', 'Graph execution error:\\n\\nDetected at node UnsortedSegmentMax defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_math_unsorted_segment_max/generated_code.py\", line 5, in call_func\\n\\nsegment_ids[0] = 0 is out of range [0, 0)\\n\\t [[{{node UnsortedSegmentMax}}]] [Op:__inference_call_func_587701]'))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentMax_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 0 is out of range [0, 0) [Op:UnsortedSegmentMax] name: "
+    }
+]

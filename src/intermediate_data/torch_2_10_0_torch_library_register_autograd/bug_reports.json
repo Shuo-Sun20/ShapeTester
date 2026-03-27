@@ -1,0 +1,19 @@
+[
+    {
+        "test_case": {
+            "op_name": "mylib::numpy_mul",
+            "backward_fn": "<function backward_sin at 0x7f31fba18ea0>",
+            "inputs": "[Tensor(shape=torch.Size([3]))]",
+            "setup_context_fn": "<function setup_context_mul at 0x7f31fba19a80>",
+            "keyword_only_args": "{val: -1.0}"
+        },
+        "segment": "(1, 0, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'backend=\\'inductor\\' raised:\\nValueError: not enough values to unpack (expected 1, got 0)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', ((3,), 'backend=\\'inductor\\' raised:\\nValueError: not enough values to unpack (expected 1, got 0)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (3,)))",
+        "error_message": "backend='inductor' raised:\nValueError: not enough values to unpack (expected 1, got 0)\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n",
+        "conflict_params": [
+            "backward_fn",
+            "setup_context_fn"
+        ]
+    }
+]

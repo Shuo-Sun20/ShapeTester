@@ -1,0 +1,129 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 4])), Tensor(shape=torch.Size([2, 4]))]",
+            "dim": "0",
+            "index": "0"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'expected src to have a size equal to the slice of self. src size = [2, 4], slice size = [3, 4]', ('expected src to have a size equal to the slice of self. src size = [2, 4], slice size = [3, 4]', 'RuntimeError: shape error in scatter op, can not broadcast torch.Size([s21, s65]) to torch.Size([s41, s65])\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (2, 3, 4)))",
+        "error_message": "expected src to have a size equal to the slice of self. src size = [2, 4], slice size = [3, 4]",
+        "conflict_params": [
+            "inputs",
+            "dim",
+            "index"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "index": "0"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 2]', ('expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 2]', 'RuntimeError: shape error in scatter op, can not broadcast torch.Size([s35, s22]) to torch.Size([s21, s65])\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (4, 3, 2)))",
+        "error_message": "expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 2]",
+        "conflict_params": [
+            "inputs",
+            "dim",
+            "index"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "2",
+            "index": "0"
+        },
+        "segment": "(2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 3]', ('expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 3]', 'RuntimeError: shape error in scatter op, can not broadcast torch.Size([s35, s22]) to torch.Size([s21, s41])\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (4, 3, 2)))",
+        "error_message": "expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 3]",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "index": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 2]', ('expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 2]', 'RuntimeError: shape error in scatter op, can not broadcast torch.Size([s35, s22]) to torch.Size([s21, s65])\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (4, 3, 2)))",
+        "error_message": "expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "index": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 2]', ('expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 2]', 'RuntimeError: shape error in scatter op, can not broadcast torch.Size([s35, s22]) to torch.Size([s21, s65])\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (4, 3, 2)))",
+        "error_message": "expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "2",
+            "index": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'select(): index 2 out of range for tensor of size [4, 3, 2] at dimension 2', ('select(): index 2 out of range for tensor of size [4, 3, 2] at dimension 2', 'RuntimeError: shape error in scatter op, can not broadcast torch.Size([s35, s22]) to torch.Size([s21, s41])\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (4, 3, 2)))",
+        "error_message": "select(): index 2 out of range for tensor of size [4, 3, 2] at dimension 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "index": "0"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 2]', ('expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 2]', 'RuntimeError: shape error in scatter op, can not broadcast torch.Size([s35, s22]) to torch.Size([s21, s65])\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (4, 3, 2)))",
+        "error_message": "expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "2",
+            "index": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 3]', ('expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 3]', 'RuntimeError: shape error in scatter op, can not broadcast torch.Size([s35, s22]) to torch.Size([s21, s41])\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (4, 3, 2)))",
+        "error_message": "expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "index": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'select(): index 3 out of range for tensor of size [4, 3, 2] at dimension 1', ('select(): index 3 out of range for tensor of size [4, 3, 2] at dimension 1', 'RuntimeError: shape error in scatter op, can not broadcast torch.Size([s35, s22]) to torch.Size([s21, s65])\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (4, 3, 2)))",
+        "error_message": "select(): index 3 out of range for tensor of size [4, 3, 2] at dimension 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "2",
+            "index": "0"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 3]', ('expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 3]', 'RuntimeError: shape error in scatter op, can not broadcast torch.Size([s35, s22]) to torch.Size([s21, s41])\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (4, 3, 2)))",
+        "error_message": "expected src to have a size equal to the slice of self. src size = [3, 2], slice size = [4, 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4, 3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "2",
+            "index": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'select(): index 3 out of range for tensor of size [4, 3, 2] at dimension 2', ('select(): index 3 out of range for tensor of size [4, 3, 2] at dimension 2', 'RuntimeError: shape error in scatter op, can not broadcast torch.Size([s35, s22]) to torch.Size([s21, s41])\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (4, 3, 2)))",
+        "error_message": "select(): index 3 out of range for tensor of size [4, 3, 2] at dimension 2"
+    }
+]

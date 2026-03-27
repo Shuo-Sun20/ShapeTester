@@ -1,0 +1,50 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "-3",
+            "dtype": "None"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Exception encountered when calling Cumprod.call().\\n\\n\\x1b[1m{{function_node __wrapped__Cumprod_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got -1 [Op:Cumprod] name: \\x1b[0m\\n\\nArguments received by Cumprod.call():\\n  \u2022 x=tf.Tensor(shape=(3, 4), dtype=float64)', ('Exception encountered when calling Cumprod.call().\\n\\n\\x1b[1m{{function_node __wrapped__Cumprod_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got -1 [Op:Cumprod] name: \\x1b[0m\\n\\nArguments received by Cumprod.call():\\n  \u2022 x=tf.Tensor(shape=(3, 4), dtype=float64)', (None, 4)))",
+        "error_message": "Exception encountered when calling Cumprod.call().\n\n\u001b[1m{{function_node __wrapped__Cumprod_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got -1 [Op:Cumprod] name: \u001b[0m\n\nArguments received by Cumprod.call():\n  \u2022 x=tf.Tensor(shape=(3, 4), dtype=float64)",
+        "conflict_params": [
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "2",
+            "dtype": "None"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Exception encountered when calling Cumprod.call().\\n\\n\\x1b[1m{{function_node __wrapped__Cumprod_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:Cumprod] name: \\x1b[0m\\n\\nArguments received by Cumprod.call():\\n  \u2022 x=tf.Tensor(shape=(3, 4), dtype=float64)', ('Exception encountered when calling Cumprod.call().\\n\\n\\x1b[1m{{function_node __wrapped__Cumprod_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:Cumprod] name: \\x1b[0m\\n\\nArguments received by Cumprod.call():\\n  \u2022 x=tf.Tensor(shape=(3, 4), dtype=float64)', (None, 4)))",
+        "error_message": "Exception encountered when calling Cumprod.call().\n\n\u001b[1m{{function_node __wrapped__Cumprod_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:Cumprod] name: \u001b[0m\n\nArguments received by Cumprod.call():\n  \u2022 x=tf.Tensor(shape=(3, 4), dtype=float64)",
+        "conflict_params": [
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "-3",
+            "dtype": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Exception encountered when calling Cumprod.call().\\n\\n\\x1b[1m{{function_node __wrapped__Cumprod_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got -1 [Op:Cumprod] name: \\x1b[0m\\n\\nArguments received by Cumprod.call():\\n  \u2022 x=tf.Tensor(shape=(3, 4), dtype=float64)', ('Exception encountered when calling Cumprod.call().\\n\\n\\x1b[1m{{function_node __wrapped__Cumprod_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got -1 [Op:Cumprod] name: \\x1b[0m\\n\\nArguments received by Cumprod.call():\\n  \u2022 x=tf.Tensor(shape=(3, 4), dtype=float64)', (None, 4)))",
+        "error_message": "Exception encountered when calling Cumprod.call().\n\n\u001b[1m{{function_node __wrapped__Cumprod_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got -1 [Op:Cumprod] name: \u001b[0m\n\nArguments received by Cumprod.call():\n  \u2022 x=tf.Tensor(shape=(3, 4), dtype=float64)"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "2",
+            "dtype": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Exception encountered when calling Cumprod.call().\\n\\n\\x1b[1m{{function_node __wrapped__Cumprod_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:Cumprod] name: \\x1b[0m\\n\\nArguments received by Cumprod.call():\\n  \u2022 x=tf.Tensor(shape=(3, 4), dtype=float64)', ('Exception encountered when calling Cumprod.call().\\n\\n\\x1b[1m{{function_node __wrapped__Cumprod_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:Cumprod] name: \\x1b[0m\\n\\nArguments received by Cumprod.call():\\n  \u2022 x=tf.Tensor(shape=(3, 4), dtype=float64)', (None, 4)))",
+        "error_message": "Exception encountered when calling Cumprod.call().\n\n\u001b[1m{{function_node __wrapped__Cumprod_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:Cumprod] name: \u001b[0m\n\nArguments received by Cumprod.call():\n  \u2022 x=tf.Tensor(shape=(3, 4), dtype=float64)"
+    }
+]

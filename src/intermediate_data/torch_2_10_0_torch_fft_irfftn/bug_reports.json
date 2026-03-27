@@ -1,0 +1,254 @@
+[
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([10, 5]))",
+            "s": "None",
+            "dim": "[1, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [18, 5], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1244 are out of bounds for storage of size 360', ((18, 5), (18, 5), 'setStorage: sizes [18, 5], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1244 are out of bounds for storage of size 360'))",
+        "error_message": "setStorage: sizes [18, 5], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1244 are out of bounds for storage of size 360",
+        "conflict_params": [
+            "s",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([10, 5]))",
+            "s": "None",
+            "dim": "[-1, -2]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(0, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [18, 5], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1244 are out of bounds for storage of size 360', ((18, 5), (18, 5), 'setStorage: sizes [18, 5], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1244 are out of bounds for storage of size 360'))",
+        "error_message": "setStorage: sizes [18, 5], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1244 are out of bounds for storage of size 360",
+        "conflict_params": [
+            "inputs",
+            "s",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([10, 5]))",
+            "s": "[10, -1]",
+            "dim": "[1, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(4, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [18, 10], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1264 are out of bounds for storage of size 720', ((18, 10), (18, 10), 'setStorage: sizes [18, 10], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1264 are out of bounds for storage of size 720'))",
+        "error_message": "setStorage: sizes [18, 10], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1264 are out of bounds for storage of size 720",
+        "conflict_params": [
+            "s",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([10, 5]))",
+            "s": "[8, -1]",
+            "dim": "[1, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(5, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [18, 8], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1256 are out of bounds for storage of size 576', ((18, 8), (18, 8), 'setStorage: sizes [18, 8], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1256 are out of bounds for storage of size 576'))",
+        "error_message": "setStorage: sizes [18, 8], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1256 are out of bounds for storage of size 576",
+        "conflict_params": [
+            "s",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 6, 5]))",
+            "s": "[8, -1]",
+            "dim": "[-1, -2]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(5, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [4, 10, 8], strides [80, 10, 1], storage offset 0, and itemsize 4 requiring a storage size of 1352 are out of bounds for storage of size 1280', ((4, 10, 8), (4, 10, 8), 'setStorage: sizes [4, 10, 8], strides [80, 10, 1], storage offset 0, and itemsize 4 requiring a storage size of 1352 are out of bounds for storage of size 1280'))",
+        "error_message": "setStorage: sizes [4, 10, 8], strides [80, 10, 1], storage offset 0, and itemsize 4 requiring a storage size of 1352 are out of bounds for storage of size 1280",
+        "conflict_params": [
+            "s",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([10, 5]))",
+            "s": "[-1, 9]",
+            "dim": "[1, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(6, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [9, 5], strides [9, 1], storage offset 0, and itemsize 4 requiring a storage size of 308 are out of bounds for storage of size 180', ((9, 5), (9, 5), 'setStorage: sizes [9, 5], strides [9, 1], storage offset 0, and itemsize 4 requiring a storage size of 308 are out of bounds for storage of size 180'))",
+        "error_message": "setStorage: sizes [9, 5], strides [9, 1], storage offset 0, and itemsize 4 requiring a storage size of 308 are out of bounds for storage of size 180",
+        "conflict_params": [
+            "s",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 6, 5]))",
+            "s": "[-1, 9]",
+            "dim": "[-1, -2]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(6, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [4, 9, 5], strides [45, 9, 1], storage offset 0, and itemsize 4 requiring a storage size of 848 are out of bounds for storage of size 720', ((4, 9, 5), (4, 9, 5), 'setStorage: sizes [4, 9, 5], strides [45, 9, 1], storage offset 0, and itemsize 4 requiring a storage size of 848 are out of bounds for storage of size 720'))",
+        "error_message": "setStorage: sizes [4, 9, 5], strides [45, 9, 1], storage offset 0, and itemsize 4 requiring a storage size of 848 are out of bounds for storage of size 720",
+        "conflict_params": [
+            "s",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([10, 5]))",
+            "s": "[10, 16]",
+            "dim": "[1, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(9, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [16, 10], strides [16, 1], storage offset 0, and itemsize 4 requiring a storage size of 1000 are out of bounds for storage of size 640', ((16, 10), (16, 10), 'setStorage: sizes [16, 10], strides [16, 1], storage offset 0, and itemsize 4 requiring a storage size of 1000 are out of bounds for storage of size 640'))",
+        "error_message": "setStorage: sizes [16, 10], strides [16, 1], storage offset 0, and itemsize 4 requiring a storage size of 1000 are out of bounds for storage of size 640",
+        "conflict_params": [
+            "inputs",
+            "s",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 6, 5]))",
+            "s": "[10, 16]",
+            "dim": "[-1, -2]",
+            "norm": "None",
+            "out": "None"
+        },
+        "segment": "(9, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [4, 16, 10], strides [160, 16, 1], storage offset 0, and itemsize 4 requiring a storage size of 2920 are out of bounds for storage of size 2560', ((4, 16, 10), (4, 16, 10), 'setStorage: sizes [4, 16, 10], strides [160, 16, 1], storage offset 0, and itemsize 4 requiring a storage size of 2920 are out of bounds for storage of size 2560'))",
+        "error_message": "setStorage: sizes [4, 16, 10], strides [160, 16, 1], storage offset 0, and itemsize 4 requiring a storage size of 2920 are out of bounds for storage of size 2560",
+        "conflict_params": [
+            "inputs",
+            "s",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 8, 9]))",
+            "s": "[10, 16]",
+            "dim": "[1, 0]",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [16, 10, 9], strides [16, 1, 160], storage offset 0, and itemsize 4 requiring a storage size of 6120 are out of bounds for storage of size 5760', ((16, 10, 9), (16, 10, 9), 'setStorage: sizes [16, 10, 9], strides [16, 1, 160], storage offset 0, and itemsize 4 requiring a storage size of 6120 are out of bounds for storage of size 5760'))",
+        "error_message": "setStorage: sizes [16, 10, 9], strides [16, 1, 160], storage offset 0, and itemsize 4 requiring a storage size of 6120 are out of bounds for storage of size 5760"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 8, 9]))",
+            "s": "[10, -1]",
+            "dim": "[-1, -2]",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [5, 14, 10], strides [140, 14, 1], storage offset 0, and itemsize 4 requiring a storage size of 3008 are out of bounds for storage of size 2800', ((5, 14, 10), (5, 14, 10), 'setStorage: sizes [5, 14, 10], strides [140, 14, 1], storage offset 0, and itemsize 4 requiring a storage size of 3008 are out of bounds for storage of size 2800'))",
+        "error_message": "setStorage: sizes [5, 14, 10], strides [140, 14, 1], storage offset 0, and itemsize 4 requiring a storage size of 3008 are out of bounds for storage of size 2800"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([5, 8, 9]))",
+            "s": "[8, -1]",
+            "dim": "[-1, -2]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [5, 14, 8], strides [112, 14, 1], storage offset 0, and itemsize 4 requiring a storage size of 2552 are out of bounds for storage of size 2240', ((5, 14, 8), (5, 14, 8), 'setStorage: sizes [5, 14, 8], strides [112, 14, 1], storage offset 0, and itemsize 4 requiring a storage size of 2552 are out of bounds for storage of size 2240'))",
+        "error_message": "setStorage: sizes [5, 14, 8], strides [112, 14, 1], storage offset 0, and itemsize 4 requiring a storage size of 2552 are out of bounds for storage of size 2240"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([10, 5]))",
+            "s": "None",
+            "dim": "[1, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [18, 5], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1244 are out of bounds for storage of size 360', ((18, 5), (18, 5), 'setStorage: sizes [18, 5], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1244 are out of bounds for storage of size 360'))",
+        "error_message": "setStorage: sizes [18, 5], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1244 are out of bounds for storage of size 360"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([10, 5]))",
+            "s": "None",
+            "dim": "[-1, -2]",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [18, 5], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1244 are out of bounds for storage of size 360', ((18, 5), (18, 5), 'setStorage: sizes [18, 5], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1244 are out of bounds for storage of size 360'))",
+        "error_message": "setStorage: sizes [18, 5], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1244 are out of bounds for storage of size 360"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([10, 5]))",
+            "s": "None",
+            "dim": "[1, 0]",
+            "norm": "backward",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [18, 5], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1244 are out of bounds for storage of size 360', ((18, 5), (18, 5), 'setStorage: sizes [18, 5], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1244 are out of bounds for storage of size 360'))",
+        "error_message": "setStorage: sizes [18, 5], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1244 are out of bounds for storage of size 360"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([10, 5]))",
+            "s": "None",
+            "dim": "[-1, -2]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [18, 5], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1244 are out of bounds for storage of size 360', ((18, 5), (18, 5), 'setStorage: sizes [18, 5], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1244 are out of bounds for storage of size 360'))",
+        "error_message": "setStorage: sizes [18, 5], strides [18, 1], storage offset 0, and itemsize 4 requiring a storage size of 1244 are out of bounds for storage of size 360"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([10, 5]))",
+            "s": "[10, 16]",
+            "dim": "[1, 0]",
+            "norm": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [16, 10], strides [16, 1], storage offset 0, and itemsize 4 requiring a storage size of 1000 are out of bounds for storage of size 640', ((16, 10), (16, 10), 'setStorage: sizes [16, 10], strides [16, 1], storage offset 0, and itemsize 4 requiring a storage size of 1000 are out of bounds for storage of size 640'))",
+        "error_message": "setStorage: sizes [16, 10], strides [16, 1], storage offset 0, and itemsize 4 requiring a storage size of 1000 are out of bounds for storage of size 640"
+    }
+]

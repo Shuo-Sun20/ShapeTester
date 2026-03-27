@@ -1,0 +1,4483 @@
+[
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "0",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "output_size": "None"
+        },
+        "segment": "(0, 0, 0, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 10, 10), (1, 1, 10, 10), (1, 1, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "2",
+            "padding": "1",
+            "output_padding": "1",
+            "groups": "8",
+            "bias": "True",
+            "dilation": "2",
+            "output_size": "[48, 48]"
+        },
+        "segment": "(0, 1, 1, 1, 1, 1, 3, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups",
+        "conflict_params": [
+            "out_channels",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "128",
+            "kernel_size": "1",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "2",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "2",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "[10, 10]"
+        },
+        "segment": "(4, 0, 1, 2, 2, 2, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (10, 10), but valid sizes range from [15, 15] to [16, 16] (for an input of torch.Size([10, 10]))', ('requested an output size of (10, 10), but valid sizes range from [15, 15] to [16, 16] (for an input of torch.Size([10, 10]))', 'requested an output size of (10, 10), but valid sizes range from [15, 15] to [16, 16] (for an input of torch.Size([10, 10]))', 'requested an output size of (10, 10), but valid sizes range from [15, 15] to [16, 16] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (10, 10), but valid sizes range from [15, 15] to [16, 16] (for an input of torch.Size([10, 10]))",
+        "conflict_params": [
+            "stride",
+            "padding",
+            "dilation",
+            "output_padding",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "16",
+            "kernel_size": "1",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "3",
+            "padding": "1",
+            "output_padding": "3",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "4",
+            "output_size": "[16, 16]"
+        },
+        "segment": "(1, 0, 2, 1, 3, 3, 2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (16, 16), but valid sizes range from [26, 26] to [28, 28] (for an input of torch.Size([10, 10]))', ('requested an output size of (16, 16), but valid sizes range from [26, 26] to [28, 28] (for an input of torch.Size([10, 10]))', 'requested an output size of (16, 16), but valid sizes range from [26, 26] to [28, 28] (for an input of torch.Size([10, 10]))', 'requested an output size of (16, 16), but valid sizes range from [26, 26] to [28, 28] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (16, 16), but valid sizes range from [26, 26] to [28, 28] (for an input of torch.Size([10, 10]))",
+        "conflict_params": [
+            "stride",
+            "padding",
+            "output_padding",
+            "dilation",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "4",
+            "padding": "3",
+            "output_padding": "1",
+            "groups": "16",
+            "bias": "True",
+            "dilation": "5",
+            "output_size": "[24, 24]"
+        },
+        "segment": "(2, 0, 3, 3, 1, 4, 4, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (24, 24), but valid sizes range from [31, 31] to [34, 34] (for an input of torch.Size([10, 10]))', ('requested an output size of (24, 24), but valid sizes range from [31, 31] to [34, 34] (for an input of torch.Size([10, 10]))', 'requested an output size of (24, 24), but valid sizes range from [31, 31] to [34, 34] (for an input of torch.Size([10, 10]))', 'requested an output size of (24, 24), but valid sizes range from [31, 31] to [34, 34] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (24, 24), but valid sizes range from [31, 31] to [34, 34] (for an input of torch.Size([10, 10]))",
+        "conflict_params": [
+            "stride",
+            "padding",
+            "dilation",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "16",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "5",
+            "output_padding": "[0, 1]",
+            "groups": "2",
+            "bias": "True",
+            "dilation": "[1, 2]",
+            "output_size": "[32, 32]"
+        },
+        "segment": "(1, 1, 0, 4, 4, 5, 1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (32, 32), but valid sizes range from [1, 2] to [1, 2] (for an input of torch.Size([10, 10]))', ('requested an output size of (32, 32), but valid sizes range from [1, 2] to [1, 2] (for an input of torch.Size([10, 10]))', 'requested an output size of (32, 32), but valid sizes range from [1, 2] to [1, 2] (for an input of torch.Size([10, 10]))', 'requested an output size of (32, 32), but valid sizes range from [1, 2] to [1, 2] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (32, 32), but valid sizes range from [1, 2] to [1, 2] (for an input of torch.Size([10, 10]))",
+        "conflict_params": [
+            "padding",
+            "dilation",
+            "output_padding",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "64",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "3",
+            "padding": "[0, 1]",
+            "output_padding": "[1, 0]",
+            "groups": "16",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "None"
+        },
+        "segment": "(3, 1, 2, 5, 5, 6, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 64, 31, 27), (1, 64, 31, 27), (1, 64, 31, 27)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "3",
+            "padding": "0",
+            "output_padding": "[1, 2]",
+            "groups": "2",
+            "bias": "True",
+            "dilation": "[2, 3]",
+            "output_size": "[48, 48]"
+        },
+        "segment": "(2, 2, 2, 0, 6, 7, 1, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (48, 48), but valid sizes range from [32, 34] to [34, 36] (for an input of torch.Size([10, 10]))', ('requested an output size of (48, 48), but valid sizes range from [32, 34] to [34, 36] (for an input of torch.Size([10, 10]))', 'requested an output size of (48, 48), but valid sizes range from [32, 34] to [34, 36] (for an input of torch.Size([10, 10]))', 'requested an output size of (48, 48), but valid sizes range from [32, 34] to [34, 36] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (48, 48), but valid sizes range from [32, 34] to [34, 36] (for an input of torch.Size([10, 10]))",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "dilation",
+            "output_padding",
+            "inputs",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "256",
+            "kernel_size": "3",
+            "stride": "5",
+            "padding": "[1, 0]",
+            "dilation": "2",
+            "output_padding": "2",
+            "groups": "4",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(5, 2, 4, 6, 2, 1, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 75, 72), (1, 256, 75, 72), (1, 256, 75, 72)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "128",
+            "kernel_size": "5",
+            "stride": "5",
+            "padding": "[1, 2]",
+            "dilation": "1",
+            "output_padding": "3",
+            "groups": "16",
+            "bias": "True",
+            "output_size": "[48, 48]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(4, 3, 4, 7, 3, 0, 4, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (48, 48), but valid sizes range from [73, 66] to [77, 70] (for an input of torch.Size([15, 14]))', ('requested an output size of (48, 48), but valid sizes range from [73, 66] to [77, 70] (for an input of torch.Size([15, 14]))', 'requested an output size of (48, 48), but valid sizes range from [73, 66] to [77, 70] (for an input of torch.Size([15, 14]))', 'requested an output size of (48, 48), but valid sizes range from [73, 66] to [77, 70] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (48, 48), but valid sizes range from [73, 66] to [77, 70] (for an input of torch.Size([15, 14]))",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "dilation",
+            "output_padding",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "16",
+            "kernel_size": "5",
+            "stride": "2",
+            "padding": "[1, 0]",
+            "dilation": "[2, 3]",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[24, 24]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(1, 3, 1, 6, 5, 7, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (24, 24), but valid sizes range from [35, 39] to [36, 40] (for an input of torch.Size([15, 14]))', ('requested an output size of (24, 24), but valid sizes range from [35, 39] to [36, 40] (for an input of torch.Size([15, 14]))', 'requested an output size of (24, 24), but valid sizes range from [35, 39] to [36, 40] (for an input of torch.Size([15, 14]))', 'requested an output size of (24, 24), but valid sizes range from [35, 39] to [36, 40] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (24, 24), but valid sizes range from [35, 39] to [36, 40] (for an input of torch.Size([15, 14]))",
+        "conflict_params": [
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[1, 2]",
+            "padding": "5",
+            "output_padding": "0",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "[10, 10]"
+        },
+        "segment": "(2, 3, 5, 4, 0, 6, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (10, 10), but valid sizes range from [8, 13] to [8, 14] (for an input of torch.Size([10, 10]))', ('requested an output size of (10, 10), but valid sizes range from [8, 13] to [8, 14] (for an input of torch.Size([10, 10]))', 'requested an output size of (10, 10), but valid sizes range from [8, 13] to [8, 14] (for an input of torch.Size([10, 10]))', 'requested an output size of (10, 10), but valid sizes range from [8, 13] to [8, 14] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (10, 10), but valid sizes range from [8, 13] to [8, 14] (for an input of torch.Size([10, 10]))",
+        "conflict_params": [
+            "stride",
+            "padding",
+            "dilation",
+            "kernel_size",
+            "output_padding",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "5",
+            "padding": "[0, 1]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "[16, 16]"
+        },
+        "segment": "(2, 4, 4, 5, 4, 2, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (16, 16), but valid sizes range from [64, 62] to [68, 66] (for an input of torch.Size([10, 10]))', ('requested an output size of (16, 16), but valid sizes range from [64, 62] to [68, 66] (for an input of torch.Size([10, 10]))', 'requested an output size of (16, 16), but valid sizes range from [64, 62] to [68, 66] (for an input of torch.Size([10, 10]))', 'requested an output size of (16, 16), but valid sizes range from [64, 62] to [68, 66] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (16, 16), but valid sizes range from [64, 62] to [68, 66] (for an input of torch.Size([10, 10]))",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "dilation",
+            "output_padding",
+            "output_size",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "64",
+            "kernel_size": "3",
+            "stride": "[2, 1]",
+            "padding": "2",
+            "dilation": "4",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[32, 32]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(3, 2, 6, 2, 1, 3, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (32, 32), but valid sizes range from [33, 18] to [34, 18] (for an input of torch.Size([15, 14]))', ('requested an output size of (32, 32), but valid sizes range from [33, 18] to [34, 18] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [33, 18] to [34, 18] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [33, 18] to [34, 18] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (32, 32), but valid sizes range from [33, 18] to [34, 18] (for an input of torch.Size([15, 14]))",
+        "conflict_params": [
+            "stride",
+            "padding",
+            "dilation",
+            "output_padding",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "16",
+            "kernel_size": "7",
+            "stride": "[2, 3]",
+            "padding": "[1, 2]",
+            "dilation": "5",
+            "output_padding": "[1, 2]",
+            "groups": "8",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(1, 4, 7, 7, 6, 4, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 58, 68), (1, 16, 58, 68), (1, 16, 58, 68)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "64",
+            "kernel_size": "[2, 3]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "4",
+            "padding": "[1, 2]",
+            "output_padding": "0",
+            "groups": "2",
+            "bias": "True",
+            "dilation": "2",
+            "output_size": "[16, 16]"
+        },
+        "segment": "(3, 5, 3, 7, 0, 1, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (16, 16), but valid sizes range from [37, 37] to [40, 40] (for an input of torch.Size([10, 10]))', ('requested an output size of (16, 16), but valid sizes range from [37, 37] to [40, 40] (for an input of torch.Size([10, 10]))', 'requested an output size of (16, 16), but valid sizes range from [37, 37] to [40, 40] (for an input of torch.Size([10, 10]))', 'requested an output size of (16, 16), but valid sizes range from [37, 37] to [40, 40] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (16, 16), but valid sizes range from [37, 37] to [40, 40] (for an input of torch.Size([10, 10]))",
+        "conflict_params": [
+            "stride",
+            "padding",
+            "dilation",
+            "kernel_size",
+            "output_padding",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "256",
+            "kernel_size": "[3, 5]",
+            "stride": "4",
+            "padding": "1",
+            "dilation": "[1, 2]",
+            "output_padding": "[1, 2]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[10, 10]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(5, 6, 3, 1, 6, 5, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (10, 10), but valid sizes range from [57, 59] to [60, 62] (for an input of torch.Size([15, 14]))', ('requested an output size of (10, 10), but valid sizes range from [57, 59] to [60, 62] (for an input of torch.Size([15, 14]))', 'requested an output size of (10, 10), but valid sizes range from [57, 59] to [60, 62] (for an input of torch.Size([15, 14]))', 'requested an output size of (10, 10), but valid sizes range from [57, 59] to [60, 62] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (10, 10), but valid sizes range from [57, 59] to [60, 62] (for an input of torch.Size([15, 14]))",
+        "conflict_params": [
+            "stride",
+            "padding",
+            "dilation",
+            "output_padding",
+            "output_size",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "128",
+            "kernel_size": "3",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "[1, 0]",
+            "groups": "8",
+            "bias": "True",
+            "output_size": "[16, 16]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(4, 2, 5, 3, 5, 5, 3, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (16, 16), but valid sizes range from [11, 25] to [11, 26] (for an input of torch.Size([15, 14]))', ('requested an output size of (16, 16), but valid sizes range from [11, 25] to [11, 26] (for an input of torch.Size([15, 14]))', 'requested an output size of (16, 16), but valid sizes range from [11, 25] to [11, 26] (for an input of torch.Size([15, 14]))', 'requested an output size of (16, 16), but valid sizes range from [11, 25] to [11, 26] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (16, 16), but valid sizes range from [11, 25] to [11, 26] (for an input of torch.Size([15, 14]))",
+        "conflict_params": [
+            "output_padding",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "[2, 3]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 3]",
+            "padding": "[1, 0]",
+            "output_padding": "[0, 1]",
+            "groups": "16",
+            "bias": "True",
+            "dilation": "4",
+            "output_size": "[10, 10]"
+        },
+        "segment": "(0, 5, 7, 6, 4, 3, 4, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups",
+        "conflict_params": [
+            "out_channels",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "64",
+            "kernel_size": "[5, 7]",
+            "stride": "1",
+            "padding": "3",
+            "dilation": "3",
+            "output_padding": "[1, 2]",
+            "groups": "4",
+            "bias": "True",
+            "output_size": "[48, 48]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(3, 7, 0, 3, 6, 2, 2, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (48, 48), but valid sizes range from [21, 26] to [21, 26] (for an input of torch.Size([15, 14]))', ('requested an output size of (48, 48), but valid sizes range from [21, 26] to [21, 26] (for an input of torch.Size([15, 14]))', 'requested an output size of (48, 48), but valid sizes range from [21, 26] to [21, 26] (for an input of torch.Size([15, 14]))', 'requested an output size of (48, 48), but valid sizes range from [21, 26] to [21, 26] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (48, 48), but valid sizes range from [21, 26] to [21, 26] (for an input of torch.Size([15, 14]))",
+        "conflict_params": [
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "128",
+            "kernel_size": "[3, 5]",
+            "stride": "[2, 3]",
+            "padding": "[0, 1]",
+            "dilation": "[2, 3]",
+            "output_padding": "0",
+            "groups": "4",
+            "bias": "True",
+            "output_size": "[32, 32]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(4, 6, 7, 5, 0, 7, 2, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (32, 32), but valid sizes range from [33, 50] to [34, 52] (for an input of torch.Size([15, 14]))', ('requested an output size of (32, 32), but valid sizes range from [33, 50] to [34, 52] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [33, 50] to [34, 52] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [33, 50] to [34, 52] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (32, 32), but valid sizes range from [33, 50] to [34, 52] (for an input of torch.Size([15, 14]))",
+        "conflict_params": [
+            "stride",
+            "padding",
+            "dilation",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "256",
+            "kernel_size": "[2, 3]",
+            "stride": "2",
+            "padding": "0",
+            "dilation": "[2, 1]",
+            "output_padding": "3",
+            "groups": "8",
+            "bias": "True",
+            "output_size": "[32, 32]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(5, 5, 1, 0, 3, 6, 3, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (32, 32), but valid sizes range from [31, 29] to [32, 30] (for an input of torch.Size([15, 14]))', ('requested an output size of (32, 32), but valid sizes range from [31, 29] to [32, 30] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [31, 29] to [32, 30] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [31, 29] to [32, 30] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (32, 32), but valid sizes range from [31, 29] to [32, 30] (for an input of torch.Size([15, 14]))",
+        "conflict_params": [
+            "stride",
+            "padding",
+            "dilation",
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "256",
+            "kernel_size": "[5, 7]",
+            "stride": "[2, 1]",
+            "padding": "5",
+            "dilation": "[2, 3]",
+            "output_padding": "2",
+            "groups": "16",
+            "bias": "True",
+            "output_size": "[16, 16]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(5, 7, 6, 4, 2, 7, 4, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (16, 16), but valid sizes range from [27, 22] to [28, 22] (for an input of torch.Size([15, 14]))', ('requested an output size of (16, 16), but valid sizes range from [27, 22] to [28, 22] (for an input of torch.Size([15, 14]))', 'requested an output size of (16, 16), but valid sizes range from [27, 22] to [28, 22] (for an input of torch.Size([15, 14]))', 'requested an output size of (16, 16), but valid sizes range from [27, 22] to [28, 22] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (16, 16), but valid sizes range from [27, 22] to [28, 22] (for an input of torch.Size([15, 14]))",
+        "conflict_params": [
+            "output_size",
+            "kernel_size",
+            "stride",
+            "padding",
+            "dilation",
+            "output_padding"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "[5, 7]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "5",
+            "padding": "1",
+            "output_padding": "[1, 0]",
+            "groups": "2",
+            "bias": "True",
+            "dilation": "5",
+            "output_size": "[32, 32]"
+        },
+        "segment": "(0, 7, 4, 1, 5, 4, 1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups",
+        "conflict_params": [
+            "out_channels",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "[3, 5]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "output_padding": "3",
+            "groups": "2",
+            "bias": "True",
+            "dilation": "4",
+            "output_size": "None"
+        },
+        "segment": "(2, 6, 6, 3, 3, 3, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 24, 23), (1, 32, 24, 23), (1, 32, 24, 23)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "16",
+            "kernel_size": "[5, 7]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[1, 2]",
+            "padding": "[0, 1]",
+            "output_padding": "1",
+            "groups": "8",
+            "bias": "True",
+            "dilation": "1",
+            "output_size": "[10, 10]"
+        },
+        "segment": "(1, 7, 5, 5, 1, 0, 3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (10, 10), but valid sizes range from [14, 23] to [14, 24] (for an input of torch.Size([10, 10]))', ('requested an output size of (10, 10), but valid sizes range from [14, 23] to [14, 24] (for an input of torch.Size([10, 10]))', 'requested an output size of (10, 10), but valid sizes range from [14, 23] to [14, 24] (for an input of torch.Size([10, 10]))', 'requested an output size of (10, 10), but valid sizes range from [14, 23] to [14, 24] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (10, 10), but valid sizes range from [14, 23] to [14, 24] (for an input of torch.Size([10, 10]))",
+        "conflict_params": [
+            "inputs",
+            "kernel_size",
+            "stride",
+            "padding",
+            "output_padding",
+            "dilation",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "128",
+            "kernel_size": "[2, 3]",
+            "stride": "3",
+            "padding": "5",
+            "dilation": "3",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(4, 5, 2, 4, 1, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 128, 37, 37), (1, 128, 37, 37), (1, 128, 37, 37)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "128",
+            "kernel_size": "2",
+            "stride": "[2, 1]",
+            "padding": "0",
+            "dilation": "5",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "bias": "True",
+            "output_size": "[10, 10]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(4, 1, 6, 0, 4, 4, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (10, 10), but valid sizes range from [34, 19] to [35, 19] (for an input of torch.Size([15, 14]))', ('requested an output size of (10, 10), but valid sizes range from [34, 19] to [35, 19] (for an input of torch.Size([15, 14]))', 'requested an output size of (10, 10), but valid sizes range from [34, 19] to [35, 19] (for an input of torch.Size([15, 14]))', 'requested an output size of (10, 10), but valid sizes range from [34, 19] to [35, 19] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (10, 10), but valid sizes range from [34, 19] to [35, 19] (for an input of torch.Size([15, 14]))",
+        "conflict_params": [
+            "stride",
+            "dilation",
+            "output_padding",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "64",
+            "kernel_size": "5",
+            "stride": "4",
+            "padding": "2",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "8",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(3, 3, 3, 2, 4, 7, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 64, 61, 62), (1, 64, 61, 62), (1, 64, 61, 62)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "256",
+            "kernel_size": "7",
+            "stride": "3",
+            "padding": "3",
+            "dilation": "1",
+            "output_padding": "2",
+            "groups": "2",
+            "bias": "True",
+            "output_size": "[32, 32]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(5, 4, 2, 3, 2, 0, 1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (32, 32), but valid sizes range from [43, 40] to [45, 42] (for an input of torch.Size([15, 14]))', ('requested an output size of (32, 32), but valid sizes range from [43, 40] to [45, 42] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [43, 40] to [45, 42] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [43, 40] to [45, 42] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (32, 32), but valid sizes range from [43, 40] to [45, 42] (for an input of torch.Size([15, 14]))",
+        "conflict_params": [
+            "output_size",
+            "inputs",
+            "stride",
+            "padding",
+            "dilation",
+            "kernel_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "[1, 0]",
+            "groups": "16",
+            "bias": "True",
+            "dilation": "2",
+            "output_size": "[10, 10]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 11, 11]))"
+        },
+        "segment": "(2, 4, 0, 2, 5, 1, 4, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (10, 10), but valid sizes range from [19, 19] to [19, 19] (for an input of torch.Size([11, 11]))', ('requested an output size of (10, 10), but valid sizes range from [19, 19] to [19, 19] (for an input of torch.Size([11, 11]))', 'requested an output size of (10, 10), but valid sizes range from [19, 19] to [19, 19] (for an input of torch.Size([11, 11]))', 'requested an output size of (10, 10), but valid sizes range from [19, 19] to [19, 19] (for an input of torch.Size([11, 11]))'))",
+        "error_message": "requested an output size of (10, 10), but valid sizes range from [19, 19] to [19, 19] (for an input of torch.Size([11, 11]))",
+        "conflict_params": [
+            "stride",
+            "padding",
+            "dilation",
+            "output_padding",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "128",
+            "kernel_size": "[3, 5]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "[1, 0]",
+            "output_padding": "1",
+            "groups": "8",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "[16, 16]"
+        },
+        "segment": "(4, 6, 0, 6, 1, 6, 3, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (16, 16), but valid sizes range from [12, 14] to [12, 14] (for an input of torch.Size([10, 10]))', ('requested an output size of (16, 16), but valid sizes range from [12, 14] to [12, 14] (for an input of torch.Size([10, 10]))', 'requested an output size of (16, 16), but valid sizes range from [12, 14] to [12, 14] (for an input of torch.Size([10, 10]))', 'requested an output size of (16, 16), but valid sizes range from [12, 14] to [12, 14] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (16, 16), but valid sizes range from [12, 14] to [12, 14] (for an input of torch.Size([10, 10]))",
+        "conflict_params": [
+            "output_size",
+            "kernel_size",
+            "stride",
+            "padding",
+            "dilation",
+            "output_padding"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "16",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "0",
+            "dilation": "3",
+            "output_padding": "2",
+            "groups": "16",
+            "bias": "True",
+            "output_size": "[32, 32]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(1, 6, 5, 0, 2, 2, 4, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (32, 32), but valid sizes range from [21, 39] to [21, 40] (for an input of torch.Size([15, 14]))', ('requested an output size of (32, 32), but valid sizes range from [21, 39] to [21, 40] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [21, 39] to [21, 40] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [21, 39] to [21, 40] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (32, 32), but valid sizes range from [21, 39] to [21, 40] (for an input of torch.Size([15, 14]))",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "dilation",
+            "output_padding",
+            "inputs",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 3]",
+            "padding": "2",
+            "output_padding": "3",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "output_size": "[16, 16]"
+        },
+        "segment": "(5, 1, 7, 2, 3, 4, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (16, 16), but valid sizes range from [20, 29] to [21, 31] (for an input of torch.Size([10, 10]))', ('requested an output size of (16, 16), but valid sizes range from [20, 29] to [21, 31] (for an input of torch.Size([10, 10]))', 'requested an output size of (16, 16), but valid sizes range from [20, 29] to [21, 31] (for an input of torch.Size([10, 10]))', 'requested an output size of (16, 16), but valid sizes range from [20, 29] to [21, 31] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (16, 16), but valid sizes range from [20, 29] to [21, 31] (for an input of torch.Size([10, 10]))",
+        "conflict_params": [
+            "stride",
+            "padding",
+            "dilation",
+            "output_padding",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "[5, 7]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "2",
+            "padding": "[1, 2]",
+            "output_padding": "0",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "[1, 2]",
+            "output_size": "None"
+        },
+        "segment": "(2, 7, 1, 7, 0, 5, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 21, 27), (1, 32, 21, 27), (1, 32, 21, 27)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "[1, 2]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "output_size": "[32, 32]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 11, 11]))"
+        },
+        "segment": "(5, 0, 5, 7, 4, 1, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (32, 32), but valid sizes range from [9, 17] to [9, 18] (for an input of torch.Size([11, 11]))', ('requested an output size of (32, 32), but valid sizes range from [9, 17] to [9, 18] (for an input of torch.Size([11, 11]))', 'requested an output size of (32, 32), but valid sizes range from [9, 17] to [9, 18] (for an input of torch.Size([11, 11]))', 'requested an output size of (32, 32), but valid sizes range from [9, 17] to [9, 18] (for an input of torch.Size([11, 11]))'))",
+        "error_message": "requested an output size of (32, 32), but valid sizes range from [9, 17] to [9, 18] (for an input of torch.Size([11, 11]))",
+        "conflict_params": [
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[2, 3]",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "dilation": "1",
+            "output_padding": "[1, 2]",
+            "groups": "4",
+            "bias": "True",
+            "output_size": "[16, 16]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(0, 5, 5, 2, 6, 0, 2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups",
+        "conflict_params": [
+            "out_channels",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "64",
+            "kernel_size": "1",
+            "stride": "5",
+            "padding": "5",
+            "dilation": "[2, 3]",
+            "output_padding": "3",
+            "groups": "8",
+            "bias": "True",
+            "output_size": "[10, 10]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(3, 0, 4, 4, 3, 7, 3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (10, 10), but valid sizes range from [61, 56] to [65, 60] (for an input of torch.Size([15, 14]))', ('requested an output size of (10, 10), but valid sizes range from [61, 56] to [65, 60] (for an input of torch.Size([15, 14]))', 'requested an output size of (10, 10), but valid sizes range from [61, 56] to [65, 60] (for an input of torch.Size([15, 14]))', 'requested an output size of (10, 10), but valid sizes range from [61, 56] to [65, 60] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (10, 10), but valid sizes range from [61, 56] to [65, 60] (for an input of torch.Size([15, 14]))",
+        "conflict_params": [
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "64",
+            "kernel_size": "5",
+            "stride": "[2, 3]",
+            "padding": "0",
+            "dilation": "[1, 2]",
+            "output_padding": "1",
+            "groups": "2",
+            "bias": "True",
+            "output_size": "[16, 16]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(3, 3, 7, 0, 1, 5, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (16, 16), but valid sizes range from [33, 48] to [34, 50] (for an input of torch.Size([15, 14]))', ('requested an output size of (16, 16), but valid sizes range from [33, 48] to [34, 50] (for an input of torch.Size([15, 14]))', 'requested an output size of (16, 16), but valid sizes range from [33, 48] to [34, 50] (for an input of torch.Size([15, 14]))', 'requested an output size of (16, 16), but valid sizes range from [33, 48] to [34, 50] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (16, 16), but valid sizes range from [33, 48] to [34, 50] (for an input of torch.Size([15, 14]))",
+        "conflict_params": [
+            "stride",
+            "dilation",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "64",
+            "kernel_size": "3",
+            "stride": "2",
+            "padding": "1",
+            "dilation": "1",
+            "output_padding": "[0, 1]",
+            "groups": "16",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(3, 2, 1, 1, 4, 0, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 64, 29, 28), (1, 64, 29, 28), (1, 64, 29, 28)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "5",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "[0, 1]",
+            "output_padding": "2",
+            "groups": "8",
+            "bias": "True",
+            "dilation": "4",
+            "output_size": "None"
+        },
+        "segment": "(5, 3, 0, 5, 2, 3, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 28, 26), (1, 256, 28, 26), (1, 256, 28, 26)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "128",
+            "kernel_size": "7",
+            "stride": "4",
+            "padding": "0",
+            "dilation": "4",
+            "output_padding": "[1, 0]",
+            "groups": "4",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(4, 4, 3, 0, 5, 3, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 128, 82, 77), (1, 128, 82, 77), (1, 128, 82, 77)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "[1, 0]",
+            "output_padding": "0",
+            "groups": "8",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "segment": "(2, 1, 6, 6, 0, 2, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 20, 13), (1, 32, 20, 13), (1, 32, 20, 13)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "4",
+            "padding": "[1, 2]",
+            "dilation": "[2, 1]",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(0, 2, 3, 7, 2, 6, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 61, 53), (1, 1, 61, 53), (1, 1, 61, 53)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "16",
+            "kernel_size": "[2, 3]",
+            "stride": "5",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "16",
+            "bias": "True",
+            "dilation": "[1, 2]",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 11, 11]))"
+        },
+        "segment": "(1, 5, 4, 3, 0, 5, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 46, 49), (1, 16, 46, 49), (1, 16, 46, 49)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "64",
+            "kernel_size": "[3, 5]",
+            "stride": "2",
+            "padding": "5",
+            "dilation": "5",
+            "output_padding": "[1, 2]",
+            "groups": "16",
+            "bias": "True",
+            "output_size": "[16, 16]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(3, 6, 1, 4, 6, 4, 4, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (16, 16), but valid sizes range from [29, 37] to [30, 38] (for an input of torch.Size([15, 14]))', ('requested an output size of (16, 16), but valid sizes range from [29, 37] to [30, 38] (for an input of torch.Size([15, 14]))', 'requested an output size of (16, 16), but valid sizes range from [29, 37] to [30, 38] (for an input of torch.Size([15, 14]))', 'requested an output size of (16, 16), but valid sizes range from [29, 37] to [30, 38] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (16, 16), but valid sizes range from [29, 37] to [30, 38] (for an input of torch.Size([15, 14]))",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "dilation",
+            "output_padding",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "16",
+            "kernel_size": "[5, 7]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "4",
+            "padding": "[0, 1]",
+            "output_padding": "3",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "output_size": "None"
+        },
+        "segment": "(1, 7, 3, 5, 3, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 48, 50), (1, 16, 48, 50), (1, 16, 48, 50)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "5",
+            "stride": "3",
+            "padding": "3",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 11, 11]))"
+        },
+        "segment": "(0, 3, 2, 3, 4, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 33, 34), (1, 1, 33, 34), (1, 1, 33, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "32",
+            "kernel_size": "3",
+            "stride": "[2, 3]",
+            "padding": "5",
+            "dilation": "1",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(2, 2, 7, 4, 5, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 22, 32), (1, 32, 22, 32), (1, 32, 22, 32)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "16",
+            "kernel_size": "3",
+            "stride": "3",
+            "padding": "2",
+            "dilation": "5",
+            "output_padding": "0",
+            "groups": "8",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(1, 2, 2, 2, 0, 4, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 49, 46), (1, 16, 49, 46), (1, 16, 49, 46)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "7",
+            "stride": "[2, 1]",
+            "padding": "[1, 2]",
+            "dilation": "[2, 3]",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(0, 4, 6, 7, 1, 7, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 40, 29), (1, 1, 40, 29), (1, 1, 40, 29)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "128",
+            "kernel_size": "2",
+            "stride": "5",
+            "padding": "[1, 2]",
+            "dilation": "4",
+            "output_padding": "[1, 2]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(4, 1, 4, 7, 6, 3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 128, 74, 68), (1, 128, 74, 68), (1, 128, 74, 68)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "128",
+            "kernel_size": "[5, 7]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 3]",
+            "padding": "1",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "None"
+        },
+        "segment": "(4, 7, 7, 1, 4, 6, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 128, 25, 33), (1, 128, 25, 33), (1, 128, 25, 33)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "5",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "1",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "segment": "(5, 3, 6, 1, 5, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 30, 20), (1, 256, 30, 20), (1, 256, 30, 20)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "[3, 5]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "5",
+            "padding": "2",
+            "output_padding": "1",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "None"
+        },
+        "segment": "(5, 6, 4, 2, 1, 6, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 47, 47), (1, 256, 47, 47), (1, 256, 47, 47)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "3",
+            "padding": "[1, 2]",
+            "dilation": "[1, 2]",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(0, 6, 2, 7, 5, 5, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 44, 44), (1, 1, 44, 44), (1, 1, 44, 44)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "64",
+            "kernel_size": "2",
+            "stride": "4",
+            "padding": "[1, 0]",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 11, 11]))"
+        },
+        "segment": "(3, 1, 3, 6, 2, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 64, 42, 44), (1, 64, 42, 44), (1, 64, 42, 44)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "7",
+            "stride": "2",
+            "padding": "5",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 11, 11]))"
+        },
+        "segment": "(5, 4, 1, 4, 0, 3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 35, 35), (1, 256, 35, 35), (1, 256, 35, 35)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "128",
+            "kernel_size": "[5, 7]",
+            "stride": "3",
+            "padding": "[1, 0]",
+            "dilation": "2",
+            "output_padding": "[1, 2]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(4, 7, 2, 6, 6, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 128, 50, 54), (1, 128, 50, 54), (1, 128, 50, 54)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "[2, 3]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "2",
+            "padding": "[0, 1]",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "output_size": "None"
+        },
+        "segment": "(0, 5, 1, 5, 2, 4, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 26, 29), (1, 1, 26, 29), (1, 1, 26, 29)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(0, 1, 5, 3, 0, 7, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 11, 24), (1, 1, 11, 24), (1, 1, 11, 24)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "4",
+            "padding": "5",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "2",
+            "output_size": "None"
+        },
+        "segment": "(0, 6, 3, 4, 4, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 31, 36), (1, 1, 31, 36), (1, 1, 31, 36)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "[1, 0]",
+            "dilation": "5",
+            "output_padding": "[1, 2]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(0, 3, 0, 6, 6, 4, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 34, 36), (1, 1, 34, 36), (1, 1, 34, 36)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "[5, 7]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "output_size": "None"
+        },
+        "segment": "(0, 7, 5, 1, 0, 3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 24, 41), (1, 1, 24, 41), (1, 1, 24, 41)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[2, 3]",
+            "stride": "[2, 1]",
+            "padding": "0",
+            "dilation": "2",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(0, 5, 6, 0, 5, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 32, 18), (1, 1, 32, 18), (1, 1, 32, 18)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "7",
+            "stride": "2",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 11, 11]))"
+        },
+        "segment": "(0, 4, 1, 3, 0, 6, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 27, 21), (1, 1, 27, 21), (1, 1, 27, 21)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[2, 1]",
+            "padding": "[0, 1]",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(0, 2, 6, 5, 0, 5, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 31, 16), (1, 1, 31, 16), (1, 1, 31, 16)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 3]",
+            "padding": "3",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 11, 11]))"
+        },
+        "segment": "(0, 0, 7, 3, 5, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 16, 25), (1, 1, 16, 25), (1, 1, 16, 25)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "5",
+            "padding": "0",
+            "dilation": "1",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(0, 6, 4, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 73, 70), (1, 1, 73, 70), (1, 1, 73, 70)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[5, 7]",
+            "stride": "4",
+            "padding": "0",
+            "dilation": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(0, 7, 3, 0, 0, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 69, 71), (1, 1, 69, 71), (1, 1, 69, 71)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "7",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 11, 11]))"
+        },
+        "segment": "(0, 4, 5, 1, 0, 4, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 39, 49), (1, 1, 39, 49), (1, 1, 39, 49)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "[5, 7]",
+            "stride": "[2, 1]",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 11, 11]))"
+        },
+        "segment": "(0, 7, 6, 2, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 21, 13), (1, 1, 21, 13), (1, 1, 21, 13)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 3]",
+            "padding": "0",
+            "dilation": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "segment": "(0, 0, 7, 0, 0, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 29, 40), (1, 1, 29, 40), (1, 1, 29, 40)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "[1, 2]",
+            "output_size": "None"
+        },
+        "segment": "(0, 0, 0, 2, 0, 5, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 6, 6), (1, 1, 6, 6), (1, 1, 6, 6)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "5",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "2",
+            "padding": "1",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 26, 21), (1, 32, 26, 21), (1, 32, 26, 21)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "5",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "[0, 1]",
+            "output_padding": "2",
+            "groups": "8",
+            "bias": "True",
+            "dilation": "4",
+            "output_size": "[24, 24]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (24, 24), but valid sizes range from [26, 24] to [26, 24] (for an input of torch.Size([10, 10]))', ('requested an output size of (24, 24), but valid sizes range from [26, 24] to [26, 24] (for an input of torch.Size([10, 10]))', 'requested an output size of (24, 24), but valid sizes range from [26, 24] to [26, 24] (for an input of torch.Size([10, 10]))', 'requested an output size of (24, 24), but valid sizes range from [26, 24] to [26, 24] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (24, 24), but valid sizes range from [26, 24] to [26, 24] (for an input of torch.Size([10, 10]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "5",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "[0, 1]",
+            "output_padding": "1",
+            "groups": "8",
+            "bias": "True",
+            "dilation": "4",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 27, 25), (1, 256, 27, 25), (1, 256, 27, 25)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "16",
+            "kernel_size": "5",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "[0, 1]",
+            "output_padding": "1",
+            "groups": "8",
+            "bias": "True",
+            "dilation": "4",
+            "output_size": "[24, 24]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (24, 24), but valid sizes range from [26, 24] to [26, 24] (for an input of torch.Size([10, 10]))', ('requested an output size of (24, 24), but valid sizes range from [26, 24] to [26, 24] (for an input of torch.Size([10, 10]))', 'requested an output size of (24, 24), but valid sizes range from [26, 24] to [26, 24] (for an input of torch.Size([10, 10]))', 'requested an output size of (24, 24), but valid sizes range from [26, 24] to [26, 24] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (24, 24), but valid sizes range from [26, 24] to [26, 24] (for an input of torch.Size([10, 10]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "5",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "2",
+            "padding": "1",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "[24, 24]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (24, 24), but valid sizes range from [29, 29] to [30, 30] (for an input of torch.Size([10, 10]))', ('requested an output size of (24, 24), but valid sizes range from [29, 29] to [30, 30] (for an input of torch.Size([10, 10]))', 'requested an output size of (24, 24), but valid sizes range from [29, 29] to [30, 30] (for an input of torch.Size([10, 10]))', 'requested an output size of (24, 24), but valid sizes range from [29, 29] to [30, 30] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (24, 24), but valid sizes range from [29, 29] to [30, 30] (for an input of torch.Size([10, 10]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "5",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "[1, 0]",
+            "groups": "8",
+            "bias": "True",
+            "dilation": "4",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 25, 24), (1, 256, 25, 24), (1, 256, 25, 24)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "5",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "[0, 1]",
+            "output_padding": "[1, 0]",
+            "groups": "8",
+            "bias": "True",
+            "dilation": "4",
+            "output_size": "[32, 32]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (32, 32), but valid sizes range from [26, 24] to [26, 24] (for an input of torch.Size([10, 10]))', ('requested an output size of (32, 32), but valid sizes range from [26, 24] to [26, 24] (for an input of torch.Size([10, 10]))', 'requested an output size of (32, 32), but valid sizes range from [26, 24] to [26, 24] (for an input of torch.Size([10, 10]))', 'requested an output size of (32, 32), but valid sizes range from [26, 24] to [26, 24] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (32, 32), but valid sizes range from [26, 24] to [26, 24] (for an input of torch.Size([10, 10]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "5",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "[1, 2]",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 26, 10), (1, 256, 26, 10), (1, 256, 26, 10)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "5",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "4",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 25, 24), (1, 256, 25, 24), (1, 256, 25, 24)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "1",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 21, 12), (1, 256, 21, 12), (1, 256, 21, 12)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "5",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 3]",
+            "padding": "2",
+            "output_padding": "1",
+            "groups": "16",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "[48, 48]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (48, 48), but valid sizes range from [27, 36] to [28, 38] (for an input of torch.Size([10, 10]))', ('requested an output size of (48, 48), but valid sizes range from [27, 36] to [28, 38] (for an input of torch.Size([10, 10]))', 'requested an output size of (48, 48), but valid sizes range from [27, 36] to [28, 38] (for an input of torch.Size([10, 10]))', 'requested an output size of (48, 48), but valid sizes range from [27, 36] to [28, 38] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (48, 48), but valid sizes range from [27, 36] to [28, 38] (for an input of torch.Size([10, 10]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "5",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "[1, 2]",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "[16, 16]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (16, 16), but valid sizes range from [25, 10] to [26, 10] (for an input of torch.Size([10, 10]))', ('requested an output size of (16, 16), but valid sizes range from [25, 10] to [26, 10] (for an input of torch.Size([10, 10]))', 'requested an output size of (16, 16), but valid sizes range from [25, 10] to [26, 10] (for an input of torch.Size([10, 10]))', 'requested an output size of (16, 16), but valid sizes range from [25, 10] to [26, 10] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (16, 16), but valid sizes range from [25, 10] to [26, 10] (for an input of torch.Size([10, 10]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "[5, 7]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "1",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 29, 27), (1, 32, 29, 27), (1, 32, 29, 27)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "[1, 2]",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 20, 7), (1, 256, 20, 7), (1, 256, 20, 7)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "128",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "1",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "5",
+            "output_size": "[10, 10]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (10, 10), but valid sizes range from [22, 13] to [23, 13] (for an input of torch.Size([10, 10]))', ('requested an output size of (10, 10), but valid sizes range from [22, 13] to [23, 13] (for an input of torch.Size([10, 10]))', 'requested an output size of (10, 10), but valid sizes range from [22, 13] to [23, 13] (for an input of torch.Size([10, 10]))', 'requested an output size of (10, 10), but valid sizes range from [22, 13] to [23, 13] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (10, 10), but valid sizes range from [22, 13] to [23, 13] (for an input of torch.Size([10, 10]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "[1, 2]",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 20, 7), (1, 32, 20, 7), (1, 32, 20, 7)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "[2, 3]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "1",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 21, 15), (1, 256, 21, 15), (1, 256, 21, 15)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "[1, 2]",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 19, 7), (1, 256, 19, 7), (1, 256, 19, 7)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "output_padding": "1",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 17, 8), (1, 256, 17, 8), (1, 256, 17, 8)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "7",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "5",
+            "padding": "[1, 0]",
+            "output_padding": "1",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 63, 65), (1, 256, 63, 65), (1, 256, 63, 65)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "5",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "[0, 1]",
+            "output_padding": "[1, 0]",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "1",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 24, 12), (1, 256, 24, 12), (1, 256, 24, 12)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "[3, 5]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "output_padding": "[1, 0]",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "[16, 16]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (16, 16), but valid sizes range from [19, 16] to [20, 16] (for an input of torch.Size([10, 10]))', ('requested an output size of (16, 16), but valid sizes range from [19, 16] to [20, 16] (for an input of torch.Size([10, 10]))', 'requested an output size of (16, 16), but valid sizes range from [19, 16] to [20, 16] (for an input of torch.Size([10, 10]))', 'requested an output size of (16, 16), but valid sizes range from [19, 16] to [20, 16] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (16, 16), but valid sizes range from [19, 16] to [20, 16] (for an input of torch.Size([10, 10]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "4",
+            "padding": "[1, 2]",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 37, 35), (1, 256, 37, 35), (1, 256, 37, 35)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 16, 7), (1, 256, 16, 7), (1, 256, 16, 7)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "64",
+            "kernel_size": "[2, 3]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "[1, 2]",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "1",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 64, 19, 8), (1, 64, 19, 8), (1, 64, 19, 8)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "[3, 5]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 3]",
+            "padding": "5",
+            "output_padding": "0",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 15, 30), (1, 256, 15, 30), (1, 256, 15, 30)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 9, 9), (1, 256, 9, 9), (1, 256, 9, 9)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "16",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "4",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 34, 34), (1, 16, 34, 34), (1, 16, 34, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "32",
+            "kernel_size": "1",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "output_padding": "1",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "[32, 32]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (32, 32), but valid sizes range from [13, 4] to [14, 4] (for an input of torch.Size([10, 10]))', ('requested an output size of (32, 32), but valid sizes range from [13, 4] to [14, 4] (for an input of torch.Size([10, 10]))', 'requested an output size of (32, 32), but valid sizes range from [13, 4] to [14, 4] (for an input of torch.Size([10, 10]))', 'requested an output size of (32, 32), but valid sizes range from [13, 4] to [14, 4] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (32, 32), but valid sizes range from [13, 4] to [14, 4] (for an input of torch.Size([10, 10]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "0",
+            "groups": "16",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "[0, 1]",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 15, 13), (1, 256, 15, 13), (1, 256, 15, 13)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 7, 7), (1, 256, 7, 7), (1, 256, 7, 7)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 12, 24), (1, 1, 12, 24), (1, 1, 12, 24)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "7",
+            "stride": "[2, 1]",
+            "padding": "[0, 1]",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 35, 24), (1, 1, 35, 24), (1, 1, 35, 24)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 10, 23), (1, 1, 10, 23), (1, 1, 10, 23)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[2, 1]",
+            "padding": "[0, 1]",
+            "dilation": "[2, 3]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 33, 18), (1, 1, 33, 18), (1, 1, 33, 18)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "[1, 2]",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 8, 9), (1, 256, 8, 9), (1, 256, 8, 9)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "1",
+            "output_padding": "2",
+            "groups": "16",
+            "bias": "True",
+            "dilation": "1",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "5",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "2",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 23, 19), (1, 256, 23, 19), (1, 256, 23, 19)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 11, 11), (1, 256, 11, 11), (1, 256, 11, 11)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "0",
+            "groups": "2",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[10, 10]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (10, 10), but valid sizes range from [10, 23] to [10, 24] (for an input of torch.Size([15, 14]))', ('requested an output size of (10, 10), but valid sizes range from [10, 23] to [10, 24] (for an input of torch.Size([15, 14]))', 'requested an output size of (10, 10), but valid sizes range from [10, 23] to [10, 24] (for an input of torch.Size([15, 14]))', 'requested an output size of (10, 10), but valid sizes range from [10, 23] to [10, 24] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (10, 10), but valid sizes range from [10, 23] to [10, 24] (for an input of torch.Size([15, 14]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 10, 22), (1, 1, 10, 22), (1, 1, 10, 22)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "output_padding": "0",
+            "groups": "4",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "[2, 3]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 7, 10), (1, 1, 7, 10), (1, 1, 7, 10)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "32",
+            "kernel_size": "2",
+            "stride": "1",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 10, 10), (1, 32, 10, 10), (1, 32, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "2",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 16, 16), (1, 256, 16, 16), (1, 256, 16, 16)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[1, 2]",
+            "padding": "0",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "16",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[5, 7]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 13, 33), (1, 1, 13, 33), (1, 1, 13, 33)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 13, 33), (1, 1, 13, 33), (1, 1, 13, 33)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "256",
+            "kernel_size": "[5, 7]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 13, 33), (1, 256, 13, 33), (1, 256, 13, 33)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "[5, 7]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 16, 22), (1, 256, 16, 22), (1, 256, 16, 22)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 13, 25), (1, 1, 13, 25), (1, 1, 13, 25)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[5, 7]",
+            "stride": "2",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 27, 33), (1, 1, 27, 33), (1, 1, 27, 33)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 13, 34), (1, 1, 13, 34), (1, 1, 13, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 11, 29), (1, 1, 11, 29), (1, 1, 11, 29)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "0",
+            "groups": "4",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "[0, 1]",
+            "output_padding": "0",
+            "groups": "16",
+            "bias": "True",
+            "dilation": "4",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 14, 12), (1, 256, 14, 12), (1, 256, 14, 12)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "7",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 31, 22), (1, 256, 31, 22), (1, 256, 31, 22)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "3",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "[48, 48]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (48, 48), but valid sizes range from [7, 7] to [7, 7] (for an input of torch.Size([10, 10]))', ('requested an output size of (48, 48), but valid sizes range from [7, 7] to [7, 7] (for an input of torch.Size([10, 10]))', 'requested an output size of (48, 48), but valid sizes range from [7, 7] to [7, 7] (for an input of torch.Size([10, 10]))', 'requested an output size of (48, 48), but valid sizes range from [7, 7] to [7, 7] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (48, 48), but valid sizes range from [7, 7] to [7, 7] (for an input of torch.Size([10, 10]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "7",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "[2, 3]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 16, 22), (1, 256, 16, 22), (1, 256, 16, 22)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "5",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "3",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 21, 34), (1, 1, 21, 34), (1, 1, 21, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "[5, 7]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "2",
+            "padding": "1",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 29, 36), (1, 256, 29, 36), (1, 256, 29, 36)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "32",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "5",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 19, 41), (1, 32, 19, 41), (1, 32, 19, 41)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[2, 3]",
+            "stride": "5",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 67, 67), (1, 1, 67, 67), (1, 1, 67, 67)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "256",
+            "kernel_size": "3",
+            "stride": "[2, 1]",
+            "padding": "5",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "2",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 21, 8), (1, 256, 21, 8), (1, 256, 21, 8)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[2, 1]",
+            "padding": "[0, 1]",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[24, 24]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (24, 24), but valid sizes range from [31, 20] to [32, 20] (for an input of torch.Size([15, 14]))', ('requested an output size of (24, 24), but valid sizes range from [31, 20] to [32, 20] (for an input of torch.Size([15, 14]))', 'requested an output size of (24, 24), but valid sizes range from [31, 20] to [32, 20] (for an input of torch.Size([15, 14]))', 'requested an output size of (24, 24), but valid sizes range from [31, 20] to [32, 20] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (24, 24), but valid sizes range from [31, 20] to [32, 20] (for an input of torch.Size([15, 14]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "64",
+            "kernel_size": "[3, 5]",
+            "stride": "4",
+            "padding": "3",
+            "dilation": "5",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[24, 24]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (24, 24), but valid sizes range from [61, 67] to [64, 70] (for an input of torch.Size([15, 14]))', ('requested an output size of (24, 24), but valid sizes range from [61, 67] to [64, 70] (for an input of torch.Size([15, 14]))', 'requested an output size of (24, 24), but valid sizes range from [61, 67] to [64, 70] (for an input of torch.Size([15, 14]))', 'requested an output size of (24, 24), but valid sizes range from [61, 67] to [64, 70] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (24, 24), but valid sizes range from [61, 67] to [64, 70] (for an input of torch.Size([15, 14]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[2, 1]",
+            "padding": "[0, 1]",
+            "dilation": "[1, 2]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 31, 17), (1, 1, 31, 17), (1, 1, 31, 17)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "16",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "2",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "[10, 10]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (10, 10), but valid sizes range from [7, 7] to [7, 7] (for an input of torch.Size([10, 10]))', ('requested an output size of (10, 10), but valid sizes range from [7, 7] to [7, 7] (for an input of torch.Size([10, 10]))', 'requested an output size of (10, 10), but valid sizes range from [7, 7] to [7, 7] (for an input of torch.Size([10, 10]))', 'requested an output size of (10, 10), but valid sizes range from [7, 7] to [7, 7] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (10, 10), but valid sizes range from [7, 7] to [7, 7] (for an input of torch.Size([10, 10]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "256",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 13, 34), (1, 256, 13, 34), (1, 256, 13, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "8",
+            "bias": "True",
+            "dilation": "[2, 3]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "3",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 15, 34), (1, 1, 15, 34), (1, 1, 15, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "2",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "[48, 48]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (48, 48), but valid sizes range from [7, 7] to [7, 7] (for an input of torch.Size([10, 10]))', ('requested an output size of (48, 48), but valid sizes range from [7, 7] to [7, 7] (for an input of torch.Size([10, 10]))', 'requested an output size of (48, 48), but valid sizes range from [7, 7] to [7, 7] (for an input of torch.Size([10, 10]))', 'requested an output size of (48, 48), but valid sizes range from [7, 7] to [7, 7] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (48, 48), but valid sizes range from [7, 7] to [7, 7] (for an input of torch.Size([10, 10]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[2, 3]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 7, 8), (1, 256, 7, 8), (1, 256, 7, 8)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "256",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 13, 33), (1, 256, 13, 33), (1, 256, 13, 33)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "256",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[10, 10]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (10, 10), but valid sizes range from [13, 33] to [13, 34] (for an input of torch.Size([15, 14]))', ('requested an output size of (10, 10), but valid sizes range from [13, 33] to [13, 34] (for an input of torch.Size([15, 14]))', 'requested an output size of (10, 10), but valid sizes range from [13, 33] to [13, 34] (for an input of torch.Size([15, 14]))', 'requested an output size of (10, 10), but valid sizes range from [13, 33] to [13, 34] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (10, 10), but valid sizes range from [13, 33] to [13, 34] (for an input of torch.Size([15, 14]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "128",
+            "kernel_size": "3",
+            "stride": "[2, 1]",
+            "padding": "[0, 1]",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[10, 10]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (10, 10), but valid sizes range from [31, 16] to [32, 16] (for an input of torch.Size([15, 14]))', ('requested an output size of (10, 10), but valid sizes range from [31, 16] to [32, 16] (for an input of torch.Size([15, 14]))', 'requested an output size of (10, 10), but valid sizes range from [31, 16] to [32, 16] (for an input of torch.Size([15, 14]))', 'requested an output size of (10, 10), but valid sizes range from [31, 16] to [32, 16] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (10, 10), but valid sizes range from [31, 16] to [32, 16] (for an input of torch.Size([15, 14]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[2, 3]",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 25, 15), (1, 1, 25, 15), (1, 1, 25, 15)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[1, 2]",
+            "padding": "[0, 1]",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 17, 29), (1, 1, 17, 29), (1, 1, 17, 29)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "5",
+            "padding": "[1, 2]",
+            "output_padding": "0",
+            "groups": "16",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 47, 45), (1, 256, 47, 45), (1, 256, 47, 45)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 16, 8), (1, 256, 16, 8), (1, 256, 16, 8)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "2",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 16, 16), (1, 256, 16, 16), (1, 256, 16, 16)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 8, 8), (1, 256, 8, 8), (1, 256, 8, 8)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "[0, 1]",
+            "dilation": "[2, 3]",
+            "output_padding": "[1, 2]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[32, 32]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (32, 32), but valid sizes range from [19, 37] to [19, 38] (for an input of torch.Size([15, 14]))', ('requested an output size of (32, 32), but valid sizes range from [19, 37] to [19, 38] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [19, 37] to [19, 38] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [19, 37] to [19, 38] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (32, 32), but valid sizes range from [19, 37] to [19, 38] (for an input of torch.Size([15, 14]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[2, 3]",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "16",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "2",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 13, 30), (1, 1, 13, 30), (1, 1, 13, 30)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[2, 3]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 11, 28), (1, 1, 11, 28), (1, 1, 11, 28)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[2, 1]",
+            "padding": "[0, 1]",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "256",
+            "kernel_size": "3",
+            "stride": "[2, 1]",
+            "padding": "[0, 1]",
+            "dilation": "[2, 3]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 33, 18), (1, 256, 33, 18), (1, 256, 33, 18)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 13, 28), (1, 1, 13, 28), (1, 1, 13, 28)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 25, 12), (1, 1, 25, 12), (1, 1, 25, 12)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "2",
+            "padding": "[0, 1]",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[10, 10]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (10, 10), but valid sizes range from [25, 12] to [26, 12] (for an input of torch.Size([15, 14]))', ('requested an output size of (10, 10), but valid sizes range from [25, 12] to [26, 12] (for an input of torch.Size([15, 14]))', 'requested an output size of (10, 10), but valid sizes range from [25, 12] to [26, 12] (for an input of torch.Size([15, 14]))', 'requested an output size of (10, 10), but valid sizes range from [25, 12] to [26, 12] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (10, 10), but valid sizes range from [25, 12] to [26, 12] (for an input of torch.Size([15, 14]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[2, 1]",
+            "padding": "[0, 1]",
+            "dilation": "2",
+            "output_padding": "0",
+            "groups": "8",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[2, 3]",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 24, 12), (1, 1, 24, 12), (1, 1, 24, 12)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "2",
+            "padding": "[0, 1]",
+            "dilation": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 37, 33), (1, 1, 37, 33), (1, 1, 37, 33)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "128",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "[1, 0]",
+            "groups": "16",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 128, 8, 7), (1, 128, 8, 7), (1, 128, 8, 7)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 7, 7), (1, 256, 7, 7), (1, 256, 7, 7)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 6, 5), (1, 256, 6, 5), (1, 256, 6, 5)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "2",
+            "groups": "2",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 9, 9), (1, 256, 9, 9), (1, 256, 9, 9)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[1, 2]",
+            "padding": "[1, 0]",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 17, 34), (1, 1, 17, 34), (1, 1, 17, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 24, 10), (1, 1, 24, 10), (1, 1, 24, 10)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "128",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 128, 13, 34), (1, 128, 13, 34), (1, 128, 13, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[2, 1]",
+            "padding": "2",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[32, 32]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (32, 32), but valid sizes range from [27, 18] to [28, 18] (for an input of torch.Size([15, 14]))', ('requested an output size of (32, 32), but valid sizes range from [27, 18] to [28, 18] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [27, 18] to [28, 18] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [27, 18] to [28, 18] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (32, 32), but valid sizes range from [27, 18] to [28, 18] (for an input of torch.Size([15, 14]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "4",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "8",
+            "bias": "True",
+            "output_size": "[48, 48]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[48, 48]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (48, 48), but valid sizes range from [27, 14] to [28, 14] (for an input of torch.Size([15, 14]))', ('requested an output size of (48, 48), but valid sizes range from [27, 14] to [28, 14] (for an input of torch.Size([15, 14]))', 'requested an output size of (48, 48), but valid sizes range from [27, 14] to [28, 14] (for an input of torch.Size([15, 14]))', 'requested an output size of (48, 48), but valid sizes range from [27, 14] to [28, 14] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (48, 48), but valid sizes range from [27, 14] to [28, 14] (for an input of torch.Size([15, 14]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[2, 1]",
+            "padding": "2",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 26, 12), (1, 1, 26, 12), (1, 1, 26, 12)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "32",
+            "kernel_size": "7",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 29, 20), (1, 32, 29, 20), (1, 32, 29, 20)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 24, 10), (1, 256, 24, 10), (1, 256, 24, 10)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[32, 32]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (32, 32), but valid sizes range from [25, 12] to [26, 12] (for an input of torch.Size([15, 14]))', ('requested an output size of (32, 32), but valid sizes range from [25, 12] to [26, 12] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [25, 12] to [26, 12] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [25, 12] to [26, 12] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (32, 32), but valid sizes range from [25, 12] to [26, 12] (for an input of torch.Size([15, 14]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[2, 1]",
+            "padding": "[1, 0]",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[32, 32]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (32, 32), but valid sizes range from [28, 16] to [29, 16] (for an input of torch.Size([15, 14]))', ('requested an output size of (32, 32), but valid sizes range from [28, 16] to [29, 16] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [28, 16] to [29, 16] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [28, 16] to [29, 16] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (32, 32), but valid sizes range from [28, 16] to [29, 16] (for an input of torch.Size([15, 14]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "7",
+            "stride": "[2, 1]",
+            "padding": "2",
+            "dilation": "4",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 49, 34), (1, 1, 49, 34), (1, 1, 49, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[2, 1]",
+            "padding": "[1, 0]",
+            "dilation": "5",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[32, 32]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (32, 32), but valid sizes range from [32, 19] to [33, 19] (for an input of torch.Size([15, 14]))', ('requested an output size of (32, 32), but valid sizes range from [32, 19] to [33, 19] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [32, 19] to [33, 19] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [32, 19] to [33, 19] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (32, 32), but valid sizes range from [32, 19] to [33, 19] (for an input of torch.Size([15, 14]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[2, 1]",
+            "padding": "2",
+            "dilation": "[2, 3]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 27, 13), (1, 1, 27, 13), (1, 1, 27, 13)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 27, 20), (1, 1, 27, 20), (1, 1, 27, 20)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "5",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 66, 62), (1, 1, 66, 62), (1, 1, 66, 62)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "16",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "7",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "[1, 2]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 10, 16), (1, 256, 10, 16), (1, 256, 10, 16)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "64",
+            "kernel_size": "3",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 64, 8, 6), (1, 64, 8, 6), (1, 64, 8, 6)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "16",
+            "bias": "True",
+            "dilation": "3",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 7, 7), (1, 256, 7, 7), (1, 256, 7, 7)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[10, 10]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (10, 10), but valid sizes range from [24, 10] to [25, 10] (for an input of torch.Size([15, 14]))', ('requested an output size of (10, 10), but valid sizes range from [24, 10] to [25, 10] (for an input of torch.Size([15, 14]))', 'requested an output size of (10, 10), but valid sizes range from [24, 10] to [25, 10] (for an input of torch.Size([15, 14]))', 'requested an output size of (10, 10), but valid sizes range from [24, 10] to [25, 10] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (10, 10), but valid sizes range from [24, 10] to [25, 10] (for an input of torch.Size([15, 14]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 24, 11), (1, 1, 24, 11), (1, 1, 24, 11)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "[0, 1]",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 19, 38), (1, 1, 19, 38), (1, 1, 19, 38)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 15, 5), (1, 256, 15, 5), (1, 256, 15, 5)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "16",
+            "kernel_size": "2",
+            "stride": "1",
+            "padding": "[1, 2]",
+            "dilation": "4",
+            "output_padding": "0",
+            "groups": "8",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 17, 14), (1, 16, 17, 14), (1, 16, 17, 14)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 6, 5), (1, 256, 6, 5), (1, 256, 6, 5)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 25, 10), (1, 1, 25, 10), (1, 1, 25, 10)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "1",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 25, 11), (1, 1, 25, 11), (1, 1, 25, 11)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "[0, 1]",
+            "groups": "16",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 1]",
+            "output_padding": "[0, 1]",
+            "groups": "16",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "[1, 2]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 14, 35), (1, 1, 14, 35), (1, 1, 14, 35)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "16",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "3",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 15, 34), (1, 16, 15, 34), (1, 16, 15, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "[1, 0]",
+            "groups": "8",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "16",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "16",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 6, 5), (1, 16, 6, 5), (1, 16, 6, 5)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "5",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "[1, 0]",
+            "output_padding": "2",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "[24, 24]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (24, 24), but valid sizes range from [16, 14] to [16, 14] (for an input of torch.Size([10, 10]))', ('requested an output size of (24, 24), but valid sizes range from [16, 14] to [16, 14] (for an input of torch.Size([10, 10]))', 'requested an output size of (24, 24), but valid sizes range from [16, 14] to [16, 14] (for an input of torch.Size([10, 10]))', 'requested an output size of (24, 24), but valid sizes range from [16, 14] to [16, 14] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (24, 24), but valid sizes range from [16, 14] to [16, 14] (for an input of torch.Size([10, 10]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "64",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[2, 3]",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "5",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 64, 18, 27), (1, 64, 18, 27), (1, 64, 18, 27)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "2",
+            "output_padding": "0",
+            "groups": "16",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 8, 7), (1, 256, 8, 7), (1, 256, 8, 7)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "2",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 6, 5), (1, 256, 6, 5), (1, 256, 6, 5)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "[2, 3]",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 6, 6), (1, 256, 6, 6), (1, 256, 6, 6)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 26, 11), (1, 1, 26, 11), (1, 1, 26, 11)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "32",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 32, 11, 30), (1, 32, 11, 30), (1, 32, 11, 30)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "stride": "4",
+            "padding": "3",
+            "dilation": "4",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 56, 51), (1, 256, 56, 51), (1, 256, 56, 51)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[2, 1]",
+            "padding": "1",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 31, 25), (1, 1, 31, 25), (1, 1, 31, 25)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "32",
+            "kernel_size": "2",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[10, 10]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (10, 10), but valid sizes range from [24, 10] to [25, 10] (for an input of torch.Size([15, 14]))', ('requested an output size of (10, 10), but valid sizes range from [24, 10] to [25, 10] (for an input of torch.Size([15, 14]))', 'requested an output size of (10, 10), but valid sizes range from [24, 10] to [25, 10] (for an input of torch.Size([15, 14]))', 'requested an output size of (10, 10), but valid sizes range from [24, 10] to [25, 10] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (10, 10), but valid sizes range from [24, 10] to [25, 10] (for an input of torch.Size([15, 14]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 27, 21), (1, 1, 27, 21), (1, 1, 27, 21)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "4",
+            "output_padding": "3",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 30, 15), (1, 1, 30, 15), (1, 1, 30, 15)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "4",
+            "bias": "True",
+            "output_size": "[16, 16]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "64",
+            "kernel_size": "[3, 5]",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "3",
+            "output_padding": "[1, 2]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 64, 30, 22), (1, 64, 30, 22), (1, 64, 30, 22)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[32, 32]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (32, 32), but valid sizes range from [11, 24] to [11, 25] (for an input of torch.Size([15, 14]))', ('requested an output size of (32, 32), but valid sizes range from [11, 24] to [11, 25] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [11, 24] to [11, 25] (for an input of torch.Size([15, 14]))', 'requested an output size of (32, 32), but valid sizes range from [11, 24] to [11, 25] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (32, 32), but valid sizes range from [11, 24] to [11, 25] (for an input of torch.Size([15, 14]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "dilation": "[2, 1]",
+            "output_padding": "[0, 1]",
+            "groups": "2",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "16",
+            "kernel_size": "2",
+            "stride": "[1, 2]",
+            "padding": "[0, 1]",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 17, 29), (1, 16, 17, 29), (1, 16, 17, 29)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "32",
+            "kernel_size": "[3, 5]",
+            "stride": "3",
+            "padding": "3",
+            "dilation": "1",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[16, 16]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (16, 16), but valid sizes range from [39, 38] to [41, 40] (for an input of torch.Size([15, 14]))', ('requested an output size of (16, 16), but valid sizes range from [39, 38] to [41, 40] (for an input of torch.Size([15, 14]))', 'requested an output size of (16, 16), but valid sizes range from [39, 38] to [41, 40] (for an input of torch.Size([15, 14]))', 'requested an output size of (16, 16), but valid sizes range from [39, 38] to [41, 40] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (16, 16), but valid sizes range from [39, 38] to [41, 40] (for an input of torch.Size([15, 14]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "2",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 12, 23), (1, 1, 12, 23), (1, 1, 12, 23)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "32",
+            "kernel_size": "[3, 5]",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "[0, 1]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[48, 48]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (48, 48), but valid sizes range from [27, 20] to [28, 20] (for an input of torch.Size([15, 14]))', ('requested an output size of (48, 48), but valid sizes range from [27, 20] to [28, 20] (for an input of torch.Size([15, 14]))', 'requested an output size of (48, 48), but valid sizes range from [27, 20] to [28, 20] (for an input of torch.Size([15, 14]))', 'requested an output size of (48, 48), but valid sizes range from [27, 20] to [28, 20] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (48, 48), but valid sizes range from [27, 20] to [28, 20] (for an input of torch.Size([15, 14]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "128",
+            "kernel_size": "2",
+            "stride": "[2, 1]",
+            "padding": "[1, 2]",
+            "dilation": "[1, 2]",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[10, 10]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (10, 10), but valid sizes range from [28, 12] to [29, 12] (for an input of torch.Size([15, 14]))', ('requested an output size of (10, 10), but valid sizes range from [28, 12] to [29, 12] (for an input of torch.Size([15, 14]))', 'requested an output size of (10, 10), but valid sizes range from [28, 12] to [29, 12] (for an input of torch.Size([15, 14]))', 'requested an output size of (10, 10), but valid sizes range from [28, 12] to [29, 12] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (10, 10), but valid sizes range from [28, 12] to [29, 12] (for an input of torch.Size([15, 14]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "[48, 48]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (48, 48), but valid sizes range from [6, 14] to [6, 15] (for an input of torch.Size([10, 10]))', ('requested an output size of (48, 48), but valid sizes range from [6, 14] to [6, 15] (for an input of torch.Size([10, 10]))', 'requested an output size of (48, 48), but valid sizes range from [6, 14] to [6, 15] (for an input of torch.Size([10, 10]))', 'requested an output size of (48, 48), but valid sizes range from [6, 14] to [6, 15] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (48, 48), but valid sizes range from [6, 14] to [6, 15] (for an input of torch.Size([10, 10]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "0",
+            "output_padding": "0",
+            "groups": "2",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "[48, 48]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (48, 48), but valid sizes range from [12, 11] to [12, 11] (for an input of torch.Size([10, 10]))', ('requested an output size of (48, 48), but valid sizes range from [12, 11] to [12, 11] (for an input of torch.Size([10, 10]))', 'requested an output size of (48, 48), but valid sizes range from [12, 11] to [12, 11] (for an input of torch.Size([10, 10]))', 'requested an output size of (48, 48), but valid sizes range from [12, 11] to [12, 11] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (48, 48), but valid sizes range from [12, 11] to [12, 11] (for an input of torch.Size([10, 10]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "[32, 32]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (32, 32), but valid sizes range from [6, 5] to [6, 5] (for an input of torch.Size([10, 10]))', ('requested an output size of (32, 32), but valid sizes range from [6, 5] to [6, 5] (for an input of torch.Size([10, 10]))', 'requested an output size of (32, 32), but valid sizes range from [6, 5] to [6, 5] (for an input of torch.Size([10, 10]))', 'requested an output size of (32, 32), but valid sizes range from [6, 5] to [6, 5] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (32, 32), but valid sizes range from [6, 5] to [6, 5] (for an input of torch.Size([10, 10]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "3",
+            "groups": "4",
+            "bias": "True",
+            "dilation": "4",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 11, 11), (1, 256, 11, 11), (1, 256, 11, 11)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "256",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "2",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "[24, 24]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (24, 24), but valid sizes range from [6, 5] to [6, 5] (for an input of torch.Size([10, 10]))', ('requested an output size of (24, 24), but valid sizes range from [6, 5] to [6, 5] (for an input of torch.Size([10, 10]))', 'requested an output size of (24, 24), but valid sizes range from [6, 5] to [6, 5] (for an input of torch.Size([10, 10]))', 'requested an output size of (24, 24), but valid sizes range from [6, 5] to [6, 5] (for an input of torch.Size([10, 10]))'))",
+        "error_message": "requested an output size of (24, 24), but valid sizes range from [6, 5] to [6, 5] (for an input of torch.Size([10, 10]))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "16",
+            "kernel_size": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 16, 10, 10]))",
+            "stride": "1",
+            "padding": "3",
+            "output_padding": "0",
+            "groups": "1",
+            "bias": "True",
+            "dilation": "[2, 1]",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 6, 5), (1, 16, 6, 5), (1, 16, 6, 5)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "2",
+            "stride": "2",
+            "padding": "2",
+            "dilation": "[1, 2]",
+            "output_padding": "[1, 0]",
+            "groups": "4",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "7",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "[1, 2]",
+            "groups": "2",
+            "bias": "True",
+            "output_size": "None",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 3]",
+            "output_padding": "[1, 0]",
+            "groups": "1",
+            "bias": "True",
+            "output_size": "[48, 48]",
+            "inputs": "Tensor(shape=torch.Size([1, 32, 15, 14]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'requested an output size of (48, 48), but valid sizes range from [13, 33] to [13, 34] (for an input of torch.Size([15, 14]))', ('requested an output size of (48, 48), but valid sizes range from [13, 33] to [13, 34] (for an input of torch.Size([15, 14]))', 'requested an output size of (48, 48), but valid sizes range from [13, 33] to [13, 34] (for an input of torch.Size([15, 14]))', 'requested an output size of (48, 48), but valid sizes range from [13, 33] to [13, 34] (for an input of torch.Size([15, 14]))'))",
+        "error_message": "requested an output size of (48, 48), but valid sizes range from [13, 33] to [13, 34] (for an input of torch.Size([15, 14]))"
+    }
+]

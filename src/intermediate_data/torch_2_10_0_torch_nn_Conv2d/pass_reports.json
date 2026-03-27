@@ -1,0 +1,4590 @@
+[
+    {
+        "test_case": {
+            "in_channels": "3",
+            "out_channels": "128",
+            "kernel_size": "[5, 5]",
+            "stride": "[1, 1]",
+            "padding": "[2, 2]",
+            "dilation": "[1, 1]",
+            "groups": "2",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([20, 16, 50, 100]))"
+        },
+        "segment": "(1, 4, 5, 3, 5, 3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in_channels must be divisible by groups', ('in_channels must be divisible by groups', 'in_channels must be divisible by groups', 'in_channels must be divisible by groups'))",
+        "error_message": "in_channels must be divisible by groups",
+        "conflict_params": [
+            "in_channels",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "256",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "0",
+            "dilation": "1",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([20, 16, 50, 100]))"
+        },
+        "segment": "(6, 0, 0, 0, 0, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups",
+        "conflict_params": [
+            "out_channels",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "16",
+            "kernel_size": "1",
+            "stride": "2",
+            "padding": "1",
+            "dilation": "2",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([20, 16, 50, 100]))"
+        },
+        "segment": "(0, 1, 0, 1, 1, 1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in_channels must be divisible by groups', ('in_channels must be divisible by groups', 'in_channels must be divisible by groups', 'in_channels must be divisible by groups'))",
+        "error_message": "in_channels must be divisible by groups",
+        "conflict_params": [
+            "in_channels",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "16",
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "2",
+            "dilation": "[1, 1]",
+            "groups": "4",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([20, 16, 50, 100]))"
+        },
+        "segment": "(2, 1, 1, 0, 2, 3, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 52, 102), (20, 16, 52, 102), (20, 16, 52, 102)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "33",
+            "kernel_size": "1",
+            "stride": "3",
+            "padding": "3",
+            "dilation": "3",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([20, 16, 50, 100]))"
+        },
+        "segment": "(2, 2, 0, 2, 3, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 33, 19, 36), (20, 33, 19, 36), (20, 33, 19, 36)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "16",
+            "kernel_size": "5",
+            "stride": "[1, 1]",
+            "padding": "0",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([20, 16, 50, 100]))"
+        },
+        "segment": "(3, 1, 2, 3, 0, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [16, 32, 5, 5], expected input[20, 16, 50, 100] to have 32 channels, but got 16 channels instead', ('Given groups=1, weight of size [16, 32, 5, 5], expected input[20, 16, 50, 100] to have 32 channels, but got 16 channels instead', 'Given groups=1, weight of size [16, 32, 5, 5], expected input[20, 16, 50, 100] to have 32 channels, but got 16 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [16, 32, 5, 5], expected input[20, 16, 50, 100] to have 32 channels, but got 16 channels instead",
+        "conflict_params": [
+            "in_channels",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "64",
+            "kernel_size": "1",
+            "stride": "[2, 2]",
+            "padding": "[1, 1]",
+            "dilation": "[1, 2]",
+            "groups": "4",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "segment": "(3, 3, 0, 4, 4, 5, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 64, 9, 9), (2, 64, 9, 9), (2, 64, 9, 9)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "64",
+            "out_channels": "33",
+            "kernel_size": "5",
+            "stride": "2",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "4",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([20, 16, 50, 100]))"
+        },
+        "segment": "(4, 2, 2, 1, 5, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups",
+        "conflict_params": [
+            "out_channels",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "64",
+            "out_channels": "64",
+            "kernel_size": "3",
+            "stride": "[1, 2]",
+            "padding": "[3, 3]",
+            "dilation": "2",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([20, 16, 50, 100]))"
+        },
+        "segment": "(4, 3, 1, 5, 6, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [64, 64, 3, 3], expected input[20, 16, 50, 100] to have 64 channels, but got 16 channels instead', ('Given groups=1, weight of size [64, 64, 3, 3], expected input[20, 16, 50, 100] to have 64 channels, but got 16 channels instead', 'Given groups=1, weight of size [64, 64, 3, 3], expected input[20, 16, 50, 100] to have 64 channels, but got 16 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [64, 64, 3, 3], expected input[20, 16, 50, 100] to have 64 channels, but got 16 channels instead",
+        "conflict_params": [
+            "in_channels",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "128",
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "1",
+            "dilation": "[1, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([20, 16, 50, 100]))"
+        },
+        "segment": "(5, 4, 3, 0, 1, 5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [128, 128, 7, 7], expected input[20, 16, 50, 100] to have 128 channels, but got 16 channels instead', ('Given groups=1, weight of size [128, 128, 7, 7], expected input[20, 16, 50, 100] to have 128 channels, but got 16 channels instead', 'Given groups=1, weight of size [128, 128, 7, 7], expected input[20, 16, 50, 100] to have 128 channels, but got 16 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [128, 128, 7, 7], expected input[20, 16, 50, 100] to have 128 channels, but got 16 channels instead",
+        "conflict_params": [
+            "in_channels",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "256",
+            "out_channels": "256",
+            "kernel_size": "[3, 3]",
+            "stride": "2",
+            "padding": "[1, 1]",
+            "dilation": "[1, 1]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([20, 16, 50, 100]))"
+        },
+        "segment": "(6, 5, 4, 1, 4, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [256, 256, 3, 3], expected input[20, 16, 50, 100] to have 256 channels, but got 16 channels instead', ('Given groups=1, weight of size [256, 256, 3, 3], expected input[20, 16, 50, 100] to have 256 channels, but got 16 channels instead', 'Given groups=1, weight of size [256, 256, 3, 3], expected input[20, 16, 50, 100] to have 256 channels, but got 16 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [256, 256, 3, 3], expected input[20, 16, 50, 100] to have 256 channels, but got 16 channels instead",
+        "conflict_params": [
+            "in_channels",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "3",
+            "out_channels": "512",
+            "kernel_size": "[7, 7]",
+            "stride": "[2, 2]",
+            "padding": "2",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([20, 16, 50, 100]))"
+        },
+        "segment": "(1, 6, 6, 4, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [512, 3, 7, 7], expected input[20, 16, 50, 100] to have 3 channels, but got 16 channels instead', ('Given groups=1, weight of size [512, 3, 7, 7], expected input[20, 16, 50, 100] to have 3 channels, but got 16 channels instead', 'Given groups=1, weight of size [512, 3, 7, 7], expected input[20, 16, 50, 100] to have 3 channels, but got 16 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [512, 3, 7, 7], expected input[20, 16, 50, 100] to have 3 channels, but got 16 channels instead",
+        "conflict_params": [
+            "in_channels",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "64",
+            "out_channels": "16",
+            "kernel_size": "7",
+            "stride": "[2, 2]",
+            "padding": "valid",
+            "dilation": "3",
+            "groups": "2",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 64, 32, 32]))"
+        },
+        "segment": "(4, 1, 3, 4, 7, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 7, 7), (1, 16, 7, 7), (1, 16, 7, 7)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "64",
+            "kernel_size": "[3, 3]",
+            "stride": "[2, 1]",
+            "padding": "1",
+            "dilation": "1",
+            "groups": "2",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([20, 16, 50, 100]))"
+        },
+        "segment": "(2, 3, 4, 6, 1, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 64, 25, 100), (20, 64, 25, 100), (20, 64, 25, 100)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "256",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "dilation": "[2, 2]",
+            "groups": "2",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "segment": "(5, 5, 0, 5, 2, 4, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 36, 18), (1, 256, 36, 18), (1, 256, 36, 18)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "256",
+            "out_channels": "512",
+            "kernel_size": "3",
+            "stride": "3",
+            "padding": "same",
+            "dilation": "[1, 2]",
+            "groups": "2",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([4, 256, 32, 32]))"
+        },
+        "segment": "(6, 6, 1, 2, 8, 5, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"padding='same' is not supported for strided convolutions\", (\"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\"))",
+        "error_message": "padding='same' is not supported for strided convolutions",
+        "conflict_params": [
+            "padding",
+            "stride"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "128",
+            "kernel_size": "[7, 7]",
+            "stride": "2",
+            "padding": "[3, 3]",
+            "dilation": "[2, 2]",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([20, 16, 50, 100]))"
+        },
+        "segment": "(2, 4, 6, 1, 6, 4, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 128, 22, 47), (20, 128, 22, 47), (20, 128, 22, 47)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "256",
+            "kernel_size": "3",
+            "stride": "[2, 1]",
+            "padding": "[2, 2]",
+            "dilation": "3",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "segment": "(3, 5, 1, 6, 5, 2, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 256, 7, 14), (2, 256, 7, 14), (2, 256, 7, 14)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "512",
+            "kernel_size": "[3, 3]",
+            "stride": "[1, 1]",
+            "padding": "3",
+            "dilation": "2",
+            "groups": "4",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "segment": "(5, 6, 4, 3, 3, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 512, 34, 34), (1, 512, 34, 34), (1, 512, 34, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "64",
+            "out_channels": "512",
+            "kernel_size": "[5, 5]",
+            "stride": "1",
+            "padding": "[1, 1]",
+            "dilation": "[2, 2]",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 64, 32, 32]))"
+        },
+        "segment": "(4, 6, 5, 0, 4, 4, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 512, 26, 26), (1, 512, 26, 26), (1, 512, 26, 26)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "64",
+            "kernel_size": "5",
+            "stride": "3",
+            "padding": "valid",
+            "dilation": "[1, 1]",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "segment": "(5, 3, 2, 2, 7, 3, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 64, 10, 10), (1, 64, 10, 10), (1, 64, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "7",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[1, 1]",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "segment": "(3, 0, 3, 5, 3, 3, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups",
+        "conflict_params": [
+            "out_channels",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "33",
+            "kernel_size": "[7, 7]",
+            "stride": "1",
+            "padding": "valid",
+            "dilation": "2",
+            "groups": "2",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "segment": "(3, 2, 6, 0, 7, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups",
+        "conflict_params": [
+            "out_channels",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "256",
+            "out_channels": "128",
+            "kernel_size": "5",
+            "stride": "[2, 1]",
+            "padding": "2",
+            "dilation": "2",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([4, 256, 32, 32]))"
+        },
+        "segment": "(6, 4, 2, 6, 2, 1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 128, 14, 28), (4, 128, 14, 28), (4, 128, 14, 28)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "128",
+            "kernel_size": "[3, 3]",
+            "stride": "[1, 2]",
+            "padding": "0",
+            "dilation": "3",
+            "groups": "4",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([20, 16, 50, 100]))"
+        },
+        "segment": "(0, 4, 4, 5, 0, 2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in_channels must be divisible by groups', ('in_channels must be divisible by groups', 'in_channels must be divisible by groups', 'in_channels must be divisible by groups'))",
+        "error_message": "in_channels must be divisible by groups",
+        "conflict_params": [
+            "in_channels",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "1",
+            "kernel_size": "[5, 5]",
+            "stride": "[2, 1]",
+            "padding": "valid",
+            "dilation": "[1, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([20, 16, 50, 100]))"
+        },
+        "segment": "(0, 0, 5, 6, 7, 5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 1, 5, 5], expected input[20, 16, 50, 100] to have 1 channels, but got 16 channels instead', ('Given groups=1, weight of size [1, 1, 5, 5], expected input[20, 16, 50, 100] to have 1 channels, but got 16 channels instead', 'Given groups=1, weight of size [1, 1, 5, 5], expected input[20, 16, 50, 100] to have 1 channels, but got 16 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 1, 5, 5], expected input[20, 16, 50, 100] to have 1 channels, but got 16 channels instead",
+        "conflict_params": [
+            "in_channels",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "[5, 5]",
+            "stride": "[2, 2]",
+            "padding": "0",
+            "dilation": "2",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([20, 16, 50, 100]))"
+        },
+        "segment": "(2, 5, 5, 4, 0, 1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 256, 21, 46), (20, 256, 21, 46), (20, 256, 21, 46)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "256",
+            "out_channels": "64",
+            "kernel_size": "[7, 7]",
+            "stride": "[1, 1]",
+            "padding": "same",
+            "dilation": "3",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([4, 256, 32, 32]))"
+        },
+        "segment": "(6, 3, 6, 3, 8, 2, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 64, 32, 32), (4, 64, 32, 32), (4, 64, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "64",
+            "out_channels": "33",
+            "kernel_size": "[3, 3]",
+            "stride": "[1, 1]",
+            "padding": "2",
+            "dilation": "[1, 2]",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 64, 32, 32]))"
+        },
+        "segment": "(4, 2, 4, 3, 2, 5, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups",
+        "conflict_params": [
+            "out_channels",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "16",
+            "kernel_size": "[5, 5]",
+            "stride": "3",
+            "padding": "[3, 3]",
+            "dilation": "1",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "segment": "(5, 1, 5, 2, 6, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 12, 12), (1, 16, 12, 12), (1, 16, 12, 12)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "64",
+            "out_channels": "1",
+            "kernel_size": "[7, 7]",
+            "stride": "3",
+            "padding": "1",
+            "dilation": "[2, 2]",
+            "groups": "4",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 64, 32, 32]))"
+        },
+        "segment": "(4, 0, 6, 2, 1, 4, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups",
+        "conflict_params": [
+            "out_channels",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "256",
+            "kernel_size": "7",
+            "stride": "[1, 1]",
+            "padding": "[1, 1]",
+            "dilation": "1",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "segment": "(0, 5, 3, 3, 4, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in_channels must be divisible by groups', ('in_channels must be divisible by groups', 'in_channels must be divisible by groups', 'in_channels must be divisible by groups'))",
+        "error_message": "in_channels must be divisible by groups",
+        "conflict_params": [
+            "in_channels",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "2",
+            "padding": "[1, 1]",
+            "dilation": "3",
+            "groups": "2",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "segment": "(5, 0, 1, 1, 4, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups",
+        "conflict_params": [
+            "out_channels",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "512",
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "[3, 3]",
+            "dilation": "3",
+            "groups": "2",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "segment": "(0, 6, 2, 0, 6, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in_channels must be divisible by groups', ('in_channels must be divisible by groups', 'in_channels must be divisible by groups', 'in_channels must be divisible by groups'))",
+        "error_message": "in_channels must be divisible by groups",
+        "conflict_params": [
+            "in_channels",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "256",
+            "out_channels": "16",
+            "kernel_size": "[7, 7]",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "[1, 2]",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([4, 256, 32, 32]))"
+        },
+        "segment": "(6, 1, 6, 5, 5, 5, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 16, 30, 12), (4, 16, 30, 12), (4, 16, 30, 12)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "64",
+            "out_channels": "128",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "same",
+            "dilation": "[1, 1]",
+            "groups": "4",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 64, 32, 32]))"
+        },
+        "segment": "(4, 4, 0, 6, 8, 3, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"padding='same' is not supported for strided convolutions\", (\"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\"))",
+        "error_message": "padding='same' is not supported for strided convolutions",
+        "conflict_params": [
+            "stride",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "256",
+            "out_channels": "33",
+            "kernel_size": "3",
+            "stride": "[2, 2]",
+            "padding": "3",
+            "dilation": "[2, 2]",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([4, 256, 32, 32]))"
+        },
+        "segment": "(6, 2, 1, 4, 3, 4, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups",
+        "conflict_params": [
+            "out_channels",
+            "groups"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "[5, 5]",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "dilation": "[1, 1]",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "segment": "(3, 6, 5, 5, 1, 3, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 14, 7), (2, 512, 14, 7), (2, 512, 14, 7)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "64",
+            "kernel_size": "7",
+            "stride": "3",
+            "padding": "[2, 2]",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "segment": "(0, 3, 3, 2, 5, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 64, 7, 7), (1, 64, 7, 7), (1, 64, 7, 7)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "512",
+            "kernel_size": "7",
+            "stride": "2",
+            "padding": "valid",
+            "dilation": "[1, 2]",
+            "groups": "4",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([20, 16, 50, 100]))"
+        },
+        "segment": "(2, 6, 3, 1, 7, 5, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 512, 22, 44), (20, 512, 22, 44), (20, 512, 22, 44)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "128",
+            "kernel_size": "[3, 3]",
+            "stride": "3",
+            "padding": "valid",
+            "dilation": "1",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "segment": "(3, 4, 4, 2, 7, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 128, 5, 5), (2, 128, 5, 5), (2, 128, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "5",
+            "stride": "[1, 2]",
+            "padding": "same",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([20, 16, 50, 100]))"
+        },
+        "segment": "(2, 0, 2, 5, 8, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"padding='same' is not supported for strided convolutions\", (\"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\"))",
+        "error_message": "padding='same' is not supported for strided convolutions",
+        "conflict_params": [
+            "padding",
+            "stride"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "33",
+            "kernel_size": "[7, 7]",
+            "stride": "[2, 1]",
+            "padding": "0",
+            "dilation": "[1, 1]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "segment": "(5, 2, 6, 6, 0, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 33, 13, 26), (1, 33, 13, 26), (1, 33, 13, 26)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "16",
+            "kernel_size": "[3, 3]",
+            "stride": "[2, 2]",
+            "padding": "same",
+            "dilation": "[2, 2]",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "segment": "(5, 1, 4, 4, 8, 4, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"padding='same' is not supported for strided convolutions\", (\"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\"))",
+        "error_message": "padding='same' is not supported for strided convolutions",
+        "conflict_params": [
+            "padding",
+            "stride"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "64",
+            "out_channels": "256",
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 64, 32, 32]))"
+        },
+        "segment": "(4, 5, 2, 0, 3, 5, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 34, 30), (1, 256, 34, 30), (1, 256, 34, 30)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "64",
+            "kernel_size": "[5, 5]",
+            "stride": "2",
+            "padding": "2",
+            "dilation": "3",
+            "groups": "4",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "segment": "(3, 3, 5, 1, 2, 2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 64, 4, 4), (2, 64, 4, 4), (2, 64, 4, 4)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "256",
+            "out_channels": "256",
+            "kernel_size": "7",
+            "stride": "[2, 1]",
+            "padding": "[3, 3]",
+            "dilation": "[1, 2]",
+            "groups": "4",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([4, 256, 32, 32]))"
+        },
+        "segment": "(6, 5, 3, 6, 6, 5, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 256, 16, 26), (4, 256, 16, 26), (4, 256, 16, 26)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "1",
+            "kernel_size": "[3, 3]",
+            "stride": "[2, 2]",
+            "padding": "[3, 3]",
+            "dilation": "[1, 1]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "segment": "(0, 0, 4, 4, 6, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 16, 16), (1, 1, 16, 16), (1, 1, 16, 16)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "512",
+            "kernel_size": "1",
+            "stride": "[1, 1]",
+            "padding": "[2, 2]",
+            "dilation": "2",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([20, 16, 50, 100]))"
+        },
+        "segment": "(2, 6, 0, 3, 5, 1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 512, 54, 104), (20, 512, 54, 104), (20, 512, 54, 104)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "33",
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "same",
+            "dilation": "2",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "segment": "(0, 2, 3, 0, 8, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 33, 28, 28), (1, 33, 28, 28), (1, 33, 28, 28)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "256",
+            "out_channels": "16",
+            "kernel_size": "[5, 5]",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "2",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([4, 256, 32, 32]))"
+        },
+        "segment": "(6, 1, 5, 6, 3, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 16, 17, 34), (4, 16, 17, 34), (4, 16, 17, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "256",
+            "kernel_size": "[7, 7]",
+            "stride": "3",
+            "padding": "[1, 1]",
+            "dilation": "2",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([20, 16, 50, 100]))"
+        },
+        "segment": "(2, 5, 6, 2, 4, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 256, 14, 30), (20, 256, 14, 30), (20, 256, 14, 30)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "256",
+            "out_channels": "256",
+            "kernel_size": "3",
+            "stride": "[1, 1]",
+            "padding": "1",
+            "dilation": "3",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([4, 256, 32, 32]))"
+        },
+        "segment": "(6, 5, 1, 3, 1, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 256, 28, 28), (4, 256, 28, 28), (4, 256, 28, 28)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "64",
+            "out_channels": "64",
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "0",
+            "dilation": "[1, 2]",
+            "groups": "2",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 64, 32, 32]))"
+        },
+        "segment": "(4, 3, 1, 0, 0, 5, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 64, 30, 28), (1, 64, 30, 28), (1, 64, 30, 28)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[3, 3]",
+            "stride": "1",
+            "padding": "[2, 2]",
+            "dilation": "2",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "segment": "(5, 0, 4, 0, 5, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 32, 32), (1, 1, 32, 32), (1, 1, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "128",
+            "kernel_size": "3",
+            "stride": "2",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "segment": "(0, 4, 1, 1, 3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 128, 16, 16), (1, 128, 16, 16), (1, 128, 16, 16)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "256",
+            "out_channels": "256",
+            "kernel_size": "1",
+            "stride": "[1, 1]",
+            "padding": "valid",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([4, 256, 32, 32]))"
+        },
+        "segment": "(6, 5, 0, 3, 7, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 256, 32, 32), (4, 256, 32, 32), (4, 256, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "128",
+            "kernel_size": "5",
+            "stride": "[2, 2]",
+            "padding": "[1, 1]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "segment": "(0, 4, 2, 4, 4, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 128, 13, 13), (1, 128, 13, 13), (1, 128, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "[3, 3]",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "segment": "(3, 6, 0, 6, 6, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 11, 22), (2, 512, 11, 22), (2, 512, 11, 22)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "256",
+            "kernel_size": "[5, 5]",
+            "stride": "2",
+            "padding": "same",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "segment": "(3, 5, 5, 1, 8, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"padding='same' is not supported for strided convolutions\", (\"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\"))",
+        "error_message": "padding='same' is not supported for strided convolutions",
+        "conflict_params": [
+            "stride",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "1",
+            "kernel_size": "7",
+            "stride": "3",
+            "padding": "2",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "segment": "(0, 0, 3, 2, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 9, 9), (1, 1, 9, 9), (1, 1, 9, 9)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "33",
+            "kernel_size": "[7, 7]",
+            "stride": "[1, 2]",
+            "padding": "[1, 1]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "segment": "(0, 2, 6, 5, 4, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 33, 24, 12), (1, 33, 24, 12), (1, 33, 24, 12)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "512",
+            "kernel_size": "7",
+            "stride": "2",
+            "padding": "0",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "segment": "(0, 6, 3, 1, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 512, 11, 11), (1, 512, 11, 11), (1, 512, 11, 11)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "33",
+            "kernel_size": "5",
+            "stride": "[2, 2]",
+            "padding": "1",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "segment": "(0, 2, 2, 4, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 33, 13, 13), (1, 33, 13, 13), (1, 33, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "33",
+            "kernel_size": "[5, 5]",
+            "stride": "[1, 1]",
+            "padding": "[3, 3]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "segment": "(0, 2, 5, 3, 6, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 33, 30, 30), (1, 33, 30, 30), (1, 33, 30, 30)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "64",
+            "kernel_size": "[7, 7]",
+            "stride": "1",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "segment": "(0, 3, 6, 0, 3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 64, 28, 28), (1, 64, 28, 28), (1, 64, 28, 28)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "16",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "[1, 1]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "segment": "(0, 1, 0, 6, 4, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 15, 30), (1, 16, 15, 30), (1, 16, 15, 30)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[1, 2]",
+            "padding": "valid",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "segment": "(0, 0, 1, 5, 7, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 26, 13), (1, 1, 26, 13), (1, 1, 26, 13)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 2]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "segment": "(0, 0, 0, 4, 5, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 16, 16), (1, 1, 16, 16), (1, 1, 16, 16)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "3",
+            "padding": "0",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "segment": "(0, 0, 0, 2, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 10, 10), (1, 1, 10, 10), (1, 1, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 1]",
+            "padding": "0",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "segment": "(0, 0, 0, 3, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 28, 28), (1, 1, 28, 28), (1, 1, 28, 28)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "valid",
+            "dilation": "[1, 1]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 16, 1, 1], expected input[1, 1, 28, 28] to have 16 channels, but got 1 channels instead', ('Given groups=1, weight of size [1, 16, 1, 1], expected input[1, 1, 28, 28] to have 16 channels, but got 1 channels instead', 'Given groups=1, weight of size [1, 16, 1, 1], expected input[1, 1, 28, 28] to have 16 channels, but got 1 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 16, 1, 1], expected input[1, 1, 28, 28] to have 16 channels, but got 1 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "3",
+            "out_channels": "1",
+            "kernel_size": "[3, 3]",
+            "stride": "1",
+            "padding": "[2, 2]",
+            "dilation": "2",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 3, 3, 3], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 3, 3, 3], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 3, 3, 3], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 3, 3, 3], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[1, 1]",
+            "padding": "[2, 2]",
+            "dilation": "2",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 28, 28), (1, 1, 28, 28), (1, 1, 28, 28)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[3, 3]",
+            "stride": "1",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 34, 34), (1, 1, 34, 34), (1, 1, 34, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "4",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in_channels must be divisible by groups', ('in_channels must be divisible by groups', 'in_channels must be divisible by groups', 'in_channels must be divisible by groups'))",
+        "error_message": "in_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[3, 3]",
+            "stride": "[1, 2]",
+            "padding": "valid",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 30, 15), (1, 1, 30, 15), (1, 1, 30, 15)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 28, 28]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in_channels must be divisible by groups', ('in_channels must be divisible by groups', 'in_channels must be divisible by groups', 'in_channels must be divisible by groups'))",
+        "error_message": "in_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[3, 3]",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 34, 17), (1, 1, 34, 17), (1, 1, 34, 17)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "[2, 2]",
+            "dilation": "2",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 24, 24), (1, 1, 24, 24), (1, 1, 24, 24)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[3, 3]",
+            "stride": "[1, 2]",
+            "padding": "valid",
+            "dilation": "1",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[3, 3]",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 32, 3, 3], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 32, 3, 3], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 32, 3, 3], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 32, 3, 3], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[7, 7]",
+            "stride": "[2, 1]",
+            "padding": "valid",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 13, 26), (1, 1, 13, 26), (1, 1, 13, 26)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[3, 3]",
+            "stride": "[1, 2]",
+            "padding": "valid",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 28, 14), (1, 1, 28, 14), (1, 1, 28, 14)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "64",
+            "out_channels": "1",
+            "kernel_size": "[3, 3]",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 64, 3, 3], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 64, 3, 3], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 64, 3, 3], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 64, 3, 3], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 34, 34), (1, 1, 34, 34), (1, 1, 34, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[1, 2]",
+            "padding": "valid",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 30, 15), (1, 1, 30, 15), (1, 1, 30, 15)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 36, 18), (1, 1, 36, 18), (1, 1, 36, 18)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "16",
+            "kernel_size": "7",
+            "stride": "2",
+            "padding": "valid",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 13, 13), (1, 16, 13, 13), (1, 16, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[3, 3]",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "valid",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 28, 28), (1, 1, 28, 28), (1, 1, 28, 28)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "64",
+            "out_channels": "16",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [16, 64, 1, 1], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', ('Given groups=1, weight of size [16, 64, 1, 1], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', 'Given groups=1, weight of size [16, 64, 1, 1], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [16, 64, 1, 1], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "[3, 3]",
+            "stride": "[2, 2]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "2",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[7, 7]",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 30, 15), (1, 1, 30, 15), (1, 1, 30, 15)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "4",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "[1, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 36, 18), (1, 1, 36, 18), (1, 1, 36, 18)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "3",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 12, 12), (1, 1, 12, 12), (1, 1, 12, 12)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "2",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "1",
+            "kernel_size": "[5, 5]",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 1, 5, 5], expected input[1, 128, 32, 32] to have 1 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 1, 5, 5], expected input[1, 128, 32, 32] to have 1 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 1, 5, 5], expected input[1, 128, 32, 32] to have 1 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 1, 5, 5], expected input[1, 128, 32, 32] to have 1 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[7, 7]",
+            "stride": "[2, 1]",
+            "padding": "valid",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 32, 7, 7], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 32, 7, 7], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 32, 7, 7], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 32, 7, 7], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "256",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "3",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 36, 18), (1, 256, 36, 18), (1, 256, 36, 18)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "256",
+            "kernel_size": "[7, 7]",
+            "stride": "[2, 1]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 15, 30), (1, 256, 15, 30), (1, 256, 15, 30)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "valid",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 32, 16), (1, 1, 32, 16), (1, 1, 32, 16)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 19, 38), (1, 1, 19, 38), (1, 1, 19, 38)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[7, 7]",
+            "stride": "[1, 2]",
+            "padding": "same",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"padding='same' is not supported for strided convolutions\", (\"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\"))",
+        "error_message": "padding='same' is not supported for strided convolutions"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[7, 7]",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 16, 1, 1], expected input[1, 128, 32, 32] to have 16 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 16, 1, 1], expected input[1, 128, 32, 32] to have 16 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 16, 1, 1], expected input[1, 128, 32, 32] to have 16 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 16, 1, 1], expected input[1, 128, 32, 32] to have 16 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "33",
+            "kernel_size": "7",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 33, 16, 32), (1, 33, 16, 32), (1, 33, 16, 32)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[7, 7]",
+            "stride": "3",
+            "padding": "valid",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 9, 9), (1, 1, 9, 9), (1, 1, 9, 9)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 1]",
+            "padding": "valid",
+            "dilation": "3",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 32, 1, 1], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 32, 1, 1], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 32, 1, 1], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 32, 1, 1], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[7, 7]",
+            "stride": "1",
+            "padding": "valid",
+            "dilation": "[1, 1]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 26, 26), (1, 1, 26, 26), (1, 1, 26, 26)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "64",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "[1, 1]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 64, 1, 1], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 64, 1, 1], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 64, 1, 1], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 64, 1, 1], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "[3, 3]",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "dilation": "3",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 12, 6), (2, 512, 12, 6), (2, 512, 12, 6)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[5, 5]",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 1]",
+            "groups": "4",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "[5, 5]",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "dilation": "1",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 14, 7), (2, 512, 14, 7), (2, 512, 14, 7)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 18, 36), (1, 1, 18, 36), (1, 1, 18, 36)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 38, 19), (1, 1, 38, 19), (1, 1, 38, 19)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "256",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 19, 38), (1, 256, 19, 38), (1, 256, 19, 38)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "33",
+            "kernel_size": "[5, 5]",
+            "stride": "1",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 33, 32, 32), (1, 33, 32, 32), (1, 33, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "256",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 256, 1, 1], expected input[1, 128, 32, 32] to have 256 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 256, 1, 1], expected input[1, 128, 32, 32] to have 256 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 256, 1, 1], expected input[1, 128, 32, 32] to have 256 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 256, 1, 1], expected input[1, 128, 32, 32] to have 256 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "256",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 18, 36), (1, 256, 18, 36), (1, 256, 18, 36)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "3",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[2, 1]",
+            "padding": "[3, 3]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 3, 3, 3], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 3, 3, 3], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 3, 3, 3], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 3, 3, 3], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "2",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 18, 36), (1, 1, 18, 36), (1, 1, 18, 36)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "16",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 19, 38), (1, 16, 19, 38), (1, 16, 19, 38)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "128",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "[3, 3]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 128, 38, 19), (1, 128, 38, 19), (1, 128, 38, 19)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "[1, 1]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 16, 1, 1], expected input[1, 128, 32, 32] to have 16 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 16, 1, 1], expected input[1, 128, 32, 32] to have 16 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 16, 1, 1], expected input[1, 128, 32, 32] to have 16 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 16, 1, 1], expected input[1, 128, 32, 32] to have 16 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 2]",
+            "padding": "[3, 3]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 19, 19), (1, 1, 19, 19), (1, 1, 19, 19)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "[3, 3]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "3",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 16, 8), (2, 512, 16, 8), (2, 512, 16, 8)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 34, 17), (1, 1, 34, 17), (1, 1, 34, 17)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "[3, 3]",
+            "stride": "[1, 1]",
+            "padding": "[3, 3]",
+            "dilation": "[1, 2]",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 20, 18), (2, 512, 20, 18), (2, 512, 20, 18)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 36, 36), (1, 1, 36, 36), (1, 1, 36, 36)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "3",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 3, 1, 1], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 3, 1, 1], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 3, 1, 1], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 3, 1, 1], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "16",
+            "kernel_size": "[3, 3]",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "dilation": "3",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 16, 12, 6), (2, 16, 12, 6), (2, 16, 12, 6)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "1",
+            "dilation": "2",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "64",
+            "kernel_size": "[3, 3]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "3",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 64, 16, 8), (2, 64, 16, 8), (2, 64, 16, 8)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "[3, 3]",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 32, 1, 1], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 32, 1, 1], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 32, 1, 1], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 32, 1, 1], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "5",
+            "stride": "[1, 1]",
+            "padding": "2",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 32, 32), (1, 1, 32, 32), (1, 1, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "128",
+            "kernel_size": "7",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 128, 32, 16), (1, 128, 32, 16), (1, 128, 32, 16)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "[1, 1]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 17, 34), (1, 1, 17, 34), (1, 1, 17, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[7, 7]",
+            "stride": "[2, 1]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 15, 30), (1, 1, 15, 30), (1, 1, 15, 30)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "512",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "4",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 512, 19, 38), (1, 512, 19, 38), (1, 512, 19, 38)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "same",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"padding='same' is not supported for strided convolutions\", (\"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\"))",
+        "error_message": "padding='same' is not supported for strided convolutions"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "7",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "dilation": "[1, 2]",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 12, 3), (2, 512, 12, 3), (2, 512, 12, 3)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "3",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 3, 1, 1], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 3, 1, 1], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 3, 1, 1], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 3, 1, 1], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "256",
+            "kernel_size": "[3, 3]",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "dilation": "3",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 256, 12, 6), (2, 256, 12, 6), (2, 256, 12, 6)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "512",
+            "kernel_size": "7",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 512, 32, 16), (1, 512, 32, 16), (1, 512, 32, 16)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 38, 38), (1, 1, 38, 38), (1, 1, 38, 38)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "3",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 13, 13), (1, 1, 13, 13), (1, 1, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[5, 5]",
+            "stride": "[2, 1]",
+            "padding": "2",
+            "dilation": "3",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 12, 24), (1, 1, 12, 24), (1, 1, 12, 24)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[5, 5]",
+            "stride": "[1, 2]",
+            "padding": "same",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"padding='same' is not supported for strided convolutions\", (\"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\"))",
+        "error_message": "padding='same' is not supported for strided convolutions"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "1",
+            "dilation": "1",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 9, 18), (2, 512, 9, 18), (2, 512, 9, 18)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 1]",
+            "padding": "valid",
+            "dilation": "[1, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 32, 32), (1, 1, 32, 32), (1, 1, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "512",
+            "kernel_size": "7",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "dilation": "[1, 1]",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=8, weight of size [512, 2, 7, 7], expected input[2, 32, 16, 16] to have 16 channels, but got 32 channels instead', ('Given groups=8, weight of size [512, 2, 7, 7], expected input[2, 32, 16, 16] to have 16 channels, but got 32 channels instead', 'Given groups=8, weight of size [512, 2, 7, 7], expected input[2, 32, 16, 16] to have 16 channels, but got 32 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=8, weight of size [512, 2, 7, 7], expected input[2, 32, 16, 16] to have 16 channels, but got 32 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 32, 1, 1], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 32, 1, 1], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 32, 1, 1], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 32, 1, 1], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "1",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 6, 6), (2, 512, 6, 6), (2, 512, 6, 6)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "64",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 64, 38, 19), (1, 64, 38, 19), (1, 64, 38, 19)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "[7, 7]",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "dilation": "[1, 2]",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 12, 3), (2, 512, 12, 3), (2, 512, 12, 3)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "7",
+            "stride": "[1, 2]",
+            "padding": "[1, 1]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 28, 14), (1, 1, 28, 14), (1, 1, 28, 14)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[5, 5]",
+            "stride": "2",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 17, 17), (1, 1, 17, 17), (1, 1, 17, 17)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "3",
+            "dilation": "3",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 38, 38), (1, 1, 38, 38), (1, 1, 38, 38)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "2",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "3",
+            "out_channels": "33",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [33, 3, 1, 1], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', ('Given groups=1, weight of size [33, 3, 1, 1], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', 'Given groups=1, weight of size [33, 3, 1, 1], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [33, 3, 1, 1], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "16",
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "1",
+            "dilation": "[1, 1]",
+            "groups": "4",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 16, 12, 12), (2, 16, 12, 12), (2, 16, 12, 12)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "7",
+            "stride": "[1, 2]",
+            "padding": "[3, 3]",
+            "dilation": "[1, 2]",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 16, 5), (2, 512, 16, 5), (2, 512, 16, 5)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "64",
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "same",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 64, 16, 16), (2, 64, 16, 16), (2, 64, 16, 16)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "64",
+            "kernel_size": "3",
+            "stride": "[1, 2]",
+            "padding": "1",
+            "dilation": "[1, 2]",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 64, 16, 7), (2, 64, 16, 7), (2, 64, 16, 7)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "4",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "[2, 2]",
+            "dilation": "2",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 18, 36), (1, 1, 18, 36), (1, 1, 18, 36)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "2",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 19, 19), (1, 1, 19, 19), (1, 1, 19, 19)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "64",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 64, 1, 1], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 64, 1, 1], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 64, 1, 1], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 64, 1, 1], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "valid",
+            "dilation": "[1, 1]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 10, 10), (2, 1, 10, 10), (2, 1, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "512",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 512, 38, 19), (1, 512, 38, 19), (1, 512, 38, 19)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "3",
+            "stride": "[2, 1]",
+            "padding": "1",
+            "dilation": "2",
+            "groups": "2",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 7, 14), (2, 512, 7, 14), (2, 512, 7, 14)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[3, 3]",
+            "stride": "[1, 2]",
+            "padding": "[1, 1]",
+            "dilation": "1",
+            "groups": "4",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "256",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "2",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 256, 1, 1], expected input[1, 128, 32, 32] to have 256 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 256, 1, 1], expected input[1, 128, 32, 32] to have 256 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 256, 1, 1], expected input[1, 128, 32, 32] to have 256 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 256, 1, 1], expected input[1, 128, 32, 32] to have 256 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[5, 5]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 34, 17), (1, 1, 34, 17), (1, 1, 34, 17)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 36, 18), (1, 1, 36, 18), (1, 1, 36, 18)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "128",
+            "kernel_size": "[5, 5]",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 128, 17, 34), (1, 128, 17, 34), (1, 128, 17, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "7",
+            "stride": "[2, 1]",
+            "padding": "1",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 3, 6), (2, 512, 3, 6), (2, 512, 3, 6)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 38, 38), (1, 1, 38, 38), (1, 1, 38, 38)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "33",
+            "kernel_size": "7",
+            "stride": "2",
+            "padding": "1",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 33, 6, 6), (2, 33, 6, 6), (2, 33, 6, 6)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 19, 38), (1, 1, 19, 38), (1, 1, 19, 38)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "7",
+            "stride": "[1, 1]",
+            "padding": "1",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 6, 6), (2, 512, 6, 6), (2, 512, 6, 6)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "7",
+            "stride": "[2, 2]",
+            "padding": "[3, 3]",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 5, 5), (2, 512, 5, 5), (2, 512, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "7",
+            "stride": "[2, 1]",
+            "padding": "same",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"padding='same' is not supported for strided convolutions\", (\"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\"))",
+        "error_message": "padding='same' is not supported for strided convolutions"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "128",
+            "kernel_size": "[3, 3]",
+            "stride": "1",
+            "padding": "1",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 128, 14, 14), (2, 128, 14, 14), (2, 128, 14, 14)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "7",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 32, 16), (1, 1, 32, 16), (1, 1, 32, 16)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "256",
+            "kernel_size": "[3, 3]",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 17, 34), (1, 256, 17, 34), (1, 256, 17, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "2",
+            "padding": "[1, 1]",
+            "dilation": "3",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 17, 17), (1, 1, 17, 17), (1, 1, 17, 17)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "1",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 34, 34), (1, 1, 34, 34), (1, 1, 34, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "128",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "same",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"padding='same' is not supported for strided convolutions\", (\"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\"))",
+        "error_message": "padding='same' is not supported for strided convolutions"
+    },
+    {
+        "test_case": {
+            "in_channels": "256",
+            "out_channels": "128",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [128, 256, 1, 1], expected input[1, 128, 32, 32] to have 256 channels, but got 128 channels instead', ('Given groups=1, weight of size [128, 256, 1, 1], expected input[1, 128, 32, 32] to have 256 channels, but got 128 channels instead', 'Given groups=1, weight of size [128, 256, 1, 1], expected input[1, 128, 32, 32] to have 256 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [128, 256, 1, 1], expected input[1, 128, 32, 32] to have 256 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "128",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "2",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 128, 19, 38), (1, 128, 19, 38), (1, 128, 19, 38)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "256",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 256, 1, 1], expected input[1, 128, 32, 32] to have 256 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 256, 1, 1], expected input[1, 128, 32, 32] to have 256 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 256, 1, 1], expected input[1, 128, 32, 32] to have 256 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 256, 1, 1], expected input[1, 128, 32, 32] to have 256 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "3",
+            "padding": "3",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 13, 13), (1, 1, 13, 13), (1, 1, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "256",
+            "kernel_size": "3",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 1]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 18, 36), (1, 256, 18, 36), (1, 256, 18, 36)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[2, 2]",
+            "groups": "2",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[7, 7]",
+            "stride": "[2, 1]",
+            "padding": "1",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 14, 28), (1, 1, 14, 28), (1, 1, 14, 28)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "128",
+            "kernel_size": "1",
+            "stride": "2",
+            "padding": "3",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 128, 19, 19), (1, 128, 19, 19), (1, 128, 19, 19)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "3",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "3",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 3, 1, 1], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 3, 1, 1], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 3, 1, 1], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 3, 1, 1], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[2, 2]",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "64",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "2",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 64, 38, 19), (1, 64, 38, 19), (1, 64, 38, 19)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "[5, 5]",
+            "stride": "[2, 1]",
+            "padding": "[3, 3]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 32, 5, 5], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 32, 5, 5], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 32, 5, 5], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 32, 5, 5], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "3",
+            "out_channels": "128",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "3",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in_channels must be divisible by groups', ('in_channels must be divisible by groups', 'in_channels must be divisible by groups', 'in_channels must be divisible by groups'))",
+        "error_message": "in_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "3",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "0",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 16, 32), (1, 1, 16, 32), (1, 1, 16, 32)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "64",
+            "out_channels": "1",
+            "kernel_size": "[5, 5]",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 64, 5, 5], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 64, 5, 5], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 64, 5, 5], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 64, 5, 5], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "33",
+            "kernel_size": "7",
+            "stride": "[1, 1]",
+            "padding": "3",
+            "dilation": "[1, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 33, 32, 26), (1, 33, 32, 26), (1, 33, 32, 26)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "[1, 1]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 32, 1, 1], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 32, 1, 1], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 32, 1, 1], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 32, 1, 1], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "128",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 128, 19, 38), (1, 128, 19, 38), (1, 128, 19, 38)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[5, 5]",
+            "stride": "[1, 2]",
+            "padding": "[3, 3]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 34, 17), (1, 1, 34, 17), (1, 1, 34, 17)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "5",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 17, 34), (1, 1, 17, 34), (1, 1, 17, 34)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "7",
+            "stride": "3",
+            "padding": "2",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 3, 3), (2, 512, 3, 3), (2, 512, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "1",
+            "stride": "[1, 1]",
+            "padding": "[3, 3]",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 22, 22), (2, 512, 22, 22), (2, 512, 22, 22)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "[3, 3]",
+            "stride": "[2, 1]",
+            "padding": "1",
+            "dilation": "[2, 2]",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 7, 14), (2, 512, 7, 14), (2, 512, 7, 14)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "64",
+            "kernel_size": "7",
+            "stride": "[2, 2]",
+            "padding": "[3, 3]",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 64, 5, 5), (2, 64, 5, 5), (2, 64, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "5",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "[1, 2]",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "64",
+            "kernel_size": "1",
+            "stride": "[2, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 64, 19, 19), (1, 64, 19, 19), (1, 64, 19, 19)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "256",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 256, 36, 18), (1, 256, 36, 18), (1, 256, 36, 18)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "0",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 32, 16), (1, 1, 32, 16), (1, 1, 32, 16)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "512",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 512, 19, 38), (1, 512, 19, 38), (1, 512, 19, 38)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "3",
+            "out_channels": "512",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [512, 3, 1, 1], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', ('Given groups=1, weight of size [512, 3, 1, 1], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', 'Given groups=1, weight of size [512, 3, 1, 1], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [512, 3, 1, 1], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 2]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 18, 18), (1, 1, 18, 18), (1, 1, 18, 18)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "33",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 33, 19, 38), (1, 33, 19, 38), (1, 33, 19, 38)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "3",
+            "out_channels": "1",
+            "kernel_size": "7",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 3, 7, 7], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 3, 7, 7], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 3, 7, 7], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 3, 7, 7], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "128",
+            "kernel_size": "[7, 7]",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[2, 2]",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 128, 13, 26), (1, 128, 13, 26), (1, 128, 13, 26)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "16",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 38, 19), (1, 16, 38, 19), (1, 16, 38, 19)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "same",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"padding='same' is not supported for strided convolutions\", (\"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\", \"padding='same' is not supported for strided convolutions\"))",
+        "error_message": "padding='same' is not supported for strided convolutions"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "512",
+            "kernel_size": "1",
+            "stride": "[1, 1]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 512, 38, 38), (1, 512, 38, 38), (1, 512, 38, 38)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "valid",
+            "dilation": "[1, 1]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 16, 32), (1, 1, 16, 32), (1, 1, 16, 32)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "33",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 1]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [33, 16, 1, 1], expected input[1, 128, 32, 32] to have 16 channels, but got 128 channels instead', ('Given groups=1, weight of size [33, 16, 1, 1], expected input[1, 128, 32, 32] to have 16 channels, but got 128 channels instead', 'Given groups=1, weight of size [33, 16, 1, 1], expected input[1, 128, 32, 32] to have 16 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [33, 16, 1, 1], expected input[1, 128, 32, 32] to have 16 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "7",
+            "stride": "[2, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "4",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "[2, 2]",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 18, 36), (1, 1, 18, 36), (1, 1, 18, 36)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "64",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 64, 1, 1], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 64, 1, 1], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 64, 1, 1], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 64, 1, 1], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "512",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "valid",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 512, 32, 16), (1, 512, 32, 16), (1, 512, 32, 16)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 1, 1, 1], expected input[1, 128, 32, 32] to have 1 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 1, 1, 1], expected input[1, 128, 32, 32] to have 1 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 1, 1, 1], expected input[1, 128, 32, 32] to have 1 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 1, 1, 1], expected input[1, 128, 32, 32] to have 1 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "3",
+            "out_channels": "1",
+            "kernel_size": "5",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 3, 5, 5], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 3, 5, 5], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 3, 5, 5], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 3, 5, 5], expected input[1, 128, 32, 32] to have 3 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "1",
+            "kernel_size": "[3, 3]",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 1, 3, 3], expected input[1, 128, 32, 32] to have 1 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 1, 3, 3], expected input[1, 128, 32, 32] to have 1 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 1, 3, 3], expected input[1, 128, 32, 32] to have 1 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 1, 3, 3], expected input[1, 128, 32, 32] to have 1 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "8",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in_channels must be divisible by groups', ('in_channels must be divisible by groups', 'in_channels must be divisible by groups', 'in_channels must be divisible by groups'))",
+        "error_message": "in_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[7, 7]",
+            "stride": "[1, 2]",
+            "padding": "[3, 3]",
+            "dilation": "[1, 1]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 32, 16), (1, 1, 32, 16), (1, 1, 32, 16)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "16",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [16, 32, 1, 1], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', ('Given groups=1, weight of size [16, 32, 1, 1], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', 'Given groups=1, weight of size [16, 32, 1, 1], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [16, 32, 1, 1], expected input[1, 128, 32, 32] to have 32 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 1]",
+            "padding": "same",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 32, 32), (1, 1, 32, 32), (1, 1, 32, 32)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "16",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [16, 16, 1, 1], expected input[1, 128, 32, 32] to have 16 channels, but got 128 channels instead', ('Given groups=1, weight of size [16, 16, 1, 1], expected input[1, 128, 32, 32] to have 16 channels, but got 128 channels instead', 'Given groups=1, weight of size [16, 16, 1, 1], expected input[1, 128, 32, 32] to have 16 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [16, 16, 1, 1], expected input[1, 128, 32, 32] to have 16 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "64",
+            "out_channels": "256",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [256, 64, 1, 1], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', ('Given groups=1, weight of size [256, 64, 1, 1], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', 'Given groups=1, weight of size [256, 64, 1, 1], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [256, 64, 1, 1], expected input[1, 128, 32, 32] to have 64 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "3",
+            "stride": "[2, 1]",
+            "padding": "[2, 2]",
+            "dilation": "2",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 16, 32), (1, 1, 16, 32), (1, 1, 16, 32)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "5",
+            "stride": "2",
+            "padding": "[3, 3]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 17, 17), (1, 1, 17, 17), (1, 1, 17, 17)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[7, 7]",
+            "stride": "[1, 2]",
+            "padding": "[3, 3]",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 32, 16), (1, 1, 32, 16), (1, 1, 32, 16)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "[5, 5]",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "[1, 1]",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'out_channels must be divisible by groups', ('out_channels must be divisible by groups', 'out_channels must be divisible by groups', 'out_channels must be divisible by groups'))",
+        "error_message": "out_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "128",
+            "kernel_size": "1",
+            "stride": "[2, 2]",
+            "padding": "3",
+            "dilation": "2",
+            "groups": "16",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 128, 19, 19), (1, 128, 19, 19), (1, 128, 19, 19)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "7",
+            "stride": "2",
+            "padding": "2",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 4, 4), (2, 512, 4, 4), (2, 512, 4, 4)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "7",
+            "stride": "[2, 1]",
+            "padding": "1",
+            "dilation": "2",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 3, 6), (2, 512, 3, 6), (2, 512, 3, 6)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "3",
+            "out_channels": "512",
+            "kernel_size": "7",
+            "stride": "[2, 2]",
+            "padding": "2",
+            "dilation": "[2, 2]",
+            "groups": "4",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'in_channels must be divisible by groups', ('in_channels must be divisible by groups', 'in_channels must be divisible by groups', 'in_channels must be divisible by groups'))",
+        "error_message": "in_channels must be divisible by groups"
+    },
+    {
+        "test_case": {
+            "in_channels": "32",
+            "out_channels": "512",
+            "kernel_size": "[5, 5]",
+            "stride": "[2, 1]",
+            "padding": "[1, 1]",
+            "dilation": "[2, 2]",
+            "groups": "2",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([2, 32, 16, 16]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 512, 5, 10), (2, 512, 5, 10), (2, 512, 5, 10)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "33",
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 33, 38, 38), (1, 33, 38, 38), (1, 33, 38, 38)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "33",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "valid",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 33, 32, 16), (1, 33, 32, 16), (1, 33, 32, 16)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "2",
+            "padding": "3",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 1, 1, 1], expected input[1, 128, 32, 32] to have 1 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 1, 1, 1], expected input[1, 128, 32, 32] to have 1 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 1, 1, 1], expected input[1, 128, 32, 32] to have 1 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 1, 1, 1], expected input[1, 128, 32, 32] to have 1 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[1, 2]",
+            "padding": "[2, 2]",
+            "dilation": "3",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 36, 18), (1, 1, 36, 18), (1, 1, 36, 18)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "128",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "0",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 128, 16, 32), (1, 128, 16, 32), (1, 128, 16, 32)))"
+    },
+    {
+        "test_case": {
+            "in_channels": "1",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "3",
+            "dilation": "[1, 1]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 1, 1, 1], expected input[1, 128, 32, 32] to have 1 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 1, 1, 1], expected input[1, 128, 32, 32] to have 1 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 1, 1, 1], expected input[1, 128, 32, 32] to have 1 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 1, 1, 1], expected input[1, 128, 32, 32] to have 1 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "16",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "0",
+            "dilation": "1",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Given groups=1, weight of size [1, 16, 1, 1], expected input[1, 128, 32, 32] to have 16 channels, but got 128 channels instead', ('Given groups=1, weight of size [1, 16, 1, 1], expected input[1, 128, 32, 32] to have 16 channels, but got 128 channels instead', 'Given groups=1, weight of size [1, 16, 1, 1], expected input[1, 128, 32, 32] to have 16 channels, but got 128 channels instead', 'Invalid channel dimensions'))",
+        "error_message": "Given groups=1, weight of size [1, 16, 1, 1], expected input[1, 128, 32, 32] to have 16 channels, but got 128 channels instead"
+    },
+    {
+        "test_case": {
+            "in_channels": "128",
+            "out_channels": "1",
+            "kernel_size": "1",
+            "stride": "[2, 1]",
+            "padding": "0",
+            "dilation": "[2, 2]",
+            "groups": "1",
+            "bias": "True",
+            "padding_mode": "zeros",
+            "inputs": "Tensor(shape=torch.Size([1, 128, 32, 32]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 16, 32), (1, 1, 16, 32), (1, 1, 16, 32)))"
+    }
+]

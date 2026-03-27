@@ -1,0 +1,6 @@
+{
+    "POC File": "/mnt/data2/Users/sunshuo/2026/dltest_3.3/data/bug_reports/crash_bugs/torch_2_10_0_torch_nn_Softmin/'Dimension/POC_Code.py",
+    "Return Code": 0,
+    "STDOUT": "Testing torch.nn.Softmin with dim=-5 on tensor shape [2, 3]\nInput shape: torch.Size([2, 3])\nDimension parameter: -5\n\n1. Dynamic output shape (direct call):\nDynamic output shape: IndexError: Dimension out of range (expected to be in range of [-2, 1], but got -5)\n\n2. Static output shape (torch.compile with dynamic=True):\nStatic output shape: InternalTorchDynamoError: AcceleratorError: CUDA error: device doesn't have valid Grid license\nSearch for `cudaErrorDeviceNotLicensed' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n\n\n\n3. Meta output shape (device='meta'):\nMeta output shape: [2, 3]\n\nDefect Summary:\n- Dynamic and Static modes correctly raise IndexError for invalid dimension\n- Meta mode incorrectly returns shape [2, 3] without validating dimension bounds\n- This inconsistency indicates a bug in meta tensor handling for torch.nn.Softmin",
+    "STDERR": ""
+}

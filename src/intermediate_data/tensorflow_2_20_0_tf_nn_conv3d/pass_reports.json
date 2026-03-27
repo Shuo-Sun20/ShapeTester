@@ -1,0 +1,1151 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 1, 1, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 10, 10, 6), (2, 10, 10, 10, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 2, 2, 2, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(0, 1, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 2, 2, 2, 1], padding=\"VALID\", strides=[1, 1, 1, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d",
+        "conflict_params": [
+            "data_format",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 2, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 3, 3, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(1, 1, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 2, 6), (2, 2, 2, 2, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 2, 2, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NCDHW",
+            "dilations": "[1, 3, 2, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(1, 0, 1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 3, 2, 1, 1], padding=\"SAME\", strides=[1, 2, 2, 2, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d",
+        "conflict_params": [
+            "strides"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 3, 2, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(2, 1, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 3, 6), (2, 2, 2, 3, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 1, 2, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(3, 0, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 5, 4, 6), (2, 10, 5, 4, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NCDHW",
+            "dilations": "[1, 3, 3, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(2, 0, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 3, 3, 3, 1], padding=\"SAME\", strides=[1, 3, 3, 3, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d",
+        "conflict_params": [
+            "strides",
+            "data_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 1, 1, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(3, 1, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 1, 1, 1, 1], padding=\"VALID\", strides=[1, 1, 2, 3, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d",
+        "conflict_params": [
+            "inputs",
+            "data_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5, 5, 5)), EagerTensor(shape=(2, 2, 2, 3, 4))]",
+            "strides": "[1, 3, 2, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 1, 2, 3, 1]",
+            "name": "test_conv3d"
+        },
+        "segment": "(4, 1, 1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: test_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: test_conv3d', 'Graph execution error:\\n\\nDetected at node test_conv3d defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 228, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 85, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func\\n\\nCurrent implementation does not yet support strides in the batch and depth dimensions.\\n\\t [[{{node test_conv3d}}]] [Op:__inference_call_func_268626]'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: test_conv3d",
+        "conflict_params": [
+            "strides",
+            "data_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 2, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 2, 2, 2, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(4, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 5, 10, 6), (2, 4, 5, 10, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 3, 3, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(0, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 10, 10, 6), (2, 10, 10, 10, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 1, 2, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(0, 0, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 10, 10, 6), (2, 10, 10, 10, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 3, 2, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(0, 0, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 10, 10, 6), (2, 10, 10, 10, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 3, 3, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(3, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 5, 4, 6), (2, 10, 5, 4, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 3, 2, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(3, 0, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 5, 4, 6), (2, 10, 5, 4, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 2, 2, 2, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(2, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 4, 4, 6), (2, 4, 4, 4, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 2, 2, 2, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(3, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 5, 4, 6), (2, 10, 5, 4, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 1, 1, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(2, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 4, 4, 6), (2, 4, 4, 4, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 1, 2, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(2, 0, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 4, 4, 6), (2, 4, 4, 4, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 2, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 3, 3, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(4, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 5, 10, 6), (2, 4, 5, 10, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 2, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 3, 2, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(4, 0, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 5, 10, 6), (2, 4, 5, 10, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 2, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 1, 1, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "segment": "(4, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 5, 10, 6), (2, 4, 5, 10, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 3, 3, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 2, 6), (2, 2, 2, 2, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 2, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 3, 2, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3, 4, 6), (2, 2, 3, 4, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 2, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 1, 2, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 1, 2, 3, 1], padding=\"VALID\", strides=[1, 2, 2, 2, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 2, 2, 2, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 2, 6), (2, 2, 2, 2, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 1, 1, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 3, 6), (2, 3, 3, 3, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 1, 1, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 1, 1, 1, 1], padding=\"VALID\", strides=[1, 3, 3, 3, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 2, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 1, 2, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 3, 2, 6), (2, 4, 3, 2, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 2, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 2, 2, 2, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3, 6, 6), (2, 2, 3, 6, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 2, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 2, 2, 2, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 2, 2, 2, 1], padding=\"VALID\", strides=[1, 2, 2, 2, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 3, 3, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 3, 3, 3, 1], padding=\"VALID\", strides=[1, 3, 3, 3, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 2, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 3, 3, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 3, 3, 3, 1], padding=\"VALID\", strides=[1, 2, 2, 2, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 2, 2, 2, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 6, 6, 6, 6), (2, 6, 6, 6, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 2, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 2, 2, 2, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 3, 6), (2, 3, 3, 3, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 3, 3, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 4, 4, 6), (2, 4, 4, 4, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 1, 1, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 8, 8, 6), (2, 8, 8, 8, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 3, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 3, 3, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 4, 4, 6), (2, 4, 4, 4, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 2, 2, 2, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 2, 2, 2, 1], padding=\"VALID\", strides=[1, 1, 1, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 3, 2, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 3, 2, 1, 1], padding=\"VALID\", strides=[1, 1, 1, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 2, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 3, 3, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 2, 4, 6), (2, 2, 2, 4, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 1, 2, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 3, 2, 6), (2, 8, 3, 2, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 2, 2, 2, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 2, 2, 2, 1], padding=\"VALID\", strides=[1, 3, 3, 3, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 2, 2, 2, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 2, 2, 2, 1], padding=\"VALID\", strides=[1, 1, 2, 3, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 1, 1, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 1, 1, 1, 1], padding=\"VALID\", strides=[1, 1, 1, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 2, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 1, 1, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 4, 4, 6), (2, 4, 4, 4, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 1, 2, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 6, 4, 6), (2, 8, 6, 4, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 2, 2, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NCDHW",
+            "dilations": "[1, 3, 3, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 3, 3, 3, 1], padding=\"SAME\", strides=[1, 2, 2, 2, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 1, 2, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 1, 2, 3, 1], padding=\"VALID\", strides=[1, 1, 2, 3, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 3, 3, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 2, 2, 6), (2, 4, 2, 2, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 1, 2, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 1, 2, 3, 1], padding=\"VALID\", strides=[1, 1, 1, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 3, 2, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 3, 3, 6), (2, 4, 3, 3, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 2, 2, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 1, 2, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 5, 5, 6), (2, 5, 5, 5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NCDHW",
+            "dilations": "[1, 1, 1, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 1, 1, 1, 1], padding=\"SAME\", strides=[1, 1, 2, 3, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 2, 2, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 3, 3, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 5, 5, 6), (2, 5, 5, 5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 1, 1, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 4, 3, 6), (2, 8, 4, 3, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 3, 3, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 3, 3, 3, 1], padding=\"VALID\", strides=[1, 1, 2, 3, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 1, 2, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 2, 2, 6), (2, 3, 2, 2, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 1, 1, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 1, 1, 1, 1], padding=\"VALID\", strides=[1, 1, 2, 3, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 2, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 1, 2, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3, 4, 6), (2, 3, 3, 4, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 2, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 1, 2, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 1, 2, 3, 1], padding=\"VALID\", strides=[1, 3, 2, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NCDHW",
+            "dilations": "[1, 2, 2, 2, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 2, 2, 2, 1], padding=\"SAME\", strides=[1, 1, 2, 3, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 2, 2, 2, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 10, 10, 6), (2, 10, 10, 10, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 2, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NCDHW",
+            "dilations": "[1, 2, 2, 2, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 2, 2, 2, 1], padding=\"SAME\", strides=[1, 3, 2, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 2, 2, 2, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 6, 3, 2, 6), (2, 6, 3, 2, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 2, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 1, 2, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 5, 10, 6), (2, 4, 5, 10, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 2, 2, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NCDHW",
+            "dilations": "[1, 1, 2, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 1, 2, 3, 1], padding=\"SAME\", strides=[1, 2, 2, 2, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NCDHW",
+            "dilations": "[1, 3, 3, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 3, 3, 3, 1], padding=\"SAME\", strides=[1, 1, 2, 3, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 3, 3, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 3, 3, 3, 1], padding=\"VALID\", strides=[1, 1, 1, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 2, 2, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 3, 2, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 5, 5, 6), (2, 5, 5, 5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NCDHW",
+            "dilations": "[1, 1, 2, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 1, 2, 3, 1], padding=\"SAME\", strides=[1, 1, 2, 3, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input and filter must have the same depth: 10 vs 4 [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 2, 2, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 1, 1, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 5, 5, 6), (2, 5, 5, 5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 2, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 1, 1, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 1, 1, 1, 1], padding=\"VALID\", strides=[1, 3, 2, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 2, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 1, 1, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 1, 1, 1, 1], padding=\"VALID\", strides=[1, 2, 2, 2, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 2, 2, 2, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 3, 2, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 3, 2, 1, 1], padding=\"VALID\", strides=[1, 2, 2, 2, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 2, 2, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NCDHW",
+            "dilations": "[1, 2, 2, 2, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 2, 2, 2, 1], padding=\"SAME\", strides=[1, 2, 2, 2, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 2, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 3, 3, 3, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 3, 3, 3, 1], padding=\"VALID\", strides=[1, 3, 2, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NCDHW",
+            "dilations": "[1, 3, 2, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 3, 2, 1, 1], padding=\"SAME\", strides=[1, 1, 2, 3, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 3, 2, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 3, 2, 1, 1], padding=\"VALID\", strides=[1, 1, 2, 3, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support dilations rates in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 3, 2, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 6, 8, 6), (2, 4, 6, 8, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 2, 2, 2, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 2, 2, 2, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 5, 5, 6), (2, 5, 5, 5, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 2, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 3, 2, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3, 8, 6), (2, 2, 3, 8, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 2, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NCDHW",
+            "dilations": "[1, 1, 1, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 1, 1, 1, 1], padding=\"SAME\", strides=[1, 3, 2, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 2, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 3, 2, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 3, 2, 1, 1], padding=\"VALID\", strides=[1, 3, 2, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 2, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 2, 2, 2, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 2, 2, 2, 1], padding=\"VALID\", strides=[1, 3, 2, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 3, 3, 1]",
+            "padding": "VALID",
+            "data_format": "NCDHW",
+            "dilations": "[1, 3, 2, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 3, 2, 1, 1], padding=\"VALID\", strides=[1, 3, 3, 3, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 2, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NCDHW",
+            "dilations": "[1, 3, 2, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', ('{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv3d/generated_code.py\", line 16, in call_func  *\\n        name=name\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (4) for \\'{{node example_conv3d}} = Conv3D[T=DT_FLOAT, data_format=\"NCDHW\", dilations=[1, 3, 2, 1, 1], padding=\"SAME\", strides=[1, 3, 2, 1, 1]](inputs, inputs_1)\\' with input shapes: [2,10,10,10,4], [3,3,3,4,6].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv3D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Current implementation does not yet support strides in the batch and depth dimensions. [Op:Conv3D] name: example_conv3d"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 1, 2, 3, 1]",
+            "padding": "SAME",
+            "data_format": "NDHWC",
+            "dilations": "[1, 1, 1, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 5, 4, 6), (2, 10, 5, 4, 6)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 10, 10, 4)), EagerTensor(shape=(3, 3, 3, 4, 6))]",
+            "strides": "[1, 3, 2, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NDHWC",
+            "dilations": "[1, 1, 1, 1, 1]",
+            "name": "example_conv3d"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4, 8, 6), (2, 3, 4, 8, 6)))"
+    }
+]

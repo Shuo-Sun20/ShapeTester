@@ -1,0 +1,48 @@
+[
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 10, 12))",
+            "kernel_size": "7",
+            "strides": "1",
+            "padding": "valid",
+            "depth_multiplier": "2",
+            "data_format": "channels_first",
+            "dilation_rate": "2",
+            "activation": "relu",
+            "use_bias": "True",
+            "depthwise_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "depthwise_regularizer": "None",
+            "bias_regularizer": "None",
+            "activity_regularizer": "None",
+            "depthwise_constraint": "None",
+            "bias_constraint": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Exception encountered when calling DepthwiseConv1D.call().\\n\\n\\x1b[1m{{function_node __wrapped__AddV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [4,10,12] vs. [1,20,1] [Op:AddV2] name: \\x1b[0m\\n\\nArguments received by DepthwiseConv1D.call():\\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 12), dtype=float32)', ('Exception encountered when calling DepthwiseConv1D.call().\\n\\n\\x1b[1m{{function_node __wrapped__AddV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [4,10,12] vs. [1,20,1] [Op:AddV2] name: \\x1b[0m\\n\\nArguments received by DepthwiseConv1D.call():\\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 12), dtype=float32)', (None, 20, 0)))",
+        "error_message": "Exception encountered when calling DepthwiseConv1D.call().\n\n\u001b[1m{{function_node __wrapped__AddV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [4,10,12] vs. [1,20,1] [Op:AddV2] name: \u001b[0m\n\nArguments received by DepthwiseConv1D.call():\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 12), dtype=float32)"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(4, 10, 12))",
+            "kernel_size": "7",
+            "strides": "1",
+            "padding": "valid",
+            "depth_multiplier": "16",
+            "data_format": "channels_first",
+            "dilation_rate": "2",
+            "activation": "relu",
+            "use_bias": "True",
+            "depthwise_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "depthwise_regularizer": "None",
+            "bias_regularizer": "None",
+            "activity_regularizer": "None",
+            "depthwise_constraint": "None",
+            "bias_constraint": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Exception encountered when calling DepthwiseConv1D.call().\\n\\n\\x1b[1m{{function_node __wrapped__AddV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [4,10,12] vs. [1,160,1] [Op:AddV2] name: \\x1b[0m\\n\\nArguments received by DepthwiseConv1D.call():\\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 12), dtype=float32)', ('Exception encountered when calling DepthwiseConv1D.call().\\n\\n\\x1b[1m{{function_node __wrapped__AddV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [4,10,12] vs. [1,160,1] [Op:AddV2] name: \\x1b[0m\\n\\nArguments received by DepthwiseConv1D.call():\\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 12), dtype=float32)', (None, 160, 0)))",
+        "error_message": "Exception encountered when calling DepthwiseConv1D.call().\n\n\u001b[1m{{function_node __wrapped__AddV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [4,10,12] vs. [1,160,1] [Op:AddV2] name: \u001b[0m\n\nArguments received by DepthwiseConv1D.call():\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 12), dtype=float32)"
+    }
+]

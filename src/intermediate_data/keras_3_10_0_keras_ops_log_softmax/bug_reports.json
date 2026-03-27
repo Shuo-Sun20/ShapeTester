@@ -1,0 +1,47 @@
+[
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 3))",
+            "axis": "-3"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`dim` must be in the range [-2, 2) where 2 is the number of dimensions in the input. Received: dim=-3', ('`dim` must be in the range [-2, 2) where 2 is the number of dimensions in the input. Received: dim=-3', (None, 3)))",
+        "error_message": "`dim` must be in the range [-2, 2) where 2 is the number of dimensions in the input. Received: dim=-3",
+        "conflict_params": [
+            "inputs",
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 3))",
+            "axis": "2"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`dim` must be in the range [-2, 2) where 2 is the number of dimensions in the input. Received: dim=2', ('`dim` must be in the range [-2, 2) where 2 is the number of dimensions in the input. Received: dim=2', (None, 3)))",
+        "error_message": "`dim` must be in the range [-2, 2) where 2 is the number of dimensions in the input. Received: dim=2",
+        "conflict_params": [
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 3))",
+            "axis": "-3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`dim` must be in the range [-2, 2) where 2 is the number of dimensions in the input. Received: dim=-3', ('`dim` must be in the range [-2, 2) where 2 is the number of dimensions in the input. Received: dim=-3', (None, 3)))",
+        "error_message": "`dim` must be in the range [-2, 2) where 2 is the number of dimensions in the input. Received: dim=-3"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 3))",
+            "axis": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`dim` must be in the range [-2, 2) where 2 is the number of dimensions in the input. Received: dim=2', ('`dim` must be in the range [-2, 2) where 2 is the number of dimensions in the input. Received: dim=2', (None, 3)))",
+        "error_message": "`dim` must be in the range [-2, 2) where 2 is the number of dimensions in the input. Received: dim=2"
+    }
+]

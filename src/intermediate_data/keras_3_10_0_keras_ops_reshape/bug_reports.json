@@ -1,0 +1,131 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(6, 8))",
+            "newshape": "48"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, \"'int' object has no attribute 'count'\", ((None,), \"'int' object has no attribute 'count'\"))",
+        "error_message": "'int' object has no attribute 'count'",
+        "conflict_params": [
+            "newshape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(6, 8))",
+            "newshape": "-1"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, \"'int' object has no attribute 'count'\", ((None,), \"'int' object has no attribute 'count'\"))",
+        "error_message": "'int' object has no attribute 'count'",
+        "conflict_params": [
+            "newshape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(6, 8))",
+            "newshape": "[6, -1]"
+        },
+        "segment": "(18,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 8), (6, None)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(6, 8))",
+            "newshape": "[12, -1]"
+        },
+        "segment": "(20,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 4), (12, None)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(6, 8))",
+            "newshape": "[24, -1]"
+        },
+        "segment": "(22,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 2), (24, None)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(6, 8))",
+            "newshape": "[2, -1, 4]"
+        },
+        "segment": "(23,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 6, 4), (2, None, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(6, 8))",
+            "newshape": "[2, 3, -1]"
+        },
+        "segment": "(25,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 3, 8), (2, 3, None)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(6, 8))",
+            "newshape": "[2, 3, -1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 3, 8), (2, 3, None)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(6, 8))",
+            "newshape": "[12, -1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 4), (12, None)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(6, 8))",
+            "newshape": "[6, -1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 8), (6, None)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(6, 8))",
+            "newshape": "[2, -1, 4]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 6, 4), (2, None, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(6, 8))",
+            "newshape": "48"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, \"'int' object has no attribute 'count'\", ((None,), \"'int' object has no attribute 'count'\"))",
+        "error_message": "'int' object has no attribute 'count'"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(6, 8))",
+            "newshape": "[24, -1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 2), (24, None)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(6, 8))",
+            "newshape": "-1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, \"'int' object has no attribute 'count'\", ((None,), \"'int' object has no attribute 'count'\"))",
+        "error_message": "'int' object has no attribute 'count'"
+    }
+]

@@ -1,0 +1,100 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4, 6, 2]))]",
+            "ind": "0",
+            "out": "None"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Expected a strictly positive integer for 'ind', but got 0\", (\"Expected a strictly positive integer for 'ind', but got 0\", 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_tensorinv>(*(FakeTensor(..., size=(s21, s41, s65, s54)),), **{\\'ind\\': 0, \\'out\\': None}): got RuntimeError(\"Expected a strictly positive integer for \\'ind\\', but got 0\")\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_tensorinv/generated_code.py\", line 5, in call_func\\n    return torch.linalg.tensorinv(A, ind=ind, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', \"Expected a strictly positive integer for 'ind', but got 0\"))",
+        "error_message": "Expected a strictly positive integer for 'ind', but got 0",
+        "conflict_params": [
+            "ind"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4, 6, 2]))]",
+            "ind": "1",
+            "out": "None"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected self to satisfy the requirement prod(self.shape[ind:]) == prod(self.shape[:ind]), but got 48 != 3', ('Expected self to satisfy the requirement prod(self.shape[ind:]) == prod(self.shape[:ind]), but got 48 != 3', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_tensorinv>(*(FakeTensor(..., size=(s21, s41, s65, s54)),), **{\\'ind\\': 1, \\'out\\': None}): got RuntimeError(\\'Expected self to satisfy the requirement prod(self.shape[ind:]) == prod(self.shape[:ind]), but got s41*s54*s65 != s21\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_tensorinv/generated_code.py\", line 5, in call_func\\n    return torch.linalg.tensorinv(A, ind=ind, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected self to satisfy the requirement prod(self.shape[ind:]) == prod(self.shape[:ind]), but got 48 != 3'))",
+        "error_message": "Expected self to satisfy the requirement prod(self.shape[ind:]) == prod(self.shape[:ind]), but got 48 != 3",
+        "conflict_params": [
+            "inputs",
+            "ind"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4, 6, 2]))]",
+            "ind": "2",
+            "out": "None"
+        },
+        "segment": "(2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6, 2, 3, 4), (6, 2, 3, 4), (6, 2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4, 6, 2]))]",
+            "ind": "3",
+            "out": "None"
+        },
+        "segment": "(3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected self to satisfy the requirement prod(self.shape[ind:]) == prod(self.shape[:ind]), but got 2 != 72', ('Expected self to satisfy the requirement prod(self.shape[ind:]) == prod(self.shape[:ind]), but got 2 != 72', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_tensorinv>(*(FakeTensor(..., size=(s21, s41, s65, s54)),), **{\\'ind\\': 3, \\'out\\': None}): got RuntimeError(\\'Expected self to satisfy the requirement prod(self.shape[ind:]) == prod(self.shape[:ind]), but got s54 != s21*s41*s65\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_tensorinv/generated_code.py\", line 5, in call_func\\n    return torch.linalg.tensorinv(A, ind=ind, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected self to satisfy the requirement prod(self.shape[ind:]) == prod(self.shape[:ind]), but got 2 != 72'))",
+        "error_message": "Expected self to satisfy the requirement prod(self.shape[ind:]) == prod(self.shape[:ind]), but got 2 != 72",
+        "conflict_params": [
+            "inputs",
+            "ind"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4, 6, 2]))]",
+            "ind": "4",
+            "out": "None"
+        },
+        "segment": "(4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected self to satisfy the requirement prod(self.shape[ind:]) == prod(self.shape[:ind]), but got 1 != 144', ('Expected self to satisfy the requirement prod(self.shape[ind:]) == prod(self.shape[:ind]), but got 1 != 144', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_tensorinv>(*(FakeTensor(..., size=(s21, s41, s65, s54)),), **{\\'ind\\': 4, \\'out\\': None}): got RuntimeError(\\'Expected self to satisfy the requirement prod(self.shape[ind:]) == prod(self.shape[:ind]), but got 1 != s21*s41*s54*s65\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_tensorinv/generated_code.py\", line 5, in call_func\\n    return torch.linalg.tensorinv(A, ind=ind, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected self to satisfy the requirement prod(self.shape[ind:]) == prod(self.shape[:ind]), but got 1 != 144'))",
+        "error_message": "Expected self to satisfy the requirement prod(self.shape[ind:]) == prod(self.shape[:ind]), but got 1 != 144",
+        "conflict_params": [
+            "inputs",
+            "ind"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4, 6, 2]))]",
+            "ind": "5",
+            "out": "None"
+        },
+        "segment": "(5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'ArrayRef: invalid slice, N = 5; size = 4', ('ArrayRef: invalid slice, N = 5; size = 4', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_tensorinv>(*(FakeTensor(..., size=(s21, s41, s65, s54)),), **{\\'ind\\': 5, \\'out\\': None}): got RuntimeError(\\'ArrayRef: invalid slice, N = 5; size = 4\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_tensorinv/generated_code.py\", line 5, in call_func\\n    return torch.linalg.tensorinv(A, ind=ind, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'ArrayRef: invalid slice, N = 5; size = 4'))",
+        "error_message": "ArrayRef: invalid slice, N = 5; size = 4",
+        "conflict_params": [
+            "inputs",
+            "ind"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4, 6, 2]))]",
+            "ind": "6",
+            "out": "None"
+        },
+        "segment": "(6, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'ArrayRef: invalid slice, N = 6; size = 4', ('ArrayRef: invalid slice, N = 6; size = 4', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_tensorinv>(*(FakeTensor(..., size=(s21, s41, s65, s54)),), **{\\'ind\\': 6, \\'out\\': None}): got RuntimeError(\\'ArrayRef: invalid slice, N = 6; size = 4\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_tensorinv/generated_code.py\", line 5, in call_func\\n    return torch.linalg.tensorinv(A, ind=ind, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'ArrayRef: invalid slice, N = 6; size = 4'))",
+        "error_message": "ArrayRef: invalid slice, N = 6; size = 4",
+        "conflict_params": [
+            "ind"
+        ]
+    }
+]

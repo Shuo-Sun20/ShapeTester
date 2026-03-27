@@ -1,0 +1,264 @@
+[
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c41126a20>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "False",
+            "axis": "-4"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tuple index out of range', ('tuple index out of range', 'tuple index out of range'))",
+        "error_message": "tuple index out of range",
+        "conflict_params": [
+            "axis",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c41126a20>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "False",
+            "axis": "-1"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None,), (None,)))"
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c41126a20>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "False",
+            "axis": "0"
+        },
+        "segment": "(0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None,), (None,)))"
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c41126a20>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "False",
+            "axis": "1"
+        },
+        "segment": "(0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tuple index out of range', ('tuple index out of range', 'tuple index out of range'))",
+        "error_message": "tuple index out of range",
+        "conflict_params": [
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c41126a20>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "False",
+            "axis": "3"
+        },
+        "segment": "(0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tuple index out of range', ('tuple index out of range', 'tuple index out of range'))",
+        "error_message": "tuple index out of range",
+        "conflict_params": [
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c42cefba0>",
+            "inputs": "EagerTensor(shape=(2, 3, 4, 5, 6))",
+            "axis": "-4",
+            "reverse": "True"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3, 4, 5, 6), (None, 3, 4, 5, 6)))"
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c41126a20>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "True",
+            "axis": "-1"
+        },
+        "segment": "(1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None,), (None,)))"
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c41126a20>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "True",
+            "axis": "0"
+        },
+        "segment": "(1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None,), (None,)))"
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c42cefba0>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "False",
+            "axis": "-1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None,), (None,)))"
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c41126a20>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "True",
+            "axis": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__ReverseV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} 'axis'[0] = 1 is out of valid range [0, 0 [Op:ReverseV2]\", (\"{{function_node __wrapped__ReverseV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} 'axis'[0] = 1 is out of valid range [0, 0 [Op:ReverseV2]\", 'tuple index out of range'))",
+        "error_message": "{{function_node __wrapped__ReverseV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} 'axis'[0] = 1 is out of valid range [0, 0 [Op:ReverseV2]"
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c41126a20>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "False",
+            "axis": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tuple index out of range', ('tuple index out of range', 'tuple index out of range'))",
+        "error_message": "tuple index out of range"
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c42cefba0>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "True",
+            "axis": "0"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None,), (None,)))"
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c41126a20>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "False",
+            "axis": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tuple index out of range', ('tuple index out of range', 'tuple index out of range'))",
+        "error_message": "tuple index out of range"
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c41126a20>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "False",
+            "axis": "-4"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tuple index out of range', ('tuple index out of range', 'tuple index out of range'))",
+        "error_message": "tuple index out of range"
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c41126a20>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "True",
+            "axis": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__ReverseV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} 'axis'[0] = 3 is out of valid range [0, 0 [Op:ReverseV2]\", (\"{{function_node __wrapped__ReverseV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} 'axis'[0] = 3 is out of valid range [0, 0 [Op:ReverseV2]\", 'tuple index out of range'))",
+        "error_message": "{{function_node __wrapped__ReverseV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} 'axis'[0] = 3 is out of valid range [0, 0 [Op:ReverseV2]"
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c42cefba0>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "True",
+            "axis": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__ReverseV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} 'axis'[0] = 1 is out of valid range [0, 0 [Op:ReverseV2]\", (\"{{function_node __wrapped__ReverseV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} 'axis'[0] = 1 is out of valid range [0, 0 [Op:ReverseV2]\", 'tuple index out of range'))",
+        "error_message": "{{function_node __wrapped__ReverseV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} 'axis'[0] = 1 is out of valid range [0, 0 [Op:ReverseV2]"
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c42cefba0>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "True",
+            "axis": "-1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None,), (None,)))"
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c42cefba0>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "False",
+            "axis": "0"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None,), (None,)))"
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c42cefba0>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "False",
+            "axis": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tuple index out of range', ('tuple index out of range', 'tuple index out of range'))",
+        "error_message": "tuple index out of range"
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c42cefba0>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "False",
+            "axis": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tuple index out of range', ('tuple index out of range', 'tuple index out of range'))",
+        "error_message": "tuple index out of range"
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c42cefba0>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "False",
+            "axis": "-4"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'tuple index out of range', ('tuple index out of range', 'tuple index out of range'))",
+        "error_message": "tuple index out of range"
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c41126a20>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "True",
+            "axis": "-4"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__ReverseV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} 'axis'[0] = -4 is out of valid range [0, 0 [Op:ReverseV2]\", (\"{{function_node __wrapped__ReverseV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} 'axis'[0] = -4 is out of valid range [0, 0 [Op:ReverseV2]\", 'tuple index out of range'))",
+        "error_message": "{{function_node __wrapped__ReverseV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} 'axis'[0] = -4 is out of valid range [0, 0 [Op:ReverseV2]"
+    },
+    {
+        "test_case": {
+            "f": "<function <lambda> at 0x7f8c42cefba0>",
+            "inputs": "EagerTensor(shape=(5,))",
+            "reverse": "True",
+            "axis": "-4"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__ReverseV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} 'axis'[0] = -4 is out of valid range [0, 0 [Op:ReverseV2]\", (\"{{function_node __wrapped__ReverseV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} 'axis'[0] = -4 is out of valid range [0, 0 [Op:ReverseV2]\", 'tuple index out of range'))",
+        "error_message": "{{function_node __wrapped__ReverseV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} 'axis'[0] = -4 is out of valid range [0, 0 [Op:ReverseV2]"
+    }
+]

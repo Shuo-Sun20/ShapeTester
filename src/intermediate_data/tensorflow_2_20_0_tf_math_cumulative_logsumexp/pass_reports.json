@@ -1,0 +1,428 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "0",
+            "exclusive": "True",
+            "reverse": "True",
+            "name": "None"
+        },
+        "segment": "(0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "0",
+            "exclusive": "False",
+            "reverse": "False",
+            "name": "None"
+        },
+        "segment": "(0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "1",
+            "exclusive": "True",
+            "reverse": "False",
+            "name": "None"
+        },
+        "segment": "(1, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "1",
+            "exclusive": "False",
+            "reverse": "True",
+            "name": "None"
+        },
+        "segment": "(1, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "-1",
+            "exclusive": "True",
+            "reverse": "True",
+            "name": "None"
+        },
+        "segment": "(2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "-1",
+            "exclusive": "False",
+            "reverse": "False",
+            "name": "None"
+        },
+        "segment": "(2, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "-2",
+            "exclusive": "True",
+            "reverse": "True",
+            "name": "None"
+        },
+        "segment": "(3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "-2",
+            "exclusive": "False",
+            "reverse": "False",
+            "name": "None"
+        },
+        "segment": "(3, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "2",
+            "exclusive": "True",
+            "reverse": "True",
+            "name": "None"
+        },
+        "segment": "(4, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__CumulativeLogsumexp_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:CumulativeLogsumexp] name: ', ('{{function_node __wrapped__CumulativeLogsumexp_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:CumulativeLogsumexp] name: ', 'Graph execution error:\\n\\nDetected at node CumulativeLogsumexp defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_math_cumulative_logsumexp/generated_code.py\", line 5, in call_func\\n\\nScanOp: Expected scan axis in the range [-2, 2), but got 2\\n\\t [[{{node CumulativeLogsumexp}}]] [Op:__inference_call_func_445257]'))",
+        "error_message": "{{function_node __wrapped__CumulativeLogsumexp_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:CumulativeLogsumexp] name: ",
+        "conflict_params": [
+            "inputs",
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "2",
+            "exclusive": "False",
+            "reverse": "False",
+            "name": "None"
+        },
+        "segment": "(4, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 5), (3, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "-1",
+            "exclusive": "False",
+            "reverse": "True",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 5), (3, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "2",
+            "exclusive": "False",
+            "reverse": "True",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__CumulativeLogsumexp_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:CumulativeLogsumexp] name: ', ('{{function_node __wrapped__CumulativeLogsumexp_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:CumulativeLogsumexp] name: ', 'Graph execution error:\\n\\nDetected at node CumulativeLogsumexp defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_math_cumulative_logsumexp/generated_code.py\", line 5, in call_func\\n\\nScanOp: Expected scan axis in the range [-2, 2), but got 2\\n\\t [[{{node CumulativeLogsumexp}}]] [Op:__inference_call_func_445301]'))",
+        "error_message": "{{function_node __wrapped__CumulativeLogsumexp_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:CumulativeLogsumexp] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "0",
+            "exclusive": "False",
+            "reverse": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 5), (3, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "2",
+            "exclusive": "True",
+            "reverse": "True",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__CumulativeLogsumexp_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:CumulativeLogsumexp] name: ', ('{{function_node __wrapped__CumulativeLogsumexp_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:CumulativeLogsumexp] name: ', 'Graph execution error:\\n\\nDetected at node CumulativeLogsumexp defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_math_cumulative_logsumexp/generated_code.py\", line 5, in call_func\\n\\nScanOp: Expected scan axis in the range [-2, 2), but got 2\\n\\t [[{{node CumulativeLogsumexp}}]] [Op:__inference_call_func_445317]'))",
+        "error_message": "{{function_node __wrapped__CumulativeLogsumexp_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:CumulativeLogsumexp] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "-1",
+            "exclusive": "False",
+            "reverse": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 5), (3, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "-1",
+            "exclusive": "True",
+            "reverse": "True",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 5), (3, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "1",
+            "exclusive": "False",
+            "reverse": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 5), (3, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "-2",
+            "exclusive": "True",
+            "reverse": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 5), (3, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "2",
+            "exclusive": "True",
+            "reverse": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 5), (3, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "2",
+            "exclusive": "False",
+            "reverse": "True",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 5), (3, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "0",
+            "exclusive": "True",
+            "reverse": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "0",
+            "exclusive": "False",
+            "reverse": "True",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "1",
+            "exclusive": "False",
+            "reverse": "True",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 5), (3, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "2",
+            "exclusive": "True",
+            "reverse": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__CumulativeLogsumexp_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:CumulativeLogsumexp] name: ', ('{{function_node __wrapped__CumulativeLogsumexp_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:CumulativeLogsumexp] name: ', 'Graph execution error:\\n\\nDetected at node CumulativeLogsumexp defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_math_cumulative_logsumexp/generated_code.py\", line 5, in call_func\\n\\nScanOp: Expected scan axis in the range [-2, 2), but got 2\\n\\t [[{{node CumulativeLogsumexp}}]] [Op:__inference_call_func_445445]'))",
+        "error_message": "{{function_node __wrapped__CumulativeLogsumexp_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:CumulativeLogsumexp] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "-2",
+            "exclusive": "True",
+            "reverse": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "2",
+            "exclusive": "True",
+            "reverse": "True",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 5), (3, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "0",
+            "exclusive": "False",
+            "reverse": "True",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 5), (3, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "-2",
+            "exclusive": "False",
+            "reverse": "True",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "-1",
+            "exclusive": "True",
+            "reverse": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "-1",
+            "exclusive": "True",
+            "reverse": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 5), (3, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "1",
+            "exclusive": "True",
+            "reverse": "True",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "-2",
+            "exclusive": "False",
+            "reverse": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 5), (3, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "1",
+            "exclusive": "False",
+            "reverse": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "-2",
+            "exclusive": "False",
+            "reverse": "True",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 5), (3, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4, 5))",
+            "axis": "0",
+            "exclusive": "True",
+            "reverse": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4, 5), (3, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "2",
+            "exclusive": "False",
+            "reverse": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__CumulativeLogsumexp_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:CumulativeLogsumexp] name: ', ('{{function_node __wrapped__CumulativeLogsumexp_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:CumulativeLogsumexp] name: ', 'Graph execution error:\\n\\nDetected at node CumulativeLogsumexp defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_math_cumulative_logsumexp/generated_code.py\", line 5, in call_func\\n\\nScanOp: Expected scan axis in the range [-2, 2), but got 2\\n\\t [[{{node CumulativeLogsumexp}}]] [Op:__inference_call_func_445671]'))",
+        "error_message": "{{function_node __wrapped__CumulativeLogsumexp_device_/job:localhost/replica:0/task:0/device:CPU:0}} ScanOp: Expected scan axis in the range [-2, 2), but got 2 [Op:CumulativeLogsumexp] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "-1",
+            "exclusive": "False",
+            "reverse": "True",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    }
+]

@@ -1,0 +1,72 @@
+[
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 3, 5)), ndarray(shape=(2, 10, 3))]",
+            "axes": "1",
+            "normalize": "False"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Incompatible input shapes: axis values 3 (at axis 1) != 10 (at axis 1). Full input shapes: (2, 3, 5), (2, 10, 3)', ('Incompatible input shapes: axis values 3 (at axis 1) != 10 (at axis 1). Full input shapes: (2, 3, 5), (2, 10, 3)', 'Incompatible input shapes: axis values 3 (at axis 1) != 10 (at axis 1). Full input shapes: (None, 3, 5), (None, 10, 3)'))",
+        "error_message": "Incompatible input shapes: axis values 3 (at axis 1) != 10 (at axis 1). Full input shapes: (2, 3, 5), (2, 10, 3)",
+        "conflict_params": [
+            "inputs",
+            "axes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 3, 5)), ndarray(shape=(2, 10, 3))]",
+            "axes": "2",
+            "normalize": "False"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Incompatible input shapes: axis values 5 (at axis 2) != 3 (at axis 2). Full input shapes: (2, 3, 5), (2, 10, 3)', ('Incompatible input shapes: axis values 5 (at axis 2) != 3 (at axis 2). Full input shapes: (2, 3, 5), (2, 10, 3)', 'Incompatible input shapes: axis values 5 (at axis 2) != 3 (at axis 2). Full input shapes: (None, 3, 5), (None, 10, 3)'))",
+        "error_message": "Incompatible input shapes: axis values 5 (at axis 2) != 3 (at axis 2). Full input shapes: (2, 3, 5), (2, 10, 3)",
+        "conflict_params": [
+            "axes",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 3, 5)), ndarray(shape=(2, 10, 3))]",
+            "axes": "[1, 1]",
+            "normalize": "False"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Incompatible input shapes: axis values 3 (at axis 1) != 10 (at axis 1). Full input shapes: (2, 3, 5), (2, 10, 3)', ('Incompatible input shapes: axis values 3 (at axis 1) != 10 (at axis 1). Full input shapes: (2, 3, 5), (2, 10, 3)', 'Incompatible input shapes: axis values 3 (at axis 1) != 10 (at axis 1). Full input shapes: (None, 3, 5), (None, 10, 3)'))",
+        "error_message": "Incompatible input shapes: axis values 3 (at axis 1) != 10 (at axis 1). Full input shapes: (2, 3, 5), (2, 10, 3)",
+        "conflict_params": [
+            "inputs",
+            "axes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 3, 5)), ndarray(shape=(2, 10, 3))]",
+            "axes": "[1, 2]",
+            "normalize": "False"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 5, 10), (None, 5, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(2, 3, 5)), ndarray(shape=(2, 10, 3))]",
+            "axes": "[2, 1]",
+            "normalize": "False"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Incompatible input shapes: axis values 5 (at axis 2) != 10 (at axis 1). Full input shapes: (2, 3, 5), (2, 10, 3)', ('Incompatible input shapes: axis values 5 (at axis 2) != 10 (at axis 1). Full input shapes: (2, 3, 5), (2, 10, 3)', 'Incompatible input shapes: axis values 5 (at axis 2) != 10 (at axis 1). Full input shapes: (None, 3, 5), (None, 10, 3)'))",
+        "error_message": "Incompatible input shapes: axis values 5 (at axis 2) != 10 (at axis 1). Full input shapes: (2, 3, 5), (2, 10, 3)",
+        "conflict_params": [
+            "inputs",
+            "axes"
+        ]
+    }
+]

@@ -1,0 +1,61 @@
+[
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "dim": "-2",
+            "index": "Tensor(shape=torch.Size([0]))",
+            "out": "None"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'index_select(): Expected dtype int32 or int64 for index', ('index_select(): Expected dtype int32 or int64 for index', 'backend=\\'inductor\\' raised:\\nRuntimeError: tensors used as indices must be long, int, byte or bool tensors\\n\\nWhile executing %index_select : [num_users=1] = call_function[target=torch.index_select](args = (), kwargs = {input: %l_inputs_, dim: %l_dim_, index: %l_index_, out: None})\\nOriginal traceback:\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/torch_2_10_0_torch_index_select/generated_code.py\", line 4, in call_func\\n    return torch.index_select(input=inputs, dim=dim, index=index, out=out)\\n\\nUse tlparse to see full graph. (https://github.com/pytorch/tlparse?tab=readme-ov-file#tlparse-parse-structured-pt2-logs)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', (0, 4)))",
+        "error_message": "index_select(): Expected dtype int32 or int64 for index",
+        "conflict_params": [
+            "index"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "dim": "-2",
+            "index": "Tensor(shape=torch.Size([0]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'index_select(): Expected dtype int32 or int64 for index', ('index_select(): Expected dtype int32 or int64 for index', 'index_select(): Expected dtype int32 or int64 for index', (0, 4)))",
+        "error_message": "index_select(): Expected dtype int32 or int64 for index"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([0]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'index_select(): Expected dtype int32 or int64 for index', ('index_select(): Expected dtype int32 or int64 for index', 'index_select(): Expected dtype int32 or int64 for index', (3, 0)))",
+        "error_message": "index_select(): Expected dtype int32 or int64 for index"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([0]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'index_select(): Expected dtype int32 or int64 for index', ('index_select(): Expected dtype int32 or int64 for index', 'index_select(): Expected dtype int32 or int64 for index', (3, 0)))",
+        "error_message": "index_select(): Expected dtype int32 or int64 for index"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([0]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'index_select(): Expected dtype int32 or int64 for index', ('index_select(): Expected dtype int32 or int64 for index', 'index_select(): Expected dtype int32 or int64 for index', (0, 4)))",
+        "error_message": "index_select(): Expected dtype int32 or int64 for index"
+    }
+]

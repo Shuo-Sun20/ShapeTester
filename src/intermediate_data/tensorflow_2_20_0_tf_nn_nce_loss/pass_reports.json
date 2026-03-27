@@ -1,0 +1,154 @@
+[
+    {
+        "test_case": {
+            "weights": "EagerTensor(shape=(10000, 128))",
+            "biases": "EagerTensor(shape=(10000,))",
+            "labels": "EagerTensor(shape=(1, 1))",
+            "inputs": "EagerTensor(shape=(32, 128))",
+            "num_sampled": "50",
+            "num_classes": "10000",
+            "num_true": "2",
+            "sampled_values": "None",
+            "remove_accidental_hits": "False",
+            "name": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LogUniformCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 2 [Op:LogUniformCandidateSampler] name: ', ('{{function_node __wrapped__LogUniformCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 2 [Op:LogUniformCandidateSampler] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_nn_nce_loss/generated_code.py\", line 15, in call_func  *\\n        name=name\\n\\n    ValueError: Dimension size must be evenly divisible by 256 but is 128 for \\'{{node compute_sampled_logits/Reshape_1}} = Reshape[T=DT_FLOAT, Tshape=DT_INT32](compute_sampled_logits/Slice, compute_sampled_logits/concat_1)\\' with input shapes: [1,128], [3] and with input tensors computed as partial shapes: input[1] = [?,2,128].\\n'))",
+        "error_message": "{{function_node __wrapped__LogUniformCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 2 [Op:LogUniformCandidateSampler] name: ",
+        "conflict_params": [
+            "labels",
+            "num_true"
+        ]
+    },
+    {
+        "test_case": {
+            "weights": "EagerTensor(shape=(10000, 128))",
+            "biases": "EagerTensor(shape=(10000,))",
+            "labels": "EagerTensor(shape=(1, 2))",
+            "inputs": "EagerTensor(shape=(32, 128))",
+            "num_sampled": "50",
+            "num_classes": "10000",
+            "num_true": "2",
+            "sampled_values": "None",
+            "remove_accidental_hits": "False",
+            "name": "None"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((32,), (32,)))"
+    },
+    {
+        "test_case": {
+            "weights": "EagerTensor(shape=(10000, 128))",
+            "biases": "EagerTensor(shape=(10000,))",
+            "labels": "EagerTensor(shape=(16, 1))",
+            "inputs": "EagerTensor(shape=(32, 128))",
+            "num_sampled": "50",
+            "num_classes": "10000",
+            "num_true": "2",
+            "sampled_values": "None",
+            "remove_accidental_hits": "False",
+            "name": "None"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LogUniformCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 2 [Op:LogUniformCandidateSampler] name: ', ('{{function_node __wrapped__LogUniformCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 2 [Op:LogUniformCandidateSampler] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_nn_nce_loss/generated_code.py\", line 15, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 32 and 8 for \\'{{node compute_sampled_logits/Mul}} = Mul[T=DT_FLOAT](compute_sampled_logits/ExpandDims, compute_sampled_logits/Reshape_1)\\' with input shapes: [32,1,128], [8,2,128].\\n'))",
+        "error_message": "{{function_node __wrapped__LogUniformCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 2 [Op:LogUniformCandidateSampler] name: ",
+        "conflict_params": [
+            "num_true",
+            "labels",
+            "sampled_values"
+        ]
+    },
+    {
+        "test_case": {
+            "weights": "EagerTensor(shape=(10000, 128))",
+            "biases": "EagerTensor(shape=(10000,))",
+            "labels": "EagerTensor(shape=(16, 2))",
+            "inputs": "EagerTensor(shape=(32, 128))",
+            "num_sampled": "50",
+            "num_classes": "10000",
+            "num_true": "2",
+            "sampled_values": "None",
+            "remove_accidental_hits": "False",
+            "name": "None"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Mul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [32,1,128] vs. [16,2,128] [Op:Mul] name: ', ('{{function_node __wrapped__Mul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [32,1,128] vs. [16,2,128] [Op:Mul] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_nn_nce_loss/generated_code.py\", line 15, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 32 and 16 for \\'{{node compute_sampled_logits/Mul}} = Mul[T=DT_FLOAT](compute_sampled_logits/ExpandDims, compute_sampled_logits/Reshape_1)\\' with input shapes: [32,1,128], [16,2,128].\\n'))",
+        "error_message": "{{function_node __wrapped__Mul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [32,1,128] vs. [16,2,128] [Op:Mul] name: ",
+        "conflict_params": [
+            "inputs",
+            "labels"
+        ]
+    },
+    {
+        "test_case": {
+            "weights": "EagerTensor(shape=(10000, 128))",
+            "biases": "EagerTensor(shape=(10000,))",
+            "labels": "EagerTensor(shape=(32, 2))",
+            "inputs": "EagerTensor(shape=(32, 128))",
+            "num_sampled": "50",
+            "num_classes": "10000",
+            "num_true": "2",
+            "sampled_values": "None",
+            "remove_accidental_hits": "False",
+            "name": "None"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((32,), (32,)))"
+    },
+    {
+        "test_case": {
+            "weights": "EagerTensor(shape=(10000, 128))",
+            "biases": "EagerTensor(shape=(10000,))",
+            "labels": "EagerTensor(shape=(16, 1))",
+            "inputs": "EagerTensor(shape=(32, 128))",
+            "num_sampled": "50",
+            "num_classes": "10000",
+            "num_true": "2",
+            "sampled_values": "None",
+            "remove_accidental_hits": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LogUniformCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 2 [Op:LogUniformCandidateSampler] name: ', ('{{function_node __wrapped__LogUniformCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 2 [Op:LogUniformCandidateSampler] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_nn_nce_loss/generated_code.py\", line 15, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 32 and 8 for \\'{{node compute_sampled_logits/Mul}} = Mul[T=DT_FLOAT](compute_sampled_logits/ExpandDims, compute_sampled_logits/Reshape_1)\\' with input shapes: [32,1,128], [8,2,128].\\n'))",
+        "error_message": "{{function_node __wrapped__LogUniformCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 2 [Op:LogUniformCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "weights": "EagerTensor(shape=(10000, 128))",
+            "biases": "EagerTensor(shape=(10000,))",
+            "labels": "EagerTensor(shape=(1, 1))",
+            "inputs": "EagerTensor(shape=(32, 128))",
+            "num_sampled": "50",
+            "num_classes": "10000",
+            "num_true": "2",
+            "sampled_values": "None",
+            "remove_accidental_hits": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LogUniformCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 2 [Op:LogUniformCandidateSampler] name: ', ('{{function_node __wrapped__LogUniformCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 2 [Op:LogUniformCandidateSampler] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_nn_nce_loss/generated_code.py\", line 15, in call_func  *\\n        name=name\\n\\n    ValueError: Dimension size must be evenly divisible by 256 but is 128 for \\'{{node compute_sampled_logits/Reshape_1}} = Reshape[T=DT_FLOAT, Tshape=DT_INT32](compute_sampled_logits/Slice, compute_sampled_logits/concat_1)\\' with input shapes: [1,128], [3] and with input tensors computed as partial shapes: input[1] = [?,2,128].\\n'))",
+        "error_message": "{{function_node __wrapped__LogUniformCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 2 [Op:LogUniformCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "weights": "EagerTensor(shape=(10000, 128))",
+            "biases": "EagerTensor(shape=(10000,))",
+            "labels": "EagerTensor(shape=(16, 2))",
+            "inputs": "EagerTensor(shape=(32, 128))",
+            "num_sampled": "50",
+            "num_classes": "10000",
+            "num_true": "2",
+            "sampled_values": "None",
+            "remove_accidental_hits": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__Mul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [32,1,128] vs. [16,2,128] [Op:Mul] name: ', ('{{function_node __wrapped__Mul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [32,1,128] vs. [16,2,128] [Op:Mul] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_nn_nce_loss/generated_code.py\", line 15, in call_func  *\\n        name=name\\n\\n    ValueError: Dimensions must be equal, but are 32 and 16 for \\'{{node compute_sampled_logits/Mul}} = Mul[T=DT_FLOAT](compute_sampled_logits/ExpandDims, compute_sampled_logits/Reshape_1)\\' with input shapes: [32,1,128], [16,2,128].\\n'))",
+        "error_message": "{{function_node __wrapped__Mul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [32,1,128] vs. [16,2,128] [Op:Mul] name: "
+    }
+]

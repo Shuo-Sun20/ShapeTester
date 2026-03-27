@@ -1,0 +1,61 @@
+[
+    {
+        "test_case": {
+            "filters": "256",
+            "kernel_size": "11",
+            "strides": "5",
+            "padding": "valid",
+            "data_format": "None",
+            "dilation_rate": "1",
+            "groups": "1",
+            "activation": "relu",
+            "use_bias": "True",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "activity_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "inputs": "ndarray(shape=(4, 10, 128))"
+        },
+        "segment": "(6, 4, 4, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Exception encountered when calling Conv1D.call().\\n\\n\\x1b[1m{{function_node __wrapped__AddV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [4,10,128] vs. [1,1,256] [Op:AddV2] name: \\x1b[0m\\n\\nArguments received by Conv1D.call():\\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 128), dtype=float32)', ('Exception encountered when calling Conv1D.call().\\n\\n\\x1b[1m{{function_node __wrapped__AddV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [4,10,128] vs. [1,1,256] [Op:AddV2] name: \\x1b[0m\\n\\nArguments received by Conv1D.call():\\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 128), dtype=float32)', (None, 0, 256)))",
+        "error_message": "Exception encountered when calling Conv1D.call().\n\n\u001b[1m{{function_node __wrapped__AddV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [4,10,128] vs. [1,1,256] [Op:AddV2] name: \u001b[0m\n\nArguments received by Conv1D.call():\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 128), dtype=float32)",
+        "conflict_params": [
+            "kernel_size",
+            "strides",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "filters": "32",
+            "kernel_size": "11",
+            "strides": "4",
+            "padding": "valid",
+            "data_format": "None",
+            "dilation_rate": "1",
+            "groups": "1",
+            "activation": "relu",
+            "use_bias": "True",
+            "kernel_initializer": "glorot_uniform",
+            "bias_initializer": "zeros",
+            "kernel_regularizer": "None",
+            "bias_regularizer": "None",
+            "activity_regularizer": "None",
+            "kernel_constraint": "None",
+            "bias_constraint": "None",
+            "inputs": "ndarray(shape=(4, 10, 128))"
+        },
+        "segment": "(3, 4, 3, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Exception encountered when calling Conv1D.call().\\n\\n\\x1b[1m{{function_node __wrapped__AddV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [4,10,128] vs. [1,1,32] [Op:AddV2] name: \\x1b[0m\\n\\nArguments received by Conv1D.call():\\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 128), dtype=float32)', ('Exception encountered when calling Conv1D.call().\\n\\n\\x1b[1m{{function_node __wrapped__AddV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [4,10,128] vs. [1,1,32] [Op:AddV2] name: \\x1b[0m\\n\\nArguments received by Conv1D.call():\\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 128), dtype=float32)', (None, 0, 32)))",
+        "error_message": "Exception encountered when calling Conv1D.call().\n\n\u001b[1m{{function_node __wrapped__AddV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [4,10,128] vs. [1,1,32] [Op:AddV2] name: \u001b[0m\n\nArguments received by Conv1D.call():\n  \u2022 inputs=tf.Tensor(shape=(4, 10, 128), dtype=float32)",
+        "conflict_params": [
+            "kernel_size",
+            "padding"
+        ]
+    }
+]

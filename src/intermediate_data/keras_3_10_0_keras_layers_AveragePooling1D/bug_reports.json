@@ -1,0 +1,15 @@
+[
+    {
+        "test_case": {
+            "pool_size": "7",
+            "inputs": "ndarray(shape=(2, 10, 3))",
+            "strides": "3",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, \"Exception encountered when calling AveragePooling1D.call().\\n\\n\\x1b[1mComputed output size would be negative. Received: `inputs.shape=[None 10 3]` and `pool_size=[7]`.\\x1b[0m\\n\\nArguments received by AveragePooling1D.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10, 3), dtype=float32, sparse=False, ragged=False, name=keras_tensor_6947>',)\\n  \u2022 kwargs=<class 'inspect._empty'>\", ((None, 10, 0), \"Exception encountered when calling AveragePooling1D.call().\\n\\n\\x1b[1mComputed output size would be negative. Received: `inputs.shape=[None 10 3]` and `pool_size=[7]`.\\x1b[0m\\n\\nArguments received by AveragePooling1D.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10, 3), dtype=float32, sparse=False, ragged=False, name=keras_tensor_6947>',)\\n  \u2022 kwargs=<class 'inspect._empty'>\"))",
+        "error_message": "Exception encountered when calling AveragePooling1D.call().\n\n\u001b[1mComputed output size would be negative. Received: `inputs.shape=[None 10 3]` and `pool_size=[7]`.\u001b[0m\n\nArguments received by AveragePooling1D.call():\n  \u2022 args=('<KerasTensor shape=(None, 10, 3), dtype=float32, sparse=False, ragged=False, name=keras_tensor_6947>',)\n  \u2022 kwargs=<class 'inspect._empty'>"
+    }
+]

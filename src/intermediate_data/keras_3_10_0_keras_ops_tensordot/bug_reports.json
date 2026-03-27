@@ -1,0 +1,105 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 5)), EagerTensor(shape=(5, 4, 3))]",
+            "axes": "0"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 4, 5, 5, 4, 3), (None, 4, 5, None, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 5)), EagerTensor(shape=(5, 4, 3))]",
+            "axes": "[[0, 1], [1, 2]]"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Shape mismatch on `x1[axes[0]]` and `x2[axes[1]]`, received [None, 4] and [4, 3].', ((None, 5), 'Shape mismatch on `x1[axes[0]]` and `x2[axes[1]]`, received [None, 4] and [4, 3].'))",
+        "error_message": "Shape mismatch on `x1[axes[0]]` and `x2[axes[1]]`, received [None, 4] and [4, 3].",
+        "conflict_params": [
+            "inputs",
+            "axes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 5)), EagerTensor(shape=(5, 4, 3))]",
+            "axes": "[[1, 2], [0, 1]]"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Shape mismatch on `x1[axes[0]]` and `x2[axes[1]]`, received [4, 5] and [None, 4].', ((None, 3), 'Shape mismatch on `x1[axes[0]]` and `x2[axes[1]]`, received [4, 5] and [None, 4].'))",
+        "error_message": "Shape mismatch on `x1[axes[0]]` and `x2[axes[1]]`, received [4, 5] and [None, 4].",
+        "conflict_params": [
+            "inputs",
+            "axes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 5)), EagerTensor(shape=(5, 4, 3))]",
+            "axes": "[[0, 1, 2], [0, 1, 2]]"
+        },
+        "segment": "(7,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Shape mismatch on `x1[axes[0]]` and `x2[axes[1]]`, received [None, 4, 5] and [None, 4, 3].', ((None,), 'Shape mismatch on `x1[axes[0]]` and `x2[axes[1]]`, received [None, 4, 5] and [None, 4, 3].'))",
+        "error_message": "Shape mismatch on `x1[axes[0]]` and `x2[axes[1]]`, received [None, 4, 5] and [None, 4, 3].",
+        "conflict_params": [
+            "inputs",
+            "axes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 5)), EagerTensor(shape=(5, 4, 3))]",
+            "axes": "[[], []]"
+        },
+        "segment": "(8,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 4, 5, 5, 4, 3), (None, 4, 5, None, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 5)), EagerTensor(shape=(5, 4, 3))]",
+            "axes": "[[0, 1], [1, 2]]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Shape mismatch on `x1[axes[0]]` and `x2[axes[1]]`, received [None, 4] and [4, 3].', ((None, 5), 'Shape mismatch on `x1[axes[0]]` and `x2[axes[1]]`, received [None, 4] and [4, 3].'))",
+        "error_message": "Shape mismatch on `x1[axes[0]]` and `x2[axes[1]]`, received [None, 4] and [4, 3]."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 5)), EagerTensor(shape=(5, 4, 3))]",
+            "axes": "[[], []]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 4, 5, 5, 4, 3), (None, 4, 5, None, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 5)), EagerTensor(shape=(5, 4, 3))]",
+            "axes": "0"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PassWithInconsistency: 'PassWithInconsistency'>, None, ((None, 4, 5, 5, 4, 3), (None, 4, 5, None, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 5)), EagerTensor(shape=(5, 4, 3))]",
+            "axes": "[[1, 2], [0, 1]]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Shape mismatch on `x1[axes[0]]` and `x2[axes[1]]`, received [4, 5] and [None, 4].', ((None, 3), 'Shape mismatch on `x1[axes[0]]` and `x2[axes[1]]`, received [4, 5] and [None, 4].'))",
+        "error_message": "Shape mismatch on `x1[axes[0]]` and `x2[axes[1]]`, received [4, 5] and [None, 4]."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4, 5)), EagerTensor(shape=(5, 4, 3))]",
+            "axes": "[[0, 1, 2], [0, 1, 2]]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Shape mismatch on `x1[axes[0]]` and `x2[axes[1]]`, received [None, 4, 5] and [None, 4, 3].', ((None,), 'Shape mismatch on `x1[axes[0]]` and `x2[axes[1]]`, received [None, 4, 5] and [None, 4, 3].'))",
+        "error_message": "Shape mismatch on `x1[axes[0]]` and `x2[axes[1]]`, received [None, 4, 5] and [None, 4, 3]."
+    }
+]

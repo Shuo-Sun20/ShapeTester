@@ -1,0 +1,933 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "sequence",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "True"
+        },
+        "segment": "(0, 1, 1, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'partial_pivoting must be True if perturb_singular is.', ('partial_pivoting must be True if perturb_singular is.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: partial_pivoting must be True if perturb_singular is.\\n'))",
+        "error_message": "partial_pivoting must be True if perturb_singular is.",
+        "conflict_params": [
+            "partial_pivoting",
+            "perturb_singular"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "matrix",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "False"
+        },
+        "segment": "(1, 0, 0, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected last two dimensions of diagonals to be same, got 5 and 3', ('Expected last two dimensions of diagonals to be same, got 5 and 3', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected last two dimensions of diagonals to be same, got 5 and 3\\n'))",
+        "error_message": "Expected last two dimensions of diagonals to be same, got 5 and 3",
+        "conflict_params": [
+            "inputs",
+            "diagonals_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "compact",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "False"
+        },
+        "segment": "(0, 1, 2, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2', ('Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2\\n'))",
+        "error_message": "Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2",
+        "conflict_params": [
+            "inputs",
+            "transpose_rhs"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "sequence",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "True"
+        },
+        "segment": "(1, 0, 1, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected diagonals to be a sequence of length 3.', ('Expected diagonals to be a sequence of length 3.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected diagonals to be a sequence of length 3.\\n'))",
+        "error_message": "Expected diagonals to be a sequence of length 3.",
+        "conflict_params": [
+            "inputs",
+            "diagonals_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "compact",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "False"
+        },
+        "segment": "(1, 0, 2, 1, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5, 2), (3, 5, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3)), EagerTensor(shape=(3,))]",
+            "diagonals_format": "matrix",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "True"
+        },
+        "segment": "(0, 1, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 3, 3)), EagerTensor(shape=(1, 3))]",
+            "transpose_rhs": "True",
+            "diagonals_format": "sequence",
+            "conjugate_rhs": "True",
+            "partial_pivoting": "True",
+            "perturb_singular": "False",
+            "name": "None"
+        },
+        "segment": "(0, 0, 1, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected diagonals to be a sequence of length 3.', ('Expected diagonals to be a sequence of length 3.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected diagonals to be a sequence of length 3.\\n'))",
+        "error_message": "Expected diagonals to be a sequence of length 3.",
+        "conflict_params": [
+            "inputs",
+            "diagonals_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3)), EagerTensor(shape=(3,))]",
+            "diagonals_format": "matrix",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "False"
+        },
+        "segment": "(1, 1, 0, 1, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 3, 3)), EagerTensor(shape=(1, 3))]",
+            "transpose_rhs": "True",
+            "diagonals_format": "compact",
+            "conjugate_rhs": "True",
+            "partial_pivoting": "True",
+            "perturb_singular": "True",
+            "name": "None"
+        },
+        "segment": "(0, 0, 2, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3), (1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "matrix",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected last two dimensions of diagonals to be same, got 5 and 3', ('Expected last two dimensions of diagonals to be same, got 5 and 3', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected last two dimensions of diagonals to be same, got 5 and 3\\n'))",
+        "error_message": "Expected last two dimensions of diagonals to be same, got 5 and 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 3, 3)), EagerTensor(shape=(1, 3))]",
+            "transpose_rhs": "True",
+            "diagonals_format": "matrix",
+            "conjugate_rhs": "True",
+            "partial_pivoting": "True",
+            "perturb_singular": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3), (1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "sequence",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected diagonals to be a sequence of length 3.', ('Expected diagonals to be a sequence of length 3.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected diagonals to be a sequence of length 3.\\n'))",
+        "error_message": "Expected diagonals to be a sequence of length 3."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 3, 3)), EagerTensor(shape=(1, 3))]",
+            "transpose_rhs": "True",
+            "diagonals_format": "compact",
+            "conjugate_rhs": "True",
+            "partial_pivoting": "False",
+            "perturb_singular": "True",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'partial_pivoting must be True if perturb_singular is.', ('partial_pivoting must be True if perturb_singular is.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: partial_pivoting must be True if perturb_singular is.\\n'))",
+        "error_message": "partial_pivoting must be True if perturb_singular is."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3)), EagerTensor(shape=(3,))]",
+            "diagonals_format": "compact",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "sequence",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected diagonals to be a sequence of length 3.', ('Expected diagonals to be a sequence of length 3.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected diagonals to be a sequence of length 3.\\n'))",
+        "error_message": "Expected diagonals to be a sequence of length 3."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3)), EagerTensor(shape=(3,))]",
+            "diagonals_format": "sequence",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'partial_pivoting must be True if perturb_singular is.', ('partial_pivoting must be True if perturb_singular is.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: partial_pivoting must be True if perturb_singular is.\\n'))",
+        "error_message": "partial_pivoting must be True if perturb_singular is."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "compact",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'partial_pivoting must be True if perturb_singular is.', ('partial_pivoting must be True if perturb_singular is.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: partial_pivoting must be True if perturb_singular is.\\n'))",
+        "error_message": "partial_pivoting must be True if perturb_singular is."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 3, 3)), EagerTensor(shape=(1, 3))]",
+            "transpose_rhs": "False",
+            "diagonals_format": "compact",
+            "conjugate_rhs": "True",
+            "partial_pivoting": "True",
+            "perturb_singular": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3), (1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "compact",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5, 2), (3, 5, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 3, 3)), EagerTensor(shape=(1, 3))]",
+            "transpose_rhs": "True",
+            "diagonals_format": "compact",
+            "conjugate_rhs": "True",
+            "partial_pivoting": "True",
+            "perturb_singular": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3), (1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "matrix",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected last two dimensions of diagonals to be same, got 5 and 3', ('Expected last two dimensions of diagonals to be same, got 5 and 3', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected last two dimensions of diagonals to be same, got 5 and 3\\n'))",
+        "error_message": "Expected last two dimensions of diagonals to be same, got 5 and 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "compact",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5, 2), (3, 5, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "sequence",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected diagonals to be a sequence of length 3.', ('Expected diagonals to be a sequence of length 3.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected diagonals to be a sequence of length 3.\\n'))",
+        "error_message": "Expected diagonals to be a sequence of length 3."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "compact",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2', ('Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2\\n'))",
+        "error_message": "Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3)), EagerTensor(shape=(3,))]",
+            "diagonals_format": "matrix",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'partial_pivoting must be True if perturb_singular is.', ('partial_pivoting must be True if perturb_singular is.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: partial_pivoting must be True if perturb_singular is.\\n'))",
+        "error_message": "partial_pivoting must be True if perturb_singular is."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3)), EagerTensor(shape=(3,))]",
+            "diagonals_format": "compact",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3)), EagerTensor(shape=(3,))]",
+            "diagonals_format": "matrix",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3)), EagerTensor(shape=(3,))]",
+            "diagonals_format": "matrix",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "sequence",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected diagonals to be a sequence of length 3.', ('Expected diagonals to be a sequence of length 3.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected diagonals to be a sequence of length 3.\\n'))",
+        "error_message": "Expected diagonals to be a sequence of length 3."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "compact",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'partial_pivoting must be True if perturb_singular is.', ('partial_pivoting must be True if perturb_singular is.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: partial_pivoting must be True if perturb_singular is.\\n'))",
+        "error_message": "partial_pivoting must be True if perturb_singular is."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "compact",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2', ('Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2\\n'))",
+        "error_message": "Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "compact",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'partial_pivoting must be True if perturb_singular is.', ('partial_pivoting must be True if perturb_singular is.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: partial_pivoting must be True if perturb_singular is.\\n'))",
+        "error_message": "partial_pivoting must be True if perturb_singular is."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "matrix",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected last two dimensions of diagonals to be same, got 5 and 3', ('Expected last two dimensions of diagonals to be same, got 5 and 3', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected last two dimensions of diagonals to be same, got 5 and 3\\n'))",
+        "error_message": "Expected last two dimensions of diagonals to be same, got 5 and 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "matrix",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected last two dimensions of diagonals to be same, got 5 and 3', ('Expected last two dimensions of diagonals to be same, got 5 and 3', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected last two dimensions of diagonals to be same, got 5 and 3\\n'))",
+        "error_message": "Expected last two dimensions of diagonals to be same, got 5 and 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "sequence",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected diagonals to be a sequence of length 3.', ('Expected diagonals to be a sequence of length 3.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected diagonals to be a sequence of length 3.\\n'))",
+        "error_message": "Expected diagonals to be a sequence of length 3."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "compact",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5, 2), (3, 5, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 3, 3)), EagerTensor(shape=(1, 3))]",
+            "transpose_rhs": "False",
+            "diagonals_format": "compact",
+            "conjugate_rhs": "True",
+            "partial_pivoting": "True",
+            "perturb_singular": "True",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3), (1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 3, 3)), EagerTensor(shape=(1, 3))]",
+            "transpose_rhs": "True",
+            "diagonals_format": "matrix",
+            "conjugate_rhs": "False",
+            "partial_pivoting": "True",
+            "perturb_singular": "True",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3), (1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 3, 3)), EagerTensor(shape=(1, 3))]",
+            "transpose_rhs": "False",
+            "diagonals_format": "sequence",
+            "conjugate_rhs": "True",
+            "partial_pivoting": "True",
+            "perturb_singular": "False",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected diagonals to be a sequence of length 3.', ('Expected diagonals to be a sequence of length 3.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected diagonals to be a sequence of length 3.\\n'))",
+        "error_message": "Expected diagonals to be a sequence of length 3."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "matrix",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'partial_pivoting must be True if perturb_singular is.', ('partial_pivoting must be True if perturb_singular is.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: partial_pivoting must be True if perturb_singular is.\\n'))",
+        "error_message": "partial_pivoting must be True if perturb_singular is."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "compact",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2', ('Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2\\n'))",
+        "error_message": "Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "compact",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2', ('Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2\\n'))",
+        "error_message": "Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "compact",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2', ('Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2\\n'))",
+        "error_message": "Expected number of left-hand sided and right-hand sides to be equal, got 5 and 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "sequence",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected diagonals to be a sequence of length 3.', ('Expected diagonals to be a sequence of length 3.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected diagonals to be a sequence of length 3.\\n'))",
+        "error_message": "Expected diagonals to be a sequence of length 3."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "sequence",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected diagonals to be a sequence of length 3.', ('Expected diagonals to be a sequence of length 3.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected diagonals to be a sequence of length 3.\\n'))",
+        "error_message": "Expected diagonals to be a sequence of length 3."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "sequence",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'partial_pivoting must be True if perturb_singular is.', ('partial_pivoting must be True if perturb_singular is.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: partial_pivoting must be True if perturb_singular is.\\n'))",
+        "error_message": "partial_pivoting must be True if perturb_singular is."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "sequence",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected diagonals to be a sequence of length 3.', ('Expected diagonals to be a sequence of length 3.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected diagonals to be a sequence of length 3.\\n'))",
+        "error_message": "Expected diagonals to be a sequence of length 3."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "sequence",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'partial_pivoting must be True if perturb_singular is.', ('partial_pivoting must be True if perturb_singular is.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: partial_pivoting must be True if perturb_singular is.\\n'))",
+        "error_message": "partial_pivoting must be True if perturb_singular is."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "compact",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'partial_pivoting must be True if perturb_singular is.', ('partial_pivoting must be True if perturb_singular is.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: partial_pivoting must be True if perturb_singular is.\\n'))",
+        "error_message": "partial_pivoting must be True if perturb_singular is."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "sequence",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected diagonals to be a sequence of length 3.', ('Expected diagonals to be a sequence of length 3.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected diagonals to be a sequence of length 3.\\n'))",
+        "error_message": "Expected diagonals to be a sequence of length 3."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "sequence",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected diagonals to be a sequence of length 3.', ('Expected diagonals to be a sequence of length 3.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected diagonals to be a sequence of length 3.\\n'))",
+        "error_message": "Expected diagonals to be a sequence of length 3."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "compact",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5, 2), (3, 5, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "matrix",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected last two dimensions of diagonals to be same, got 5 and 3', ('Expected last two dimensions of diagonals to be same, got 5 and 3', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected last two dimensions of diagonals to be same, got 5 and 3\\n'))",
+        "error_message": "Expected last two dimensions of diagonals to be same, got 5 and 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "sequence",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'partial_pivoting must be True if perturb_singular is.', ('partial_pivoting must be True if perturb_singular is.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: partial_pivoting must be True if perturb_singular is.\\n'))",
+        "error_message": "partial_pivoting must be True if perturb_singular is."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "matrix",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'partial_pivoting must be True if perturb_singular is.', ('partial_pivoting must be True if perturb_singular is.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: partial_pivoting must be True if perturb_singular is.\\n'))",
+        "error_message": "partial_pivoting must be True if perturb_singular is."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "matrix",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'partial_pivoting must be True if perturb_singular is.', ('partial_pivoting must be True if perturb_singular is.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: partial_pivoting must be True if perturb_singular is.\\n'))",
+        "error_message": "partial_pivoting must be True if perturb_singular is."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "matrix",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected last two dimensions of diagonals to be same, got 5 and 3', ('Expected last two dimensions of diagonals to be same, got 5 and 3', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected last two dimensions of diagonals to be same, got 5 and 3\\n'))",
+        "error_message": "Expected last two dimensions of diagonals to be same, got 5 and 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "matrix",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected last two dimensions of diagonals to be same, got 5 and 3', ('Expected last two dimensions of diagonals to be same, got 5 and 3', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected last two dimensions of diagonals to be same, got 5 and 3\\n'))",
+        "error_message": "Expected last two dimensions of diagonals to be same, got 5 and 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "matrix",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected last two dimensions of diagonals to be same, got 5 and 3', ('Expected last two dimensions of diagonals to be same, got 5 and 3', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: Expected last two dimensions of diagonals to be same, got 5 and 3\\n'))",
+        "error_message": "Expected last two dimensions of diagonals to be same, got 5 and 3"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3, 5)), EagerTensor(shape=(3, 5, 2))]",
+            "diagonals_format": "compact",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5, 2), (3, 5, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 3, 3)), EagerTensor(shape=(1, 3))]",
+            "transpose_rhs": "True",
+            "diagonals_format": "compact",
+            "conjugate_rhs": "False",
+            "partial_pivoting": "True",
+            "perturb_singular": "True",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3), (1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 3, 3)), EagerTensor(shape=(1, 3))]",
+            "transpose_rhs": "True",
+            "diagonals_format": "matrix",
+            "conjugate_rhs": "True",
+            "partial_pivoting": "True",
+            "perturb_singular": "True",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3), (1, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 3, 3)), EagerTensor(shape=(1, 3))]",
+            "transpose_rhs": "True",
+            "diagonals_format": "matrix",
+            "conjugate_rhs": "True",
+            "partial_pivoting": "False",
+            "perturb_singular": "True",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'partial_pivoting must be True if perturb_singular is.', ('partial_pivoting must be True if perturb_singular is.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: partial_pivoting must be True if perturb_singular is.\\n'))",
+        "error_message": "partial_pivoting must be True if perturb_singular is."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3)), EagerTensor(shape=(3,))]",
+            "diagonals_format": "matrix",
+            "transpose_rhs": "True",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "True",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3)), EagerTensor(shape=(3,))]",
+            "diagonals_format": "sequence",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "False",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'partial_pivoting must be True if perturb_singular is.', ('partial_pivoting must be True if perturb_singular is.', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_solve/generated_code.py\", line 16, in call_func  *\\n        perturb_singular=perturb_singular\\n\\n    ValueError: partial_pivoting must be True if perturb_singular is.\\n'))",
+        "error_message": "partial_pivoting must be True if perturb_singular is."
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 3)), EagerTensor(shape=(3,))]",
+            "diagonals_format": "matrix",
+            "transpose_rhs": "False",
+            "conjugate_rhs": "True",
+            "name": "None",
+            "partial_pivoting": "False",
+            "perturb_singular": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,)))"
+    }
+]

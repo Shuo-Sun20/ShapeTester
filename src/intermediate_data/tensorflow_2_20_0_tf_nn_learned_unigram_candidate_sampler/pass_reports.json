@@ -1,0 +1,1976 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "1",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "None"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 2 was: 1\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_821282]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 1 [Op:LearnedUnigramCandidateSampler] name: ",
+        "conflict_params": [
+            "inputs",
+            "num_true"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 1))]",
+            "num_true": "1",
+            "num_sampled": "3",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "None"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((3,), (1, 1), (3,)), ((3,), (1, 1), (3,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 1))]",
+            "num_true": "1",
+            "num_sampled": "10",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "None"
+        },
+        "segment": "(0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((10,), (1, 1), (10,)), ((10,), (1, 1), (10,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 1))]",
+            "num_true": "1",
+            "num_sampled": "50",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "None"
+        },
+        "segment": "(0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((50,), (1, 1), (50,)), ((50,), (1, 1), (50,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 1))]",
+            "num_true": "1",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "None"
+        },
+        "segment": "(0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((100,), (1, 1), (100,)), ((100,), (1, 1), (100,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "2",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "None"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (4, 2), (1,)), ((1,), (4, 2), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "2",
+            "num_sampled": "3",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "None"
+        },
+        "segment": "(1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((3,), (4, 2), (3,)), ((3,), (4, 2), (3,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "2",
+            "num_sampled": "10",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "None"
+        },
+        "segment": "(1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((10,), (4, 2), (10,)), ((10,), (4, 2), (10,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "2",
+            "num_sampled": "50",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "None"
+        },
+        "segment": "(1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} Sampler's range is too small. [Op:LearnedUnigramCandidateSampler] name: \", (\"{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} Sampler's range is too small. [Op:LearnedUnigramCandidateSampler] name: \", 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\nSampler\\'s range is too small.\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_821414]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} Sampler's range is too small. [Op:LearnedUnigramCandidateSampler] name: ",
+        "conflict_params": [
+            "num_sampled",
+            "range_max",
+            "unique"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "2",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "None"
+        },
+        "segment": "(1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} Sampler's range is too small. [Op:LearnedUnigramCandidateSampler] name: \", (\"{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} Sampler's range is too small. [Op:LearnedUnigramCandidateSampler] name: \", 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\nSampler\\'s range is too small.\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_821440]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} Sampler's range is too small. [Op:LearnedUnigramCandidateSampler] name: ",
+        "conflict_params": [
+            "num_sampled",
+            "range_max",
+            "unique"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "3",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "None"
+        },
+        "segment": "(2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 2 was: 3\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_821466]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 3 [Op:LearnedUnigramCandidateSampler] name: ",
+        "conflict_params": [
+            "inputs",
+            "num_true"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3))]",
+            "num_true": "3",
+            "num_sampled": "3",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "None"
+        },
+        "segment": "(2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((3,), (2, 3), (3,)), ((3,), (2, 3), (3,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3))]",
+            "num_true": "3",
+            "num_sampled": "10",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "None"
+        },
+        "segment": "(2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((10,), (2, 3), (10,)), ((10,), (2, 3), (10,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 2))]",
+            "num_true": "3",
+            "num_sampled": "50",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42"
+        },
+        "segment": "(2, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 2 was: 3\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_821522]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 3 [Op:LearnedUnigramCandidateSampler] name: ",
+        "conflict_params": [
+            "inputs",
+            "num_true"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 1))]",
+            "num_true": "3",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "200"
+        },
+        "segment": "(2, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 1 was: 3\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_821548]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 3 [Op:LearnedUnigramCandidateSampler] name: ",
+        "conflict_params": [
+            "inputs",
+            "num_true"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "5",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "None"
+        },
+        "segment": "(3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 2 was: 5\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_821574]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 5 [Op:LearnedUnigramCandidateSampler] name: ",
+        "conflict_params": [
+            "inputs",
+            "num_true"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 5))]",
+            "num_true": "5",
+            "num_sampled": "3",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "segment": "(3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((3,), (1, 5), (3,)), ((3,), (1, 5), (3,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 5))]",
+            "num_true": "5",
+            "num_sampled": "10",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "segment": "(3, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((10,), (1, 5), (10,)), ((10,), (1, 5), (10,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 2))]",
+            "num_true": "5",
+            "num_sampled": "50",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42"
+        },
+        "segment": "(3, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 2 was: 5\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_821630]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 5 [Op:LearnedUnigramCandidateSampler] name: ",
+        "conflict_params": [
+            "inputs",
+            "num_true"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 1))]",
+            "num_true": "5",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "200"
+        },
+        "segment": "(3, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 1 was: 5\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_821656]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 5 [Op:LearnedUnigramCandidateSampler] name: ",
+        "conflict_params": [
+            "inputs",
+            "num_true"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "10",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "None"
+        },
+        "segment": "(4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 10 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 10 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 2 was: 10\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_821682]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 10 [Op:LearnedUnigramCandidateSampler] name: ",
+        "conflict_params": [
+            "inputs",
+            "num_true"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "3",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "None"
+        },
+        "segment": "(4, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((3,), (1, 10), (3,)), ((3,), (1, 10), (3,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "10",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "None"
+        },
+        "segment": "(4, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((10,), (1, 10), (10,)), ((10,), (1, 10), (10,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 2))]",
+            "num_true": "10",
+            "num_sampled": "50",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42"
+        },
+        "segment": "(4, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 10 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 10 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 2 was: 10\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_821738]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 10 [Op:LearnedUnigramCandidateSampler] name: ",
+        "conflict_params": [
+            "inputs",
+            "num_true"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 1))]",
+            "num_true": "10",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "200"
+        },
+        "segment": "(4, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 10 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 10 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 1 was: 10\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_821764]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 10 [Op:LearnedUnigramCandidateSampler] name: ",
+        "conflict_params": [
+            "inputs",
+            "num_true"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "3",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 3 [Op:LearnedUnigramCandidateSampler] name: test_sampler', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 3 [Op:LearnedUnigramCandidateSampler] name: test_sampler', 'Graph execution error:\\n\\nDetected at node test_sampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 2 was: 3\\n\\t [[{{node test_sampler}}]] [Op:__inference_call_func_821810]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 3 [Op:LearnedUnigramCandidateSampler] name: test_sampler"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "1",
+            "num_sampled": "3",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 1\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_821819]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "2",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (4, 2), (1,)), ((1,), (4, 2), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "3",
+            "num_sampled": "50",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 3\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_821843]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "5",
+            "num_sampled": "10",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 2 was: 5\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_821872]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 5 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "2",
+            "num_sampled": "3",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((3,), (4, 2), (3,)), ((3,), (4, 2), (3,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "2",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (4, 2), (1,)), ((1,), (4, 2), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "1",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 2 was: 1\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_821911]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 1 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "3",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((3,), (1, 10), (3,)), ((3,), (1, 10), (3,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "5",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 2 was: 5\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_821955]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 5 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "3",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 2 was: 3\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_821964]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 3 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "5",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 2 was: 5\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_821993]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 5 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "1",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 2 was: 1\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822002]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 1 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "2",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (4, 2), (1,)), ((1,), (4, 2), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "2",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (4, 2), (1,)), ((1,), (4, 2), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (1, 10), (1,)), ((1,), (1, 10), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "10",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((10,), (1, 10), (10,)), ((10,), (1, 10), (10,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "2",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 2\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822111]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 1))]",
+            "num_true": "1",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((100,), (1, 1), (100,)), ((100,), (1, 1), (100,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "1",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 1\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822135]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 1))]",
+            "num_true": "10",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 10 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 10 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 1 was: 10\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822144]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 10 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (1, 10), (1,)), ((1,), (1, 10), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "2",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (4, 2), (1,)), ((1,), (4, 2), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (1, 10), (1,)), ((1,), (1, 10), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "2",
+            "num_sampled": "50",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} Sampler's range is too small. [Op:LearnedUnigramCandidateSampler] name: \", (\"{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} Sampler's range is too small. [Op:LearnedUnigramCandidateSampler] name: \", 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\nSampler\\'s range is too small.\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822218]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} Sampler's range is too small. [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "2",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 2\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822247]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (1, 10), (1,)), ((1,), (1, 10), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "5",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: test_sampler', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: test_sampler', 'Graph execution error:\\n\\nDetected at node test_sampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 5\\n\\t [[{{node test_sampler}}]] [Op:__inference_call_func_822271]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: test_sampler"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "3",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 3\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822280]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (1, 10), (1,)), ((1,), (1, 10), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "1",
+            "num_sampled": "50",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 1\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822324]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "5",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 5\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822333]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "2",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 2\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822342]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 1))]",
+            "num_true": "1",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((100,), (1, 1), (100,)), ((100,), (1, 1), (100,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 1))]",
+            "num_true": "1",
+            "num_sampled": "50",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((50,), (1, 1), (50,)), ((50,), (1, 1), (50,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 1))]",
+            "num_true": "1",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} Sampler's range is too small. [Op:LearnedUnigramCandidateSampler] name: \", (\"{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} Sampler's range is too small. [Op:LearnedUnigramCandidateSampler] name: \", 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\nSampler\\'s range is too small.\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822401]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} Sampler's range is too small. [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "5",
+            "num_sampled": "50",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 5\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822430]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "10",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((10,), (1, 10), (10,)), ((10,), (1, 10), (10,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "1",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 1\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822454]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "3",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 3\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822463]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "5",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 5\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822492]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (1, 10), (1,)), ((1,), (1, 10), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "5",
+            "num_sampled": "10",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 5\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822516]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "5",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: test_sampler', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: test_sampler', 'Graph execution error:\\n\\nDetected at node test_sampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 5\\n\\t [[{{node test_sampler}}]] [Op:__inference_call_func_822545]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: test_sampler"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (1, 10), (1,)), ((1,), (1, 10), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((100,), (1, 10), (100,)), ((100,), (1, 10), (100,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "1",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: test_sampler', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: test_sampler', 'Graph execution error:\\n\\nDetected at node test_sampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 1\\n\\t [[{{node test_sampler}}]] [Op:__inference_call_func_822604]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: test_sampler"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "10",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((10,), (1, 10), (10,)), ((10,), (1, 10), (10,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "3",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((3,), (1, 10), (3,)), ((3,), (1, 10), (3,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 1))]",
+            "num_true": "1",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((100,), (1, 1), (100,)), ((100,), (1, 1), (100,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 1))]",
+            "num_true": "5",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 1 was: 5\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822678]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 5 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 1))]",
+            "num_true": "1",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((100,), (1, 1), (100,)), ((100,), (1, 1), (100,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (1, 10), (1,)), ((1,), (1, 10), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (1, 10), (1,)), ((1,), (1, 10), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "5",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 2 was: 5\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822772]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 5 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "2",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (4, 2), (1,)), ((1,), (4, 2), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 1))]",
+            "num_true": "10",
+            "num_sampled": "50",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 10 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 10 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 1 was: 10\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822816]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 10 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 1))]",
+            "num_true": "1",
+            "num_sampled": "10",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((10,), (1, 1), (10,)), ((10,), (1, 1), (10,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 1))]",
+            "num_true": "2",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 2 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 2 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 1 was: 2\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822840]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 1 was: 2 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 1))]",
+            "num_true": "1",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (1, 1), (1,)), ((1,), (1, 1), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((100,), (1, 10), (100,)), ((100,), (1, 10), (100,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (1, 10), (1,)), ((1,), (1, 10), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (1, 10), (1,)), ((1,), (1, 10), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "50",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((50,), (1, 10), (50,)), ((50,), (1, 10), (50,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "2",
+            "num_sampled": "10",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "0",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((10,), (4, 2), (10,)), ((10,), (4, 2), (10,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "2",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((100,), (4, 2), (100,)), ((100,), (4, 2), (100,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "1",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 2 was: 1\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_822994]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 2 was: 1 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "2",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (4, 2), (1,)), ((1,), (4, 2), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "50",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((50,), (1, 10), (50,)), ((50,), (1, 10), (50,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "50",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((50,), (1, 10), (50,)), ((50,), (1, 10), (50,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "3",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((3,), (1, 10), (3,)), ((3,), (1, 10), (3,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "3",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 3\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_823143]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "1",
+            "num_sampled": "3",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: test_sampler', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: test_sampler', 'Graph execution error:\\n\\nDetected at node test_sampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 1\\n\\t [[{{node test_sampler}}]] [Op:__inference_call_func_823172]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: test_sampler"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "1",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 1\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_823181]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "3",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: test_sampler', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: test_sampler', 'Graph execution error:\\n\\nDetected at node test_sampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 3\\n\\t [[{{node test_sampler}}]] [Op:__inference_call_func_823210]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: test_sampler"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "3",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((3,), (1, 10), (3,)), ((3,), (1, 10), (3,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "10",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((10,), (1, 10), (10,)), ((10,), (1, 10), (10,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((100,), (1, 10), (100,)), ((100,), (1, 10), (100,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "5",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 5\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_823304]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "3",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 3\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_823313]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} Sampler's range is too small. [Op:LearnedUnigramCandidateSampler] name: \", (\"{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} Sampler's range is too small. [Op:LearnedUnigramCandidateSampler] name: \", 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\nSampler\\'s range is too small.\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_823342]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} Sampler's range is too small. [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((100,), (1, 10), (100,)), ((100,), (1, 10), (100,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "2",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: test_sampler', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: test_sampler', 'Graph execution error:\\n\\nDetected at node test_sampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 2\\n\\t [[{{node test_sampler}}]] [Op:__inference_call_func_823386]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: test_sampler"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "1",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 1\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_823415]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "2",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "0",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: test_sampler', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: test_sampler', 'Graph execution error:\\n\\nDetected at node test_sampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 2\\n\\t [[{{node test_sampler}}]] [Op:__inference_call_func_823424]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: test_sampler"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "1",
+            "num_sampled": "10",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: test_sampler', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: test_sampler', 'Graph execution error:\\n\\nDetected at node test_sampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 1\\n\\t [[{{node test_sampler}}]] [Op:__inference_call_func_823453]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: test_sampler"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "3",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: test_sampler', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: test_sampler', 'Graph execution error:\\n\\nDetected at node test_sampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 3\\n\\t [[{{node test_sampler}}]] [Op:__inference_call_func_823462]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: test_sampler"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "5",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 5\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_823471]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "5",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: test_sampler', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: test_sampler', 'Graph execution error:\\n\\nDetected at node test_sampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 5\\n\\t [[{{node test_sampler}}]] [Op:__inference_call_func_823500]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: test_sampler"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "0",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (1, 10), (1,)), ((1,), (1, 10), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "2",
+            "num_sampled": "50",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} Sampler's range is too small. [Op:LearnedUnigramCandidateSampler] name: \", (\"{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} Sampler's range is too small. [Op:LearnedUnigramCandidateSampler] name: \", 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\nSampler\\'s range is too small.\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_823544]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} Sampler's range is too small. [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "2",
+            "num_sampled": "50",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((50,), (4, 2), (50,)), ((50,), (4, 2), (50,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 2))]",
+            "num_true": "2",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((1,), (4, 2), (1,)), ((1,), (4, 2), (1,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "2",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 2\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_823603]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((100,), (1, 10), (100,)), ((100,), (1, 10), (100,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "50",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((50,), (1, 10), (50,)), ((50,), (1, 10), (50,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "5",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 5\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_823682]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "2",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 2\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_823731]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "2",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 2\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_823760]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "1",
+            "num_sampled": "3",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: test_sampler', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: test_sampler', 'Graph execution error:\\n\\nDetected at node test_sampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 1\\n\\t [[{{node test_sampler}}]] [Op:__inference_call_func_823769]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: test_sampler"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "5",
+            "num_sampled": "3",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 5\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_823798]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "1",
+            "num_sampled": "100",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 1\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_823807]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "3",
+            "num_sampled": "3",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 3\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_823836]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "2",
+            "num_sampled": "10",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 2\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_823845]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "10",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((10,), (1, 10), (10,)), ((10,), (1, 10), (10,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "50",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((50,), (1, 10), (50,)), ((50,), (1, 10), (50,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "5",
+            "num_sampled": "3",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 5\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_823904]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "1",
+            "num_sampled": "10",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 1\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_823933]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "50",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((50,), (1, 10), (50,)), ((50,), (1, 10), (50,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "3",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 3\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_823977]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 3 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "5",
+            "num_sampled": "10",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 5\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_824006]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "5",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "10",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 5\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_824035]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 5 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "10",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "0",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((10,), (1, 10), (10,)), ((10,), (1, 10), (10,))))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "1",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "42",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: ', 'Graph execution error:\\n\\nDetected at node LearnedUnigramCandidateSampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 1\\n\\t [[{{node LearnedUnigramCandidateSampler}}]] [Op:__inference_call_func_824079]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 1 [Op:LearnedUnigramCandidateSampler] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "2",
+            "num_sampled": "1",
+            "unique": "True",
+            "range_max": "100",
+            "seed": "0",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: test_sampler', ('{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: test_sampler', 'Graph execution error:\\n\\nDetected at node test_sampler defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_learned_unigram_candidate_sampler/generated_code.py\", line 5, in call_func\\n\\ntrue_classes must have num_true columns, expected: 10 was: 2\\n\\t [[{{node test_sampler}}]] [Op:__inference_call_func_824088]'))",
+        "error_message": "{{function_node __wrapped__LearnedUnigramCandidateSampler_device_/job:localhost/replica:0/task:0/device:CPU:0}} true_classes must have num_true columns, expected: 10 was: 2 [Op:LearnedUnigramCandidateSampler] name: test_sampler"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(1, 10))]",
+            "num_true": "10",
+            "num_sampled": "3",
+            "unique": "True",
+            "range_max": "1000",
+            "seed": "42",
+            "name": "test_sampler"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, (((3,), (1, 10), (3,)), ((3,), (1, 10), (3,))))"
+    }
+]

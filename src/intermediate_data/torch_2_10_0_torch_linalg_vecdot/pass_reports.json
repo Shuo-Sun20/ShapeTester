@@ -1,0 +1,189 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-5",
+            "out": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -5)', ('Dimension out of range (expected to be in range of [-2, 1], but got -5)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_vecdot>(*(FakeTensor(..., size=(s21, s41)), FakeTensor(..., size=(s21, s41))), **{\\'dim\\': -5, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got -5)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_vecdot/generated_code.py\", line 5, in call_func\\n    return torch.linalg.vecdot(x, y, dim=dim, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got -5)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -5)",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-4",
+            "out": "None"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -4)', ('Dimension out of range (expected to be in range of [-2, 1], but got -4)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_vecdot>(*(FakeTensor(..., size=(s21, s41)), FakeTensor(..., size=(s21, s41))), **{\\'dim\\': -4, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got -4)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_vecdot/generated_code.py\", line 5, in call_func\\n    return torch.linalg.vecdot(x, y, dim=dim, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got -4)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -4)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-3",
+            "out": "None"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -3)', ('Dimension out of range (expected to be in range of [-2, 1], but got -3)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_vecdot>(*(FakeTensor(..., size=(s21, s41)), FakeTensor(..., size=(s21, s41))), **{\\'dim\\': -3, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got -3)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_vecdot/generated_code.py\", line 5, in call_func\\n    return torch.linalg.vecdot(x, y, dim=dim, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got -3)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -3)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-2",
+            "out": "None"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2,), (2,), (2,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-1",
+            "out": "None"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "0",
+            "out": "None"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2,), (2,), (2,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "out": "None"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "2",
+            "out": "None"
+        },
+        "segment": "(7,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 2)', ('Dimension out of range (expected to be in range of [-2, 1], but got 2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_vecdot>(*(FakeTensor(..., size=(s21, s41)), FakeTensor(..., size=(s21, s41))), **{\\'dim\\': 2, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 2)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_vecdot/generated_code.py\", line 5, in call_func\\n    return torch.linalg.vecdot(x, y, dim=dim, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 2)",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "3",
+            "out": "None"
+        },
+        "segment": "(8,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 3)', ('Dimension out of range (expected to be in range of [-2, 1], but got 3)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_vecdot>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22))), **{\\'dim\\': 3, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 3)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_vecdot/generated_code.py\", line 5, in call_func\\n    return torch.linalg.vecdot(x, y, dim=dim, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 3)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 3)",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "4",
+            "out": "None"
+        },
+        "segment": "(9,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 4)', ('Dimension out of range (expected to be in range of [-2, 1], but got 4)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_vecdot>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22))), **{\\'dim\\': 4, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 4)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_vecdot/generated_code.py\", line 5, in call_func\\n    return torch.linalg.vecdot(x, y, dim=dim, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 4)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 4)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-4",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -4)', ('Dimension out of range (expected to be in range of [-2, 1], but got -4)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_vecdot>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22))), **{\\'dim\\': -4, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got -4)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_vecdot/generated_code.py\", line 5, in call_func\\n    return torch.linalg.vecdot(x, y, dim=dim, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got -4)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -4)"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-3",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -3)', ('Dimension out of range (expected to be in range of [-2, 1], but got -3)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_vecdot>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22))), **{\\'dim\\': -3, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got -3)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_vecdot/generated_code.py\", line 5, in call_func\\n    return torch.linalg.vecdot(x, y, dim=dim, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got -3)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -3)"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "4",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 4)', ('Dimension out of range (expected to be in range of [-2, 1], but got 4)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_vecdot>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22))), **{\\'dim\\': 4, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 4)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_vecdot/generated_code.py\", line 5, in call_func\\n    return torch.linalg.vecdot(x, y, dim=dim, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 4)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 4)"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "3",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 3)', ('Dimension out of range (expected to be in range of [-2, 1], but got 3)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_vecdot>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22))), **{\\'dim\\': 3, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 3)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_vecdot/generated_code.py\", line 5, in call_func\\n    return torch.linalg.vecdot(x, y, dim=dim, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 3)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 3)"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "2",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 2)', ('Dimension out of range (expected to be in range of [-2, 1], but got 2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_vecdot>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22))), **{\\'dim\\': 2, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 2)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_vecdot/generated_code.py\", line 5, in call_func\\n    return torch.linalg.vecdot(x, y, dim=dim, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 2)"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 2])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-5",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -5)', ('Dimension out of range (expected to be in range of [-2, 1], but got -5)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_vecdot>(*(FakeTensor(..., size=(s21, s22)), FakeTensor(..., size=(s21, s22))), **{\\'dim\\': -5, \\'out\\': None}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got -5)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_vecdot/generated_code.py\", line 5, in call_func\\n    return torch.linalg.vecdot(x, y, dim=dim, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got -5)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -5)"
+    }
+]

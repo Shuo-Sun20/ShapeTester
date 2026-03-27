@@ -1,0 +1,369 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4))]",
+            "segment_ids": "EagerTensor(shape=(3,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 0 is out of range [0, 0) [Op:UnsortedSegmentSum] name: ', ('{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 0 is out of range [0, 0) [Op:UnsortedSegmentSum] name: ', 'Graph execution error:\\n\\nDetected at node UnsortedSegmentSum defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_unsorted_segment_sum/generated_code.py\", line 6, in call_func\\n\\nsegment_ids[0] = 0 is out of range [0, 0)\\n\\t [[{{node UnsortedSegmentSum}}]] [Op:__inference_call_func_70898]'))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 0 is out of range [0, 0) [Op:UnsortedSegmentSum] name: ",
+        "conflict_params": [
+            "segment_ids",
+            "num_segments"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4))]",
+            "segment_ids": "EagerTensor(shape=(3,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[1] = 1 is out of range [0, 1) [Op:UnsortedSegmentSum] name: ', ('{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[1] = 1 is out of range [0, 1) [Op:UnsortedSegmentSum] name: ', 'Graph execution error:\\n\\nDetected at node UnsortedSegmentSum defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_unsorted_segment_sum/generated_code.py\", line 6, in call_func\\n\\nsegment_ids[1] = 1 is out of range [0, 1)\\n\\t [[{{node UnsortedSegmentSum}}]] [Op:__inference_call_func_70905]'))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[1] = 1 is out of range [0, 1) [Op:UnsortedSegmentSum] name: ",
+        "conflict_params": [
+            "segment_ids",
+            "num_segments"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4))]",
+            "segment_ids": "EagerTensor(shape=(3,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "segment": "(0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4), (2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4))]",
+            "segment_ids": "EagerTensor(shape=(3,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "segment": "(0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4))]",
+            "segment_ids": "EagerTensor(shape=(3,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "segment": "(0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 4), (5, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4))]",
+            "segment_ids": "EagerTensor(shape=(4,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [3,4] does not start with segment_ids.shape = [4] [Op:UnsortedSegmentSum] name: ', ('{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [3,4] does not start with segment_ids.shape = [4] [Op:UnsortedSegmentSum] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_unsorted_segment_sum/generated_code.py\", line 6, in call_func  *\\n        return tf.math.unsorted_segment_sum(data, segment_ids, num_segments, name)\\n\\n    ValueError: Dimensions must be equal, but are 3 and 4 for \\'{{node UnsortedSegmentSum}} = UnsortedSegmentSum[T=DT_FLOAT, Tindices=DT_INT32, Tnumsegments=DT_INT32](inputs, segment_ids, num_segments)\\' with input shapes: [3,4], [4], [].\\n'))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [3,4] does not start with segment_ids.shape = [4] [Op:UnsortedSegmentSum] name: ",
+        "conflict_params": [
+            "inputs",
+            "segment_ids"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 3))]",
+            "segment_ids": "EagerTensor(shape=(4,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "test_unsorted_segment_sum"
+        },
+        "segment": "(1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[2] = 1 is out of range [0, 1) [Op:UnsortedSegmentSum] name: test_unsorted_segment_sum', ('{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[2] = 1 is out of range [0, 1) [Op:UnsortedSegmentSum] name: test_unsorted_segment_sum', 'Graph execution error:\\n\\nDetected at node test_unsorted_segment_sum defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_unsorted_segment_sum/generated_code.py\", line 6, in call_func\\n\\nsegment_ids[2] = 1 is out of range [0, 1)\\n\\t [[{{node test_unsorted_segment_sum}}]] [Op:__inference_call_func_70959]'))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[2] = 1 is out of range [0, 1) [Op:UnsortedSegmentSum] name: test_unsorted_segment_sum",
+        "conflict_params": [
+            "segment_ids",
+            "num_segments"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 3))]",
+            "segment_ids": "EagerTensor(shape=(4,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "test_unsorted_segment_sum"
+        },
+        "segment": "(1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3), (2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 3))]",
+            "segment_ids": "EagerTensor(shape=(4,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "test_unsorted_segment_sum"
+        },
+        "segment": "(1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 3), (3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 3))]",
+            "segment_ids": "EagerTensor(shape=(4,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "test_unsorted_segment_sum"
+        },
+        "segment": "(1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4))]",
+            "segment_ids": "EagerTensor(shape=(2, 2))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "segment": "(2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [3,4] does not start with segment_ids.shape = [2,2] [Op:UnsortedSegmentSum] name: ', ('{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [3,4] does not start with segment_ids.shape = [2,2] [Op:UnsortedSegmentSum] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_unsorted_segment_sum/generated_code.py\", line 6, in call_func  *\\n        return tf.math.unsorted_segment_sum(data, segment_ids, num_segments, name)\\n\\n    ValueError: Dimensions must be equal, but are 3 and 2 for \\'{{node UnsortedSegmentSum}} = UnsortedSegmentSum[T=DT_FLOAT, Tindices=DT_INT32, Tnumsegments=DT_INT32](inputs, segment_ids, num_segments)\\' with input shapes: [3,4], [2,2], [].\\n'))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [3,4] does not start with segment_ids.shape = [2,2] [Op:UnsortedSegmentSum] name: ",
+        "conflict_params": [
+            "inputs",
+            "segment_ids"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4))]",
+            "segment_ids": "EagerTensor(shape=(3,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "segment": "(3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[1] = 0 is out of range [0, 0) [Op:UnsortedSegmentSum] name: ', ('{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[1] = 0 is out of range [0, 0) [Op:UnsortedSegmentSum] name: ', 'Graph execution error:\\n\\nDetected at node UnsortedSegmentSum defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_unsorted_segment_sum/generated_code.py\", line 6, in call_func\\n\\nsegment_ids[1] = 0 is out of range [0, 0)\\n\\t [[{{node UnsortedSegmentSum}}]] [Op:__inference_call_func_70997]'))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[1] = 0 is out of range [0, 0) [Op:UnsortedSegmentSum] name: ",
+        "conflict_params": [
+            "segment_ids",
+            "num_segments"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4))]",
+            "segment_ids": "EagerTensor(shape=(3,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "segment": "(3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[2] = 1 is out of range [0, 1) [Op:UnsortedSegmentSum] name: ', ('{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[2] = 1 is out of range [0, 1) [Op:UnsortedSegmentSum] name: ', 'Graph execution error:\\n\\nDetected at node UnsortedSegmentSum defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_unsorted_segment_sum/generated_code.py\", line 6, in call_func\\n\\nsegment_ids[2] = 1 is out of range [0, 1)\\n\\t [[{{node UnsortedSegmentSum}}]] [Op:__inference_call_func_71004]'))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[2] = 1 is out of range [0, 1) [Op:UnsortedSegmentSum] name: ",
+        "conflict_params": [
+            "segment_ids",
+            "num_segments"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4))]",
+            "segment_ids": "EagerTensor(shape=(3,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "segment": "(3, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4), (2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4))]",
+            "segment_ids": "EagerTensor(shape=(3,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "segment": "(3, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4))]",
+            "segment_ids": "EagerTensor(shape=(3,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "segment": "(3, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 4), (5, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4))]",
+            "segment_ids": "EagerTensor(shape=(3,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "segment": "(4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 2 is out of range [0, 0) [Op:UnsortedSegmentSum] name: ', ('{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 2 is out of range [0, 0) [Op:UnsortedSegmentSum] name: ', 'Graph execution error:\\n\\nDetected at node UnsortedSegmentSum defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_unsorted_segment_sum/generated_code.py\", line 6, in call_func\\n\\nsegment_ids[0] = 2 is out of range [0, 0)\\n\\t [[{{node UnsortedSegmentSum}}]] [Op:__inference_call_func_71038]'))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 2 is out of range [0, 0) [Op:UnsortedSegmentSum] name: ",
+        "conflict_params": [
+            "segment_ids",
+            "num_segments"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4))]",
+            "segment_ids": "EagerTensor(shape=(3,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "segment": "(4, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 2 is out of range [0, 1) [Op:UnsortedSegmentSum] name: ', ('{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 2 is out of range [0, 1) [Op:UnsortedSegmentSum] name: ', 'Graph execution error:\\n\\nDetected at node UnsortedSegmentSum defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_unsorted_segment_sum/generated_code.py\", line 6, in call_func\\n\\nsegment_ids[0] = 2 is out of range [0, 1)\\n\\t [[{{node UnsortedSegmentSum}}]] [Op:__inference_call_func_71045]'))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 2 is out of range [0, 1) [Op:UnsortedSegmentSum] name: ",
+        "conflict_params": [
+            "segment_ids",
+            "num_segments"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4))]",
+            "segment_ids": "EagerTensor(shape=(3,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "segment": "(4, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 2 is out of range [0, 2) [Op:UnsortedSegmentSum] name: ', ('{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 2 is out of range [0, 2) [Op:UnsortedSegmentSum] name: ', 'Graph execution error:\\n\\nDetected at node UnsortedSegmentSum defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 220, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/ShapeTester/main.py\", line 82, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_unsorted_segment_sum/generated_code.py\", line 6, in call_func\\n\\nsegment_ids[0] = 2 is out of range [0, 2)\\n\\t [[{{node UnsortedSegmentSum}}]] [Op:__inference_call_func_71052]'))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} segment_ids[0] = 2 is out of range [0, 2) [Op:UnsortedSegmentSum] name: ",
+        "conflict_params": [
+            "segment_ids",
+            "num_segments"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4))]",
+            "segment_ids": "EagerTensor(shape=(3,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "segment": "(4, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4))]",
+            "segment_ids": "EagerTensor(shape=(3,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "segment": "(4, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 4), (5, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 3))]",
+            "segment_ids": "EagerTensor(shape=(2, 2))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [4,3] does not start with segment_ids.shape = [2,2] [Op:UnsortedSegmentSum] name: ', ('{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [4,3] does not start with segment_ids.shape = [2,2] [Op:UnsortedSegmentSum] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_unsorted_segment_sum/generated_code.py\", line 6, in call_func  *\\n        return tf.math.unsorted_segment_sum(data, segment_ids, num_segments, name)\\n\\n    ValueError: Dimensions must be equal, but are 4 and 2 for \\'{{node UnsortedSegmentSum}} = UnsortedSegmentSum[T=DT_FLOAT, Tindices=DT_INT32, Tnumsegments=DT_INT32](inputs, segment_ids, num_segments)\\' with input shapes: [4,3], [2,2], [].\\n'))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [4,3] does not start with segment_ids.shape = [2,2] [Op:UnsortedSegmentSum] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4))]",
+            "segment_ids": "EagerTensor(shape=(3,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "test_unsorted_segment_sum"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4), (2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 3))]",
+            "segment_ids": "EagerTensor(shape=(3,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "test_unsorted_segment_sum"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [4,3] does not start with segment_ids.shape = [3] [Op:UnsortedSegmentSum] name: test_unsorted_segment_sum', ('{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [4,3] does not start with segment_ids.shape = [3] [Op:UnsortedSegmentSum] name: test_unsorted_segment_sum', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_unsorted_segment_sum/generated_code.py\", line 6, in call_func  *\\n        return tf.math.unsorted_segment_sum(data, segment_ids, num_segments, name)\\n\\n    ValueError: Dimensions must be equal, but are 4 and 3 for \\'{{node test_unsorted_segment_sum}} = UnsortedSegmentSum[T=DT_FLOAT, Tindices=DT_INT32, Tnumsegments=DT_INT32](inputs, segment_ids, num_segments)\\' with input shapes: [4,3], [3], [].\\n'))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [4,3] does not start with segment_ids.shape = [3] [Op:UnsortedSegmentSum] name: test_unsorted_segment_sum"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4))]",
+            "segment_ids": "EagerTensor(shape=(4,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [3,4] does not start with segment_ids.shape = [4] [Op:UnsortedSegmentSum] name: ', ('{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [3,4] does not start with segment_ids.shape = [4] [Op:UnsortedSegmentSum] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_unsorted_segment_sum/generated_code.py\", line 6, in call_func  *\\n        return tf.math.unsorted_segment_sum(data, segment_ids, num_segments, name)\\n\\n    ValueError: Dimensions must be equal, but are 3 and 4 for \\'{{node UnsortedSegmentSum}} = UnsortedSegmentSum[T=DT_FLOAT, Tindices=DT_INT32, Tnumsegments=DT_INT32](inputs, segment_ids, num_segments)\\' with input shapes: [3,4], [4], [].\\n'))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [3,4] does not start with segment_ids.shape = [4] [Op:UnsortedSegmentSum] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 3))]",
+            "segment_ids": "EagerTensor(shape=(4,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4))]",
+            "segment_ids": "EagerTensor(shape=(4,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "test_unsorted_segment_sum"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [3,4] does not start with segment_ids.shape = [4] [Op:UnsortedSegmentSum] name: test_unsorted_segment_sum', ('{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [3,4] does not start with segment_ids.shape = [4] [Op:UnsortedSegmentSum] name: test_unsorted_segment_sum', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_unsorted_segment_sum/generated_code.py\", line 6, in call_func  *\\n        return tf.math.unsorted_segment_sum(data, segment_ids, num_segments, name)\\n\\n    ValueError: Dimensions must be equal, but are 3 and 4 for \\'{{node test_unsorted_segment_sum}} = UnsortedSegmentSum[T=DT_FLOAT, Tindices=DT_INT32, Tnumsegments=DT_INT32](inputs, segment_ids, num_segments)\\' with input shapes: [3,4], [4], [].\\n'))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [3,4] does not start with segment_ids.shape = [4] [Op:UnsortedSegmentSum] name: test_unsorted_segment_sum"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 3))]",
+            "segment_ids": "EagerTensor(shape=(2, 2))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "test_unsorted_segment_sum"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [4,3] does not start with segment_ids.shape = [2,2] [Op:UnsortedSegmentSum] name: test_unsorted_segment_sum', ('{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [4,3] does not start with segment_ids.shape = [2,2] [Op:UnsortedSegmentSum] name: test_unsorted_segment_sum', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_unsorted_segment_sum/generated_code.py\", line 6, in call_func  *\\n        return tf.math.unsorted_segment_sum(data, segment_ids, num_segments, name)\\n\\n    ValueError: Dimensions must be equal, but are 4 and 2 for \\'{{node test_unsorted_segment_sum}} = UnsortedSegmentSum[T=DT_FLOAT, Tindices=DT_INT32, Tnumsegments=DT_INT32](inputs, segment_ids, num_segments)\\' with input shapes: [4,3], [2,2], [].\\n'))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [4,3] does not start with segment_ids.shape = [2,2] [Op:UnsortedSegmentSum] name: test_unsorted_segment_sum"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(4, 3))]",
+            "segment_ids": "EagerTensor(shape=(3,))",
+            "num_segments": "EagerTensor(shape=())",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [4,3] does not start with segment_ids.shape = [3] [Op:UnsortedSegmentSum] name: ', ('{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [4,3] does not start with segment_ids.shape = [3] [Op:UnsortedSegmentSum] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/tensorflow_2_20_0_tf_math_unsorted_segment_sum/generated_code.py\", line 6, in call_func  *\\n        return tf.math.unsorted_segment_sum(data, segment_ids, num_segments, name)\\n\\n    ValueError: Dimensions must be equal, but are 4 and 3 for \\'{{node UnsortedSegmentSum}} = UnsortedSegmentSum[T=DT_FLOAT, Tindices=DT_INT32, Tnumsegments=DT_INT32](inputs, segment_ids, num_segments)\\' with input shapes: [4,3], [3], [].\\n'))",
+        "error_message": "{{function_node __wrapped__UnsortedSegmentSum_device_/job:localhost/replica:0/task:0/device:CPU:0}} data.shape = [4,3] does not start with segment_ids.shape = [3] [Op:UnsortedSegmentSum] name: "
+    }
+]

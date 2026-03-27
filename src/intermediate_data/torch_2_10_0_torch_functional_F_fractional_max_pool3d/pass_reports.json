@@ -1,0 +1,3375 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "1",
+            "output_size": "None",
+            "output_ratio": "None",
+            "return_indices": "False"
+        },
+        "segment": "(0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d requires specifying either an output_size or an output_ratio', ('fractional_max_pool3d requires specifying either an output_size or an output_ratio', 'Dynamo failed to run FX node with fake tensors: call_function <function boolean_dispatch.<locals>.fn at 0x7f7500c728e0>(*(), **{\\'input\\': FakeTensor(..., size=(s21, s41, s65, s54, s41)), \\'kernel_size\\': s91, \\'output_size\\': None, \\'output_ratio\\': None, \\'return_indices\\': False, \\'_random_samples\\': None}): got ValueError(\\'fractional_max_pool3d requires specifying either an output_size or an output_ratio\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_functional_F_fractional_max_pool3d/generated_code.py\", line 17, in call_func\\n    return F.fractional_max_pool3d(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'fractional_max_pool3d requires specifying either an output_size or an output_ratio'))",
+        "error_message": "fractional_max_pool3d requires specifying either an output_size or an output_ratio",
+        "conflict_params": [
+            "output_size",
+            "output_ratio"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "1",
+            "output_size": "10",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "segment": "(0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "1",
+            "output_size": "13",
+            "output_ratio": "0.25",
+            "return_indices": "False"
+        },
+        "segment": "(0, 2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 13, 13), (20, 16, 13, 13, 13), (20, 16, 13, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "1",
+            "output_size": "16",
+            "output_ratio": "0.5",
+            "return_indices": "False"
+        },
+        "segment": "(0, 3, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'Dynamo failed to run FX node with fake tensors: call_function <function boolean_dispatch.<locals>.fn at 0x7f7500c728e0>(*(), **{\\'input\\': FakeTensor(..., size=(20, 16, 50, 32, 16)), \\'kernel_size\\': 1, \\'output_size\\': 16, \\'output_ratio\\': zf99, \\'return_indices\\': False, \\'_random_samples\\': None}): got RuntimeError(\\'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_functional_F_fractional_max_pool3d/generated_code.py\", line 17, in call_func\\n    return F.fractional_max_pool3d(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 1 too large relative to input width 16",
+        "conflict_params": [
+            "output_size",
+            "output_ratio"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "1",
+            "output_size": "20",
+            "output_ratio": "0.75",
+            "return_indices": "False"
+        },
+        "segment": "(0, 4, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'Dynamo failed to run FX node with fake tensors: call_function <function boolean_dispatch.<locals>.fn at 0x7f7500c728e0>(*(), **{\\'input\\': FakeTensor(..., size=(20, 16, 50, 32, 16)), \\'kernel_size\\': 1, \\'output_size\\': 20, \\'output_ratio\\': zf99, \\'return_indices\\': False, \\'_random_samples\\': None}): got RuntimeError(\\'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_functional_F_fractional_max_pool3d/generated_code.py\", line 17, in call_func\\n    return F.fractional_max_pool3d(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 1 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "2",
+            "output_size": "10",
+            "output_ratio": "0.25",
+            "return_indices": "False"
+        },
+        "segment": "(1, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "2",
+            "output_size": "13",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "segment": "(1, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 13, 13), (20, 16, 13, 13, 13), (20, 16, 13, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "2",
+            "output_size": "25",
+            "output_ratio": "0.75",
+            "return_indices": "False"
+        },
+        "segment": "(1, 5, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 2 too large relative to input width 16', 'Dynamo failed to run FX node with fake tensors: call_function <function boolean_dispatch.<locals>.fn at 0x7f7500c728e0>(*(), **{\\'input\\': FakeTensor(..., size=(20, 16, 50, 32, 16)), \\'kernel_size\\': 2, \\'output_size\\': 25, \\'output_ratio\\': zf99, \\'return_indices\\': False, \\'_random_samples\\': None}): got RuntimeError(\\'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_functional_F_fractional_max_pool3d/generated_code.py\", line 17, in call_func\\n    return F.fractional_max_pool3d(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 2 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_ratio"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "10",
+            "output_ratio": "0.9",
+            "return_indices": "False"
+        },
+        "segment": "(2, 1, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "13",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "segment": "(2, 2, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 13, 13), (20, 16, 13, 13, 13), (20, 16, 13, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "25",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "segment": "(2, 5, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'Dynamo failed to run FX node with fake tensors: call_function <function boolean_dispatch.<locals>.fn at 0x7f7500c728e0>(*(), **{\\'input\\': FakeTensor(..., size=(20, 16, 50, 32, 16)), \\'kernel_size\\': 3, \\'output_size\\': 25, \\'output_ratio\\': zf99, \\'return_indices\\': False, \\'_random_samples\\': None}): got RuntimeError(\\'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_functional_F_fractional_max_pool3d/generated_code.py\", line 17, in call_func\\n    return F.fractional_max_pool3d(\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 3 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "5",
+            "output_size": "10",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "segment": "(3, 1, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "5",
+            "output_size": "13",
+            "output_ratio": "0.9",
+            "return_indices": "False"
+        },
+        "segment": "(3, 2, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 5 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "10",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "segment": "(4, 1, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_ratio"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "10",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "return_indices": "False"
+        },
+        "segment": "(5, 1, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "segment": "(5, 6, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "0.25",
+            "return_indices": "False"
+        },
+        "segment": "(5, 7, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "[16, 16, 16]",
+            "output_ratio": "0.9",
+            "return_indices": "False"
+        },
+        "segment": "(5, 8, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 1 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "10",
+            "output_ratio": "[0.75, 0.5, 0.25]",
+            "return_indices": "False"
+        },
+        "segment": "(6, 1, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "0.25",
+            "return_indices": "False"
+        },
+        "segment": "(6, 6, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "segment": "(6, 7, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "[20, 16, 10]",
+            "output_ratio": "0.9",
+            "return_indices": "False"
+        },
+        "segment": "(6, 9, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 20, 16, 10), (20, 16, 20, 16, 10), (20, 16, 20, 16, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "[25, 20, 15]",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "segment": "(6, 10, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 2 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 2 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_ratio"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "10",
+            "output_ratio": "[0.9, 0.9, 0.9]",
+            "return_indices": "False"
+        },
+        "segment": "(7, 1, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "0.9",
+            "return_indices": "False"
+        },
+        "segment": "(7, 6, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "return_indices": "False"
+        },
+        "segment": "(7, 7, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "[20, 16, 10]",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "segment": "(7, 9, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 20, 16, 10), (20, 16, 20, 16, 10), (20, 16, 20, 16, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "[25, 20, 15]",
+            "output_ratio": "0.25",
+            "return_indices": "False"
+        },
+        "segment": "(7, 10, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 3 too large relative to input width 16",
+        "conflict_params": [
+            "inputs",
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "return_indices": "False"
+        },
+        "segment": "(8, 6, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "0.9",
+            "return_indices": "False"
+        },
+        "segment": "(8, 7, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_size": "[20, 16, 10]",
+            "output_ratio": "0.25",
+            "return_indices": "False"
+        },
+        "segment": "(8, 9, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 20, 16, 10), (20, 16, 20, 16, 10), (20, 16, 20, 16, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "[0.75, 0.5, 0.25]",
+            "return_indices": "False"
+        },
+        "segment": "(9, 6, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_ratio",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_size": "10",
+            "output_ratio": "0.75",
+            "return_indices": "False"
+        },
+        "segment": "(8, 1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_size": "20",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "segment": "(8, 4, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 4 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 4 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 4 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 4 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 4 too large relative to input width 16",
+        "conflict_params": [
+            "output_size",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "1",
+            "output_size": "[20, 16, 10]",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "return_indices": "False"
+        },
+        "segment": "(0, 9, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 20, 16, 10), (20, 16, 20, 16, 10), (20, 16, 20, 16, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "2",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "[0.9, 0.9, 0.9]",
+            "return_indices": "False"
+        },
+        "segment": "(1, 6, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_size": "None",
+            "output_ratio": "[0.9, 0.9, 0.9]",
+            "return_indices": "False"
+        },
+        "segment": "(8, 0, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 4 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 4 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 4 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 4 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 4 too large relative to input width 16",
+        "conflict_params": [
+            "inputs",
+            "kernel_size",
+            "output_ratio"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "None",
+            "output_ratio": "0.25",
+            "return_indices": "False"
+        },
+        "segment": "(2, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 12, 8, 4), (20, 16, 12, 8, 4), (20, 16, 12, 8, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 50, 50, 50]))]",
+            "kernel_size": "1",
+            "output_ratio": "[0.9, 0.9, 0.9]",
+            "return_indices": "False",
+            "output_size": "[13, 12, 11]"
+        },
+        "segment": "(0, 7, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 13, 12, 11), (1, 1, 13, 12, 11), (1, 1, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "2",
+            "output_size": "None",
+            "output_ratio": "0.9",
+            "return_indices": "False"
+        },
+        "segment": "(1, 0, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 45, 28, 14), (20, 16, 45, 28, 14), (20, 16, 45, 28, 14)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "None",
+            "return_indices": "False"
+        },
+        "segment": "(2, 6, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "None",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "segment": "(4, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 50, 50, 50]))]",
+            "kernel_size": "7",
+            "output_ratio": "[0.9, 0.9, 0.9]",
+            "return_indices": "False",
+            "output_size": "[20, 16, 10]"
+        },
+        "segment": "(4, 9, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 20, 16, 10), (1, 1, 20, 16, 10), (1, 1, 20, 16, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "2",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "None",
+            "return_indices": "False"
+        },
+        "segment": "(1, 7, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "5",
+            "output_size": "[20, 16, 10]",
+            "output_ratio": "None",
+            "return_indices": "False"
+        },
+        "segment": "(3, 9, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 20, 16, 10), (20, 16, 20, 16, 10), (20, 16, 20, 16, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "None",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "return_indices": "False"
+        },
+        "segment": "(6, 0, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 25, 16, 8), (20, 16, 25, 16, 8), (20, 16, 25, 16, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "2",
+            "output_size": "16",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "return_indices": "False"
+        },
+        "segment": "(1, 3, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 2 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 2 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "0.5",
+            "return_indices": "False"
+        },
+        "segment": "(2, 7, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "5",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "0.5",
+            "return_indices": "False"
+        },
+        "segment": "(3, 6, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "[20, 16, 10]",
+            "output_ratio": "0.5",
+            "return_indices": "False"
+        },
+        "segment": "(5, 9, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 20, 16, 10), (20, 16, 20, 16, 10), (20, 16, 20, 16, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 50, 50, 50]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False",
+            "output_size": "13"
+        },
+        "segment": "(8, 2, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 13, 13, 13), (1, 1, 13, 13, 13), (1, 1, 13, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 40, 40, 40]))]",
+            "kernel_size": "5",
+            "output_size": "20",
+            "output_ratio": "0.25",
+            "return_indices": "False"
+        },
+        "segment": "(3, 4, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 20, 20, 20), (1, 3, 20, 20, 20), (1, 3, 20, 20, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 50, 50, 50]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False",
+            "output_size": "25"
+        },
+        "segment": "(8, 5, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 25, 25, 25), (1, 1, 25, 25, 25), (1, 1, 25, 25, 25)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "1",
+            "output_size": "25",
+            "output_ratio": "0.9",
+            "return_indices": "False"
+        },
+        "segment": "(0, 5, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 1 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "5",
+            "output_size": "[16, 16, 16]",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "segment": "(3, 8, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 5 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "10",
+            "output_ratio": "None",
+            "return_indices": "False"
+        },
+        "segment": "(9, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16",
+        "conflict_params": [
+            "inputs",
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 50, 50, 50]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_ratio": "[0.75, 0.5, 0.25]",
+            "return_indices": "False",
+            "output_size": "[25, 20, 15]"
+        },
+        "segment": "(8, 10, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 25, 20, 15), (1, 1, 25, 20, 15), (1, 1, 25, 20, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "0.75",
+            "return_indices": "False"
+        },
+        "segment": "(4, 6, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16",
+        "conflict_params": [
+            "inputs",
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 40, 40, 40]))]",
+            "kernel_size": "7",
+            "output_size": "20",
+            "output_ratio": "0.9",
+            "return_indices": "False"
+        },
+        "segment": "(4, 4, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 20, 20, 20), (1, 3, 20, 20, 20), (1, 3, 20, 20, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "0.75"
+        },
+        "segment": "(9, 7, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 13, 12, 11), (2, 3, 13, 12, 11), (2, 3, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 40, 40, 40]))]",
+            "kernel_size": "3",
+            "output_size": "20",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "return_indices": "False"
+        },
+        "segment": "(2, 4, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 20, 20, 20), (1, 3, 20, 20, 20), (1, 3, 20, 20, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "None",
+            "output_ratio": "0.5",
+            "return_indices": "False"
+        },
+        "segment": "(7, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 25, 16, 8), (20, 16, 25, 16, 8), (20, 16, 25, 16, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 32, 32, 32]))]",
+            "kernel_size": "7",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "[0.1, 0.1, 0.1]"
+        },
+        "segment": "(4, 7, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 13, 12, 11), (1, 1, 13, 12, 11), (1, 1, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[20, 16, 10]",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "segment": "(2, 9, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 20, 16, 10), (20, 16, 20, 16, 10), (20, 16, 20, 16, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 32, 32, 32]))]",
+            "kernel_size": "7",
+            "output_size": "13",
+            "output_ratio": "[0.5, 0.5, 0.5]"
+        },
+        "segment": "(4, 2, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 13, 13, 13), (1, 1, 13, 13, 13), (1, 1, 13, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 40, 40, 40]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "20",
+            "output_ratio": "None",
+            "return_indices": "False"
+        },
+        "segment": "(5, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 20, 20, 20), (1, 3, 20, 20, 20), (1, 3, 20, 20, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "[25, 20, 15]",
+            "output_ratio": "0.1"
+        },
+        "segment": "(9, 10, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 25, 20, 15), (2, 3, 25, 20, 15), (2, 3, 25, 20, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 40, 40, 40]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "20",
+            "output_ratio": "[0.9, 0.9, 0.9]",
+            "return_indices": "False"
+        },
+        "segment": "(6, 4, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 20, 20, 20), (1, 3, 20, 20, 20), (1, 3, 20, 20, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 50, 50, 50]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_ratio": "[0.9, 0.9, 0.9]",
+            "return_indices": "False",
+            "output_size": "13"
+        },
+        "segment": "(5, 2, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 13, 13, 13), (1, 1, 13, 13, 13), (1, 1, 13, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "16",
+            "output_ratio": "0.75",
+            "return_indices": "False"
+        },
+        "segment": "(6, 3, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 2 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 2 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "13",
+            "output_ratio": "None",
+            "return_indices": "False"
+        },
+        "segment": "(7, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 13, 13), (20, 16, 13, 13, 13), (20, 16, 13, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "None",
+            "output_ratio": "[0.25, 0.5, 0.75]"
+        },
+        "segment": "(9, 0, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 12, 30, 52), (2, 3, 12, 30, 52), (2, 3, 12, 30, 52)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "[20, 16, 10]",
+            "output_ratio": "[0.1, 0.1, 0.1]"
+        },
+        "segment": "(9, 9, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 20, 16, 10), (2, 3, 20, 16, 10), (2, 3, 20, 16, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 50, 50, 50]))]",
+            "kernel_size": "3",
+            "output_ratio": "[0.9, 0.9, 0.9]",
+            "return_indices": "False",
+            "output_size": "[25, 20, 15]"
+        },
+        "segment": "(2, 10, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 25, 20, 15), (1, 1, 25, 20, 15), (1, 1, 25, 20, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 32, 32, 32]))]",
+            "kernel_size": "7",
+            "output_size": "[16, 16, 16]",
+            "output_ratio": "0.25"
+        },
+        "segment": "(4, 8, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 16, 16, 16), (1, 1, 16, 16, 16), (1, 1, 16, 16, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 50, 50, 50]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_ratio": "None",
+            "return_indices": "False",
+            "output_size": "[16, 16, 16]"
+        },
+        "segment": "(8, 8, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 16, 16, 16), (1, 1, 16, 16, 16), (1, 1, 16, 16, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 32, 32, 32]))]",
+            "kernel_size": "1",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "[0.25, 0.5, 0.75]"
+        },
+        "segment": "(0, 6, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 10, 10, 10), (1, 1, 10, 10, 10), (1, 1, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "5",
+            "output_size": "[25, 20, 15]",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "return_indices": "False"
+        },
+        "segment": "(3, 10, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 5 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 40, 40, 40]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "20",
+            "output_ratio": "[0.75, 0.5, 0.25]",
+            "return_indices": "False"
+        },
+        "segment": "(7, 4, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 20, 20, 20), (1, 3, 20, 20, 20), (1, 3, 20, 20, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "25",
+            "output_ratio": "0.25"
+        },
+        "segment": "(9, 5, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 25, 25, 25), (2, 3, 25, 25, 25), (2, 3, 25, 25, 25)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "5",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "segment": "(3, 7, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 40, 40, 40]))]",
+            "kernel_size": "2",
+            "output_size": "20",
+            "output_ratio": "0.5",
+            "return_indices": "False"
+        },
+        "segment": "(1, 4, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 20, 20, 20), (1, 3, 20, 20, 20), (1, 3, 20, 20, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "[16, 16, 16]",
+            "output_ratio": "[0.75, 0.5, 0.25]",
+            "return_indices": "False"
+        },
+        "segment": "(2, 8, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 3 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "25",
+            "output_ratio": "[0.75, 0.5, 0.25]",
+            "return_indices": "False"
+        },
+        "segment": "(5, 5, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 1 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "16",
+            "output_ratio": "0.9"
+        },
+        "segment": "(9, 3, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 16, 16, 16), (2, 3, 16, 16, 16), (2, 3, 16, 16, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 32, 32, 32]))]",
+            "kernel_size": "7",
+            "output_size": "16",
+            "output_ratio": "[0.75, 0.5, 0.25]"
+        },
+        "segment": "(4, 3, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 16, 16, 16), (1, 1, 16, 16, 16), (1, 1, 16, 16, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "[16, 16, 16]",
+            "output_ratio": "0.75",
+            "return_indices": "False"
+        },
+        "segment": "(7, 8, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 3 too large relative to input width 16",
+        "conflict_params": [
+            "inputs",
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "[16, 16, 16]",
+            "output_ratio": "[0.5, 0.5, 0.5]"
+        },
+        "segment": "(9, 8, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 16, 16, 16), (2, 3, 16, 16, 16), (2, 3, 16, 16, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "5",
+            "output_size": "None",
+            "output_ratio": "0.75",
+            "return_indices": "False"
+        },
+        "segment": "(3, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 5 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_ratio"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "[25, 20, 15]",
+            "output_ratio": "0.75",
+            "return_indices": "False"
+        },
+        "segment": "(5, 10, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 25, 20, 15), (20, 16, 25, 20, 15), (20, 16, 25, 20, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 40, 30]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "25",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "segment": "(7, 5, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 25, 25, 25), (2, 3, 25, 25, 25), (2, 3, 25, 25, 25)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 40, 30]))]",
+            "kernel_size": "1",
+            "output_size": "[16, 16, 16]",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "segment": "(0, 8, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 16, 16, 16), (2, 3, 16, 16, 16), (2, 3, 16, 16, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 32, 32, 32]))]",
+            "kernel_size": "7",
+            "output_size": "[25, 20, 15]",
+            "output_ratio": "None"
+        },
+        "segment": "(4, 10, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 25, 20, 15), (1, 1, 25, 20, 15), (1, 1, 25, 20, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "13",
+            "output_ratio": "0.5",
+            "return_indices": "False"
+        },
+        "segment": "(6, 2, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 13, 13), (20, 16, 13, 13, 13), (20, 16, 13, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "None",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "segment": "(5, 0, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 32, 32, 32]))]",
+            "kernel_size": "7",
+            "output_size": "25",
+            "output_ratio": "0.5"
+        },
+        "segment": "(4, 5, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 25, 25, 25), (1, 1, 25, 25, 25), (1, 1, 25, 25, 25)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 40, 30]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "16",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "segment": "(7, 3, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 16, 16, 16), (2, 3, 16, 16, 16), (2, 3, 16, 16, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "2",
+            "output_size": "[20, 16, 10]",
+            "output_ratio": "[0.75, 0.5, 0.25]",
+            "return_indices": "False"
+        },
+        "segment": "(1, 9, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 20, 16, 10), (20, 16, 20, 16, 10), (20, 16, 20, 16, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "16",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "segment": "(5, 3, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 1 too large relative to input width 16",
+        "conflict_params": [
+            "output_size",
+            "output_ratio"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 40, 30]))]",
+            "kernel_size": "2",
+            "output_size": "[16, 16, 16]",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "segment": "(1, 8, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 16, 16, 16), (2, 3, 16, 16, 16), (2, 3, 16, 16, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "25",
+            "output_ratio": "None",
+            "return_indices": "False"
+        },
+        "segment": "(6, 5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 2 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 2 too large relative to input width 16",
+        "conflict_params": [
+            "inputs",
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 50, 50, 50]))]",
+            "kernel_size": "5",
+            "output_ratio": "[0.9, 0.9, 0.9]",
+            "return_indices": "False",
+            "output_size": "16"
+        },
+        "segment": "(3, 3, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 16, 16, 16), (1, 1, 16, 16, 16), (1, 1, 16, 16, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 50, 50, 50]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_ratio": "0.5",
+            "return_indices": "False",
+            "output_size": "10"
+        },
+        "segment": "(8, 1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 10, 10, 10), (1, 1, 10, 10, 10), (1, 1, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 50, 50, 50]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_ratio": "[0.9, 0.9, 0.9]",
+            "return_indices": "False",
+            "output_size": "13"
+        },
+        "segment": "(9, 2, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 13, 13, 13), (1, 1, 13, 13, 13), (1, 1, 13, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "1",
+            "output_size": "[25, 20, 15]",
+            "output_ratio": "0.9",
+            "return_indices": "False"
+        },
+        "segment": "(0, 10, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 25, 20, 15), (20, 16, 25, 20, 15), (20, 16, 25, 20, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 40, 40, 40]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "20",
+            "output_ratio": "0.5",
+            "return_indices": "False"
+        },
+        "segment": "(9, 4, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 20, 20, 20), (1, 3, 20, 20, 20), (1, 3, 20, 20, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 32, 32, 32]))]",
+            "kernel_size": "2",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "[0.1, 0.1, 0.1]"
+        },
+        "segment": "(1, 6, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 10, 10, 10), (1, 1, 10, 10, 10), (1, 1, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "2",
+            "output_size": "[25, 20, 15]",
+            "output_ratio": "0.5",
+            "return_indices": "False"
+        },
+        "segment": "(1, 10, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 2 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 2 too large relative to input width 16",
+        "conflict_params": [
+            "output_size",
+            "output_ratio"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "13",
+            "output_ratio": "0.75",
+            "return_indices": "False"
+        },
+        "segment": "(2, 2, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 13, 13), (20, 16, 13, 13, 13), (20, 16, 13, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "1",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "[0.75, 0.5, 0.25]",
+            "return_indices": "False"
+        },
+        "segment": "(0, 7, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 40, 40, 40]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "20",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "segment": "(6, 4, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 20, 20, 20), (1, 3, 20, 20, 20), (1, 3, 20, 20, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "5",
+            "output_size": "None",
+            "output_ratio": "[0.75, 0.5, 0.25]",
+            "return_indices": "False"
+        },
+        "segment": "(3, 0, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 37, 16, 4), (20, 16, 37, 16, 4), (20, 16, 37, 16, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 50, 50, 50]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_ratio": "[0.9, 0.9, 0.9]",
+            "return_indices": "False",
+            "output_size": "[16, 16, 16]"
+        },
+        "segment": "(6, 8, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 16, 16, 16), (1, 1, 16, 16, 16), (1, 1, 16, 16, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 50, 50, 50]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_ratio": "0.1",
+            "return_indices": "False",
+            "output_size": "16"
+        },
+        "segment": "(8, 3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 16, 16, 16), (1, 1, 16, 16, 16), (1, 1, 16, 16, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "16",
+            "output_ratio": "0.25",
+            "return_indices": "False"
+        },
+        "segment": "(2, 3, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 3 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "5",
+            "output_size": "25",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "return_indices": "False"
+        },
+        "segment": "(3, 5, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 5 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 3, 40, 40, 40]))]",
+            "kernel_size": "2",
+            "output_size": "20",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "segment": "(1, 4, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 3, 20, 20, 20), (1, 3, 20, 20, 20), (1, 3, 20, 20, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "1",
+            "output_size": "13",
+            "output_ratio": "[0.75, 0.5, 0.25]",
+            "return_indices": "False"
+        },
+        "segment": "(0, 2, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 13, 13), (20, 16, 13, 13, 13), (20, 16, 13, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "1",
+            "output_size": "[20, 16, 10]",
+            "output_ratio": "0.75",
+            "return_indices": "False"
+        },
+        "segment": "(0, 9, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 20, 16, 10), (20, 16, 20, 16, 10), (20, 16, 20, 16, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "1",
+            "output_size": "[25, 20, 15]",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "segment": "(0, 10, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 25, 20, 15), (20, 16, 25, 20, 15), (20, 16, 25, 20, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 40, 30]))]",
+            "kernel_size": "1",
+            "output_size": "[16, 16, 16]",
+            "output_ratio": "0.5",
+            "return_indices": "False"
+        },
+        "segment": "(0, 8, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 16, 16, 16), (2, 3, 16, 16, 16), (2, 3, 16, 16, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 50, 50, 50]))]",
+            "kernel_size": "2",
+            "output_ratio": "[0.9, 0.9, 0.9]",
+            "return_indices": "False",
+            "output_size": "25"
+        },
+        "segment": "(1, 5, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 25, 25, 25), (1, 1, 25, 25, 25), (1, 1, 25, 25, 25)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "1",
+            "output_size": "16",
+            "output_ratio": "None",
+            "return_indices": "False"
+        },
+        "segment": "(0, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 1 too large relative to input width 16",
+        "conflict_params": [
+            "kernel_size",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "None",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "None",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "None",
+            "output_ratio": "0.9",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool time 7 too large relative to input time 50', ('fractional_max_pool3d_out(): pool time 7 too large relative to input time 50', 'fractional_max_pool3d_out(): pool time 7 too large relative to input time 50', 'fractional_max_pool3d_out(): pool time 7 too large relative to input time 50'))",
+        "error_message": "fractional_max_pool3d_out(): pool time 7 too large relative to input time 50"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "5",
+            "output_size": "None",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "20",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 1 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "16",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 1 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "None",
+            "output_ratio": "[0.9, 0.9, 0.9]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "None",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "None",
+            "output_ratio": "None",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d requires specifying either an output_size or an output_ratio', ('fractional_max_pool3d requires specifying either an output_size or an output_ratio', 'fractional_max_pool3d requires specifying either an output_size or an output_ratio', 'fractional_max_pool3d requires specifying either an output_size or an output_ratio'))",
+        "error_message": "fractional_max_pool3d requires specifying either an output_size or an output_ratio"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "None",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 25, 16, 8), (20, 16, 25, 16, 8), (20, 16, 25, 16, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "2",
+            "output_size": "None",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "None",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_size": "None",
+            "output_ratio": "0.25",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 12, 8, 4), (20, 16, 12, 8, 4), (20, 16, 12, 8, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "None",
+            "output_ratio": "0.9",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 45, 28, 14), (20, 16, 45, 28, 14), (20, 16, 45, 28, 14)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "None",
+            "output_ratio": "[0.75, 0.5, 0.25]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 37, 16, 4), (20, 16, 37, 16, 4), (20, 16, 37, 16, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "None",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 25, 16, 8), (20, 16, 25, 16, 8), (20, 16, 25, 16, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "1",
+            "output_size": "None",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "5",
+            "output_size": "None",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "None",
+            "output_ratio": "0.5",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 25, 16, 8), (20, 16, 25, 16, 8), (20, 16, 25, 16, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "None",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "None",
+            "output_ratio": "[0.9, 0.9, 0.9]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool time 7 too large relative to input time 50', ('fractional_max_pool3d_out(): pool time 7 too large relative to input time 50', 'fractional_max_pool3d_out(): pool time 7 too large relative to input time 50', 'fractional_max_pool3d_out(): pool time 7 too large relative to input time 50'))",
+        "error_message": "fractional_max_pool3d_out(): pool time 7 too large relative to input time 50"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "None",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "None",
+            "output_ratio": "0.75",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "None",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 25, 16, 8), (20, 16, 25, 16, 8), (20, 16, 25, 16, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "10",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "[25, 20, 15]",
+            "output_ratio": "0.9",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 2 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 2 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 2 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "None",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "25",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "None",
+            "output_ratio": "0.25",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 12, 8, 4), (20, 16, 12, 8, 4), (20, 16, 12, 8, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "20",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 1 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "[25, 20, 15]",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 25, 20, 15), (2, 3, 25, 20, 15), (2, 3, 25, 20, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "20",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "13",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 13, 13, 13), (2, 3, 13, 13, 13), (2, 3, 13, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "13",
+            "output_ratio": "0.9",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "None",
+            "output_ratio": "None",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d requires specifying either an output_size or an output_ratio', ('fractional_max_pool3d requires specifying either an output_size or an output_ratio', 'fractional_max_pool3d requires specifying either an output_size or an output_ratio', 'fractional_max_pool3d requires specifying either an output_size or an output_ratio'))",
+        "error_message": "fractional_max_pool3d requires specifying either an output_size or an output_ratio"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "None",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "None",
+            "output_ratio": "0.75",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 37, 24, 12), (20, 16, 37, 24, 12), (20, 16, 37, 24, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "None",
+            "output_ratio": "[0.25, 0.5, 0.75]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 12, 30, 52), (2, 3, 12, 30, 52), (2, 3, 12, 30, 52)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "[20, 16, 10]",
+            "output_ratio": "None",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "7",
+            "output_size": "None",
+            "output_ratio": "[0.25, 0.5, 0.75]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 12, 30, 52), (2, 3, 12, 30, 52), (2, 3, 12, 30, 52)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "[0.9, 0.9, 0.9]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "20",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "20",
+            "output_ratio": "[0.75, 0.5, 0.25]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 1 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "5",
+            "output_size": "None",
+            "output_ratio": "0.5",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 25, 16, 8), (20, 16, 25, 16, 8), (20, 16, 25, 16, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_size": "None",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "None",
+            "output_ratio": "[0.75, 0.5, 0.25]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 37, 16, 4), (20, 16, 37, 16, 4), (20, 16, 37, 16, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "0.9"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 13, 12, 11), (2, 3, 13, 12, 11), (2, 3, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 10, 10, 10), (2, 3, 10, 10, 10), (2, 3, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "None",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 12, 30, 52), (2, 3, 12, 30, 52), (2, 3, 12, 30, 52)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "None",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 12, 30, 52), (2, 3, 12, 30, 52), (2, 3, 12, 30, 52)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_size": "25",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 4 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 4 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 4 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 4 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 4 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "None",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "None",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "20",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "16",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 1 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_size": "None",
+            "output_ratio": "0.1",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "None",
+            "output_ratio": "None",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d requires specifying either an output_size or an output_ratio', ('fractional_max_pool3d requires specifying either an output_size or an output_ratio', 'fractional_max_pool3d requires specifying either an output_size or an output_ratio', 'fractional_max_pool3d requires specifying either an output_size or an output_ratio'))",
+        "error_message": "fractional_max_pool3d requires specifying either an output_size or an output_ratio"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "10",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "None",
+            "output_ratio": "0.5",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 25, 30, 35), (2, 3, 25, 30, 35), (2, 3, 25, 30, 35)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "10",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 10, 10, 10), (2, 3, 10, 10, 10), (2, 3, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "13",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 13, 13, 13), (2, 3, 13, 13, 13), (2, 3, 13, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "13",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "1",
+            "output_size": "None",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "[20, 16, 10]",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 20, 16, 10), (20, 16, 20, 16, 10), (20, 16, 20, 16, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "None",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "None",
+            "output_ratio": "0.9"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 45, 54, 63), (2, 3, 45, 54, 63), (2, 3, 45, 54, 63)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "None",
+            "output_ratio": "0.75"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 37, 45, 52), (2, 3, 37, 45, 52), (2, 3, 37, 45, 52)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "None",
+            "output_ratio": "[0.9, 0.9, 0.9]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 45, 54, 63), (2, 3, 45, 54, 63), (2, 3, 45, 54, 63)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "[16, 16, 16]",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 16, 16, 16), (2, 3, 16, 16, 16), (2, 3, 16, 16, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "16",
+            "output_ratio": "0.1",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "13",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 13, 13), (20, 16, 13, 13, 13), (20, 16, 13, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "25",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 1 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "25",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 1 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "[20, 16, 10]",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 20, 16, 10), (20, 16, 20, 16, 10), (20, 16, 20, 16, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "None",
+            "output_ratio": "0.1",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "None",
+            "output_ratio": "0.9",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 3 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "16",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "[16, 16, 16]",
+            "output_ratio": "0.9",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 1 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "None",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 25, 16, 8), (20, 16, 25, 16, 8), (20, 16, 25, 16, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "None",
+            "output_ratio": "0.1",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "7",
+            "output_size": "10",
+            "output_ratio": "[0.25, 0.5, 0.75]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 10, 10, 10), (2, 3, 10, 10, 10), (2, 3, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "5",
+            "output_size": "None",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 12, 30, 52), (2, 3, 12, 30, 52), (2, 3, 12, 30, 52)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "None",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 12, 30, 52), (2, 3, 12, 30, 52), (2, 3, 12, 30, 52)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "None",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 12, 30, 52), (2, 3, 12, 30, 52), (2, 3, 12, 30, 52)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "5",
+            "output_size": "None",
+            "output_ratio": "0.75",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 5 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "[16, 16, 16]",
+            "output_ratio": "[0.75, 0.5, 0.25]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 1 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "10",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "None",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "[16, 16, 16]",
+            "output_ratio": "0.75",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "None",
+            "output_ratio": "[0.9, 0.9, 0.9]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 45, 28, 14), (20, 16, 45, 28, 14), (20, 16, 45, 28, 14)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "10",
+            "output_ratio": "[0.9, 0.9, 0.9]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "None",
+            "output_ratio": "0.1",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "10",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "None",
+            "output_ratio": "0.9"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 45, 54, 63), (2, 3, 45, 54, 63), (2, 3, 45, 54, 63)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "[20, 16, 10]",
+            "output_ratio": "[0.25, 0.5, 0.75]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 20, 16, 10), (2, 3, 20, 16, 10), (2, 3, 20, 16, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "2",
+            "output_size": "None",
+            "output_ratio": "[0.25, 0.5, 0.75]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 12, 30, 52), (2, 3, 12, 30, 52), (2, 3, 12, 30, 52)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_size": "None",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 12, 30, 52), (2, 3, 12, 30, 52), (2, 3, 12, 30, 52)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "5",
+            "output_size": "13",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 5 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "None",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "10",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "[25, 20, 15]",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 25, 20, 15), (20, 16, 25, 20, 15), (20, 16, 25, 20, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "10",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "[25, 20, 15]",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 25, 20, 15), (20, 16, 25, 20, 15), (20, 16, 25, 20, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "16",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "20",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 3 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "None",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "16",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 3 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "[25, 20, 15]",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "25",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "[25, 20, 15]",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 25, 20, 15), (20, 16, 25, 20, 15), (20, 16, 25, 20, 15)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "None",
+            "output_ratio": "0.5",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 25, 16, 8), (20, 16, 25, 16, 8), (20, 16, 25, 16, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "2",
+            "output_size": "None",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 25, 16, 8), (20, 16, 25, 16, 8), (20, 16, 25, 16, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "None",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 12, 16, 12), (20, 16, 12, 16, 12), (20, 16, 12, 16, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "10",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "None",
+            "output_ratio": "[0.9, 0.9, 0.9]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 45, 28, 14), (20, 16, 45, 28, 14), (20, 16, 45, 28, 14)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "[25, 20, 15]",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "None",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 12, 16, 12), (20, 16, 12, 16, 12), (20, 16, 12, 16, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "3",
+            "output_size": "None",
+            "output_ratio": "[0.75, 0.5, 0.25]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 37, 16, 4), (20, 16, 37, 16, 4), (20, 16, 37, 16, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "[20, 16, 10]",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 20, 16, 10), (2, 3, 20, 16, 10), (2, 3, 20, 16, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "None",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 12, 30, 52), (2, 3, 12, 30, 52), (2, 3, 12, 30, 52)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "[0.5, 0.5, 0.5]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 13, 12, 11), (2, 3, 13, 12, 11), (2, 3, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "None",
+            "output_ratio": "0.1",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 5, 6, 7), (2, 3, 5, 6, 7), (2, 3, 5, 6, 7)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "None",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "16",
+            "output_ratio": "None",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "13",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 13, 13), (20, 16, 13, 13, 13), (20, 16, 13, 13, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_size": "[20, 16, 10]",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 20, 16, 10), (20, 16, 20, 16, 10), (20, 16, 20, 16, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "None",
+            "output_ratio": "0.1",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "5",
+            "output_size": "10",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "0.5",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "None",
+            "output_ratio": "[0.75, 0.5, 0.25]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 37, 30, 17), (2, 3, 37, 30, 17), (2, 3, 37, 30, 17)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "20",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 20, 20, 20), (2, 3, 20, 20, 20), (2, 3, 20, 20, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "10",
+            "output_ratio": "[0.25, 0.5, 0.75]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 10, 10, 10), (2, 3, 10, 10, 10), (2, 3, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_size": "None",
+            "output_ratio": "[0.9, 0.9, 0.9]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 45, 54, 63), (2, 3, 45, 54, 63), (2, 3, 45, 54, 63)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "[20, 16, 10]",
+            "output_ratio": "None",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 13, 12, 11), (20, 16, 13, 12, 11), (20, 16, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "[16, 16, 16]",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_size": "None",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 5, 3, 1), (20, 16, 5, 3, 1), (20, 16, 5, 3, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "7",
+            "output_size": "[16, 16, 16]",
+            "output_ratio": "[0.1, 0.1, 0.1]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 7 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 7 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_size": "25",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 4 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 4 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 4 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 4 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 4 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[3, 3, 3]",
+            "output_size": "20",
+            "output_ratio": "0.1",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 3 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 3 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "[20, 16, 10]",
+            "output_ratio": "[0.75, 0.5, 0.25]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 20, 16, 10), (20, 16, 20, 16, 10), (20, 16, 20, 16, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "1",
+            "output_size": "20",
+            "output_ratio": "[0.75, 0.5, 0.25]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 1 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "5",
+            "output_size": "13",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 5 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 5 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "[0.25, 0.5, 0.75]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 13, 12, 11), (2, 3, 13, 12, 11), (2, 3, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "None",
+            "output_ratio": "0.5",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 25, 30, 35), (2, 3, 25, 30, 35), (2, 3, 25, 30, 35)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[2, 3, 4]",
+            "output_size": "None",
+            "output_ratio": "0.9"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 45, 54, 63), (2, 3, 45, 54, 63), (2, 3, 45, 54, 63)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3, 50, 60, 70]))]",
+            "kernel_size": "[3, 5, 7]",
+            "output_size": "[13, 12, 11]",
+            "output_ratio": "[0.25, 0.5, 0.75]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 13, 12, 11), (2, 3, 13, 12, 11), (2, 3, 13, 12, 11)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "5",
+            "output_size": "[10, 10, 10]",
+            "output_ratio": "0.1",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 10, 10, 10), (20, 16, 10, 10, 10), (20, 16, 10, 10, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "25",
+            "output_ratio": "[0.5, 0.5, 0.5]",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 1 too large relative to input width 16"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "None",
+            "output_ratio": "0.25",
+            "return_indices": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 12, 8, 4), (20, 16, 12, 8, 4), (20, 16, 12, 8, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[2, 2, 2]",
+            "output_size": "None",
+            "output_ratio": "0.5",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20, 16, 25, 16, 8), (20, 16, 25, 16, 8), (20, 16, 25, 16, 8)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([20, 16, 50, 32, 16]))]",
+            "kernel_size": "[1, 1, 1]",
+            "output_size": "16",
+            "output_ratio": "0.1",
+            "return_indices": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', ('fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16', 'fractional_max_pool3d_out(): pool width 1 too large relative to input width 16'))",
+        "error_message": "fractional_max_pool3d_out(): pool width 1 too large relative to input width 16"
+    }
+]

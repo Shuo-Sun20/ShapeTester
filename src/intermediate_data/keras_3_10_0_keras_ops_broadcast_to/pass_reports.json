@@ -1,0 +1,60 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,))]",
+            "shape": "3"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__BroadcastTo_device_/job:localhost/replica:0/task:0/device:CPU:0}} shape must be a vector of {int32,int64}, got shape [] [Op:BroadcastTo] name: ', ('{{function_node __wrapped__BroadcastTo_device_/job:localhost/replica:0/task:0/device:CPU:0}} shape must be a vector of {int32,int64}, got shape [] [Op:BroadcastTo] name: ', \"'int' object is not iterable\"))",
+        "error_message": "{{function_node __wrapped__BroadcastTo_device_/job:localhost/replica:0/task:0/device:CPU:0}} shape must be a vector of {int32,int64}, got shape [] [Op:BroadcastTo] name: ",
+        "conflict_params": [
+            "shape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,))]",
+            "shape": "[3]"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None,), (None,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,))]",
+            "shape": "[1, 3]"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3), (None, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,))]",
+            "shape": "[2, 3]"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3), (None, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,))]",
+            "shape": "[3, 3]"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3), (None, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3,))]",
+            "shape": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__BroadcastTo_device_/job:localhost/replica:0/task:0/device:CPU:0}} shape must be a vector of {int32,int64}, got shape [] [Op:BroadcastTo] name: ', ('{{function_node __wrapped__BroadcastTo_device_/job:localhost/replica:0/task:0/device:CPU:0}} shape must be a vector of {int32,int64}, got shape [] [Op:BroadcastTo] name: ', \"'int' object is not iterable\"))",
+        "error_message": "{{function_node __wrapped__BroadcastTo_device_/job:localhost/replica:0/task:0/device:CPU:0}} shape must be a vector of {int32,int64}, got shape [] [Op:BroadcastTo] name: "
+    }
+]

@@ -1,0 +1,104 @@
+[
+    {
+        "test_case": {
+            "dim": "-3",
+            "inputs": "Tensor(shape=torch.Size([2, 3]))"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -3)', ('Dimension out of range (expected to be in range of [-2, 1], but got -3)', 'Dynamo failed to run FX node with fake tensors: call_function <function log_softmax at 0x7f8585a889a0>(*(FakeTensor(..., size=(s85, s71)), -3), **{\\'_stacklevel\\': 5}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got -3)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_LogSoftmax/generated_code.py\", line 5, in call_func\\n    return log_softmax_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/activation.py\", line 1899, in forward\\n    return F.log_softmax(input, self.dim, _stacklevel=5)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got -3)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -3)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "dim": "-2",
+            "inputs": "Tensor(shape=torch.Size([2, 3]))"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3), (2, 3), (2, 3)))"
+    },
+    {
+        "test_case": {
+            "dim": "-1",
+            "inputs": "Tensor(shape=torch.Size([2, 3]))"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3), (2, 3), (2, 3)))"
+    },
+    {
+        "test_case": {
+            "dim": "0",
+            "inputs": "Tensor(shape=torch.Size([2, 3]))"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3), (2, 3), (2, 3)))"
+    },
+    {
+        "test_case": {
+            "dim": "1",
+            "inputs": "Tensor(shape=torch.Size([2, 3]))"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3), (2, 3), (2, 3)))"
+    },
+    {
+        "test_case": {
+            "dim": "2",
+            "inputs": "Tensor(shape=torch.Size([2, 3]))"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 2)', ('Dimension out of range (expected to be in range of [-2, 1], but got 2)', 'Dynamo failed to run FX node with fake tensors: call_function <function log_softmax at 0x7f8585a889a0>(*(FakeTensor(..., size=(s85, s71)), 2), **{\\'_stacklevel\\': 5}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 2)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_LogSoftmax/generated_code.py\", line 5, in call_func\\n    return log_softmax_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/activation.py\", line 1899, in forward\\n    return F.log_softmax(input, self.dim, _stacklevel=5)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 2)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "dim": "3",
+            "inputs": "Tensor(shape=torch.Size([2, 3]))"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 3)', ('Dimension out of range (expected to be in range of [-2, 1], but got 3)', 'Dynamo failed to run FX node with fake tensors: call_function <function log_softmax at 0x7f8585a889a0>(*(FakeTensor(..., size=(s85, s71)), 3), **{\\'_stacklevel\\': 5}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 3)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_LogSoftmax/generated_code.py\", line 5, in call_func\\n    return log_softmax_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/activation.py\", line 1899, in forward\\n    return F.log_softmax(input, self.dim, _stacklevel=5)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 3)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 3)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "dim": "3",
+            "inputs": "Tensor(shape=torch.Size([2, 3]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 3)', ('Dimension out of range (expected to be in range of [-2, 1], but got 3)', 'Dynamo failed to run FX node with fake tensors: call_function <function log_softmax at 0x7f8585a889a0>(*(FakeTensor(..., size=(s85, s71)), 3), **{\\'_stacklevel\\': 5}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 3)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_LogSoftmax/generated_code.py\", line 5, in call_func\\n    return log_softmax_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/activation.py\", line 1899, in forward\\n    return F.log_softmax(input, self.dim, _stacklevel=5)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 3)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 3)"
+    },
+    {
+        "test_case": {
+            "dim": "2",
+            "inputs": "Tensor(shape=torch.Size([2, 3]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 2)', ('Dimension out of range (expected to be in range of [-2, 1], but got 2)', 'Dynamo failed to run FX node with fake tensors: call_function <function log_softmax at 0x7f8585a889a0>(*(FakeTensor(..., size=(s85, s71)), 2), **{\\'_stacklevel\\': 5}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 2)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_LogSoftmax/generated_code.py\", line 5, in call_func\\n    return log_softmax_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/activation.py\", line 1899, in forward\\n    return F.log_softmax(input, self.dim, _stacklevel=5)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 2)"
+    },
+    {
+        "test_case": {
+            "dim": "-3",
+            "inputs": "Tensor(shape=torch.Size([2, 3]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -3)', ('Dimension out of range (expected to be in range of [-2, 1], but got -3)', 'Dynamo failed to run FX node with fake tensors: call_function <function log_softmax at 0x7f8585a889a0>(*(FakeTensor(..., size=(s85, s71)), -3), **{\\'_stacklevel\\': 5}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got -3)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_LogSoftmax/generated_code.py\", line 5, in call_func\\n    return log_softmax_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/activation.py\", line 1899, in forward\\n    return F.log_softmax(input, self.dim, _stacklevel=5)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got -3)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -3)"
+    }
+]

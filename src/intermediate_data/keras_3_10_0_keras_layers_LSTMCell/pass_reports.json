@@ -1,0 +1,157 @@
+[
+    {
+        "test_case": {
+            "units": "1",
+            "activation": "tanh",
+            "recurrent_activation": "sigmoid",
+            "use_bias": "True",
+            "kernel_initializer": "glorot_uniform",
+            "recurrent_initializer": "orthogonal",
+            "bias_initializer": "zeros",
+            "unit_forget_bias": "True",
+            "kernel_regularizer": "None",
+            "recurrent_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "recurrent_constraint": "None",
+            "bias_constraint": "None",
+            "dropout": "0.0",
+            "recurrent_dropout": "0.0",
+            "seed": "None",
+            "inputs": "ndarray(shape=(32, 10))",
+            "states": "ndarray(shape=(32, 4))",
+            "training": "False"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Exception encountered when calling LSTMCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [1,4], In[1]: [1,4] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by LSTMCell.call():\\n  \u2022 inputs=tf.Tensor(shape=(32, 10), dtype=float32)\\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\\n  \u2022 training=False', ('Exception encountered when calling LSTMCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [1,4], In[1]: [1,4] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by LSTMCell.call():\\n  \u2022 inputs=tf.Tensor(shape=(32, 10), dtype=float32)\\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\\n  \u2022 training=False', \"Exception encountered when calling LSTMCell.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'lstm_cell_5' (of type LSTMCell). Either the `LSTMCell.call()` method is incorrect, or you need to implement the `LSTMCell.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nDimensions must be equal, but are 4 and 1 for '{{node Tensordot/MatMul}} = MatMul[T=DT_FLOAT, grad_a=false, grad_b=false, transpose_a=false, transpose_b=false](Tensordot/Reshape, Cast_1/ReadVariableOp)' with input shapes: [1,4], [1,4].\\x1b[0m\\n\\nArguments received by LSTMCell.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float32, sparse=False, ragged=False, name=keras_tensor_2899>', 'tf.Tensor(shape=(32, 4), dtype=float32)')\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling LSTMCell.call().\n\n\u001b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [1,4], In[1]: [1,4] [Op:MatMul] name: \u001b[0m\n\nArguments received by LSTMCell.call():\n  \u2022 inputs=tf.Tensor(shape=(32, 10), dtype=float32)\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\n  \u2022 training=False",
+        "conflict_params": [
+            "units",
+            "states"
+        ]
+    },
+    {
+        "test_case": {
+            "units": "4",
+            "activation": "tanh",
+            "recurrent_activation": "sigmoid",
+            "use_bias": "True",
+            "kernel_initializer": "glorot_uniform",
+            "recurrent_initializer": "orthogonal",
+            "bias_initializer": "zeros",
+            "unit_forget_bias": "True",
+            "kernel_regularizer": "None",
+            "recurrent_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "recurrent_constraint": "None",
+            "bias_constraint": "None",
+            "dropout": "0.0",
+            "recurrent_dropout": "0.0",
+            "seed": "None",
+            "inputs": "ndarray(shape=(32, 10))",
+            "states": "ndarray(shape=(32, 4))",
+            "training": "False"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4), (None, 4)))"
+    },
+    {
+        "test_case": {
+            "units": "16",
+            "activation": "tanh",
+            "recurrent_activation": "sigmoid",
+            "use_bias": "True",
+            "kernel_initializer": "glorot_uniform",
+            "recurrent_initializer": "orthogonal",
+            "bias_initializer": "zeros",
+            "unit_forget_bias": "True",
+            "kernel_regularizer": "None",
+            "recurrent_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "recurrent_constraint": "None",
+            "bias_constraint": "None",
+            "dropout": "0.0",
+            "recurrent_dropout": "0.0",
+            "seed": "None",
+            "inputs": "ndarray(shape=(32, 10))",
+            "states": "ndarray(shape=(32, 4))",
+            "training": "False"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Exception encountered when calling LSTMCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [1,4], In[1]: [16,64] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by LSTMCell.call():\\n  \u2022 inputs=tf.Tensor(shape=(32, 10), dtype=float32)\\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\\n  \u2022 training=False', ('Exception encountered when calling LSTMCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [1,4], In[1]: [16,64] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by LSTMCell.call():\\n  \u2022 inputs=tf.Tensor(shape=(32, 10), dtype=float32)\\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\\n  \u2022 training=False', \"Exception encountered when calling LSTMCell.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'lstm_cell_11' (of type LSTMCell). Either the `LSTMCell.call()` method is incorrect, or you need to implement the `LSTMCell.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nDimensions must be equal, but are 4 and 16 for '{{node Tensordot/MatMul}} = MatMul[T=DT_FLOAT, grad_a=false, grad_b=false, transpose_a=false, transpose_b=false](Tensordot/Reshape, Cast_1/ReadVariableOp)' with input shapes: [1,4], [16,64].\\x1b[0m\\n\\nArguments received by LSTMCell.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float32, sparse=False, ragged=False, name=keras_tensor_2908>', 'tf.Tensor(shape=(32, 4), dtype=float32)')\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling LSTMCell.call().\n\n\u001b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [1,4], In[1]: [16,64] [Op:MatMul] name: \u001b[0m\n\nArguments received by LSTMCell.call():\n  \u2022 inputs=tf.Tensor(shape=(32, 10), dtype=float32)\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\n  \u2022 training=False",
+        "conflict_params": [
+            "units",
+            "states"
+        ]
+    },
+    {
+        "test_case": {
+            "units": "32",
+            "activation": "tanh",
+            "recurrent_activation": "sigmoid",
+            "use_bias": "True",
+            "kernel_initializer": "glorot_uniform",
+            "recurrent_initializer": "orthogonal",
+            "bias_initializer": "zeros",
+            "unit_forget_bias": "True",
+            "kernel_regularizer": "None",
+            "recurrent_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "recurrent_constraint": "None",
+            "bias_constraint": "None",
+            "dropout": "0.0",
+            "recurrent_dropout": "0.0",
+            "seed": "None",
+            "inputs": "ndarray(shape=(32, 10))",
+            "states": "ndarray(shape=(32, 4))",
+            "training": "False"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Exception encountered when calling LSTMCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [1,4], In[1]: [32,128] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by LSTMCell.call():\\n  \u2022 inputs=tf.Tensor(shape=(32, 10), dtype=float32)\\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\\n  \u2022 training=False', ('Exception encountered when calling LSTMCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [1,4], In[1]: [32,128] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by LSTMCell.call():\\n  \u2022 inputs=tf.Tensor(shape=(32, 10), dtype=float32)\\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\\n  \u2022 training=False', \"Exception encountered when calling LSTMCell.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'lstm_cell_15' (of type LSTMCell). Either the `LSTMCell.call()` method is incorrect, or you need to implement the `LSTMCell.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nDimensions must be equal, but are 4 and 32 for '{{node Tensordot/MatMul}} = MatMul[T=DT_FLOAT, grad_a=false, grad_b=false, transpose_a=false, transpose_b=false](Tensordot/Reshape, Cast_1/ReadVariableOp)' with input shapes: [1,4], [32,128].\\x1b[0m\\n\\nArguments received by LSTMCell.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float32, sparse=False, ragged=False, name=keras_tensor_2913>', 'tf.Tensor(shape=(32, 4), dtype=float32)')\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling LSTMCell.call().\n\n\u001b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [1,4], In[1]: [32,128] [Op:MatMul] name: \u001b[0m\n\nArguments received by LSTMCell.call():\n  \u2022 inputs=tf.Tensor(shape=(32, 10), dtype=float32)\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\n  \u2022 training=False",
+        "conflict_params": [
+            "units",
+            "states"
+        ]
+    },
+    {
+        "test_case": {
+            "units": "64",
+            "activation": "tanh",
+            "recurrent_activation": "sigmoid",
+            "use_bias": "True",
+            "kernel_initializer": "glorot_uniform",
+            "recurrent_initializer": "orthogonal",
+            "bias_initializer": "zeros",
+            "unit_forget_bias": "True",
+            "kernel_regularizer": "None",
+            "recurrent_regularizer": "None",
+            "bias_regularizer": "None",
+            "kernel_constraint": "None",
+            "recurrent_constraint": "None",
+            "bias_constraint": "None",
+            "dropout": "0.0",
+            "recurrent_dropout": "0.0",
+            "seed": "None",
+            "inputs": "ndarray(shape=(32, 10))",
+            "states": "ndarray(shape=(32, 4))",
+            "training": "False"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Exception encountered when calling LSTMCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [1,4], In[1]: [64,256] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by LSTMCell.call():\\n  \u2022 inputs=tf.Tensor(shape=(32, 10), dtype=float32)\\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\\n  \u2022 training=False', ('Exception encountered when calling LSTMCell.call().\\n\\n\\x1b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [1,4], In[1]: [64,256] [Op:MatMul] name: \\x1b[0m\\n\\nArguments received by LSTMCell.call():\\n  \u2022 inputs=tf.Tensor(shape=(32, 10), dtype=float32)\\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\\n  \u2022 training=False', \"Exception encountered when calling LSTMCell.call().\\n\\n\\x1b[1mCould not automatically infer the output shape / dtype of 'lstm_cell_19' (of type LSTMCell). Either the `LSTMCell.call()` method is incorrect, or you need to implement the `LSTMCell.compute_output_spec() / compute_output_shape()` method. Error encountered:\\n\\nDimensions must be equal, but are 4 and 64 for '{{node Tensordot/MatMul}} = MatMul[T=DT_FLOAT, grad_a=false, grad_b=false, transpose_a=false, transpose_b=false](Tensordot/Reshape, Cast_1/ReadVariableOp)' with input shapes: [1,4], [64,256].\\x1b[0m\\n\\nArguments received by LSTMCell.call():\\n  \u2022 args=('<KerasTensor shape=(None, 10), dtype=float32, sparse=False, ragged=False, name=keras_tensor_2918>', 'tf.Tensor(shape=(32, 4), dtype=float32)')\\n  \u2022 kwargs={'training': 'False'}\"))",
+        "error_message": "Exception encountered when calling LSTMCell.call().\n\n\u001b[1m{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [1,4], In[1]: [64,256] [Op:MatMul] name: \u001b[0m\n\nArguments received by LSTMCell.call():\n  \u2022 inputs=tf.Tensor(shape=(32, 10), dtype=float32)\n  \u2022 states=tf.Tensor(shape=(32, 4), dtype=float32)\n  \u2022 training=False",
+        "conflict_params": [
+            "units",
+            "states"
+        ]
+    }
+]

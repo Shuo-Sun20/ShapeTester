@@ -1,0 +1,83 @@
+[
+    {
+        "test_case": {
+            "f": "<function identity at 0x7f4e2052b6a0>",
+            "inputs": "EagerTensor(shape=(5, 3, 3))"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3, 3), (None, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "f": "<function scalar_output at 0x7f4e2052b4c0>",
+            "inputs": "EagerTensor(shape=(5, 3, 3))"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None,), (None,)))"
+    },
+    {
+        "test_case": {
+            "f": "<function flatten_output at 0x7f4e2052b560>",
+            "inputs": "EagerTensor(shape=(5, 3, 3))"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"module 'keras.ops' has no attribute 'flatten'\", (\"module 'keras.ops' has no attribute 'flatten'\", \"module 'keras.ops' has no attribute 'flatten'\"))",
+        "error_message": "module 'keras.ops' has no attribute 'flatten'",
+        "conflict_params": [
+            "f"
+        ]
+    },
+    {
+        "test_case": {
+            "f": "<function reshaped_output at 0x7f4e2052b9c0>",
+            "inputs": "EagerTensor(shape=(5, 3, 3))"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 9), (None, 1, 9)))"
+    },
+    {
+        "test_case": {
+            "f": "<function elementwise_double at 0x7f4e2052bce0>",
+            "inputs": "EagerTensor(shape=(5, 3, 3))"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3, 3), (None, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "f": "<function nested_output at 0x7f4e2052bb00>",
+            "inputs": "EagerTensor(shape=(5, 3, 3))"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Output does not have a shape attribute.', ('Output does not have a shape attribute.', 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Output does not have a shape attribute.",
+        "conflict_params": [
+            "f",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "f": "<function flatten_output at 0x7f4e2052b560>",
+            "inputs": "EagerTensor(shape=(5, 3, 3))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"module 'keras.ops' has no attribute 'flatten'\", (\"module 'keras.ops' has no attribute 'flatten'\", \"module 'keras.ops' has no attribute 'flatten'\"))",
+        "error_message": "module 'keras.ops' has no attribute 'flatten'"
+    },
+    {
+        "test_case": {
+            "f": "<function nested_output at 0x7f4e2052bb00>",
+            "inputs": "EagerTensor(shape=(5, 3, 3))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Output does not have a shape attribute.', ('Output does not have a shape attribute.', 'Symbolic output does not have a shape attribute.'))",
+        "error_message": "Output does not have a shape attribute."
+    }
+]

@@ -1,0 +1,2487 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "None",
+            "dtype": "torch.float32",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "True"
+        },
+        "segment": "(0, 1, 2, 1, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", (\"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\"))",
+        "error_message": "sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType",
+        "conflict_params": [
+            "size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[1, 10]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "segment": "(4, 0, 0, 0, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 10), (1, 10), (1, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[3, 3]",
+            "dtype": "None",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "True",
+            "check_invariants": "True",
+            "is_coalesced": "False"
+        },
+        "segment": "(1, 0, 1, 1, 1, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "No CUDA GPUs are available",
+        "conflict_params": [
+            "pin_memory"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[5, 5]",
+            "dtype": "torch.int32",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "True",
+            "is_coalesced": "None"
+        },
+        "segment": "(3, 3, 2, 0, 1, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only Tensors of floating point and complex dtype can require gradients', ('Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "Only Tensors of floating point and complex dtype can require gradients",
+        "conflict_params": [
+            "dtype",
+            "requires_grad"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[10, 1]",
+            "dtype": "torch.int64",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "True"
+        },
+        "segment": "(5, 4, 3, 0, 0, 2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 1, size is 1 but found index 2', ('size is inconsistent with indices: for dim 1, size is 1 but found index 2', 'size is inconsistent with indices: for dim 1, size is 1 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 1, size is 1 but found index 2",
+        "conflict_params": [
+            "inputs",
+            "size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.bool",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "False",
+            "is_coalesced": "True"
+        },
+        "segment": "(6, 5, 0, 0, 1, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", (\"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\"))",
+        "error_message": "'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0",
+        "conflict_params": [
+            "inputs",
+            "size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(7, 4, 0, 0, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only Tensors of floating point and complex dtype can require gradients', ('Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients'))",
+        "error_message": "Only Tensors of floating point and complex dtype can require gradients",
+        "conflict_params": [
+            "dtype",
+            "requires_grad"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[5, 5]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "True"
+        },
+        "segment": "(3, 2, 0, 0, 0, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 5), (5, 5), (5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 4]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "None"
+        },
+        "segment": "(2, 6, 0, 0, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 2 but found index 2', ('size is inconsistent with indices: for dim 0, size is 2 but found index 2', 'size is inconsistent with indices: for dim 0, size is 2 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 2 but found index 2",
+        "conflict_params": [
+            "inputs",
+            "size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[1, 10]",
+            "dtype": "torch.bool",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "False"
+        },
+        "segment": "(4, 5, 2, 0, 0, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 1 but found index 2', ('size is inconsistent with indices: for dim 0, size is 1 but found index 2', 'size is inconsistent with indices: for dim 0, size is 1 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 1 but found index 2",
+        "conflict_params": [
+            "inputs",
+            "size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "None",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "True"
+        },
+        "segment": "(7, 0, 3, 0, 0, 2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', ('size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 0 but found index 2",
+        "conflict_params": [
+            "inputs",
+            "size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[10, 1]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "False"
+        },
+        "segment": "(5, 3, 0, 0, 0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 1), (10, 1), (10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[3, 3]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "segment": "(1, 1, 0, 0, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 3), (3, 3), (3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[3, 3]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(1, 3, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 3), (3, 3), (3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[5, 5]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "False"
+        },
+        "segment": "(3, 4, 0, 0, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 5), (5, 5), (5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[3, 3]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(1, 6, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 3), (3, 3), (3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[5, 5]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(3, 0, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 5), (5, 5), (5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[1, 10]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(4, 1, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 10), (1, 10), (1, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[1, 10]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(4, 2, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 10), (1, 10), (1, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[10, 1]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(5, 1, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 1), (10, 1), (10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[100, 100]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(8, 0, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[5, 5]",
+            "dtype": "torch.bool",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(3, 5, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 5), (5, 5), (5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[10, 1]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(5, 2, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 1), (10, 1), (10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(7, 1, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[5, 5]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(3, 6, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 5), (5, 5), (5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(7, 2, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[10, 1]",
+            "dtype": "torch.bool",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(5, 5, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 1), (10, 1), (10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[10, 1]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(5, 6, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 1), (10, 1), (10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.bool",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(8, 5, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.bool",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(7, 5, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(8, 6, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[1, 10]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(4, 3, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 10), (1, 10), (1, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(8, 4, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(7, 3, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 2])), Tensor(shape=torch.Size([2]))]",
+            "size": "[1, 10]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "segment": "(4, 4, 0, 0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 10), (1, 10), (1, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[1, 10]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 10), (1, 10), (1, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "None",
+            "dtype": "torch.float64",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "False",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", (\"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\"))",
+        "error_message": "sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "True",
+            "is_coalesced": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', ('size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 0 but found index 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaDoubleType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 4]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4), (2, 4), (2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[1, 10]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 10), (1, 10), (1, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[10, 1]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 1), (10, 1), (10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.float64",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", (\"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[10, 1]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 1), (10, 1), (10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "False",
+            "is_coalesced": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", (\"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\"))",
+        "error_message": "'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", (\"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\"))",
+        "error_message": "'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[3, 3]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 3), (3, 3), (3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 4]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4), (2, 4), (2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[10, 1]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 1), (10, 1), (10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", (\"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\"))",
+        "error_message": "'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaDoubleType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', ('size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 0 but found index 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "None",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", (\"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\"))",
+        "error_message": "sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', ('size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 0 but found index 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int32",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[5, 5]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 5), (5, 5), (5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "None",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", (\"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\"))",
+        "error_message": "sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only Tensors of floating point and complex dtype can require gradients', ('Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients'))",
+        "error_message": "Only Tensors of floating point and complex dtype can require gradients"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.bool",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", (\"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\"))",
+        "error_message": "'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", (\"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\"))",
+        "error_message": "'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', ('size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 0 but found index 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', ('size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 0 but found index 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[10, 1]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 1), (10, 1), (10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', ('size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 0 but found index 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[3, 3]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 3), (3, 3), (3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[1, 10]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 1 but found index 2', ('size is inconsistent with indices: for dim 0, size is 1 but found index 2', 'size is inconsistent with indices: for dim 0, size is 1 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 1 but found index 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "None",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', ('size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 0 but found index 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaIntType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "None",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[3, 3]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 3), (3, 3), (3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaDoubleType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[10, 1]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 1), (10, 1), (10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[1, 10]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 10), (1, 10), (1, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[5, 5]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 5), (5, 5), (5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[5, 5]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 5), (5, 5), (5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[10, 1]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10, 1), (10, 1), (10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", (\"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\"))",
+        "error_message": "'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.complex64",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 4]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4), (2, 4), (2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int64",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', ('size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 0 but found index 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[3, 3]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 3), (3, 3), (3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', ('size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 0 but found index 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only Tensors of floating point and complex dtype can require gradients', ('Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients'))",
+        "error_message": "Only Tensors of floating point and complex dtype can require gradients"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[5, 5]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 5), (5, 5), (5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 4]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaLongType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 4]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaDoubleType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', ('size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 0 but found index 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaComplexFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only Tensors of floating point and complex dtype can require gradients', ('Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients'))",
+        "error_message": "Only Tensors of floating point and complex dtype can require gradients"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", (\"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\"))",
+        "error_message": "'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[3, 3]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 3), (3, 3), (3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "None",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', ('size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 0 but found index 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[10, 1]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[5, 5]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 5), (5, 5), (5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[1, 10]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 10), (1, 10), (1, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int64",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[1, 10]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 10), (1, 10), (1, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "None",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", (\"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\"))",
+        "error_message": "sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 4]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 2 but found index 2', ('size is inconsistent with indices: for dim 0, size is 2 but found index 2', 'size is inconsistent with indices: for dim 0, size is 2 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 2 but found index 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "None",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", (\"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\"))",
+        "error_message": "sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", (\"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\"))",
+        "error_message": "'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[3, 3]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 3), (3, 3), (3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.bool",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Only Tensors of floating point and complex dtype can require gradients', ('Only Tensors of floating point and complex dtype can require gradients', 'Only Tensors of floating point and complex dtype can require gradients', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "Only Tensors of floating point and complex dtype can require gradients"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", (\"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\"))",
+        "error_message": "'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", (\"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\"))",
+        "error_message": "'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', ('size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 0 but found index 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[1, 10]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[3, 3]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaDoubleType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaFloatType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[1, 10]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', \"cannot pin 'MetaDoubleType' only dense CPU tensors can be pinned\"))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", (\"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\"))",
+        "error_message": "'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[1, 10]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 10), (1, 10), (1, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", (\"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\"))",
+        "error_message": "'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[5, 5]",
+            "dtype": "torch.float64",
+            "device": "cpu",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'No CUDA GPUs are available', ('No CUDA GPUs are available', 'No CUDA GPUs are available', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "No CUDA GPUs are available"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "True",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', ('size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 0 but found index 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', ('size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 0 but found index 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "None",
+            "dtype": "torch.float32",
+            "device": "cpu",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", (\"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\"))",
+        "error_message": "sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 3, 4]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "False",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", (\"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\", \"'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0\"))",
+        "error_message": "'len(size) == sparse_dim + dense_dim' is not satisfied: len(size) = 3, sparse_dim = 2, dense_dim = 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[1, 10]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 10), (1, 10), (1, 10)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[3, 3]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 3), (3, 3), (3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 4]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4), (2, 4), (2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.int64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', ('size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'size is inconsistent with indices: for dim 0, size is 0 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 0 but found index 2"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "None",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "True",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", (\"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\", \"sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType\"))",
+        "error_message": "sparse_coo_tensor(): argument 'size' must be tuple of ints, not NoneType"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.bool",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[100, 100]",
+            "dtype": "torch.float64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "None",
+            "is_coalesced": "True"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((100, 100), (100, 100), (100, 100)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[0, 0]",
+            "dtype": "torch.float32",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "True",
+            "check_invariants": "None",
+            "is_coalesced": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0, 0), (0, 0), (0, 0)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([2, 3])), Tensor(shape=torch.Size([3]))]",
+            "size": "[2, 4]",
+            "dtype": "torch.complex64",
+            "device": "None",
+            "pin_memory": "False",
+            "requires_grad": "False",
+            "check_invariants": "True",
+            "is_coalesced": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'size is inconsistent with indices: for dim 0, size is 2 but found index 2', ('size is inconsistent with indices: for dim 0, size is 2 but found index 2', 'size is inconsistent with indices: for dim 0, size is 2 but found index 2', 'Cannot copy out of meta tensor; no data!'))",
+        "error_message": "size is inconsistent with indices: for dim 0, size is 2 but found index 2"
+    }
+]

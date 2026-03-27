@@ -1,0 +1,98 @@
+[
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-0.5",
+            "max": "Tensor(shape=torch.Size([]))",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(2, 6, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor.item() cannot be called on meta tensors', ((4,), (4,), 'Tensor.item() cannot be called on meta tensors'))",
+        "error_message": "Tensor.item() cannot be called on meta tensors",
+        "conflict_params": [
+            "max"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([]))",
+            "max": "0.5",
+            "out": "None"
+        },
+        "segment": "(6, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor.item() cannot be called on meta tensors', ((4,), (4,), 'Tensor.item() cannot be called on meta tensors'))",
+        "error_message": "Tensor.item() cannot be called on meta tensors",
+        "conflict_params": [
+            "min"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([]))",
+            "max": "1.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor.item() cannot be called on meta tensors', ((4,), (4,), 'Tensor.item() cannot be called on meta tensors'))",
+        "error_message": "Tensor.item() cannot be called on meta tensors"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "1.0",
+            "max": "Tensor(shape=torch.Size([]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor.item() cannot be called on meta tensors', ((4,), (4,), 'Tensor.item() cannot be called on meta tensors'))",
+        "error_message": "Tensor.item() cannot be called on meta tensors"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([]))",
+            "max": "-1.0",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor.item() cannot be called on meta tensors', ((4,), (4,), 'Tensor.item() cannot be called on meta tensors'))",
+        "error_message": "Tensor.item() cannot be called on meta tensors"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-1.0",
+            "max": "Tensor(shape=torch.Size([]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor.item() cannot be called on meta tensors', ((4,), (4,), 'Tensor.item() cannot be called on meta tensors'))",
+        "error_message": "Tensor.item() cannot be called on meta tensors"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "Tensor(shape=torch.Size([]))",
+            "max": "-1.0",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor.item() cannot be called on meta tensors', ((4,), (4,), 'Tensor.item() cannot be called on meta tensors'))",
+        "error_message": "Tensor.item() cannot be called on meta tensors"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4]))",
+            "min": "-1.0",
+            "max": "Tensor(shape=torch.Size([]))",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Tensor.item() cannot be called on meta tensors', ((4,), (4,), 'Tensor.item() cannot be called on meta tensors'))",
+        "error_message": "Tensor.item() cannot be called on meta tensors"
+    }
+]

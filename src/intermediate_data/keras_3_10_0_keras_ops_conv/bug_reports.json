@@ -1,0 +1,982 @@
+[
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(3, 3, 3, 4))",
+            "strides": "[1, 2]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "1"
+        },
+        "segment": "(1, 2, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for \\'{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 2], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)\\' with input shapes: [2,5,5,3], [3,3,3,4].\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for \\'{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 2], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)\\' with input shapes: [2,5,5,3], [3,3,3,4].\\n', (None, 4, 3, 1)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for '{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 2], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)' with input shapes: [2,5,5,3], [3,3,3,4].\n",
+        "conflict_params": [
+            "data_format",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "same",
+            "data_format": "channels_last",
+            "dilation_rate": "2"
+        },
+        "segment": "(4, 4, 1, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', (None, 3, 3, 4)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]",
+        "conflict_params": [
+            "strides",
+            "dilation_rate"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 1]"
+        },
+        "segment": "(2, 4, 0, 1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 1]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 1]', (None, 4, 1, 3)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 1]",
+        "conflict_params": [
+            "strides",
+            "dilation_rate"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "segment": "(3, 3, 0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]', (None, 8, 3, 6)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]",
+        "conflict_params": [
+            "strides",
+            "dilation_rate"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(3, 3, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "same",
+            "data_format": "channels_last",
+            "dilation_rate": "[2, 1]"
+        },
+        "segment": "(1, 3, 1, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 1]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 1]', (None, 3, 5, 4)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 1]",
+        "conflict_params": [
+            "strides",
+            "dilation_rate"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[1, 2]",
+            "padding": "same",
+            "data_format": "channels_last",
+            "dilation_rate": "[1, 2]"
+        },
+        "segment": "(2, 2, 1, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[1 2]', (None, 5, 3, 4)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[1 2]",
+        "conflict_params": [
+            "strides",
+            "dilation_rate"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "segment": "(4, 1, 0, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', (None, 4, 5, 5)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]",
+        "conflict_params": [
+            "strides",
+            "dilation_rate"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(3, 3, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[2, 2]"
+        },
+        "segment": "(1, 4, 0, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', (None, 1, 1, 4)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]",
+        "conflict_params": [
+            "strides",
+            "dilation_rate"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(3, 3, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "2"
+        },
+        "segment": "(1, 1, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', (None, 1, 1, 4)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]",
+        "conflict_params": [
+            "strides",
+            "dilation_rate"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "[2, 2]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[1, 2]"
+        },
+        "segment": "(3, 4, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', (None, 2, 1, 8)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]",
+        "conflict_params": [
+            "strides",
+            "dilation_rate"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[2, 1]"
+        },
+        "segment": "(3, 1, 0, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 1]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 1]', (None, 1, 2, 8)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 1]",
+        "conflict_params": [
+            "strides",
+            "dilation_rate"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "[1, 2]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[2, 1]"
+        },
+        "segment": "(4, 2, 0, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 1]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 1]', (None, 5, 3, 4)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 1]",
+        "conflict_params": [
+            "strides",
+            "dilation_rate"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "[1, 2]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[2, 2]"
+        },
+        "segment": "(3, 2, 0, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]', (None, 1, 1, 8)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]",
+        "conflict_params": [
+            "strides",
+            "dilation_rate"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(3, 3, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[1, 2]"
+        },
+        "segment": "(1, 3, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[1 2]', (None, 2, 1, 4)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[1 2]",
+        "conflict_params": [
+            "strides",
+            "dilation_rate"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 1]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 1]', (None, 4, 1, 6)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 1]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for \\'{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 2, 2], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)\\' with input shapes: [2,5,5,3], [5,5,3,4].\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for \\'{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 2, 2], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)\\' with input shapes: [2,5,5,3], [5,5,3,4].\\n', (None, 4, 1, 0)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for '{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 2, 2], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)' with input shapes: [2,5,5,3], [5,5,3,4].\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', (None, 4, 1, 1)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]', (None, 4, 1, 2)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[1, 2]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]', (None, 4, 2, 1)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', (None, 4, 3, 1)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', (None, 0, 1, 4)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "[1, 2]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(2, 5, 5, 3) with 5 channels and filters.shape=(3, 3, 3, 8) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(2, 5, 5, 3) with 5 channels and filters.shape=(3, 3, 3, 8) with 3 output filters.\\n', (None, 8, 3, 0)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(2, 5, 5, 3) with 5 channels and filters.shape=(3, 3, 3, 8) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "1",
+            "padding": "same",
+            "data_format": "channels_last",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', (None, 3, 10, 4)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', (None, 0, 1, 4)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', (None, 4, 4, 3)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "[2, 1]",
+            "padding": "same",
+            "data_format": "channels_last",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(3, 3, 3, 8) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(3, 3, 3, 8) with 3 output filters.\\n', (None, 2, 10, 8)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(3, 3, 3, 8) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', (None, 4, 3, 1)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "2",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', (None, 4, 5, 5)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', (None, 4, 1, 1)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', (None, 0, 2, 4)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(3, 3, 3, 8) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(3, 3, 3, 8) with 3 output filters.\\n', (None, 1, 6, 8)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(3, 3, 3, 8) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "same",
+            "data_format": "channels_last",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[1 2]', (None, 3, 5, 4)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 1]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 1]', (None, 4, 1, 3)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 1]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', (None, 4, 5, 5)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[1 2]', (None, 4, 3, 2)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', (None, 4, 5, 5)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', (None, 4, 5, 5)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]', (None, 4, 1, 2)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)\\' with input shapes: [1,3,10,10], [3,3,3,4].\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)\\' with input shapes: [1,3,10,10], [3,3,3,4].\\n', (None, 1, 8, 4)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for '{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)' with input shapes: [1,3,10,10], [3,3,3,4].\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[1, 2]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[1 2]', (None, 4, 6, 1)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]', (None, 8, 3, 6)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]', (None, 4, 5, 10)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "1",
+            "padding": "same",
+            "data_format": "channels_last",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(3, 3, 3, 8) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(3, 3, 3, 8) with 3 output filters.\\n', (None, 3, 10, 8)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(3, 3, 3, 8) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "2",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', (None, 4, 5, 5)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 1]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 1]', (None, 4, 1, 3)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 1]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[1 2]', (None, 4, 5, 10)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "1",
+            "padding": "same",
+            "data_format": "channels_last",
+            "dilation_rate": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', (None, 3, 10, 4)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', (None, 4, 3, 3)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[1, 2]",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[1 2]', (None, 4, 10, 5)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', (None, 4, 1, 1)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "same",
+            "data_format": "channels_last",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', (None, 2, 5, 4)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 2, 2, 1], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)\\' with input shapes: [1,3,10,10], [5,5,3,4].\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 2, 2, 1], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)\\' with input shapes: [1,3,10,10], [5,5,3,4].\\n', (None, 0, 3, 4)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for '{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 2, 2, 1], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)' with input shapes: [1,3,10,10], [5,5,3,4].\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "[2, 2]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', (None, 8, 3, 3)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "same",
+            "data_format": "channels_last",
+            "dilation_rate": "[2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', (None, 2, 5, 4)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(1, 1, 3, 4) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(1, 1, 3, 4) with 3 output filters.\\n', (None, 3, 10, 4)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(1, 1, 3, 4) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "2",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', (None, 4, 5, 5)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[2, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 1]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 1]', (None, 8, 3, 8)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 1]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[1, 2]",
+            "padding": "same",
+            "data_format": "channels_last",
+            "dilation_rate": "[2, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\\n', (None, 3, 5, 4)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(5, 5, 3, 4) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for \\'{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 2, 2], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)\\' with input shapes: [2,5,5,3], [5,5,3,4].\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for \\'{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 2, 2], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)\\' with input shapes: [2,5,5,3], [5,5,3,4].\\n', (None, 4, 1, 0)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for '{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 2, 2], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)' with input shapes: [2,5,5,3], [5,5,3,4].\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "[1, 2]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[1 2]', (None, 8, 8, 3)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "[1, 2]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for \\'{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 2], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)\\' with input shapes: [2,5,5,3], [1,1,3,4].\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for \\'{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 2], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)\\' with input shapes: [2,5,5,3], [1,1,3,4].\\n', (None, 4, 5, 2)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for '{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 2], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)' with input shapes: [2,5,5,3], [1,1,3,4].\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(5, 5, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[1 2]', (None, 4, 5, 10)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 5, 5, 3))",
+            "kernel": "ndarray(shape=(1, 3, 4))",
+            "strides": "2",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 5, 5, 3).', ((None, 5, 3, 4), 'Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 5, 5, 3).'))",
+        "error_message": "Kernel shape must have the same length as input, but received kernel of shape (1, 3, 4) and input of shape (None, 5, 5, 3)."
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)\\' with input shapes: [1,3,10,10], [3,3,3,8].\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)\\' with input shapes: [1,3,10,10], [3,3,3,8].\\n', (None, 1, 8, 8)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for '{{node convolution}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](convolution_internal_1/input, convolution_internal/filters)' with input shapes: [1,3,10,10], [3,3,3,8].\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 4))",
+            "strides": "1",
+            "padding": "same",
+            "data_format": "channels_last",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(3, 3, 3, 4) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(3, 3, 3, 4) with 3 output filters.\\n', (None, 3, 10, 4)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(3, 3, 3, 4) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]', (None, 4, 3, 6)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 4))",
+            "strides": "[2, 2]",
+            "padding": "same",
+            "data_format": "channels_first",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', (None, 4, 5, 5)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(3, 3, 3, 8))",
+            "strides": "1",
+            "padding": "same",
+            "data_format": "channels_last",
+            "dilation_rate": "[1, 2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(3, 3, 3, 8) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(3, 3, 3, 8) with 3 output filters.\\n', (None, 3, 10, 8)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(3, 3, 3, 8) with 3 output filters.\n"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "[2, 1]",
+            "padding": "valid",
+            "data_format": "channels_first",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]', (None, 4, 5, 10)))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 1] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(1, 3, 10, 10))",
+            "kernel": "ndarray(shape=(1, 1, 3, 4))",
+            "strides": "1",
+            "padding": "valid",
+            "data_format": "channels_last",
+            "dilation_rate": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(1, 1, 3, 4) with 3 output filters.\\n', ('in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\\n        return _conv()\\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\\n        return tf.nn.convolution(\\n\\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(1, 1, 3, 4) with 3 output filters.\\n', (None, 3, 10, 4)))",
+        "error_message": "in user code:\n\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 326, in _conv_xla  *\n        return _conv()\n    File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/keras/src/backend/tensorflow/nn.py\", line 313, in _conv  **\n        return tf.nn.convolution(\n\n    ValueError: The number of input channels is not divisible by the corresponding number of output filters. Received: input.shape=(1, 3, 10, 10) with 10 channels and filters.shape=(1, 1, 3, 4) with 3 output filters.\n"
+    }
+]

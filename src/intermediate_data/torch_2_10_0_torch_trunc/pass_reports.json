@@ -1,0 +1,79 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4]))]",
+            "out": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4]))]",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4]))]",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4]))]",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4]))]",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4]))]",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4]))]",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([4]))]",
+            "out": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(7,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Found dtype Double but expected Float', ('Found dtype Double but expected Float', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method trunc of type object at 0x7f9908329b40>(*(), **{\\'input\\': FakeTensor(..., size=(s21,)), \\'out\\': FakeTensor(..., size=(s21,), dtype=torch.float64)}): got RuntimeError(\\'Expected out tensor to have dtype torch.float32 but got torch.float64 instead\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_trunc/generated_code.py\", line 5, in call_func\\n    return torch.trunc(input=input_tensor, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected out tensor to have dtype torch.float32 but got torch.float64 instead'))",
+        "error_message": "Found dtype Double but expected Float",
+        "conflict_params": [
+            "inputs",
+            "out"
+        ]
+    }
+]

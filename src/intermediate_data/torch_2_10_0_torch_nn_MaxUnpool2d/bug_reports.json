@@ -1,0 +1,1378 @@
+[
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "1",
+            "padding": "0",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "segment": "(0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 14 (output volumes are of size 2x2)', ('Found an invalid max index: 14 (output volumes are of size 2x2)', 'kernel, /tmp/torchinductor_sunshuo/o6/co6xgqbah7njcw4e2l4yk3b2kj2ik7dj5r42mha77gfaqbqgnvkw.main.cpp:115, index out of bounds: 0 <= tmp11 < static_cast<int64_t>(ks0*ks0)', (1, 1, 2, 2)))",
+        "error_message": "Found an invalid max index: 14 (output volumes are of size 2x2)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "2",
+            "stride": "1",
+            "padding": "1",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(1, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 12 (output volumes are of size 3x3)', ('Found an invalid max index: 12 (output volumes are of size 3x3)', 'Found an invalid max index: 14 (output volumes are of size 3x3)', (1, 1, 3, 3)))",
+        "error_message": "Found an invalid max index: 12 (output volumes are of size 3x3)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "2",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(2, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 13 (output volumes are of size 2x2)', ('Found an invalid max index: 13 (output volumes are of size 2x2)', 'Found an invalid max index: 8 (output volumes are of size 2x2)', (1, 1, 2, 2)))",
+        "error_message": "Found an invalid max index: 13 (output volumes are of size 2x2)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "1",
+            "padding": "3",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(3, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 7 (output volumes are of size 2x2)', ('Found an invalid max index: 7 (output volumes are of size 2x2)', 'Found an invalid max index: 11 (output volumes are of size 2x2)', (1, 1, 2, 2)))",
+        "error_message": "Found an invalid max index: 7 (output volumes are of size 2x2)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "2",
+            "padding": "2",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "segment": "(3, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 13 (output volumes are of size 3x3)', ('Found an invalid max index: 13 (output volumes are of size 3x3)', 'Found an invalid max index: 13 (output volumes are of size 3x3)', (1, 1, 3, 3)))",
+        "error_message": "Found an invalid max index: 13 (output volumes are of size 3x3)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "[1, 1]",
+            "padding": "[1, 1]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(3, 5, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 46 (output volumes are of size 6x6)', ('Found an invalid max index: 46 (output volumes are of size 6x6)', 'Found an invalid max index: 38 (output volumes are of size 6x6)', (1, 1, 6, 6)))",
+        "error_message": "Found an invalid max index: 46 (output volumes are of size 6x6)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "[3, 3]",
+            "padding": "4",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(3, 7, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 46 (output volumes are of size 6x6)', ('Found an invalid max index: 46 (output volumes are of size 6x6)', 'Found an invalid max index: 43 (output volumes are of size 6x6)', (1, 1, 6, 6)))",
+        "error_message": "Found an invalid max index: 46 (output volumes are of size 6x6)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "[3, 2]",
+            "padding": "[3, 4]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(3, 9, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 38 (output volumes are of size 8x3)', ('Found an invalid max index: 38 (output volumes are of size 8x3)', 'Found an invalid max index: 38 (output volumes are of size 8x3)', (1, 1, 8, 3)))",
+        "error_message": "Found an invalid max index: 38 (output volumes are of size 8x3)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "1",
+            "padding": "4",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(4, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 13 (output volumes are of size 2x2)', ('Found an invalid max index: 13 (output volumes are of size 2x2)', 'Found an invalid max index: 4 (output volumes are of size 2x2)', (1, 1, 2, 2)))",
+        "error_message": "Found an invalid max index: 13 (output volumes are of size 2x2)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 2]",
+            "stride": "3",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "segment": "(5, 2, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 14 (output volumes are of size 1x1)', ('Found an invalid max index: 14 (output volumes are of size 1x1)', 'Found an invalid max index: 4 (output volumes are of size 1x1)', (1, 1, 1, 1)))",
+        "error_message": "Found an invalid max index: 14 (output volumes are of size 1x1)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 2]",
+            "stride": "[2, 2]",
+            "padding": "3",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(5, 6, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 48 (output volumes are of size 2x2)', ('Found an invalid max index: 48 (output volumes are of size 2x2)', 'Found an invalid max index: 48 (output volumes are of size 2x2)', (1, 1, 2, 2)))",
+        "error_message": "Found an invalid max index: 48 (output volumes are of size 2x2)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[3, 3]",
+            "stride": "2",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(6, 1, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 38 (output volumes are of size 5x5)', ('Found an invalid max index: 38 (output volumes are of size 5x5)', 'Found an invalid max index: 46 (output volumes are of size 5x5)', (1, 1, 5, 5)))",
+        "error_message": "Found an invalid max index: 38 (output volumes are of size 5x5)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[5, 5]",
+            "stride": "[1, 1]",
+            "padding": "2",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(7, 5, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 18 (output volumes are of size 4x4)', ('Found an invalid max index: 18 (output volumes are of size 4x4)', 'Found an invalid max index: 38 (output volumes are of size 4x4)', (1, 1, 4, 4)))",
+        "error_message": "Found an invalid max index: 18 (output volumes are of size 4x4)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 3]",
+            "stride": "1",
+            "padding": "[1, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(8, 0, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 9 (output volumes are of size 3x2)', ('Found an invalid max index: 9 (output volumes are of size 3x2)', 'Found an invalid max index: 14 (output volumes are of size 3x2)', (1, 1, 3, 2)))",
+        "error_message": "Found an invalid max index: 9 (output volumes are of size 3x2)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 3]",
+            "stride": "2",
+            "padding": "[2, 1]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(8, 1, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 43 (output volumes are of size 4x7)', ('Found an invalid max index: 43 (output volumes are of size 4x7)', 'Found an invalid max index: 38 (output volumes are of size 4x7)', (1, 1, 4, 7)))",
+        "error_message": "Found an invalid max index: 43 (output volumes are of size 4x7)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[3, 2]",
+            "stride": "1",
+            "padding": "[2, 1]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(9, 0, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 9 (output volumes are of size 2x3)', ('Found an invalid max index: 9 (output volumes are of size 2x3)', 'Found an invalid max index: 15 (output volumes are of size 2x3)', (1, 1, 2, 3)))",
+        "error_message": "Found an invalid max index: 9 (output volumes are of size 2x3)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[3, 2]",
+            "stride": "2",
+            "padding": "[1, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(9, 1, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 43 (output volumes are of size 7x4)', ('Found an invalid max index: 43 (output volumes are of size 7x4)', 'Found an invalid max index: 43 (output volumes are of size 7x4)', (1, 1, 7, 4)))",
+        "error_message": "Found an invalid max index: 43 (output volumes are of size 7x4)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[3, 2]",
+            "stride": "[1, 5]",
+            "padding": "2",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(9, 11, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 46 (output volumes are of size 2x13)', ('Found an invalid max index: 46 (output volumes are of size 2x13)', 'Found an invalid max index: 43 (output volumes are of size 2x13)', (1, 1, 2, 13)))",
+        "error_message": "Found an invalid max index: 46 (output volumes are of size 2x13)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[5, 7]",
+            "stride": "1",
+            "padding": "[3, 4]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(10, 0, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 5 (output volumes are of size 2x2)', ('Found an invalid max index: 5 (output volumes are of size 2x2)', 'Found an invalid max index: 8 (output volumes are of size 2x2)', (1, 1, 2, 2)))",
+        "error_message": "Found an invalid max index: 5 (output volumes are of size 2x2)",
+        "conflict_params": [
+            "kernel_size",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[1, 1]",
+            "stride": "4",
+            "padding": "[2, 1]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "segment": "(11, 3, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 14 (output volumes are of size 1x3)', ('Found an invalid max index: 14 (output volumes are of size 1x3)', 'Found an invalid max index: 4 (output volumes are of size 1x3)', (1, 1, 1, 3)))",
+        "error_message": "Found an invalid max index: 14 (output volumes are of size 1x3)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[1, 1]",
+            "stride": "[2, 3]",
+            "padding": "2",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(11, 8, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 18 (output volumes are of size 3x6)', ('Found an invalid max index: 18 (output volumes are of size 3x6)', 'Found an invalid max index: 18 (output volumes are of size 3x6)', (1, 1, 3, 6)))",
+        "error_message": "Found an invalid max index: 18 (output volumes are of size 3x6)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[1, 1]",
+            "stride": "[3, 2]",
+            "padding": "3",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(11, 9, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 55 (output volumes are of size 4x1)', ('Found an invalid max index: 55 (output volumes are of size 4x1)', 'Found an invalid max index: 48 (output volumes are of size 4x1)', (1, 1, 4, 1)))",
+        "error_message": "Found an invalid max index: 55 (output volumes are of size 4x1)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[1, 1]",
+            "stride": "[5, 1]",
+            "padding": "[1, 1]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(11, 12, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 69 (output volumes are of size 14x2)', ('Found an invalid max index: 69 (output volumes are of size 14x2)', 'Found an invalid max index: 69 (output volumes are of size 14x2)', (1, 1, 14, 2)))",
+        "error_message": "Found an invalid max index: 69 (output volumes are of size 14x2)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[7, 1]",
+            "stride": "3",
+            "padding": "[2, 1]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "segment": "(13, 2, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 14 (output volumes are of size 6x2)', ('Found an invalid max index: 14 (output volumes are of size 6x2)', 'Found an invalid max index: 14 (output volumes are of size 6x2)', (1, 1, 6, 2)))",
+        "error_message": "Found an invalid max index: 14 (output volumes are of size 6x2)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[7, 1]",
+            "stride": "4",
+            "padding": "[1, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "segment": "(13, 3, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 13 (output volumes are of size 9x1)', ('Found an invalid max index: 13 (output volumes are of size 9x1)', 'Found an invalid max index: 14 (output volumes are of size 9x1)', (1, 1, 9, 1)))",
+        "error_message": "Found an invalid max index: 13 (output volumes are of size 9x1)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[7, 1]",
+            "stride": "[2, 3]",
+            "padding": "3",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(13, 8, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 71 (output volumes are of size 7x4)', ('Found an invalid max index: 71 (output volumes are of size 7x4)', 'Found an invalid max index: 85 (output volumes are of size 7x4)', (1, 1, 7, 4)))",
+        "error_message": "Found an invalid max index: 71 (output volumes are of size 7x4)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[7, 1]",
+            "stride": "[3, 2]",
+            "padding": "2",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(13, 9, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 38 (output volumes are of size 12x3)', ('Found an invalid max index: 38 (output volumes are of size 12x3)', 'Found an invalid max index: 43 (output volumes are of size 12x3)', (1, 1, 12, 3)))",
+        "error_message": "Found an invalid max index: 38 (output volumes are of size 12x3)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[1, 7]",
+            "stride": "2",
+            "padding": "[3, 4]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(12, 1, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 46 (output volumes are of size 1x5)', ('Found an invalid max index: 46 (output volumes are of size 1x5)', 'Found an invalid max index: 18 (output volumes are of size 1x5)', (1, 1, 1, 5)))",
+        "error_message": "Found an invalid max index: 46 (output volumes are of size 1x5)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[1, 1]",
+            "stride": "5",
+            "padding": "[3, 4]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "segment": "(11, 4, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Trying to create tensor with negative dimension -2: [1, 1, 0, -2]', ((1, 1, 0, -2), (1, 1, 0, -2), 'Trying to create tensor with negative dimension -2: [1, 1, 0, -2]'))",
+        "error_message": "Trying to create tensor with negative dimension -2: [1, 1, 0, -2]",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[5, 7]",
+            "stride": "[1, 1]",
+            "padding": "[2, 1]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(10, 5, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 45 (output volumes are of size 4x8)', ('Found an invalid max index: 45 (output volumes are of size 4x8)', 'Found an invalid max index: 45 (output volumes are of size 4x8)', (1, 1, 4, 8)))",
+        "error_message": "Found an invalid max index: 45 (output volumes are of size 4x8)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[5, 7]",
+            "stride": "[2, 2]",
+            "padding": "[0, 4]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "segment": "(10, 6, 11)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 13 (output volumes are of size 7x1)', ('Found an invalid max index: 13 (output volumes are of size 7x1)', 'Found an invalid max index: 14 (output volumes are of size 7x1)', (1, 1, 7, 1)))",
+        "error_message": "Found an invalid max index: 13 (output volumes are of size 7x1)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[1, 7]",
+            "stride": "[1, 1]",
+            "padding": "[1, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(12, 5, 8)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 83 (output volumes are of size 2x6)', ('Found an invalid max index: 83 (output volumes are of size 2x6)', 'Found an invalid max index: 23 (output volumes are of size 2x6)', (1, 1, 2, 6)))",
+        "error_message": "Found an invalid max index: 83 (output volumes are of size 2x6)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[1, 7]",
+            "stride": "[1, 5]",
+            "padding": "[1, 1]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(12, 11, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 76 (output volumes are of size 2x20)', ('Found an invalid max index: 76 (output volumes are of size 2x20)', 'Found an invalid max index: 59 (output volumes are of size 2x20)', (1, 1, 2, 20)))",
+        "error_message": "Found an invalid max index: 76 (output volumes are of size 2x20)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[5, 5]",
+            "stride": "[4, 5]",
+            "padding": "[3, 4]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "segment": "(7, 10, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 14 (output volumes are of size 3x2)', ('Found an invalid max index: 14 (output volumes are of size 3x2)', 'Found an invalid max index: 14 (output volumes are of size 3x2)', (1, 1, 3, 2)))",
+        "error_message": "Found an invalid max index: 14 (output volumes are of size 3x2)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 3]",
+            "stride": "[1, 1]",
+            "padding": "[0, 0]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(8, 5, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 59 (output volumes are of size 5x6)', ('Found an invalid max index: 59 (output volumes are of size 5x6)', 'Found an invalid max index: 69 (output volumes are of size 5x6)', (1, 1, 5, 6)))",
+        "error_message": "Found an invalid max index: 59 (output volumes are of size 5x6)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 3]",
+            "stride": "[2, 2]",
+            "padding": "[1, 1]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(8, 6, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 76 (output volumes are of size 6x7)', ('Found an invalid max index: 76 (output volumes are of size 6x7)', 'Found an invalid max index: 59 (output volumes are of size 6x7)', (1, 1, 6, 7)))",
+        "error_message": "Found an invalid max index: 76 (output volumes are of size 6x7)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[5, 7]",
+            "stride": "[5, 1]",
+            "padding": "3",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(10, 12, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 71 (output volumes are of size 14x4)', ('Found an invalid max index: 71 (output volumes are of size 14x4)', 'Found an invalid max index: 66 (output volumes are of size 14x4)', (1, 1, 14, 4)))",
+        "error_message": "Found an invalid max index: 71 (output volumes are of size 14x4)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[1, 7]",
+            "stride": "[2, 2]",
+            "padding": "3",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(12, 6, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 19 (output volumes are of size 1x7)', ('Found an invalid max index: 19 (output volumes are of size 1x7)', 'Found an invalid max index: 66 (output volumes are of size 1x7)', (1, 1, 1, 7)))",
+        "error_message": "Found an invalid max index: 19 (output volumes are of size 1x7)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "[2, 2]",
+            "padding": "[2, 1]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(0, 6, 9)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 15 (output volumes are of size 3x5)', ('Found an invalid max index: 15 (output volumes are of size 3x5)', 'Found an invalid max index: 15 (output volumes are of size 3x5)', (1, 1, 3, 5)))",
+        "error_message": "Found an invalid max index: 15 (output volumes are of size 3x5)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "[3, 3]",
+            "padding": "[3, 4]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "segment": "(0, 7, 10)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 9 (output volumes are of size 4x2)', ('Found an invalid max index: 9 (output volumes are of size 4x2)', 'Found an invalid max index: 13 (output volumes are of size 4x2)', (1, 1, 4, 2)))",
+        "error_message": "Found an invalid max index: 9 (output volumes are of size 4x2)",
+        "conflict_params": [
+            "kernel_size",
+            "stride",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 2]",
+            "stride": "2",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 38 (output volumes are of size 4x4)', ('Found an invalid max index: 38 (output volumes are of size 4x4)', 'Found an invalid max index: 18 (output volumes are of size 4x4)', (1, 1, 4, 4)))",
+        "error_message": "Found an invalid max index: 38 (output volumes are of size 4x4)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 2]",
+            "stride": "[5, 1]",
+            "padding": "[1, 1]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 46 (output volumes are of size 15x3)', ('Found an invalid max index: 46 (output volumes are of size 15x3)', 'Found an invalid max index: 46 (output volumes are of size 15x3)', (1, 1, 15, 3)))",
+        "error_message": "Found an invalid max index: 46 (output volumes are of size 15x3)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "2",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 4 (output volumes are of size 1x1)', ('Found an invalid max index: 4 (output volumes are of size 1x1)', 'Found an invalid max index: 4 (output volumes are of size 1x1)', (1, 1, 1, 1)))",
+        "error_message": "Found an invalid max index: 4 (output volumes are of size 1x1)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "2",
+            "padding": "4",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 38 (output volumes are of size 1x1)', ('Found an invalid max index: 38 (output volumes are of size 1x1)', 'Found an invalid max index: 18 (output volumes are of size 1x1)', (1, 1, 1, 1)))",
+        "error_message": "Found an invalid max index: 38 (output volumes are of size 1x1)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "[1, 1]",
+            "padding": "1",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 4 (output volumes are of size 2x2)', ('Found an invalid max index: 4 (output volumes are of size 2x2)', 'Found an invalid max index: 4 (output volumes are of size 2x2)', (1, 1, 2, 2)))",
+        "error_message": "Found an invalid max index: 4 (output volumes are of size 2x2)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "2",
+            "padding": "[3, 4]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 18 (output volumes are of size 3x1)', ('Found an invalid max index: 18 (output volumes are of size 3x1)', 'Found an invalid max index: 38 (output volumes are of size 3x1)', (1, 1, 3, 1)))",
+        "error_message": "Found an invalid max index: 18 (output volumes are of size 3x1)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 2]",
+            "stride": "2",
+            "padding": "[2, 1]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 46 (output volumes are of size 4x6)', ('Found an invalid max index: 46 (output volumes are of size 4x6)', 'Found an invalid max index: 38 (output volumes are of size 4x6)', (1, 1, 4, 6)))",
+        "error_message": "Found an invalid max index: 46 (output volumes are of size 4x6)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "[2, 3]",
+            "padding": "4",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 18 (output volumes are of size 1x4)', ('Found an invalid max index: 18 (output volumes are of size 1x4)', 'Found an invalid max index: 18 (output volumes are of size 1x4)', (1, 1, 1, 4)))",
+        "error_message": "Found an invalid max index: 18 (output volumes are of size 1x4)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 2]",
+            "stride": "[1, 1]",
+            "padding": "[0, 0]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 14 (output volumes are of size 3x3)', ('Found an invalid max index: 14 (output volumes are of size 3x3)', 'Found an invalid max index: 14 (output volumes are of size 3x3)', (1, 1, 3, 3)))",
+        "error_message": "Found an invalid max index: 14 (output volumes are of size 3x3)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[3, 2]",
+            "stride": "2",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 21 (output volumes are of size 5x4)', ('Found an invalid max index: 21 (output volumes are of size 5x4)', 'Found an invalid max index: 21 (output volumes are of size 5x4)', (1, 1, 5, 4)))",
+        "error_message": "Found an invalid max index: 21 (output volumes are of size 5x4)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "2",
+            "padding": "[1, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 46 (output volumes are of size 7x5)', ('Found an invalid max index: 46 (output volumes are of size 7x5)', 'Found an invalid max index: 46 (output volumes are of size 7x5)', (1, 1, 7, 5)))",
+        "error_message": "Found an invalid max index: 46 (output volumes are of size 7x5)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "2",
+            "padding": "[2, 1]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 4 (output volumes are of size 1x3)', ('Found an invalid max index: 4 (output volumes are of size 1x3)', 'Found an invalid max index: 4 (output volumes are of size 1x3)', (1, 1, 1, 3)))",
+        "error_message": "Found an invalid max index: 4 (output volumes are of size 1x3)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[5, 7]",
+            "stride": "[1, 1]",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 14 (output volumes are of size 2x4)', ('Found an invalid max index: 14 (output volumes are of size 2x4)', 'Found an invalid max index: 14 (output volumes are of size 2x4)', (1, 1, 2, 4)))",
+        "error_message": "Found an invalid max index: 14 (output volumes are of size 2x4)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "[2, 2]",
+            "padding": "4",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 18 (output volumes are of size 1x1)', ('Found an invalid max index: 18 (output volumes are of size 1x1)', 'Found an invalid max index: 16 (output volumes are of size 1x1)', (1, 1, 1, 1)))",
+        "error_message": "Found an invalid max index: 18 (output volumes are of size 1x1)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 2]",
+            "stride": "[3, 3]",
+            "padding": "2",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 2 (output volumes are of size 1x1)', ('Found an invalid max index: 2 (output volumes are of size 1x1)', 'Found an invalid max index: 4 (output volumes are of size 1x1)', (1, 1, 1, 1)))",
+        "error_message": "Found an invalid max index: 2 (output volumes are of size 1x1)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[5, 5]",
+            "stride": "[1, 1]",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 4 (output volumes are of size 2x2)', ('Found an invalid max index: 4 (output volumes are of size 2x2)', 'Found an invalid max index: 4 (output volumes are of size 2x2)', (1, 1, 2, 2)))",
+        "error_message": "Found an invalid max index: 4 (output volumes are of size 2x2)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 2]",
+            "stride": "[2, 3]",
+            "padding": "2",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 43 (output volumes are of size 4x7)', ('Found an invalid max index: 43 (output volumes are of size 4x7)', 'Found an invalid max index: 46 (output volumes are of size 4x7)', (1, 1, 4, 7)))",
+        "error_message": "Found an invalid max index: 43 (output volumes are of size 4x7)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[3, 2]",
+            "stride": "[3, 2]",
+            "padding": "1",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 13 (output volumes are of size 4x2)', ('Found an invalid max index: 13 (output volumes are of size 4x2)', 'Found an invalid max index: 14 (output volumes are of size 4x2)', (1, 1, 4, 2)))",
+        "error_message": "Found an invalid max index: 13 (output volumes are of size 4x2)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "2",
+            "padding": "[1, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 4 (output volumes are of size 3x1)', ('Found an invalid max index: 4 (output volumes are of size 3x1)', 'Found an invalid max index: 4 (output volumes are of size 3x1)', (1, 1, 3, 1)))",
+        "error_message": "Found an invalid max index: 4 (output volumes are of size 3x1)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[7, 1]",
+            "stride": "[1, 1]",
+            "padding": "[4, 0]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 16 (output volumes are of size 2x4)', ('Found an invalid max index: 16 (output volumes are of size 2x4)', 'Found an invalid max index: 18 (output volumes are of size 2x4)', (1, 1, 2, 4)))",
+        "error_message": "Found an invalid max index: 16 (output volumes are of size 2x4)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "1",
+            "padding": "[1, 1]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 4 (output volumes are of size 2x2)', ('Found an invalid max index: 4 (output volumes are of size 2x2)', 'Found an invalid max index: 4 (output volumes are of size 2x2)', (1, 1, 2, 2)))",
+        "error_message": "Found an invalid max index: 4 (output volumes are of size 2x2)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 2]",
+            "stride": "[1, 1]",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 16 (output volumes are of size 1x1)', ('Found an invalid max index: 16 (output volumes are of size 1x1)', 'Found an invalid max index: 18 (output volumes are of size 1x1)', (1, 1, 1, 1)))",
+        "error_message": "Found an invalid max index: 16 (output volumes are of size 1x1)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "[3, 3]",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 13 (output volumes are of size 2x2)', ('Found an invalid max index: 13 (output volumes are of size 2x2)', 'Found an invalid max index: 4 (output volumes are of size 2x2)', (1, 1, 2, 2)))",
+        "error_message": "Found an invalid max index: 13 (output volumes are of size 2x2)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[3, 3]",
+            "stride": "2",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 4 (output volumes are of size 1x1)', ('Found an invalid max index: 4 (output volumes are of size 1x1)', 'Found an invalid max index: 4 (output volumes are of size 1x1)', (1, 1, 1, 1)))",
+        "error_message": "Found an invalid max index: 4 (output volumes are of size 1x1)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[3, 3]",
+            "stride": "4",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 14 (output volumes are of size 3x3)', ('Found an invalid max index: 14 (output volumes are of size 3x3)', 'Found an invalid max index: 14 (output volumes are of size 3x3)', (1, 1, 3, 3)))",
+        "error_message": "Found an invalid max index: 14 (output volumes are of size 3x3)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "4",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 14 (output volumes are of size 3x3)', ('Found an invalid max index: 14 (output volumes are of size 3x3)', 'Found an invalid max index: 13 (output volumes are of size 3x3)', (1, 1, 3, 3)))",
+        "error_message": "Found an invalid max index: 14 (output volumes are of size 3x3)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[3, 3]",
+            "stride": "[4, 5]",
+            "padding": "4",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Trying to create tensor with negative dimension -1: [1, 1, -1, 0]', ((1, 1, -1, 0), (1, 1, -1, 0), 'Trying to create tensor with negative dimension -1: [1, 1, -1, 0]'))",
+        "error_message": "Trying to create tensor with negative dimension -1: [1, 1, -1, 0]"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "[5, 1]",
+            "padding": "4",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Trying to create tensor with negative dimension -4: [1, 1, 0, -4]', ((1, 1, 0, -4), (1, 1, 0, -4), 'Trying to create tensor with negative dimension -4: [1, 1, 0, -4]'))",
+        "error_message": "Trying to create tensor with negative dimension -4: [1, 1, 0, -4]"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 2]",
+            "stride": "1",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 18 (output volumes are of size 1x1)', ('Found an invalid max index: 18 (output volumes are of size 1x1)', 'Found an invalid max index: 18 (output volumes are of size 1x1)', (1, 1, 1, 1)))",
+        "error_message": "Found an invalid max index: 18 (output volumes are of size 1x1)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 2]",
+            "stride": "3",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 13 (output volumes are of size 1x1)', ('Found an invalid max index: 13 (output volumes are of size 1x1)', 'Found an invalid max index: 4 (output volumes are of size 1x1)', (1, 1, 1, 1)))",
+        "error_message": "Found an invalid max index: 13 (output volumes are of size 1x1)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "7",
+            "stride": "[1, 1]",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 43 (output volumes are of size 6x6)', ('Found an invalid max index: 43 (output volumes are of size 6x6)', 'Found an invalid max index: 46 (output volumes are of size 6x6)', (1, 1, 6, 6)))",
+        "error_message": "Found an invalid max index: 43 (output volumes are of size 6x6)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "[4, 5]",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 13 (output volumes are of size 3x4)', ('Found an invalid max index: 13 (output volumes are of size 3x4)', 'Found an invalid max index: 14 (output volumes are of size 3x4)', (1, 1, 3, 4)))",
+        "error_message": "Found an invalid max index: 13 (output volumes are of size 3x4)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[1, 7]",
+            "stride": "[1, 1]",
+            "padding": "4",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Trying to create tensor with negative dimension -6: [1, 1, -6, 0]', ((1, 1, -6, 0), (1, 1, -6, 0), 'Trying to create tensor with negative dimension -6: [1, 1, -6, 0]'))",
+        "error_message": "Trying to create tensor with negative dimension -6: [1, 1, -6, 0]"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 2]",
+            "stride": "4",
+            "padding": "4",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 38 (output volumes are of size 6x6)', ('Found an invalid max index: 38 (output volumes are of size 6x6)', 'Found an invalid max index: 46 (output volumes are of size 6x6)', (1, 1, 6, 6)))",
+        "error_message": "Found an invalid max index: 38 (output volumes are of size 6x6)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[1, 1]",
+            "stride": "[4, 5]",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 4 (output volumes are of size 1x2)', ('Found an invalid max index: 4 (output volumes are of size 1x2)', 'Found an invalid max index: 4 (output volumes are of size 1x2)', (1, 1, 1, 2)))",
+        "error_message": "Found an invalid max index: 4 (output volumes are of size 1x2)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 2]",
+            "stride": "2",
+            "padding": "3",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 43 (output volumes are of size 2x2)', ('Found an invalid max index: 43 (output volumes are of size 2x2)', 'Found an invalid max index: 18 (output volumes are of size 2x2)', (1, 1, 2, 2)))",
+        "error_message": "Found an invalid max index: 43 (output volumes are of size 2x2)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[5, 7]",
+            "stride": "2",
+            "padding": "[4, 0]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 43 (output volumes are of size 3x13)', ('Found an invalid max index: 43 (output volumes are of size 3x13)', 'Found an invalid max index: 46 (output volumes are of size 3x13)', (1, 1, 3, 13)))",
+        "error_message": "Found an invalid max index: 43 (output volumes are of size 3x13)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[3, 2]",
+            "stride": "2",
+            "padding": "[2, 1]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 46 (output volumes are of size 5x6)', ('Found an invalid max index: 46 (output volumes are of size 5x6)', 'Found an invalid max index: 46 (output volumes are of size 5x6)', (1, 1, 5, 6)))",
+        "error_message": "Found an invalid max index: 46 (output volumes are of size 5x6)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "2",
+            "padding": "2",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 13 (output volumes are of size 3x3)', ('Found an invalid max index: 13 (output volumes are of size 3x3)', 'Found an invalid max index: 14 (output volumes are of size 3x3)', (1, 1, 3, 3)))",
+        "error_message": "Found an invalid max index: 13 (output volumes are of size 3x3)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 2]",
+            "stride": "[2, 2]",
+            "padding": "1",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 43 (output volumes are of size 6x6)', ('Found an invalid max index: 43 (output volumes are of size 6x6)', 'Found an invalid max index: 43 (output volumes are of size 6x6)', (1, 1, 6, 6)))",
+        "error_message": "Found an invalid max index: 43 (output volumes are of size 6x6)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "[1, 1]",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 13 (output volumes are of size 2x2)', ('Found an invalid max index: 13 (output volumes are of size 2x2)', 'Found an invalid max index: 14 (output volumes are of size 2x2)', (1, 1, 2, 2)))",
+        "error_message": "Found an invalid max index: 13 (output volumes are of size 2x2)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "[2, 2]",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 14 (output volumes are of size 1x1)', ('Found an invalid max index: 14 (output volumes are of size 1x1)', 'Found an invalid max index: 4 (output volumes are of size 1x1)', (1, 1, 1, 1)))",
+        "error_message": "Found an invalid max index: 14 (output volumes are of size 1x1)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "2",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 46 (output volumes are of size 5x5)', ('Found an invalid max index: 46 (output volumes are of size 5x5)', 'Found an invalid max index: 38 (output volumes are of size 5x5)', (1, 1, 5, 5)))",
+        "error_message": "Found an invalid max index: 46 (output volumes are of size 5x5)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "[2, 3]",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 2 (output volumes are of size 1x2)', ('Found an invalid max index: 2 (output volumes are of size 1x2)', 'Found an invalid max index: 4 (output volumes are of size 1x2)', (1, 1, 1, 2)))",
+        "error_message": "Found an invalid max index: 2 (output volumes are of size 1x2)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "5",
+            "stride": "2",
+            "padding": "4",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 46 (output volumes are of size 3x3)', ('Found an invalid max index: 46 (output volumes are of size 3x3)', 'Found an invalid max index: 21 (output volumes are of size 3x3)', (1, 1, 3, 3)))",
+        "error_message": "Found an invalid max index: 46 (output volumes are of size 3x3)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 2]",
+            "stride": "2",
+            "padding": "[1, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 38 (output volumes are of size 6x4)', ('Found an invalid max index: 38 (output volumes are of size 6x4)', 'Found an invalid max index: 43 (output volumes are of size 6x4)', (1, 1, 6, 4)))",
+        "error_message": "Found an invalid max index: 38 (output volumes are of size 6x4)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[3, 3]",
+            "stride": "[4, 5]",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 14 (output volumes are of size 3x4)', ('Found an invalid max index: 14 (output volumes are of size 3x4)', 'Found an invalid max index: 14 (output volumes are of size 3x4)', (1, 1, 3, 4)))",
+        "error_message": "Found an invalid max index: 14 (output volumes are of size 3x4)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 2]",
+            "stride": "[3, 3]",
+            "padding": "4",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 46 (output volumes are of size 3x3)', ('Found an invalid max index: 46 (output volumes are of size 3x3)', 'Found an invalid max index: 38 (output volumes are of size 3x3)', (1, 1, 3, 3)))",
+        "error_message": "Found an invalid max index: 46 (output volumes are of size 3x3)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[3, 3]",
+            "stride": "[3, 3]",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 14 (output volumes are of size 2x2)', ('Found an invalid max index: 14 (output volumes are of size 2x2)', 'Found an invalid max index: 4 (output volumes are of size 2x2)', (1, 1, 2, 2)))",
+        "error_message": "Found an invalid max index: 14 (output volumes are of size 2x2)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "3",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 14 (output volumes are of size 2x2)', ('Found an invalid max index: 14 (output volumes are of size 2x2)', 'Found an invalid max index: 4 (output volumes are of size 2x2)', (1, 1, 2, 2)))",
+        "error_message": "Found an invalid max index: 14 (output volumes are of size 2x2)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 2]",
+            "stride": "[1, 1]",
+            "padding": "0",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 14 (output volumes are of size 3x3)', ('Found an invalid max index: 14 (output volumes are of size 3x3)', 'Found an invalid max index: 13 (output volumes are of size 3x3)', (1, 1, 3, 3)))",
+        "error_message": "Found an invalid max index: 14 (output volumes are of size 3x3)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "[2, 3]",
+            "padding": "[1, 1]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 14 (output volumes are of size 3x4)', ('Found an invalid max index: 14 (output volumes are of size 3x4)', 'Found an invalid max index: 14 (output volumes are of size 3x4)', (1, 1, 3, 4)))",
+        "error_message": "Found an invalid max index: 14 (output volumes are of size 3x4)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[3, 3]",
+            "stride": "[2, 2]",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 2 (output volumes are of size 1x1)', ('Found an invalid max index: 2 (output volumes are of size 1x1)', 'Found an invalid max index: 13 (output volumes are of size 1x1)', (1, 1, 1, 1)))",
+        "error_message": "Found an invalid max index: 2 (output volumes are of size 1x1)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[2, 3]",
+            "stride": "[1, 1]",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Trying to create tensor with negative dimension -1: [1, 1, -1, 0]', ((1, 1, -1, 0), (1, 1, -1, 0), 'Trying to create tensor with negative dimension -1: [1, 1, -1, 0]'))",
+        "error_message": "Trying to create tensor with negative dimension -1: [1, 1, -1, 0]"
+    },
+    {
+        "test_case": {
+            "kernel_size": "1",
+            "stride": "[1, 1]",
+            "padding": "[2, 1]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Trying to create tensor with negative dimension -2: [1, 1, -2, 0]', ((1, 1, -2, 0), (1, 1, -2, 0), 'Trying to create tensor with negative dimension -2: [1, 1, -2, 0]'))",
+        "error_message": "Trying to create tensor with negative dimension -2: [1, 1, -2, 0]"
+    },
+    {
+        "test_case": {
+            "kernel_size": "2",
+            "stride": "4",
+            "padding": "2",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 13 (output volumes are of size 2x2)', ('Found an invalid max index: 13 (output volumes are of size 2x2)', 'Found an invalid max index: 4 (output volumes are of size 2x2)', (1, 1, 2, 2)))",
+        "error_message": "Found an invalid max index: 13 (output volumes are of size 2x2)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "[1, 5]",
+            "padding": "4",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Trying to create tensor with negative dimension -4: [1, 1, -4, 0]', ((1, 1, -4, 0), (1, 1, -4, 0), 'Trying to create tensor with negative dimension -4: [1, 1, -4, 0]'))",
+        "error_message": "Trying to create tensor with negative dimension -4: [1, 1, -4, 0]"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[5, 5]",
+            "stride": "2",
+            "padding": "4",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 18 (output volumes are of size 3x3)', ('Found an invalid max index: 18 (output volumes are of size 3x3)', 'Found an invalid max index: 18 (output volumes are of size 3x3)', (1, 1, 3, 3)))",
+        "error_message": "Found an invalid max index: 18 (output volumes are of size 3x3)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "2",
+            "padding": "[1, 1]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 14 (output volumes are of size 3x3)', ('Found an invalid max index: 14 (output volumes are of size 3x3)', 'Found an invalid max index: 14 (output volumes are of size 3x3)', (1, 1, 3, 3)))",
+        "error_message": "Found an invalid max index: 14 (output volumes are of size 3x3)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "[3, 3]",
+            "stride": "[2, 3]",
+            "padding": "[2, 2]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 2, 2])), Tensor(shape=torch.Size([1, 1, 2, 2]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 4 (output volumes are of size 1x2)', ('Found an invalid max index: 4 (output volumes are of size 1x2)', 'Found an invalid max index: 4 (output volumes are of size 1x2)', (1, 1, 1, 2)))",
+        "error_message": "Found an invalid max index: 4 (output volumes are of size 1x2)"
+    },
+    {
+        "test_case": {
+            "kernel_size": "3",
+            "stride": "2",
+            "padding": "[2, 1]",
+            "inputs": "[Tensor(shape=torch.Size([1, 1, 4, 4])), Tensor(shape=torch.Size([1, 1, 4, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'Found an invalid max index: 46 (output volumes are of size 5x7)', ('Found an invalid max index: 46 (output volumes are of size 5x7)', 'Found an invalid max index: 38 (output volumes are of size 5x7)', (1, 1, 5, 7)))",
+        "error_message": "Found an invalid max index: 46 (output volumes are of size 5x7)"
+    }
+]

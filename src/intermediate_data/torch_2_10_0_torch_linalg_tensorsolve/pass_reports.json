@@ -1,0 +1,222 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([6, 4, 4, 3, 2])), Tensor(shape=torch.Size([4, 3, 2]))]",
+            "dims": "None",
+            "out": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24', ('Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_tensorsolve>(*(FakeTensor(..., size=(s21, s41, s41, s54, s40)), FakeTensor(..., size=(s41, s54, s40))), **{\\'dims\\': None, \\'out\\': None}): got RuntimeError(\\'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got s40*s54 != s40*s41*s54\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_tensorsolve/generated_code.py\", line 5, in call_func\\n    return torch.linalg.tensorsolve(A, B, dims=dims, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24'))",
+        "error_message": "Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24",
+        "conflict_params": [
+            "inputs",
+            "dims"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([6, 4, 4, 3, 2])), Tensor(shape=torch.Size([4, 3, 2]))]",
+            "dims": "[]",
+            "out": "None"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24', ('Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_tensorsolve>(*(FakeTensor(..., size=(s21, s41, s65, s54, s40)), FakeTensor(..., size=(s35, s22, s20))), **{\\'dims\\': (), \\'out\\': None}): got RuntimeError(\\'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got s40*s54 != s20*s22*s35\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_tensorsolve/generated_code.py\", line 5, in call_func\\n    return torch.linalg.tensorsolve(A, B, dims=dims, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24'))",
+        "error_message": "Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24",
+        "conflict_params": [
+            "inputs",
+            "dims"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([6, 4, 4, 3, 2])), Tensor(shape=torch.Size([4, 3, 2]))]",
+            "dims": "[0]",
+            "out": "None"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 12 != 24', ('Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 12 != 24', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_tensorsolve>(*(FakeTensor(..., size=(s21, s41, s65, s54, s40)), FakeTensor(..., size=(s35, s22, s20))), **{\\'dims\\': (0,), \\'out\\': None}): got RuntimeError(\\'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got s21*s40 != s20*s22*s35\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_tensorsolve/generated_code.py\", line 5, in call_func\\n    return torch.linalg.tensorsolve(A, B, dims=dims, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 12 != 24'))",
+        "error_message": "Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 12 != 24",
+        "conflict_params": [
+            "inputs",
+            "dims"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([6, 4, 4, 3, 2])), Tensor(shape=torch.Size([4, 3, 2]))]",
+            "dims": "[0, 2]",
+            "out": "None"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6, 4), (6, 4), (6, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([6, 4, 4, 3, 2])), Tensor(shape=torch.Size([4, 3, 2]))]",
+            "dims": "[0, 1]",
+            "out": "None"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6, 4), (6, 4), (6, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([6, 4, 4, 3, 2])), Tensor(shape=torch.Size([4, 3, 2]))]",
+            "dims": "[1, 2]",
+            "out": "None"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24', ('Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_tensorsolve>(*(FakeTensor(..., size=(s21, s41, s65, s54, s40)), FakeTensor(..., size=(s35, s22, s20))), **{\\'dims\\': (1, 2), \\'out\\': None}): got RuntimeError(\\'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got s41*s65 != s20*s22*s35\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_tensorsolve/generated_code.py\", line 5, in call_func\\n    return torch.linalg.tensorsolve(A, B, dims=dims, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24'))",
+        "error_message": "Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24",
+        "conflict_params": [
+            "inputs",
+            "dims"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([6, 4, 4, 3, 2])), Tensor(shape=torch.Size([4, 3, 2]))]",
+            "dims": "[0, 1, 2]",
+            "out": "None"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24', ('Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_tensorsolve>(*(FakeTensor(..., size=(s21, s41, s65, s54, s40)), FakeTensor(..., size=(s35, s22, s20))), **{\\'dims\\': (0, 1, 2), \\'out\\': None}): got RuntimeError(\\'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got s41*s65 != s20*s22*s35\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_tensorsolve/generated_code.py\", line 5, in call_func\\n    return torch.linalg.tensorsolve(A, B, dims=dims, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24'))",
+        "error_message": "Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24",
+        "conflict_params": [
+            "inputs",
+            "dims"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([6, 4, 4, 3, 2])), Tensor(shape=torch.Size([4, 3, 2]))]",
+            "dims": "[0, 2, 1]",
+            "out": "None"
+        },
+        "segment": "(7,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24', ('Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_tensorsolve>(*(FakeTensor(..., size=(s21, s41, s65, s54, s40)), FakeTensor(..., size=(s35, s22, s20))), **{\\'dims\\': (0, 2, 1), \\'out\\': None}): got RuntimeError(\\'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got s41*s65 != s20*s22*s35\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_tensorsolve/generated_code.py\", line 5, in call_func\\n    return torch.linalg.tensorsolve(A, B, dims=dims, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24'))",
+        "error_message": "Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24",
+        "conflict_params": [
+            "inputs",
+            "dims"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([6, 4, 4, 3, 2])), Tensor(shape=torch.Size([4, 3, 2]))]",
+            "dims": "[3, 4]",
+            "out": "None"
+        },
+        "segment": "(8,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24', ('Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24'))",
+        "error_message": "Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24",
+        "conflict_params": [
+            "inputs",
+            "dims"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([6, 4, 4, 3, 2])), Tensor(shape=torch.Size([4, 3, 2]))]",
+            "dims": "[0, 3]",
+            "out": "None"
+        },
+        "segment": "(9,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 18 != 24', ('Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 18 != 24', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 18 != 24', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 18 != 24'))",
+        "error_message": "Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 18 != 24",
+        "conflict_params": [
+            "inputs",
+            "dims"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([6, 4, 4, 3, 2])), Tensor(shape=torch.Size([4, 3, 2]))]",
+            "dims": "[]",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24', ('Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24'))",
+        "error_message": "Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([6, 4, 4, 3, 2])), Tensor(shape=torch.Size([4, 3, 2]))]",
+            "dims": "[0, 1, 2]",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24', ('Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24'))",
+        "error_message": "Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([6, 4, 4, 3, 2])), Tensor(shape=torch.Size([4, 3, 2]))]",
+            "dims": "[3, 4]",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24', ('Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24'))",
+        "error_message": "Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([6, 4, 4, 3, 2])), Tensor(shape=torch.Size([4, 3, 2]))]",
+            "dims": "[0, 2, 1]",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24', ('Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24'))",
+        "error_message": "Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([6, 4, 4, 3, 2])), Tensor(shape=torch.Size([4, 3, 2]))]",
+            "dims": "[0]",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 12 != 24', ('Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 12 != 24', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 12 != 24', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 12 != 24'))",
+        "error_message": "Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 12 != 24"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([6, 4, 4, 3, 2])), Tensor(shape=torch.Size([4, 3, 2]))]",
+            "dims": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24', ('Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24'))",
+        "error_message": "Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 6 != 24"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([6, 4, 4, 3, 2])), Tensor(shape=torch.Size([4, 3, 2]))]",
+            "dims": "[1, 2]",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24', ('Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24'))",
+        "error_message": "Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 16 != 24"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([6, 4, 4, 3, 2])), Tensor(shape=torch.Size([4, 3, 2]))]",
+            "dims": "[0, 3]",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 18 != 24', ('Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 18 != 24', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 18 != 24', 'Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 18 != 24'))",
+        "error_message": "Expected self to satisfy the requirement prod(self.shape[other.ndim:]) == prod(self.shape[:other.ndim]), but got 18 != 24"
+    }
+]

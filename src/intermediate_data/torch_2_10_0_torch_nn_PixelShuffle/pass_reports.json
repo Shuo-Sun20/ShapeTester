@@ -1,0 +1,135 @@
+[
+    {
+        "test_case": {
+            "upscale_factor": "1",
+            "inputs": "Tensor(shape=torch.Size([1, 9, 4, 4]))"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 9, 4, 4), (1, 9, 4, 4), (1, 9, 4, 4)))"
+    },
+    {
+        "test_case": {
+            "upscale_factor": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 9, 4, 4]))"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 4\", (\"pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 4\", 'Dynamo failed to run FX node with fake tensors: call_function <built-in method pixel_shuffle of type object at 0x7f59f8529b40>(*(FakeTensor(..., size=(1, s71, s34, s34)), 2), **{}): got AssertionError(\\'Invalid input shape for pixel_shuffle: torch.Size([1, s71, s34, s34]) with upscale_factor = 2\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_PixelShuffle/generated_code.py\", line 6, in call_func\\n    output = pixel_shuffle(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pixelshuffle.py\", line 62, in forward\\n    return F.pixel_shuffle(input, self.upscale_factor)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Invalid input shape for pixel_shuffle: torch.Size([1, 9, 4, 4]) with upscale_factor = 2'))",
+        "error_message": "pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 4",
+        "conflict_params": [
+            "upscale_factor",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "upscale_factor": "3",
+            "inputs": "Tensor(shape=torch.Size([1, 9, 4, 4]))"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 12, 12), (1, 1, 12, 12), (1, 1, 12, 12)))"
+    },
+    {
+        "test_case": {
+            "upscale_factor": "4",
+            "inputs": "Tensor(shape=torch.Size([1, 9, 4, 4]))"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 16\", (\"pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 16\", 'Dynamo failed to run FX node with fake tensors: call_function <built-in method pixel_shuffle of type object at 0x7f59f8529b40>(*(FakeTensor(..., size=(1, s71, s34, s34)), 4), **{}): got AssertionError(\\'Invalid input shape for pixel_shuffle: torch.Size([1, s71, s34, s34]) with upscale_factor = 4\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_PixelShuffle/generated_code.py\", line 6, in call_func\\n    output = pixel_shuffle(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pixelshuffle.py\", line 62, in forward\\n    return F.pixel_shuffle(input, self.upscale_factor)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Invalid input shape for pixel_shuffle: torch.Size([1, 9, 4, 4]) with upscale_factor = 4'))",
+        "error_message": "pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 16",
+        "conflict_params": [
+            "upscale_factor",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "upscale_factor": "6",
+            "inputs": "Tensor(shape=torch.Size([1, 9, 4, 4]))"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 36\", (\"pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 36\", 'Dynamo failed to run FX node with fake tensors: call_function <built-in method pixel_shuffle of type object at 0x7f59f8529b40>(*(FakeTensor(..., size=(1, s71, s34, s34)), 6), **{}): got AssertionError(\\'Invalid input shape for pixel_shuffle: torch.Size([1, s71, s34, s34]) with upscale_factor = 6\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_PixelShuffle/generated_code.py\", line 6, in call_func\\n    output = pixel_shuffle(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pixelshuffle.py\", line 62, in forward\\n    return F.pixel_shuffle(input, self.upscale_factor)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Invalid input shape for pixel_shuffle: torch.Size([1, 9, 4, 4]) with upscale_factor = 6'))",
+        "error_message": "pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 36",
+        "conflict_params": [
+            "upscale_factor",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "upscale_factor": "8",
+            "inputs": "Tensor(shape=torch.Size([1, 9, 4, 4]))"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 64\", (\"pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 64\", 'Dynamo failed to run FX node with fake tensors: call_function <built-in method pixel_shuffle of type object at 0x7f59f8529b40>(*(FakeTensor(..., size=(1, s71, s34, s34)), 8), **{}): got AssertionError(\\'Invalid input shape for pixel_shuffle: torch.Size([1, s71, s34, s34]) with upscale_factor = 8\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_PixelShuffle/generated_code.py\", line 6, in call_func\\n    output = pixel_shuffle(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pixelshuffle.py\", line 62, in forward\\n    return F.pixel_shuffle(input, self.upscale_factor)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Invalid input shape for pixel_shuffle: torch.Size([1, 9, 4, 4]) with upscale_factor = 8'))",
+        "error_message": "pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 64",
+        "conflict_params": [
+            "upscale_factor",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "upscale_factor": "12",
+            "inputs": "Tensor(shape=torch.Size([1, 9, 4, 4]))"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 144\", (\"pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 144\", 'Dynamo failed to run FX node with fake tensors: call_function <built-in method pixel_shuffle of type object at 0x7f59f8529b40>(*(FakeTensor(..., size=(1, s71, s34, s34)), 12), **{}): got AssertionError(\\'Invalid input shape for pixel_shuffle: torch.Size([1, s71, s34, s34]) with upscale_factor = 12\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_PixelShuffle/generated_code.py\", line 6, in call_func\\n    output = pixel_shuffle(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pixelshuffle.py\", line 62, in forward\\n    return F.pixel_shuffle(input, self.upscale_factor)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Invalid input shape for pixel_shuffle: torch.Size([1, 9, 4, 4]) with upscale_factor = 12'))",
+        "error_message": "pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 144",
+        "conflict_params": [
+            "upscale_factor",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "upscale_factor": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 9, 4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 4\", (\"pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 4\", 'Dynamo failed to run FX node with fake tensors: call_function <built-in method pixel_shuffle of type object at 0x7f59f8529b40>(*(FakeTensor(..., size=(1, s71, s34, s34)), 2), **{}): got AssertionError(\\'Invalid input shape for pixel_shuffle: torch.Size([1, s71, s34, s34]) with upscale_factor = 2\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_PixelShuffle/generated_code.py\", line 6, in call_func\\n    output = pixel_shuffle(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pixelshuffle.py\", line 62, in forward\\n    return F.pixel_shuffle(input, self.upscale_factor)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Invalid input shape for pixel_shuffle: torch.Size([1, 9, 4, 4]) with upscale_factor = 2'))",
+        "error_message": "pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 4"
+    },
+    {
+        "test_case": {
+            "upscale_factor": "6",
+            "inputs": "Tensor(shape=torch.Size([1, 9, 4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 36\", (\"pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 36\", 'Dynamo failed to run FX node with fake tensors: call_function <built-in method pixel_shuffle of type object at 0x7f59f8529b40>(*(FakeTensor(..., size=(1, s71, s34, s34)), 6), **{}): got AssertionError(\\'Invalid input shape for pixel_shuffle: torch.Size([1, s71, s34, s34]) with upscale_factor = 6\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_PixelShuffle/generated_code.py\", line 6, in call_func\\n    output = pixel_shuffle(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pixelshuffle.py\", line 62, in forward\\n    return F.pixel_shuffle(input, self.upscale_factor)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Invalid input shape for pixel_shuffle: torch.Size([1, 9, 4, 4]) with upscale_factor = 6'))",
+        "error_message": "pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 36"
+    },
+    {
+        "test_case": {
+            "upscale_factor": "12",
+            "inputs": "Tensor(shape=torch.Size([1, 9, 4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 144\", (\"pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 144\", 'Dynamo failed to run FX node with fake tensors: call_function <built-in method pixel_shuffle of type object at 0x7f59f8529b40>(*(FakeTensor(..., size=(1, s71, s34, s34)), 12), **{}): got AssertionError(\\'Invalid input shape for pixel_shuffle: torch.Size([1, s71, s34, s34]) with upscale_factor = 12\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_PixelShuffle/generated_code.py\", line 6, in call_func\\n    output = pixel_shuffle(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pixelshuffle.py\", line 62, in forward\\n    return F.pixel_shuffle(input, self.upscale_factor)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Invalid input shape for pixel_shuffle: torch.Size([1, 9, 4, 4]) with upscale_factor = 12'))",
+        "error_message": "pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 144"
+    },
+    {
+        "test_case": {
+            "upscale_factor": "8",
+            "inputs": "Tensor(shape=torch.Size([1, 9, 4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 64\", (\"pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 64\", 'Dynamo failed to run FX node with fake tensors: call_function <built-in method pixel_shuffle of type object at 0x7f59f8529b40>(*(FakeTensor(..., size=(1, s71, s34, s34)), 8), **{}): got AssertionError(\\'Invalid input shape for pixel_shuffle: torch.Size([1, s71, s34, s34]) with upscale_factor = 8\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_PixelShuffle/generated_code.py\", line 6, in call_func\\n    output = pixel_shuffle(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pixelshuffle.py\", line 62, in forward\\n    return F.pixel_shuffle(input, self.upscale_factor)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Invalid input shape for pixel_shuffle: torch.Size([1, 9, 4, 4]) with upscale_factor = 8'))",
+        "error_message": "pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 64"
+    },
+    {
+        "test_case": {
+            "upscale_factor": "4",
+            "inputs": "Tensor(shape=torch.Size([1, 9, 4, 4]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 16\", (\"pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 16\", 'Dynamo failed to run FX node with fake tensors: call_function <built-in method pixel_shuffle of type object at 0x7f59f8529b40>(*(FakeTensor(..., size=(1, s71, s34, s34)), 4), **{}): got AssertionError(\\'Invalid input shape for pixel_shuffle: torch.Size([1, s71, s34, s34]) with upscale_factor = 4\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_PixelShuffle/generated_code.py\", line 6, in call_func\\n    output = pixel_shuffle(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pixelshuffle.py\", line 62, in forward\\n    return F.pixel_shuffle(input, self.upscale_factor)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Invalid input shape for pixel_shuffle: torch.Size([1, 9, 4, 4]) with upscale_factor = 4'))",
+        "error_message": "pixel_shuffle expects its input's 'channel' dimension to be divisible by the square of upscale_factor, but input.size(-3)=9 is not divisible by 16"
+    }
+]

@@ -1,0 +1,78 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3])), Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([3, 2]))]",
+            "left": "True",
+            "adjoint": "True",
+            "out": "None"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3])), Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([3, 2]))]",
+            "left": "True",
+            "adjoint": "False",
+            "out": "None"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3])), Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([3, 2]))]",
+            "left": "False",
+            "adjoint": "True",
+            "out": "None"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'linalg.lu_solve: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x2)', ('linalg.lu_solve: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_lu_solve>(*(FakeTensor(..., size=(s21, s21)), FakeTensor(..., size=(s21,), dtype=torch.int32), FakeTensor(..., size=(s21, s24))), **{\\'left\\': False, \\'adjoint\\': True, \\'out\\': None}): got RuntimeError(\\'linalg.lu_solve: Incompatible shapes of A and B for the equation XA = B (s21xs21 and s21xs24)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_lu_solve/generated_code.py\", line 5, in call_func\\n    return torch.linalg.lu_solve(LU, pivots, B, left=left, adjoint=adjoint, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'linalg.lu_solve: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x2)'))",
+        "error_message": "linalg.lu_solve: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x2)",
+        "conflict_params": [
+            "left",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3])), Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([3, 2]))]",
+            "left": "False",
+            "adjoint": "False",
+            "out": "None"
+        },
+        "segment": "(1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'linalg.lu_solve: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x2)', ('linalg.lu_solve: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_lu_solve>(*(FakeTensor(..., size=(s21, s21)), FakeTensor(..., size=(s21,), dtype=torch.int32), FakeTensor(..., size=(s39, s24))), **{\\'left\\': False, \\'adjoint\\': False, \\'out\\': None}): got RuntimeError(\\'linalg.lu_solve: Incompatible shapes of A and B for the equation XA = B (s21xs21 and s39xs24)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_lu_solve/generated_code.py\", line 5, in call_func\\n    return torch.linalg.lu_solve(LU, pivots, B, left=left, adjoint=adjoint, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'linalg.lu_solve: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x2)'))",
+        "error_message": "linalg.lu_solve: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x2)",
+        "conflict_params": [
+            "inputs",
+            "left"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3])), Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([3, 2]))]",
+            "left": "False",
+            "adjoint": "True",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'linalg.lu_solve: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x2)', ('linalg.lu_solve: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_lu_solve>(*(FakeTensor(..., size=(s21, s21)), FakeTensor(..., size=(s21,), dtype=torch.int32), FakeTensor(..., size=(s39, s24))), **{\\'left\\': False, \\'adjoint\\': True, \\'out\\': None}): got RuntimeError(\\'linalg.lu_solve: Incompatible shapes of A and B for the equation XA = B (s21xs21 and s39xs24)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_lu_solve/generated_code.py\", line 5, in call_func\\n    return torch.linalg.lu_solve(LU, pivots, B, left=left, adjoint=adjoint, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'linalg.lu_solve: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x2)'))",
+        "error_message": "linalg.lu_solve: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x2)"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3])), Tensor(shape=torch.Size([3])), Tensor(shape=torch.Size([3, 2]))]",
+            "left": "False",
+            "adjoint": "False",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'linalg.lu_solve: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x2)', ('linalg.lu_solve: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x2)', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function linalg_lu_solve>(*(FakeTensor(..., size=(s21, s21)), FakeTensor(..., size=(s21,), dtype=torch.int32), FakeTensor(..., size=(s39, s24))), **{\\'left\\': False, \\'adjoint\\': False, \\'out\\': None}): got RuntimeError(\\'linalg.lu_solve: Incompatible shapes of A and B for the equation XA = B (s21xs21 and s39xs24)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_linalg_lu_solve/generated_code.py\", line 5, in call_func\\n    return torch.linalg.lu_solve(LU, pivots, B, left=left, adjoint=adjoint, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'linalg.lu_solve: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x2)'))",
+        "error_message": "linalg.lu_solve: Incompatible shapes of A and B for the equation XA = B (3x3 and 3x2)"
+    }
+]

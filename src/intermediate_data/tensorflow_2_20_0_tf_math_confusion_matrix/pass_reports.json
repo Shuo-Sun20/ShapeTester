@@ -1,0 +1,96 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(6,)), EagerTensor(shape=(6,))]",
+            "num_classes": "None",
+            "weights": "None",
+            "dtype": "None",
+            "name": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 3), (3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(6,)), EagerTensor(shape=(6,))]",
+            "num_classes": "1",
+            "weights": "None",
+            "dtype": "None",
+            "name": "None"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`labels` out of bound\\nCondition x < y did not hold.\\nFirst 3 elements of x:\\n[1 2 0]\\nFirst 1 elements of y:\\n[1]', ('`labels` out of bound\\nCondition x < y did not hold.\\nFirst 3 elements of x:\\n[1 2 0]\\nFirst 1 elements of y:\\n[1]', 'Graph execution error:\\n\\nDetected at node confusion_matrix/assert_less/Assert/AssertGuard/Assert defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_math_confusion_matrix/generated_code.py\", line 7, in call_func\\n\\nassertion failed: [`labels` out of bound] [Condition x < y did not hold element-wise:] [x (confusion_matrix/control_dependency:0) = ] [1 2 0...] [y (confusion_matrix/Cast_2:0) = ] [1]\\n\\t [[{{node confusion_matrix/assert_less/Assert/AssertGuard/Assert}}]] [Op:__inference_call_func_409176]'))",
+        "error_message": "`labels` out of bound\nCondition x < y did not hold.\nFirst 3 elements of x:\n[1 2 0]\nFirst 1 elements of y:\n[1]",
+        "conflict_params": [
+            "inputs",
+            "num_classes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(6,)), EagerTensor(shape=(6,))]",
+            "num_classes": "2",
+            "weights": "None",
+            "dtype": "None",
+            "name": "None"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`labels` out of bound\\nCondition x < y did not hold.\\nFirst 3 elements of x:\\n[1 2 0]\\nFirst 1 elements of y:\\n[2]', ('`labels` out of bound\\nCondition x < y did not hold.\\nFirst 3 elements of x:\\n[1 2 0]\\nFirst 1 elements of y:\\n[2]', 'Graph execution error:\\n\\nDetected at node confusion_matrix/assert_less/Assert/AssertGuard/Assert defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_math_confusion_matrix/generated_code.py\", line 7, in call_func\\n\\nassertion failed: [`labels` out of bound] [Condition x < y did not hold element-wise:] [x (confusion_matrix/control_dependency:0) = ] [1 2 0...] [y (confusion_matrix/Cast_2:0) = ] [2]\\n\\t [[{{node confusion_matrix/assert_less/Assert/AssertGuard/Assert}}]] [Op:__inference_call_func_409540]'))",
+        "error_message": "`labels` out of bound\nCondition x < y did not hold.\nFirst 3 elements of x:\n[1 2 0]\nFirst 1 elements of y:\n[2]",
+        "conflict_params": [
+            "inputs",
+            "num_classes"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(6,)), EagerTensor(shape=(6,))]",
+            "num_classes": "3",
+            "weights": "None",
+            "dtype": "None",
+            "name": "None"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 3), (3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(6,)), EagerTensor(shape=(6,))]",
+            "num_classes": "5",
+            "weights": "None",
+            "dtype": "None",
+            "name": "None"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 5), (5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(6,)), EagerTensor(shape=(6,))]",
+            "num_classes": "2",
+            "weights": "None",
+            "dtype": "None",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`labels` out of bound\\nCondition x < y did not hold.\\nFirst 3 elements of x:\\n[1 2 0]\\nFirst 1 elements of y:\\n[2]', ('`labels` out of bound\\nCondition x < y did not hold.\\nFirst 3 elements of x:\\n[1 2 0]\\nFirst 1 elements of y:\\n[2]', 'Graph execution error:\\n\\nDetected at node confusion_matrix/assert_less/Assert/AssertGuard/Assert defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_math_confusion_matrix/generated_code.py\", line 7, in call_func\\n\\nassertion failed: [`labels` out of bound] [Condition x < y did not hold element-wise:] [x (confusion_matrix/control_dependency:0) = ] [1 2 0...] [y (confusion_matrix/Cast_2:0) = ] [2]\\n\\t [[{{node confusion_matrix/assert_less/Assert/AssertGuard/Assert}}]] [Op:__inference_call_func_410232]'))",
+        "error_message": "`labels` out of bound\nCondition x < y did not hold.\nFirst 3 elements of x:\n[1 2 0]\nFirst 1 elements of y:\n[2]"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(6,)), EagerTensor(shape=(6,))]",
+            "num_classes": "1",
+            "weights": "None",
+            "dtype": "None",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`labels` out of bound\\nCondition x < y did not hold.\\nFirst 3 elements of x:\\n[1 2 0]\\nFirst 1 elements of y:\\n[1]', ('`labels` out of bound\\nCondition x < y did not hold.\\nFirst 3 elements of x:\\n[1 2 0]\\nFirst 1 elements of y:\\n[1]', 'Graph execution error:\\n\\nDetected at node confusion_matrix/assert_less/Assert/AssertGuard/Assert defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_math_confusion_matrix/generated_code.py\", line 7, in call_func\\n\\nassertion failed: [`labels` out of bound] [Condition x < y did not hold element-wise:] [x (confusion_matrix/control_dependency:0) = ] [1 2 0...] [y (confusion_matrix/Cast_2:0) = ] [1]\\n\\t [[{{node confusion_matrix/assert_less/Assert/AssertGuard/Assert}}]] [Op:__inference_call_func_410369]'))",
+        "error_message": "`labels` out of bound\nCondition x < y did not hold.\nFirst 3 elements of x:\n[1 2 0]\nFirst 1 elements of y:\n[1]"
+    }
+]

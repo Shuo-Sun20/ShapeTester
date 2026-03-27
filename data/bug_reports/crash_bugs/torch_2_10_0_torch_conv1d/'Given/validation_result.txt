@@ -1,0 +1,6 @@
+{
+    "POC File": "/mnt/data2/Users/sunshuo/2026/dltest_3.3/data/bug_reports/crash_bugs/torch_2_10_0_torch_conv1d/'Given/POC_Code.py",
+    "Return Code": 0,
+    "STDOUT": "Testing torch.conv1d defect reproduction\nInput shape: torch.Size([2, 12, 30])\nWeight shape: torch.Size([3, 2, 3])\nParameters: bias=None, stride=1, padding=4, dilation=5, groups=6\n\n1. Dynamic output shape (direct call):\nDynamic error: Given groups=6, expected weight to be at least 6 at dimension 0, but got weight of size [3, 2, 3] instead\n\n2. Static output shape (torch.compile with dynamic=True):\nStatic error: AcceleratorError: CUDA error: device doesn't have valid Grid license\nSearch for `cudaErrorDeviceNotLicensed' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n\n\n\n3. Meta output shape (device='meta'):\nMeta shape: torch.Size([2, 3, 28])\n\nDefect summary:\n- Dynamic and Static calls should fail with groups validation error\n- Meta device call produces shape [2, 3, 28] without validation\n- This inconsistency indicates a bug in meta device shape inference",
+    "STDERR": ""
+}

@@ -1,0 +1,1133 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "-2",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "alpha": "1.0",
+            "out": "None"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method index_add of type object at 0x7fb5d4329b40>(*(FakeTensor(..., size=(s21, s41)), -2, FakeTensor(..., size=(1,), dtype=torch.int64), FakeTensor(..., size=(s41, s41))), **{\\'alpha\\': zf27, \\'out\\': None}): got RuntimeError(\\'Number of indices (1) should be equal to tensor.size(dim) (s41: hint = 3), for dim=0\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/torch_2_10_0_torch_index_add/generated_code.py\", line 5, in call_func\\n    return torch.index_add(input_tensor, dim, index, source_tensor, alpha=alpha, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Number of indices (1) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0",
+        "conflict_params": [
+            "inputs",
+            "dim",
+            "index"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 5])), Tensor(shape=torch.Size([1, 5]))]",
+            "dim": "-2",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1",
+            "out": "None"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (1), for dim: 0', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (1), for dim: 0', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method index_add of type object at 0x7fb5d4329b40>(*(FakeTensor(..., size=(s21, s41)), -2, FakeTensor(..., size=(s91,), dtype=torch.int64), FakeTensor(..., size=(1, s22))), **{\\'alpha\\': s27, \\'out\\': None}): got RuntimeError(\\'Number of indices (s91: hint = 2) should be equal to tensor.size(dim) (1), for dim=0\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/torch_2_10_0_torch_index_add/generated_code.py\", line 5, in call_func\\n    return torch.index_add(input_tensor, dim, index, source_tensor, alpha=alpha, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Number of indices (2) should be equal to tensor.size(dim) (1), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (1), for dim: 0",
+        "conflict_params": [
+            "inputs",
+            "dim",
+            "index"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 5])), Tensor(shape=torch.Size([1, 5]))]",
+            "dim": "-2",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "1",
+            "out": "None"
+        },
+        "segment": "(0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (3) should be equal to source.size(dim): (1), for dim: 0', ('index_add_(): Number of indices (3) should be equal to source.size(dim): (1), for dim: 0', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method index_add of type object at 0x7fb5d4329b40>(*(FakeTensor(..., size=(s21, s41)), -2, FakeTensor(..., size=(s91,), dtype=torch.int64), FakeTensor(..., size=(1, s22))), **{\\'alpha\\': s27, \\'out\\': None}): got RuntimeError(\\'Number of indices (s91: hint = 3) should be equal to tensor.size(dim) (1), for dim=0\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/torch_2_10_0_torch_index_add/generated_code.py\", line 5, in call_func\\n    return torch.index_add(input_tensor, dim, index, source_tensor, alpha=alpha, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Number of indices (3) should be equal to tensor.size(dim) (1), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (3) should be equal to source.size(dim): (1), for dim: 0",
+        "conflict_params": [
+            "index",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 5])), Tensor(shape=torch.Size([1, 5]))]",
+            "dim": "-2",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1",
+            "out": "None"
+        },
+        "segment": "(0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (1), for dim: 0', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (1), for dim: 0', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method index_add of type object at 0x7fb5d4329b40>(*(FakeTensor(..., size=(s21, s41)), -2, FakeTensor(..., size=(s91,), dtype=torch.int64), FakeTensor(..., size=(1, s22))), **{\\'alpha\\': s27, \\'out\\': None}): got RuntimeError(\\'Number of indices (s91: hint = 2) should be equal to tensor.size(dim) (1), for dim=0\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/torch_2_10_0_torch_index_add/generated_code.py\", line 5, in call_func\\n    return torch.index_add(input_tensor, dim, index, source_tensor, alpha=alpha, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Number of indices (2) should be equal to tensor.size(dim) (1), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (1), for dim: 0",
+        "conflict_params": [
+            "inputs",
+            "dim",
+            "index"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 5])), Tensor(shape=torch.Size([1, 5]))]",
+            "dim": "-2",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "alpha": "1",
+            "out": "None"
+        },
+        "segment": "(0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 5), (5, 5), (5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 5])), Tensor(shape=torch.Size([1, 5]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "alpha": "1",
+            "out": "None"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (5), for dim: 1', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (5), for dim: 1', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method index_add of type object at 0x7fb5d4329b40>(*(FakeTensor(..., size=(s21, s41)), -1, FakeTensor(..., size=(1,), dtype=torch.int64), FakeTensor(..., size=(1, s22))), **{\\'alpha\\': s27, \\'out\\': None}): got RuntimeError(\\'Number of indices (1) should be equal to tensor.size(dim) (s22: hint = 5), for dim=1\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/torch_2_10_0_torch_index_add/generated_code.py\", line 5, in call_func\\n    return torch.index_add(input_tensor, dim, index, source_tensor, alpha=alpha, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Number of indices (1) should be equal to tensor.size(dim) (5), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (5), for dim: 1",
+        "conflict_params": [
+            "inputs",
+            "dim",
+            "index"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([2]))"
+        },
+        "segment": "(1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method index_add of type object at 0x7fb5d4329b40>(*(FakeTensor(..., size=(s21, s41)), -1, FakeTensor(..., size=(s91,), dtype=torch.int64), FakeTensor(..., size=(s35, s22))), **{\\'alpha\\': s27, \\'out\\': None}): got RuntimeError(\\'Number of indices (s91: hint = 2) should be equal to tensor.size(dim) (s22: hint = 3), for dim=1\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/torch_2_10_0_torch_index_add/generated_code.py\", line 5, in call_func\\n    return torch.index_add(input_tensor, dim, index, source_tensor, alpha=alpha, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1",
+        "conflict_params": [
+            "inputs",
+            "dim",
+            "index"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([2]))"
+        },
+        "segment": "(1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5), (3, 5), (3, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 5])), Tensor(shape=torch.Size([1, 5]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "alpha": "1",
+            "out": "None"
+        },
+        "segment": "(2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 5), (5, 5), (5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([2]))"
+        },
+        "segment": "(2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "1.5"
+        },
+        "segment": "(2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([2]))"
+        },
+        "segment": "(2, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 5])), Tensor(shape=torch.Size([1, 5]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "alpha": "1",
+            "out": "None"
+        },
+        "segment": "(2, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 5), (5, 5), (5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 5])), Tensor(shape=torch.Size([1, 5]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "alpha": "1",
+            "out": "None"
+        },
+        "segment": "(3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (5), for dim: 1', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (5), for dim: 1', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (5), for dim: 1', 'Number of indices (1) should be equal to tensor.size(dim) (5), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (5), for dim: 1",
+        "conflict_params": [
+            "inputs",
+            "index"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([2]))"
+        },
+        "segment": "(3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1",
+        "conflict_params": [
+            "inputs",
+            "dim",
+            "index"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([2]))"
+        },
+        "segment": "(3, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([2]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([2]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1.5",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5), (3, 5), (3, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "-2",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5), (3, 5), (3, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-2",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5), (3, 5), (3, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1.5",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "1.5",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 0', ('index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 0', 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 0', 'Number of indices (3) should be equal to tensor.size(dim) (2), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1.5"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "1.5"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', ('index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', 'Number of indices (3) should be equal to tensor.size(dim) (2), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"index_add(): argument 'alpha' must be Number, not NoneType\", (\"index_add(): argument 'alpha' must be Number, not NoneType\", \"index_add(): argument 'alpha' must be Number, not NoneType\", \"index_add(): argument 'alpha' must be Number, not NoneType\"))",
+        "error_message": "index_add(): argument 'alpha' must be Number, not NoneType"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1.5"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5), (3, 5), (3, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5), (3, 5), (3, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([3]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 0', ('index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 0', 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 0', 'Number of indices (3) should be equal to tensor.size(dim) (2), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "out": "None",
+            "alpha": "1.5"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "1",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-2",
+            "index": "Tensor(shape=torch.Size([2]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-2",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1.5",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([1]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (1) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "1.5",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', ('index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', 'Number of indices (3) should be equal to tensor.size(dim) (2), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-2",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "alpha": "1.5",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', 'Number of indices (1) should be equal to tensor.size(dim) (2), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "alpha": "1",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', 'Number of indices (1) should be equal to tensor.size(dim) (2), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([3]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', ('index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', 'Number of indices (3) should be equal to tensor.size(dim) (2), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"index_add(): argument 'alpha' must be Number, not NoneType\", (\"index_add(): argument 'alpha' must be Number, not NoneType\", \"index_add(): argument 'alpha' must be Number, not NoneType\", \"index_add(): argument 'alpha' must be Number, not NoneType\"))",
+        "error_message": "index_add(): argument 'alpha' must be Number, not NoneType"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', 'Number of indices (1) should be equal to tensor.size(dim) (2), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1.5",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5), (3, 5), (3, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([2]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5), (3, 5), (3, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "alpha": "1.5"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (1) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([1]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 0', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 0', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 0', 'Number of indices (1) should be equal to tensor.size(dim) (2), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "out": "None",
+            "alpha": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "out": "None",
+            "alpha": "1.5"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-2",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1.5"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "alpha": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"index_add(): argument 'alpha' must be Number, not NoneType\", (\"index_add(): argument 'alpha' must be Number, not NoneType\", \"index_add(): argument 'alpha' must be Number, not NoneType\", \"index_add(): argument 'alpha' must be Number, not NoneType\"))",
+        "error_message": "index_add(): argument 'alpha' must be Number, not NoneType"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "alpha": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"index_add(): argument 'alpha' must be Number, not NoneType\", (\"index_add(): argument 'alpha' must be Number, not NoneType\", \"index_add(): argument 'alpha' must be Number, not NoneType\", \"index_add(): argument 'alpha' must be Number, not NoneType\"))",
+        "error_message": "index_add(): argument 'alpha' must be Number, not NoneType"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1.5"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5), (3, 5), (3, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 0', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 0', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 0', 'Number of indices (1) should be equal to tensor.size(dim) (2), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "alpha": "1.5",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (1) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1.5"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"index_add(): argument 'alpha' must be Number, not NoneType\", (\"index_add(): argument 'alpha' must be Number, not NoneType\", \"index_add(): argument 'alpha' must be Number, not NoneType\", \"index_add(): argument 'alpha' must be Number, not NoneType\"))",
+        "error_message": "index_add(): argument 'alpha' must be Number, not NoneType"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "1.5",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', ('index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', 'Number of indices (3) should be equal to tensor.size(dim) (2), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', ('index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', 'Number of indices (3) should be equal to tensor.size(dim) (2), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5), (3, 5), (3, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1.5",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1.5"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"index_add(): argument 'alpha' must be Number, not NoneType\", (\"index_add(): argument 'alpha' must be Number, not NoneType\", \"index_add(): argument 'alpha' must be Number, not NoneType\", \"index_add(): argument 'alpha' must be Number, not NoneType\"))",
+        "error_message": "index_add(): argument 'alpha' must be Number, not NoneType"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "alpha": "1.5"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 0', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 0', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 0', 'Number of indices (1) should be equal to tensor.size(dim) (2), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1.5"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "1.5"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 0', ('index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 0', 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 0', 'Number of indices (3) should be equal to tensor.size(dim) (2), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "alpha": "1.5"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', 'Number of indices (1) should be equal to tensor.size(dim) (2), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "1",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', ('index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', 'Number of indices (3) should be equal to tensor.size(dim) (2), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', ('index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', 'Number of indices (3) should be equal to tensor.size(dim) (2), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-2",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"index_add(): argument 'alpha' must be Number, not NoneType\", (\"index_add(): argument 'alpha' must be Number, not NoneType\", \"index_add(): argument 'alpha' must be Number, not NoneType\", \"index_add(): argument 'alpha' must be Number, not NoneType\"))",
+        "error_message": "index_add(): argument 'alpha' must be Number, not NoneType"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "alpha": "1.5",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', 'Number of indices (1) should be equal to tensor.size(dim) (2), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "alpha": "1",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (1) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"index_add(): argument 'alpha' must be Number, not NoneType\", (\"index_add(): argument 'alpha' must be Number, not NoneType\", \"index_add(): argument 'alpha' must be Number, not NoneType\", \"index_add(): argument 'alpha' must be Number, not NoneType\"))",
+        "error_message": "index_add(): argument 'alpha' must be Number, not NoneType"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "1",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', ('index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', 'index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1', 'Number of indices (3) should be equal to tensor.size(dim) (2), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (3) should be equal to source.size(dim): (2), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([1]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', 'Number of indices (1) should be equal to tensor.size(dim) (2), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-2",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "alpha": "1.5",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (1) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 5), (3, 5), (3, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "alpha": "1",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (1) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([3, 3]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([3]))",
+            "alpha": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"index_add(): argument 'alpha' must be Number, not NoneType\", (\"index_add(): argument 'alpha' must be Number, not NoneType\", \"index_add(): argument 'alpha' must be Number, not NoneType\", \"index_add(): argument 'alpha' must be Number, not NoneType\"))",
+        "error_message": "index_add(): argument 'alpha' must be Number, not NoneType"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([5, 3])), Tensor(shape=torch.Size([2, 3]))]",
+            "dim": "-2",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "out": "None",
+            "alpha": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-2",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "alpha": "1.5"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (1) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-1",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', 'Number of indices (1) should be equal to tensor.size(dim) (2), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "1.5"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([1]))",
+            "alpha": "1.5"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', 'Number of indices (1) should be equal to tensor.size(dim) (2), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "0",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "alpha": "None",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"index_add(): argument 'alpha' must be Number, not NoneType\", (\"index_add(): argument 'alpha' must be Number, not NoneType\", \"index_add(): argument 'alpha' must be Number, not NoneType\", \"index_add(): argument 'alpha' must be Number, not NoneType\"))",
+        "error_message": "index_add(): argument 'alpha' must be Number, not NoneType"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-2",
+            "index": "Tensor(shape=torch.Size([2]))",
+            "out": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (2) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (2) should be equal to source.size(dim): (3), for dim: 0"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "1",
+            "index": "Tensor(shape=torch.Size([1]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1', 'Number of indices (1) should be equal to tensor.size(dim) (2), for dim=1'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (2), for dim: 1"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 5])), Tensor(shape=torch.Size([3, 2]))]",
+            "dim": "-2",
+            "index": "Tensor(shape=torch.Size([1]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', ('index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', 'index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0', 'Number of indices (1) should be equal to tensor.size(dim) (3), for dim=0'))",
+        "error_message": "index_add_(): Number of indices (1) should be equal to source.size(dim): (3), for dim: 0"
+    }
+]

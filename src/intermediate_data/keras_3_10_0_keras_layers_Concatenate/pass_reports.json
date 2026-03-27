@@ -1,0 +1,67 @@
+[
+    {
+        "test_case": {
+            "axis": "-3",
+            "inputs": "[ndarray(shape=(2, 2, 5)), ndarray(shape=(2, 1, 5))]"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A `Concatenate` layer requires inputs with matching shapes except for the concatenation axis. Received: input_shape=[(2, 2, 5), (2, 1, 5)]', ('A `Concatenate` layer requires inputs with matching shapes except for the concatenation axis. Received: input_shape=[(2, 2, 5), (2, 1, 5)]', 'A `Concatenate` layer requires inputs with matching shapes except for the concatenation axis. Received: input_shape=[(None, 2, 5), (None, 1, 5)]'))",
+        "error_message": "A `Concatenate` layer requires inputs with matching shapes except for the concatenation axis. Received: input_shape=[(2, 2, 5), (2, 1, 5)]",
+        "conflict_params": [
+            "axis",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "axis": "-1",
+            "inputs": "[ndarray(shape=(2, 2, 5)), ndarray(shape=(2, 1, 5))]"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A `Concatenate` layer requires inputs with matching shapes except for the concatenation axis. Received: input_shape=[(2, 2, 5), (2, 1, 5)]', ('A `Concatenate` layer requires inputs with matching shapes except for the concatenation axis. Received: input_shape=[(2, 2, 5), (2, 1, 5)]', 'A `Concatenate` layer requires inputs with matching shapes except for the concatenation axis. Received: input_shape=[(None, 2, 5), (None, 1, 5)]'))",
+        "error_message": "A `Concatenate` layer requires inputs with matching shapes except for the concatenation axis. Received: input_shape=[(2, 2, 5), (2, 1, 5)]",
+        "conflict_params": [
+            "axis",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "axis": "0",
+            "inputs": "[ndarray(shape=(2, 2, 5)), ndarray(shape=(2, 1, 5))]"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A `Concatenate` layer requires inputs with matching shapes except for the concatenation axis. Received: input_shape=[(2, 2, 5), (2, 1, 5)]', ('A `Concatenate` layer requires inputs with matching shapes except for the concatenation axis. Received: input_shape=[(2, 2, 5), (2, 1, 5)]', 'A `Concatenate` layer requires inputs with matching shapes except for the concatenation axis. Received: input_shape=[(None, 2, 5), (None, 1, 5)]'))",
+        "error_message": "A `Concatenate` layer requires inputs with matching shapes except for the concatenation axis. Received: input_shape=[(2, 2, 5), (2, 1, 5)]",
+        "conflict_params": [
+            "axis",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "axis": "1",
+            "inputs": "[ndarray(shape=(2, 2, 5)), ndarray(shape=(2, 1, 5))]"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3, 5), (None, 3, 5)))"
+    },
+    {
+        "test_case": {
+            "axis": "2",
+            "inputs": "[ndarray(shape=(2, 2, 5)), ndarray(shape=(2, 1, 5))]"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'A `Concatenate` layer requires inputs with matching shapes except for the concatenation axis. Received: input_shape=[(2, 2, 5), (2, 1, 5)]', ('A `Concatenate` layer requires inputs with matching shapes except for the concatenation axis. Received: input_shape=[(2, 2, 5), (2, 1, 5)]', 'A `Concatenate` layer requires inputs with matching shapes except for the concatenation axis. Received: input_shape=[(None, 2, 5), (None, 1, 5)]'))",
+        "error_message": "A `Concatenate` layer requires inputs with matching shapes except for the concatenation axis. Received: input_shape=[(2, 2, 5), (2, 1, 5)]",
+        "conflict_params": [
+            "axis",
+            "inputs"
+        ]
+    }
+]

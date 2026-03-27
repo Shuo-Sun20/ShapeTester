@@ -1,0 +1,166 @@
+[
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "n": "Tensor(shape=torch.Size([]))"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "n": "Tensor(shape=torch.Size([]))"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "n": "Tensor(shape=torch.Size([]))"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "n": "Tensor(shape=torch.Size([]))"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "n": "Tensor(shape=torch.Size([]))"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "n": "Tensor(shape=torch.Size([]))"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "n": "Tensor(shape=torch.Size([3]))"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 1', ('The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 1', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function special_chebyshev_polynomial_w>(*(FakeTensor(..., size=(s85, s71)), FakeTensor(..., size=(s72,), dtype=torch.int32)), **{\\'out\\': None}): got RuntimeError(\\'Attempting to broadcast a dimension of length s72 at -1! Mismatching argument at index 1 had torch.Size([s72]); but expected shape should be broadcastable to [s85, s71]\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_special_chebyshev_polynomial_w/generated_code.py\", line 4, in call_func\\n    return torch.special.chebyshev_polynomial_w(inputs, n, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Attempting to broadcast a dimension of length 3 at -1! Mismatching argument at index 1 had torch.Size([3]); but expected shape should be broadcastable to [3, 4]'))",
+        "error_message": "The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 1",
+        "conflict_params": [
+            "inputs",
+            "n"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "n": "Tensor(shape=torch.Size([4]))"
+        },
+        "segment": "(7,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "n": "Tensor(shape=torch.Size([3, 1]))"
+        },
+        "segment": "(8,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "n": "Tensor(shape=torch.Size([1, 3]))"
+        },
+        "segment": "(9,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 1', ('The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 1', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function special_chebyshev_polynomial_w>(*(FakeTensor(..., size=(s85, s71)), FakeTensor(..., size=(1, s7), dtype=torch.int32)), **{\\'out\\': None}): got RuntimeError(\\'Attempting to broadcast a dimension of length s7 at -1! Mismatching argument at index 1 had torch.Size([1, s7]); but expected shape should be broadcastable to [s85, s71]\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_special_chebyshev_polynomial_w/generated_code.py\", line 4, in call_func\\n    return torch.special.chebyshev_polynomial_w(inputs, n, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Attempting to broadcast a dimension of length 3 at -1! Mismatching argument at index 1 had torch.Size([1, 3]); but expected shape should be broadcastable to [3, 4]'))",
+        "error_message": "The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 1",
+        "conflict_params": [
+            "inputs",
+            "n"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "n": "Tensor(shape=torch.Size([0]))"
+        },
+        "segment": "(10,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (4) must match the size of tensor b (0) at non-singleton dimension 1', ('The size of tensor a (4) must match the size of tensor b (0) at non-singleton dimension 1', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function special_chebyshev_polynomial_w>(*(FakeTensor(..., size=(s85, s71)), FakeTensor(..., size=(0,), dtype=torch.int32)), **{\\'out\\': None}): got RuntimeError(\\'Attempting to broadcast a dimension of length 0 at -1! Mismatching argument at index 1 had torch.Size([0]); but expected shape should be broadcastable to [s85, s71]\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_special_chebyshev_polynomial_w/generated_code.py\", line 4, in call_func\\n    return torch.special.chebyshev_polynomial_w(inputs, n, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Attempting to broadcast a dimension of length 0 at -1! Mismatching argument at index 1 had torch.Size([0]); but expected shape should be broadcastable to [3, 4]'))",
+        "error_message": "The size of tensor a (4) must match the size of tensor b (0) at non-singleton dimension 1",
+        "conflict_params": [
+            "inputs",
+            "n"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "n": "Tensor(shape=torch.Size([1, 2, 2]))"
+        },
+        "segment": "(11,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (4) must match the size of tensor b (2) at non-singleton dimension 2', ('The size of tensor a (4) must match the size of tensor b (2) at non-singleton dimension 2', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function special_chebyshev_polynomial_w>(*(FakeTensor(..., size=(s85, s71)), FakeTensor(..., size=(1, s7, s46), dtype=torch.int32)), **{\\'out\\': None}): got RuntimeError(\\'Attempting to broadcast a dimension of length s46 at -1! Mismatching argument at index 1 had torch.Size([1, s7, s46]); but expected shape should be broadcastable to [1, s85, s71]\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_special_chebyshev_polynomial_w/generated_code.py\", line 4, in call_func\\n    return torch.special.chebyshev_polynomial_w(inputs, n, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Attempting to broadcast a dimension of length 2 at -1! Mismatching argument at index 1 had torch.Size([1, 2, 2]); but expected shape should be broadcastable to [1, 3, 4]'))",
+        "error_message": "The size of tensor a (4) must match the size of tensor b (2) at non-singleton dimension 2",
+        "conflict_params": [
+            "inputs",
+            "n"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "n": "Tensor(shape=torch.Size([3]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 1', ('The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 1', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function special_chebyshev_polynomial_w>(*(FakeTensor(..., size=(s85, s71)), FakeTensor(..., size=(s72,), dtype=torch.int32)), **{\\'out\\': None}): got RuntimeError(\\'Attempting to broadcast a dimension of length s72 at -1! Mismatching argument at index 1 had torch.Size([s72]); but expected shape should be broadcastable to [s85, s71]\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_special_chebyshev_polynomial_w/generated_code.py\", line 4, in call_func\\n    return torch.special.chebyshev_polynomial_w(inputs, n, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Attempting to broadcast a dimension of length 3 at -1! Mismatching argument at index 1 had torch.Size([3]); but expected shape should be broadcastable to [3, 4]'))",
+        "error_message": "The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 1"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "n": "Tensor(shape=torch.Size([1, 3]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 1', ('The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 1', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function special_chebyshev_polynomial_w>(*(FakeTensor(..., size=(s85, s71)), FakeTensor(..., size=(1, s7), dtype=torch.int32)), **{\\'out\\': None}): got RuntimeError(\\'Attempting to broadcast a dimension of length s7 at -1! Mismatching argument at index 1 had torch.Size([1, s7]); but expected shape should be broadcastable to [s85, s71]\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_special_chebyshev_polynomial_w/generated_code.py\", line 4, in call_func\\n    return torch.special.chebyshev_polynomial_w(inputs, n, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Attempting to broadcast a dimension of length 3 at -1! Mismatching argument at index 1 had torch.Size([1, 3]); but expected shape should be broadcastable to [3, 4]'))",
+        "error_message": "The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 1"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "n": "Tensor(shape=torch.Size([1, 2, 2]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (4) must match the size of tensor b (2) at non-singleton dimension 2', ('The size of tensor a (4) must match the size of tensor b (2) at non-singleton dimension 2', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function special_chebyshev_polynomial_w>(*(FakeTensor(..., size=(s85, s71)), FakeTensor(..., size=(1, s7, s46), dtype=torch.int32)), **{\\'out\\': None}): got RuntimeError(\\'Attempting to broadcast a dimension of length s46 at -1! Mismatching argument at index 1 had torch.Size([1, s7, s46]); but expected shape should be broadcastable to [1, s85, s71]\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_special_chebyshev_polynomial_w/generated_code.py\", line 4, in call_func\\n    return torch.special.chebyshev_polynomial_w(inputs, n, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Attempting to broadcast a dimension of length 2 at -1! Mismatching argument at index 1 had torch.Size([1, 2, 2]); but expected shape should be broadcastable to [1, 3, 4]'))",
+        "error_message": "The size of tensor a (4) must match the size of tensor b (2) at non-singleton dimension 2"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "n": "Tensor(shape=torch.Size([0]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'The size of tensor a (4) must match the size of tensor b (0) at non-singleton dimension 1', ('The size of tensor a (4) must match the size of tensor b (0) at non-singleton dimension 1', 'Dynamo failed to run FX node with fake tensors: call_function <built-in function special_chebyshev_polynomial_w>(*(FakeTensor(..., size=(s85, s71)), FakeTensor(..., size=(0,), dtype=torch.int32)), **{\\'out\\': None}): got RuntimeError(\\'Attempting to broadcast a dimension of length 0 at -1! Mismatching argument at index 1 had torch.Size([0]); but expected shape should be broadcastable to [s85, s71]\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_special_chebyshev_polynomial_w/generated_code.py\", line 4, in call_func\\n    return torch.special.chebyshev_polynomial_w(inputs, n, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Attempting to broadcast a dimension of length 0 at -1! Mismatching argument at index 1 had torch.Size([0]); but expected shape should be broadcastable to [3, 4]'))",
+        "error_message": "The size of tensor a (4) must match the size of tensor b (0) at non-singleton dimension 1"
+    }
+]

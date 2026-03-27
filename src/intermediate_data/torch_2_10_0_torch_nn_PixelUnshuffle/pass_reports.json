@@ -1,0 +1,116 @@
+[
+    {
+        "test_case": {
+            "downscale_factor": "1",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 12, 12]))"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 1, 12, 12), (1, 1, 12, 12), (1, 1, 12, 12)))"
+    },
+    {
+        "test_case": {
+            "downscale_factor": "2",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 12, 12]))"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 4, 6, 6), (1, 4, 6, 6), (1, 4, 6, 6)))"
+    },
+    {
+        "test_case": {
+            "downscale_factor": "3",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 12, 12]))"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 9, 4, 4), (1, 9, 4, 4), (1, 9, 4, 4)))"
+    },
+    {
+        "test_case": {
+            "downscale_factor": "4",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 12, 12]))"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 16, 3, 3), (1, 16, 3, 3), (1, 16, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "downscale_factor": "5",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 12, 12]))"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 5', ('pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 5', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method pixel_unshuffle of type object at 0x7fe3fa729b40>(*(FakeTensor(..., size=(1, 1, s34, s34)), 5), **{}): got RuntimeError(\"shape \\'[1, 1, (s34//5), 5, (s34//5), 5]\\' is invalid for input of size s34**2\")\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_PixelUnshuffle/generated_code.py\", line 6, in call_func\\n    return pixel_unshuffle(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pixelshuffle.py\", line 121, in forward\\n    return F.pixel_unshuffle(input, self.downscale_factor)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', \"shape '[1, 1, 2, 5, 2, 5]' is invalid for input of size 144\"))",
+        "error_message": "pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 5",
+        "conflict_params": [
+            "downscale_factor",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "downscale_factor": "6",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 12, 12]))"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1, 36, 2, 2), (1, 36, 2, 2), (1, 36, 2, 2)))"
+    },
+    {
+        "test_case": {
+            "downscale_factor": "8",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 12, 12]))"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 8', ('pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 8', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method pixel_unshuffle of type object at 0x7fe3fa729b40>(*(FakeTensor(..., size=(1, 1, s34, s90)), 8), **{}): got RuntimeError(\"shape \\'[1, 1, (s34//8), 8, (s90//8), 8]\\' is invalid for input of size s34*s90\")\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_PixelUnshuffle/generated_code.py\", line 6, in call_func\\n    return pixel_unshuffle(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pixelshuffle.py\", line 121, in forward\\n    return F.pixel_unshuffle(input, self.downscale_factor)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', \"shape '[1, 1, 1, 8, 1, 8]' is invalid for input of size 144\"))",
+        "error_message": "pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 8",
+        "conflict_params": [
+            "downscale_factor",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "downscale_factor": "10",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 12, 12]))"
+        },
+        "segment": "(7,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 10', ('pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 10', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method pixel_unshuffle of type object at 0x7fe3fa729b40>(*(FakeTensor(..., size=(1, 1, s34, s90)), 10), **{}): got RuntimeError(\"shape \\'[1, 1, (s34//10), 10, (s90//10), 10]\\' is invalid for input of size s34*s90\")\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_PixelUnshuffle/generated_code.py\", line 6, in call_func\\n    return pixel_unshuffle(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/pixelshuffle.py\", line 121, in forward\\n    return F.pixel_unshuffle(input, self.downscale_factor)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', \"shape '[1, 1, 1, 10, 1, 10]' is invalid for input of size 144\"))",
+        "error_message": "pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 10",
+        "conflict_params": [
+            "downscale_factor",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "downscale_factor": "5",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 12, 12]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 5', ('pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 5', 'pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 5', \"shape '[1, 1, 2, 5, 2, 5]' is invalid for input of size 144\"))",
+        "error_message": "pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 5"
+    },
+    {
+        "test_case": {
+            "downscale_factor": "8",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 12, 12]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 8', ('pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 8', 'pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 8', \"shape '[1, 1, 1, 8, 1, 8]' is invalid for input of size 144\"))",
+        "error_message": "pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 8"
+    },
+    {
+        "test_case": {
+            "downscale_factor": "10",
+            "inputs": "Tensor(shape=torch.Size([1, 1, 12, 12]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 10', ('pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 10', 'pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 10', \"shape '[1, 1, 1, 10, 1, 10]' is invalid for input of size 144\"))",
+        "error_message": "pixel_unshuffle expects height to be divisible by downscale_factor, but input.size(-2)=12 is not divisible by 10"
+    }
+]

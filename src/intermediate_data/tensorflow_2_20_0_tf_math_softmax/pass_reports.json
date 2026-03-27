@@ -1,0 +1,66 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "-2",
+            "name": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "-1",
+            "name": "None"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "0",
+            "name": "None"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "1",
+            "name": "None"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "[0, 1]",
+            "name": "None"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"'<=' not supported between instances of 'int' and 'list'\", (\"'<=' not supported between instances of 'int' and 'list'\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_math_softmax/generated_code.py\", line 4, in call_func  *\\n        return tf.math.softmax(logits=inputs, axis=axis, name=name)\\n\\n    TypeError: \\'<=\\' not supported between instances of \\'int\\' and \\'list\\'\\n'))",
+        "error_message": "'<=' not supported between instances of 'int' and 'list'",
+        "conflict_params": [
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(3, 4))",
+            "axis": "[0, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"'<=' not supported between instances of 'int' and 'list'\", (\"'<=' not supported between instances of 'int' and 'list'\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_math_softmax/generated_code.py\", line 4, in call_func  *\\n        return tf.math.softmax(logits=inputs, axis=axis, name=name)\\n\\n    TypeError: \\'<=\\' not supported between instances of \\'int\\' and \\'list\\'\\n'))",
+        "error_message": "'<=' not supported between instances of 'int' and 'list'"
+    }
+]

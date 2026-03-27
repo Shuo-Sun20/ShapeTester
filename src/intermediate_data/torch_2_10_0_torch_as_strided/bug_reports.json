@@ -1,0 +1,80 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3]))]",
+            "size": "[3, 3]",
+            "stride": "[2, 1]",
+            "storage_offset": "4"
+        },
+        "segment": "(2, 2, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [3, 3], strides [2, 1], storage offset 4, and itemsize 4 requiring a storage size of 44 are out of bounds for storage of size 36', ('setStorage: sizes [3, 3], strides [2, 1], storage offset 4, and itemsize 4 requiring a storage size of 44 are out of bounds for storage of size 36', 'setStorage: sizes [3, 3], strides [2, 1], storage offset 4, and itemsize 4 requiring a storage size of 44 are out of bounds for storage of size 36', (3, 3)))",
+        "error_message": "setStorage: sizes [3, 3], strides [2, 1], storage offset 4, and itemsize 4 requiring a storage size of 44 are out of bounds for storage of size 36",
+        "conflict_params": [
+            "size",
+            "stride",
+            "storage_offset"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3]))]",
+            "size": "[3, 3]",
+            "stride": "[3, 1]",
+            "storage_offset": "1"
+        },
+        "segment": "(2, 4, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [3, 3], strides [3, 1], storage offset 1, and itemsize 4 requiring a storage size of 40 are out of bounds for storage of size 36', ('setStorage: sizes [3, 3], strides [3, 1], storage offset 1, and itemsize 4 requiring a storage size of 40 are out of bounds for storage of size 36', 'setStorage: sizes [3, 3], strides [3, 1], storage offset 1, and itemsize 4 requiring a storage size of 40 are out of bounds for storage of size 36', (3, 3)))",
+        "error_message": "setStorage: sizes [3, 3], strides [3, 1], storage offset 1, and itemsize 4 requiring a storage size of 40 are out of bounds for storage of size 36",
+        "conflict_params": [
+            "size",
+            "stride",
+            "storage_offset"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3]))]",
+            "size": "[3, 3]",
+            "stride": "[2, 1]",
+            "storage_offset": "4"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [3, 3], strides [2, 1], storage offset 4, and itemsize 4 requiring a storage size of 44 are out of bounds for storage of size 36', ('setStorage: sizes [3, 3], strides [2, 1], storage offset 4, and itemsize 4 requiring a storage size of 44 are out of bounds for storage of size 36', 'setStorage: sizes [3, 3], strides [2, 1], storage offset 4, and itemsize 4 requiring a storage size of 44 are out of bounds for storage of size 36', (3, 3)))",
+        "error_message": "setStorage: sizes [3, 3], strides [2, 1], storage offset 4, and itemsize 4 requiring a storage size of 44 are out of bounds for storage of size 36"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3]))]",
+            "size": "[3, 3]",
+            "stride": "[2, 2]",
+            "storage_offset": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [3, 3], strides [2, 2], storage offset 1, and itemsize 4 requiring a storage size of 40 are out of bounds for storage of size 36', ('setStorage: sizes [3, 3], strides [2, 2], storage offset 1, and itemsize 4 requiring a storage size of 40 are out of bounds for storage of size 36', 'setStorage: sizes [3, 3], strides [2, 2], storage offset 1, and itemsize 4 requiring a storage size of 40 are out of bounds for storage of size 36', (3, 3)))",
+        "error_message": "setStorage: sizes [3, 3], strides [2, 2], storage offset 1, and itemsize 4 requiring a storage size of 40 are out of bounds for storage of size 36"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3]))]",
+            "size": "[3, 3]",
+            "stride": "[3, 1]",
+            "storage_offset": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [3, 3], strides [3, 1], storage offset 2, and itemsize 4 requiring a storage size of 44 are out of bounds for storage of size 36', ('setStorage: sizes [3, 3], strides [3, 1], storage offset 2, and itemsize 4 requiring a storage size of 44 are out of bounds for storage of size 36', 'setStorage: sizes [3, 3], strides [3, 1], storage offset 2, and itemsize 4 requiring a storage size of 44 are out of bounds for storage of size 36', (3, 3)))",
+        "error_message": "setStorage: sizes [3, 3], strides [3, 1], storage offset 2, and itemsize 4 requiring a storage size of 44 are out of bounds for storage of size 36"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 3]))]",
+            "size": "[3, 3]",
+            "stride": "[3, 1]",
+            "storage_offset": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'setStorage: sizes [3, 3], strides [3, 1], storage offset 1, and itemsize 4 requiring a storage size of 40 are out of bounds for storage of size 36', ('setStorage: sizes [3, 3], strides [3, 1], storage offset 1, and itemsize 4 requiring a storage size of 40 are out of bounds for storage of size 36', 'setStorage: sizes [3, 3], strides [3, 1], storage offset 1, and itemsize 4 requiring a storage size of 40 are out of bounds for storage of size 36', (3, 3)))",
+        "error_message": "setStorage: sizes [3, 3], strides [3, 1], storage offset 1, and itemsize 4 requiring a storage size of 40 are out of bounds for storage of size 36"
+    }
+]

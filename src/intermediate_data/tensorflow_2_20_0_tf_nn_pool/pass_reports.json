@@ -1,0 +1,2319 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[1, 1]",
+            "pooling_type": "AVG",
+            "strides": "None",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "segment": "(0, 0, 0, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32, 3), (4, 32, 32, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "None",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[1, 2]",
+            "name": "None"
+        },
+        "segment": "(1, 0, 1, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 31, 30, 3), (4, 31, 30, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[1, 1]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "segment": "(2, 1, 0, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[3 3]\", (\"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[3 3]\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: pooling with \\'SAME\\' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[3 3]\\n'))",
+        "error_message": "pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[3 3]",
+        "conflict_params": [
+            "padding",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[1, 1]",
+            "pooling_type": "AVG",
+            "strides": "[1, 1]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "None"
+        },
+        "segment": "(0, 1, 1, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32, 3), (4, 32, 32, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[2, 2]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "segment": "(2, 2, 1, 2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]",
+        "conflict_params": [
+            "strides",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 2]",
+            "name": "None"
+        },
+        "segment": "(3, 3, 0, 1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]",
+        "conflict_params": [
+            "strides",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "segment": "(3, 4, 1, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 27, 14, 3), (4, 27, 14, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "None",
+            "name": "None"
+        },
+        "segment": "(1, 4, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32, 2), (4, 32, 32, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "segment": "(4, 3, 1, 2, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]",
+        "conflict_params": [
+            "strides",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "[2, 2]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "None",
+            "name": "None"
+        },
+        "segment": "(4, 2, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 16, 16, 3), (4, 16, 16, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "None",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "segment": "(4, 0, 0, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[2 2]\", (\"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[2 2]\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: pooling with \\'SAME\\' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[2 2]\\n'))",
+        "error_message": "pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[2 2]",
+        "conflict_params": [
+            "padding",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[2, 2]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "segment": "(1, 2, 0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 16, 16, 3), (4, 16, 16, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[1, 1]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "segment": "(0, 3, 1, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]",
+        "conflict_params": [
+            "strides",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "[1, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 2]",
+            "name": "None"
+        },
+        "segment": "(4, 1, 0, 2, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[1 2]\", (\"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[1 2]\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: pooling with \\'SAME\\' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[1 2]\\n'))",
+        "error_message": "pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[1 2]",
+        "conflict_params": [
+            "padding",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[1, 1]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "segment": "(0, 4, 1, 1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[3 3]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[3 3]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[3 3]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[3 3]",
+        "conflict_params": [
+            "strides",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "None",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "None"
+        },
+        "segment": "(2, 0, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32, 3), (4, 32, 32, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "None",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "segment": "(3, 0, 1, 2, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -4 [input_size: 1, effective_filter_size: 6, stride: 1] [Op:AvgPool]', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -4 [input_size: 1, effective_filter_size: 6, stride: 1] [Op:AvgPool]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Negative dimension size caused by subtracting 6 from 1 for \\'{{node avg_pool}} = AvgPool[T=DT_FLOAT, data_format=\"NCHW\", ksize=[1, 1, 6, 6], padding=\"VALID\", strides=[1, 1, 1, 1]](avg_pool/SpaceToBatchND)\\' with input shapes: [36,32,11,1].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -4 [input_size: 1, effective_filter_size: 6, stride: 1] [Op:AvgPool]",
+        "conflict_params": [
+            "inputs",
+            "window_shape",
+            "dilations",
+            "data_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "segment": "(2, 3, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 11, 11, 3), (4, 11, 11, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[1, 1]",
+            "pooling_type": "AVG",
+            "strides": "[2, 2]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[1, 2]",
+            "name": "None"
+        },
+        "segment": "(0, 2, 1, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]",
+        "conflict_params": [
+            "strides",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[1, 1]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "segment": "(1, 1, 1, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 30, 30, 3), (4, 30, 30, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[1, 2]",
+            "name": "None"
+        },
+        "segment": "(2, 4, 1, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[1 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[1 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[1 2]",
+        "conflict_params": [
+            "strides",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "None",
+            "name": "None"
+        },
+        "segment": "(3, 3, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 11, 11, 3), (4, 11, 11, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "[1, 1]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "segment": "(4, 1, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32, 3), (4, 32, 32, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "segment": "(4, 4, 1, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]",
+        "conflict_params": [
+            "strides",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[1, 1]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "segment": "(3, 1, 1, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 22, 22, 3), (4, 22, 22, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[2, 2]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "segment": "(3, 2, 1, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[3 3]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[3 3]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[3 3]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[3 3]",
+        "conflict_params": [
+            "strides",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "None",
+            "name": "None"
+        },
+        "segment": "(1, 3, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]', ('`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]\\n'))",
+        "error_message": "`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]",
+        "conflict_params": [
+            "strides",
+            "window_shape"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "None",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "segment": "(1, 0, 1, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 29, 29, 3), (4, 29, 29, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 16, 3), (4, 32, 16, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[1, 1]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 9, 9, 3), (4, 9, 9, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "None",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[1, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[1 2]\", (\"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[1 2]\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: pooling with \\'SAME\\' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[1 2]\\n'))",
+        "error_message": "pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 25, 13, 3), (4, 25, 13, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 16, 3), (4, 32, 16, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 16, 3), (4, 32, 16, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 29, 15, 3), (4, 29, 15, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[3 3]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[3 3]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[3 3]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[3 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[1, 1]",
+            "pooling_type": "AVG",
+            "strides": "None",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[3 3]\", (\"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[3 3]\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: pooling with \\'SAME\\' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[3 3]\\n'))",
+        "error_message": "pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[3 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[3 3]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[3 3]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[3 3]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[3 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "None",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 31, 31, 3), (4, 31, 31, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32, 2), (4, 32, 32, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]', ('`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]\\n'))",
+        "error_message": "`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[1, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32, 3), (4, 32, 32, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "None",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 16, 3), (4, 32, 16, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[2, 2]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 16, 3), (4, 32, 16, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[1, 1]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[2 2]\", (\"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[2 2]\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: pooling with \\'SAME\\' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[2 2]\\n'))",
+        "error_message": "pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]', ('`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]\\n'))",
+        "error_message": "`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[1, 1]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 27, 27, 3), (4, 27, 27, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[1, 1]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[1 2] and window_shape=[1, 1]', ('`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[1 2] and window_shape=[1, 1]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[1 2] and window_shape=[1, 1]\\n'))",
+        "error_message": "`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[1 2] and window_shape=[1, 1]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]', ('`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]\\n'))",
+        "error_message": "`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 16, 3), (4, 32, 16, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[2, 2]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 14, 14, 3), (4, 14, 14, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[1, 1]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[1 2] and window_shape=[1, 1]', ('`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[1 2] and window_shape=[1, 1]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[1 2] and window_shape=[1, 1]\\n'))",
+        "error_message": "`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[1 2] and window_shape=[1, 1]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[1 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[1 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 16, 3), (4, 32, 16, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 31, 16, 3), (4, 31, 16, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 31, 16, 3), (4, 31, 16, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[1, 1]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[1 2] and window_shape=[1, 1]', ('`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[1 2] and window_shape=[1, 1]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[1 2] and window_shape=[1, 1]\\n'))",
+        "error_message": "`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[1 2] and window_shape=[1, 1]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[1, 1]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[1, 1]', ('`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[1, 1]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[1, 1]\\n'))",
+        "error_message": "`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[1, 1]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "None",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 27, 27, 3), (4, 27, 27, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 16, 3), (4, 32, 16, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 9, 9, 3), (4, 9, 9, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 27, 14, 3), (4, 27, 14, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 9, 9, 3), (4, 9, 9, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "None",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 9, 9, 3), (4, 9, 9, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "None",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 9, 9, 3), (4, 9, 9, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "None",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 27, 27, 3), (4, 27, 27, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 11, 11, 3), (4, 11, 11, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[1, 1]",
+            "pooling_type": "AVG",
+            "strides": "[2, 2]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[2 2] and window_shape=[1, 1]', ('`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[2 2] and window_shape=[1, 1]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[2 2] and window_shape=[1, 1]\\n'))",
+        "error_message": "`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[2 2] and window_shape=[1, 1]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 10, 10, 3), (4, 10, 10, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "None",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 16, 3), (4, 32, 16, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 11, 1), (4, 32, 11, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "None",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 22, 22, 3), (4, 22, 22, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "None",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 9, 9, 3), (4, 9, 9, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 11, 1), (4, 32, 11, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "None",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 10, 10, 3), (4, 10, 10, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[1, 1]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[1, 1]', ('`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[1, 1]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[1, 1]\\n'))",
+        "error_message": "`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[1, 1]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 11, 11, 3), (4, 11, 11, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]', ('`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]\\n'))",
+        "error_message": "`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "None",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 29, 29, 3), (4, 29, 29, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32, 2), (4, 32, 32, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[2, 2]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 16, 2), (4, 32, 16, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "None",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[1 2]\", (\"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[1 2]\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: pooling with \\'SAME\\' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[1 2]\\n'))",
+        "error_message": "pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[1, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32, 3), (4, 32, 32, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[1, 1]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 29, 29, 3), (4, 29, 29, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[2, 2]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 16, 2), (4, 32, 16, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "None",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 11, 1), (4, 32, 11, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 11, 11, 3), (4, 11, 11, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[1, 1]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 11, 1), (4, 32, 11, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 11, 11, 3), (4, 11, 11, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[1, 1]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "dilations": "[1, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 16, 3), (4, 32, 16, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32, 2), (4, 32, 32, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "None",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32, 3), (4, 32, 32, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32, 2), (4, 32, 32, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[1, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[3 3]\", (\"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[3 3]\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: pooling with \\'SAME\\' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[3 3]\\n'))",
+        "error_message": "pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[3 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]', ('`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]\\n'))",
+        "error_message": "`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[2, 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "None",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32, 3), (4, 32, 32, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 9, 9, 3), (4, 9, 9, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 9, 9, 3), (4, 9, 9, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[1, 1]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "None",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[1, 1]', ('`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[1, 1]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[1, 1]\\n'))",
+        "error_message": "`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[1, 1]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[1, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[1 2]\", (\"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[1 2]\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: pooling with \\'SAME\\' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[1 2]\\n'))",
+        "error_message": "pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[1, 1]",
+            "pooling_type": "AVG",
+            "strides": "[1, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32, 3), (4, 32, 32, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "[2, 2]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 16, 2), (4, 32, 16, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "None",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 11, 1), (4, 32, 11, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 10, 10, 3), (4, 10, 10, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "None",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[2 2]\", (\"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[2 2]\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: pooling with \\'SAME\\' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[2 2]\\n'))",
+        "error_message": "pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[2, 2]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[1, 1]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32, 3), (4, 32, 32, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 11, 11, 3), (4, 11, 11, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[1, 1]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[1, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "None",
+            "padding": "VALID",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 27, 27, 3), (4, 27, 27, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[1, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[3 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[1, 1]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[1, 1]', ('`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[1, 1]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[1, 1]\\n'))",
+        "error_message": "`strides` > `window_shape` not supported due to inconsistency between CPU and GPU implementations. Received: strides=[3 3] and window_shape=[1, 1]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[1, 1]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32, 3), (4, 32, 32, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "None",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32, 3), (4, 32, 32, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[1, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[2, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[2 2]\", (\"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[2 2]\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: pooling with \\'SAME\\' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[2 2]\\n'))",
+        "error_message": "pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[2 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "None",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[3 3]\", (\"pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[3 3]\", 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: pooling with \\'SAME\\' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[3 3]\\n'))",
+        "error_message": "pooling with 'SAME' padding is not implemented for `dilation_rate` > 1. Received: padding=SAME and dilation_rate=[3 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[2, 2]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 16, 16, 3), (4, 16, 16, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[1, 1]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -2 [input_size: 3, effective_filter_size: 6, stride: 1] [Op:AvgPool]', ('{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -2 [input_size: 3, effective_filter_size: 6, stride: 1] [Op:AvgPool]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Negative dimension size caused by subtracting 6 from 3 for \\'{{node avg_pool}} = AvgPool[T=DT_FLOAT, data_format=\"NCHW\", ksize=[1, 1, 6, 6], padding=\"VALID\", strides=[1, 1, 1, 1]](inputs)\\' with input shapes: [4,32,32,3].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeAvgPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -2 [input_size: 3, effective_filter_size: 6, stride: 1] [Op:AvgPool]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[2, 2]",
+            "pooling_type": "AVG",
+            "strides": "[2, 2]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[1, 1]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32, 3), (4, 32, 32, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[2, 2]",
+            "padding": "SAME",
+            "data_format": "NHWC",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 16, 16, 3), (4, 16, 16, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[1, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[1, 2]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[3 3]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[3 3]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[3 3]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[1 2] and dilation_rate=[3 3]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[3, 3]",
+            "padding": "VALID",
+            "data_format": "NCHW",
+            "dilations": "[1, 2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[3 3] and dilation_rate=[1 2]"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[6, 6]",
+            "pooling_type": "AVG",
+            "strides": "[2, 2]",
+            "padding": "SAME",
+            "data_format": "None",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 16, 16, 3), (4, 16, 16, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[4, 4]",
+            "pooling_type": "AVG",
+            "strides": "[1, 1]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 32, 32, 3), (4, 32, 32, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(4, 32, 32, 3))",
+            "window_shape": "[8, 8]",
+            "pooling_type": "AVG",
+            "strides": "[2, 2]",
+            "padding": "SAME",
+            "data_format": "NCHW",
+            "dilations": "[3, 3]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[3 3]', ('`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[3 3]', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_pool/generated_code.py\", line 4, in call_func  *\\n        return tf.nn.pool(input=inputs, window_shape=window_shape, pooling_type=pooling_type, strides=strides, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: `strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[3 3]\\n'))",
+        "error_message": "`strides > 1` not supported in conjunction with `dilation_rate > 1`. Received: strides=[2 2] and dilation_rate=[3 3]"
+    }
+]

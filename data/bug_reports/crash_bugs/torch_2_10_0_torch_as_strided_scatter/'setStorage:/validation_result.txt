@@ -1,0 +1,6 @@
+{
+    "POC File": "/mnt/data2/Users/sunshuo/2026/dltest_3.3/data/bug_reports/crash_bugs/torch_2_10_0_torch_as_strided_scatter/'setStorage:/POC_Code.py",
+    "Return Code": 0,
+    "STDOUT": "Input tensor shape: torch.Size([3, 3])\nSrc tensor shape: torch.Size([3, 3])\nSize: [3, 3]\nStride: [1, 2]\nStorage offset: 3\n\n=== Dynamic output shape (direct call) ===\nDynamic error: setStorage: sizes [3, 3], strides [1, 2], storage offset 3, and itemsize 4 requiring a storage size of 40 are out of bounds for storage of size 36\n\n=== Static output shape (torch.compile with dynamic=True) ===\nStatic error: AcceleratorError: CUDA error: device doesn't have valid Grid license\nSearch for `cudaErrorDeviceNotLicensed' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n\n\n\n=== Meta output shape (device='meta') ===\nMeta output shape: torch.Size([3, 3])",
+    "STDERR": ""
+}

@@ -1,0 +1,790 @@
+[
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "repeats": "1",
+            "dim": "None",
+            "output_size": "6"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeat_interleave: Invalid output_size, expected 12 but got 6', ('repeat_interleave: Invalid output_size, expected 12 but got 6', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method repeat_interleave of type object at 0x7fb5d4329b40>(*(FakeTensor(..., size=(s85, s71)), 1), **{\\'dim\\': None, \\'output_size\\': s35}): got RuntimeError(\\'repeat_interleave: Invalid output_size, expected 12 but got s35\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/torch_2_10_0_torch_repeat_interleave/generated_code.py\", line 11, in call_func\\n    return torch.repeat_interleave(inputs, repeats, dim=dim, output_size=output_size)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'repeat_interleave: Invalid output_size, expected 12 but got 6'))",
+        "error_message": "repeat_interleave: Invalid output_size, expected 12 but got 6",
+        "conflict_params": [
+            "repeats",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "1",
+            "dim": "0"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "1",
+            "dim": "1"
+        },
+        "segment": "(0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "1",
+            "dim": "-1"
+        },
+        "segment": "(0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "1",
+            "dim": "-2"
+        },
+        "segment": "(0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 4]))",
+            "repeats": "2",
+            "dim": "None",
+            "output_size": "6"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeat_interleave: Invalid output_size, expected 24 but got 6', ('repeat_interleave: Invalid output_size, expected 24 but got 6', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method repeat_interleave of type object at 0x7fb5d4329b40>(*(FakeTensor(..., size=(s85, s71)), s73), **{\\'dim\\': None, \\'output_size\\': s35}): got RuntimeError(\\'repeat_interleave: Invalid output_size, expected 24 but got s35\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_2.25/src/intermediate_data/torch_2_10_0_torch_repeat_interleave/generated_code.py\", line 11, in call_func\\n    return torch.repeat_interleave(inputs, repeats, dim=dim, output_size=output_size)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'repeat_interleave: Invalid output_size, expected 24 but got 6'))",
+        "error_message": "repeat_interleave: Invalid output_size, expected 24 but got 6",
+        "conflict_params": [
+            "inputs",
+            "repeats",
+            "dim",
+            "output_size"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "2",
+            "dim": "0"
+        },
+        "segment": "(1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6,), (6,), (6,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "2",
+            "dim": "1"
+        },
+        "segment": "(1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', ('Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 1)",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "2",
+            "dim": "-1"
+        },
+        "segment": "(1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6,), (6,), (6,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "2",
+            "dim": "-2"
+        },
+        "segment": "(1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', ('Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got -2)",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "None"
+        },
+        "segment": "(3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 3', ('repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 3', 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 3', 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 3'))",
+        "error_message": "repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 3",
+        "conflict_params": [
+            "inputs",
+            "repeats"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "0",
+            "output_size": "3"
+        },
+        "segment": "(3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 3]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "1"
+        },
+        "segment": "(3, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(1) = 3', ('repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(1) = 3', 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(1) = 3', 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(1) = 3'))",
+        "error_message": "repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(1) = 3",
+        "conflict_params": [
+            "inputs",
+            "repeats",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "-1",
+            "output_size": "3"
+        },
+        "segment": "(3, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3), (2, 3), (2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 3]))",
+            "repeats": "Tensor(shape=torch.Size([3]))",
+            "dim": "0",
+            "output_size": "3"
+        },
+        "segment": "(4, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(0) = 2', ('repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(0) = 2', 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(0) = 2', 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(0) = 2'))",
+        "error_message": "repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(0) = 2",
+        "conflict_params": [
+            "inputs",
+            "repeats",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 2]))",
+            "repeats": "Tensor(shape=torch.Size([3]))",
+            "dim": "-1",
+            "output_size": "3"
+        },
+        "segment": "(4, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(-1) = 2', ('repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(-1) = 2', 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(-1) = 2', 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(-1) = 2'))",
+        "error_message": "repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(-1) = 2",
+        "conflict_params": [
+            "inputs",
+            "repeats",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3, 2]))",
+            "repeats": "Tensor(shape=torch.Size([3]))",
+            "dim": "-2",
+            "output_size": "3"
+        },
+        "segment": "(4, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([1]))",
+            "dim": "0",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "2",
+            "dim": "-1",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeat_interleave: Invalid output_size, expected 6 but got 3', ('repeat_interleave: Invalid output_size, expected 6 but got 3', 'repeat_interleave: Invalid output_size, expected 6 but got 3', 'repeat_interleave: Invalid output_size, expected 6 but got 3'))",
+        "error_message": "repeat_interleave: Invalid output_size, expected 6 but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "2",
+            "dim": "0",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeat_interleave: Invalid output_size, expected 6 but got 3', ('repeat_interleave: Invalid output_size, expected 6 but got 3', 'repeat_interleave: Invalid output_size, expected 6 but got 3', 'repeat_interleave: Invalid output_size, expected 6 but got 3'))",
+        "error_message": "repeat_interleave: Invalid output_size, expected 6 but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([1]))",
+            "dim": "-1",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "2",
+            "dim": "-1",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6,), (6,), (6,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([1]))",
+            "dim": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', ('Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 1)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "0"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 3', ('repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 3', 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 3', 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 3'))",
+        "error_message": "repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 3"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "2",
+            "dim": "0",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6,), (6,), (6,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "2",
+            "dim": "None",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6,), (6,), (6,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "0",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 3', ('repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 3', 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 3', 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 3'))",
+        "error_message": "repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 3"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "1",
+            "dim": "0",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "-2",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 2), (3, 2), (3, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "1",
+            "dim": "0",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeat_interleave: Invalid output_size, expected 2 but got 3', ('repeat_interleave: Invalid output_size, expected 2 but got 3', 'repeat_interleave: Invalid output_size, expected 2 but got 3', 'repeat_interleave: Invalid output_size, expected 2 but got 3'))",
+        "error_message": "repeat_interleave: Invalid output_size, expected 2 but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([3]))",
+            "dim": "0",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(0) = 2', ('repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(0) = 2', 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(0) = 2', 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(0) = 2'))",
+        "error_message": "repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(0) = 2"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "2",
+            "dim": "-1",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeat_interleave: Invalid output_size, expected 4 but got 3', ('repeat_interleave: Invalid output_size, expected 4 but got 3', 'repeat_interleave: Invalid output_size, expected 4 but got 3', 'repeat_interleave: Invalid output_size, expected 4 but got 3'))",
+        "error_message": "repeat_interleave: Invalid output_size, expected 4 but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "1",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3), (2, 3), (2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "1",
+            "dim": "-1",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "1",
+            "dim": "0"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "1",
+            "dim": "1",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "None",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 4', ('repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 4', 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 4', 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 4'))",
+        "error_message": "repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 4"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "None",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 4', ('repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 4', 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 4', 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 4'))",
+        "error_message": "repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 4"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "1",
+            "dim": "-2",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeat_interleave: Invalid output_size, expected 2 but got 3', ('repeat_interleave: Invalid output_size, expected 2 but got 3', 'repeat_interleave: Invalid output_size, expected 2 but got 3', 'repeat_interleave: Invalid output_size, expected 2 but got 3'))",
+        "error_message": "repeat_interleave: Invalid output_size, expected 2 but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([3]))",
+            "dim": "-1",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(-1) = 2', ('repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(-1) = 2', 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(-1) = 2', 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(-1) = 2'))",
+        "error_message": "repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(-1) = 2"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "2",
+            "dim": "0",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeat_interleave: Invalid output_size, expected 4 but got 3', ('repeat_interleave: Invalid output_size, expected 4 but got 3', 'repeat_interleave: Invalid output_size, expected 4 but got 3', 'repeat_interleave: Invalid output_size, expected 4 but got 3'))",
+        "error_message": "repeat_interleave: Invalid output_size, expected 4 but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "2",
+            "dim": "-2",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 2), (4, 2), (4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "1",
+            "dim": "1",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeat_interleave: Invalid output_size, expected 2 but got 3', ('repeat_interleave: Invalid output_size, expected 2 but got 3', 'repeat_interleave: Invalid output_size, expected 2 but got 3', 'repeat_interleave: Invalid output_size, expected 2 but got 3'))",
+        "error_message": "repeat_interleave: Invalid output_size, expected 2 but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "2",
+            "dim": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6,), (6,), (6,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "1",
+            "dim": "-2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', ('Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got -2)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "2",
+            "dim": "-2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', ('Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got -2)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "2",
+            "dim": "0",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 2), (4, 2), (4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "2",
+            "dim": "-2",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', ('Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got -2)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([3]))",
+            "dim": "1",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', ('Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 1)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "-1",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(-1) = 3', ('repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(-1) = 3', 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(-1) = 3', 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(-1) = 3'))",
+        "error_message": "repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(-1) = 3"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "2",
+            "dim": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', ('Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 1)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "-2",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', ('Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got -2)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "-1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(-1) = 3', ('repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(-1) = 3', 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(-1) = 3', 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(-1) = 3'))",
+        "error_message": "repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(-1) = 3"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "2",
+            "dim": "-2",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', ('Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)', 'Dimension out of range (expected to be in range of [-1, 0], but got -2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got -2)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "1",
+            "dim": "-1",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "1",
+            "dim": "None",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeat_interleave: Invalid output_size, expected 4 but got 3', ('repeat_interleave: Invalid output_size, expected 4 but got 3', 'repeat_interleave: Invalid output_size, expected 4 but got 3', 'repeat_interleave: Invalid output_size, expected 4 but got 3'))",
+        "error_message": "repeat_interleave: Invalid output_size, expected 4 but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([3]))",
+            "dim": "1",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(1) = 2', ('repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(1) = 2', 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(1) = 2', 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(1) = 2'))",
+        "error_message": "repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(1) = 2"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "1",
+            "dim": "-1",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeat_interleave: Invalid output_size, expected 2 but got 3', ('repeat_interleave: Invalid output_size, expected 2 but got 3', 'repeat_interleave: Invalid output_size, expected 2 but got 3', 'repeat_interleave: Invalid output_size, expected 2 but got 3'))",
+        "error_message": "repeat_interleave: Invalid output_size, expected 2 but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "2",
+            "dim": "1",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeat_interleave: Invalid output_size, expected 4 but got 3', ('repeat_interleave: Invalid output_size, expected 4 but got 3', 'repeat_interleave: Invalid output_size, expected 4 but got 3', 'repeat_interleave: Invalid output_size, expected 4 but got 3'))",
+        "error_message": "repeat_interleave: Invalid output_size, expected 4 but got 3"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "2",
+            "dim": "1",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4), (2, 4), (2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "2",
+            "dim": "1",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', ('Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 1)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([3]))",
+            "dim": "0",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(0) = 2', ('repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(0) = 2', 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(0) = 2', 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(0) = 2'))",
+        "error_message": "repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(0) = 2"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "2",
+            "dim": "1",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', ('Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 1)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "2",
+            "dim": "None",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((8,), (8,), (8,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', ('Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)', 'Dimension out of range (expected to be in range of [-1, 0], but got 1)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-1, 0], but got 1)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "2",
+            "dim": "-1",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4), (2, 4), (2, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([3]))",
+            "dim": "1",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(1) = 2', ('repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(1) = 2', 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(1) = 2', 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(1) = 2'))",
+        "error_message": "repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(1) = 2"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "1",
+            "dim": "-1",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([2, 2]))",
+            "repeats": "Tensor(shape=torch.Size([3]))",
+            "dim": "-2",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(-2) = 2', ('repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(-2) = 2', 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(-2) = 2', 'repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(-2) = 2'))",
+        "error_message": "repeats must have the same size as input along dim, but got repeats.size(0) = 3 and input.size(-2) = 2"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "0",
+            "output_size": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 3', ('repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 3', 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 3', 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 3'))",
+        "error_message": "repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(0) = 3"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([3]))",
+            "repeats": "Tensor(shape=torch.Size([2]))",
+            "dim": "-1",
+            "output_size": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(-1) = 3', ('repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(-1) = 3', 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(-1) = 3', 'repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(-1) = 3'))",
+        "error_message": "repeats must have the same size as input along dim, but got repeats.size(0) = 2 and input.size(-1) = 3"
+    }
+]

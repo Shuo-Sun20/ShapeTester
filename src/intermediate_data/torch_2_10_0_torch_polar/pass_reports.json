@@ -1,0 +1,51 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "out": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "out": "Tensor(shape=torch.Size([3, 4]))"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "out": "Tensor(shape=torch.Size([3, 4]))"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"Expected object of scalar type ComplexFloat but got scalar type ComplexDouble for argument 'out'\", (\"Expected object of scalar type ComplexFloat but got scalar type ComplexDouble for argument 'out'\", 'Dynamo failed to run FX node with fake tensors: call_function <built-in method polar of type object at 0x7fb6edb29b40>(*(FakeTensor(..., size=(s21, s41)), FakeTensor(..., size=(s21, s41))), **{\\'out\\': FakeTensor(..., size=(s21, s41), dtype=torch.complex128)}): got RuntimeError(\\'Expected out tensor to have dtype torch.complex64 but got torch.complex128 instead\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_polar/generated_code.py\", line 5, in call_func\\n    return torch.polar(abs_tensor, angle_tensor, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected out tensor to have dtype torch.complex64 but got torch.complex128 instead'))",
+        "error_message": "Expected object of scalar type ComplexFloat but got scalar type ComplexDouble for argument 'out'",
+        "conflict_params": [
+            "out"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "out": "Tensor(shape=torch.Size([3, 4]))"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "out": "Tensor(shape=torch.Size([3, 4]))"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    }
+]

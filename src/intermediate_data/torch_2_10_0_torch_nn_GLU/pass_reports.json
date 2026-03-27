@@ -1,0 +1,129 @@
+[
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 2]))",
+            "dim": "-4"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -4)', ('Dimension out of range (expected to be in range of [-2, 1], but got -4)', 'Dynamo failed to run FX node with fake tensors: call_function <function glu at 0x7f2d380900e0>(*(FakeTensor(..., size=(s85, s71)), -4), **{}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got -4)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_GLU/generated_code.py\", line 5, in call_func\\n    return glu_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/activation.py\", line 767, in forward\\n    return F.glu(input, self.dim)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got -4)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -4)",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 2]))",
+            "dim": "-3"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -3)', ('Dimension out of range (expected to be in range of [-2, 1], but got -3)', 'Dynamo failed to run FX node with fake tensors: call_function <function glu at 0x7f2d380900e0>(*(FakeTensor(..., size=(s85, s71)), -3), **{}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got -3)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_GLU/generated_code.py\", line 5, in call_func\\n    return glu_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/activation.py\", line 767, in forward\\n    return F.glu(input, self.dim)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got -3)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -3)",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 2]))",
+            "dim": "-2"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 2]))",
+            "dim": "-1"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 1), (4, 1), (4, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 2]))",
+            "dim": "0"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2), (2, 2), (2, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 2]))",
+            "dim": "1"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 1), (4, 1), (4, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 2]))",
+            "dim": "2"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 2)', ('Dimension out of range (expected to be in range of [-2, 1], but got 2)', 'Dynamo failed to run FX node with fake tensors: call_function <function glu at 0x7f2d380900e0>(*(FakeTensor(..., size=(s85, s71)), 2), **{}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 2)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_GLU/generated_code.py\", line 5, in call_func\\n    return glu_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/activation.py\", line 767, in forward\\n    return F.glu(input, self.dim)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 2)",
+        "conflict_params": [
+            "inputs",
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 2]))",
+            "dim": "3"
+        },
+        "segment": "(7,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 3)', ('Dimension out of range (expected to be in range of [-2, 1], but got 3)', 'Dynamo failed to run FX node with fake tensors: call_function <function glu at 0x7f2d380900e0>(*(FakeTensor(..., size=(s85, s71)), 3), **{}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 3)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_GLU/generated_code.py\", line 5, in call_func\\n    return glu_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/activation.py\", line 767, in forward\\n    return F.glu(input, self.dim)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 3)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 3)",
+        "conflict_params": [
+            "dim"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 2]))",
+            "dim": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 2)', ('Dimension out of range (expected to be in range of [-2, 1], but got 2)', 'Dynamo failed to run FX node with fake tensors: call_function <function glu at 0x7f2d380900e0>(*(FakeTensor(..., size=(s85, s71)), 2), **{}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 2)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_GLU/generated_code.py\", line 5, in call_func\\n    return glu_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/activation.py\", line 767, in forward\\n    return F.glu(input, self.dim)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 2)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 2)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 2]))",
+            "dim": "-4"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -4)', ('Dimension out of range (expected to be in range of [-2, 1], but got -4)', 'Dynamo failed to run FX node with fake tensors: call_function <function glu at 0x7f2d380900e0>(*(FakeTensor(..., size=(s85, s71)), -4), **{}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got -4)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_GLU/generated_code.py\", line 5, in call_func\\n    return glu_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/activation.py\", line 767, in forward\\n    return F.glu(input, self.dim)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got -4)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -4)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 2]))",
+            "dim": "-3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got -3)', ('Dimension out of range (expected to be in range of [-2, 1], but got -3)', 'Dynamo failed to run FX node with fake tensors: call_function <function glu at 0x7f2d380900e0>(*(FakeTensor(..., size=(s85, s71)), -3), **{}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got -3)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_GLU/generated_code.py\", line 5, in call_func\\n    return glu_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/activation.py\", line 767, in forward\\n    return F.glu(input, self.dim)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got -3)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got -3)"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([4, 2]))",
+            "dim": "3"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Dimension out of range (expected to be in range of [-2, 1], but got 3)', ('Dimension out of range (expected to be in range of [-2, 1], but got 3)', 'Dynamo failed to run FX node with fake tensors: call_function <function glu at 0x7f2d380900e0>(*(FakeTensor(..., size=(s85, s71)), 3), **{}): got IndexError(\\'Dimension out of range (expected to be in range of [-2, 1], but got 3)\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_nn_GLU/generated_code.py\", line 5, in call_func\\n    return glu_layer(inputs)\\n  File \"/mnt/data2/Users/sunshuo/anaconda3/envs/dltest/lib/python3.12/site-packages/torch/nn/modules/activation.py\", line 767, in forward\\n    return F.glu(input, self.dim)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Dimension out of range (expected to be in range of [-2, 1], but got 3)'))",
+        "error_message": "Dimension out of range (expected to be in range of [-2, 1], but got 3)"
+    }
+]

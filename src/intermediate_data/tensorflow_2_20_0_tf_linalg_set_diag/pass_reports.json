@@ -1,0 +1,270 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "-2",
+            "align": "RIGHT_LEFT"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,1] [Op:MatrixSetDiagV3] name: \", (\"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,1] [Op:MatrixSetDiagV3] name: \", 'Graph execution error:\\n\\nDetected at node MatrixSetDiagV3 defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_set_diag/generated_code.py\", line 6, in call_func\\n\\nEither first dimensions of diagonal don\\'t match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,1]\\n\\t [[{{node MatrixSetDiagV3}}]] [Op:__inference_call_func_243607]'))",
+        "error_message": "{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\nInput shape: [2,3,4]\nDiagonal shape: [2,3]\nExpected diagonal shape: [2,1] [Op:MatrixSetDiagV3] name: ",
+        "conflict_params": [
+            "inputs",
+            "k"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "-1",
+            "align": "RIGHT_LEFT"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: \", (\"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: \", 'Graph execution error:\\n\\nDetected at node MatrixSetDiagV3 defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_set_diag/generated_code.py\", line 6, in call_func\\n\\nEither first dimensions of diagonal don\\'t match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2]\\n\\t [[{{node MatrixSetDiagV3}}]] [Op:__inference_call_func_243615]'))",
+        "error_message": "{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\nInput shape: [2,3,4]\nDiagonal shape: [2,3]\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: ",
+        "conflict_params": [
+            "inputs",
+            "k"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "0",
+            "align": "RIGHT_LEFT"
+        },
+        "segment": "(2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "0",
+            "align": "LEFT_RIGHT"
+        },
+        "segment": "(2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "0",
+            "align": "LEFT_LEFT"
+        },
+        "segment": "(2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "0",
+            "align": "RIGHT_RIGHT"
+        },
+        "segment": "(2, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "1",
+            "align": "RIGHT_LEFT"
+        },
+        "segment": "(3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "1",
+            "align": "LEFT_RIGHT"
+        },
+        "segment": "(3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "1",
+            "align": "LEFT_LEFT"
+        },
+        "segment": "(3, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "1",
+            "align": "RIGHT_RIGHT"
+        },
+        "segment": "(3, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 4), (2, 3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "2",
+            "align": "RIGHT_LEFT"
+        },
+        "segment": "(4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: \", (\"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: \", 'Graph execution error:\\n\\nDetected at node MatrixSetDiagV3 defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_set_diag/generated_code.py\", line 6, in call_func\\n\\nEither first dimensions of diagonal don\\'t match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2]\\n\\t [[{{node MatrixSetDiagV3}}]] [Op:__inference_call_func_243703]'))",
+        "error_message": "{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\nInput shape: [2,3,4]\nDiagonal shape: [2,3]\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: ",
+        "conflict_params": [
+            "inputs",
+            "k"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "-2",
+            "align": "RIGHT_LEFT"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,1] [Op:MatrixSetDiagV3] name: \", (\"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,1] [Op:MatrixSetDiagV3] name: \", 'Graph execution error:\\n\\nDetected at node MatrixSetDiagV3 defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_set_diag/generated_code.py\", line 6, in call_func\\n\\nEither first dimensions of diagonal don\\'t match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,1]\\n\\t [[{{node MatrixSetDiagV3}}]] [Op:__inference_call_func_243773]'))",
+        "error_message": "{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\nInput shape: [2,3,4]\nDiagonal shape: [2,3]\nExpected diagonal shape: [2,1] [Op:MatrixSetDiagV3] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "-1",
+            "align": "LEFT_LEFT"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: \", (\"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: \", 'Graph execution error:\\n\\nDetected at node MatrixSetDiagV3 defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_set_diag/generated_code.py\", line 6, in call_func\\n\\nEither first dimensions of diagonal don\\'t match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2]\\n\\t [[{{node MatrixSetDiagV3}}]] [Op:__inference_call_func_243833]'))",
+        "error_message": "{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\nInput shape: [2,3,4]\nDiagonal shape: [2,3]\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "2",
+            "align": "LEFT_RIGHT"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: \", (\"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: \", 'Graph execution error:\\n\\nDetected at node MatrixSetDiagV3 defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_set_diag/generated_code.py\", line 6, in call_func\\n\\nEither first dimensions of diagonal don\\'t match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2]\\n\\t [[{{node MatrixSetDiagV3}}]] [Op:__inference_call_func_243893]'))",
+        "error_message": "{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\nInput shape: [2,3,4]\nDiagonal shape: [2,3]\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "2",
+            "align": "RIGHT_LEFT"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: \", (\"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: \", 'Graph execution error:\\n\\nDetected at node MatrixSetDiagV3 defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_set_diag/generated_code.py\", line 6, in call_func\\n\\nEither first dimensions of diagonal don\\'t match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2]\\n\\t [[{{node MatrixSetDiagV3}}]] [Op:__inference_call_func_243953]'))",
+        "error_message": "{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\nInput shape: [2,3,4]\nDiagonal shape: [2,3]\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "-2",
+            "align": "LEFT_RIGHT"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,1] [Op:MatrixSetDiagV3] name: \", (\"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,1] [Op:MatrixSetDiagV3] name: \", 'Graph execution error:\\n\\nDetected at node MatrixSetDiagV3 defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_set_diag/generated_code.py\", line 6, in call_func\\n\\nEither first dimensions of diagonal don\\'t match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,1]\\n\\t [[{{node MatrixSetDiagV3}}]] [Op:__inference_call_func_243961]'))",
+        "error_message": "{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\nInput shape: [2,3,4]\nDiagonal shape: [2,3]\nExpected diagonal shape: [2,1] [Op:MatrixSetDiagV3] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "-1",
+            "align": "RIGHT_LEFT"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: \", (\"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: \", 'Graph execution error:\\n\\nDetected at node MatrixSetDiagV3 defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_set_diag/generated_code.py\", line 6, in call_func\\n\\nEither first dimensions of diagonal don\\'t match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2]\\n\\t [[{{node MatrixSetDiagV3}}]] [Op:__inference_call_func_243969]'))",
+        "error_message": "{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\nInput shape: [2,3,4]\nDiagonal shape: [2,3]\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "2",
+            "align": "LEFT_LEFT"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: \", (\"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: \", 'Graph execution error:\\n\\nDetected at node MatrixSetDiagV3 defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_set_diag/generated_code.py\", line 6, in call_func\\n\\nEither first dimensions of diagonal don\\'t match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2]\\n\\t [[{{node MatrixSetDiagV3}}]] [Op:__inference_call_func_244029]'))",
+        "error_message": "{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\nInput shape: [2,3,4]\nDiagonal shape: [2,3]\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "-1",
+            "align": "LEFT_RIGHT"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: \", (\"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: \", 'Graph execution error:\\n\\nDetected at node MatrixSetDiagV3 defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_set_diag/generated_code.py\", line 6, in call_func\\n\\nEither first dimensions of diagonal don\\'t match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2]\\n\\t [[{{node MatrixSetDiagV3}}]] [Op:__inference_call_func_244505]'))",
+        "error_message": "{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\nInput shape: [2,3,4]\nDiagonal shape: [2,3]\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "-1",
+            "align": "RIGHT_RIGHT"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: \", (\"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: \", 'Graph execution error:\\n\\nDetected at node MatrixSetDiagV3 defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_set_diag/generated_code.py\", line 6, in call_func\\n\\nEither first dimensions of diagonal don\\'t match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2]\\n\\t [[{{node MatrixSetDiagV3}}]] [Op:__inference_call_func_244565]'))",
+        "error_message": "{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\nInput shape: [2,3,4]\nDiagonal shape: [2,3]\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "-2",
+            "align": "RIGHT_RIGHT"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,1] [Op:MatrixSetDiagV3] name: \", (\"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,1] [Op:MatrixSetDiagV3] name: \", 'Graph execution error:\\n\\nDetected at node MatrixSetDiagV3 defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_set_diag/generated_code.py\", line 6, in call_func\\n\\nEither first dimensions of diagonal don\\'t match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,1]\\n\\t [[{{node MatrixSetDiagV3}}]] [Op:__inference_call_func_244989]'))",
+        "error_message": "{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\nInput shape: [2,3,4]\nDiagonal shape: [2,3]\nExpected diagonal shape: [2,1] [Op:MatrixSetDiagV3] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "2",
+            "align": "RIGHT_RIGHT"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: \", (\"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: \", 'Graph execution error:\\n\\nDetected at node MatrixSetDiagV3 defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_set_diag/generated_code.py\", line 6, in call_func\\n\\nEither first dimensions of diagonal don\\'t match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,2]\\n\\t [[{{node MatrixSetDiagV3}}]] [Op:__inference_call_func_245361]'))",
+        "error_message": "{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\nInput shape: [2,3,4]\nDiagonal shape: [2,3]\nExpected diagonal shape: [2,2] [Op:MatrixSetDiagV3] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 4)), EagerTensor(shape=(2, 3))]",
+            "name": "None",
+            "k": "-2",
+            "align": "LEFT_LEFT"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,1] [Op:MatrixSetDiagV3] name: \", (\"{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,1] [Op:MatrixSetDiagV3] name: \", 'Graph execution error:\\n\\nDetected at node MatrixSetDiagV3 defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_set_diag/generated_code.py\", line 6, in call_func\\n\\nEither first dimensions of diagonal don\\'t match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\\nInput shape: [2,3,4]\\nDiagonal shape: [2,3]\\nExpected diagonal shape: [2,1]\\n\\t [[{{node MatrixSetDiagV3}}]] [Op:__inference_call_func_245733]'))",
+        "error_message": "{{function_node __wrapped__MatrixSetDiagV3_device_/job:localhost/replica:0/task:0/device:CPU:0}} Either first dimensions of diagonal don't match input.shape[:-2], or diagonal.shape[:-1] is not equal to the longests diagonal in range [lower_diag_index:upper_diag_index].\nInput shape: [2,3,4]\nDiagonal shape: [2,3]\nExpected diagonal shape: [2,1] [Op:MatrixSetDiagV3] name: "
+    }
+]

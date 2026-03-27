@@ -1,0 +1,42 @@
+[
+    {
+        "test_case": {
+            "data_format": "channels_last",
+            "keepdims": "True",
+            "inputs": "ndarray(shape=(2, 4, 5, 4, 3))"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 1, 1, 3), (None, 1, 1, 1, 3)))"
+    },
+    {
+        "test_case": {
+            "data_format": "channels_last",
+            "keepdims": "False",
+            "inputs": "ndarray(shape=(2, 4, 5, 4, 3))"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3), (None, 3)))"
+    },
+    {
+        "test_case": {
+            "data_format": "channels_first",
+            "keepdims": "True",
+            "inputs": "ndarray(shape=(2, 4, 5, 4, 3))"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4, 1, 1, 1), (None, 4, 1, 1, 1)))"
+    },
+    {
+        "test_case": {
+            "data_format": "channels_first",
+            "keepdims": "False",
+            "inputs": "ndarray(shape=(2, 4, 5, 4, 3))"
+        },
+        "segment": "(1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 4), (None, 4)))"
+    }
+]

@@ -1,0 +1,71 @@
+[
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(3, 4)), ndarray(shape=(4,))]",
+            "axis": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`weights` must have the same shape as `x` when `axis=None`, but received `weights.shape=(None,)` and `x.shape=(None, 4)`.', ((None,), '`weights` must have the same shape as `x` when `axis=None`, but received `weights.shape=(None,)` and `x.shape=(None, 4)`.'))",
+        "error_message": "`weights` must have the same shape as `x` when `axis=None`, but received `weights.shape=(None,)` and `x.shape=(None, 4)`.",
+        "conflict_params": [
+            "inputs",
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(3, 4)), ndarray(shape=(4,))]",
+            "axis": "0"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [4,3], In[1]: [4,1] [Op:MatMul] name: ', ('{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [4,3], In[1]: [4,1] [Op:MatMul] name: ', (None,)))",
+        "error_message": "{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [4,3], In[1]: [4,1] [Op:MatMul] name: ",
+        "conflict_params": [
+            "inputs",
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(3, 4)), ndarray(shape=(4,))]",
+            "axis": "-2"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [4,3], In[1]: [4,1] [Op:MatMul] name: ', ('{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [4,3], In[1]: [4,1] [Op:MatMul] name: ', (None,)))",
+        "error_message": "{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [4,3], In[1]: [4,1] [Op:MatMul] name: ",
+        "conflict_params": [
+            "inputs",
+            "axis"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(3, 4)), ndarray(shape=(4,))]",
+            "axis": "0"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [4,3], In[1]: [4,1] [Op:MatMul] name: ', ('{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [4,3], In[1]: [4,1] [Op:MatMul] name: ', (None,)))",
+        "error_message": "{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [4,3], In[1]: [4,1] [Op:MatMul] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(3, 4)), ndarray(shape=(4,))]",
+            "axis": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '`weights` must have the same shape as `x` when `axis=None`, but received `weights.shape=(None,)` and `x.shape=(None, 4)`.', ((None,), '`weights` must have the same shape as `x` when `axis=None`, but received `weights.shape=(None,)` and `x.shape=(None, 4)`.'))",
+        "error_message": "`weights` must have the same shape as `x` when `axis=None`, but received `weights.shape=(None,)` and `x.shape=(None, 4)`."
+    },
+    {
+        "test_case": {
+            "inputs": "[ndarray(shape=(3, 4)), ndarray(shape=(4,))]",
+            "axis": "-2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [4,3], In[1]: [4,1] [Op:MatMul] name: ', ('{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [4,3], In[1]: [4,1] [Op:MatMul] name: ', (None,)))",
+        "error_message": "{{function_node __wrapped____MklMatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Matrix size-incompatible: In[0]: [4,3], In[1]: [4,1] [Op:MatMul] name: "
+    }
+]

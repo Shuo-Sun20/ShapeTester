@@ -1,0 +1,82 @@
+[
+    {
+        "test_case": {
+            "op": "<CustomOpDef(test_lib::custom_div)>",
+            "vmap_func": "<function custom_mul_vmap at 0x7f3ebf4a9da0>",
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]"
+        },
+        "segment": "(4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '', ('', (3, 4), 'There was no fake impl registered for <CustomOpDef(test_lib::custom_div)>. This is necessary for torch.compile/export/fx tracing to work. Please use `custom_div.register_fake` to add an fake impl.'))",
+        "error_message": "",
+        "conflict_params": [
+            "op",
+            "vmap_func",
+            "inputs"
+        ]
+    },
+    {
+        "test_case": {
+            "op": "<CustomOpDef(test_lib::custom_div)>",
+            "vmap_func": "<function custom_add_vmap at 0x7f3ebfc7d620>",
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]"
+        },
+        "segment": "(4, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'There was no fake impl registered for <CustomOpDef(test_lib::custom_div)>. This is necessary for torch.compile/export/fx tracing to work. Please use `custom_div.register_fake` to add an fake impl.', ((3, 4), (3, 4), 'There was no fake impl registered for <CustomOpDef(test_lib::custom_div)>. This is necessary for torch.compile/export/fx tracing to work. Please use `custom_div.register_fake` to add an fake impl.'))",
+        "error_message": "There was no fake impl registered for <CustomOpDef(test_lib::custom_div)>. This is necessary for torch.compile/export/fx tracing to work. Please use `custom_div.register_fake` to add an fake impl.",
+        "conflict_params": [
+            "op"
+        ]
+    },
+    {
+        "test_case": {
+            "op": "<CustomOpDef(test_lib::custom_div)>",
+            "vmap_func": "<function custom_div_vmap at 0x7f3ebfa52d40>",
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'There was no fake impl registered for <CustomOpDef(test_lib::custom_div)>. This is necessary for torch.compile/export/fx tracing to work. Please use `custom_div.register_fake` to add an fake impl.', ((3, 4), (3, 4), 'There was no fake impl registered for <CustomOpDef(test_lib::custom_div)>. This is necessary for torch.compile/export/fx tracing to work. Please use `custom_div.register_fake` to add an fake impl.'))",
+        "error_message": "There was no fake impl registered for <CustomOpDef(test_lib::custom_div)>. This is necessary for torch.compile/export/fx tracing to work. Please use `custom_div.register_fake` to add an fake impl."
+    },
+    {
+        "test_case": {
+            "op": "<CustomOpDef(test_lib::custom_div)>",
+            "vmap_func": "<function custom_add_vmap at 0x7f3ebfc7d620>",
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'There was no fake impl registered for <CustomOpDef(test_lib::custom_div)>. This is necessary for torch.compile/export/fx tracing to work. Please use `custom_div.register_fake` to add an fake impl.', ((3, 4), (3, 4), 'There was no fake impl registered for <CustomOpDef(test_lib::custom_div)>. This is necessary for torch.compile/export/fx tracing to work. Please use `custom_div.register_fake` to add an fake impl.'))",
+        "error_message": "There was no fake impl registered for <CustomOpDef(test_lib::custom_div)>. This is necessary for torch.compile/export/fx tracing to work. Please use `custom_div.register_fake` to add an fake impl."
+    },
+    {
+        "test_case": {
+            "op": "<CustomOpDef(test_lib::custom_div)>",
+            "vmap_func": "<function custom_mul_vmap at 0x7f3ebf4a9da0>",
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'There was no fake impl registered for <CustomOpDef(test_lib::custom_div)>. This is necessary for torch.compile/export/fx tracing to work. Please use `custom_div.register_fake` to add an fake impl.', ((3, 4), (3, 4), 'There was no fake impl registered for <CustomOpDef(test_lib::custom_div)>. This is necessary for torch.compile/export/fx tracing to work. Please use `custom_div.register_fake` to add an fake impl.'))",
+        "error_message": "There was no fake impl registered for <CustomOpDef(test_lib::custom_div)>. This is necessary for torch.compile/export/fx tracing to work. Please use `custom_div.register_fake` to add an fake impl."
+    },
+    {
+        "test_case": {
+            "op": "<CustomOpDef(test_lib::custom_div)>",
+            "vmap_func": "<function custom_sub_vmap at 0x7f3ebfa53060>",
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'There was no fake impl registered for <CustomOpDef(test_lib::custom_div)>. This is necessary for torch.compile/export/fx tracing to work. Please use `custom_div.register_fake` to add an fake impl.', ((3, 4), (3, 4), 'There was no fake impl registered for <CustomOpDef(test_lib::custom_div)>. This is necessary for torch.compile/export/fx tracing to work. Please use `custom_div.register_fake` to add an fake impl.'))",
+        "error_message": "There was no fake impl registered for <CustomOpDef(test_lib::custom_div)>. This is necessary for torch.compile/export/fx tracing to work. Please use `custom_div.register_fake` to add an fake impl."
+    },
+    {
+        "test_case": {
+            "op": "<CustomOpDef(test_lib::custom_div)>",
+            "vmap_func": "<function custom_matmul_vmap at 0x7f3ebfa52fc0>",
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, 'There was no fake impl registered for <CustomOpDef(test_lib::custom_div)>. This is necessary for torch.compile/export/fx tracing to work. Please use `custom_div.register_fake` to add an fake impl.', ((3, 4), (3, 4), 'There was no fake impl registered for <CustomOpDef(test_lib::custom_div)>. This is necessary for torch.compile/export/fx tracing to work. Please use `custom_div.register_fake` to add an fake impl.'))",
+        "error_message": "There was no fake impl registered for <CustomOpDef(test_lib::custom_div)>. This is necessary for torch.compile/export/fx tracing to work. Please use `custom_div.register_fake` to add an fake impl."
+    }
+]

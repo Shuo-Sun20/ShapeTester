@@ -1,0 +1,166 @@
+[
+    {
+        "test_case": {
+            "inputs": "[[EagerTensor(shape=(5,)), EagerTensor(shape=(5,)), EagerTensor(shape=(5,))], EagerTensor(shape=(5, 3))]",
+            "diagonals_format": "sequence",
+            "name": "None"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[[EagerTensor(shape=(5,)), EagerTensor(shape=(5,)), EagerTensor(shape=(5,))], EagerTensor(shape=(5, 3))]",
+            "diagonals_format": "sequence",
+            "name": "test_op"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[[EagerTensor(shape=(5,)), EagerTensor(shape=(5,)), EagerTensor(shape=(5,))], EagerTensor(shape=(5, 3))]",
+            "diagonals_format": "sequence",
+            "name": "matmul_op"
+        },
+        "segment": "(0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[[EagerTensor(shape=(5,)), EagerTensor(shape=(5,)), EagerTensor(shape=(5,))], EagerTensor(shape=(5, 3))]",
+            "diagonals_format": "sequence",
+            "name": "tridiag_mul"
+        },
+        "segment": "(0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[[EagerTensor(shape=(5,)), EagerTensor(shape=(5,)), EagerTensor(shape=(5,))], EagerTensor(shape=(5, 3))]",
+            "diagonals_format": "sequence",
+            "name": ""
+        },
+        "segment": "(0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5, 3), (5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[[EagerTensor(shape=(5,)), EagerTensor(shape=(5,)), EagerTensor(shape=(5,))], EagerTensor(shape=(5, 3))]",
+            "diagonals_format": "compact",
+            "name": "None"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'list indices must be integers or slices, not tuple', ('list indices must be integers or slices, not tuple', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_matmul/generated_code.py\", line 6, in call_func  *\\n        return tf.linalg.tridiagonal_matmul(diagonals, rhs, diagonals_format=diagonals_format, name=name)\\n\\n    TypeError: list indices must be integers or slices, not tuple\\n'))",
+        "error_message": "list indices must be integers or slices, not tuple",
+        "conflict_params": [
+            "inputs",
+            "diagonals_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 3))]",
+            "diagonals_format": "compact",
+            "name": "test_op"
+        },
+        "segment": "(1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3), (4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 3))]",
+            "diagonals_format": "compact",
+            "name": "matmul_op"
+        },
+        "segment": "(1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3), (4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 3))]",
+            "diagonals_format": "compact",
+            "name": "tridiag_mul"
+        },
+        "segment": "(1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3), (4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 3))]",
+            "diagonals_format": "compact",
+            "name": ""
+        },
+        "segment": "(1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3), (4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(3, 4)), EagerTensor(shape=(4, 3))]",
+            "diagonals_format": "compact",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4, 3), (4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[[EagerTensor(shape=(5,)), EagerTensor(shape=(5,)), EagerTensor(shape=(5,))], EagerTensor(shape=(5, 3))]",
+            "diagonals_format": "compact",
+            "name": "test_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'list indices must be integers or slices, not tuple', ('list indices must be integers or slices, not tuple', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_matmul/generated_code.py\", line 6, in call_func  *\\n        return tf.linalg.tridiagonal_matmul(diagonals, rhs, diagonals_format=diagonals_format, name=name)\\n\\n    TypeError: list indices must be integers or slices, not tuple\\n'))",
+        "error_message": "list indices must be integers or slices, not tuple"
+    },
+    {
+        "test_case": {
+            "inputs": "[[EagerTensor(shape=(5,)), EagerTensor(shape=(5,)), EagerTensor(shape=(5,))], EagerTensor(shape=(5, 3))]",
+            "diagonals_format": "compact",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'list indices must be integers or slices, not tuple', ('list indices must be integers or slices, not tuple', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_matmul/generated_code.py\", line 6, in call_func  *\\n        return tf.linalg.tridiagonal_matmul(diagonals, rhs, diagonals_format=diagonals_format, name=name)\\n\\n    TypeError: list indices must be integers or slices, not tuple\\n'))",
+        "error_message": "list indices must be integers or slices, not tuple"
+    },
+    {
+        "test_case": {
+            "inputs": "[[EagerTensor(shape=(5,)), EagerTensor(shape=(5,)), EagerTensor(shape=(5,))], EagerTensor(shape=(5, 3))]",
+            "diagonals_format": "compact",
+            "name": "tridiag_mul"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'list indices must be integers or slices, not tuple', ('list indices must be integers or slices, not tuple', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_matmul/generated_code.py\", line 6, in call_func  *\\n        return tf.linalg.tridiagonal_matmul(diagonals, rhs, diagonals_format=diagonals_format, name=name)\\n\\n    TypeError: list indices must be integers or slices, not tuple\\n'))",
+        "error_message": "list indices must be integers or slices, not tuple"
+    },
+    {
+        "test_case": {
+            "inputs": "[[EagerTensor(shape=(5,)), EagerTensor(shape=(5,)), EagerTensor(shape=(5,))], EagerTensor(shape=(5, 3))]",
+            "diagonals_format": "compact",
+            "name": "matmul_op"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'list indices must be integers or slices, not tuple', ('list indices must be integers or slices, not tuple', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_matmul/generated_code.py\", line 6, in call_func  *\\n        return tf.linalg.tridiagonal_matmul(diagonals, rhs, diagonals_format=diagonals_format, name=name)\\n\\n    TypeError: list indices must be integers or slices, not tuple\\n'))",
+        "error_message": "list indices must be integers or slices, not tuple"
+    },
+    {
+        "test_case": {
+            "inputs": "[[EagerTensor(shape=(5,)), EagerTensor(shape=(5,)), EagerTensor(shape=(5,))], EagerTensor(shape=(5, 3))]",
+            "diagonals_format": "compact",
+            "name": ""
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'list indices must be integers or slices, not tuple', ('list indices must be integers or slices, not tuple', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_linalg_tridiagonal_matmul/generated_code.py\", line 6, in call_func  *\\n        return tf.linalg.tridiagonal_matmul(diagonals, rhs, diagonals_format=diagonals_format, name=name)\\n\\n    TypeError: list indices must be integers or slices, not tuple\\n'))",
+        "error_message": "list indices must be integers or slices, not tuple"
+    }
+]

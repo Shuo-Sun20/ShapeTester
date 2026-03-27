@@ -1,0 +1,1029 @@
+[
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "1",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "1",
+            "name": "None"
+        },
+        "segment": "(0, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 7, 5), (2, 7, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "1",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "dilations": "2",
+            "name": "None"
+        },
+        "segment": "(0, 1, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 2], explicit_paddings=[], padding=\"SAME\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ",
+        "conflict_params": [
+            "inputs",
+            "data_format",
+            "dilations"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "2",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "dilations": "[2]",
+            "name": "None"
+        },
+        "segment": "(1, 1, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 5), (2, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "3",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "2"
+        },
+        "segment": "(2, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 2, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 3, 1], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,1,3,5], [1,3,3,4].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:Conv2D] name: ",
+        "conflict_params": [
+            "inputs",
+            "dilations",
+            "data_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "3",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "dilations": "1"
+        },
+        "segment": "(2, 1, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 2), (2, 4, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "[2]",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "[1, 1, 1]",
+            "name": "None"
+        },
+        "segment": "(3, 0, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 5), (2, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "[1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "[2]"
+        },
+        "segment": "(4, 0, 1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 1), (2, 4, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "[1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "dilations": "3",
+            "name": "None"
+        },
+        "segment": "(4, 1, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 5), (2, 10, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "[2]",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "dilations": "[1, 1, 1]"
+        },
+        "segment": "(3, 1, 1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 3), (2, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "1",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "3",
+            "name": "None"
+        },
+        "segment": "(0, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 5), (2, 1, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "1",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "[2]",
+            "name": "None"
+        },
+        "segment": "(0, 0, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 5), (2, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "1",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "[1, 1, 1]",
+            "name": "None"
+        },
+        "segment": "(0, 0, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 7, 5), (2, 7, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "2",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "1",
+            "name": "None"
+        },
+        "segment": "(1, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 5), (2, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "2",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "2",
+            "name": "None"
+        },
+        "segment": "(1, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 5), (2, 2, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "2",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "[1, 1, 1]",
+            "name": "None"
+        },
+        "segment": "(1, 0, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 5), (2, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "3",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "3",
+            "name": "None"
+        },
+        "segment": "(2, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 5), (2, 1, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "3",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "[2]",
+            "name": "None"
+        },
+        "segment": "(2, 0, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 5), (2, 2, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "3",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "[1, 1, 1]",
+            "name": "None"
+        },
+        "segment": "(2, 0, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 5), (2, 3, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "[2]",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "1",
+            "name": "None"
+        },
+        "segment": "(3, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 5), (2, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "[2]",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "2",
+            "name": "None"
+        },
+        "segment": "(3, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 5), (2, 2, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "[2]",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "3",
+            "name": "None"
+        },
+        "segment": "(3, 0, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 5), (2, 1, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "[2]",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "[2]",
+            "name": "None"
+        },
+        "segment": "(3, 0, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 5), (2, 2, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "[1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "1",
+            "name": "None"
+        },
+        "segment": "(4, 0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 7, 5), (2, 7, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "[1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "2",
+            "name": "None"
+        },
+        "segment": "(4, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 5), (2, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "[1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "[1, 1, 1]",
+            "name": "None"
+        },
+        "segment": "(4, 0, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 7, 5), (2, 7, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "3",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "[2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 2, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 3, 1], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,1,3,5], [1,3,3,4].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "[1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "3",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 5), (2, 1, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "[1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "[2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 1), (2, 4, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "3",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "2"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 1), (2, 4, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "3",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "1",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 1), (2, 4, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "[1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "1",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 3), (2, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "[1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "[1, 1, 1]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 3), (2, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "[1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "3",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -1 [input_size: 5, effective_filter_size: 7, stride: 1] [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -1 [input_size: 5, effective_filter_size: 7, stride: 1] [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Negative dimension size caused by subtracting 7 from 5 for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 3], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,3,1,5], [1,3,3,4].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} Computed output size would be negative: -1 [input_size: 5, effective_filter_size: 7, stride: 1] [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "3",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "[2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 1), (2, 4, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "[1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "dilations": "[1, 1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 5), (2, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "1",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "3",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 3], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "1",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "1",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "3",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "dilations": "3",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 5), (2, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "3",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "dilations": "3",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 3], explicit_paddings=[], padding=\"SAME\", strides=[1, 1, 1, 3], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "[2]",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "3",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 3], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 2], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "3",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "3",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 3], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 3], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "1",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "dilations": "3",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 5), (2, 10, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "3",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "[1, 1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 3], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "1",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "2",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 2], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "2",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "3",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 1, 5), (2, 1, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "[1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "[2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 2, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,1,3,5], [1,3,3,4].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "[1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "[2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 2, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,1,3,5], [1,3,3,4].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "[1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "dilations": "[2]"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 5), (2, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "2",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "[2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 1), (2, 4, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "1",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "dilations": "3",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 3], explicit_paddings=[], padding=\"SAME\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "2",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "dilations": "3",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 5), (2, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "1",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "[2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 2], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "3",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "1",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 5), (2, 3, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "3",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "2",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 5), (2, 2, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "[1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "[2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 5), (2, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "[1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "1"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 3), (2, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "1",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "dilations": "[2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 2, 1], explicit_paddings=[], padding=\"SAME\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,1,3,5], [1,3,3,4].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "[1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "2",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (5) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NHWC\", dilations=[1, 1, 2, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,1,3,5], [1,3,3,4].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 5 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 3, 5)), EagerTensor(shape=(3, 3, 4))]",
+            "stride": "[2]",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "[2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 1), (2, 4, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "1",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "2",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 5), (2, 4, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "1",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "dilations": "[2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 2], explicit_paddings=[], padding=\"SAME\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "1",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "dilations": "2",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 2], explicit_paddings=[], padding=\"SAME\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "3",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "1",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 3], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "[1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "3",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 3], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "2",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "dilations": "2",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 5), (2, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "[1, 1, 1]",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "1",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "1",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "dilations": "2",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 5), (2, 10, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "3",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "2",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 2], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 3], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "[1, 1, 1]",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "dilations": "1",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 5), (2, 10, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "[2]",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "dilations": "[2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 5), (2, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "1",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "[1, 1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 1], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "2",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "dilations": "3",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 3], explicit_paddings=[], padding=\"SAME\", strides=[1, 1, 1, 2], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "2",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "dilations": "[2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 5), (2, 2, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "2",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "2",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 2], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 2], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "3",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "[2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 2], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 3], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "[2]",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "[2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 2], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 2], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "2",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "dilations": "[2]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 2], explicit_paddings=[], padding=\"VALID\", strides=[1, 1, 1, 2], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "[2]",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "dilations": "1",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 5), (2, 5, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "3",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "dilations": "2",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', ('{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_conv1d/generated_code.py\", line 6, in call_func  *\\n        return tf.nn.conv1d(input=input_tensor, filters=filters_tensor, stride=stride, padding=padding, data_format=data_format, dilations=dilations, name=name)\\n\\n    ValueError: Depth of input (10) is not a multiple of input depth of filter (3) for \\'{{node conv1d}} = Conv2D[T=DT_FLOAT, data_format=\"NCHW\", dilations=[1, 1, 1, 2], explicit_paddings=[], padding=\"SAME\", strides=[1, 1, 1, 3], use_cudnn_on_gpu=true](conv1d/ExpandDims, conv1d/ExpandDims_1)\\' with input shapes: [2,10,1,3], [1,4,3,5].\\n'))",
+        "error_message": "{{function_node __wrapped____MklNativeConv2D_device_/job:localhost/replica:0/task:0/device:CPU:0}} input depth must be evenly divisible by filter depth: 10 vs 3 [Op:Conv2D] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "1",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "dilations": "[1, 1, 1]",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 5), (2, 10, 5)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[EagerTensor(shape=(2, 10, 3)), EagerTensor(shape=(4, 3, 5))]",
+            "stride": "1",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "dilations": "1",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 5), (2, 10, 5)))"
+    }
+]

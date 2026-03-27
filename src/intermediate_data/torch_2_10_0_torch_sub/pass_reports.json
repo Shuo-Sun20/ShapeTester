@@ -1,0 +1,117 @@
+[
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "alpha": "2",
+            "out": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "alpha": "2",
+            "out": "Tensor(shape=torch.Size([3, 4]))"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "alpha": "2",
+            "out": "Tensor(shape=torch.Size([3, 4]))"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "alpha": "2",
+            "out": "Tensor(shape=torch.Size([3, 4]))"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "alpha": "2",
+            "out": "Tensor(shape=torch.Size([3, 4]))"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "alpha": "2",
+            "out": "Tensor(shape=torch.Size([3, 4]))"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, \"sub(): functions with out=... arguments don't support automatic differentiation, but one of the arguments requires grad.\", (\"sub(): functions with out=... arguments don't support automatic differentiation, but one of the arguments requires grad.\", 'Dynamo failed to run FX node with fake tensors: call_function <built-in method sub of type object at 0x7f94c7b29b40>(*(FakeTensor(..., size=(s21, s41)), FakeTensor(..., size=(s21, s41))), **{\\'alpha\\': s27, \\'out\\': FakeTensor(..., size=(s21, s41), requires_grad=True)}): got RuntimeError(\"sub(): functions with out=... arguments don\\'t support automatic differentiation, but one of the arguments requires grad.\")\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_sub/generated_code.py\", line 5, in call_func\\n    return torch.sub(input_tensor, other_tensor, alpha=alpha, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', \"sub(): functions with out=... arguments don't support automatic differentiation, but one of the arguments requires grad.\"))",
+        "error_message": "sub(): functions with out=... arguments don't support automatic differentiation, but one of the arguments requires grad.",
+        "conflict_params": [
+            "inputs",
+            "out"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "alpha": "2",
+            "out": "Tensor(shape=torch.Size([3, 4]))"
+        },
+        "segment": "(6,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "alpha": "2",
+            "out": "Tensor(shape=torch.Size([3, 4]))"
+        },
+        "segment": "(7,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "alpha": "2",
+            "out": "Tensor(shape=torch.Size([3, 4]))"
+        },
+        "segment": "(8,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "alpha": "2",
+            "out": "Tensor(shape=torch.Size([3, 4]))"
+        },
+        "segment": "(9,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[Tensor(shape=torch.Size([3, 4])), Tensor(shape=torch.Size([3, 4]))]",
+            "alpha": "2",
+            "out": "Tensor(shape=torch.Size([3, 4]))"
+        },
+        "segment": "(10,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3, 4), (3, 4), (3, 4)))"
+    }
+]

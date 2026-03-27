@@ -1,0 +1,69 @@
+[
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([6]))",
+            "out": "None"
+        },
+        "segment": "(0,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6,), (6,), (6,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([6]))",
+            "out": "Tensor(shape=torch.Size([0]))"
+        },
+        "segment": "(1,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'signbit does not support non-boolean outputs.', ('signbit does not support non-boolean outputs.', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method signbit of type object at 0x7f8e0b129b40>(*(FakeTensor(..., size=(s85,)),), **{\\'out\\': FakeTensor(..., size=(s85,))}): got RuntimeError(\\'Expected out tensor to have dtype torch.bool but got torch.float32 instead\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_signbit/generated_code.py\", line 4, in call_func\\n    return torch.signbit(inputs, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected out tensor to have dtype torch.bool but got torch.float32 instead'))",
+        "error_message": "signbit does not support non-boolean outputs.",
+        "conflict_params": [
+            "out"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([6]))",
+            "out": "Tensor(shape=torch.Size([6]))"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6,), (6,), (6,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([6]))",
+            "out": "Tensor(shape=torch.Size([6]))"
+        },
+        "segment": "(3,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6,), (6,), (6,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([6]))",
+            "out": "Tensor(shape=torch.Size([6]))"
+        },
+        "segment": "(4,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6,), (6,), (6,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([6]))",
+            "out": "Tensor(shape=torch.Size([6]))"
+        },
+        "segment": "(5,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6,), (6,), (6,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "Tensor(shape=torch.Size([6]))",
+            "out": "Tensor(shape=torch.Size([0]))"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'signbit does not support non-boolean outputs.', ('signbit does not support non-boolean outputs.', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method signbit of type object at 0x7f8e0b129b40>(*(FakeTensor(..., size=(s85,)),), **{\\'out\\': FakeTensor(..., size=(s85,))}): got RuntimeError(\\'Expected out tensor to have dtype torch.bool but got torch.float32 instead\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_signbit/generated_code.py\", line 4, in call_func\\n    return torch.signbit(inputs, out=out)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'Expected out tensor to have dtype torch.bool but got torch.float32 instead'))",
+        "error_message": "signbit does not support non-boolean outputs."
+    }
+]

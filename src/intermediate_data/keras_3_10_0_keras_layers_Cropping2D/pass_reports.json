@@ -1,0 +1,303 @@
+[
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 28, 28, 3))",
+            "cropping": "0",
+            "data_format": "None"
+        },
+        "segment": "(0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 28, 28, 3), (None, 28, 28, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 28, 28, 3))",
+            "cropping": "0",
+            "data_format": "channels_last"
+        },
+        "segment": "(0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 28, 28, 3), (None, 28, 28, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 28, 28, 3))",
+            "cropping": "0",
+            "data_format": "channels_first"
+        },
+        "segment": "(0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 28, 28, 3), (None, 28, 28, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 28, 28, 3))",
+            "cropping": "1",
+            "data_format": "None"
+        },
+        "segment": "(1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 26, 26, 3), (None, 26, 26, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 28, 28, 3))",
+            "cropping": "1",
+            "data_format": "channels_last"
+        },
+        "segment": "(1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 26, 26, 3), (None, 26, 26, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 28, 28, 3))",
+            "cropping": "1",
+            "data_format": "channels_first"
+        },
+        "segment": "(1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 28, 26, 1), (None, 28, 26, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 28, 28, 3))",
+            "cropping": "[1, 2]",
+            "data_format": "None"
+        },
+        "segment": "(2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 26, 24, 3), (None, 26, 24, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 28, 28, 3))",
+            "cropping": "[1, 2]",
+            "data_format": "channels_last"
+        },
+        "segment": "(2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 26, 24, 3), (None, 26, 24, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 28, 28, 3))",
+            "cropping": "[1, 2]",
+            "data_format": "channels_first"
+        },
+        "segment": "(2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 28, 28, 3), cropping=((1, 1), (2, 2))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 28, 28, 3), dtype=float32)', ('Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 28, 28, 3), cropping=((1, 1), (2, 2))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 28, 28, 3), dtype=float32)', \"Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: input_shape=(None, 28, 28, 3), cropping=((1, 1), (2, 2))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 args=('<KerasTensor shape=(None, 28, 28, 3), dtype=float32, sparse=False, ragged=False, name=keras_tensor_7651>',)\\n  \u2022 kwargs=<class 'inspect._empty'>\"))",
+        "error_message": "Exception encountered when calling Cropping2D.call().\n\n\u001b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 28, 28, 3), cropping=((1, 1), (2, 2))\u001b[0m\n\nArguments received by Cropping2D.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 28, 28, 3), dtype=float32)",
+        "conflict_params": [
+            "cropping",
+            "data_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 28, 28, 3))",
+            "cropping": "[[1, 2], [3, 4]]",
+            "data_format": "None"
+        },
+        "segment": "(3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 25, 21, 3), (None, 25, 21, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 28, 28, 3))",
+            "cropping": "[[1, 2], [3, 4]]",
+            "data_format": "channels_last"
+        },
+        "segment": "(3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 25, 21, 3), (None, 25, 21, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 28, 28, 3))",
+            "cropping": "[[1, 2], [3, 4]]",
+            "data_format": "channels_first"
+        },
+        "segment": "(3, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 28, 28, 3), cropping=((1, 2), (3, 4))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 28, 28, 3), dtype=float32)', ('Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 28, 28, 3), cropping=((1, 2), (3, 4))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 28, 28, 3), dtype=float32)', \"Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: input_shape=(None, 28, 28, 3), cropping=((1, 2), (3, 4))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 args=('<KerasTensor shape=(None, 28, 28, 3), dtype=float32, sparse=False, ragged=False, name=keras_tensor_7656>',)\\n  \u2022 kwargs=<class 'inspect._empty'>\"))",
+        "error_message": "Exception encountered when calling Cropping2D.call().\n\n\u001b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 28, 28, 3), cropping=((1, 2), (3, 4))\u001b[0m\n\nArguments received by Cropping2D.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 28, 28, 3), dtype=float32)",
+        "conflict_params": [
+            "inputs",
+            "cropping",
+            "data_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 28, 28, 3))",
+            "cropping": "[[2, 2], [4, 4]]",
+            "data_format": "None"
+        },
+        "segment": "(4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 24, 20, 3), (None, 24, 20, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 28, 28, 3))",
+            "cropping": "[[2, 2], [4, 4]]",
+            "data_format": "channels_last"
+        },
+        "segment": "(4, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 24, 20, 3), (None, 24, 20, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 3, 10, 20))",
+            "cropping": "[[2, 2], [4, 4]]",
+            "data_format": "channels_first"
+        },
+        "segment": "(4, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3, 6, 12), (None, 3, 6, 12)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 3, 10, 20))",
+            "cropping": "[1, 2]",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3, 8, 16), (None, 3, 8, 16)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 3, 10, 20))",
+            "cropping": "1",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3, 8, 18), (None, 3, 8, 18)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 28, 28, 3))",
+            "cropping": "[[2, 2], [4, 4]]",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 28, 28, 3), cropping=((2, 2), (4, 4))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 28, 28, 3), dtype=float32)', ('Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 28, 28, 3), cropping=((2, 2), (4, 4))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 28, 28, 3), dtype=float32)', \"Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: input_shape=(None, 28, 28, 3), cropping=((2, 2), (4, 4))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 args=('<KerasTensor shape=(None, 28, 28, 3), dtype=float32, sparse=False, ragged=False, name=keras_tensor_7669>',)\\n  \u2022 kwargs=<class 'inspect._empty'>\"))",
+        "error_message": "Exception encountered when calling Cropping2D.call().\n\n\u001b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 28, 28, 3), cropping=((2, 2), (4, 4))\u001b[0m\n\nArguments received by Cropping2D.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 28, 28, 3), dtype=float32)"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 3, 10, 20))",
+            "cropping": "1",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 8, 20), (None, 1, 8, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 3, 10, 20))",
+            "cropping": "[[1, 2], [3, 4]]",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 3, 10, 20), cropping=((1, 2), (3, 4))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 3, 10, 20), dtype=float32)', ('Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 3, 10, 20), cropping=((1, 2), (3, 4))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 3, 10, 20), dtype=float32)', \"Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: input_shape=(None, 3, 10, 20), cropping=((1, 2), (3, 4))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 args=('<KerasTensor shape=(None, 3, 10, 20), dtype=float32, sparse=False, ragged=False, name=keras_tensor_7672>',)\\n  \u2022 kwargs=<class 'inspect._empty'>\"))",
+        "error_message": "Exception encountered when calling Cropping2D.call().\n\n\u001b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 3, 10, 20), cropping=((1, 2), (3, 4))\u001b[0m\n\nArguments received by Cropping2D.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 3, 10, 20), dtype=float32)"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 3, 10, 20))",
+            "cropping": "[1, 2]",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 6, 20), (None, 1, 6, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 3, 10, 20))",
+            "cropping": "[[2, 2], [4, 4]]",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 3, 10, 20), cropping=((2, 2), (4, 4))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 3, 10, 20), dtype=float32)', ('Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 3, 10, 20), cropping=((2, 2), (4, 4))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 3, 10, 20), dtype=float32)', \"Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: input_shape=(None, 3, 10, 20), cropping=((2, 2), (4, 4))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 args=('<KerasTensor shape=(None, 3, 10, 20), dtype=float32, sparse=False, ragged=False, name=keras_tensor_7675>',)\\n  \u2022 kwargs=<class 'inspect._empty'>\"))",
+        "error_message": "Exception encountered when calling Cropping2D.call().\n\n\u001b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 3, 10, 20), cropping=((2, 2), (4, 4))\u001b[0m\n\nArguments received by Cropping2D.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 3, 10, 20), dtype=float32)"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 3, 10, 20))",
+            "cropping": "[1, 2]",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 6, 20), (None, 1, 6, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 3, 10, 20))",
+            "cropping": "[[1, 2], [3, 4]]",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 3, 10, 20), cropping=((1, 2), (3, 4))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 3, 10, 20), dtype=float32)', ('Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 3, 10, 20), cropping=((1, 2), (3, 4))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 3, 10, 20), dtype=float32)', \"Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: input_shape=(None, 3, 10, 20), cropping=((1, 2), (3, 4))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 args=('<KerasTensor shape=(None, 3, 10, 20), dtype=float32, sparse=False, ragged=False, name=keras_tensor_7678>',)\\n  \u2022 kwargs=<class 'inspect._empty'>\"))",
+        "error_message": "Exception encountered when calling Cropping2D.call().\n\n\u001b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 3, 10, 20), cropping=((1, 2), (3, 4))\u001b[0m\n\nArguments received by Cropping2D.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 3, 10, 20), dtype=float32)"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 3, 10, 20))",
+            "cropping": "1",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 1, 8, 20), (None, 1, 8, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 3, 10, 20))",
+            "cropping": "[[2, 2], [4, 4]]",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 3, 10, 20), cropping=((2, 2), (4, 4))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 3, 10, 20), dtype=float32)', ('Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 3, 10, 20), cropping=((2, 2), (4, 4))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 inputs=tf.Tensor(shape=(2, 3, 10, 20), dtype=float32)', \"Exception encountered when calling Cropping2D.call().\\n\\n\\x1b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: input_shape=(None, 3, 10, 20), cropping=((2, 2), (4, 4))\\x1b[0m\\n\\nArguments received by Cropping2D.call():\\n  \u2022 args=('<KerasTensor shape=(None, 3, 10, 20), dtype=float32, sparse=False, ragged=False, name=keras_tensor_7681>',)\\n  \u2022 kwargs=<class 'inspect._empty'>\"))",
+        "error_message": "Exception encountered when calling Cropping2D.call().\n\n\u001b[1mValues in `cropping` argument should be smaller than the corresponding spatial dimension of the input. Received: inputs.shape=(2, 3, 10, 20), cropping=((2, 2), (4, 4))\u001b[0m\n\nArguments received by Cropping2D.call():\n  \u2022 inputs=tf.Tensor(shape=(2, 3, 10, 20), dtype=float32)"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 3, 10, 20))",
+            "cropping": "0",
+            "data_format": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3, 10, 20), (None, 3, 10, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 3, 10, 20))",
+            "cropping": "0",
+            "data_format": "channels_last"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3, 10, 20), (None, 3, 10, 20)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 3, 10, 20))",
+            "cropping": "[[1, 2], [3, 4]]",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3, 7, 13), (None, 3, 7, 13)))"
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 3, 10, 20))",
+            "cropping": "0",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((None, 3, 10, 20), (None, 3, 10, 20)))"
+    }
+]

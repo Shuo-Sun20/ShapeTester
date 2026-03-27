@@ -1,0 +1,1586 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "1",
+            "strides": "1",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(0, 0, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 3), (2, 10, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "1",
+            "strides": "2",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "segment": "(0, 1, 4, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'Graph execution error:\\n\\nDetected at node MaxPool1d defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func\\n\\nDefault MaxPoolingOp only supports NHWC on device type CPU\\n\\t [[{{node MaxPool1d}}]] [Op:__inference_call_func_914683]'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ",
+        "conflict_params": [
+            "data_format",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "2",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(1, 1, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 6, 3), (2, 6, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "3",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(2, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "4",
+            "padding": "[[0, 0], [2, 2], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(3, 3, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "1",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "segment": "(1, 0, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 2), (2, 10, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "4",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "segment": "(2, 3, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 1), (2, 10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "3",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "segment": "(3, 2, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Negative dimension size caused by subtracting 4 from 3 for \\'{{node MaxPool1d}} = MaxPool[T=DT_FLOAT, data_format=\"NCHW\", explicit_paddings=[0, 0, 0, 0, 1, 1, 0, 0], ksize=[1, 1, 1, 4], padding=\"EXPLICIT\", strides=[1, 1, 1, 3]](MaxPool1d/ExpandDims)\\' with input shapes: [2,10,1,3].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ",
+        "conflict_params": [
+            "data_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "5",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(4, 4, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3), (2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "3",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(1, 2, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "1",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(2, 0, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 3), (2, 8, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "1",
+            "strides": "4",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(0, 3, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "1",
+            "strides": "3",
+            "padding": "[[0, 0], [2, 2], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(0, 2, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Left padding 2 needs to be smaller than the window size 1 [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Left padding 2 needs to be smaller than the window size 1 [Op:MaxPool] name: ', 'Graph execution error:\\n\\nDetected at node MaxPool1d defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func\\n\\nLeft padding 2 needs to be smaller than the window size 1\\n\\t [[{{node MaxPool1d}}]] [Op:__inference_call_func_914816]'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Left padding 2 needs to be smaller than the window size 1 [Op:MaxPool] name: ",
+        "conflict_params": [
+            "ksize",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "5",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(1, 4, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3), (2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "2",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(3, 1, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 3), (2, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "2",
+            "padding": "[[0, 0], [2, 2], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(2, 1, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 6, 3), (2, 6, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "1",
+            "strides": "5",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(0, 4, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Left padding 1 needs to be smaller than the window size 1 [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Left padding 1 needs to be smaller than the window size 1 [Op:MaxPool] name: ', 'Graph execution error:\\n\\nDetected at node MaxPool1d defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func\\n\\nLeft padding 1 needs to be smaller than the window size 1\\n\\t [[{{node MaxPool1d}}]] [Op:__inference_call_func_914865]'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Left padding 1 needs to be smaller than the window size 1 [Op:MaxPool] name: ",
+        "conflict_params": [
+            "ksize",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "2",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(4, 1, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 3), (2, 5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "1",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(4, 0, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 8, 3), (2, 8, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "1",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(3, 0, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 7, 3), (2, 7, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "4",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(1, 3, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "5",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(2, 4, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3), (2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "1",
+            "padding": "[[0, 0], [2, 2], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(1, 0, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Left padding 2 needs to be smaller than the window size 2 [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Left padding 2 needs to be smaller than the window size 2 [Op:MaxPool] name: ', 'Graph execution error:\\n\\nDetected at node MaxPool1d defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 86, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func\\n\\nLeft padding 2 needs to be smaller than the window size 2\\n\\t [[{{node MaxPool1d}}]] [Op:__inference_call_func_914940]'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Left padding 2 needs to be smaller than the window size 2 [Op:MaxPool] name: ",
+        "conflict_params": [
+            "padding",
+            "ksize"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "3",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(3, 2, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 3), (2, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "3",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(4, 2, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3), (2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "5",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(3, 4, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3), (2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "4",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(4, 3, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3), (2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "5",
+            "padding": "[[0, 0], [2, 2], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "segment": "(4, 4, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3), (2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "4",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 1), (2, 10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "4",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Negative dimension size caused by subtracting 4 from 3 for \\'{{node MaxPool1d}} = MaxPool[T=DT_FLOAT, data_format=\"NCHW\", explicit_paddings=[0, 0, 0, 0, 1, 1, 0, 0], ksize=[1, 1, 1, 4], padding=\"EXPLICIT\", strides=[1, 1, 1, 4]](MaxPool1d/ExpandDims)\\' with input shapes: [2,10,1,3].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "1",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 3), (2, 10, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "4",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "4",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3), (2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "4",
+            "padding": "[[0, 0], [2, 2], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "5",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3), (2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "4",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'Graph execution error:\\n\\nDetected at node MaxPool1d defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func\\n\\nDefault MaxPoolingOp only supports NHWC on device type CPU\\n\\t [[{{node MaxPool1d}}]] [Op:__inference_call_func_915131]'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "4",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Negative dimension size caused by subtracting 4 from 3 for \\'{{node MaxPool1d}} = MaxPool[T=DT_FLOAT, data_format=\"NCHW\", explicit_paddings=[], ksize=[1, 1, 1, 4], padding=\"VALID\", strides=[1, 1, 1, 4]](MaxPool1d/ExpandDims)\\' with input shapes: [2,10,1,3].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "4",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 1), (2, 10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "4",
+            "padding": "[[0, 0], [2, 2], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Can not squeeze dim[2], expected a dimension of 1, got 5 for \\'{{node MaxPool1d/Squeeze}} = Squeeze[T=DT_FLOAT, squeeze_dims=[2]](MaxPool1d)\\' with input shapes: [2,10,5,1].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "1",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Can not squeeze dim[2], expected a dimension of 1, got 3 for \\'{{node MaxPool1d/Squeeze}} = Squeeze[T=DT_FLOAT, squeeze_dims=[2]](MaxPool1d)\\' with input shapes: [2,10,3,1].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "2",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 2), (2, 10, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "1",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 1), (2, 10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "4",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 1), (2, 10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "4",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Negative dimension size caused by subtracting 5 from 3 for \\'{{node MaxPool1d}} = MaxPool[T=DT_FLOAT, data_format=\"NCHW\", explicit_paddings=[], ksize=[1, 1, 1, 5], padding=\"VALID\", strides=[1, 1, 1, 4]](MaxPool1d/ExpandDims)\\' with input shapes: [2,10,1,3].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "1",
+            "strides": "4",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "1",
+            "strides": "4",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 1), (2, 10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "4",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Can not squeeze dim[2], expected a dimension of 1, got 3 for \\'{{node MaxPool1d/Squeeze}} = Squeeze[T=DT_FLOAT, squeeze_dims=[2]](MaxPool1d)\\' with input shapes: [2,10,3,1].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "5",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 1), (2, 10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "4",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Can not squeeze dim[2], expected a dimension of 1, got 3 for \\'{{node MaxPool1d/Squeeze}} = Squeeze[T=DT_FLOAT, squeeze_dims=[2]](MaxPool1d)\\' with input shapes: [2,10,3,1].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "5",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 1), (2, 10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "4",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 1), (2, 10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "2",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Can not squeeze dim[2], expected a dimension of 1, got 3 for \\'{{node MaxPool1d/Squeeze}} = Squeeze[T=DT_FLOAT, squeeze_dims=[2]](MaxPool1d)\\' with input shapes: [2,10,3,1].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "3",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Can not squeeze dim[2], expected a dimension of 1, got 3 for \\'{{node MaxPool1d/Squeeze}} = Squeeze[T=DT_FLOAT, squeeze_dims=[2]](MaxPool1d)\\' with input shapes: [2,10,3,1].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "4",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3), (2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "3",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 1), (2, 10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "1",
+            "padding": "[[0, 0], [2, 2], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Can not squeeze dim[2], expected a dimension of 1, got 5 for \\'{{node MaxPool1d/Squeeze}} = Squeeze[T=DT_FLOAT, squeeze_dims=[2]](MaxPool1d)\\' with input shapes: [2,10,5,2].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "1",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 3), (2, 10, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "2",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 1), (2, 10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "5",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Negative dimension size caused by subtracting 5 from 3 for \\'{{node MaxPool1d}} = MaxPool[T=DT_FLOAT, data_format=\"NCHW\", explicit_paddings=[0, 0, 0, 0, 0, 0, 0, 0], ksize=[1, 1, 1, 5], padding=\"EXPLICIT\", strides=[1, 1, 1, 5]](MaxPool1d/ExpandDims)\\' with input shapes: [2,10,1,3].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "3",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "5",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Negative dimension size caused by subtracting 4 from 3 for \\'{{node MaxPool1d}} = MaxPool[T=DT_FLOAT, data_format=\"NCHW\", explicit_paddings=[0, 0, 0, 0, 0, 0, 0, 0], ksize=[1, 1, 1, 4], padding=\"EXPLICIT\", strides=[1, 1, 1, 5]](MaxPool1d/ExpandDims)\\' with input shapes: [2,10,1,3].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "4",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "4",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "1",
+            "strides": "4",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Left padding 1 needs to be smaller than the window size 1 [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Left padding 1 needs to be smaller than the window size 1 [Op:MaxPool] name: ', 'Graph execution error:\\n\\nDetected at node MaxPool1d defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func\\n\\nLeft padding 1 needs to be smaller than the window size 1\\n\\t [[{{node MaxPool1d}}]] [Op:__inference_call_func_915486]'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Left padding 1 needs to be smaller than the window size 1 [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "4",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 1), (2, 10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "1",
+            "strides": "5",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3), (2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "5",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3), (2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "3",
+            "padding": "[[0, 0], [2, 2], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 3), (2, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "2",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 2), (2, 10, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "4",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "5",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 1), (2, 10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "3",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 1), (2, 10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "5",
+            "padding": "[[0, 0], [2, 2], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Left padding 2 needs to be smaller than the window size 2 [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Left padding 2 needs to be smaller than the window size 2 [Op:MaxPool] name: ', 'Graph execution error:\\n\\nDetected at node MaxPool1d defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func\\n\\nLeft padding 2 needs to be smaller than the window size 2\\n\\t [[{{node MaxPool1d}}]] [Op:__inference_call_func_915624]'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Left padding 2 needs to be smaller than the window size 2 [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "5",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3), (2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "5",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 1), (2, 10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "5",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3), (2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "1",
+            "strides": "4",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'Graph execution error:\\n\\nDetected at node MaxPool1d defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func\\n\\nDefault MaxPoolingOp only supports NHWC on device type CPU\\n\\t [[{{node MaxPool1d}}]] [Op:__inference_call_func_915681]'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "2",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 2), (2, 10, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "4",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'Graph execution error:\\n\\nDetected at node MaxPool1d defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func\\n\\nDefault MaxPoolingOp only supports NHWC on device type CPU\\n\\t [[{{node MaxPool1d}}]] [Op:__inference_call_func_915720]'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "2",
+            "padding": "[[0, 0], [2, 2], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Can not squeeze dim[2], expected a dimension of 1, got 5 for \\'{{node MaxPool1d/Squeeze}} = Squeeze[T=DT_FLOAT, squeeze_dims=[2]](MaxPool1d)\\' with input shapes: [2,10,5,1].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "3",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Negative dimension size caused by subtracting 5 from 3 for \\'{{node MaxPool1d}} = MaxPool[T=DT_FLOAT, data_format=\"NCHW\", explicit_paddings=[], ksize=[1, 1, 1, 5], padding=\"VALID\", strides=[1, 1, 1, 3]](MaxPool1d/ExpandDims)\\' with input shapes: [2,10,1,3].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "4",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "1",
+            "padding": "[[0, 0], [2, 2], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Can not squeeze dim[2], expected a dimension of 1, got 5 for \\'{{node MaxPool1d/Squeeze}} = Squeeze[T=DT_FLOAT, squeeze_dims=[2]](MaxPool1d)\\' with input shapes: [2,10,5,1].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "1",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Negative dimension size caused by subtracting 4 from 3 for \\'{{node MaxPool1d}} = MaxPool[T=DT_FLOAT, data_format=\"NCHW\", explicit_paddings=[0, 0, 0, 0, 0, 0, 0, 0], ksize=[1, 1, 1, 4], padding=\"EXPLICIT\", strides=[1, 1, 1, 1]](MaxPool1d/ExpandDims)\\' with input shapes: [2,10,1,3].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "1",
+            "strides": "2",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 2), (2, 10, 2)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "2",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 3), (2, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "2",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Negative dimension size caused by subtracting 4 from 3 for \\'{{node MaxPool1d}} = MaxPool[T=DT_FLOAT, data_format=\"NCHW\", explicit_paddings=[0, 0, 0, 0, 1, 1, 0, 0], ksize=[1, 1, 1, 4], padding=\"EXPLICIT\", strides=[1, 1, 1, 2]](MaxPool1d/ExpandDims)\\' with input shapes: [2,10,1,3].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "1",
+            "strides": "1",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 3), (2, 10, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "5",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Negative dimension size caused by subtracting 4 from 3 for \\'{{node MaxPool1d}} = MaxPool[T=DT_FLOAT, data_format=\"NCHW\", explicit_paddings=[], ksize=[1, 1, 1, 4], padding=\"VALID\", strides=[1, 1, 1, 5]](MaxPool1d/ExpandDims)\\' with input shapes: [2,10,1,3].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "3",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3), (2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "5",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "5",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 1), (2, 10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "5",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3), (2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "3",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 3), (2, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "5",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'Graph execution error:\\n\\nDetected at node MaxPool1d defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func\\n\\nDefault MaxPoolingOp only supports NHWC on device type CPU\\n\\t [[{{node MaxPool1d}}]] [Op:__inference_call_func_915981]'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "1",
+            "strides": "1",
+            "padding": "[[0, 0], [2, 2], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Can not squeeze dim[2], expected a dimension of 1, got 5 for \\'{{node MaxPool1d/Squeeze}} = Squeeze[T=DT_FLOAT, squeeze_dims=[2]](MaxPool1d)\\' with input shapes: [2,10,5,3].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "2",
+            "padding": "[[0, 0], [2, 2], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Negative dimension size caused by subtracting 5 from 3 for \\'{{node MaxPool1d}} = MaxPool[T=DT_FLOAT, data_format=\"NCHW\", explicit_paddings=[0, 0, 0, 0, 2, 2, 0, 0], ksize=[1, 1, 1, 5], padding=\"EXPLICIT\", strides=[1, 1, 1, 2]](MaxPool1d/ExpandDims)\\' with input shapes: [2,10,1,3].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "4",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Negative dimension size caused by subtracting 5 from 3 for \\'{{node MaxPool1d}} = MaxPool[T=DT_FLOAT, data_format=\"NCHW\", explicit_paddings=[0, 0, 0, 0, 0, 0, 0, 0], ksize=[1, 1, 1, 5], padding=\"EXPLICIT\", strides=[1, 1, 1, 4]](MaxPool1d/ExpandDims)\\' with input shapes: [2,10,1,3].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "2",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 3), (2, 5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "5",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 1), (2, 10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "2",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'Graph execution error:\\n\\nDetected at node MaxPool1d defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func\\n\\nDefault MaxPoolingOp only supports NHWC on device type CPU\\n\\t [[{{node MaxPool1d}}]] [Op:__inference_call_func_916076]'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "3",
+            "strides": "3",
+            "padding": "[[0, 0], [2, 2], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 3), (2, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "2",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "1",
+            "strides": "4",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 1), (2, 10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "3",
+            "padding": "[[0, 0], [2, 2], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 3), (2, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "3",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 1), (2, 10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "5",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3), (2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "4",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "1",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 9, 3), (2, 9, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "2",
+            "padding": "VALID",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Negative dimension size caused by subtracting 4 from 3 for \\'{{node MaxPool1d}} = MaxPool[T=DT_FLOAT, data_format=\"NCHW\", explicit_paddings=[], ksize=[1, 1, 1, 4], padding=\"VALID\", strides=[1, 1, 1, 2]](MaxPool1d/ExpandDims)\\' with input shapes: [2,10,1,3].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "1",
+            "strides": "1",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 3), (2, 10, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "1",
+            "padding": "[[0, 0], [2, 2], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 3), (2, 10, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "1",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 6, 3), (2, 6, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "3",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 1), (2, 10, 1)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "5",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3), (2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "3",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 3), (2, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "3",
+            "padding": "SAME",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 4, 3), (2, 4, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "2",
+            "strides": "5",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'Graph execution error:\\n\\nDetected at node MaxPool1d defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func\\n\\nDefault MaxPoolingOp only supports NHWC on device type CPU\\n\\t [[{{node MaxPool1d}}]] [Op:__inference_call_func_916367]'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "1",
+            "padding": "SAME",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 10, 3), (2, 10, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "5",
+            "strides": "5",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3), (2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "1",
+            "strides": "2",
+            "padding": "[[0, 0], [0, 0], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'Graph execution error:\\n\\nDetected at node MaxPool1d defined at (most recent call last):\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 229, in <module>\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/main.py\", line 172, in main\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/ShapeTester/GA_Based_Generation.py\", line 427, in run_ga_based_generation\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/base.py\", line 21, in wrapper\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 23, in test_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/utils/test_oracle/tensorflow_oracle.py\", line 8, in convert_to_symbolic_shape_tf\\n\\n  File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func\\n\\nDefault MaxPoolingOp only supports NHWC on device type CPU\\n\\t [[{{node MaxPool1d}}]] [Op:__inference_call_func_916419]'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "5",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 2, 3), (2, 2, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "1",
+            "strides": "2",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 5, 3), (2, 5, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "4",
+            "strides": "3",
+            "padding": "VALID",
+            "data_format": "NWC",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2, 3, 3), (2, 3, 3)))"
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 10, 3))",
+            "ksize": "1",
+            "strides": "5",
+            "padding": "[[0, 0], [1, 1], [0, 0]]",
+            "data_format": "NCW",
+            "name": "None"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: ', 'in user code:\\n\\n    File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/tensorflow_2_20_0_tf_nn_max_pool1d/generated_code.py\", line 5, in call_func  *\\n        return tf.nn.max_pool1d(input=inputs, ksize=ksize, strides=strides, padding=padding, data_format=data_format, name=name)\\n\\n    ValueError: Can not squeeze dim[2], expected a dimension of 1, got 3 for \\'{{node MaxPool1d/Squeeze}} = Squeeze[T=DT_FLOAT, squeeze_dims=[2]](MaxPool1d)\\' with input shapes: [2,10,3,1].\\n'))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Default MaxPoolingOp only supports NHWC on device type CPU [Op:MaxPool] name: "
+    }
+]

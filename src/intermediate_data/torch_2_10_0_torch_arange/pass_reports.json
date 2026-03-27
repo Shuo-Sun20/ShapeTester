@@ -1,0 +1,2758 @@
+[
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-10.0",
+            "end": "-5.0",
+            "step": "-3.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(0, 0, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method arange of type object at 0x7f27a8b29b40>(*(), **{\\'start\\': zf44, \\'end\\': zf7, \\'step\\': zf51, \\'out\\': None, \\'dtype\\': None, \\'layout\\': torch.strided, \\'device\\': None, \\'requires_grad\\': False}): got RuntimeError(\\'upper bound and lower bound inconsistent with step sign\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_arange/generated_code.py\", line 4, in call_func\\n    return torch.arange(start=start, end=end, step=step, out=out, dtype=dtype, layout=layout, device=device, requires_grad=requires_grad)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-10.0",
+            "end": "0",
+            "step": "-1.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(0, 1, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method arange of type object at 0x7f27a8b29b40>(*(), **{\\'start\\': zf44, \\'end\\': s7, \\'step\\': zf51, \\'out\\': None, \\'dtype\\': None, \\'layout\\': torch.strided, \\'device\\': None, \\'requires_grad\\': False}): got RuntimeError(\\'upper bound and lower bound inconsistent with step sign\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_arange/generated_code.py\", line 4, in call_func\\n    return torch.arange(start=start, end=end, step=step, out=out, dtype=dtype, layout=layout, device=device, requires_grad=requires_grad)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-10.0",
+            "end": "4",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(0, 2, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method arange of type object at 0x7f27a8b29b40>(*(), **{\\'start\\': zf44, \\'end\\': s7, \\'step\\': zf51, \\'out\\': None, \\'dtype\\': None, \\'layout\\': torch.strided, \\'device\\': None, \\'requires_grad\\': False}): got RuntimeError(\\'upper bound and lower bound inconsistent with step sign\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_arange/generated_code.py\", line 4, in call_func\\n    return torch.arange(start=start, end=end, step=step, out=out, dtype=dtype, layout=layout, device=device, requires_grad=requires_grad)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-10.0",
+            "end": "10.0",
+            "step": "0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(0, 3, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((40,), (40,), (40,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-10.0",
+            "end": "15.5",
+            "step": "1",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(0, 4, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((26,), (26,), (26,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-10.0",
+            "end": "20.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(0, 5, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((15,), (15,), (15,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-10.0",
+            "end": "100.0",
+            "step": "5.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(0, 6, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((22,), (22,), (22,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-5.5",
+            "end": "-5.0",
+            "step": "-1.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(1, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method arange of type object at 0x7f27a8b29b40>(*(), **{\\'start\\': zf44, \\'end\\': zf7, \\'step\\': zf51, \\'out\\': None, \\'dtype\\': None, \\'layout\\': torch.strided, \\'device\\': None, \\'requires_grad\\': False}): got RuntimeError(\\'upper bound and lower bound inconsistent with step sign\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_arange/generated_code.py\", line 4, in call_func\\n    return torch.arange(start=start, end=end, step=step, out=out, dtype=dtype, layout=layout, device=device, requires_grad=requires_grad)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-5.5",
+            "end": "0",
+            "step": "-3.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(1, 1, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method arange of type object at 0x7f27a8b29b40>(*(), **{\\'start\\': zf44, \\'end\\': s7, \\'step\\': zf51, \\'out\\': None, \\'dtype\\': None, \\'layout\\': torch.strided, \\'device\\': None, \\'requires_grad\\': False}): got RuntimeError(\\'upper bound and lower bound inconsistent with step sign\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_arange/generated_code.py\", line 4, in call_func\\n    return torch.arange(start=start, end=end, step=step, out=out, dtype=dtype, layout=layout, device=device, requires_grad=requires_grad)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-5.5",
+            "end": "4",
+            "step": "0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(1, 2, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((19,), (19,), (19,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-5.5",
+            "end": "10.0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(1, 3, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'Dynamo failed to run FX node with fake tensors: call_function <built-in method arange of type object at 0x7f27a8b29b40>(*(), **{\\'start\\': zf44, \\'end\\': zf7, \\'step\\': zf51, \\'out\\': None, \\'dtype\\': None, \\'layout\\': torch.strided, \\'device\\': None, \\'requires_grad\\': False}): got RuntimeError(\\'upper bound and lower bound inconsistent with step sign\\')\\n\\nfrom user code:\\n   File \"/mnt/data2/Users/sunshuo/2026/dltest_3.3/src/intermediate_data/torch_2_10_0_torch_arange/generated_code.py\", line 4, in call_func\\n    return torch.arange(start=start, end=end, step=step, out=out, dtype=dtype, layout=layout, device=device, requires_grad=requires_grad)\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\\n', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-5.5",
+            "end": "15.5",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(1, 4, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((11,), (11,), (11,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-5.5",
+            "end": "20.0",
+            "step": "1",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(1, 5, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((26,), (26,), (26,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-5.5",
+            "end": "100.0",
+            "step": "10.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(1, 6, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((11,), (11,), (11,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-1",
+            "end": "-5.0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(2, 0, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((8,), (8,), (8,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-1",
+            "end": "0",
+            "step": "0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(2, 1, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2,), (2,), (2,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-1",
+            "end": "4",
+            "step": "-3.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(2, 2, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-1",
+            "end": "10.0",
+            "step": "-1.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(2, 3, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-1",
+            "end": "15.5",
+            "step": "5.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(2, 4, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-1",
+            "end": "20.0",
+            "step": "10.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(2, 5, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-1",
+            "end": "100.0",
+            "step": "1",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(2, 6, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((101,), (101,), (101,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "-5.0",
+            "step": "0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(3, 0, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(3, 1, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0,), (0,), (0,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "4",
+            "step": "-1.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(3, 2, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "10.0",
+            "step": "-3.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(3, 3, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "15.5",
+            "step": "10.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(3, 4, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2,), (2,), (2,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "20.0",
+            "step": "5.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(3, 5, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "100.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(3, 6, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((50,), (50,), (50,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "1",
+            "end": "-5.0",
+            "step": "1",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(4, 0, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "1",
+            "end": "0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(4, 1, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "1",
+            "end": "4",
+            "step": "5.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(4, 2, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1,), (1,), (1,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "1",
+            "end": "10.0",
+            "step": "10.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(4, 3, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1,), (1,), (1,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "1",
+            "end": "15.5",
+            "step": "-3.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(4, 4, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "1",
+            "end": "20.0",
+            "step": "-1.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(4, 5, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "1",
+            "end": "100.0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(4, 6, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "-5.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(5, 0, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "0",
+            "step": "1",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(5, 1, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "4",
+            "step": "10.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(5, 2, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1,), (1,), (1,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "10.0",
+            "step": "5.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(5, 3, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2,), (2,), (2,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "15.5",
+            "step": "-1.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(5, 4, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "20.0",
+            "step": "-3.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(5, 5, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "100.0",
+            "step": "0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(5, 6, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((195,), (195,), (195,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "-5.0",
+            "step": "5.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(6, 0, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "0",
+            "step": "10.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(6, 1, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "4",
+            "step": "1",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(6, 2, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "10.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(6, 3, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0,), (0,), (0,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "15.5",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(6, 4, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "20.0",
+            "step": "0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(6, 5, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20,), (20,), (20,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "100.0",
+            "step": "-3.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(6, 6, 0)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-10.0",
+            "end": "-5.0",
+            "step": "10.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(0, 0, 7)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1,), (1,), (1,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-5.5",
+            "end": "0",
+            "step": "5.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(1, 1, 6)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2,), (2,), (2,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-1",
+            "end": "4",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(2, 2, 5)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "10.0",
+            "step": "1",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(3, 3, 4)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10,), (10,), (10,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "1",
+            "end": "15.5",
+            "step": "0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(4, 4, 3)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((29,), (29,), (29,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "20.0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(5, 5, 2)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "100.0",
+            "step": "-1.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "segment": "(6, 6, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign",
+        "conflict_params": [
+            "start",
+            "end",
+            "step"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-1",
+            "end": "10.0",
+            "step": "-1.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0,), (0,), (0,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "10.0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0,), (0,), (0,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-5.5",
+            "end": "10.0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-1",
+            "end": "0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1,), (1,), (1,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "15.5",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "10.0",
+            "step": "-3.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0,), (0,), (0,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "-5.0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10,), (10,), (10,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "4",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "10.0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "20.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5,), (5,), (5,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "0",
+            "step": "-3.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0,), (0,), (0,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "10.0",
+            "step": "-1.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0,), (0,), (0,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "0",
+            "step": "-1.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0,), (0,), (0,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "10.0",
+            "step": "10.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0,), (0,), (0,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "20.0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "1",
+            "end": "10.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5,), (5,), (5,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5,), (5,), (5,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-10.0",
+            "end": "10.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10,), (10,), (10,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "0",
+            "step": "5.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0,), (0,), (0,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "100.0",
+            "step": "10.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10,), (10,), (10,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "4",
+            "step": "1",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "1",
+            "end": "-5.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "0",
+            "step": "-3.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20,), (20,), (20,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "0",
+            "step": "0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0,), (0,), (0,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "4",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2,), (2,), (2,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "1",
+            "end": "4",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "10.0",
+            "step": "0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0,), (0,), (0,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "4",
+            "step": "-3.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "1",
+            "end": "0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-5.5",
+            "end": "0",
+            "step": "10.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1,), (1,), (1,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-5.5",
+            "end": "10.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((8,), (8,), (8,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "20.0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "10.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "0",
+            "step": "0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-5.5",
+            "end": "-5.0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "-5.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "10.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5,), (5,), (5,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "10.0",
+            "step": "-1.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "0",
+            "step": "-1.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((7,), (7,), (7,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "1",
+            "end": "10.0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-5.5",
+            "end": "0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-1",
+            "end": "20.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((11,), (11,), (11,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "0",
+            "step": "-1.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2,), (2,), (2,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-10.0",
+            "end": "-5.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "10.0",
+            "step": "1",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0,), (0,), (0,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "10.0",
+            "step": "-3.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "0",
+            "step": "0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "1",
+            "end": "0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2,), (2,), (2,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "4",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((12,), (12,), (12,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-1",
+            "end": "0",
+            "step": "10.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1,), (1,), (1,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-1",
+            "end": "10.0",
+            "step": "10.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((2,), (2,), (2,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "100.0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-5.5",
+            "end": "100.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((53,), (53,), (53,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "10.0",
+            "step": "0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20,), (20,), (20,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "0",
+            "step": "1",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "-5.0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((30,), (30,), (30,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "1",
+            "end": "10.0",
+            "step": "-3.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "20.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((10,), (10,), (10,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "10.0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "0",
+            "step": "1",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0,), (0,), (0,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "100.0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "15.5",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-10.0",
+            "end": "10.0",
+            "step": "1",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20,), (20,), (20,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "1",
+            "end": "0",
+            "step": "0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-1",
+            "end": "10.0",
+            "step": "5.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "20.0",
+            "step": "10.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1,), (1,), (1,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "15.5",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((8,), (8,), (8,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "10.0",
+            "step": "5.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0,), (0,), (0,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "-5.0",
+            "step": "0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "0",
+            "step": "10.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((0,), (0,), (0,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "1",
+            "end": "100.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((50,), (50,), (50,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-1",
+            "end": "0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "20.0",
+            "step": "1",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20,), (20,), (20,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "0",
+            "step": "5.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-1",
+            "end": "4",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "-5.0",
+            "step": "-1.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-1",
+            "end": "0",
+            "step": "1",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1,), (1,), (1,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-10.0",
+            "end": "0",
+            "step": "-3.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "1",
+            "end": "0",
+            "step": "-1.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1,), (1,), (1,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-1",
+            "end": "10.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((6,), (6,), (6,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "20.0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "-5.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "-5.0",
+            "step": "0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "-5.0",
+            "step": "10.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "0",
+            "step": "10.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "10.0",
+            "step": "10.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1,), (1,), (1,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "20.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((9,), (9,), (9,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "-5.0",
+            "step": "1",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "-5.0",
+            "step": "1",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-10.0",
+            "end": "0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((5,), (5,), (5,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-10.0",
+            "end": "10.0",
+            "step": "-1.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "1",
+            "end": "0",
+            "step": "10.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-10.0",
+            "end": "0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "0",
+            "step": "1",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "0",
+            "step": "-3.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1,), (1,), (1,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-5.5",
+            "end": "10.0",
+            "step": "5.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((4,), (4,), (4,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-5.5",
+            "end": "15.5",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-5.5",
+            "end": "0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((3,), (3,), (3,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "20.0",
+            "step": "-3.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "-5.0",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((15,), (15,), (15,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-5.5",
+            "end": "-5.0",
+            "step": "10.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((1,), (1,), (1,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "4",
+            "step": "10.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "0",
+            "end": "100.0",
+            "step": "5.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((20,), (20,), (20,)))"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "2.5",
+            "end": "4",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "-10.0",
+            "end": "10.0",
+            "step": "-3.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "15.5",
+            "step": "-0.5",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.AllCrash: 'AllCrash'>, 'upper bound and lower bound inconsistent with step sign', ('upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign', 'upper bound and lower bound inconsistent with step sign'))",
+        "error_message": "upper bound and lower bound inconsistent with step sign"
+    },
+    {
+        "test_case": {
+            "inputs": "[]",
+            "start": "10.0",
+            "end": "100.0",
+            "step": "2.0",
+            "out": "None",
+            "dtype": "None",
+            "layout": "torch.strided",
+            "device": "None",
+            "requires_grad": "False"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.Pass: 'Pass'>, None, ((45,), (45,), (45,)))"
+    }
+]

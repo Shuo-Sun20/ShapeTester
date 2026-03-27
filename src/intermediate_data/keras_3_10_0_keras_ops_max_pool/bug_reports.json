@@ -1,0 +1,44 @@
+[
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 5, 5, 3))",
+            "pool_size": "4",
+            "strides": "4",
+            "padding": "valid",
+            "data_format": "channels_first"
+        },
+        "segment": "(3, 3, 0, 1)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: ', (None, 5, 1, 0)))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: ",
+        "conflict_params": [
+            "pool_size",
+            "strides",
+            "padding"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 5, 5, 3))",
+            "pool_size": "4",
+            "strides": "4",
+            "padding": "valid",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: ', (None, 5, 1, 0)))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: "
+    },
+    {
+        "test_case": {
+            "inputs": "EagerTensor(shape=(2, 5, 5, 3))",
+            "pool_size": "4",
+            "strides": "3",
+            "padding": "valid",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: ', ('{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: ', (None, 5, 1, 0)))",
+        "error_message": "{{function_node __wrapped__MaxPool_device_/job:localhost/replica:0/task:0/device:CPU:0}} Compute received an exception:Status: 2, message: could not create a descriptor for a pooling forward propagation primitive, in file tensorflow/core/kernels/mkl/mkl_maxpooling_op.cc:211 [Op:MaxPool] name: "
+    }
+]

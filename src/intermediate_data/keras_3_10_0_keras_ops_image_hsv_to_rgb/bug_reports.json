@@ -1,0 +1,25 @@
+[
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 4, 4, 3))",
+            "data_format": "channels_first"
+        },
+        "segment": "(2,)",
+        "stage": "Combinatorial Testing",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__HSVToRGB_device_/job:localhost/replica:0/task:0/device:CPU:0}} input must have 3 channels but input only has 4 channels. [Op:HSVToRGB] name: ', ('{{function_node __wrapped__HSVToRGB_device_/job:localhost/replica:0/task:0/device:CPU:0}} input must have 3 channels but input only has 4 channels. [Op:HSVToRGB] name: ', (None, 4, 4, 3)))",
+        "error_message": "{{function_node __wrapped__HSVToRGB_device_/job:localhost/replica:0/task:0/device:CPU:0}} input must have 3 channels but input only has 4 channels. [Op:HSVToRGB] name: ",
+        "conflict_params": [
+            "inputs",
+            "data_format"
+        ]
+    },
+    {
+        "test_case": {
+            "inputs": "ndarray(shape=(2, 4, 4, 3))",
+            "data_format": "channels_first"
+        },
+        "stage": "Genetic Algorithm",
+        "result": "(<TestResult.PartialCrash: 'PartialCrash'>, '{{function_node __wrapped__HSVToRGB_device_/job:localhost/replica:0/task:0/device:CPU:0}} input must have 3 channels but input only has 4 channels. [Op:HSVToRGB] name: ', ('{{function_node __wrapped__HSVToRGB_device_/job:localhost/replica:0/task:0/device:CPU:0}} input must have 3 channels but input only has 4 channels. [Op:HSVToRGB] name: ', (None, 4, 4, 3)))",
+        "error_message": "{{function_node __wrapped__HSVToRGB_device_/job:localhost/replica:0/task:0/device:CPU:0}} input must have 3 channels but input only has 4 channels. [Op:HSVToRGB] name: "
+    }
+]
